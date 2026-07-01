@@ -1,4 +1,5 @@
 import { Component, signal } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,5 @@ import { Component, signal } from '@angular/core';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('basstahali');
+  protected readonly title = signal('منصة بسطهالي');
 }
