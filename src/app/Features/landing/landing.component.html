@@ -104,3 +104,56 @@
     </div>
   </div>
 </section>
+
+
+<!-- Banner Section Start -->
+<section class="w-full max-w-6xl mx-auto px-4 py-6 ">
+  <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#4A148C] via-[#5E17EB] to-[#45129E] p-6 md:p-10 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+    
+    <!-- الجانب الأيمن: صورة البومة والعناصر البصرية -->
+    <div class="relative flex items-center justify-center min-w-[180px] md:min-w-[240px]">
+      <!-- النجوم البصرية -->
+      <span class="absolute -top-2 left-4 text-yellow-300 text-xl animate-pulse">✦</span>
+      <span class="absolute bottom-2 right-2 text-purple-300 text-lg">✦</span>
+      <span class="absolute top-1/2 -right-6 text-purple-300 text-xs">✦</span>
+      <span class="absolute top-1/2 -right-18 text-purple-300 text-xs">✦</span>
+      <span class="absolute top-1/2 -right-16 text-purple-300 text-xs">✦</span>
+      
+      <!-- الصورة -->
+      <img 
+        src="/images/owl.png" 
+        alt="شخصية بسطهالي" 
+        class="w-40 md:w-60 h-auto object-contain z-10 drop-shadow-lg"
+      />
+    </div>
+
+    <!-- الجانب الأيسر: النصوص والأزرار -->
+    <div class="flex flex-col items-center md:items-end text-center md:text-right text-white space-y-4 z-10">
+      <!-- العنوان الرئيسي -->
+      <h2 class="text-2xl md:text-4xl font-extrabold leading-tight tracking-wide flex items-center gap-2">
+        جاهز تبسطها على نفسك؟ 
+        <span class="inline-block text-2xl md:text-3xl">😎</span>
+      </h2>
+
+      <!-- النص الفرعي -->
+      <p class="text-lg md:text-2xl font-medium text-purple-100 opacity-95">
+        ابدأ رحلتك التعليمية الآن مع بسطهالي
+      </p>
+
+      <!-- زر الإجراء -->
+      <div class="pt-2">
+        <a 
+          routerLink="/store"
+          class="inline-block bg-gradient-to-r from-[#FFC107] to-[#FF9800] hover:from-[#FFB300] hover:to-[#F57C00] text-gray-900 font-bold text-base md:text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 hover:scale-105 active:scale-95 text-center cursor-pointer">
+          ابدأ الآن مجاناً
+        </a>
+      </div>
+    </div>
+
+    <!-- خلفية تجميلية خفيفة (Glow) -->
+    <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-purple-400/20 rounded-full blur-2xl pointer-events-none"></div>
+    <div class="absolute -top-10 -left-10 w-40 h-40 bg-indigo-400/20 rounded-full blur-2xl pointer-events-none"></div>
+
+  </div>
+</section>
+<!-- Banner Section End -->
