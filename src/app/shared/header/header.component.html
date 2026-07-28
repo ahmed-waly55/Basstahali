@@ -1,0 +1,240 @@
+<header class="bg-white shadow-sm border-b border-gray-100 fixed top-0 inset-x-0 w-full z-50">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="flex items-center justify-between h-20">
+
+      <!-- Logo -->
+      <a routerLink="/home" class="flex items-center">
+        <img
+          src="/logo.jpg"
+          alt="Basstahali"
+          class="h-16 w-auto object-contain"
+        />
+      </a>
+
+      <!-- Desktop Menu -->
+      <nav class="hidden lg:flex items-center gap-7">
+
+        <a
+          routerLink="/home"
+          routerLinkActive="text-[#4F2DB7]"
+          [routerLinkActiveOptions]="{exact: true}"
+          class="relative font-semibold text-gray-700 hover:text-[#4F2DB7] transition group py-2"
+        >
+          الرئيسية
+          <!-- الخط السفلي للرابط النشط -->
+          <span
+            routerLinkActive="!block"
+            [routerLinkActiveOptions]="{exact: true}"
+            class="hidden absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-1 rounded-full bg-[#4F2DB7]"
+          ></span>
+        </a>
+
+        <a
+          routerLink="/stages"
+          routerLinkActive="text-[#4F2DB7]"
+          class="relative font-semibold text-gray-700 hover:text-[#4F2DB7] transition py-2"
+        >
+          المراحل
+          <span
+            routerLinkActive="!block"
+            class="hidden absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-1 rounded-full bg-[#4F2DB7]"
+          ></span>
+        </a>
+
+        <a
+          routerLink="/features"
+          routerLinkActive="text-[#4F2DB7]"
+          class="relative font-semibold text-gray-700 hover:text-[#4F2DB7] transition py-2"
+        >
+          المميزات
+          <span
+            routerLinkActive="!block"
+            class="hidden absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-1 rounded-full bg-[#4F2DB7]"
+          ></span>
+        </a>
+
+        <a
+          routerLink="/teachers"
+          routerLinkActive="text-[#4F2DB7]"
+          class="relative font-semibold text-gray-700 hover:text-[#4F2DB7] transition py-2"
+        >
+          المدرسين
+          <span
+            routerLinkActive="!block"
+            class="hidden absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-1 rounded-full bg-[#4F2DB7]"
+          ></span>
+        </a>
+
+        <a
+          routerLink="/pricing"
+          routerLinkActive="text-[#4F2DB7]"
+          class="relative font-semibold text-gray-700 hover:text-[#4F2DB7] transition py-2"
+        >
+          الأسعار
+          <span
+            routerLinkActive="!block"
+            class="hidden absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-1 rounded-full bg-[#4F2DB7]"
+          ></span>
+        </a>
+
+        <a
+          routerLink="/about"
+          routerLinkActive="text-[#4F2DB7]"
+          class="relative font-semibold text-gray-700 hover:text-[#4F2DB7] transition py-2"
+        >
+          من نحن
+          <span
+            routerLinkActive="!block"
+            class="hidden absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-1 rounded-full bg-[#4F2DB7]"
+          ></span>
+        </a>
+
+        <a
+          routerLink="/contact"
+          routerLinkActive="text-[#4F2DB7]"
+          class="relative font-semibold text-gray-700 hover:text-[#4F2DB7] transition py-2"
+        >
+          تواصل معنا
+          <span
+            routerLinkActive="!block"
+            class="hidden absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-1 rounded-full bg-[#4F2DB7]"
+          ></span>
+        </a>
+
+      </nav>
+
+      <!-- Desktop Buttons -->
+      <div class="hidden lg:flex items-center gap-4">
+
+        <button 
+          routerLink="/auth/login"
+          class="border-2 border-[#6D4BCE] text-[#4F2DB7] rounded-xl px-7 py-2.5 font-bold hover:bg-[#6D4BCE] hover:text-white transition flex items-center gap-2"
+        >
+          <i class="fa-solid fa-right-to-bracket"></i>
+          <span>تسجيل الدخول</span>
+        </button>
+
+        <button 
+          routerLink="/auth/register"
+          class="bg-[#F9B400] text-black font-bold rounded-xl px-7 py-2.5 hover:bg-yellow-500 transition shadow-md flex items-center gap-2"
+        >
+          <i class="fa-solid fa-rocket"></i>
+          <span>ابدأ الآن</span>
+        </button>
+
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button 
+        (click)="toggleMenu()" 
+        type="button"
+        class="lg:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition focus:outline-none w-10 h-10 flex items-center justify-center text-2xl"
+      >
+        @if (!isMenuOpen) {
+          <i class="fa-solid fa-bars"></i>
+        } @else {
+          <i class="fa-solid fa-xmark"></i>
+        }
+      </button>
+
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <div 
+      class="lg:hidden transition-all duration-300 ease-in-out border-t border-gray-100 overflow-hidden"
+      [class.block]="isMenuOpen"
+      [class.hidden]="!isMenuOpen"
+    >
+      <div class="flex flex-col py-4 space-y-2">
+
+        <a
+          routerLink="/home"
+          (click)="closeMenu()"
+          routerLinkActive="text-[#4F2DB7] font-bold bg-gray-50"
+          [routerLinkActiveOptions]="{exact: true}"
+          class="text-gray-700 hover:text-[#4F2DB7] py-2.5 px-4 rounded-lg transition"
+        >
+          الرئيسية
+        </a>
+
+        <a
+          routerLink="/stages"
+          (click)="closeMenu()"
+          routerLinkActive="text-[#4F2DB7] font-bold bg-gray-50"
+          class="text-gray-700 hover:text-[#4F2DB7] py-2.5 px-4 rounded-lg transition"
+        >
+          المراحل
+        </a>
+
+        <a
+          routerLink="/features"
+          (click)="closeMenu()"
+          routerLinkActive="text-[#4F2DB7] font-bold bg-gray-50"
+          class="text-gray-700 hover:text-[#4F2DB7] py-2.5 px-4 rounded-lg transition"
+        >
+          المميزات
+        </a>
+
+        <a
+          routerLink="/teachers"
+          (click)="closeMenu()"
+          routerLinkActive="text-[#4F2DB7] font-bold bg-gray-50"
+          class="text-gray-700 hover:text-[#4F2DB7] py-2.5 px-4 rounded-lg transition"
+        >
+          المدرسين
+        </a>
+
+        <a
+          routerLink="/pricing"
+          (click)="closeMenu()"
+          routerLinkActive="text-[#4F2DB7] font-bold bg-gray-50"
+          class="text-gray-700 hover:text-[#4F2DB7] py-2.5 px-4 rounded-lg transition"
+        >
+          الأسعار
+        </a>
+
+        <a
+          routerLink="/about"
+          (click)="closeMenu()"
+          routerLinkActive="text-[#4F2DB7] font-bold bg-gray-50"
+          class="text-gray-700 hover:text-[#4F2DB7] py-2.5 px-4 rounded-lg transition"
+        >
+          من نحن
+        </a>
+
+        <a
+          routerLink="/contact"
+          (click)="closeMenu()"
+          routerLinkActive="text-[#4F2DB7] font-bold bg-gray-50"
+          class="text-gray-700 hover:text-[#4F2DB7] py-2.5 px-4 rounded-lg transition"
+        >
+          تواصل معنا
+        </a>
+
+        <!-- Mobile Buttons -->
+        <div class="pt-4 flex flex-col gap-3 border-t border-gray-100">
+          <button
+            routerLink="/auth/login"
+            (click)="closeMenu()"
+            class="w-full border-2 border-[#6D4BCE] text-[#4F2DB7] rounded-xl py-2.5 font-bold hover:bg-[#6D4BCE] hover:text-white transition flex items-center justify-center gap-2"
+          >
+            <i class="fa-solid fa-right-to-bracket"></i>
+            <span>تسجيل الدخول</span>
+          </button>
+
+          <button
+            routerLink="/auth/register"
+            (click)="closeMenu()"
+            class="w-full bg-[#F9B400] text-black font-bold rounded-xl py-2.5 hover:bg-yellow-500 transition shadow-md flex items-center justify-center gap-2"
+          >
+            <i class="fa-solid fa-rocket"></i>
+            <span>ابدأ الآن</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</header>

@@ -1,0 +1,109 @@
+<footer class="bg-[#3D1A6D] text-white pt-12 pb-6">
+  <div class="max-w-7xl mx-auto px-6">
+    
+    <!-- Main Footer Content Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-10 border-b border-white/10">
+
+      <!-- Column 1: Brand & Socials -->
+      <div class="space-y-4 lg:col-span-1">
+        <a routerLink="/" class="inline-block">
+          <img src="/owl.png" alt="بسطهالي" class="h-20 w-auto object-contain" />
+        </a>
+        <p class="text-gray-200 text-sm leading-relaxed font-medium">
+          منصة تعليمية تساعدك تتعلّم وتتفوّق بسهولة
+        </p>
+        <!-- Social Icons -->
+        <div class="flex items-center gap-3 pt-2">
+          <a href="#" class="w-9 h-9 bg-white text-[#3D1A6D] rounded-full flex items-center justify-center hover:bg-[#F9B400] hover:text-black transition-colors">
+            <i class="fa-brands fa-facebook-f text-lg"></i>
+          </a>
+          <a href="#" class="w-9 h-9 bg-white text-[#3D1A6D] rounded-full flex items-center justify-center hover:bg-[#F9B400] hover:text-black transition-colors">
+            <i class="fa-brands fa-instagram text-lg"></i>
+          </a>
+          <a href="#" class="w-9 h-9 bg-white text-[#3D1A6D] rounded-full flex items-center justify-center hover:bg-[#F9B400] hover:text-black transition-colors">
+            <i class="fa-brands fa-youtube text-lg"></i>
+          </a>
+          <a href="#" class="w-9 h-9 bg-white text-[#3D1A6D] rounded-full flex items-center justify-center hover:bg-[#F9B400] hover:text-black transition-colors">
+            <i class="fa-brands fa-telegram text-lg"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div class="space-y-3">
+        <h3 class="text-lg font-bold mb-4 text-white">روابط سريعة</h3>
+        <ul class="space-y-2.5 text-sm text-gray-200">
+          <li><a routerLink="/" class="hover:text-[#F9B400] transition">الرئيسية</a></li>
+          <li><a routerLink="/stages" class="hover:text-[#F9B400] transition">المراحل</a></li>
+          <li><a routerLink="/features" class="hover:text-[#F9B400] transition">المميزات</a></li>
+          <li><a routerLink="/teachers" class="hover:text-[#F9B400] transition">المدرسين</a></li>
+          <li><a routerLink="/pricing" class="hover:text-[#F9B400] transition">الأسعار</a></li>
+          <li><a routerLink="/contact" class="hover:text-[#F9B400] transition">تواصل معنا</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Support Links -->
+      <div class="space-y-3">
+        <h3 class="text-lg font-bold mb-4 text-white">الدعم</h3>
+        <ul class="space-y-2.5 text-sm text-gray-200">
+          <li><a routerLink="/faq" class="hover:text-[#F9B400] transition">الأسئلة الشائعة</a></li>
+          <li><a routerLink="/privacy" class="hover:text-[#F9B400] transition">سياسة الخصوصية</a></li>
+          <li><a routerLink="/terms" class="hover:text-[#F9B400] transition">الشروط والأحكام</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Contact Us -->
+      <div class="space-y-3">
+        <h3 class="text-lg font-bold mb-4 text-white">تواصل معنا</h3>
+        <ul class="space-y-3 text-sm text-gray-200">
+          <li class="flex items-center gap-3">
+            <i class="fa-solid fa-phone text-[#F9B400]"></i>
+            <span dir="ltr">0100 123 4567</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <i class="fa-solid fa-envelope text-[#F9B400]"></i>
+            <span>info&#64;basstahali.com</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <i class="fa-regular fa-clock text-[#F9B400] mt-1"></i>
+            <div>
+              <p>السبت - الخميس</p>
+              <p class="text-xs text-gray-300 mt-0.5">9:00 ص - 6:00 م</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 5: Newsletter -->
+      <div class="space-y-3 lg:col-span-1">
+        <h3 class="text-lg font-bold text-white">اشترك في النشرة البريدية</h3>
+        <p class="text-xs text-gray-200 leading-relaxed">
+          احصل على آخر الأخبار والعروض الخاصة بطلابنا
+        </p>
+        <form (ngSubmit)="subscribeNewsletter()" class="space-y-2.5 pt-1">
+          <input 
+            type="email" 
+            [(ngModel)]="email" 
+            name="email" 
+            placeholder="البريد الإلكتروني" 
+            class="w-full px-4 py-2.5 rounded-xl bg-white text-gray-800 placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-[#F9B400]" 
+            required
+          >
+          <button 
+            type="submit" 
+            class="w-full bg-[#F9B400] hover:bg-yellow-500 text-black font-bold py-2.5 rounded-xl text-sm transition shadow-md"
+          >
+            اشترك
+          </button>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="pt-6 text-center text-xs text-gray-300">
+      جميع الحقوق محفوظة &copy; {{ currentYear }} بسطهالي
+    </div>
+
+  </div>
+</footer>
