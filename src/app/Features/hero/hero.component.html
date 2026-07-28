@@ -9,15 +9,15 @@
 
   <div class="max-w-7xl mx-auto px-6 relative z-10">
     
-    <!-- Hero Main Container (Compact Height) -->
+    <!-- Hero Main Container -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
       
-      <!-- Illustration / Owl Side -->
+      <!-- Illustration / Owl Side with Floating Animation -->
       <div class="lg:col-span-6 order-2 lg:order-1 relative flex justify-center items-center">
         <img
           src="/owl.png"
           alt="بسطهالي"
-          class="relative w-[260px] md:w-[340px] lg:w-[420px] drop-shadow-2xl animate-float object-contain"
+          class="relative w-[240px] md:w-[320px] lg:w-[380px] drop-shadow-2xl animate-bounce [animation-duration:3s] object-contain"
         >
       </div>
 
@@ -44,7 +44,7 @@
           
           <button 
             routerLink="/auth/register"
-            class="bg-[#F9B400] hover:bg-yellow-500 text-black font-extrabold px-7 py-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center gap-2.5 text-base cursor-pointer"
+            class="bg-[#F9B400] hover:bg-yellow-500 text-black font-extrabold px-7 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center gap-2.5 text-base cursor-pointer"
           >
             <span>ابدأ الآن</span>
             <i class="fa-solid fa-arrow-left"></i>
@@ -52,7 +52,7 @@
 
           <button 
             routerLink="/about"
-            class="bg-white/80 backdrop-blur-sm border-2 border-[#E5E0F8] hover:border-[#4F2DB7] text-[#4F2DB7] font-bold px-7 py-3 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 flex items-center gap-2.5 text-base cursor-pointer"
+            class="bg-white/80 backdrop-blur-sm border-2 border-[#E5E0F8] hover:border-[#4F2DB7] text-[#4F2DB7] font-bold px-7 py-2.5 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 flex items-center gap-2.5 text-base cursor-pointer"
           >
             <i class="fa-regular fa-circle-question"></i>
             <span>تعرف علينا</span>
@@ -64,63 +64,63 @@
 
     </div>
 
-    <!-- Features Bottom Floating Card (Compact Padding) -->
-    <div class="mt-8 bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-100 p-4 lg:p-6 relative z-20">
+    <!-- Compact Features Bottom Card -->
+    <div class=" mt-6 max-w-6xl mx-auto bg-white/95 backdrop-blur-sm rounded-xl shadow-md border border-gray-100 p-3 lg:p-4 relative z-20">
       
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 divide-y md:divide-y-0 md:divide-x md:divide-x-reverse divide-gray-100">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 divide-y md:divide-y-0 md:divide-x md:divide-x-reverse divide-gray-100">
         
         <!-- Feature 1 -->
-        <div class="flex flex-col items-center text-center p-2 space-y-1.5">
-          <div class="w-12 h-12 rounded-xl bg-[#F3EFFF] text-[#4F2DB7] flex items-center justify-center text-xl shadow-sm">
+        <div class="flex flex-col items-center text-center p-1.5 space-y-1">
+          <div class="w-10 h-10 rounded-lg bg-[#F3EFFF] text-[#4F2DB7] flex items-center justify-center text-lg shadow-sm">
             <i class="fa-solid fa-calendar-days"></i>
           </div>
-          <h3 class="font-bold text-gray-800 text-sm">تنظيم الحصص</h3>
-          <p class="text-[11px] text-gray-500 leading-tight">جدول حصص مرتب وتنبيهات قبل الحصة</p>
+          <h3 class="font-bold text-gray-800 text-xs">تنظيم الحصص</h3>
+          <p class="text-[10px] text-gray-500 leading-tight">جدول حصص مرتب وتنبيهات</p>
         </div>
 
         <!-- Feature 2 -->
-        <div class="flex flex-col items-center text-center p-2 space-y-1.5 pt-3 md:pt-2">
-          <div class="w-12 h-12 rounded-xl bg-[#F3EFFF] text-[#4F2DB7] flex items-center justify-center text-xl shadow-sm">
+        <div class="flex flex-col items-center text-center p-1.5 space-y-1 pt-2 md:pt-1.5">
+          <div class="w-10 h-10 rounded-lg bg-[#F3EFFF] text-[#4F2DB7] flex items-center justify-center text-lg shadow-sm">
             <i class="fa-solid fa-clipboard-check"></i>
           </div>
-          <h3 class="font-bold text-gray-800 text-sm">واجبات إلكترونية</h3>
-          <p class="text-[11px] text-gray-500 leading-tight">حل ورفع الواجبات ومتابعة التصحيح</p>
+          <h3 class="font-bold text-gray-800 text-xs">واجبات إلكترونية</h3>
+          <p class="text-[10px] text-gray-500 leading-tight">حل ورفع الواجبات ومتابعة التصحيح</p>
         </div>
 
         <!-- Feature 3 -->
-        <div class="flex flex-col items-center text-center p-2 space-y-1.5 pt-3 md:pt-2">
-          <div class="w-12 h-12 rounded-xl bg-[#F3EFFF] text-[#4F2DB7] flex items-center justify-center text-xl shadow-sm">
+        <div class="flex flex-col items-center text-center p-1.5 space-y-1 pt-2 md:pt-1.5">
+          <div class="w-10 h-10 rounded-lg bg-[#F3EFFF] text-[#4F2DB7] flex items-center justify-center text-lg shadow-sm">
             <i class="fa-solid fa-chart-pie"></i>
           </div>
-          <h3 class="font-bold text-gray-800 text-sm">متابعة الأداء</h3>
-          <p class="text-[11px] text-gray-500 leading-tight">تقارير دورية لمتابعة تقدمك الدراسي</p>
+          <h3 class="font-bold text-gray-800 text-xs">متابعة الأداء</h3>
+          <p class="text-[10px] text-gray-500 leading-tight">تقارير دورية لمتابعة تقدمك</p>
         </div>
 
         <!-- Feature 4 -->
-        <div class="flex flex-col items-center text-center p-2 space-y-1.5 pt-3 lg:pt-2">
-          <div class="w-12 h-12 rounded-xl bg-[#F3EFFF] text-[#4F2DB7] flex items-center justify-center text-xl shadow-sm">
+        <div class="flex flex-col items-center text-center p-1.5 space-y-1 pt-2 lg:pt-1.5">
+          <div class="w-10 h-10 rounded-lg bg-[#F3EFFF] text-[#4F2DB7] flex items-center justify-center text-lg shadow-sm">
             <i class="fa-solid fa-folder-open"></i>
           </div>
-          <h3 class="font-bold text-gray-800 text-sm">ملفات وموارد</h3>
-          <p class="text-[11px] text-gray-500 leading-tight">تحميل ملفات PDF وكتب ومذكرات</p>
+          <h3 class="font-bold text-gray-800 text-xs">ملفات وموارد</h3>
+          <p class="text-[10px] text-gray-500 leading-tight">تحميل ملفات PDF ومذكرات</p>
         </div>
 
         <!-- Feature 5 -->
-        <div class="flex flex-col items-center text-center p-2 space-y-1.5 pt-3 lg:pt-2">
-          <div class="w-12 h-12 rounded-xl bg-[#F3EFFF] text-[#4F2DB7] flex items-center justify-center text-xl shadow-sm">
+        <div class="flex flex-col items-center text-center p-1.5 space-y-1 pt-2 lg:pt-1.5">
+          <div class="w-10 h-10 rounded-lg bg-[#F3EFFF] text-[#4F2DB7] flex items-center justify-center text-lg shadow-sm">
             <i class="fa-solid fa-user-graduate"></i>
           </div>
-          <h3 class="font-bold text-gray-800 text-sm">أفضل المدرسين</h3>
-          <p class="text-[11px] text-gray-500 leading-tight">نخبة من أفضل المدرسين في كل المواد</p>
+          <h3 class="font-bold text-gray-800 text-xs">أفضل المدرسين</h3>
+          <p class="text-[10px] text-gray-500 leading-tight">نخبة من أفضل المدرسين</p>
         </div>
 
         <!-- Feature 6 -->
-        <div class="flex flex-col items-center text-center p-2 space-y-1.5 pt-3 lg:pt-2">
-          <div class="w-12 h-12 rounded-xl bg-[#F3EFFF] text-[#4F2DB7] flex items-center justify-center text-xl shadow-sm">
+        <div class="flex flex-col items-center text-center p-1.5 space-y-1 pt-2 lg:pt-1.5">
+          <div class="w-10 h-10 rounded-lg bg-[#F3EFFF] text-[#4F2DB7] flex items-center justify-center text-lg shadow-sm">
             <i class="fa-solid fa-users-between-lines"></i>
           </div>
-          <h3 class="font-bold text-gray-800 text-sm">متابعة أولياء الأمور</h3>
-          <p class="text-[11px] text-gray-500 leading-tight">تقارير شاملة لمتابعة أداء أبنائك</p>
+          <h3 class="font-bold text-gray-800 text-xs">متابعة أولياء الأمور</h3>
+          <p class="text-[10px] text-gray-500 leading-tight">تقارير شاملة لمتابعة أبنائك</p>
         </div>
 
       </div>
