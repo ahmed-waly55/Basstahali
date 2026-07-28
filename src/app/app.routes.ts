@@ -8,6 +8,6 @@ export const routes: Routes = [
         {path:"", loadComponent:()=> import("./Features/landing/landing.component").then(m => m.LandingComponent)}
     ]},
 
-    {path:"**" , loadComponent:()=> import("./shared/not-found/not-found.component").then(m => m.NotFoundComponent), title:"الصفحة غير موجودة"}
+    {path:"**" , loadComponent:()=> import("./shared/not-found/not-found.component").then(m => m.NotFoundComponent)}
 
 ];
