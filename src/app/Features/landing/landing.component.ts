@@ -1,34 +1,26 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, OnDestroy, ViewChild, inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { HeroComponent } from "../hero/hero.component";
 import { SectionHeaderComponent } from "../../shared/components/section-header/section-header.component";
 import { EducationCardComponent } from '../../shared/components/education-card/education-card.component';
 import { RouterLink } from '@angular/router';
-
-
-interface Testimonial {
-  id: number;
-  quote: string;
-  name: string;
-  grade: string;
-  avatar: string;
-}
-
+import AOS from 'aos';
 
 @Component({
   selector: 'app-landing',
-  imports: [HeroComponent, SectionHeaderComponent , EducationCardComponent , RouterLink],
+  standalone: true,
+  imports: [HeroComponent, SectionHeaderComponent, EducationCardComponent, RouterLink],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css',
 })
-export class LandingComponent {
-onSelectStage(stage: string): void {
-    console.log('Selected stage:', stage);
-  }
+export class LandingComponent implements OnInit, OnDestroy {
 
-@ViewChild('sliderTrack') sliderTrack!: ElementRef<HTMLDivElement>;
+  @ViewChild('sliderTrack') sliderTrack!: ElementRef<HTMLDivElement>;
+
+  private platformId = inject(PLATFORM_ID);
 
   autoPlayInterval: any;
-  scrollStep = 360;
+  scrollStep = 300;
 
   testimonials = [
     {
@@ -62,11 +54,27 @@ onSelectStage(stage: string): void {
   ];
 
   ngOnInit(): void {
-    this.startAutoPlay();
+    // تشغيل الكود فقط إذا كنا داخل المتصفح (Client Side) لتفادي أخطاء الـ SSR
+    if (isPlatformBrowser(this.platformId)) {
+      AOS.init({
+        duration: 700,
+        once: true,
+        offset: 100,
+        easing: 'ease-in-out',
+      });
+
+      this.startAutoPlay();
+    }
   }
 
   ngOnDestroy(): void {
-    this.stopAutoPlay();
+    if (isPlatformBrowser(this.platformId)) {
+      this.stopAutoPlay();
+    }
+  }
+
+  onSelectStage(stage: string): void {
+    console.log('Selected stage:', stage);
   }
 
   startAutoPlay(): void {
@@ -101,6 +109,5 @@ onSelectStage(stage: string): void {
       el.scrollBy({ left: this.scrollStep, behavior: 'smooth' });
     }
   }
-
 
 }
