@@ -3,13 +3,12 @@ import { isPlatformBrowser } from '@angular/common';
 import { HeroComponent } from "../hero/hero.component";
 import { SectionHeaderComponent } from "../../shared/components/section-header/section-header.component";
 import { EducationCardComponent } from '../../shared/components/education-card/education-card.component';
-import { RouterLink } from '@angular/router';
 import AOS from 'aos';
 
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [HeroComponent, SectionHeaderComponent, EducationCardComponent, RouterLink],
+  imports: [HeroComponent, SectionHeaderComponent, EducationCardComponent],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css',
 })
@@ -73,9 +72,10 @@ export class LandingComponent implements OnInit, OnDestroy {
     }
   }
 
-  onSelectStage(stage: string): void {
-    console.log('Selected stage:', stage);
-  }
+onSelectCurriculum(curriculum: string): void {
+  // Navigate أو عرض الصفوف الخاصة بالمنهج
+  console.log(curriculum);
+}
 
   startAutoPlay(): void {
     this.stopAutoPlay();

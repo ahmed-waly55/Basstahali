@@ -1,45 +1,74 @@
 <app-hero></app-hero>
 
 <!-- Header 1 -->
-<app-section-header title="المراحل التعليمية" data-aos="fade-down" />
+<app-section-header title="المناهج الدراسية" data-aos="fade-down" />
 
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-4 container m-auto">
-  
-  <app-education-card 
-    data-aos="fade-up" data-aos-delay="100"
-    title="المرحلة الابتدائية" 
-    subtitle="من الصف الأول حتى السادس" 
-    imageSrc="images/edu-2.webp"
-    (explore)="onSelectStage('primary')">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4 container m-auto">
+
+  <app-education-card
+    data-aos="fade-up"
+    data-aos-delay="100"
+    title="المنهج الإماراتي"
+    subtitle="جميع المراحل الدراسية"
+    imageSrc="images/flags/uae.png"
+    (explore)="onSelectCurriculum('uae')">
   </app-education-card>
 
-  <app-education-card 
-    data-aos="fade-up" data-aos-delay="200"
-    title="المرحلة المتوسطة" 
-    subtitle="من الصف الأول حتى الثالث المتوسط" 
-    imageSrc="images/edu-2.webp"
-    bgColor="bg-[#fff9eb]"
-    (explore)="onSelectStage('intermediate')">
+  <app-education-card
+    data-aos="fade-up"
+    data-aos-delay="200"
+    title="المنهج السعودي"
+    subtitle="جميع المراحل الدراسية"
+    imageSrc="images/flags/Saudi.png"
+    (explore)="onSelectCurriculum('saudi')">
   </app-education-card>
 
-  <app-education-card 
-    data-aos="fade-up" data-aos-delay="300"
-    title="المرحلة الثانوية" 
-    subtitle="من الصف الأول حتى الثالث الثانوي" 
-    imageSrc="images/edu-2.webp"
-    (explore)="onSelectStage('secondary')">
+  <app-education-card
+    data-aos="fade-up"
+    data-aos-delay="300"
+    title="المنهج القطري"
+    subtitle="جميع المراحل الدراسية"
+    imageSrc="images/flags/qatar.png"
+    (explore)="onSelectCurriculum('qatar')">
   </app-education-card>
 
-  <app-education-card 
-    data-aos="fade-up" data-aos-delay="400"
-    title="القدرات والتحصيلي" 
-    subtitle="تدريبات واختبارات قياس للقبول الجامعي" 
-    imageSrc="images/edu-2.webp"
-    (explore)="onSelectStage('aptitude')">
+  <app-education-card
+    data-aos="fade-up"
+    data-aos-delay="400"
+    title="المنهج الكويتي"
+    subtitle="جميع المراحل الدراسية"
+    imageSrc="images/flags/kuwait.png"
+    (explore)="onSelectCurriculum('kuwait')">
+  </app-education-card>
+
+  <app-education-card
+    data-aos="fade-up"
+    data-aos-delay="500"
+    title="المنهج البحريني"
+    subtitle="جميع المراحل الدراسية"
+    imageSrc="images/flags/bahrain.png"
+    (explore)="onSelectCurriculum('bahrain')">
+  </app-education-card>
+
+  <app-education-card
+    data-aos="fade-up"
+    data-aos-delay="600"
+    title="المنهج العُماني"
+    subtitle="جميع المراحل الدراسية"
+    imageSrc="images/flags/oman.png"
+    (explore)="onSelectCurriculum('oman')">
+  </app-education-card>
+
+  <app-education-card
+    data-aos="fade-up"
+    data-aos-delay="700"
+    title="المنهج المصري"
+    subtitle="جميع المراحل الدراسية"
+    imageSrc="images/flags/egypt.png"
+    (explore)="onSelectCurriculum('egypt')">
   </app-education-card>
 
 </div>
-
 <!-- Header 2 -->
 <app-section-header title="مميزات المنصة " data-aos="fade-down" />
 
@@ -47,7 +76,7 @@
 <section class="container mx-auto p-4" data-aos="zoom-in" data-aos-duration="600">
   <div class="bg-[#f5f3ff] rounded-3xl p-6 md:p-8 shadow-sm border border-purple-100/50">
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-4 divide-y md:divide-y-0 md:divide-x md:divide-x-reverse divide-purple-200/60">
-      
+
       <!-- 1. جدول الحصص -->
       <div class="flex flex-col items-center text-center p-3 space-y-3 pt-4 md:pt-0" data-aos="fade-up" data-aos-delay="100">
         <div class="w-12 h-12 flex items-center justify-center text-purple-800 text-3xl">
@@ -108,56 +137,68 @@
 
 
 <!-- 3. Banner Section (دخول من الطرفين) -->
-<section dir="ltr" class="w-full max-w-6xl mx-auto px-4 py-6" data-aos="fade-up">
-  <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#4A148C] via-[#5E17EB] to-[#45129E] p-6 md:p-10 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
-    
-    <!-- الجانب الأيمن: صورة البومة (تأتي من اليسار) -->
-    <div class="relative flex items-center justify-center min-w-[180px] md:min-w-[240px]" data-aos="fade-right" data-aos-delay="200">
-      <span class="absolute -top-2 left-4 text-yellow-300 text-xl animate-pulse">✦</span>
-      <span class="absolute bottom-2 right-2 text-purple-300 text-lg">✦</span>
-      <span class="absolute top-1/2 -right-6 text-purple-300 text-xs">✦</span>
-      <span class="absolute top-1/2 -right-2 text-purple-300 text-xs">✦</span>
-      <span class="absolute top-1/3 -right-6 text-purple-300 text-xs">✦</span>
-      
-      <img 
-        src="/images/owl-banner.png" 
-        alt="شخصية بسطهالي" 
-        class="w-40 md:w-60 h-auto object-contain z-10 drop-shadow-lg"
-      />
+<section dir="ltr" class="w-full max-w-7xl mx-auto px-4 py-4" data-aos="fade-up">
+  <div
+    class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#4A148C] via-[#5E17EB] to-[#45129E] px-6 md:px-10 py-5 shadow-xl flex flex-col md:flex-row items-center justify-between gap-4">
+
+    <!-- البومة -->
+    <div
+      class="relative flex items-center justify-center shrink-0"
+      data-aos="fade-right"
+      data-aos-delay="200">
+
+      <span class="absolute -top-2 left-4 text-yellow-300 animate-pulse">✦</span>
+      <span class="absolute bottom-2 right-2 text-purple-300">✦</span>
+
+      <img
+        src="/images/owl-banner.png"
+        alt="بسطهالي"
+        class="w-32 md:w-44 h-auto object-contain drop-shadow-xl" />
     </div>
 
-    <!-- الجانب الأيسر: النصوص والأزرار (تأتي من اليمين) -->
-    <div class="flex flex-col items-center md:items-end text-center md:text-right text-white space-y-4 z-10" data-aos="fade-left" data-aos-delay="300">
-      <h2 class="text-2xl md:text-4xl font-extrabold leading-tight tracking-wide flex flex-row-reverse items-center gap-2">
-        جاهز تبسطها على نفسك؟ 
-        <span class="inline-block text-2xl md:text-3xl">😎</span>
+    <!-- المحتوى -->
+    <div
+      class="flex-1 flex flex-col md:items-end items-center text-center md:text-right text-white"
+      data-aos="fade-left"
+      data-aos-delay="300">
+
+      <span
+        class="mb-2 inline-flex items-center rounded-full bg-yellow-400/20 border border-yellow-300/30 px-4 py-1 text-sm font-semibold text-yellow-200">
+        🎁 عرض لفترة محدودة
+      </span>
+
+      <h2 class="text-2xl md:text-4xl font-extrabold">
+        جرّب أول حصة <span class="text-yellow-300">مجانًا</span>
       </h2>
 
-      <p class="text-lg md:text-2xl font-medium text-purple-100 opacity-95">
-        ابدأ رحلتك التعليمية الآن مع بسطهالي
+      <p class="mt-2 text-purple-100 text-base md:text-lg">
+        احجز حصتك التجريبية المجانية وتعرّف على أسلوب الشرح قبل الاشتراك.
       </p>
 
-      <div class="pt-2">
-        <a 
-          routerLink="/auth/login"
-          class="inline-block bg-gradient-to-r from-[#FFC107] to-[#FF9800] hover:from-[#FFB300] hover:to-[#F57C00] text-gray-900 font-bold text-base md:text-lg px-8 py-3 rounded-2xl shadow-lg transition-all duration-300 hover:scale-105 active:scale-95 text-center cursor-pointer">
-          ابدأ الآن مجاناً
+      <div class="mt-4">
+        <a
+          href="https://wa.me/971525250833?text=السلام%20عليكم،%20أرغب%20في%20حجز%20أول%20حصة%20تجريبية%20مجانية."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-3 bg-[#FFC107] hover:bg-[#FFC108] text-black font-bold px-7 py-3 rounded-2xl shadow-lg transition duration-300 hover:scale-105">
+
+          <i class="pi pi-whatsapp text-xl"></i>
+          احجز الآن عبر واتساب
         </a>
       </div>
     </div>
 
-    <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-purple-400/20 rounded-full blur-2xl pointer-events-none"></div>
-    <div class="absolute -top-10 -left-10 w-40 h-40 bg-indigo-400/20 rounded-full blur-2xl pointer-events-none"></div>
+    <!-- خلفية -->
+    <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-purple-400/20 rounded-full blur-3xl"></div>
+    <div class="absolute -top-10 -left-10 w-40 h-40 bg-indigo-400/20 rounded-full blur-3xl"></div>
 
   </div>
 </section>
-
-
 <!-- 4. الأرقام والإحصائيات (Flip Up Animation) -->
 <section class="max-w-7xl mx-auto p-4" data-aos="flip-up" data-aos-duration="800">
   <div class="bg-white rounded-3xl shadow-md border border-gray-100 p-4 md:py-6 md:px-6">
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-      
+
       <!-- Item 1 -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 p-4 rounded-2xl bg-purple-50/50 md:bg-transparent border border-purple-100/50 md:border-none">
         <svg class="w-10 h-10 text-purple-700 shrink-0" fill="currentColor" viewBox="0 0 24 24">
@@ -209,13 +250,13 @@
 <section class="max-w-6xl mx-auto px-4 py-8" data-aos="zoom-in-up">
   <app-section-header title="ماذا يقول طلابنا؟ " />
 
-  <div 
+  <div
     class="relative flex items-center px-2"
-    (mouseenter)="stopAutoPlay()" 
+    (mouseenter)="stopAutoPlay()"
     (mouseleave)="startAutoPlay()"
   >
-    <button 
-      (click)="scrollRight()" 
+    <button
+      (click)="scrollRight()"
       type="button"
       aria-label="Next"
       class="absolute -right-2 md:-right-4 z-20 w-8 h-8 md:w-9 md:h-9 rounded-full bg-white shadow-md border border-purple-100 flex items-center justify-center text-purple-600 hover:bg-purple-50 transition-all focus:outline-none"
@@ -223,20 +264,20 @@
       <i class="fa-solid fa-chevron-right text-xs md:text-sm"></i>
     </button>
 
-    <div 
-      #sliderTrack 
+    <div
+      #sliderTrack
       class="flex gap-4 overflow-x-auto no-scrollbar scroll-smooth py-2 px-1 w-full"
       style="scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;"
     >
       @for (item of testimonials; track item.id) {
-        <div 
-          class="w-[82%] sm:w-[48%] lg:w-[calc(33.333%-11px)] shrink-0 bg-[#f8f7ff] rounded-2xl p-4 md:p-5 text-center flex flex-col items-center justify-between border border-purple-50/60 shadow-xs relative" 
+        <div
+          class="w-[82%] sm:w-[48%] lg:w-[calc(33.333%-11px)] shrink-0 bg-[#f8f7ff] rounded-2xl p-4 md:p-5 text-center flex flex-col items-center justify-between border border-purple-50/60 shadow-xs relative"
           style="scroll-snap-align: start;"
         >
           <div class="w-full text-right text-[#9b8bc4]/50 text-xl font-serif select-none leading-none">
             <i class="fa-solid fa-quote-right"></i>
           </div>
-          
+
           <p class="text-[#2a174a] font-bold text-xs md:text-sm leading-relaxed px-1 my-3 text-center">
             {{ item.quote }}
           </p>
@@ -259,8 +300,8 @@
       }
     </div>
 
-    <button 
-      (click)="scrollLeft()" 
+    <button
+      (click)="scrollLeft()"
       type="button"
       aria-label="Previous"
       class="absolute -left-2 md:-left-4 z-20 w-8 h-8 md:w-9 md:h-9 rounded-full bg-white shadow-md border border-purple-100 flex items-center justify-center text-purple-600 hover:bg-purple-50 transition-all focus:outline-none"
@@ -275,7 +316,7 @@
 <!-- 6. WhatsApp CTA Section (Fade Up) -->
 <section class="max-w-5xl mx-auto px-4 py-8" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
   <div class="relative bg-gradient-to-r from-[#4c1d95] via-[#5b21b6] to-[#6d28d9] text-white rounded-[2rem] p-6 md:p-8 flex flex-col md:flex-row items-center justify-between shadow-xl overflow-hidden">
-    
+
     <i class="fa-solid fa-sparkles absolute top-4 right-8 text-white/20 text-xl pointer-events-none"></i>
     <i class="fa-solid fa-star-of-life absolute bottom-4 right-1/4 text-white/10 text-xs pointer-events-none"></i>
 
@@ -283,14 +324,14 @@
       <h2 class="text-2xl md:text-3xl font-extrabold mb-2 tracking-wide">
         تواصل معنا على واتساب
       </h2>
-      
+
       <p class="text-white/80 text-sm md:text-base font-medium mb-6">
         نحن هنا لمساعدتك والإجابة على استفساراتك
       </p>
 
-      <a 
-        href="https://wa.me/971525250833" 
-        target="_blank" 
+      <a
+        href="https://wa.me/971525250833"
+        target="_blank"
         rel="noopener noreferrer"
         class="inline-flex items-center justify-center gap-2.5 bg-white text-[#4c1d95] hover:bg-gray-100 font-bold text-sm md:text-base px-8 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0"
       >
