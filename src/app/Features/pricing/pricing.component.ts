@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import * as AOS from 'aos';
 
 export interface PlanFeature {
   text: string;
@@ -19,11 +20,12 @@ export interface PricingPlan {
 
 @Component({
   selector: 'app-pricing',
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './pricing.component.html',
   styleUrl: './pricing.component.css',
 })
-export class PricingComponent {
+export class PricingComponent implements OnInit {
   isAnnual = false;
 
   plans: PricingPlan[] = [
@@ -76,6 +78,13 @@ export class PricingComponent {
       ]
     }
   ];
+
+  ngOnInit(): void {
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  }
 
   toggleBilling() {
     this.isAnnual = !this.isAnnual;

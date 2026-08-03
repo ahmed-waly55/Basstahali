@@ -1,5 +1,6 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, OnInit, inject, PLATFORM_ID } from '@angular/core';
+import * as AOS from 'aos';
 
 export interface Teacher {
   id: number;
@@ -13,14 +14,16 @@ export interface Teacher {
   bio: string;
 }
 
-
 @Component({
   selector: 'app-teachers',
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './teachers.component.html',
   styleUrl: './teachers.component.css',
 })
-export class TeachersComponent {
+export class TeachersComponent implements OnInit {
+  private platformId = inject(PLATFORM_ID);
+
   selectedCategory = 'all';
 
   categories = [
@@ -77,6 +80,16 @@ export class TeachersComponent {
       bio: 'متخصصة في النحو والتأسيس القوي في القراءة والكتابة والفرق بين التعبير والبلاغة.'
     }
   ];
+
+  ngOnInit(): void {
+    // تشغيل AOS فقط إذا كان الكود يعمل في متصفح المستخدم وليس في الخادم (Node.js)
+    if (isPlatformBrowser(this.platformId)) {
+      AOS.init({
+        duration: 800,
+        once: true,
+      });
+    }
+  }
 
   get filteredTeachers(): Teacher[] {
     if (this.selectedCategory === 'all') {

@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import * as AOS from 'aos';
 
 export interface Course {
   id: string;
@@ -26,7 +27,7 @@ export interface Course {
   templateUrl: './courses.component.html',
   styleUrl: './courses.component.css',
 })
-export class CoursesComponent {
+export class CoursesComponent implements OnInit {
   selectedCategory = 'all';
 
   categories = [
@@ -93,6 +94,13 @@ export class CoursesComponent {
     }
   ];
 
+  ngOnInit(): void {
+    AOS.init({
+      duration: 1000, // مدة الحركة بالمللي ثانية
+      once: true,     // تشغيل الحركة مرة واحدة فقط أثناء التمرير
+    });
+  }
+
   get filteredCourses(): Course[] {
     if (this.selectedCategory === 'all') {
       return this.courses;
@@ -102,6 +110,11 @@ export class CoursesComponent {
 
   selectCategory(categoryId: string) {
     this.selectedCategory = categoryId;
+
+    // إعادة تحديث AOS بعد تصفية العناصر ليتم تطبيق الحركة على الكروت الظاهرة من جديد
+    setTimeout(() => {
+      AOS.refresh();
+    }, 100);
   }
 
   getEnrollWhatsAppLink(courseTitle: string): string {
