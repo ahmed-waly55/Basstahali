@@ -1,1 +1,123 @@
-<p>pricing works!</p>
+<section class="py-12 md:py-16 bg-slate-50 relative overflow-hidden" dir="rtl">
+  <!-- Dynamic Background Decoration -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-purple-200/30 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="container mx-auto px-4 max-w-7xl relative z-10">
+
+    <!-- Section Header -->
+    <div class="text-center max-w-2xl mx-auto mb-10" data-aos="fade-down" data-aos-duration="800">
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-100 text-[#4F2DB7] text-sm font-bold mb-3">
+        <i class="fa-solid fa-tags"></i>
+        خطط باقات متناسبة
+      </span>
+      <h2 class="text-3xl md:text-4xl font-black text-slate-900">
+        اختر <span class="text-[#4F2DB7]">الباقة المناسبة لك</span>
+      </h2>
+      <p class="mt-3 text-slate-600 text-base md:text-lg">
+        خطط أسعار مرنة واضحة وبدون أي رسوم خفية. اختر الباقة التي تلبي احتياجاتك الدراسية.
+      </p>
+
+      <!-- Billing Cycle Toggle Switch -->
+      <div class="mt-8 flex items-center justify-center gap-4">
+        <span class="text-sm font-bold" [class.text-slate-900]="!isAnnual" [class.text-slate-400]="isAnnual">شهري</span>
+
+        <button
+          (click)="toggleBilling()"
+          type="button"
+          class="relative w-16 h-8 bg-[#4F2DB7] rounded-full p-1 transition duration-300 focus:outline-none"
+          aria-label="تغيير نظام الدفع">
+          <div
+            class="w-6 h-6 bg-white rounded-full shadow-md transform transition duration-300"
+            [class.-translate-x-8]="isAnnual"
+            [class.translate-x-0]="!isAnnual">
+          </div>
+        </button>
+
+        <span class="text-sm font-bold flex items-center gap-2" [class.text-slate-900]="isAnnual" [class.text-slate-400]="!isAnnual">
+          سنوي
+          <span class="bg-[#F9B400] text-[#3D1A6D] text-[11px] font-black px-2 py-0.5 rounded-full shadow-xs">خصم 20%</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Pricing Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
+      @for (plan of plans; track plan.id; let i = $index) {
+        <div
+          class="relative bg-white rounded-3xl p-8 border transition-all duration-300 flex flex-col justify-between"
+          [ngClass]="{
+            'border-[#4F2DB7] shadow-2xl scale-105 z-20': plan.isPopular,
+            'border-slate-200 shadow-md hover:shadow-xl': !plan.isPopular
+          }"
+          data-aos="fade-up"
+          [attr.data-aos-delay]="i * 150">
+
+          <!-- Popular Badge -->
+          @if (plan.isPopular) {
+            <div class="absolute -top-4 right-1/2 translate-x-1/2 bg-gradient-to-r from-[#F9B400] to-amber-500 text-[#3D1A6D] text-xs font-black px-4 py-1.5 rounded-full shadow-lg flex items-center gap-1.5">
+              <i class="fa-solid fa-crown"></i>
+              <span>الأكثر شعبية وحجزاً</span>
+            </div>
+          }
+
+          <div>
+            <!-- Header Info -->
+            <div class="text-right border-b border-slate-100 pb-6 mb-6">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">{{ plan.name }}</h3>
+              <p class="text-xs text-slate-500 leading-relaxed min-h-[36px]">{{ plan.description }}</p>
+
+              <!-- Price Box -->
+              <div class="mt-4 flex items-baseline gap-1">
+                <span class="text-4xl font-black text-slate-900">
+                  {{ isAnnual ? plan.annualPrice : plan.monthlyPrice }}
+                </span>
+                <span class="text-xs font-bold text-slate-500">درهم / {{ isAnnual ? 'سنوياً' : 'شهرياً' }}</span>
+              </div>
+            </div>
+
+            <!-- Features List -->
+            <ul class="space-y-3.5 mb-8 text-right">
+              @for (feature of plan.features; track feature.text) {
+                <li class="flex items-start gap-3 text-xs md:text-sm">
+                  @if (feature.included) {
+                    <div class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
+                      <i class="fa-solid fa-check text-xs"></i>
+                    </div>
+                    <span class="text-slate-700 font-medium">{{ feature.text }}</span>
+                  } @else {
+                    <div class="w-5 h-5 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center shrink-0 mt-0.5">
+                      <i class="fa-solid fa-xmark text-xs"></i>
+                    </div>
+                    <span class="text-slate-400 line-through">{{ feature.text }}</span>
+                  }
+                </li>
+              }
+            </ul>
+          </div>
+
+          <!-- Bottom Action Button -->
+          <a
+            [href]="getSubscribeLink(plan.name)"
+            target="_blank"
+            rel="noopener noreferrer"
+            [ngClass]="plan.isPopular
+              ? 'bg-[#4F2DB7] hover:bg-[#3D1A6D] text-white shadow-lg shadow-purple-200'
+              : 'bg-slate-100 hover:bg-slate-200 text-slate-800'"
+            class="w-full text-center font-bold text-xs md:text-sm py-3.5 px-6 rounded-2xl transition duration-300 block">
+            {{ plan.buttonText }}
+          </a>
+
+        </div>
+      }
+    </div>
+
+    <!-- Contact note -->
+    <div class="mt-12 text-center text-xs text-slate-500" data-aos="fade-up">
+      <span>هل تحتاج باقة خاصة لمجموعات أو مدارس؟ </span>
+      <a href="https://wa.me/971525250833" target="_blank" class="text-[#4F2DB7] font-bold underline hover:text-[#3D1A6D]">
+        تواصل معنا للاستفسار عن الباقات المخصصة
+      </a>
+    </div>
+
+  </div>
+</section>

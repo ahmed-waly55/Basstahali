@@ -1,1 +1,167 @@
-<p>contact works!</p>
+<section class="py-12 md:py-16 bg-slate-50 relative overflow-hidden">
+  <!-- Dynamic Background Decoration -->
+  <div class="absolute top-0 right-0 -mt-12 -mr-12 w-96 h-96 bg-purple-200/40 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-0 left-0 -mb-12 -ml-12 w-96 h-96 bg-blue-200/40 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="container mx-auto px-4 max-w-7xl relative z-10">
+
+    <!-- Section Header -->
+    <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-down" data-aos-duration="800">
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-100 text-[#4F2DB7] text-sm font-bold mb-3">
+        <i class="fa-solid fa-[#4F2DB7] fa-headset"></i>
+        دائماً في خدمتك
+      </span>
+      <h2 class="text-3xl md:text-4xl font-black text-slate-900">
+        تواصل <span class="text-[#4F2DB7]">معنا</span>
+      </h2>
+      <p class="mt-3 text-slate-600 text-base md:text-lg">
+        هل لديك استفسار أو تحتاج إلى مساعدة؟ فريقنا جاهز للرد على جميع أسئلتك في أسرع وقت.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+      <!-- Contact Info & Quick Links (5 Columns) -->
+      <div class="lg:col-span-5 space-y-6" data-aos="fade-right" data-aos-duration="800">
+
+        <!-- Info Card -->
+        <div class="bg-gradient-to-br from-[#3D1A6D] via-[#4F2DB7] to-[#6A3FC8] text-white p-8 rounded-3xl shadow-xl relative overflow-hidden">
+          <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
+
+          <h3 class="text-2xl font-bold mb-6 text-white">معلومات التواصل</h3>
+
+          <div class="space-y-6">
+            <!-- Phone / WhatsApp -->
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center shrink-0 text-[#F9B400] text-xl">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div>
+                <h4 class="text-xs text-purple-200 font-semibold mb-1">الهاتف / واتساب</h4>
+                <a href="https://wa.me/971525250833" target="_blank" class="text-lg font-bold hover:text-[#F9B400] transition" dir="ltr">
+                  +971 52 525 0833
+                </a>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center shrink-0 text-[#F9B400] text-xl">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div>
+                <h4 class="text-xs text-purple-200 font-semibold mb-1">البريد الإلكتروني</h4>
+                <a href="mailto:support@basstahali.com" class="text-base font-bold hover:text-[#F9B400] transition">
+                  support&#64;basstahali.com
+                </a>
+              </div>
+            </div>
+
+            <!-- Location -->
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center shrink-0 text-[#F9B400] text-xl">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <h4 class="text-xs text-purple-200 font-semibold mb-1">الموقع</h4>
+                <p class="text-sm font-medium leading-relaxed">
+                  الإمارات العربية المتحدة
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div class="mt-8 pt-6 border-t border-white/15">
+            <h4 class="text-xs text-purple-200 font-semibold mb-3">تابعنا على شبكات التواصل</h4>
+            <div class="flex items-center gap-3">
+              <a href="#" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-[#F9B400] hover:text-[#3D1A6D] flex items-center justify-center transition duration-300">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="#" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-[#F9B400] hover:text-[#3D1A6D] flex items-center justify-center transition duration-300">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="#" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-[#F9B400] hover:text-[#3D1A6D] flex items-center justify-center transition duration-300">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+              <a href="https://wa.me/971525250833" target="_blank" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-[#25D366] hover:text-white flex items-center justify-center transition duration-300">
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Contact Form (7 Columns) -->
+      <div class="lg:col-span-7 bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-slate-100" data-aos="fade-left" data-aos-duration="800">
+        <h3 class="text-2xl font-bold text-slate-800 mb-6">أرسل لنا رسالة</h3>
+
+        <form (ngSubmit)="onSubmit()" #contactForm="ngForm" class="space-y-5">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <!-- Name Input -->
+            <div>
+              <label class="block text-sm font-bold text-slate-700 mb-2">الاسم بالكامل</label>
+              <div class="relative">
+                <input type="text" [(ngModel)]="formData.name" name="name" required
+                       class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#4F2DB7] focus:bg-white transition"
+                       placeholder="أدخل اسمك الكريم">
+              </div>
+            </div>
+
+            <!-- Phone Input -->
+            <div>
+              <label class="block text-sm font-bold text-slate-700 mb-2">رقم الهاتف</label>
+              <div class="relative">
+                <input type="tel" [(ngModel)]="formData.phone" name="phone" required dir="ltr"
+                       class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-right focus:outline-none focus:border-[#4F2DB7] focus:bg-white transition"
+                       placeholder="+971 50 000 0000">
+              </div>
+            </div>
+          </div>
+
+          <!-- Email Input -->
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-2">البريد الإلكتروني</label>
+            <input type="email" [(ngModel)]="formData.email" name="email" required
+                   class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#4F2DB7] focus:bg-white transition"
+                   placeholder="example@domain.com">
+          </div>
+
+          <!-- Subject Input -->
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-2">موضوع الرسالة</label>
+            <select [(ngModel)]="formData.subject" name="subject"
+                    class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#4F2DB7] focus:bg-white transition">
+              <option value="general">استفسار عام</option>
+              <option value="courses">استفسار عن المناهج والكورسات</option>
+              <option value="tech">مشكلة تقنية في المنصة</option>
+              <option value="other">موضوع آخر</option>
+            </select>
+          </div>
+
+          <!-- Message Input -->
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-2">الرسالة</label>
+            <textarea [(ngModel)]="formData.message" name="message" rows="4" required
+                      class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#4F2DB7] focus:bg-white transition resize-none"
+                      placeholder="اكتب رسالتك هنا بالتفصيل..."></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" [disabled]="!contactForm.form.valid || isSubmitting"
+                  class="w-full bg-[#4F2DB7] hover:bg-[#3D1A6D] text-white font-bold py-3.5 px-6 rounded-xl shadow-lg transition duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
+            @if (isSubmitting) {
+              <i class="fa-solid fa-[#4F2DB7] fa-circle-notch animate-spin"></i>
+              <span>جاري الإرسال...</span>
+            } @else {
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>إرسال الرسالة</span>
+            }
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
