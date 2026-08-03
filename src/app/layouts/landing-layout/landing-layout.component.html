@@ -2,6 +2,34 @@
 
 <main class="flex-1 pt-20">
   <router-outlet></router-outlet>
+  <!-- Floating WhatsApp Button -->
+
+  <div class="whatsapp">
+    <!-- Floating WhatsApp Button (Right Side) -->
+<a
+  href="https://wa.me/971525250833?text=السلام%20عليكم،%20أرغب%20في%20الاستفسار%20عن%20الخدمات."
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="تواصل معنا عبر واتساب"
+  data-aos="fade-up"
+  data-aos-delay="500"
+  class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-[#25D366] text-white rounded-full shadow-2xl hover:bg-[#20ba5a] transition-all duration-300 hover:scale-110 active:scale-95 group"
+>
+  <!-- Pulse Aura Animation -->
+  <span class="absolute inset-0 rounded-full bg-[#25D366] opacity-75 animate-ping group-hover:animate-none"></span>
+
+  <!-- Icon -->
+  <i class="fa-brands fa-whatsapp text-3xl md:text-4xl relative z-10 drop-shadow-md"></i>
+
+  <!-- Tooltip (يظهر على اليسار عند التمرير بالماوس) -->
+  <span class="absolute right-full mr-3 hidden md:group-hover:flex items-center whitespace-nowrap bg-gray-900 text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+    تواصل معنا مباشرة
+  </span>
+</a>
+  </div>
+
+
+
 </main>
 
 <app-footer></app-footer>
