@@ -1,0 +1,15 @@
+:host{
+    display:block;
+}
+
+.group{
+    transition:all .35s ease;
+}
+
+.group svg{
+    transition:.35s;
+}
+
+.group:hover svg{
+    transform:scale(1.15) rotate(-5deg);
+}

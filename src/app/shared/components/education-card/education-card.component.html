@@ -1,32 +1,66 @@
-<div [class]="'relative flex flex-col justify-between p-6 rounded-3xl shadow-sm border border-purple-50/50 min-h-[260px] transition-transform hover:-translate-y-1 duration-200 ' + bgColor()">
-  
-  <!-- الجزء العلوي: العنوان والوصف محاذيان لليمين -->
-  <div class="text-right space-y-2 max-w-[55%]">
-    <h3 class="text-2xl font-bold text-indigo-950 leading-snug">
-      {{ title() }}
+<div
+    class="group relative overflow-hidden rounded-[32px] bg-white border border-slate-200 p-8 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 min-h-[320px] flex flex-col"
+    [ngClass]="borderColor()">
+
+    <!-- Glow -->
+
+    <div
+        class="absolute -left-12 -top-12 w-44 h-44 rounded-full blur-3xl opacity-20"
+        [ngClass]="glowColor()">
+    </div>
+
+    <!-- Icon -->
+
+    <div
+        class="relative z-10 w-20 h-20 rounded-full flex items-center justify-center"
+        [ngClass]="iconBg()">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+             fill="none"
+             viewBox="0 0 24 24"
+             stroke-width="1.8"
+             stroke="currentColor"
+             class="w-10 h-10"
+             [ngClass]="iconColor()">
+
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 6.253v13m0-13C10.832 5.483 9.246 5 7.5 5S4.168 5.483 3 6.253v13C4.168 18.483 5.754 18 7.5 18s3.332.483 4.5 1.253m0-13C13.168 5.483 14.754 5 16.5 5S19.832 5.483 21 6.253v13C19.832 18.483 18.246 18 16.5 18s-3.332.483-4.5 1.253"/>
+
+        </svg>
+
+    </div>
+
+    <!-- Title -->
+
+    <h3 class="relative z-10 mt-6 text-2xl font-bold text-slate-900">
+        {{title()}}
     </h3>
-    <p class="text-sm font-medium text-purple-900/70 leading-relaxed">
-      {{ subtitle() }}
+
+    <!-- Description -->
+
+    <p class="relative z-10 mt-4 text-slate-500 leading-7 flex-1">
+        {{subtitle()}}
     </p>
-  </div>
 
-  <!-- صورة المرحلة (موضعة على اليسار وبأحجام متناسقة) -->
-  <div class="absolute left-3 bottom-6 w-32 h-32 md:w-36 md:h-36 flex items-center justify-center pointer-events-none">
-    <img 
-      [src]="imageSrc()" 
-      [alt]="imageAlt()" 
-      class="w-full h-full object-contain drop-shadow-md"
-    />
-  </div>
+    <!-- Button -->
 
-  <!-- الزر في الأسفل على اليمين -->
-  <div class="mt-6">
-    <button 
-      (click)="onExploreClick()"
-      type="button"
-      class="px-5 py-2 text-sm font-bold text-white bg-indigo-700 hover:bg-indigo-800 active:scale-95 transition-all rounded-xl shadow-md shadow-indigo-200 cursor-pointer">
-      {{ buttonText() }}
+    <button
+        (click)="onExploreClick()"
+        type="button"
+        class="relative z-10 mt-8 rounded-full border px-6 py-3 font-semibold transition-all duration-300 hover:scale-105 w-fit"
+        [ngClass]="buttonColor()">
+
+        {{buttonText()}}
+
     </button>
-  </div>
+
+    <!-- Bottom Line -->
+
+    <div
+        class="absolute bottom-0 left-0 h-1 w-full"
+        [ngClass]="lineColor()">
+    </div>
 
 </div>

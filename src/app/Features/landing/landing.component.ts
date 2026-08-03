@@ -5,6 +5,8 @@ import { SectionHeaderComponent } from "../../shared/components/section-header/s
 import { EducationCardComponent } from '../../shared/components/education-card/education-card.component';
 import AOS from 'aos';
 
+
+
 @Component({
   selector: 'app-landing',
   standalone: true,

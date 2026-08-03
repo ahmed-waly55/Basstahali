@@ -35,7 +35,7 @@
           routerLinkActive="text-[#4F2DB7]"
           class="relative font-semibold text-gray-700 hover:text-[#4F2DB7] transition py-2"
         >
-          المراحل
+الكورسات
           <span
             routerLinkActive="!block"
             class="hidden absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-1 rounded-full bg-[#4F2DB7]"
@@ -107,7 +107,7 @@
       <!-- Desktop Buttons -->
       <div class="hidden lg:flex items-center gap-4">
 
-        <button 
+        <button
           routerLink="/auth/login"
           class="border-2 border-[#6D4BCE] text-[#4F2DB7] rounded-xl px-7 py-2.5 font-bold hover:bg-[#6D4BCE] hover:text-white transition flex items-center gap-2"
         >
@@ -115,7 +115,7 @@
           <span>تسجيل الدخول</span>
         </button>
 
-        <button 
+        <button
           routerLink="/auth/register"
           class="bg-[#F9B400] text-black font-bold rounded-xl px-7 py-2.5 hover:bg-yellow-500 transition shadow-md flex items-center gap-2"
         >
@@ -126,8 +126,8 @@
       </div>
 
       <!-- Mobile Hamburger Button -->
-      <button 
-        (click)="toggleMenu()" 
+      <button
+        (click)="toggleMenu()"
         type="button"
         class="lg:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition focus:outline-none w-10 h-10 flex items-center justify-center text-2xl"
       >
@@ -141,7 +141,7 @@
     </div>
 
     <!-- Mobile Menu Dropdown -->
-    <div 
+    <div
       class="lg:hidden transition-all duration-300 ease-in-out border-t border-gray-100 overflow-hidden"
       [class.block]="isMenuOpen"
       [class.hidden]="!isMenuOpen"
