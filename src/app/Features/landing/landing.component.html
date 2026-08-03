@@ -170,150 +170,139 @@
   </div>
 </section>
 
-<section class="relative py-24 overflow-hidden bg-gradient-to-b from-white via-indigo-50/40 to-white">
+<section class="relative py-20 md:py-28 overflow-hidden bg-slate-50">
+  <!-- Dynamic Background Glowing Blobs -->
+  <div class="absolute top-1/4 -right-20 w-80 h-80 bg-purple-200/40 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-10 -left-20 w-80 h-80 bg-amber-200/40 rounded-full blur-3xl pointer-events-none"></div>
 
-  <!-- Background Blur -->
-  <div class="absolute top-0 left-0 w-72 h-72 bg-indigo-200/30 rounded-full blur-3xl"></div>
-  <div class="absolute bottom-0 right-0 w-72 h-72 bg-yellow-200/30 rounded-full blur-3xl"></div>
+  <div class="container relative mx-auto px-4 max-w-7xl z-10">
 
-  <div class="container relative mx-auto px-6">
-
-    <!-- Heading -->
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <span
-        class="inline-flex items-center rounded-full bg-indigo-100 px-4 py-2 text-sm font-semibold text-indigo-700">
-        🚀 كيف تبدأ؟
+    <!-- Header Section -->
+    <div class="text-center max-w-3xl mx-auto mb-16 md:mb-20" data-aos="fade-down">
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-100 text-[#4F2DB7] text-sm font-bold mb-4 shadow-sm">
+        <i class="fa-solid fa-rocket text-[#F9B400]"></i>
+        <span>كيف تبدأ معنا؟</span>
       </span>
 
-      <h2 class="mt-6 text-4xl md:text-5xl font-black text-gray-900">
-        ابدأ رحلتك التعليمية في
-        <span class="text-indigo-600">4 خطوات</span>
+      <h2 class="text-3xl md:text-5xl font-black text-slate-900 leading-tight">
+        ابدأ رحلتك التعليمية في <span class="text-[#4F2DB7] relative inline-block">
+          4 خطوات
+          <svg class="absolute -bottom-2 right-0 w-full h-2 text-[#F9B400]" viewBox="0 0 100 20" preserveAspectRatio="none">
+            <path d="M0 15 Q 50 0, 100 15" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round"/>
+          </svg>
+        </span>
       </h2>
 
-      <p class="mt-5 text-lg text-gray-600 leading-8">
-        التسجيل في منصة بسطهالي لا يستغرق سوى دقائق، وبعدها يمكنك متابعة
-        الدروس والواجبات مع أفضل المعلمين.
+      <p class="mt-4 text-slate-600 text-base md:text-lg leading-relaxed">
+        التسجيل في منصة بسطهالي لا يستغرق سوى دقائق قليلة، لتنطلق بعدها في تجربة تعليمية سلسة وممتعة.
       </p>
     </div>
 
-    <!-- Steps -->
-    <div class="grid md:grid-cols-4 gap-8 relative">
+    <!-- Steps Timeline Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
 
-      <!-- line -->
-      <div
-        class="hidden md:block absolute top-12 left-0 right-0 h-1 bg-gradient-to-r from-indigo-200 via-indigo-300 to-indigo-200">
-      </div>
+      <!-- Connection Line (Desktop) -->
+      <div class="hidden lg:block absolute top-1/2 right-[12%] left-[12%] h-1 bg-gradient-to-l from-purple-200 via-[#4F2DB7]/30 to-purple-200 -translate-y-8 z-0"></div>
 
       <!-- Step 1 -->
-      <div class="relative group">
-        <div
-          class="relative z-10 bg-white rounded-3xl p-8 shadow-lg border border-indigo-100 hover:-translate-y-3 hover:shadow-2xl transition duration-300">
+      <div class="relative group z-10" data-aos="fade-up" data-aos-delay="0">
+        <div class="h-full bg-white rounded-3xl p-8 border border-slate-200/80 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center">
 
-          <div
-            class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-indigo-600 text-white text-3xl shadow-lg">
-            👤
+          <!-- Step Number Badge -->
+          <div class="absolute -top-4 right-6 w-9 h-9 rounded-2xl bg-[#F9B400] text-[#3D1A6D] text-sm font-black flex items-center justify-center shadow-md border-2 border-white">
+            01
           </div>
 
-          <h3 class="mt-6 text-xl font-bold text-center">
-            أنشئ حسابك
-          </h3>
+          <!-- Icon Circle -->
+          <div class="w-20 h-20 rounded-2xl bg-purple-50 text-[#4F2DB7] group-hover:bg-[#4F2DB7] group-hover:text-white transition-colors duration-300 flex items-center justify-center text-3xl shadow-inner mb-6">
+            <i class="fa-solid fa-user-plus"></i>
+          </div>
 
-          <p class="mt-3 text-gray-600 text-center leading-7">
-            قم بإنشاء حسابك أو اطلب التسجيل عبر واتساب.
+          <h3 class="text-xl font-bold text-slate-900 mb-2">أنشئ حسابك</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">
+            قم بإنشاء حسابك الجديد بسهولة أو اطلب التسجيل المباشر عبر خدمة الواتساب.
           </p>
-
-          <div
-            class="absolute -top-4 -right-4 h-10 w-10 rounded-full bg-[#F9B400] text-white flex items-center justify-center font-bold">
-            1
-          </div>
-
         </div>
       </div>
 
       <!-- Step 2 -->
-      <div class="relative group">
-        <div
-          class="relative z-10 bg-white rounded-3xl p-8 shadow-lg border border-indigo-100 hover:-translate-y-3 hover:shadow-2xl transition duration-300">
+      <div class="relative group z-10" data-aos="fade-up" data-aos-delay="150">
+        <div class="h-full bg-white rounded-3xl p-8 border border-slate-200/80 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center">
 
-          <div
-            class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-indigo-600 text-white text-3xl">
-            📚
+          <!-- Step Number Badge -->
+          <div class="absolute -top-4 right-6 w-9 h-9 rounded-2xl bg-[#F9B400] text-[#3D1A6D] text-sm font-black flex items-center justify-center shadow-md border-2 border-white">
+            02
           </div>
 
-          <h3 class="mt-6 text-xl font-bold text-center">
-            اختر المنهج
-          </h3>
+          <!-- Icon Circle -->
+          <div class="w-20 h-20 rounded-2xl bg-purple-50 text-[#4F2DB7] group-hover:bg-[#4F2DB7] group-hover:text-white transition-colors duration-300 flex items-center justify-center text-3xl shadow-inner mb-6">
+            <i class="fa-solid fa-book-open"></i>
+          </div>
 
-          <p class="mt-3 text-gray-600 text-center leading-7">
-            اختر الدولة والمنهج والمرحلة الدراسية الخاصة بك.
+          <h3 class="text-xl font-bold text-slate-900 mb-2">اختر المنهج</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">
+            حدد الدولة، المنهج، والمرحلة الدراسية لتظهر لك الدروس والمواد المخصصة لك.
           </p>
-
-          <div
-            class="absolute -top-4 -right-4 h-10 w-10 rounded-full bg-[#F9B400] text-white flex items-center justify-center font-bold">
-            2
-          </div>
-
         </div>
       </div>
 
       <!-- Step 3 -->
-      <div class="relative group">
-        <div
-          class="relative z-10 bg-white rounded-3xl p-8 shadow-lg border border-indigo-100 hover:-translate-y-3 hover:shadow-2xl transition duration-300">
+      <div class="relative group z-10" data-aos="fade-up" data-aos-delay="300">
+        <div class="h-full bg-white rounded-3xl p-8 border border-slate-200/80 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center">
 
-          <div
-            class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-indigo-600 text-white text-3xl">
-            💳
+          <!-- Step Number Badge -->
+          <div class="absolute -top-4 right-6 w-9 h-9 rounded-2xl bg-[#F9B400] text-[#3D1A6D] text-sm font-black flex items-center justify-center shadow-md border-2 border-white">
+            03
           </div>
 
-          <h3 class="mt-6 text-xl font-bold text-center">
-            فعّل اشتراكك
-          </h3>
+          <!-- Icon Circle -->
+          <div class="w-20 h-20 rounded-2xl bg-purple-50 text-[#4F2DB7] group-hover:bg-[#4F2DB7] group-hover:text-white transition-colors duration-300 flex items-center justify-center text-3xl shadow-inner mb-6">
+            <i class="fa-solid fa-[#F9B400] fa-credit-card"></i>
+          </div>
 
-          <p class="mt-3 text-gray-600 text-center leading-7">
-            أكمل الاشتراك واختر الباقة المناسبة لك.
+          <h3 class="text-xl font-bold text-slate-900 mb-2">فعّل اشتراكك</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">
+            اختر الباقة المناسبة لاحتياجاتك وأكمل عملية الاشتراك بخطوات آمنة وسريعة.
           </p>
-
-          <div
-            class="absolute -top-4 -right-4 h-10 w-10 rounded-full bg-[#F9B400] text-white flex items-center justify-center font-bold">
-            3
-          </div>
-
         </div>
       </div>
 
       <!-- Step 4 -->
-      <div class="relative group">
-        <div
-          class="relative z-10 bg-white rounded-3xl p-8 shadow-lg border border-indigo-100 hover:-translate-y-3 hover:shadow-2xl transition duration-300">
+      <div class="relative group z-10" data-aos="fade-up" data-aos-delay="450">
+        <div class="h-full bg-white rounded-3xl p-8 border border-slate-200/80 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center">
 
-          <div
-            class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-indigo-600 text-white text-3xl">
-            🎓
+          <!-- Step Number Badge -->
+          <div class="absolute -top-4 right-6 w-9 h-9 rounded-2xl bg-[#F9B400] text-[#3D1A6D] text-sm font-black flex items-center justify-center shadow-md border-2 border-white">
+            04
           </div>
 
-          <h3 class="mt-6 text-xl font-bold text-center">
-            ابدأ التعلم
-          </h3>
+          <!-- Icon Circle -->
+          <div class="w-20 h-20 rounded-2xl bg-purple-50 text-[#4F2DB7] group-hover:bg-[#4F2DB7] group-hover:text-white transition-colors duration-300 flex items-center justify-center text-3xl shadow-inner mb-6">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
 
-          <p class="mt-3 text-gray-600 text-center leading-7">
-            شاهد الدروس، احضر الحصص، وأنجز الواجبات بسهولة.
+          <h3 class="text-xl font-bold text-slate-900 mb-2">ابدأ التعلم</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">
+            شاهد الشروحات التفاعلية، احضر الحصص، وأنجز الواجبات بسهولة للتفوق.
           </p>
-
-          <div
-            class="absolute -top-4 -right-4 h-10 w-10 rounded-full bg-[#F9B400] text-white flex items-center justify-center font-bold">
-            4
-          </div>
-
         </div>
       </div>
 
     </div>
 
+    <!-- Call To Action Button -->
+    <div class="mt-16 text-center" data-aos="zoom-in" data-aos-delay="500">
+      <a
+        href="https://wa.me/971525250833"
+        target="_blank"
+        class="inline-flex items-center gap-3 bg-[#4F2DB7] hover:bg-[#3D1A6D] text-white font-bold py-4 px-8 rounded-2xl transition duration-300 shadow-xl shadow-purple-900/20 hover:scale-105">
+        <i class="fa-brands fa-whatsapp text-2xl text-[#25D366]"></i>
+        <span>سجل حسابك الآن عبر الواتساب</span>
+      </a>
+    </div>
+
   </div>
-
 </section>
-
 
 <!-- 5. ماذا يقول طلابنا -->
 <section class="max-w-6xl mx-auto px-4 py-8" data-aos="fade-up" data-aos-duration="800">
