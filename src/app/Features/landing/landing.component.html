@@ -1,119 +1,56 @@
 <app-hero></app-hero>
 
 <!-- Header 1 -->
-<app-section-header title="المناهج الدراسية" data-aos="fade-down" />
+<app-section-header title="المناهج الدراسية و الكورسات" data-aos="fade-down" />
 
 <div class="container mx-auto px-4">
 
-  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
 
-    <!-- الإمارات -->
-    <app-education-card
-      data-aos="fade-up"
-      title="المنهج الإماراتي"
-      subtitle="المناهج المعتمدة من وزارة التربية والتعليم بالإمارات."
-      iconBg="bg-blue-100"
-      iconColor="text-blue-600"
-      glowColor="bg-blue-300"
-      lineColor="bg-blue-500"
-      borderColor="hover:border-blue-300"
-      buttonColor="border-blue-500 text-blue-600 hover:bg-blue-600 hover:text-white"
-      (explore)="onSelectCurriculum('uae')">
-    </app-education-card>
+    <!-- المنهج الإماراتي -->
+    <a
+      routerLink="/curriculum/uae"
+      class="block hover:no-underline">
 
-    <!-- السعودية -->
-    <app-education-card
-      data-aos="fade-up"
-      data-aos-delay="100"
-      title="المنهج السعودي"
-      subtitle="المناهج المعتمدة من وزارة التعليم بالمملكة العربية السعودية."
-      iconBg="bg-green-100"
-      iconColor="text-green-600"
-      glowColor="bg-green-300"
-      lineColor="bg-green-500"
-      borderColor="hover:border-green-300"
-      buttonColor="border-green-500 text-green-600 hover:bg-green-600 hover:text-white"
-      (explore)="onSelectCurriculum('saudi')">
-    </app-education-card>
+      <app-education-card
+        data-aos="fade-up"
+        title="المنهج الإماراتي"
+        subtitle="جميع المراحل الدراسية وفق مناهج دولة الإمارات العربية المتحدة مع أفضل المدرسين."
+        iconBg="bg-blue-100"
+        iconColor="text-blue-600"
+        glowColor="bg-blue-300"
+        lineColor="bg-blue-500"
+        borderColor="hover:border-blue-300"
+        buttonColor="border-blue-500 text-blue-600 hover:bg-blue-600 hover:text-white">
+      </app-education-card>
 
-    <!-- قطر -->
-    <app-education-card
-      data-aos="fade-up"
-      data-aos-delay="200"
-      title="المنهج القطري"
-      subtitle="جميع المراحل الدراسية وفق المناهج القطرية."
-      iconBg="bg-rose-100"
-      iconColor="text-rose-700"
-      glowColor="bg-rose-300"
-      lineColor="bg-rose-600"
-      borderColor="hover:border-rose-300"
-      buttonColor="border-rose-600 text-rose-600 hover:bg-rose-600 hover:text-white"
-      (explore)="onSelectCurriculum('qatar')">
-    </app-education-card>
+    </a>
 
-    <!-- الكويت -->
-    <app-education-card
-      data-aos="fade-up"
-      data-aos-delay="300"
-      title="المنهج الكويتي"
-      subtitle="جميع المراحل الدراسية وفق المناهج الكويتية."
-      iconBg="bg-emerald-100"
-      iconColor="text-emerald-600"
-      glowColor="bg-emerald-300"
-      lineColor="bg-emerald-500"
-      borderColor="hover:border-emerald-300"
-      buttonColor="border-emerald-500 text-emerald-600 hover:bg-emerald-600 hover:text-white"
-      (explore)="onSelectCurriculum('kuwait')">
-    </app-education-card>
+    <!-- الكورسات -->
+    <a
+      routerLink="/courses"
+      class="block hover:no-underline">
 
-    <!-- البحرين -->
-    <app-education-card
-      data-aos="fade-up"
-      data-aos-delay="400"
-      title="المنهج البحريني"
-      subtitle="جميع المراحل الدراسية وفق المناهج البحرينية."
-      iconBg="bg-amber-100"
-      iconColor="text-amber-600"
-      glowColor="bg-amber-300"
-      lineColor="bg-amber-500"
-      borderColor="hover:border-amber-300"
-      buttonColor="border-amber-500 text-amber-600 hover:bg-amber-600 hover:text-white"
-      (explore)="onSelectCurriculum('bahrain')">
-    </app-education-card>
+      <app-education-card
+        data-aos="fade-up"
+        data-aos-delay="100"
+        title="الكورسات"
+        subtitle="كورسات في اللغات، البرمجة، المهارات، والمواد الإثرائية لجميع الأعمار."
+        iconBg="bg-[#F9B400]/20"
+        iconColor="text-[#F9B400]"
+        glowColor="bg-[#F9B400]/40"
+        lineColor="bg-[#F9B400]"
+        borderColor="hover:border-[#F9B400]"
+        buttonColor="border-[#F9B400] text-[#F9B400] hover:bg-[#F9B400] hover:text-black">
+      </app-education-card>
 
-    <!-- عمان -->
-    <app-education-card
-      data-aos="fade-up"
-      data-aos-delay="500"
-      title="المنهج العُماني"
-      subtitle="جميع المراحل الدراسية وفق المناهج العُمانية."
-      iconBg="bg-orange-100"
-      iconColor="text-orange-600"
-      glowColor="bg-orange-300"
-      lineColor="bg-orange-500"
-      borderColor="hover:border-orange-300"
-      buttonColor="border-orange-500 text-orange-600 hover:bg-orange-600 hover:text-white"
-      (explore)="onSelectCurriculum('oman')">
-    </app-education-card>
-
-    <!-- مصر -->
-    <app-education-card
-      data-aos="fade-up"
-      data-aos-delay="600"
-      title="المنهج المصري"
-      subtitle="جميع المراحل الدراسية وفق المناهج المصرية."
-      iconBg="bg-red-100"
-      iconColor="text-red-600"
-      glowColor="bg-red-300"
-      lineColor="bg-red-500"
-      borderColor="hover:border-red-300"
-      buttonColor="border-red-500 text-red-600 hover:bg-red-600 hover:text-white"
-      (explore)="onSelectCurriculum('egypt')">
-    </app-education-card>
+    </a>
 
   </div>
 
 </div>
+
+
 <!-- Header 2 -->
 <app-section-header title="مميزات المنصة " data-aos="fade-down" />
 

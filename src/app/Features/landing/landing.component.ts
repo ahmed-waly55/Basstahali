@@ -1,16 +1,15 @@
 import { Component, ElementRef, OnInit, OnDestroy, ViewChild, inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { Router, RouterLink } from '@angular/router';
 import { HeroComponent } from "../hero/hero.component";
 import { SectionHeaderComponent } from "../../shared/components/section-header/section-header.component";
 import { EducationCardComponent } from '../../shared/components/education-card/education-card.component';
 import AOS from 'aos';
 
-
-
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [HeroComponent, SectionHeaderComponent, EducationCardComponent],
+  imports: [HeroComponent, SectionHeaderComponent, EducationCardComponent , RouterLink],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css',
 })
@@ -19,6 +18,7 @@ export class LandingComponent implements OnInit, OnDestroy {
   @ViewChild('sliderTrack') sliderTrack!: ElementRef<HTMLDivElement>;
 
   private platformId = inject(PLATFORM_ID);
+  private router = inject(Router);
 
   autoPlayInterval: any;
   scrollStep = 300;
@@ -55,7 +55,6 @@ export class LandingComponent implements OnInit, OnDestroy {
   ];
 
   ngOnInit(): void {
-    // تشغيل الكود فقط إذا كنا داخل المتصفح (Client Side) لتفادي أخطاء الـ SSR
     if (isPlatformBrowser(this.platformId)) {
       AOS.init({
         duration: 700,
@@ -74,10 +73,25 @@ export class LandingComponent implements OnInit, OnDestroy {
     }
   }
 
-onSelectCurriculum(curriculum: string): void {
-  // Navigate أو عرض الصفوف الخاصة بالمنهج
-  console.log(curriculum);
-}
+  onSelectCurriculum(type: string): void {
+
+    switch (type) {
+
+      case 'uae':
+        this.router.navigate(['/curriculum/uae']);
+        break;
+
+      case 'courses':
+        this.router.navigate(['/courses']);
+        break;
+
+      default:
+        this.router.navigate(['/']);
+        break;
+
+    }
+
+  }
 
   startAutoPlay(): void {
     this.stopAutoPlay();
@@ -95,6 +109,7 @@ onSelectCurriculum(curriculum: string): void {
   scrollLeft(): void {
     if (!this.sliderTrack) return;
     const el = this.sliderTrack.nativeElement;
+
     if (Math.abs(el.scrollLeft) + el.clientWidth >= el.scrollWidth - 15) {
       el.scrollTo({ left: 0, behavior: 'smooth' });
     } else {
@@ -105,6 +120,7 @@ onSelectCurriculum(curriculum: string): void {
   scrollRight(): void {
     if (!this.sliderTrack) return;
     const el = this.sliderTrack.nativeElement;
+
     if (Math.abs(el.scrollLeft) <= 15) {
       el.scrollTo({ left: -el.scrollWidth, behavior: 'smooth' });
     } else {

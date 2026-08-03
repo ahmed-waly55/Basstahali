@@ -1,134 +1,102 @@
-<section class="relative bg-gradient-to-b from-[#F5F2FC] via-[#F8F6FD] to-white py-6 lg:py-8 overflow-hidden">
-  
-  <!-- Full Hero Background Image Cover -->
-  <img
-    src="/images/hero-bg.png"
-    class="absolute inset-0 w-full h-full object-cover pointer-events-none select-none opacity-40 z-0"
-    alt=""
-  >
-
-  <div class="max-w-7xl mx-auto px-6 relative z-10">
-    
-    <!-- Hero Main Container -->
-    <div class="flex flex-col lg:flex-row-reverse gap-6 items-center">
-      
-<!-- Text & CTA Content Side -->
-      <div class="lg:col-span-6 order-1 lg:order-2 space-y-4 text-center lg:text-right">
-        
-        <!-- Main Heading -->
-        <div class="space-y-1">
-          <h1 class="text-3xl lg:text-5xl font-black text-[#2B1B54] leading-tight">
-            بسطـ<span class="text-[#F9B400]">هالـي</span>...
-          </h1>
-          <h2 class="text-2xl lg:text-4xl font-black text-[#4F2DB7] leading-tight">
-            طريقك للتفوق يبدأ من هنا
-          </h2>
-        </div>
-
-        <!-- Description Paragraph -->
-        <p class="text-gray-600 text-base lg:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 font-medium">
-          منصة تعليمية تساعدك تنظم وقتك، تتابع دروسك، وتحقق أفضل النتائج بسهولة.
-        </p>
-
-        <!-- CTA Buttons -->
-        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-1">
-          
-          <button 
-            routerLink="/auth/register"
-            class="bg-[#F9B400] hover:bg-yellow-500 text-black font-extrabold px-7 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center gap-2.5 text-base cursor-pointer"
-          >
-            <span>ابدأ الآن</span>
-            <i class="fa-solid fa-arrow-left"></i>
-          </button>
-
-          <button 
-            routerLink="/about"
-            class="bg-white/80 backdrop-blur-sm border-2 border-[#E5E0F8] hover:border-[#4F2DB7] text-[#4F2DB7] font-bold px-7 py-2.5 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 flex items-center gap-2.5 text-base cursor-pointer"
-          >
-            <i class="fa-regular fa-circle-question"></i>
-            <span>تعرف علينا</span>
-          </button>
-
-        </div>
-
-      </div>
-
-      <!-- Illustration / Owl Side with Floating Animation -->
-      <div class="lg:col-span-6 order-2 lg:order-1 relative flex justify-center items-center">
-        <img
-          src="images/owl.png"
-          alt="بسطهالي"
-          class="relative w-[240px] md:w-[320px] lg:w-[380px] drop-shadow-2xl animate-bounce [animation-duration:3s] object-contain"
-        >
-      </div>
-
-      
-
-    </div>
-
-    <!-- Compact Features Bottom Card -->
-    <div class=" mt-6 max-w-6xl mx-auto bg-white/95 backdrop-blur-sm rounded-xl shadow-md border border-gray-100 p-3 lg:p-4 relative z-20">
-      
-      <div class="feat grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 divide-y md:divide-y-0 md:divide-x md:divide-x-reverse divide-gray-100">
-        
-        <!-- Feature 1 -->
-        <div class="flex flex-col items-center text-center p-1.5 space-y-1">
-          <div class="w-10  h-10 rounded-lg bg-[#F3EFFF] text-[#4F2DB7] flex items-center justify-center text-lg shadow-sm">
-            <i class="fa-solid fa-calendar-days"></i>
-          </div>
-          <h3 class="font-bold text-gray-800 text-xs">تنظيم الحصص</h3>
-          <p class="text-[10px] text-gray-500 leading-tight">جدول حصص مرتب وتنبيهات</p>
-        </div>
-
-        <!-- Feature 2 -->
-        <div class="flex flex-col items-center text-center p-1.5 space-y-1 pt-2 md:pt-1.5">
-          <div class="w-10 h-10 rounded-lg bg-[#F3EFFF] text-[#4F2DB7] flex items-center justify-center text-lg shadow-sm">
-            <i class="fa-solid fa-clipboard-check"></i>
-          </div>
-          <h3 class="font-bold text-gray-800 text-xs">واجبات إلكترونية</h3>
-          <p class="text-[10px] text-gray-500 leading-tight">حل ورفع الواجبات ومتابعة التصحيح</p>
-        </div>
-
-        <!-- Feature 3 -->
-        <div class="flex flex-col items-center text-center p-1.5 space-y-1 pt-2 md:pt-1.5">
-          <div class="w-10 h-10 rounded-lg bg-[#F3EFFF] text-[#4F2DB7] flex items-center justify-center text-lg shadow-sm">
-            <i class="fa-solid fa-chart-pie"></i>
-          </div>
-          <h3 class="font-bold text-gray-800 text-xs">متابعة الأداء</h3>
-          <p class="text-[10px] text-gray-500 leading-tight">تقارير دورية لمتابعة تقدمك</p>
-        </div>
-
-        <!-- Feature 4 -->
-        <div class="flex flex-col items-center text-center p-1.5 space-y-1 pt-2 lg:pt-1.5">
-          <div class="w-10 h-10 rounded-lg bg-[#F3EFFF] text-[#4F2DB7] flex items-center justify-center text-lg shadow-sm">
-            <i class="fa-solid fa-folder-open"></i>
-          </div>
-          <h3 class="font-bold text-gray-800 text-xs">ملفات وموارد</h3>
-          <p class="text-[10px] text-gray-500 leading-tight">تحميل ملفات PDF ومذكرات</p>
-        </div>
-
-        <!-- Feature 5 -->
-        <div class="flex flex-col items-center text-center p-1.5 space-y-1 pt-2 lg:pt-1.5">
-          <div class="w-10 h-10 rounded-lg bg-[#F3EFFF] text-[#4F2DB7] flex items-center justify-center text-lg shadow-sm">
-            <i class="fa-solid fa-user-graduate"></i>
-          </div>
-          <h3 class="font-bold text-gray-800 text-xs">أفضل المدرسين</h3>
-          <p class="text-[10px] text-gray-500 leading-tight">نخبة من أفضل المدرسين</p>
-        </div>
-
-        <!-- Feature 6 -->
-        <div class="flex flex-col items-center text-center p-1.5 space-y-1 pt-2 lg:pt-1.5">
-          <div class="w-10 h-10 rounded-lg bg-[#F3EFFF] text-[#4F2DB7] flex items-center justify-center text-lg shadow-sm">
-            <i class="fa-solid fa-users-between-lines"></i>
-          </div>
-          <h3 class="font-bold text-gray-800 text-xs">متابعة أولياء الأمور</h3>
-          <p class="text-[10px] text-gray-500 leading-tight">تقارير شاملة لمتابعة أبنائك</p>
-        </div>
-
-      </div>
-
-    </div>
-
+<section class="relative overflow-hidden bg-gradient-to-br from-[#F7F3FD] via-white to-[#F3EDFF] py-12 lg:py-20">
+  <!-- Background Decor -->
+  <div class="absolute inset-0 pointer-events-none">
+    <img src="/images/hero-bg.png" class="w-full h-full object-cover opacity-10" alt="" />
+    <div class="absolute -top-40 right-0 w-80 md:w-[450px] h-80 md:h-[450px] rounded-full bg-[#F9B400]/20 blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-72 md:w-[380px] h-72 md:h-[380px] rounded-full bg-[#4F2DB7]/15 blur-3xl"></div>
   </div>
 
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+
+      <!-- Text Content -->
+      <div class="text-center lg:text-right">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 bg-[#F3EFFF] text-[#4F2DB7] px-4 py-2 rounded-full text-sm sm:text-base font-bold shadow-sm">
+          <span class="w-2.5 h-2.5 rounded-full bg-[#F9B400] animate-pulse"></span>
+          المنصة التعليمية الأولى للمنهج الإماراتي
+        </div>
+
+        <!-- Title -->
+        <h1 class="mt-6 text-3xl sm:text-5xl lg:text-6xl font-black leading-tight text-[#2B1B54]">
+          تعلّم بطريقة
+          <span class="text-[#F9B400]">أذكى</span>
+          مع
+          <span class="text-[#4F2DB7]">بسطهالي</span>
+        </h1>
+
+        <!-- Description -->
+        <p class="mt-5 text-base sm:text-lg text-slate-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
+          منصة تعليمية متكاملة تساعدك على متابعة الحصص، حل الواجبات، مشاهدة الدروس، والتواصل مع أفضل المدرسين في الإمارات.
+        </p>
+
+        <!-- Buttons -->
+        <div class="mt-8 flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4">
+          <a
+            href="https://wa.me/971525250833"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full sm:w-auto inline-flex items-center justify-center group bg-[#F9B400] hover:bg-yellow-400 text-black font-bold px-8 py-3.5 rounded-2xl shadow-lg transition-all duration-200">
+            ابدأ الآن
+            <i class="fa-solid fa-arrow-left mr-2 group-hover:-translate-x-1 transition-transform"></i>
+          </a>
+
+          <button class="w-full sm:w-auto bg-white border-2 border-[#E7DFFF] hover:border-[#4F2DB7] text-[#4F2DB7] font-bold px-8 py-3.5 rounded-2xl shadow-sm transition-all duration-200">
+            استكشف الكورسات
+          </button>
+        </div>
+
+        <!-- Animated Stats Counter -->
+        <div #statsContainer class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10">
+          @for (stat of stats(); track stat.label) {
+            <div class="rounded-2xl bg-white shadow-md border border-purple-50/50 p-4 text-center">
+              <h3 class="text-2xl sm:text-3xl font-black" [ngClass]="stat.colorClass">
+                {{ formatValue(stat) }}
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-500 mt-1">{{ stat.label }}</p>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Hero Image -->
+      <div class="relative flex justify-center items-center mt-6 lg:mt-0">
+        <div class="absolute w-[280px] sm:w-[380px] lg:w-[420px] h-[280px] sm:h-[380px] lg:h-[420px] rounded-full bg-gradient-to-r from-[#4F2DB7]/15 to-[#F9B400]/20 blur-2xl animate-pulse"></div>
+        <div class="relative bg-white/70 backdrop-blur-xl rounded-full p-6 sm:p-8 shadow-2xl border border-white">
+          <img src="images/owl.png" alt="بسطهالي" class="w-[240px] sm:w-[320px] lg:w-[380px] object-contain animate-bounce [animation-duration:4s]" />
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Features Section -->
+    <div class="mt-16 sm:mt-20">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-5">
+
+        @for (feature of features(); track feature.title) {
+          @if (feature.isHighlighted) {
+            <!-- Card Highlighted -->
+            <div class="group rounded-3xl bg-gradient-to-br from-[#3D1A6D] to-[#5C2DA5] text-white shadow-xl hover:-translate-y-1 transition-all duration-300 p-5 text-center relative overflow-hidden">
+              <div class="absolute -top-8 -left-8 w-24 h-24 rounded-full bg-[#F9B400]/20 blur-2xl pointer-events-none"></div>
+              <div class="relative w-14 h-14 mx-auto rounded-2xl bg-[#F9B400] text-[#3D1A6D] flex items-center justify-center text-xl shadow-md">
+                <i class="fa-solid" [ngClass]="feature.icon"></i>
+              </div>
+              <h3 class="relative font-bold mt-4 text-base">{{ feature.title }}</h3>
+              <p class="relative text-white/80 text-xs mt-2 leading-relaxed">{{ feature.desc }}</p>
+            </div>
+          } @else {
+            <!-- Standard Cards -->
+            <div class="group rounded-3xl bg-white/80 backdrop-blur-xl border border-white shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-5 text-center">
+              <div class="w-14 h-14 mx-auto rounded-2xl bg-[#F3EFFF] text-[#4F2DB7] flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                <i class="fa-solid" [ngClass]="feature.icon"></i>
+              </div>
+              <h3 class="font-bold text-[#2B1B54] mt-4 text-base">{{ feature.title }}</h3>
+              <p class="text-xs text-slate-500 mt-2 leading-relaxed">{{ feature.desc }}</p>
+            </div>
+          }
+        }
+
+      </div>
+    </div>
+  </div>
 </section>

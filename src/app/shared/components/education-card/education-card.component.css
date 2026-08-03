@@ -13,3 +13,6 @@
 .group:hover svg{
     transform:scale(1.15) rotate(-5deg);
 }
+button{
+  cursor:pointer;
+}
