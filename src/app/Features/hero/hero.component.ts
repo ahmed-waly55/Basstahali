@@ -1,5 +1,6 @@
 import { isPlatformBrowser, NgClass } from '@angular/common';
 import { Component, ElementRef, inject, OnDestroy, PLATFORM_ID, signal, viewChild, afterNextRender } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 interface Stat {
   target: number;
@@ -21,7 +22,7 @@ interface Feature {
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [NgClass],
+  imports: [NgClass, RouterLink],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.css',
 })

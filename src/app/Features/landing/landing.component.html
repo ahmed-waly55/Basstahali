@@ -1,19 +1,17 @@
-<app-hero></app-hero>
+<!-- Hero Component Animation -->
+<div data-aos="fade-down" data-aos-duration="1000">
+  <app-hero></app-hero>
+</div>
 
 <!-- Header 1 -->
-<app-section-header title="المناهج الدراسية و الكورسات" data-aos="fade-down" />
+<app-section-header title="المناهج الدراسية و الكورسات" data-aos="fade-down" data-aos-duration="800" />
 
 <div class="container mx-auto px-4">
-
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
 
     <!-- المنهج الإماراتي -->
-    <a
-      routerLink="/curriculum/uae"
-      class="block hover:no-underline">
-
+    <a routerLink="/curriculum/uae" class="block hover:no-underline" data-aos="fade-up" data-aos-delay="100">
       <app-education-card
-        data-aos="fade-up"
         title="المنهج الإماراتي"
         subtitle="جميع المراحل الدراسية وفق مناهج دولة الإمارات العربية المتحدة مع أفضل المدرسين."
         iconBg="bg-blue-100"
@@ -23,17 +21,11 @@
         borderColor="hover:border-blue-300"
         buttonColor="border-blue-500 text-blue-600 hover:bg-blue-600 hover:text-white">
       </app-education-card>
-
     </a>
 
     <!-- الكورسات -->
-    <a
-      routerLink="/courses"
-      class="block hover:no-underline">
-
+    <a routerLink="/courses" class="block hover:no-underline" data-aos="fade-up" data-aos-delay="250">
       <app-education-card
-        data-aos="fade-up"
-        data-aos-delay="100"
         title="الكورسات"
         subtitle="كورسات في اللغات، البرمجة، المهارات، والمواد الإثرائية لجميع الأعمار."
         iconBg="bg-[#F9B400]/20"
@@ -43,127 +35,128 @@
         borderColor="hover:border-[#F9B400]"
         buttonColor="border-[#F9B400] text-[#F9B400] hover:bg-[#F9B400] hover:text-black">
       </app-education-card>
-
     </a>
 
   </div>
-
 </div>
 
 
 <!-- Header 2 -->
-<app-section-header title="مميزات المنصة " data-aos="fade-down" />
+<app-section-header title="مميزات المنصة" data-aos="fade-down" data-aos-duration="800" />
 
-<!-- 2. المميزات (أنيميشن تكبير خفيف Zoom In) -->
-<section class="container mx-auto p-4" data-aos="zoom-in" data-aos-duration="600">
-  <div class="bg-[#f5f3ff] rounded-3xl p-6 md:p-8 shadow-sm border border-purple-100/50">
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-4 divide-y md:divide-y-0 md:divide-x md:divide-x-reverse divide-purple-200/60">
+<!-- 2. المميزات -->
+<section class="container mx-auto px-4 py-8">
+  <div class="relative overflow-hidden rounded-[32px] bg-gradient-to-r from-[#3D1A6D] via-[#4F2DB7] to-[#6A3FC8] p-8 md:p-10" data-aos="zoom-in" data-aos-duration="900">
 
-      <!-- 1. جدول الحصص -->
-      <div class="flex flex-col items-center text-center p-3 space-y-3 pt-4 md:pt-0" data-aos="fade-up" data-aos-delay="100">
-        <div class="w-12 h-12 flex items-center justify-center text-purple-800 text-3xl">
+    <!-- Decorations -->
+    <div class="absolute -top-20 -right-20 w-72 h-72 bg-[#F9B400]/20 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-20 -left-20 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
+
+    <!-- Heading -->
+    <div class="relative text-center mb-10" data-aos="fade-up" data-aos-delay="150">
+      <span class="inline-flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full text-white text-sm font-semibold">
+        <i class="fa-solid fa-stars text-[#F9B400]"></i>
+        لماذا بسطهالي؟
+      </span>
+
+      <h2 class="mt-5 text-3xl md:text-4xl font-black text-white">
+        كل ما يحتاجه الطالب...
+        <span class="text-[#F9B400]">في مكان واحد</span>
+      </h2>
+
+      <p class="mt-3 text-white/75 max-w-2xl mx-auto">
+        منصة متكاملة تساعد الطالب وولي الأمر على متابعة العملية التعليمية بسهولة.
+      </p>
+    </div>
+
+    <!-- Features Cards with Stagger Animation -->
+    <div class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-5">
+
+      <div class="group rounded-3xl bg-white/10 backdrop-blur-md border border-white/10 p-5 text-center hover:bg-white/20 transition-all duration-300 hover:-translate-y-2"
+           data-aos="fade-up" data-aos-delay="100">
+        <div class="w-14 h-14 rounded-2xl bg-[#F9B400] text-[#3D1A6D] flex items-center justify-center text-2xl mx-auto shadow-lg group-hover:scale-110 transition">
           <i class="fa-solid fa-calendar-days"></i>
         </div>
-        <h4 class="text-base font-bold text-indigo-950">جدول الحصص</h4>
-        <p class="text-xs font-medium text-purple-900/70 leading-relaxed max-w-[140px]">جمع حصصك في مكان واحد</p>
+        <h3 class="mt-4 font-bold text-white">جدول الحصص</h3>
+        <p class="mt-2 text-sm text-white/70 leading-6">تنظيم كامل للحصص والمواعيد.</p>
       </div>
 
-      <!-- 2. إشعارات ذكية -->
-      <div class="flex flex-col items-center text-center p-3 space-y-3 pt-4 md:pt-0" data-aos="fade-up" data-aos-delay="200">
-        <div class="w-12 h-12 flex items-center justify-center text-purple-800 text-3xl">
+      <div class="group rounded-3xl bg-white/10 backdrop-blur-md border border-white/10 p-5 text-center hover:bg-white/20 transition-all duration-300 hover:-translate-y-2"
+           data-aos="fade-up" data-aos-delay="200">
+        <div class="w-14 h-14 rounded-2xl bg-[#F9B400] text-[#3D1A6D] flex items-center justify-center text-2xl mx-auto shadow-lg group-hover:scale-110 transition">
           <i class="fa-solid fa-bell"></i>
         </div>
-        <h4 class="text-base font-bold text-indigo-950">إشعارات ذكية</h4>
-        <p class="text-xs font-medium text-purple-900/70 leading-relaxed max-w-[140px]">تذكير قبل الحصة والواجبات</p>
+        <h3 class="mt-4 font-bold text-white">إشعارات ذكية</h3>
+        <p class="mt-2 text-sm text-white/70">تنبيهات قبل الحصص والواجبات.</p>
       </div>
 
-      <!-- 3. رفع الواجبات -->
-      <div class="flex flex-col items-center text-center p-3 space-y-3 pt-4 md:pt-0" data-aos="fade-up" data-aos-delay="300">
-        <div class="w-12 h-12 flex items-center justify-center text-purple-800 text-3xl">
+      <div class="group rounded-3xl bg-white/10 backdrop-blur-md border border-white/10 p-5 text-center hover:bg-white/20 transition-all duration-300 hover:-translate-y-2"
+           data-aos="fade-up" data-aos-delay="300">
+        <div class="w-14 h-14 rounded-2xl bg-[#F9B400] text-[#3D1A6D] flex items-center justify-center text-2xl mx-auto shadow-lg group-hover:scale-110 transition">
           <i class="fa-solid fa-cloud-arrow-up"></i>
         </div>
-        <h4 class="text-base font-bold text-indigo-950">رفع الواجبات</h4>
-        <p class="text-xs font-medium text-purple-900/70 leading-relaxed max-w-[140px]">رفع سهل وسريع لواجباتك</p>
+        <h3 class="mt-4 font-bold text-white">رفع الواجبات</h3>
+        <p class="mt-2 text-sm text-white/70">رفع سريع وسهل للواجبات.</p>
       </div>
 
-      <!-- 4. تصحيح إلكتروني -->
-      <div class="flex flex-col items-center text-center p-3 space-y-3 pt-4 md:pt-0" data-aos="fade-up" data-aos-delay="400">
-        <div class="w-12 h-12 flex items-center justify-center text-purple-800 text-3xl">
+      <div class="group rounded-3xl bg-white/10 backdrop-blur-md border border-white/10 p-5 text-center hover:bg-white/20 transition-all duration-300 hover:-translate-y-2"
+           data-aos="fade-up" data-aos-delay="400">
+        <div class="w-14 h-14 rounded-2xl bg-[#F9B400] text-[#3D1A6D] flex items-center justify-center text-2xl mx-auto shadow-lg group-hover:scale-110 transition">
           <i class="fa-solid fa-circle-check"></i>
         </div>
-        <h4 class="text-base font-bold text-indigo-950">تصحيح إلكتروني</h4>
-        <p class="text-xs font-medium text-purple-900/70 leading-relaxed max-w-[140px]">تصحيح دقيق وسريع مع الملاحظات</p>
+        <h3 class="mt-4 font-bold text-white">تصحيح إلكتروني</h3>
+        <p class="mt-2 text-sm text-white/70">تصحيح فوري مع ملاحظات المعلم.</p>
       </div>
 
-      <!-- 5. متابعة ولي الأمر -->
-      <div class="flex flex-col items-center text-center p-3 space-y-3 pt-4 md:pt-0" data-aos="fade-up" data-aos-delay="500">
-        <div class="w-12 h-12 flex items-center justify-center text-purple-800 text-3xl">
+      <div class="group rounded-3xl bg-white/10 backdrop-blur-md border border-white/10 p-5 text-center hover:bg-white/20 transition-all duration-300 hover:-translate-y-2"
+           data-aos="fade-up" data-aos-delay="500">
+        <div class="w-14 h-14 rounded-2xl bg-[#F9B400] text-[#3D1A6D] flex items-center justify-center text-2xl mx-auto shadow-lg group-hover:scale-110 transition">
           <i class="fa-solid fa-user-group"></i>
         </div>
-        <h4 class="text-base font-bold text-indigo-950">متابعة ولي الأمر</h4>
-        <p class="text-xs font-medium text-purple-900/70 leading-relaxed max-w-[140px]">تقارير مفصلة لولي الأمر</p>
+        <h3 class="mt-4 font-bold text-white">متابعة ولي الأمر</h3>
+        <p class="mt-2 text-sm text-white/70">متابعة مستمرة لمستوى الأبناء.</p>
       </div>
 
-      <!-- 6. تقارير أداء -->
-      <div class="flex flex-col items-center text-center p-3 space-y-3 pt-4 md:pt-0" data-aos="fade-up" data-aos-delay="600">
-        <div class="w-12 h-12 flex items-center justify-center text-purple-800 text-3xl">
-          <i class="fa-solid fa-chart-simple"></i>
+      <div class="group rounded-3xl bg-white/10 backdrop-blur-md border border-white/10 p-5 text-center hover:bg-white/20 transition-all duration-300 hover:-translate-y-2"
+           data-aos="fade-up" data-aos-delay="600">
+        <div class="w-14 h-14 rounded-2xl bg-[#F9B400] text-[#3D1A6D] flex items-center justify-center text-2xl mx-auto shadow-lg group-hover:scale-110 transition">
+          <i class="fa-solid fa-chart-line"></i>
         </div>
-        <h4 class="text-base font-bold text-indigo-950">تقارير أداء</h4>
-        <p class="text-xs font-medium text-purple-900/70 leading-relaxed max-w-[140px]">تحليل شامل لأدائك وتطورك</p>
+        <h3 class="mt-4 font-bold text-white">تقارير الأداء</h3>
+        <p class="mt-2 text-sm text-white/70">تحليل كامل لتقدم الطالب.</p>
       </div>
 
     </div>
   </div>
 </section>
 
-
-<!-- 3. Banner Section (دخول من الطرفين) -->
-<section dir="ltr" class="w-full max-w-7xl mx-auto px-4 py-4" data-aos="fade-up">
-  <div
-    class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#4A148C] via-[#5E17EB] to-[#45129E] px-6 md:px-10 py-5 shadow-xl flex flex-col md:flex-row items-center justify-between gap-4">
+<!-- 3. Banner Section -->
+<section dir="ltr" class="w-full max-w-7xl mx-auto px-4 py-4" data-aos="zoom-in-up" data-aos-duration="800">
+  <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#4A148C] via-[#5E17EB] to-[#45129E] px-6 md:px-10 py-5 shadow-xl flex flex-col md:flex-row items-center justify-between gap-4">
 
     <!-- البومة -->
-    <div
-      class="relative flex items-center justify-center shrink-0"
-      data-aos="fade-right"
-      data-aos-delay="200">
-
+    <div class="relative flex items-center justify-center shrink-0" data-aos="fade-right" data-aos-delay="250">
       <span class="absolute -top-2 left-4 text-yellow-300 animate-pulse">✦</span>
       <span class="absolute bottom-2 right-2 text-purple-300">✦</span>
-
-      <img
-        src="/images/owl-banner.png"
-        alt="بسطهالي"
-        class="w-32 md:w-44 h-auto object-contain drop-shadow-xl" />
+      <img src="/images/owl-banner.png" alt="بسطهالي" class="w-32 md:w-44 h-auto object-contain drop-shadow-xl" />
     </div>
 
     <!-- المحتوى -->
-    <div
-      class="flex-1 flex flex-col md:items-end items-center text-center md:text-right text-white"
-      data-aos="fade-left"
-      data-aos-delay="300">
-
-      <span
-        class="mb-2 inline-flex items-center rounded-full bg-yellow-400/20 border border-yellow-300/30 px-4 py-1 text-sm font-semibold text-yellow-200">
+    <div class="flex-1 flex flex-col md:items-end items-center text-center md:text-right text-white" data-aos="fade-left" data-aos-delay="350">
+      <span class="mb-2 inline-flex items-center rounded-full bg-yellow-400/20 border border-yellow-300/30 px-4 py-1 text-sm font-semibold text-yellow-200">
         🎁 عرض لفترة محدودة
       </span>
-
       <h2 class="text-2xl md:text-4xl font-extrabold">
         جرّب أول حصة <span class="text-yellow-300">مجانًا</span>
       </h2>
-
       <p class="mt-2 text-purple-100 text-base md:text-lg">
         احجز حصتك التجريبية المجانية وتعرّف على أسلوب الشرح قبل الاشتراك.
       </p>
-
       <div class="mt-4">
-        <a
-          href="https://wa.me/971525250833?text=السلام%20عليكم،%20أرغب%20في%20حجز%20أول%20حصة%20تجريبية%20مجانية."
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-3 bg-[#FFC107] hover:bg-[#FFC108] text-black font-bold px-7 py-3 rounded-2xl shadow-lg transition duration-300 hover:scale-105">
-
+        <a href="https://wa.me/971525250833?text=السلام%20عليكم،%20أرغب%20في%20حجز%20أول%20حصة%20تجريبية%20مجانية."
+           target="_blank"
+           rel="noopener noreferrer"
+           class="inline-flex items-center gap-3 bg-[#FFC107] hover:bg-[#FFC108] text-black font-bold px-7 py-3 rounded-2xl shadow-lg transition duration-300 hover:scale-105">
           <i class="pi pi-whatsapp text-xl"></i>
           احجز الآن عبر واتساب
         </a>
@@ -176,86 +169,22 @@
 
   </div>
 </section>
-<!-- 4. الأرقام والإحصائيات (Flip Up Animation) -->
-<section class="max-w-7xl mx-auto p-4" data-aos="flip-up" data-aos-duration="800">
-  <div class="bg-white rounded-3xl shadow-md border border-gray-100 p-4 md:py-6 md:px-6">
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
 
-      <!-- Item 1 -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 p-4 rounded-2xl bg-purple-50/50 md:bg-transparent border border-purple-100/50 md:border-none">
-        <svg class="w-10 h-10 text-purple-700 shrink-0" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
-        </svg>
-        <div class="text-center sm:text-right">
-          <h3 class="text-2xl lg:text-3xl font-extrabold text-purple-900 tracking-tight">+500</h3>
-          <p class="text-sm font-semibold text-purple-900/70 mt-0.5">طالب وطالبة</p>
-        </div>
-      </div>
+<!-- 5. ماذا يقول طلابنا -->
+<section class="max-w-6xl mx-auto px-4 py-8" data-aos="fade-up" data-aos-duration="800">
+  <app-section-header title="ماذا يقول طلابنا؟" />
 
-      <!-- Item 2 -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 p-4 rounded-2xl bg-purple-50/50 md:bg-transparent border border-purple-100/50 md:border-none">
-        <svg class="w-10 h-10 text-purple-700 shrink-0" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>
-        </svg>
-        <div class="text-center sm:text-right">
-          <h3 class="text-2xl lg:text-3xl font-extrabold text-purple-900 tracking-tight">+700</h3>
-          <p class="text-sm font-semibold text-purple-900/70 mt-0.5">درس مشروح</p>
-        </div>
-      </div>
-
-      <!-- Item 3 -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 p-4 rounded-2xl bg-purple-50/50 md:bg-transparent border border-purple-100/50 md:border-none">
-        <svg class="w-10 h-10 text-purple-700 shrink-0" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.35-.75-2.5-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/>
-        </svg>
-        <div class="text-center sm:text-right">
-          <h3 class="text-2xl lg:text-3xl font-extrabold text-purple-900 tracking-tight">+1,000</h3>
-          <p class="text-sm font-semibold text-purple-900/70 mt-0.5">ملف تعليمي</p>
-        </div>
-      </div>
-
-      <!-- Item 4 -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 p-4 rounded-2xl bg-purple-50/50 md:bg-transparent border border-purple-100/50 md:border-none">
-        <svg class="w-10 h-10 text-purple-700 shrink-0" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/>
-        </svg>
-        <div class="text-center sm:text-right">
-          <h3 class="text-2xl lg:text-3xl font-extrabold text-purple-900 tracking-tight">+20,000</h3>
-          <p class="text-sm font-semibold text-purple-900/70 mt-0.5">اختبار تم حله</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-<!-- 5. ماذا يقول طلابنا (Zoom in) -->
-<section class="max-w-6xl mx-auto px-4 py-8" data-aos="zoom-in-up">
-  <app-section-header title="ماذا يقول طلابنا؟ " />
-
-  <div
-    class="relative flex items-center px-2"
-    (mouseenter)="stopAutoPlay()"
-    (mouseleave)="startAutoPlay()"
-  >
-    <button
-      (click)="scrollRight()"
-      type="button"
-      aria-label="Next"
-      class="absolute -right-2 md:-right-4 z-20 w-8 h-8 md:w-9 md:h-9 rounded-full bg-white shadow-md border border-purple-100 flex items-center justify-center text-purple-600 hover:bg-purple-50 transition-all focus:outline-none"
-    >
+  <div class="relative flex items-center px-2" (mouseenter)="stopAutoPlay()" (mouseleave)="startAutoPlay()">
+    <button (click)="scrollRight()" type="button" aria-label="Next"
+            class="absolute -right-2 md:-right-4 z-20 w-8 h-8 md:w-9 md:h-9 rounded-full bg-white shadow-md border border-purple-100 flex items-center justify-center text-purple-600 hover:bg-purple-50 transition-all focus:outline-none">
       <i class="fa-solid fa-chevron-right text-xs md:text-sm"></i>
     </button>
 
-    <div
-      #sliderTrack
-      class="flex gap-4 overflow-x-auto no-scrollbar scroll-smooth py-2 px-1 w-full"
-      style="scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;"
-    >
+    <div #sliderTrack class="flex gap-4 overflow-x-auto no-scrollbar scroll-smooth py-2 px-1 w-full"
+         style="scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;">
       @for (item of testimonials; track item.id) {
-        <div
-          class="w-[82%] sm:w-[48%] lg:w-[calc(33.333%-11px)] shrink-0 bg-[#f8f7ff] rounded-2xl p-4 md:p-5 text-center flex flex-col items-center justify-between border border-purple-50/60 shadow-xs relative"
-          style="scroll-snap-align: start;"
-        >
+        <div class="w-[82%] sm:w-[48%] lg:w-[calc(33.333%-11px)] shrink-0 bg-[#f8f7ff] rounded-2xl p-4 md:p-5 text-center flex flex-col items-center justify-between border border-purple-50/60 shadow-xs relative"
+             style="scroll-snap-align: start;">
           <div class="w-full text-right text-[#9b8bc4]/50 text-xl font-serif select-none leading-none">
             <i class="fa-solid fa-quote-right"></i>
           </div>
@@ -282,27 +211,21 @@
       }
     </div>
 
-    <button
-      (click)="scrollLeft()"
-      type="button"
-      aria-label="Previous"
-      class="absolute -left-2 md:-left-4 z-20 w-8 h-8 md:w-9 md:h-9 rounded-full bg-white shadow-md border border-purple-100 flex items-center justify-center text-purple-600 hover:bg-purple-50 transition-all focus:outline-none"
-    >
+    <button (click)="scrollLeft()" type="button" aria-label="Previous"
+            class="absolute -left-2 md:-left-4 z-20 w-8 h-8 md:w-9 md:h-9 rounded-full bg-white shadow-md border border-purple-100 flex items-center justify-center text-purple-600 hover:bg-purple-50 transition-all focus:outline-none">
       <i class="fa-solid fa-chevron-left text-xs md:text-sm"></i>
     </button>
-
   </div>
 </section>
 
-
-<!-- 6. WhatsApp CTA Section (Fade Up) -->
-<section class="max-w-5xl mx-auto px-4 py-8" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+<!-- 6. WhatsApp CTA Section -->
+<section class="max-w-5xl mx-auto px-4 py-8" data-aos="zoom-in" data-aos-duration="800">
   <div class="relative bg-gradient-to-r from-[#4c1d95] via-[#5b21b6] to-[#6d28d9] text-white rounded-[2rem] p-6 md:p-8 flex flex-col md:flex-row items-center justify-between shadow-xl overflow-hidden">
 
     <i class="fa-solid fa-sparkles absolute top-4 right-8 text-white/20 text-xl pointer-events-none"></i>
     <i class="fa-solid fa-star-of-life absolute bottom-4 right-1/4 text-white/10 text-xs pointer-events-none"></i>
 
-    <div class="flex flex-col items-center md:items-start text-center md:text-right z-10 w-full md:w-auto mb-6 md:mb-0">
+    <div class="flex flex-col items-center md:items-start text-center md:text-right z-10 w-full md:w-auto mb-6 md:mb-0" data-aos="fade-right" data-aos-delay="200">
       <h2 class="text-2xl md:text-3xl font-extrabold mb-2 tracking-wide">
         تواصل معنا على واتساب
       </h2>
@@ -311,18 +234,16 @@
         نحن هنا لمساعدتك والإجابة على استفساراتك
       </p>
 
-      <a
-        href="https://wa.me/971525250833"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center justify-center gap-2.5 bg-white text-[#4c1d95] hover:bg-gray-100 font-bold text-sm md:text-base px-8 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0"
-      >
+      <a href="https://wa.me/971525250833"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="inline-flex items-center justify-center gap-2.5 bg-white text-[#4c1d95] hover:bg-gray-100 font-bold text-sm md:text-base px-8 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0">
         <i class="fa-brands fa-whatsapp text-green-500 text-lg md:text-xl"></i>
         <span>تواصل معنا</span>
       </a>
     </div>
 
-    <div class="relative z-10 flex items-center justify-center shrink-0">
+    <div class="relative z-10 flex items-center justify-center shrink-0" data-aos="zoom-in" data-aos-delay="300">
       <div class="w-24 h-24 md:w-32 md:h-32 bg-gradient-to-tr from-green-600 to-green-400 rounded-full flex items-center justify-center shadow-2xl border-4 border-white/20 transform hover:scale-105 transition-transform duration-300">
         <i class="fa-brands fa-whatsapp text-white text-5xl md:text-7xl drop-shadow-md"></i>
       </div>
