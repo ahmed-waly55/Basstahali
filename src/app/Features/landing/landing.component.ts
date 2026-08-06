@@ -58,7 +58,7 @@ export class LandingComponent implements OnInit, OnDestroy {
     if (isPlatformBrowser(this.platformId)) {
       AOS.init({
         duration: 700,
-        once: true,
+        once: false,
         offset: 100,
         easing: 'ease-in-out',
       });
