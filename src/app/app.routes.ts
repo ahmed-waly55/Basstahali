@@ -16,6 +16,11 @@ export const routes: Routes = [
         // {path: "curriculum/:stageId" , loadComponent:()=> import("./Features/curriculum/curriculum.component").then(m => m.CurriculumComponent), title:"بسطهالي | المناهج الدراسية"},
 
     ]},
+    {path:"dashboard", loadComponent:()=> import("./layouts/dashboard-layout/dashboard-layout.component").then(m => m.DashboardLayoutComponent), title:"بسطهالي | لوحة التحكم",
+    children:[]
+    },
+
+
 
     {path:"auth", loadComponent:()=> import("./layouts/auth-layout/auth-layout.component").then(m => m.AuthLayoutComponent), title:"بسطهالي | تسجيل الدخول",
     children:[

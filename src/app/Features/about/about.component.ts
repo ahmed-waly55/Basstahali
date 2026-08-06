@@ -43,7 +43,7 @@ export class AboutComponent implements OnInit, AfterViewInit {
     if (isPlatformBrowser(this.platformId)) {
       AOS.init({
         duration: 900,
-        once: true,
+        once: false,
         offset: 120,
         easing: 'ease-out-cubic',
         mirror: false
