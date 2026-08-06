@@ -1,0 +1,125 @@
+<div class="space-y-6 text-right font-sans pb-10 overflow-y-auto scrollbar-none h-full bg-slate-50/50 p-4 rounded-3xl">
+
+  <!-- 1. Top Stat Cards (إحصائيات الطالب بتصميم هادي وموحد) -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+    <!-- الحصص المحضورة -->
+    <div class="bg-white p-5 rounded-3xl shadow-sm border border-slate-100 flex items-center justify-between">
+      <div class="space-y-1">
+        <p class="text-xs font-medium text-slate-500">الحصص المحضورة</p>
+        <h3 class="text-2xl font-black text-slate-900">{{ totalAttendedSessions }}</h3>
+        <span class="text-[11px] text-emerald-600 font-bold">حصة مكتملة</span>
+      </div>
+      <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl shrink-0">
+        <i class="fa-regular fa-calendar-check"></i>
+      </div>
+    </div>
+
+    <!-- الواجبات المسلمة -->
+    <div class="bg-white p-5 rounded-3xl shadow-sm border border-slate-100 flex items-center justify-between">
+      <div class="space-y-1">
+        <p class="text-xs font-medium text-slate-500">الواجبات المسلمة</p>
+        <h3 class="text-2xl font-black text-slate-900">{{ completedAssignmentsCount }}</h3>
+        <span class="text-[11px] text-indigo-600 font-bold">تم التصحيح</span>
+      </div>
+      <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl shrink-0">
+        <i class="fa-regular fa-file-lines"></i>
+      </div>
+    </div>
+
+    <!-- الاختبارات القادمة -->
+    <div class="bg-white p-5 rounded-3xl shadow-sm border border-slate-100 flex items-center justify-between">
+      <div class="space-y-1">
+        <p class="text-xs font-medium text-slate-500">الاختبارات القادمة</p>
+        <h3 class="text-2xl font-black text-slate-900">{{ pendingExamsCount }}</h3>
+        <span class="text-[11px] text-amber-600 font-bold">هذا الأسبوع</span>
+      </div>
+      <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-500 flex items-center justify-center text-xl shrink-0">
+        <i class="fa-solid fa-clipboard-question"></i>
+      </div>
+    </div>
+
+    <!-- المعدل التراكمي -->
+    <div class="bg-white p-5 rounded-3xl shadow-sm border border-slate-100 flex items-center justify-between">
+      <div class="space-y-1">
+        <p class="text-xs font-medium text-slate-500">معدل الأداء</p>
+        <h3 class="text-2xl font-black text-slate-900">{{ studentAverageGrade }}</h3>
+        <span class="text-[11px] text-purple-600 font-bold">مستوى ممتاز</span>
+      </div>
+      <div class="w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center text-xl shrink-0">
+        <i class="fa-solid fa-chart-line"></i>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 2. Main Content Grid (الحصص القادمة والواجبات) -->
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+    <!-- الحصص القادمة والعدادات التنازلية -->
+    <div class="lg:col-span-2 space-y-4">
+      <h3 class="font-black text-slate-900 text-base flex items-center gap-2">
+        <i class="fa-regular fa-clock text-indigo-600"></i>
+        حصصك القادمة ومواعيد الانضمام
+      </h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        @for (session of upcomingSessions; track session.id) {
+          <div class="bg-white p-5 rounded-3xl shadow-sm border border-slate-100 flex flex-col justify-between space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-2xl {{ session.bgColor }} flex items-center justify-center text-base font-bold shrink-0">
+                  <i class="fa-solid {{ session.icon }}"></i>
+                </div>
+                <div>
+                  <h4 class="font-black text-slate-900 text-xs">{{ session.subject }}</h4>
+                  <p class="text-[10px] text-slate-500 mt-0.5">{{ session.teacher }}</p>
+                </div>
+              </div>
+              <span class="px-2.5 py-1 bg-slate-100 text-slate-700 font-bold text-[10px] rounded-xl">{{ session.dayLabel }}</span>
+            </div>
+
+            <div class="p-3.5 bg-slate-50/80 rounded-2xl border border-slate-100 flex items-center justify-between">
+              <span class="text-[10px] font-bold text-slate-600">{{ session.countdownText }}</span>
+              <button
+                [disabled]="!session.canJoin"
+                (click)="joinSession(session.meetingUrl)"
+                [class]="session.canJoin ? 'bg-emerald-600 text-white hover:bg-emerald-700 shadow-sm shadow-emerald-200 cursor-pointer' : 'bg-slate-200 text-slate-400 cursor-not-allowed'"
+                class="px-3.5 py-1.5 rounded-xl text-[10px] font-bold transition-all">
+                دخول الحصة
+              </button>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- الواجبات المطلوبة -->
+    <div class="space-y-4">
+      <h3 class="font-black text-slate-900 text-base flex items-center gap-2">
+        <i class="fa-regular fa-clipboard text-indigo-600"></i>
+        الواجبات المطلوبة منك
+      </h3>
+
+      <div class="bg-white p-5 rounded-3xl shadow-sm border border-slate-100 space-y-3">
+        @for (assignment of pendingAssignments; track assignment.title) {
+          <div class="p-3.5 bg-slate-50/80 rounded-2xl border border-slate-100 space-y-2">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="w-7 h-7 rounded-lg bg-rose-50 text-rose-600 flex items-center justify-center font-bold text-[10px]">{{ assignment.fileType }}</span>
+                <div>
+                  <h4 class="font-bold text-slate-900 text-xs">{{ assignment.title }}</h4>
+                  <p class="text-[10px] text-slate-500">{{ assignment.subject }}</p>
+                </div>
+              </div>
+              <span class="text-[10px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-md">{{ assignment.deadline }}</span>
+            </div>
+          </div>
+        }
+        <button class="w-full mt-2 text-center text-xs font-bold text-indigo-600 hover:underline">عرض كل الواجبات والامتحانات</button>
+      </div>
+    </div>
+
+  </div>
+
+</div>
