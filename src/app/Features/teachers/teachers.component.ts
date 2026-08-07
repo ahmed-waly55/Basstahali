@@ -1,5 +1,5 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { Component, OnInit, inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, inject, PLATFORM_ID, ChangeDetectionStrategy } from '@angular/core';
 import * as AOS from 'aos';
 
 export interface Teacher {
@@ -19,6 +19,7 @@ export interface Teacher {
   standalone: true,
   imports: [CommonModule],
   templateUrl: './teachers.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './teachers.component.css',
 })
 export class TeachersComponent implements OnInit {
@@ -43,8 +44,9 @@ export class TeachersComponent implements OnInit {
       experience: 10,
       rating: 4.9,
       reviewsCount: 128,
-      avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop',
-      bio: 'متخصص في تدريس المناهج الإماراتية ومساعدة الطلاب على تفوقهم في القدرات والاختبارات الوطنية.'
+      avatar:
+        'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop',
+      bio: 'متخصص في تدريس المناهج الإماراتية ومساعدة الطلاب على تفوقهم في القدرات والاختبارات الوطنية.',
     },
     {
       id: 2,
@@ -54,8 +56,9 @@ export class TeachersComponent implements OnInit {
       experience: 8,
       rating: 4.8,
       reviewsCount: 95,
-      avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop',
-      bio: 'خبرة طويلة في تأسيس اللغات والتجهيز لاختبارات IELTS والمحادثة بطرق مبسطة.'
+      avatar:
+        'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop',
+      bio: 'خبرة طويلة في تأسيس اللغات والتجهيز لاختبارات IELTS والمحادثة بطرق مبسطة.',
     },
     {
       id: 3,
@@ -65,8 +68,9 @@ export class TeachersComponent implements OnInit {
       experience: 12,
       rating: 5.0,
       reviewsCount: 150,
-      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop',
-      bio: 'أسلوب تبسيطي فريد يحول المفاهيم المعقدة إلى تجارب ذهنية وتطبيقات عملية ممتعة.'
+      avatar:
+        'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop',
+      bio: 'أسلوب تبسيطي فريد يحول المفاهيم المعقدة إلى تجارب ذهنية وتطبيقات عملية ممتعة.',
     },
     {
       id: 4,
@@ -76,9 +80,10 @@ export class TeachersComponent implements OnInit {
       experience: 7,
       rating: 4.9,
       reviewsCount: 84,
-      avatar: 'https://images.unsplash.com/photo-1580894732413-801199468593?q=80&w=400&auto=format&fit=crop',
-      bio: 'متخصصة في النحو والتأسيس القوي في القراءة والكتابة والفرق بين التعبير والبلاغة.'
-    }
+      avatar:
+        'https://images.unsplash.com/photo-1580894732413-801199468593?q=80&w=400&auto=format&fit=crop',
+      bio: 'متخصصة في النحو والتأسيس القوي في القراءة والكتابة والفرق بين التعبير والبلاغة.',
+    },
   ];
 
   ngOnInit(): void {
@@ -95,7 +100,7 @@ export class TeachersComponent implements OnInit {
     if (this.selectedCategory === 'all') {
       return this.teachers;
     }
-    return this.teachers.filter(t => t.categoryId === this.selectedCategory);
+    return this.teachers.filter((t) => t.categoryId === this.selectedCategory);
   }
 
   selectCategory(categoryId: string) {

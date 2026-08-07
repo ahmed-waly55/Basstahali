@@ -1,16 +1,19 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, OnInit, ViewChild, ChangeDetectionStrategy, inject, PLATFORM_ID } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import * as AOS from 'aos';
+import AOS from 'aos';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './contact.component.html',
+  changeDetection: ChangeDetectionStrategy.Default,
   styleUrl: './contact.component.css',
 })
 export class ContactComponent implements OnInit {
+  private platformId = inject(PLATFORM_ID);
+
   // الوصول للنموذج مباشرة لتفادي خطأ undefined
   @ViewChild('contactForm') contactForm!: NgForm;
 
@@ -19,7 +22,7 @@ export class ContactComponent implements OnInit {
     phone: '',
     email: '',
     subject: 'general',
-    message: ''
+    message: '',
   };
 
   isSubmitting = false;
@@ -27,14 +30,17 @@ export class ContactComponent implements OnInit {
   // إشعار نجاح الإرسال (Custom Toast)
   toast = {
     show: false,
-    message: ''
+    message: '',
   };
 
   ngOnInit(): void {
-    AOS.init({
-      duration: 800,
-      once: true,
-    });
+    // التأكد من تشغيل مكتبة AOS في المتصفح فقط لمنع مشاكل الـ SSR
+    if (isPlatformBrowser(this.platformId)) {
+      AOS.init({
+        duration: 800,
+        once: true,
+      });
+    }
   }
 
   onSubmit() {
@@ -52,12 +58,12 @@ export class ContactComponent implements OnInit {
       // 1. إظهار الإشعار المخصص
       this.toast = {
         show: true,
-        message: 'تم إرسال رسالتك بنجاح! سنقوم بالتواصل معك قريباً.'
+        message: 'تم إرسال رسالتك بنجاح! سنقوم بالتواصل معك قريباً.',
       };
 
       // 2. إعادة تعيين النموذج بدون مشاكل الـ Validation
       this.contactForm.resetForm({
-        subject: 'general'
+        subject: 'general',
       });
 
       this.isSubmitting = false;
@@ -66,7 +72,6 @@ export class ContactComponent implements OnInit {
       setTimeout(() => {
         this.toast.show = false;
       }, 3000);
-
     }, 800);
   }
 }

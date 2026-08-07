@@ -1,9 +1,10 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-section-header',
   imports: [],
   templateUrl: './section-header.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './section-header.component.css',
 })
 export class SectionHeaderComponent {

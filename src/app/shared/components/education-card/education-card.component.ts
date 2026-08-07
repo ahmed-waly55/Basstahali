@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { Component, input, output, ChangeDetectionStrategy } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -6,10 +6,10 @@ import { NgClass } from '@angular/common';
   standalone: true,
   imports: [NgClass],
   templateUrl: './education-card.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './education-card.component.css',
 })
 export class EducationCardComponent {
-
   title = input.required<string>();
   subtitle = input.required<string>();
 
@@ -25,14 +25,11 @@ export class EducationCardComponent {
 
   lineColor = input('bg-indigo-500');
 
-  buttonColor = input(
-    'border-indigo-500 text-indigo-600 hover:bg-indigo-600 hover:text-white'
-  );
+  buttonColor = input('border-indigo-500 text-indigo-600 hover:bg-indigo-600 hover:text-white');
 
   explore = output<void>();
 
   onExploreClick() {
     this.explore.emit();
   }
-
 }

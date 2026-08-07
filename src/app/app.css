@@ -5,3 +5,17 @@
   justify-content: space-between;
   overflow-x: hidden;
 }
+
+
+/* إخفاء شريط التمرير لجميع العناصر في الصفحة */
+* {
+  /* لمتصفحات Firefox */
+  scrollbar-width: none;
+  /* لمتصفحات IE و Edge */
+  -ms-overflow-style: none;
+}
+
+/* لمتصفحات Chrome و Safari و Opera */
+*::-webkit-scrollbar {
+  display: none;
+}

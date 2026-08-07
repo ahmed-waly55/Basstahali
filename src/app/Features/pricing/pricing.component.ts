@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import * as AOS from 'aos';
 
 export interface PlanFeature {
@@ -23,6 +23,7 @@ export interface PricingPlan {
   standalone: true,
   imports: [CommonModule],
   templateUrl: './pricing.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './pricing.component.css',
 })
 export class PricingComponent implements OnInit {
@@ -43,7 +44,7 @@ export class PricingComponent implements OnInit {
         { text: 'رفع الواجبات والتصحيح الإلكتروني', included: true },
         { text: 'تقارير أداء دورية', included: false },
         { text: 'متابعة مباشرة مع معلم الخاص', included: false },
-      ]
+      ],
     },
     {
       id: 'pro',
@@ -59,7 +60,7 @@ export class PricingComponent implements OnInit {
         { text: 'رفع الواجبات وتصحيح فوري ملاحظات', included: true },
         { text: 'لوحة متابعة خاصة لولي الأمر وتقارير أداء', included: true },
         { text: 'حذف الإعلانات والوصول للمواد الإثرائية', included: true },
-      ]
+      ],
     },
     {
       id: 'vip',
@@ -75,8 +76,8 @@ export class PricingComponent implements OnInit {
         { text: 'معلم خاص للرد على الاستفسارات 24/7', included: true },
         { text: 'نماذج امتحانات محلولة ومراجعات ليلة الامتحان', included: true },
         { text: 'جلسات استشارية دورية مع ولي الأمر', included: true },
-      ]
-    }
+      ],
+    },
   ];
 
   ngOnInit(): void {
@@ -92,7 +93,9 @@ export class PricingComponent implements OnInit {
 
   getSubscribeLink(planName: string): string {
     const cycle = this.isAnnual ? 'السنوي' : 'الشهري';
-    const message = encodeURIComponent(`السلام عليكم، أرغب في الاشتراك في ${planName} بالنظام ${cycle}.`);
+    const message = encodeURIComponent(
+      `السلام عليكم، أرغب في الاشتراك في ${planName} بالنظام ${cycle}.`,
+    );
     return `https://wa.me/971525250833?text=${message}`;
   }
 }

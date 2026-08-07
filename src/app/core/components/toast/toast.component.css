@@ -1,0 +1,136 @@
+/* حاوية التنبيهات (تترتب تحت بعضها في الشمال) */
+.toast-container {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 999999;
+  max-width: 90vw;
+  width: 350px;
+}
+
+/* صندوق التوستر الفردي بخلفية متدرجة متحركة */
+.custom-toast-box {
+  position: relative;
+  background: linear-gradient(270deg, #18181b, #27272a, #1e1b4b);
+  background-size: 600% 600%;
+  color: #f4f4f5;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3), 0 0 1px 1px rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  font-family: inherit;
+  display: flex;
+  flex-direction: column;
+  animation: slideInLeft 0.35s cubic-bezier(0.21, 1.02, 0.73, 1) forwards, gradientAnimation 8s ease infinite;
+}
+
+.toast-body {
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.toast-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+}
+
+.toast-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.toast-message {
+  font-size: 13px;
+  color: #a1a1aa;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  color: #71717a;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 2px;
+  line-height: 1;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+.toast-close:hover {
+  color: #f4f4f5;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* شريط التقدم التنازلي */
+.toast-progress-track {
+  height: 3px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+
+.toast-progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  animation: progressTimer 4s linear forwards;
+}
+
+/* ألوان مؤشرات الحالات */
+.custom-toast-box.success .toast-indicator { background-color: #10b981; }
+.custom-toast-box.success .toast-title { color: #34d399; }
+.custom-toast-box.success .toast-progress-bar { background-color: #10b981; }
+
+.custom-toast-box.error .toast-indicator { background-color: #ef4444; }
+.custom-toast-box.error .toast-title { color: #f87171; }
+.custom-toast-box.error .toast-progress-bar { background-color: #ef4444; }
+
+.custom-toast-box.warning .toast-indicator { background-color: #f59e0b; }
+.custom-toast-box.warning .toast-title { color: #fbbf24; }
+.custom-toast-box.warning .toast-progress-bar { background-color: #f59e0b; }
+
+.custom-toast-box.info .toast-indicator { background-color: #3b82f6; }
+.custom-toast-box.info .toast-title { color: #60a5fa; }
+.custom-toast-box.info .toast-progress-bar { background-color: #3b82f6; }
+
+.toast-indicator {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+}
+
+/* الأنيميشنات */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-110%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes progressTimer {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

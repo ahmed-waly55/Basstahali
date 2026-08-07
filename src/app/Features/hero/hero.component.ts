@@ -1,5 +1,15 @@
 import { isPlatformBrowser, NgClass } from '@angular/common';
-import { Component, ElementRef, inject, OnDestroy, PLATFORM_ID, signal, viewChild, afterNextRender } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  inject,
+  OnDestroy,
+  PLATFORM_ID,
+  signal,
+  viewChild,
+  afterNextRender,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 interface Stat {
@@ -24,10 +34,11 @@ interface Feature {
   standalone: true,
   imports: [NgClass, RouterLink],
   templateUrl: './hero.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './hero.component.css',
 })
 export class HeroComponent implements OnDestroy {
- private platformId = inject(PLATFORM_ID);
+  private platformId = inject(PLATFORM_ID);
 
   statsContainer = viewChild<ElementRef<HTMLDivElement>>('statsContainer');
 
@@ -35,16 +46,29 @@ export class HeroComponent implements OnDestroy {
     { target: 500, current: 0, prefix: '+', label: 'طالب', colorClass: 'text-[#4F2DB7]' },
     { target: 100, current: 0, prefix: '+', label: 'مدرس', colorClass: 'text-[#4F2DB7]' },
     { target: 500, current: 0, prefix: '+', label: 'كورس', colorClass: 'text-[#4F2DB7]' },
-    { target: 98, current: 0, suffix: '%', label: 'رضاء العملاء', colorClass: 'text-[#F9B400]' } // 👈 تم حذف decimals: 1
+    { target: 98, current: 0, suffix: '%', label: 'رضاء العملاء', colorClass: 'text-[#F9B400]' }, // 👈 تم حذف decimals: 1
   ]);
 
   features = signal<Feature[]>([
     { icon: 'fa-calendar-days', title: 'تنظيم الحصص', desc: 'جدول ذكي مع تنبيهات للحصص والدروس.' },
-    { icon: 'fa-clipboard-check', title: 'واجبات إلكترونية', desc: 'حل الواجبات واستلام التصحيح مباشرة.' },
+    {
+      icon: 'fa-clipboard-check',
+      title: 'واجبات إلكترونية',
+      desc: 'حل الواجبات واستلام التصحيح مباشرة.',
+    },
     { icon: 'fa-chart-line', title: 'متابعة الأداء', desc: 'تقارير وإحصائيات لمستوى الطالب.' },
     { icon: 'fa-book-open', title: 'مكتبة الدروس', desc: 'فيديوهات وملفات PDF في مكان واحد.' },
-    { icon: 'fa-user-graduate', title: 'أفضل المدرسين', desc: 'نخبة من أفضل المدرسين في الإمارات.' },
-    { icon: 'fa-users', title: 'متابعة ولي الأمر', desc: 'متابعة مستمرة للحضور والدرجات والواجبات.', isHighlighted: true }
+    {
+      icon: 'fa-user-graduate',
+      title: 'أفضل المدرسين',
+      desc: 'نخبة من أفضل المدرسين في الإمارات.',
+    },
+    {
+      icon: 'fa-users',
+      title: 'متابعة ولي الأمر',
+      desc: 'متابعة مستمرة للحضور والدرجات والواجبات.',
+      isHighlighted: true,
+    },
   ]);
 
   private observer?: IntersectionObserver;
@@ -71,7 +95,7 @@ export class HeroComponent implements OnDestroy {
             this.observer?.disconnect();
           }
         },
-        { threshold: 0.3 }
+        { threshold: 0.3 },
       );
       this.observer.observe(container);
     }
@@ -93,9 +117,9 @@ export class HeroComponent implements OnDestroy {
             ...stat,
             current: stat.decimals
               ? parseFloat(rawValue.toFixed(stat.decimals))
-              : Math.floor(rawValue)
+              : Math.floor(rawValue),
           };
-        })
+        }),
       );
 
       if (progress < 1) {
@@ -109,9 +133,7 @@ export class HeroComponent implements OnDestroy {
   }
 
   private showFinalValues(): void {
-    this.stats.update((items) =>
-      items.map((stat) => ({ ...stat, current: stat.target }))
-    );
+    this.stats.update((items) => items.map((stat) => ({ ...stat, current: stat.target })));
   }
 
   formatValue(stat: Stat): string {

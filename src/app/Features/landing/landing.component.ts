@@ -1,20 +1,29 @@
-import { Component, ElementRef, OnInit, OnDestroy, ViewChild, inject, PLATFORM_ID } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  OnInit,
+  OnDestroy,
+  ViewChild,
+  inject,
+  PLATFORM_ID,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
-import { HeroComponent } from "../hero/hero.component";
-import { SectionHeaderComponent } from "../../shared/components/section-header/section-header.component";
+import { HeroComponent } from '../hero/hero.component';
+import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
 import { EducationCardComponent } from '../../shared/components/education-card/education-card.component';
 import AOS from 'aos';
 
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [HeroComponent, SectionHeaderComponent, EducationCardComponent , RouterLink],
+  imports: [HeroComponent, SectionHeaderComponent, EducationCardComponent, RouterLink],
   templateUrl: './landing.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './landing.component.css',
 })
 export class LandingComponent implements OnInit, OnDestroy {
-
   @ViewChild('sliderTrack') sliderTrack!: ElementRef<HTMLDivElement>;
 
   private platformId = inject(PLATFORM_ID);
@@ -29,29 +38,29 @@ export class LandingComponent implements OnInit, OnDestroy {
       quote: 'المنصة ساعدتني أذاكر بسهولة وأحسن مستواي بشكل كبير.',
       name: 'محمد أحمد',
       grade: 'الصف الثاني الثانوي',
-      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Ahmed'
+      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Ahmed',
     },
     {
       id: 2,
       quote: 'شرح المدرسين رائع والتصحيح الإلكتروني بيوفر وقت كبير.',
       name: 'سارة محمود',
       grade: 'الصف الثالث الإعدادي',
-      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sara'
+      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sara',
     },
     {
       id: 3,
       quote: 'واجهة المنصة بسيطة وسهلة والدعم دائماً متعاون.',
       name: 'أحمد علي',
       grade: 'الصف الأول الثانوي',
-      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Ali'
+      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Ali',
     },
     {
       id: 4,
       quote: 'تجربة ممتازة والامتحانات التفاعلية ساعدتني جداً.',
       name: 'منى حسن',
       grade: 'الصف الثالث الثانوي',
-      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Mona'
-    }
+      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Mona',
+    },
   ];
 
   ngOnInit(): void {
@@ -74,9 +83,7 @@ export class LandingComponent implements OnInit, OnDestroy {
   }
 
   onSelectCurriculum(type: string): void {
-
     switch (type) {
-
       case 'uae':
         this.router.navigate(['/curriculum/uae']);
         break;
@@ -88,9 +95,7 @@ export class LandingComponent implements OnInit, OnDestroy {
       default:
         this.router.navigate(['/']);
         break;
-
     }
-
   }
 
   startAutoPlay(): void {
@@ -127,5 +132,4 @@ export class LandingComponent implements OnInit, OnDestroy {
       el.scrollBy({ left: this.scrollStep, behavior: 'smooth' });
     }
   }
-
 }

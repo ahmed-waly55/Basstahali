@@ -1,0 +1,23 @@
+<div class="toast-container">
+  @for (toast of toastService.toasts(); track toast.id) {
+    <div class="custom-toast-box" [ngClass]="toast.type">
+      <div class="toast-indicator"></div>
+
+      <div class="toast-body">
+        <div class="toast-content">
+          @if (toast.title) {
+            <h4 class="toast-title">{{ toast.title }}</h4>
+          }
+          <p class="toast-message">{{ toast.message }}</p>
+        </div>
+
+        <button class="toast-close" (click)="toastService.remove(toast.id)">✕</button>
+      </div>
+
+      <!-- شريط العد التنازلي -->
+      <div class="toast-progress-track">
+        <div class="toast-progress-bar"></div>
+      </div>
+    </div>
+  }
+</div>

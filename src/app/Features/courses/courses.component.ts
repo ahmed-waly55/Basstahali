@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import * as AOS from 'aos';
 
 export interface Course {
@@ -25,6 +25,7 @@ export interface Course {
   selector: 'app-courses',
   imports: [CommonModule],
   templateUrl: './courses.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './courses.component.css',
 })
 export class CoursesComponent implements OnInit {
@@ -49,12 +50,15 @@ export class CoursesComponent implements OnInit {
       reviewsCount: 86,
       lessonsCount: 32,
       duration: '18 ساعة',
-      thumbnail: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=600&auto=format&fit=crop',
-      description: 'شرح كامل للمنهج شاملاً التفاضل والتكامل، مع حل نماذج الامتحانات السابقة بالتفصيل.',
+      thumbnail:
+        'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=600&auto=format&fit=crop',
+      description:
+        'شرح كامل للمنهج شاملاً التفاضل والتكامل، مع حل نماذج الامتحانات السابقة بالتفصيل.',
       instructor: {
         name: 'أ. أحمد سليمان',
-        avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=150&auto=format&fit=crop'
-      }
+        avatar:
+          'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=150&auto=format&fit=crop',
+      },
     },
     {
       id: 'physics-11',
@@ -67,12 +71,14 @@ export class CoursesComponent implements OnInit {
       reviewsCount: 64,
       lessonsCount: 24,
       duration: '14 ساعة',
-      thumbnail: 'https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?q=80&w=600&auto=format&fit=crop',
+      thumbnail:
+        'https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?q=80&w=600&auto=format&fit=crop',
       description: 'تغطية شاملة لمفاهيم الحركة والقوى والطاقة مع تجارب تفاعلية ومسائل محلولة.',
       instructor: {
         name: 'د. محمد الكردي',
-        avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop'
-      }
+        avatar:
+          'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop',
+      },
     },
     {
       id: 'english-prep',
@@ -85,19 +91,22 @@ export class CoursesComponent implements OnInit {
       reviewsCount: 112,
       lessonsCount: 20,
       duration: '10 ساعات',
-      thumbnail: 'https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=600&auto=format&fit=crop',
-      description: 'تطوير مهارات القراءة، الكتابة، والقواعد الأساسية لتأهيل الطالب لاختبارات الفصل.',
+      thumbnail:
+        'https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=600&auto=format&fit=crop',
+      description:
+        'تطوير مهارات القراءة، الكتابة، والقواعد الأساسية لتأهيل الطالب لاختبارات الفصل.',
       instructor: {
         name: 'أ. سارة محمود',
-        avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=150&auto=format&fit=crop'
-      }
-    }
+        avatar:
+          'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=150&auto=format&fit=crop',
+      },
+    },
   ];
 
   ngOnInit(): void {
     AOS.init({
       duration: 1000, // مدة الحركة بالمللي ثانية
-      once: true,     // تشغيل الحركة مرة واحدة فقط أثناء التمرير
+      once: true, // تشغيل الحركة مرة واحدة فقط أثناء التمرير
     });
   }
 
@@ -105,7 +114,7 @@ export class CoursesComponent implements OnInit {
     if (this.selectedCategory === 'all') {
       return this.courses;
     }
-    return this.courses.filter(c => c.categoryId === this.selectedCategory);
+    return this.courses.filter((c) => c.categoryId === this.selectedCategory);
   }
 
   selectCategory(categoryId: string) {
