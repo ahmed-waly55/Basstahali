@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, OnInit, ChangeDetectionStrategy, inject, PLATFORM_ID } from '@angular/core';
 import * as AOS from 'aos';
 
 export interface PlanFeature {
@@ -23,10 +23,12 @@ export interface PricingPlan {
   standalone: true,
   imports: [CommonModule],
   templateUrl: './pricing.component.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.Default,
   styleUrl: './pricing.component.css',
 })
 export class PricingComponent implements OnInit {
+  private platformId = inject(PLATFORM_ID);
+
   isAnnual = false;
 
   plans: PricingPlan[] = [
@@ -81,10 +83,13 @@ export class PricingComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    AOS.init({
-      duration: 800,
-      once: true,
-    });
+    // التأكد من تشغيل AOS في المتصفح فقط لمنع مشاكل الـ SSR
+    if (isPlatformBrowser(this.platformId)) {
+      AOS.init({
+        duration: 800,
+        once: true,
+      });
+    }
   }
 
   toggleBilling() {

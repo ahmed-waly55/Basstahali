@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, OnInit, ChangeDetectionStrategy, inject, PLATFORM_ID } from '@angular/core';
 import * as AOS from 'aos';
 
 export interface Course {
@@ -25,10 +25,12 @@ export interface Course {
   selector: 'app-courses',
   imports: [CommonModule],
   templateUrl: './courses.component.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.Default,
   styleUrl: './courses.component.css',
 })
 export class CoursesComponent implements OnInit {
+  private platformId = inject(PLATFORM_ID);
+
   selectedCategory = 'all';
 
   categories = [
@@ -104,10 +106,13 @@ export class CoursesComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    AOS.init({
-      duration: 1000, // مدة الحركة بالمللي ثانية
-      once: true, // تشغيل الحركة مرة واحدة فقط أثناء التمرير
-    });
+    // التأكد من تشغيل AOS في المتصفح فقط لمنع مشاكل الـ SSR
+    if (isPlatformBrowser(this.platformId)) {
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+    }
   }
 
   get filteredCourses(): Course[] {
@@ -120,10 +125,11 @@ export class CoursesComponent implements OnInit {
   selectCategory(categoryId: string) {
     this.selectedCategory = categoryId;
 
-    // إعادة تحديث AOS بعد تصفية العناصر ليتم تطبيق الحركة على الكروت الظاهرة من جديد
-    setTimeout(() => {
-      AOS.refresh();
-    }, 100);
+    if (isPlatformBrowser(this.platformId)) {
+      setTimeout(() => {
+        AOS.refresh();
+      }, 100);
+    }
   }
 
   getEnrollWhatsAppLink(courseTitle: string): string {
