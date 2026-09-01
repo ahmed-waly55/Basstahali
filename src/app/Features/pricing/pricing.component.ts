@@ -29,6 +29,7 @@ export interface PricingPlan {
 export class PricingComponent implements OnInit {
   private platformId = inject(PLATFORM_ID);
 
+  isShow: boolean = false;
   isAnnual = false;
 
   plans: PricingPlan[] = [
