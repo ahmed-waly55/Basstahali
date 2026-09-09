@@ -7,30 +7,38 @@ import {
   inject,
   PLATFORM_ID,
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
 } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser, CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { HeroComponent } from '../hero/hero.component';
 import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
 import { EducationCardComponent } from '../../shared/components/education-card/education-card.component';
 import AOS from 'aos';
+import { TeacherService } from '../../core/services/teacher.service';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [HeroComponent, SectionHeaderComponent, EducationCardComponent, RouterLink],
+  imports: [CommonModule, HeroComponent, SectionHeaderComponent, EducationCardComponent, RouterLink],
   templateUrl: './landing.component.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.Default,
   styleUrl: './landing.component.css',
 })
 export class LandingComponent implements OnInit, OnDestroy {
   @ViewChild('sliderTrack') sliderTrack!: ElementRef<HTMLDivElement>;
 
+  private teacherService = inject(TeacherService);
   private platformId = inject(PLATFORM_ID);
   private router = inject(Router);
+  private cdr = inject(ChangeDetectorRef);
+  private destroy$ = new Subject<void>(); // Subject لإيقاف الاشتراكات
 
   autoPlayInterval: any;
   scrollStep = 300;
+
+  curriculaList: any[] = [];
 
   testimonials = [
     {
@@ -49,7 +57,7 @@ export class LandingComponent implements OnInit, OnDestroy {
     },
     {
       id: 3,
-      quote: 'واجهة المنصة بسيطة وسهلة والدعم دائماً متعاون.',
+      quote: 'واجهة المنصة بسيطة والسهلة والدعم دائماً متعاون.',
       name: 'أحمد علي',
       grade: 'الصف الأول الثانوي',
       avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Ali',
@@ -74,27 +82,38 @@ export class LandingComponent implements OnInit, OnDestroy {
 
       this.startAutoPlay();
     }
+
+    this.fetchCurricula();
   }
 
+  // تنفيذ الـ ngOnDestroy وإغلاق الاشتراكات بداخلها لتنظيف الذاكرة
   ngOnDestroy(): void {
     if (isPlatformBrowser(this.platformId)) {
       this.stopAutoPlay();
     }
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
-  onSelectCurriculum(type: string): void {
-    switch (type) {
-      case 'uae':
-        this.router.navigate(['/curriculum/uae']);
-        break;
+  fetchCurricula(): void {
+    this.teacherService.getCurricula()
+      .pipe(takeUntil(this.destroy$)) // ربط الاشتراك بـ destroy$ لإلغائه عند الخروج من الصفحة
+      .subscribe({
+        next: (response: any) => {
+          this.curriculaList = response?.data || response || [];
+          this.cdr.markForCheck();
+        },
+        error: (error) => {
+          console.error('خطأ في جلب المناهج:', error);
+        }
+      });
+  }
 
-      case 'courses':
-        this.router.navigate(['/courses']);
-        break;
-
-      default:
-        this.router.navigate(['/']);
-        break;
+  onSelectCurriculum(curriculumId: string): void {
+    if (curriculumId) {
+      this.router.navigate(['/curriculum', curriculumId]);
+    } else {
+      this.router.navigate(['/courses']);
     }
   }
 

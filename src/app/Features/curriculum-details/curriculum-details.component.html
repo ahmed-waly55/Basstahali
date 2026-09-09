@@ -1,1 +1,55 @@
-<p>curriculum-details works!</p>
+<div class="container mx-auto px-4 py-16 max-w-7xl">
+
+
+    <!-- عنوان الصفحة -->
+    <div class="text-center mb-14" data-aos="fade-down">
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-100 text-[#4F2DB7] text-sm font-bold mb-4 shadow-sm">
+        <i class="fa-solid fa-layer-group text-[#F9B400]"></i>
+        <span>المراحل التعليمية</span>
+      </span>
+      <h1 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight">اختر المرحلة الدراسية</h1>
+      <p class="mt-4 text-slate-600 text-lg md:text-xl max-w-2xl mx-auto">استعرض المواد والدروس المقررة وفق أحدث المناهج التعليمية.</p>
+    </div>
+
+    <!-- عرض المراحل التعليمية -->
+    @if (gradeLevels.length > 0) {
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        @for (grade of gradeLevels; track grade.id; let idx = $index) {
+          <div class="bg-white rounded-[2.5rem] p-8 border border-purple-100 shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between transform hover:-translate-y-1.5 group relative overflow-hidden"
+               [attr.data-aos]="'fade-up'" [attr.data-aos-delay]="(idx + 1) * 100">
+
+            <div class="absolute -top-12 -left-12 w-32 h-32 bg-purple-50 rounded-full blur-2xl group-hover:bg-[#F9B400]/20 transition-all duration-300"></div>
+
+            <div class="relative z-10">
+              <div class="w-20 h-20 rounded-3xl bg-purple-50 text-[#4F2DB7] group-hover:bg-[#4F2DB7] group-hover:text-white transition-colors duration-300 flex items-center justify-center text-3xl mb-6 shadow-inner">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-[#4F2DB7] transition-colors">{{ grade.nameAr || grade.name }}</h3>
+              <p class="text-slate-500 text-base leading-relaxed mb-8">
+                {{ grade.description || 'استعراض شامل للمواد والدروس والاختبارات التفاعلية الخاصة بهذه المرحلة الدراسية.' }}
+              </p>
+            </div>
+
+            <a [routerLink]="['/grade-levels', grade.id, 'subjects']"
+               class="relative z-10 w-full text-center bg-purple-50 text-[#4F2DB7] group-hover:bg-[#4F2DB7] group-hover:text-white font-bold py-4 px-6 rounded-2xl transition duration-300 shadow-md text-base block">
+              استعرض المواد
+            </a>
+          </div>
+        }
+      </div>
+    } @else {
+      <!-- رسالة اعتذار بسيطة ومتناسقة مع الهوية في حال عدم وجود صفوف -->
+      <div class="max-w-xl mx-auto text-center py-16 px-8 bg-white rounded-[2.5rem] border border-purple-100 shadow-lg" data-aos="zoom-in">
+        <h3 class="text-2xl font-black text-slate-900 mb-3">لا توجد صفوف متاحة حالياً</h3>
+        <p class="text-slate-600 text-base md:text-lg leading-relaxed mb-8">
+          نعتذر لعدم توفر صفوف دراسية متاحة في الوقت الحالي، ونعمل على إضافتها قريباً.
+        </p>
+        <a routerLink="/curriculum" class="inline-flex items-center gap-2 bg-purple-50 hover:bg-purple-100 text-[#4F2DB7] font-bold py-3 px-7 rounded-2xl transition duration-300 text-sm">
+          <i class="fa-solid fa-arrow-right"></i>
+          <span>العودة للمناهج</span>
+        </a>
+      </div>
+    }
+
+
+</div>

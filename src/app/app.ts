@@ -2,10 +2,11 @@ import { Component, signal, ChangeDetectionStrategy, inject, HostListener } from
 import { RouterOutlet } from '@angular/router';
 import { ToastComponent } from './core/components/toast/toast.component';
 import { ToastService } from './core/services/toast.service';
+import { OwlLoaderComponent } from "./shared/components/owl-loader/owl-loader.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ToastComponent],
+  imports: [RouterOutlet, ToastComponent, OwlLoaderComponent],
   templateUrl: './app.html',
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './app.css',

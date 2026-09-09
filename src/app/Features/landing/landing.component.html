@@ -7,23 +7,26 @@
 <app-section-header title="المناهج الدراسية و الكورسات" data-aos="fade-down" data-aos-duration="800" />
 
 <div class="container mx-auto px-4">
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+  <!-- تم ضبط الشبكة هنا لتصبح 3 كروت في الصف الواحد lg:grid-cols-3 -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
 
-    <!-- المنهج الإماراتي -->
-    <a routerLink="/curriculum/uae" class="block hover:no-underline" data-aos="fade-up" data-aos-delay="100">
-      <app-education-card
-        title="المنهج الإماراتي"
-        subtitle="جميع المراحل الدراسية وفق مناهج دولة الإمارات العربية المتحدة مع أفضل المدرسين."
-        iconBg="bg-blue-100"
-        iconColor="text-blue-600"
-        glowColor="bg-blue-300"
-        lineColor="bg-blue-500"
-        borderColor="hover:border-blue-300"
-        buttonColor="border-blue-500 text-blue-600 hover:bg-blue-600 hover:text-white">
-      </app-education-card>
-    </a>
+    <!-- عرض المناهج القادمة من الـ API ديناميكياً -->
+    @for (curriculum of curriculaList; track curriculum.id; let idx = $index) {
+      <a (click)="onSelectCurriculum(curriculum.id)" class="block hover:no-underline cursor-pointer" [attr.data-aos]="'fade-up'" [attr.data-aos-delay]="(idx + 1) * 100">
+        <app-education-card
+          [title]="curriculum.nameAr || curriculum.name || 'المنهج الدراسي'"
+          [subtitle]="curriculum.description || 'جميع المراحل الدراسية وفق أفضل المناهج مع نخبة من المدرسين.'"
+          iconBg="bg-blue-100"
+          iconColor="text-blue-600"
+          glowColor="bg-blue-300"
+          lineColor="bg-blue-500"
+          borderColor="hover:border-blue-300"
+          buttonColor="border-blue-500 text-blue-600 hover:bg-blue-600 hover:text-white">
+        </app-education-card>
+      </a>
+    }
 
-    <!-- الكورسات -->
+    <!-- الكورسات (ثابتة بجانب المناهج) -->
     <a routerLink="/courses" class="block hover:no-underline" data-aos="fade-up" data-aos-delay="250">
       <app-education-card
         title="الكورسات"
@@ -257,7 +260,7 @@
 
           <!-- Icon Circle -->
           <div class="w-20 h-20 rounded-2xl bg-purple-50 text-[#4F2DB7] group-hover:bg-[#4F2DB7] group-hover:text-white transition-colors duration-300 flex items-center justify-center text-3xl shadow-inner mb-6">
-            <i class="fa-solid fa-[#F9B400] fa-credit-card"></i>
+            <i class="fa-solid fa-credit-card"></i>
           </div>
 
           <h3 class="text-xl font-bold text-slate-900 mb-2">فعّل اشتراكك</h3>

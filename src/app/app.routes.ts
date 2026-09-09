@@ -14,6 +14,7 @@ export const routes: Routes = [
             { path: "contact", loadComponent: () => import("./Features/contact/contact.component").then(m => m.ContactComponent), title: "بسطهالي | تواصل معنا" },
             { path: "pricing", loadComponent: () => import("./Features/pricing/pricing.component").then(m => m.PricingComponent), title: "بسطهالي | خطط الاشتراك" },
             { path: "curriculum", loadComponent: () => import("./Features/curriculum/curriculum.component").then(m => m.CurriculumComponent), title: "بسطهالي | المناهج الدراسية" },
+            // { path: "curriculum/:id", loadComponent: () => import("./Features/curriculum-details/curriculum-details.component").then(m => m.CurriculumDetailsComponent), title: "بسطهالي | تفاصيل المنهج" },
             { path: "features", loadComponent: () => import("./Features/features/features.component").then(m => m.FeaturesComponent), title: "بسطهالي | مميزات المنصة" },
             {path:"teacher-form", loadComponent:()=> import("./Features/teacher-form/teacher-form.component").then( m =>m.TeacherFormComponent)}
         ]
