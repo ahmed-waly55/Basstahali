@@ -1,1 +1,151 @@
-<p>curriculum works!</p>
+<div class="max-w-7xl mx-auto px-4 py-12 md:py-16" dir="rtl">
+
+  <!-- Header Section (عنوان القسم) -->
+  <div class="flex flex-col items-center mb-12 relative text-center">
+    <h1 class="text-[#3b236d] text-3xl md:text-4xl font-extrabold mb-3 tracking-tight">
+      المناهج الدراسية
+    </h1>
+
+    <p class="text-gray-600 text-base md:text-lg max-w-md">
+      اختر المنهج المناسب لك للبدء في رحلة التعلم مع بسطهالي
+    </p>
+
+    <!-- خط ديكوري أصفر متناسق -->
+    <div class="w-16 h-1 bg-[#ffc107] rounded-full mt-4"></div>
+  </div>
+
+  <!-- عرض المناهج الدراسية -->
+  @if (CurriculmData?.length > 0) {
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+
+      @for (item of CurriculmData; track (item._id || item.id || $index)) {
+
+        <div
+          class="
+            bg-white
+            border
+            border-gray-100
+            rounded-2xl
+            p-6
+            shadow-sm
+            hover:shadow-xl
+            hover:shadow-[#3b236d]/10
+            hover:border-[#3b236d]/30
+            hover:-translate-y-1.5
+            transition-all
+            duration-300
+            flex
+            flex-col
+            items-center
+            text-center
+            relative
+            overflow-hidden
+            group
+          "
+        >
+
+          <!-- لمسة جمالية تتوسع في الخلفية عند التمرير (Hover) -->
+          <div class="absolute -top-10 -right-10 w-24 h-24 bg-[#f4f0fa] rounded-full group-hover:scale-150 transition-transform duration-500 -z-0"></div>
+
+          <!-- أيقونة المنهج التعليمي (SVG كتاب ودراسة) -->
+          <div
+            class="
+              w-20
+              h-20
+              bg-[#f4f0fa]
+              group-hover:bg-[#3b236d]
+              rounded-2xl
+              flex
+              items-center
+              justify-center
+              mb-4
+              transition-colors
+              duration-300
+              shadow-sm
+              z-10
+            "
+          >
+            <svg
+              class="w-10 h-10 text-[#3b236d] group-hover:text-[#ffc107] transition-colors duration-300"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+          </div>
+
+          <!-- كود المنهج كـ Badge صغير أنيق إن وجد -->
+          @if (item.code) {
+            <span class="bg-[#f4f0fa] text-[#3b236d] text-xs font-bold px-3 py-1 rounded-full mb-3 z-10 border border-[#e1d5f2]">
+              {{ item.code }}
+            </span>
+          }
+
+          <!-- اسم المنهج -->
+          <h2 class="text-[#3b236d] text-xl font-bold mb-3 z-10 line-clamp-1">
+            {{ item.nameAr || item.nameEn }}
+          </h2>
+
+          <!-- وصف المنهج -->
+          <p class="text-gray-500 text-sm mb-6 line-clamp-2 z-10 min-h-[40px] leading-relaxed">
+            {{ item.description || 'استكشف المقررات والمراحل التعليمية المتوافقة مع هذا المنهج.' }}
+          </p>
+
+          <!-- زر الانتقال لعرض مراحل المنهج -->
+          <a
+            [routerLink]="['/curriculum', item.id || item._id]"
+            class="
+              w-full
+              mt-auto
+              bg-[#3b236d]
+              hover:bg-[#2d1a54]
+              text-white
+              font-bold
+              py-3
+              px-4
+              rounded-xl
+              transition-all
+              duration-300
+              shadow-sm
+              z-10
+              block
+              text-center
+              cursor-pointer
+            "
+          >
+            عرض المراحل الدراسية
+          </a>
+
+        </div>
+
+      }
+
+    </div>
+
+  }
+
+  <!-- حالة عدم وجود بيانات -->
+  @else {
+
+    <div class="flex flex-col items-center justify-center py-20 text-center bg-white rounded-3xl border border-gray-100 shadow-sm p-8 max-w-lg mx-auto mt-6">
+
+      <div class="w-20 h-20 bg-[#f4f0fa] text-[#3b236d] rounded-full flex items-center justify-center text-3xl mb-5 font-bold">
+        !
+      </div>
+
+      <h3 class="text-2xl font-bold text-[#3b236d] mb-2">
+        لا توجد مناهج متاحة
+      </h3>
+
+      <p class="text-gray-500 leading-relaxed">
+        لم يتم العثور على مناهج دراسية حالياً، أو جاري تحميل البيانات...
+      </p>
+
+    </div>
+
+  }
+
+</div>

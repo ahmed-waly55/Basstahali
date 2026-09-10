@@ -3,34 +3,34 @@
   <!-- Header Section -->
   <div class="flex flex-col items-center mb-12 relative">
 
-    <!-- زر الرجوع للمناهج -->
-    <a
-      routerLink="/curriculum"
+    <!-- زر الرجوع للمرحلة السابقة -->
+    <button
+      (click)="goBack()"
+      type="button"
       class="absolute right-0 top-0 text-[#3b236d] hover:text-[#ffc107] transition-all flex items-center gap-2 font-semibold text-base md:text-lg group cursor-pointer"
     >
       <span class="text-xl transform group-hover:translate-x-1 transition-transform">&rarr;</span>
-      عودة للمناهج
-    </a>
+      عودة للمراحل
+    </button>
 
     <!-- العنوان والوصف -->
     <h1 class="text-[#3b236d] text-3xl md:text-4xl font-extrabold mb-3 mt-10 md:mt-0 text-center tracking-tight">
-      المراحل الدراسية
+      المواد الدراسية
     </h1>
 
     <p class="text-gray-600 text-base md:text-lg text-center max-w-md">
-      اختر المرحلة الدراسية المناسبة لك للاطلاع على كافة المواد
+      اختر المادة الدراسية للاطلاع على الكورسات والمعلمين المتاحين
     </p>
 
-    <!-- خط أصفر ديكوري أسفل العنوان -->
     <div class="w-16 h-1 bg-[#ffc107] rounded-full mt-4"></div>
   </div>
 
-  <!-- عرض المراحل الدراسية -->
-  @if (gradeLevels().length > 0) {
+  <!-- عرض المواد الدراسية -->
+  @if (subjects().length > 0) {
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
 
-      @for (grade of gradeLevels(); track (grade._id || grade.id || $index)) {
+      @for (subject of subjects(); track (subject._id || subject.id || $index)) {
 
         <div
           class="
@@ -56,10 +56,10 @@
           "
         >
 
-          <!-- خلفية دائرية ديكورية في الزاوية تتوسع عند الـ Hover -->
+          <!-- لمسة جمالية في زاوية البطاقة -->
           <div class="absolute -top-10 -right-10 w-24 h-24 bg-[#f4f0fa] rounded-full group-hover:scale-150 transition-transform duration-500 -z-0"></div>
 
-          <!-- أيقونة المرحلة الدراسية بـ SVG (قبعة التخرج والصرح التعليمي) -->
+          <!-- أيقونة المادة (SVG كتاب ومستلزمات دراسية) -->
           <div
             class="
               w-20
@@ -84,31 +84,31 @@
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 14l9-5-9-5-9 5 9 5z" />
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 14v7" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
             </svg>
           </div>
 
-          <!-- اسم المرحلة الدراسية -->
-          <h2 class="text-[#3b236d] text-xl font-bold mb-3 z-10 line-clamp-1">
-            {{ grade.nameAr }}
+          <!-- اسم المادة -->
+          <h2 class="text-[#3b236d] text-xl font-bold mb-3 z-10 line-clamp-1 group-hover:text-[#3b236d]">
+            {{ subject.nameAr || subject.name }}
           </h2>
 
-          <!-- وصف مختصر للمرحلة -->
+          <!-- وصف مختصر للمادة إن وُجد -->
           <p class="text-gray-500 text-sm mb-6 line-clamp-2 z-10 min-h-[40px] leading-relaxed">
-            {{ grade.description || 'استكشف المواد والمقررات الدراسية المتاحة لهذه المرحلة.' }}
+            {{ subject.description || 'استكشف شروحات ومراجعات المادة وأفضل المدرسين المعتمدين.' }}
           </p>
 
-          <!-- زر الانتقال لصفحة المواد -->
-          <a
-            [routerLink]="['/subjects', grade.id || grade._id]"
+          <!-- زر الإجراء -->
+          <!-- <button
+            type="button"
             class="
               w-full
               mt-auto
               bg-[#3b236d]
               hover:bg-[#2d1a54]
               text-white
+              group-hover:bg-[#ffc107]
+              group-hover:text-black
               font-bold
               py-3
               px-4
@@ -117,13 +117,11 @@
               duration-300
               shadow-sm
               z-10
-              block
-              text-center
               cursor-pointer
             "
           >
-            عرض المواد
-          </a>
+            تصفح المادة
+          </button> -->
 
         </div>
 
@@ -133,7 +131,7 @@
 
   }
 
-  <!-- حالة عدم وجود مراحل دراسية -->
+  <!-- حالة عدم وجود مواد -->
   @else {
 
     <div class="flex flex-col items-center justify-center py-20 text-center bg-white rounded-3xl border border-gray-100 shadow-sm p-8 max-w-lg mx-auto mt-6">
@@ -143,19 +141,20 @@
       </div>
 
       <h3 class="text-2xl font-bold text-[#3b236d] mb-2">
-        لا توجد مراحل دراسية
+        لا توجد مواد دراسية
       </h3>
 
       <p class="text-gray-500 mb-8 leading-relaxed">
-        لم يتم العثور على مراحل دراسية لهذا المنهج حالياً، يرجى التحقق من المنهج المختار.
+        لم يتم إضافة مواد دراسية لهذه المرحلة حتى الآن، يرجى المحاولة لاحقاً أو اختيار مرحلة أخرى.
       </p>
 
-      <a
-        routerLink="/curriculum"
-        class="bg-[#3b236d] hover:bg-[#2d1a54] text-white font-bold py-3 px-8 rounded-xl transition-colors cursor-pointer shadow-md inline-block"
+      <button
+        (click)="goBack()"
+        type="button"
+        class="bg-[#3b236d] hover:bg-[#2d1a54] text-white font-bold py-3 px-8 rounded-xl transition-colors cursor-pointer shadow-md"
       >
-        العودة للمناهج
-      </a>
+        العودة للمراحل السابقة
+      </button>
 
     </div>
 

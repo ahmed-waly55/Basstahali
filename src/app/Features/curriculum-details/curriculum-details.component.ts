@@ -1,61 +1,77 @@
-import { Component, Input, OnChanges, SimpleChanges, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef, inject } from '@angular/core';
+import {
+  Component,
+  DestroyRef,
+  inject,
+  OnInit,
+  signal,
+  ChangeDetectorRef
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { RouterLink, ActivatedRoute } from '@angular/router';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+
 import { TeacherService } from '../../core/services/teacher.service';
-import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-curriculum-details',
   standalone: true,
-  imports: [CommonModule, RouterLink],
-  templateUrl: './curriculum-details.component.html',
-  styleUrl: './curriculum-details.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    CommonModule,
+    RouterLink
+  ],
+  templateUrl: './curriculum-details.component.html'
 })
-export class CurriculumDetailsComponent implements OnChanges, OnDestroy {
+export class CurriculumDetailsComponent implements OnInit {
+
   private teacherService = inject(TeacherService);
+  private route = inject(ActivatedRoute);
+  private destroyRef = inject(DestroyRef);
   private cdr = inject(ChangeDetectorRef);
-  private destroy$ = new Subject<void>();
 
-  // استقبال الـ id كـ Input (سواء قادم من الأب أو مربوط مباشرة من الـ Router باستخدام withComponentInputBinding)
-  @Input() id!: string;
+  id: string | null = null;
 
-  gradeLevels: any[] = [];
+  // تحويل البيانات إلى Signal لضمان تحديث الـ View فوراً مع SSR
+  gradeLevels = signal<any[]>([]);
 
-  ngOnChanges(changes: SimpleChanges): void {
-    // يتم تنفذيها فور تغير قيمة الـ id (سواء عند التحميل أو عند حدوث أي تغير/Refresh يمرر الـ id)
-    if (changes['id'] && this.id) {
-      this.fetchGradeLevels(this.id);
-    }
-  }
+  ngOnInit(): void {
+    const paramSource = this.route.snapshot.paramMap.keys.length > 0
+      ? this.route.paramMap
+      : (this.route.parent?.paramMap ?? this.route.paramMap);
 
-  fetchGradeLevels(curriculumId: string): void {
-    this.teacherService.getGradeLevels(curriculumId)
-      .pipe(takeUntil(this.destroy$))
-      .subscribe({
-        next: (response: any) => {
-          console.log("Grade Levels Response:", response);
+    paramSource
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(params => {
+        const curriculumId = params.get('id') || params.get('curriculumId');
 
-          if (Array.isArray(response)) {
-            this.gradeLevels = response;
-          } else if (response?.data && Array.isArray(response.data)) {
-            this.gradeLevels = response.data;
-          } else {
-            this.gradeLevels = [];
-          }
-
-          this.cdr.detectChanges();
-        },
-        error: (error) => {
-          console.error('خطأ في جلب المراحل التعليمية:', error);
-          this.gradeLevels = [];
-          this.cdr.detectChanges();
+        if (!curriculumId) {
+          console.error('Curriculum ID not found');
+          return;
         }
+
+        this.id = curriculumId;
+        this.fetchGradeLevels(curriculumId);
       });
   }
 
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete();
+  private fetchGradeLevels(curriculumId: string): void {
+    this.teacherService
+      .getGradeLevels(curriculumId)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe({
+        next: (response: any) => {
+          const data = response?.data ?? (Array.isArray(response) ? response : []);
+
+          // تحديث الـ Signal
+          this.gradeLevels.set(data);
+
+          // إخطار Angular صراحةً بوجود تحديث للواجهة
+          this.cdr.markForCheck();
+        },
+        error: (error) => {
+          console.error('Grade Levels API Error:', error);
+          this.gradeLevels.set([]);
+          this.cdr.markForCheck();
+        }
+      });
   }
 }

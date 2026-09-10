@@ -6,30 +6,30 @@ import { NgClass } from '@angular/common';
   standalone: true,
   imports: [NgClass],
   templateUrl: './education-card.component.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './education-card.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EducationCardComponent {
+  // البيانات الأساسية
   title = input.required<string>();
-  subtitle = input.required<string>();
+  subtitle = input<string>('');
+  buttonText = input<string>('عرض التفاصيل');
+  badge = input<string | null>(null);
 
-  buttonText = input('استكشف المنهج');
+  // درجات البنفسجي الهادئة والراقية
+  iconBg = input<string>('bg-[#f4f0fa] group-hover:bg-[#3b236d]');
+  iconColor = input<string>('text-[#3b236d] group-hover:text-white');
+  borderColor = input<string>('hover:border-[#3b236d]/30');
+  buttonBg = input<string>('bg-[#3b236d]');       // تم تغيير خلفية الزرار للبنفسجي
+  buttonTextColor = input<string>('text-white');  // نص الزرار أبيض واضح
 
-  iconBg = input('bg-indigo-100');
-
-  iconColor = input('text-indigo-600');
-
-  glowColor = input('bg-indigo-300');
-
-  borderColor = input('hover:border-indigo-300');
-
-  lineColor = input('bg-indigo-500');
-
-  buttonColor = input('border-indigo-500 text-indigo-600 hover:bg-indigo-600 hover:text-white');
+  // خط سفلي ديكوري اختياري
+  showBottomLine = input<boolean>(false);
+  lineColor = input<string>('bg-[#3b236d]');
 
   explore = output<void>();
 
-  onExploreClick() {
+  onExploreClick(): void {
     this.explore.emit();
   }
 }
