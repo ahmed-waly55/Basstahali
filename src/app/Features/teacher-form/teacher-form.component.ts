@@ -1,4 +1,3 @@
-import { PageHeadingComponent } from '../../shared/components/page-heading/page-heading.component';
 import { PreferencesService } from '../../core/services/preferences.service';
 import { TranslatePipe } from '../../core/services/translate.pipe';
 import { Component, inject, OnInit, OnDestroy, ChangeDetectorRef, NgZone } from '@angular/core';
@@ -12,7 +11,7 @@ import {
   FormsModule,
 } from '@angular/forms';
 import { Subject, Subscription, finalize, takeUntil } from 'rxjs';
-import Swal from 'sweetalert2';
+import Swal, { type SweetAlertOptions } from 'sweetalert2';
 import { TeacherService } from '../../core/services/teacher.service';
 
 export type RegistrationStatus = 'Pending' | 'Approved' | 'Rejected';
@@ -40,7 +39,7 @@ export function registrationResult(response: any): RegistrationResult | null {
 @Component({
   selector: 'app-teacher-form',
   standalone: true,
-  imports: [PageHeadingComponent, TranslatePipe, CommonModule, ReactiveFormsModule, FormsModule],
+  imports: [TranslatePipe, CommonModule, ReactiveFormsModule, FormsModule],
   templateUrl: './teacher-form.component.html',
   styleUrl: './teacher-form.component.css',
 })
@@ -251,7 +250,7 @@ export class TeacherFormComponent implements OnInit, OnDestroy {
           this.statusWhatsAppInput = whatsAppNumber;
           this.clearStatusResult();
 
-          Swal.fire({
+          this.showAlert({
             icon: 'success',
             title: this.preferences.translate('تم إرسال طلبك بنجاح!'),
             text:
@@ -259,7 +258,6 @@ export class TeacherFormComponent implements OnInit, OnDestroy {
                 ? `${this.preferences.translate('رقم الطلب الخاص بك')}: ${reqId}`
                 : this.preferences.translate('تم إرسال طلبك بنجاح!'),
             confirmButtonText: this.preferences.translate('حسناً'),
-            confirmButtonColor: '#7c3aed',
           });
           this.teacherForm.reset();
           this.clearSubjectIds();
@@ -269,16 +267,33 @@ export class TeacherFormComponent implements OnInit, OnDestroy {
             error?.error?.message ||
             'حدث خطأ أثناء إرسال الطلب، تأكد من صحة البيانات والمحاولة مرة أخرى.';
 
-          Swal.fire({
+          this.showAlert({
             icon: 'error',
             title: this.preferences.translate('عذراً!'),
             text: errorMessage,
             confirmButtonText: this.preferences.translate('موافق'),
-            confirmButtonColor: '#ef4444',
           });
           console.error(error);
         },
       });
+  }
+
+  private showAlert(options: SweetAlertOptions) {
+    return Swal.fire({
+      ...options,
+      buttonsStyling: false,
+      showCloseButton: true,
+      closeButtonAriaLabel: this.preferences.translate('إغلاق'),
+      backdrop: 'rgba(20, 12, 37, 0.5)',
+      customClass: {
+        popup: 'basstahali-dialog',
+        title: 'basstahali-dialog__title',
+        htmlContainer: 'basstahali-dialog__message',
+        actions: 'basstahali-dialog__actions',
+        confirmButton: 'basstahali-dialog__confirm',
+        closeButton: 'basstahali-dialog__close',
+      },
+    });
   }
 
   checkStatus(): void {

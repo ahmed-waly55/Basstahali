@@ -1,54 +1,161 @@
-<footer class="clean-footer">
-  <div class="page-container">
-    <div class="grid gap-8 md:grid-cols-[1.4fr_1fr_1fr]">
-      <div>
-        <a routerLink="/" class="footer-brand"
-          ><img src="images/owl.png" width="72" height="48" alt="" /><strong>{{
-            'بسطهالي' | translate
-          }}</strong></a
-        >
-        <p>{{ 'حصص خصوصية مباشرة أونلاين' | translate }}</p>
+<footer class="bg-[#3D1A6D] text-white pt-12 pb-6" dir="inherit">
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- Main -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 items-start pb-10">
+      <!-- Brand -->
+      <div class="space-y-5">
+        <a routerLink="/" class="block">
+          <img
+            src="images/owl.png"
+            [alt]="'بسطهالي' | translate"
+            class="h-24 w-auto object-contain"
+          />
+        </a>
+
+        <p class="text-white/80 leading-8 text-sm max-w-sm">
+          {{
+            'منصة تعليمية تساعد الطلاب على التعلم بسهولة وتحقيق أفضل النتائج من خلال تجربة تعليمية حديثة ومميزة.'
+              | translate
+          }}
+        </p>
       </div>
-      <nav [attr.aria-label]="'روابط سريعة' | translate">
-        <h2>{{ 'روابط سريعة' | translate }}</h2>
-        <div class="grid grid-cols-2 gap-x-6 gap-y-3">
-          <a routerLink="/curriculum">{{ 'المناهج الدراسية' | translate }}</a
-          ><a routerLink="/courses">{{ 'الكورسات' | translate }}</a
-          ><a routerLink="/teachers">{{ 'المدرسين' | translate }}</a
-          ><a routerLink="/features">{{ 'المميزات' | translate }}</a
-          ><a routerLink="/about" fragment="faq">{{ 'الأسئلة الشائعة' | translate }}</a
-          ><a routerLink="/teacher-form">{{ 'انضم لهيئة التدريس' | translate }}</a>
+
+      <!-- Links -->
+      <div class="grid grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-5">
+            {{ 'روابط سريعة' | translate }}
+          </h3>
+
+          <ul class="space-y-3 text-white/80 text-sm">
+            <li>
+              <a routerLink="/" class="hover:text-yellow-300 transition">
+                {{ 'الرئيسية' | translate }}
+              </a>
+            </li>
+
+            <li>
+              <a routerLink="/courses" class="hover:text-yellow-300 transition">
+                {{ 'المراحل الدراسية' | translate }}
+              </a>
+            </li>
+
+            <li>
+              <a routerLink="/features" class="hover:text-yellow-300 transition">
+                {{ 'المميزات' | translate }}
+              </a>
+            </li>
+
+            <li>
+              <a routerLink="/teachers" class="hover:text-yellow-300 transition">
+                {{ 'المدرسين' | translate }}
+              </a>
+            </li>
+
+            <li>
+              <a routerLink="/teacher-form" class="hover:text-yellow-300 transition">
+                {{ 'انضم لهيئة التدريس' | translate }}
+              </a>
+            </li>
+          </ul>
         </div>
-      </nav>
+
+        <div>
+          <h3 class="text-xl font-bold mb-5">
+            {{ 'الدعم' | translate }}
+          </h3>
+
+          <ul class="space-y-3 text-white/80 text-sm">
+            <li>
+              <a routerLink="/privacy" class="hover:text-yellow-300 transition">
+                {{ 'سياسة الخصوصية' | translate }}
+              </a>
+            </li>
+
+            <li>
+              <a routerLink="/terms" class="hover:text-yellow-300 transition">
+                {{ 'الشروط والأحكام' | translate }}
+              </a>
+            </li>
+
+            <li>
+              <a routerLink="/about" fragment="faq" class="hover:text-yellow-300 transition">
+                {{ 'الأسئلة الشائعة' | translate }}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Contact -->
+
       <div>
-        <h2>{{ 'تواصل معنا' | translate }}</h2>
-        <a href="https://wa.me/971525250833" target="_blank" rel="noopener noreferrer" dir="ltr"
-          >+971 52 525 0833</a
-        ><a href="mailto:info@basstahali.com" dir="ltr" class="block mt-3"
-          >info&#64;basstahali.com</a
-        ><a routerLink="/contact" class="block mt-3">{{ 'معلومات التواصل' | translate }}</a>
+        <h3 class="text-xl font-bold mb-5">
+          {{ 'تواصل معنا' | translate }}
+        </h3>
+
+        <div class="space-y-4 text-white/90 text-sm">
+          <div class="flex items-center gap-3">
+            <i class="fa-solid fa-phone text-xl"></i>
+
+            <span dir="ltr"> +971525250833 </span>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <i class="fa-solid fa-envelope text-xl"></i>
+
+            <span> info@basstahali.com </span>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <i class="fa-solid fa-location-dot text-xl"></i>
+
+            <span>
+              {{ 'الامارات العربية المتحدة، دبي' | translate }}
+            </span>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span
-        >© {{ currentYear }} {{ 'بسطهالي' | translate }} ·
-        {{ 'جميع الحقوق محفوظة' | translate }}</span
-      >
-      <div class="flex gap-5">
+
+    <!-- Social -->
+
+    <div class="border-t border-white/20 pt-6">
+      <div class="flex justify-center gap-4">
+        <a
+          href="https://www.facebook.com/basstahali"
+          class="w-11 h-11 bg-white text-[#2039A8] rounded-full flex items-center justify-center hover:bg-yellow-300 hover:text-black transition duration-300"
+        >
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+
         <a
           href="https://www.instagram.com/basstahali"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Instagram"
-          >Instagram</a
-        ><a
-          href="https://www.facebook.com/basstahali"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Facebook"
-          >Facebook</a
+          class="w-11 h-11 bg-white text-[#2039A8] rounded-full flex items-center justify-center hover:bg-yellow-300 hover:text-black transition"
         >
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a
+          href="https://www.tiktok.com/@basstahali"
+          class="w-11 h-11 bg-white text-[#2039A8] rounded-full flex items-center justify-center hover:bg-yellow-300 hover:text-black transition"
+        >
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+
+        <a
+          href="https://wa.me/971525250833"
+          class="w-11 h-11 bg-white text-[#2039A8] rounded-full flex items-center justify-center hover:bg-yellow-300 hover:text-black transition"
+        >
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
       </div>
+    </div>
+
+    <!-- Copyright -->
+
+    <div class="text-center text-sm text-white/70 mt-6">
+      جميع الحقوق محفوظة © {{ currentYear | translate }} بسطهالي
     </div>
   </div>
 </footer>

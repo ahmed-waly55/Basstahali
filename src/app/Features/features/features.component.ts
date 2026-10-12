@@ -1,5 +1,3 @@
-import { RouterLink } from '@angular/router';
-import { PageHeadingComponent } from '../../shared/components/page-heading/page-heading.component';
 import { TranslatePipe } from '../../core/services/translate.pipe';
 import {
   Component,
@@ -14,7 +12,7 @@ import AOS from 'aos';
 
 @Component({
   selector: 'app-features',
-  imports: [RouterLink, PageHeadingComponent, TranslatePipe],
+  imports: [TranslatePipe],
   templateUrl: './features.component.html',
   changeDetection: ChangeDetectionStrategy.Default,
   styleUrl: './features.component.css',

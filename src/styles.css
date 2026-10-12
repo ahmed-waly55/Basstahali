@@ -5,11 +5,6 @@
 :root {
   color-scheme: light;
 }
-body {
-  margin: 0;
-  background: #faf8ff;
-  color: #24163f;
-}
 a,
 button,
 input {
@@ -144,10 +139,6 @@ html.dark {
   --ink: #f1e9fa;
   --muted: #bdb0ce;
   --brand: #d6baff;
-}
-body {
-  background: var(--page);
-  color: var(--ink);
 }
 .page-container {
   width: min(100% - 40px, 1152px);
@@ -314,4 +305,72 @@ body {
   .page-container {
     width: calc(100% - 32px);
   }
+}
+
+/* Shared confirmation dialogs: use the same brand and theme as the retained header. */
+.swal2-popup.basstahali-dialog {
+  width: min(420px, calc(100vw - 32px));
+  padding: 24px;
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: 0 24px 80px rgba(20, 12, 37, 0.2);
+}
+.basstahali-dialog__title {
+  padding: 0;
+  margin-top: 12px;
+  color: var(--ink);
+  font-size: 23px;
+  line-height: 1.5;
+  font-weight: 750;
+}
+.basstahali-dialog__message {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+.basstahali-dialog__actions {
+  width: 100%;
+  margin: 24px 0 0;
+  padding: 0;
+}
+.basstahali-dialog__confirm {
+  width: 100%;
+  padding: 13px 22px;
+  border: 0;
+  border-radius: 12px;
+  background: #4f2db7;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.basstahali-dialog__confirm:hover {
+  background: #3b236d;
+}
+.basstahali-dialog__confirm:focus-visible {
+  outline: 3px solid #ffc107;
+  outline-offset: 3px;
+}
+.basstahali-dialog__close {
+  width: 36px;
+  height: 36px;
+  margin: 10px;
+  border-radius: 10px;
+  color: var(--muted);
+  font-size: 26px;
+}
+.basstahali-dialog__close:hover {
+  color: var(--brand);
+  background: var(--soft);
+}
+.basstahali-dialog .swal2-icon {
+  margin: 14px auto 8px;
+}
+html[dir='rtl'] .basstahali-dialog__close {
+  grid-column: 1;
+  justify-self: start;
 }

@@ -1,4 +1,3 @@
-import { PageHeadingComponent } from '../../shared/components/page-heading/page-heading.component';
 import { TranslatePipe } from '../../core/services/translate.pipe';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, OnInit, ChangeDetectionStrategy, inject, PLATFORM_ID } from '@angular/core';
@@ -25,7 +24,7 @@ export interface Course {
 
 @Component({
   selector: 'app-courses',
-  imports: [PageHeadingComponent, TranslatePipe, CommonModule],
+  imports: [TranslatePipe, CommonModule],
   templateUrl: './courses.component.html',
   changeDetection: ChangeDetectionStrategy.Default,
   styleUrl: './courses.component.css',

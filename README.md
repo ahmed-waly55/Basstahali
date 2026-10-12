@@ -18,7 +18,7 @@ In the managed cloud environment, use `NODE_USE_ENV_PROXY=1` for Node HTTPS requ
 
 ## UI behaviour
 
-- Curricula, grade levels and subjects come from the existing API. The catalog supports search, loading, retry, empty results and Arabic/English names supplied by the API. No sample curriculum data is shipped.
+- Curricula, grade levels and subjects come from the existing API. The original catalog cards support loading, retry, empty results and Arabic/English names supplied by the API. No sample curriculum data is shipped.
 - Language and theme controls are available in the header. Preferences are saved locally; the initial language is Arabic and the initial theme follows the device preference.
 - A photorealistic illustrative student image moves subtly with scrolling and respects reduced-motion settings. The generated marketing image is committed as an optimized WebP asset; the interaction uses Angular and CSS without an animation dependency.
 - The existing right-click and developer shortcut handlers are preserved. These are browser interactions, not a security boundary; sensitive information must stay on the backend.
@@ -36,3 +36,5 @@ The tracking panel shows only a numeric application-number input. Registration s
 The current backend Swagger contract and a read-only validation check require `whatsAppNumber` for `GET /api/v1/teacher-forms/{requestId}/status`. The frontend reuses the number already entered during registration when available, without storing it in local storage. A fresh visit with only an application number remains blocked by the backend requirement; supporting that workflow needs an API change. No application was created and no real teacher record was queried during validation.
 
 The HTTP interceptor counts concurrent API requests, handles cancellation, applies a 20-second timeout, preserves errors and never retries writes automatically. The teacher registration screen handles its own errors to avoid duplicate notifications. The contact form opens an email draft; it does not falsely claim delivery.
+
+The original page layouts were restored at the user’s request. The current header and photorealistic hero are retained; Courses is available in both desktop and mobile header navigation. API, status parsing, interceptor and SEO corrections are preserved. The header uses touch-friendly controls and a scrollable mobile menu below 1120px; branded notifications and confirmation dialogs follow the selected theme and fit narrow screens.

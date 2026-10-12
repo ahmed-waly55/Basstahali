@@ -1,4 +1,3 @@
-import { PageHeadingComponent } from '../../shared/components/page-heading/page-heading.component';
 import { TranslatePipe } from '../../core/services/translate.pipe';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, OnInit, ChangeDetectionStrategy, inject, PLATFORM_ID } from '@angular/core';
@@ -23,7 +22,7 @@ export interface PricingPlan {
 @Component({
   selector: 'app-pricing',
   standalone: true,
-  imports: [PageHeadingComponent, TranslatePipe, CommonModule],
+  imports: [TranslatePipe, CommonModule],
   templateUrl: './pricing.component.html',
   changeDetection: ChangeDetectionStrategy.Default,
   styleUrl: './pricing.component.css',

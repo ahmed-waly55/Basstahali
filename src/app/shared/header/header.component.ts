@@ -1,7 +1,6 @@
-import { inject } from '@angular/core';
+import { ElementRef, HostListener, inject } from '@angular/core';
 import { PreferencesService } from '../../core/services/preferences.service';
 import { TranslatePipe } from '../../core/services/translate.pipe';
-import { NgClass } from '@angular/common';
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
@@ -13,14 +12,28 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
+  private readonly element = inject<ElementRef<HTMLElement>>(ElementRef);
+  private readonly desktopBreakpoint = 1120;
   preferences = inject(PreferencesService);
   isMenuOpen = false;
 
-  toggleMenu() {
+  toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
-  closeMenu() {
+  closeMenu(): void {
     this.isMenuOpen = false;
+  }
+
+  @HostListener('document:keydown.escape')
+  closeMenuOnEscape(): void {
+    if (!this.isMenuOpen) return;
+    this.closeMenu();
+    this.element.nativeElement.querySelector<HTMLButtonElement>('.menu-button')?.focus();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  closeMenuOnDesktop(event: Event): void {
+    if ((event.target as Window).innerWidth >= this.desktopBreakpoint) this.closeMenu();
   }
 }

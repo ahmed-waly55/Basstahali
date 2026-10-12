@@ -1,4 +1,3 @@
-import { PageHeadingComponent } from '../../shared/components/page-heading/page-heading.component';
 import { PreferencesService } from '../../core/services/preferences.service';
 import { TranslatePipe } from '../../core/services/translate.pipe';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
@@ -16,7 +15,7 @@ import AOS from 'aos';
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [PageHeadingComponent, TranslatePipe, CommonModule, FormsModule],
+  imports: [TranslatePipe, CommonModule, FormsModule],
   templateUrl: './contact.component.html',
   changeDetection: ChangeDetectionStrategy.Default,
   styleUrl: './contact.component.css',

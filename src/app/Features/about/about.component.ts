@@ -1,4 +1,3 @@
-import { PageHeadingComponent } from '../../shared/components/page-heading/page-heading.component';
 import { TranslatePipe } from '../../core/services/translate.pipe';
 import {
   Component,
@@ -10,13 +9,12 @@ import {
   ChangeDetectionStrategy,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { RouterLink } from '@angular/router';
 import AOS from 'aos';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [RouterLink, PageHeadingComponent, TranslatePipe],
+  imports: [TranslatePipe],
   templateUrl: './about.component.html',
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './about.component.css',
