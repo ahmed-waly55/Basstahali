@@ -1,14 +1,22 @@
+import { PageHeadingComponent } from '../../shared/components/page-heading/page-heading.component';
 import { PreferencesService } from '../../core/services/preferences.service';
 import { TranslatePipe } from '../../core/services/translate.pipe';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { Component, OnInit, ViewChild, ChangeDetectionStrategy, inject, PLATFORM_ID } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  ChangeDetectionStrategy,
+  inject,
+  PLATFORM_ID,
+} from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import AOS from 'aos';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [TranslatePipe, CommonModule, FormsModule],
+  imports: [PageHeadingComponent, TranslatePipe, CommonModule, FormsModule],
   templateUrl: './contact.component.html',
   changeDetection: ChangeDetectionStrategy.Default,
   styleUrl: './contact.component.css',
@@ -52,29 +60,10 @@ export class ContactComponent implements OnInit {
       return;
     }
 
-    this.isSubmitting = true;
-
-    // محاكاة إرسال البيانات
-    setTimeout(() => {
-      console.log('Form Submitted:', this.formData);
-
-      // 1. إظهار الإشعار المخصص
-      this.toast = {
-        show: true,
-        message: 'تم إرسال رسالتك بنجاح! سنقوم بالتواصل معك قريباً.',
-      };
-
-      // 2. إعادة تعيين النموذج بدون مشاكل الـ Validation
-      this.contactForm.resetForm({
-        subject: 'general',
-      });
-
-      this.isSubmitting = false;
-
-      // 3. إخفاء الإشعار تلقائياً بعد 3 ثوانٍ
-      setTimeout(() => {
-        this.toast.show = false;
-      }, 3000);
-    }, 800);
+    const subject = this.preferences.translate('استفسار من بسطهالي') + ': ' + this.formData.subject;
+    const body = `${this.formData.name}\n${this.formData.phone}\n${this.formData.email}\n\n${this.formData.message}`;
+    if (isPlatformBrowser(this.platformId)) {
+      window.location.href = `mailto:support@basstahali.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
   }
 }

@@ -1,3 +1,4 @@
+import { PageHeadingComponent } from '../../shared/components/page-heading/page-heading.component';
 import { TranslatePipe } from '../../core/services/translate.pipe';
 import {
   Component,
@@ -15,7 +16,7 @@ import AOS from 'aos';
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [TranslatePipe],
+  imports: [RouterLink, PageHeadingComponent, TranslatePipe],
   templateUrl: './about.component.html',
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './about.component.css',
@@ -70,7 +71,9 @@ export class AboutComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
-  ngOnDestroy(): void { clearTimeout(this.refreshTimer); }
+  ngOnDestroy(): void {
+    clearTimeout(this.refreshTimer);
+  }
 
   toggleFaq(index: number): void {
     this.openedFaq = this.openedFaq === index ? -1 : index;

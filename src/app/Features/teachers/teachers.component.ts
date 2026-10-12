@@ -1,3 +1,4 @@
+import { PageHeadingComponent } from '../../shared/components/page-heading/page-heading.component';
 import { TranslatePipe } from '../../core/services/translate.pipe';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, OnInit, inject, PLATFORM_ID, ChangeDetectionStrategy } from '@angular/core';
@@ -18,7 +19,7 @@ export interface Teacher {
 @Component({
   selector: 'app-teachers',
   standalone: true,
-  imports: [TranslatePipe, CommonModule],
+  imports: [PageHeadingComponent, TranslatePipe, CommonModule],
   templateUrl: './teachers.component.html',
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './teachers.component.css',

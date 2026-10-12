@@ -1,35 +1,28 @@
-<app-header></app-header>
-
-<main class="flex-1 pt-20">
-  <router-outlet></router-outlet>
-  <!-- Floating WhatsApp Button -->
-
-  <div class="whatsapp">
-    <!-- Floating WhatsApp Button (Right Side) -->
+<app-header />
+<main class="min-h-[65vh] pt-20"><router-outlet /></main>
 <a
-  href="https://wa.me/971525250833?text=السلام%20عليكم،%20أرغب%20في%20الاستفسار%20عن%20الخدمات."
+  href="https://wa.me/971525250833"
   target="_blank"
   rel="noopener noreferrer"
   [attr.aria-label]="'تواصل معنا عبر واتساب' | translate"
-  data-aos="fade-up"
-  data-aos-delay="500"
-  class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-[#25D366] text-white rounded-full shadow-2xl hover:bg-[#20ba5a] transition-all duration-300 hover:scale-110 active:scale-95 group"
->
-  <!-- Pulse Aura Animation -->
-  <span class="absolute inset-0 rounded-full bg-[#25D366] opacity-75 animate-ping group-hover:animate-none"></span>
-
-  <!-- Icon -->
-  <i class="fa-brands fa-whatsapp text-3xl md:text-4xl relative z-10 drop-shadow-md"></i>
-
-  <!-- Tooltip (يظهر على اليسار عند التمرير بالماوس) -->
-  <span class="absolute right-full mr-3 hidden md:group-hover:flex items-center whitespace-nowrap bg-gray-900 text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-    {{ 'تواصل معنا مباشرة' | translate }}
-  </span>
-</a>
-  </div>
-
-
-
-</main>
-
-<app-footer></app-footer>
+  class="fixed bottom-5 right-5 z-30 grid h-12 w-12 place-items-center rounded-full bg-[#3b236d] text-white shadow-lg"
+  ><svg
+    viewBox="0 0 24 24"
+    class="h-6 w-6"
+    aria-hidden="true"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.6"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M20 11.5a8 8 0 0 1-12 7l-4 1 1-4a8 8 0 1 1 15-4Z"
+    />
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="m8 8 1 3 2-1 3 3-1 2c-3 0-6-3-6-6l1-1Z"
+    /></svg
+></a>
+<app-footer />

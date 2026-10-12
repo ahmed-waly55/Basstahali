@@ -1,202 +1,105 @@
-<section class="py-12 md:py-16 bg-slate-50 relative overflow-hidden">
-  <!-- Dynamic Background Decoration -->
-  <div class="absolute top-0 right-0 -mt-12 -mr-12 w-96 h-96 bg-purple-200/40 rounded-full blur-3xl pointer-events-none"></div>
-  <div class="absolute bottom-0 left-0 -mb-12 -ml-12 w-96 h-96 bg-blue-200/40 rounded-full blur-3xl pointer-events-none"></div>
-
-  <!-- Custom Notification (Toast) -->
-  @if (toast.show) {
-    <div
-      class="fixed top-5 right-5 left-5 sm:left-auto sm:right-5 z-[99999] flex items-center justify-between gap-4 bg-slate-900 text-white px-6 py-4 rounded-2xl shadow-2xl border border-emerald-500/50 transition-all duration-300 transform translate-y-0">
-
-      <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
-          <i class="fa-solid fa-circle-check text-lg"></i>
+<app-page-heading
+  title="تواصل معنا"
+  description="هل لديك استفسار أو تحتاج إلى مساعدة؟ فريقنا جاهز للرد على جميع أسئلتك في أسرع وقت."
+/>
+<section class="content-section">
+  <div class="page-container grid gap-8 lg:grid-cols-[.8fr_1.2fr]">
+    <div>
+      <h2 class="section-title">{{ 'معلومات التواصل' | translate }}</h2>
+      <p class="section-copy mb-7">{{ 'نحن هنا لمساعدتك والإجابة على استفساراتك' | translate }}</p>
+      <div class="space-y-4">
+        <a
+          href="https://wa.me/971525250833"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="surface-card block"
+          ><span class="text-xs text-[var(--muted)]">{{ 'الهاتف / واتساب' | translate }}</span
+          ><strong dir="ltr" class="block mt-2 text-lg text-[var(--brand)]"
+            >+971 52 525 0833</strong
+          ></a
+        ><a href="mailto:support@basstahali.com" class="surface-card block"
+          ><span class="text-xs text-[var(--muted)]">{{ 'البريد الإلكتروني' | translate }}</span
+          ><strong dir="ltr" class="block mt-2 text-base text-[var(--brand)]"
+            >support&#64;basstahali.com</strong
+          ></a
+        >
+        <div class="surface-card">
+          <span class="text-xs text-[var(--muted)]">{{ 'الموقع' | translate }}</span>
+          <p class="mt-2 font-semibold">{{ 'الإمارات العربية المتحدة' | translate }}</p>
         </div>
-        <span class="text-sm font-medium">{{ (toast.message) | translate }}</span>
       </div>
-
-      <button type="button" (click)="toast.show = false" class="text-slate-400 hover:text-white transition">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
     </div>
-  }
-
-  <div class="container mx-auto px-4 max-w-7xl relative z-10">
-
-    <!-- Section Header -->
-    <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-down" data-aos-duration="800">
-      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-100 text-[#4F2DB7] text-sm font-bold mb-3">
-        <i class="fa-solid fa-headset"></i>
-        {{ 'دائماً في خدمتك' | translate }}
-      </span>
-      <h2 class="text-3xl md:text-4xl font-black text-slate-900">
-        {{ 'تواصل' | translate }} <span class="text-[#4F2DB7]">{{ 'معنا' | translate }}</span>
-      </h2>
-      <p class="mt-3 text-slate-600 text-base md:text-lg">
-        {{ 'هل لديك استفسار أو تحتاج إلى مساعدة؟ فريقنا جاهز للرد على جميع أسئلتك في أسرع وقت.' | translate }}
+    <form #contactForm="ngForm" (ngSubmit)="onSubmit()" class="surface-card clean-form space-y-5">
+      <h2 class="text-xl font-bold mb-5">{{ 'أرسل لنا رسالة' | translate }}</h2>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div>
+          <label for="contact-name">{{ 'الاسم الكامل' | translate }}</label
+          ><input
+            id="contact-name"
+            name="name"
+            [(ngModel)]="formData.name"
+            required
+            minlength="3"
+            autocomplete="name"
+            #nameControl="ngModel"
+          />
+          @if (nameControl.touched && nameControl.invalid) {
+            <p class="field-error">{{ 'يجب أن يتكون الاسم من 3 أحرف على الأقل.' | translate }}</p>
+          }
+        </div>
+        <div>
+          <label for="contact-phone">{{ 'رقم الهاتف' | translate }}</label
+          ><input
+            id="contact-phone"
+            name="phone"
+            type="tel"
+            [(ngModel)]="formData.phone"
+            required
+            autocomplete="tel"
+          />
+        </div>
+      </div>
+      <div>
+        <label for="contact-email">{{ 'البريد الإلكتروني' | translate }}</label
+        ><input
+          id="contact-email"
+          name="email"
+          type="email"
+          [(ngModel)]="formData.email"
+          required
+          email
+          autocomplete="email"
+          #emailControl="ngModel"
+        />
+        @if (emailControl.touched && emailControl.invalid) {
+          <p class="field-error">{{ 'يرجى إدخال بريد إلكتروني صحيح.' | translate }}</p>
+        }
+      </div>
+      <div>
+        <label for="contact-subject">{{ 'موضوع الرسالة' | translate }}</label
+        ><select id="contact-subject" name="subject" [(ngModel)]="formData.subject">
+          <option value="general">{{ 'استفسار عام' | translate }}</option>
+          <option value="courses">{{ 'استفسار عن المناهج والكورسات' | translate }}</option>
+          <option value="support">{{ 'مشكلة تقنية في المنصة' | translate }}</option>
+        </select>
+      </div>
+      <div>
+        <label for="contact-message">{{ 'الرسالة' | translate }}</label
+        ><textarea
+          id="contact-message"
+          name="message"
+          [(ngModel)]="formData.message"
+          required
+          minlength="5"
+          rows="5"
+        ></textarea>
+      </div>
+      <p class="text-xs leading-6 text-[var(--muted)]">
+        {{ 'ستفتح الرسالة في تطبيق البريد لديك لإرسالها إلى فريق بسطهالي.' | translate }}
       </p>
-    </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-
-      <!-- Contact Info -->
-      <div class="lg:col-span-5 space-y-6" data-aos="fade-right" data-aos-duration="800">
-        <div class="bg-gradient-to-br from-[#3D1A6D] via-[#4F2DB7] to-[#6A3FC8] text-white p-8 rounded-3xl shadow-xl relative overflow-hidden">
-          <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
-
-          <h3 class="text-2xl font-bold mb-6 text-white">{{ 'معلومات التواصل' | translate }}</h3>
-
-          <div class="space-y-6">
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center shrink-0 text-[#F9B400] text-xl">
-                <i class="fa-solid fa-phone"></i>
-              </div>
-              <div>
-                <h4 class="text-xs text-purple-200 font-semibold mb-1">{{ 'الهاتف / واتساب' | translate }}</h4>
-                <a href="https://wa.me/971525250833" target="_blank" class="text-lg font-bold hover:text-[#F9B400] transition" dir="ltr">
-                  +971 52 525 0833
-                </a>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center shrink-0 text-[#F9B400] text-xl">
-                <i class="fa-solid fa-envelope"></i>
-              </div>
-              <div>
-                <h4 class="text-xs text-purple-200 font-semibold mb-1">{{ 'البريد الإلكتروني' | translate }}</h4>
-                <a href="mailto:support@basstahali.com" class="text-base font-bold hover:text-[#F9B400] transition">
-                  support&#64;basstahali.com
-                </a>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center shrink-0 text-[#F9B400] text-xl">
-                <i class="fa-solid fa-location-dot"></i>
-              </div>
-              <div>
-                <h4 class="text-xs text-purple-200 font-semibold mb-1">{{ 'الموقع' | translate }}</h4>
-                <p class="text-sm font-medium leading-relaxed">
-                  {{ 'الإمارات العربية المتحدة' | translate }}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-8 pt-6 border-t border-white/15">
-            <h4 class="text-xs text-purple-200 font-semibold mb-3">{{ 'تابعنا على شبكات التواصل' | translate }}</h4>
-            <div class="flex items-center gap-3">
-              <a href="#" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-[#F9B400] hover:text-[#3D1A6D] flex items-center justify-center transition duration-300">
-                <i class="fa-brands fa-facebook-f"></i>
-              </a>
-              <a href="#" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-[#F9B400] hover:text-[#3D1A6D] flex items-center justify-center transition duration-300">
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-              <a href="#" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-[#F9B400] hover:text-[#3D1A6D] flex items-center justify-center transition duration-300">
-                <i class="fa-brands fa-youtube"></i>
-              </a>
-              <a href="https://wa.me/971525250833" target="_blank" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-[#25D366] hover:text-white flex items-center justify-center transition duration-300">
-                <i class="fa-brands fa-whatsapp"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Contact Form -->
-      <div class="lg:col-span-7 bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-slate-100" data-aos="fade-left" data-aos-duration="800">
-        <h3 class="text-2xl font-bold text-slate-800 mb-6">{{ 'أرسل لنا رسالة' | translate }}</h3>
-
-        <form (ngSubmit)="onSubmit()" #contactForm="ngForm" class="space-y-5">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-
-            <!-- Name Input -->
-            <div>
-              <label class="block text-sm font-bold text-slate-700 mb-2">{{ 'الاسم بالكامل' | translate }} <span class="text-rose-500">*</span></label>
-              <input type="text" [(ngModel)]="formData.name" name="name" #nameControl="ngModel" required minlength="3"
-                     class="w-full bg-slate-50 border rounded-xl px-4 py-3 text-sm focus:outline-none focus:bg-white transition"
-                     [ngClass]="{'border-rose-400 bg-rose-50/30': nameControl.invalid && (nameControl.dirty || nameControl.touched), 'border-slate-200 focus:border-[#4F2DB7]': !(nameControl.invalid && (nameControl.dirty || nameControl.touched))}"
-                     [placeholder]="'أدخل اسمك الكريم' | translate">
-              @if (nameControl.invalid && (nameControl.dirty || nameControl.touched)) {
-                <p class="text-rose-500 text-xs mt-1 font-medium">
-                  @if (nameControl.errors?.['required']) { {{ 'الاسم مطلوب.' | translate }}  }
-                  @if (nameControl.errors?.['minlength']) { {{ 'يجب أن يتكون الاسم من 3 أحرف على الأقل.' | translate }}  }
-                </p>
-              }
-            </div>
-
-            <!-- Phone Input -->
-            <div>
-              <label class="block text-sm font-bold text-slate-700 mb-2">{{ 'رقم الهاتف' | translate }} <span class="text-rose-500">*</span></label>
-              <input type="tel" [(ngModel)]="formData.phone" name="phone" #phoneControl="ngModel" required dir="ltr"
-                     class="w-full bg-slate-50 border rounded-xl px-4 py-3 text-sm text-right focus:outline-none focus:bg-white transition"
-                     [ngClass]="{'border-rose-400 bg-rose-50/30': phoneControl.invalid && (phoneControl.dirty || phoneControl.touched), 'border-slate-200 focus:border-[#4F2DB7]': !(phoneControl.invalid && (phoneControl.dirty || phoneControl.touched))}"
-                     placeholder="+971 50 000 0000">
-              @if (phoneControl.invalid && (phoneControl.dirty || phoneControl.touched)) {
-                <p class="text-rose-500 text-xs mt-1 font-medium">
-                  {{ 'رقم الهاتف مطلوب.' | translate }}
-                </p>
-              }
-            </div>
-          </div>
-
-          <!-- Email Input -->
-          <div>
-            <label class="block text-sm font-bold text-slate-700 mb-2">{{ 'البريد الإلكتروني' | translate }} <span class="text-rose-500">*</span></label>
-            <input type="email" [(ngModel)]="formData.email" name="email" #emailControl="ngModel" required email
-                   class="w-full bg-slate-50 border rounded-xl px-4 py-3 text-sm focus:outline-none focus:bg-white transition"
-                   [ngClass]="{'border-rose-400 bg-rose-50/30': emailControl.invalid && (emailControl.dirty || emailControl.touched), 'border-slate-200 focus:border-[#4F2DB7]': !(emailControl.invalid && (emailControl.dirty || emailControl.touched))}"
-                   placeholder="example@domain.com">
-            @if (emailControl.invalid && (emailControl.dirty || emailControl.touched)) {
-              <p class="text-rose-500 text-xs mt-1 font-medium">
-                @if (emailControl.errors?.['required']) { {{ 'البريد الإلكتروني مطلوب.' | translate }}  }
-                @if (emailControl.errors?.['email']) { {{ 'يرجى إدخال بريد إلكتروني صحيح.' | translate }}  }
-              </p>
-            }
-          </div>
-
-          <!-- Subject Input -->
-          <div>
-            <label class="block text-sm font-bold text-slate-700 mb-2">{{ 'موضوع الرسالة' | translate }}</label>
-            <select [(ngModel)]="formData.subject" name="subject"
-                    class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#4F2DB7] focus:bg-white transition">
-              <option value="general">{{ 'استفسار عام' | translate }}</option>
-              <option value="courses">{{ 'استفسار عن المناهج والكورسات' | translate }}</option>
-              <option value="tech">{{ 'مشكلة تقنية في المنصة' | translate }}</option>
-              <option value="other">{{ 'موضوع آخر' | translate }}</option>
-            </select>
-          </div>
-
-          <!-- Message Input -->
-          <div>
-            <label class="block text-sm font-bold text-slate-700 mb-2">{{ 'الرسالة' | translate }} <span class="text-rose-500">*</span></label>
-            <textarea [(ngModel)]="formData.message" name="message" #messageControl="ngModel" rows="4" required minlength="5"
-                      class="w-full bg-slate-50 border rounded-xl px-4 py-3 text-sm focus:outline-none focus:bg-white transition resize-none"
-                      [ngClass]="{'border-rose-400 bg-rose-50/30': messageControl.invalid && (messageControl.dirty || messageControl.touched), 'border-slate-200 focus:border-[#4F2DB7]': !(messageControl.invalid && (messageControl.dirty || messageControl.touched))}"
-                      [placeholder]="'اكتب رسالتك هنا بالتفصيل...' | translate"></textarea>
-            @if (messageControl.invalid && (messageControl.dirty || messageControl.touched)) {
-              <p class="text-rose-500 text-xs mt-1 font-medium">
-                @if (messageControl.errors?.['required']) { {{ 'محتوى الرسالة مطلوب.' | translate }}  }
-                @if (messageControl.errors?.['minlength']) { {{ 'يجب أن تكون الرسالة من 5 أحرف على الأقل.' | translate }}  }
-              </p>
-            }
-          </div>
-
-          <!-- Submit Button -->
-          <button type="submit" [disabled]="!contactForm.form.valid || isSubmitting"
-                  class="w-full bg-[#4F2DB7] hover:bg-[#3D1A6D] text-white font-bold py-3.5 px-6 rounded-xl shadow-lg transition duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
-            @if (isSubmitting) {
-              <i class="fa-solid fa-circle-notch animate-spin text-white"></i>
-              <span>{{ 'جاري الإرسال...' | translate }}</span>
-            } @else {
-              <i class="fa-solid fa-paper-plane"></i>
-              <span>{{ 'إرسال الرسالة' | translate }}</span>
-            }
-          </button>
-        </form>
-      </div>
-
-    </div>
+      <button type="submit" [disabled]="contactForm.invalid" class="primary-action w-full">
+        {{ 'فتح الرسالة في البريد' | translate }}
+      </button>
+    </form>
   </div>
 </section>

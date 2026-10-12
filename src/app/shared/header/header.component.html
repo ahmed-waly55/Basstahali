@@ -1,257 +1,124 @@
-<header class="bg-white shadow-sm border-b border-gray-100 fixed top-0 inset-x-0 w-full z-50">
-  <div class="max-w-7xl mx-auto px-6">
-
-    <div class="flex items-center justify-between h-20">
-
-      <!-- Logo -->
-      <a routerLink="/" class="flex items-center">
-        <img
-          src="images/logo.jpg"
-          [alt]="'بسطهالي — منصة تعليمية أونلاين' | translate"
-          class="h-16 w-auto object-contain"
-        />
-      </a>
-
-      <!-- Desktop Menu -->
-      <nav [attr.aria-label]="'القائمة الرئيسية' | translate" class="hidden 2xl:flex items-center gap-4">
-        <a routerLink="/curriculum" routerLinkActive="text-[#4F2DB7]" class="font-semibold text-gray-700 hover:text-[#4F2DB7] py-2">{{ 'المناهج' | translate }}</a>
-
-        <a
-          routerLink="/"
-          routerLinkActive="text-[#4F2DB7]"
-          [routerLinkActiveOptions]="{exact: true}"
-          class="relative font-semibold text-gray-700 hover:text-[#4F2DB7] transition group py-2"
-        >
-          {{ 'الرئيسية' | translate }}
-          <!-- الخط السفلي للرابط النشط -->
-          <span
-            routerLinkActive="!block"
-            [routerLinkActiveOptions]="{exact: true}"
-            class="hidden absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-1 rounded-full bg-[#4F2DB7]"
-          ></span>
-        </a>
-
-        <a
-          routerLink="/courses"
-          routerLinkActive="text-[#4F2DB7]"
-          class="relative font-semibold text-gray-700 hover:text-[#4F2DB7] transition py-2"
-        >
-{{ 'الكورسات' | translate }}
-          <span
-            routerLinkActive="!block"
-            class="hidden absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-1 rounded-full bg-[#4F2DB7]"
-          ></span>
-        </a>
-
-        <a
-          routerLink="/features"
-          routerLinkActive="text-[#4F2DB7]"
-          class="relative font-semibold text-gray-700 hover:text-[#4F2DB7] transition py-2"
-        >
-          {{ 'المميزات' | translate }}
-          <span
-            routerLinkActive="!block"
-            class="hidden absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-1 rounded-full bg-[#4F2DB7]"
-          ></span>
-        </a>
-
-        <a
-          routerLink="/teachers"
-          routerLinkActive="text-[#4F2DB7]"
-          class="relative font-semibold text-gray-700 hover:text-[#4F2DB7] transition py-2"
-        >
-          {{ 'المدرسين' | translate }}
-          <span
-            routerLinkActive="!block"
-            class="hidden absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-1 rounded-full bg-[#4F2DB7]"
-          ></span>
-        </a>
-
-        <a
-          routerLink="/pricing"
-          routerLinkActive="text-[#4F2DB7]"
-          class="relative font-semibold text-gray-700 hover:text-[#4F2DB7] transition py-2"
-        >
-          {{ 'الأسعار' | translate }}
-          <span
-            routerLinkActive="!block"
-            class="hidden absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-1 rounded-full bg-[#4F2DB7]"
-          ></span>
-        </a>
-
-        <a
-          routerLink="/about"
-          routerLinkActive="text-[#4F2DB7]"
-          class="relative font-semibold text-gray-700 hover:text-[#4F2DB7] transition py-2"
-        >
-          {{ 'من نحن' | translate }}
-          <span
-            routerLinkActive="!block"
-            class="hidden absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-1 rounded-full bg-[#4F2DB7]"
-          ></span>
-        </a>
-
-        <a
-          routerLink="/contact"
-          routerLinkActive="text-[#4F2DB7]"
-          class="relative font-semibold text-gray-700 hover:text-[#4F2DB7] transition py-2"
-        >
-          {{ 'تواصل معنا' | translate }}
-          <span
-            routerLinkActive="!block"
-            class="hidden absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-1 rounded-full bg-[#4F2DB7]"
-          ></span>
-        </a>
-
-      </nav>
-
-      <!-- Desktop Buttons -->
-      <div class="hidden 2xl:flex items-center gap-4">
-
-       <a
-  href="https://dashboard.basstahali.com"
-  class="border-2 border-[#6D4BCE] text-[#4F2DB7] rounded-xl px-7 py-2.5 font-bold hover:bg-[#6D4BCE] hover:text-white transition flex items-center gap-2"
->
-  <i class="fa-solid fa-right-to-bracket"></i>
-  <span>{{ 'تسجيل الدخول' | translate }}</span>
-</a>
-
-        <a
-  href="https://wa.me/971525250833?text=السلام%20عليكم%20أريد%20معرفة%20تفاصيل%20الاشتراك%20في%20منصة%20بسطهالي"
-  target="_blank"
-  class="bg-[#F9B400] text-black font-bold rounded-xl px-7 py-2.5 hover:bg-yellow-500 transition shadow-md flex items-center gap-2"
->
-  <i class="fa-brands fa-whatsapp"></i>
-  <span>{{ 'ابدأ الآن' | translate }}</span>
-</a>
-      </div>
-
-      <div class="flex shrink-0 items-center gap-2">
-        <button type="button" (click)="preferences.toggleLanguage()" class="rounded-xl border border-purple-100 px-3 py-2 text-sm font-bold text-[#3b236d]" [attr.aria-label]="preferences.language() === 'ar' ? 'Switch to English' : 'التبديل إلى العربية'">{{ preferences.language() === 'ar' ? 'EN' : 'عربي' }}</button>
-        <button type="button" (click)="preferences.toggleTheme()" class="flex h-10 w-10 items-center justify-center rounded-xl border border-purple-100 text-[#3b236d]" [attr.aria-pressed]="preferences.dark()" [attr.aria-label]="preferences.language() === 'ar' ? 'تبديل الوضع الداكن' : 'Toggle dark mode'">
-          <svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">@if (preferences.dark()) { <circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/> } @else { <path d="M20 14A8 8 0 0 1 10 4a8 8 0 1 0 10 10Z"/> }</svg>
-        </button>
-      </div>
-      <!-- Mobile Hamburger Button -->
+<header class="site-header">
+  <div class="header-inner">
+    <a
+      routerLink="/"
+      (click)="closeMenu()"
+      class="brand-link"
+      [attr.aria-label]="'الرئيسية' | translate"
+      ><span class="brand-owl"><img src="images/owl.png" alt="" width="96" height="64" /></span
+      ><span class="brand-wordmark"
+        ><span class="brand-name" dir="rtl">بسط<span>هالي</span></span
+        ><span class="brand-english">Basstahali</span></span
+      ></a
+    >
+    <nav class="desktop-nav" [attr.aria-label]="'القائمة الرئيسية' | translate">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">{{
+        'الرئيسية' | translate
+      }}</a>
+      <a routerLink="/curriculum" routerLinkActive="active">{{ 'المناهج الدراسية' | translate }}</a>
+      <a routerLink="/teachers" routerLinkActive="active">{{ 'المدرسين' | translate }}</a>
+      <a routerLink="/pricing" routerLinkActive="active">{{ 'الأسعار' | translate }}</a>
+      <a routerLink="/about" routerLinkActive="active">{{ 'من نحن' | translate }}</a>
+    </nav>
+    <div class="header-actions">
       <button
+        type="button"
+        (click)="preferences.toggleLanguage()"
+        class="language-button"
+        [attr.aria-label]="
+          preferences.language() === 'ar' ? 'Switch to English' : 'التبديل إلى العربية'
+        "
+      >
+        {{ preferences.language() === 'ar' ? 'EN' : 'عربي' }}
+      </button>
+      <button
+        type="button"
+        (click)="preferences.toggleTheme()"
+        class="theme-button"
+        [attr.aria-pressed]="preferences.dark()"
+        [attr.aria-label]="
+          preferences.language() === 'ar' ? 'تبديل الوضع الداكن' : 'Toggle dark mode'
+        "
+      >
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.7"
+        >
+          @if (preferences.dark()) {
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"
+            />
+          } @else {
+            <path d="M20 14A8 8 0 0 1 10 4a8 8 0 1 0 10 10Z" />
+          }
+        </svg>
+      </button>
+      <a href="https://dashboard.basstahali.com" class="header-login"
+        >{{ 'تسجيل الدخول' | translate }}
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.7"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="m7 17 10-10M7 7h10v10" /></svg
+      ></a>
+      <button
+        type="button"
         (click)="toggleMenu()"
+        class="menu-button"
         [attr.aria-expanded]="isMenuOpen"
         aria-controls="mobile-navigation"
-        [attr.aria-label]="preferences.language() === 'ar' ? 'القائمة الرئيسية' : 'Main navigation'"
-        type="button"
-        class="2xl:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition focus:outline-none w-10 h-10 flex items-center justify-center text-2xl"
+        [attr.aria-label]="'القائمة الرئيسية' | translate"
       >
-        @if (!isMenuOpen) {
-          <svg aria-hidden="true" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-        } @else {
-          <svg aria-hidden="true" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 6 12 12M6 18 18 6"/></svg>
-        }
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        >
+          @if (isMenuOpen) {
+            <path d="m6 6 12 12M6 18 18 6" />
+          } @else {
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          }
+        </svg>
       </button>
-
     </div>
-
-    <!-- Mobile Menu Dropdown -->
-    <div
-      id="mobile-navigation" class="2xl:hidden max-h-[calc(100dvh-5rem)] overflow-y-auto transition-all duration-300 ease-in-out border-t border-gray-100"
-      [class.block]="isMenuOpen"
-      [class.hidden]="!isMenuOpen"
-    >
-      <div class="flex flex-col py-4 space-y-2">
-
-        <a
-          routerLink="/"
-          (click)="closeMenu()"
-          routerLinkActive="text-[#4F2DB7] font-bold bg-gray-50"
-          [routerLinkActiveOptions]="{exact: true}"
-          class="text-gray-700 hover:text-[#4F2DB7] py-2.5 px-4 rounded-lg transition"
-        >
-          {{ 'الرئيسية' | translate }}
-        </a>
-
-        <a
-          routerLink="/curriculum"
-          (click)="closeMenu()"
-          routerLinkActive="text-[#4F2DB7] font-bold bg-gray-50"
-          class="text-gray-700 hover:text-[#4F2DB7] py-2.5 px-4 rounded-lg transition"
-        >
-         {{ 'المناهج الدراسية' | translate }}
-        </a>
-<a
-          routerLink="/courses"
-          (click)="closeMenu()"
-          routerLinkActive="text-[#4F2DB7] font-bold bg-gray-50"
-          class="text-gray-700 hover:text-[#4F2DB7] py-2.5 px-4 rounded-lg transition"
-        >
-         {{ 'الكورسات' | translate }}
-        </a>
-
-        <a
-          routerLink="/features"
-          (click)="closeMenu()"
-          routerLinkActive="text-[#4F2DB7] font-bold bg-gray-50"
-          class="text-gray-700 hover:text-[#4F2DB7] py-2.5 px-4 rounded-lg transition"
-        >
-          {{ 'المميزات' | translate }}
-        </a>
-
-        <a
-          routerLink="/teachers"
-          (click)="closeMenu()"
-          routerLinkActive="text-[#4F2DB7] font-bold bg-gray-50"
-          class="text-gray-700 hover:text-[#4F2DB7] py-2.5 px-4 rounded-lg transition"
-        >
-          {{ 'المدرسين' | translate }}
-        </a>
-
-        <a
-          routerLink="/pricing"
-          (click)="closeMenu()"
-          routerLinkActive="text-[#4F2DB7] font-bold bg-gray-50"
-          class="text-gray-700 hover:text-[#4F2DB7] py-2.5 px-4 rounded-lg transition"
-        >
-          {{ 'الأسعار' | translate }}
-        </a>
-
-        <a
-          routerLink="/about"
-          (click)="closeMenu()"
-          routerLinkActive="text-[#4F2DB7] font-bold bg-gray-50"
-          class="text-gray-700 hover:text-[#4F2DB7] py-2.5 px-4 rounded-lg transition"
-        >
-          {{ 'من نحن' | translate }}
-        </a>
-
-        <a
-          routerLink="/contact"
-          (click)="closeMenu()"
-          routerLinkActive="text-[#4F2DB7] font-bold bg-gray-50"
-          class="text-gray-700 hover:text-[#4F2DB7] py-2.5 px-4 rounded-lg transition"
-        >
-          {{ 'تواصل معنا' | translate }}
-        </a>
-
-        <!-- Mobile Buttons -->
-        <div class="pt-4 flex flex-col gap-3 border-t border-gray-100">
-          <a
-  href="https://dashboard.basstahali.com"
-  class="w-full text-center border-2 border-[#6D4BCE] text-[#4F2DB7] rounded-xl px-7 py-2.5 font-bold hover:bg-[#6D4BCE] hover:text-white transition flex items-center justify-center gap-2"
->
-  <i class="fa-solid fa-right-to-bracket"></i>
-  <span>{{ 'تسجيل الدخول' | translate }}</span>
-</a>
-
-          <button
-            routerLink="/auth/register"
-            (click)="closeMenu()"
-            class="w-full bg-[#F9B400] text-black font-bold rounded-xl py-2.5 hover:bg-yellow-500 transition shadow-md flex items-center justify-center gap-2"
-          >
-            <i class="fa-solid fa-rocket"></i>
-            <span>{{ 'ابدأ الآن' | translate }}</span>
-          </button>
-        </div>
-
-      </div>
-    </div>
-
   </div>
+  @if (isMenuOpen) {
+    <nav
+      id="mobile-navigation"
+      class="mobile-navigation"
+      [attr.aria-label]="'القائمة الرئيسية' | translate"
+    >
+      @for (
+        link of [
+          { path: '/', label: 'الرئيسية' },
+          { path: '/curriculum', label: 'المناهج الدراسية' },
+          { path: '/teachers', label: 'المدرسين' },
+          { path: '/pricing', label: 'الأسعار' },
+          { path: '/about', label: 'من نحن' },
+          { path: '/contact', label: 'تواصل معنا' },
+        ];
+        track link.path
+      ) {
+        <a
+          [routerLink]="link.path"
+          (click)="closeMenu()"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+          >{{ link.label | translate }}</a
+        >
+      }
+      <a href="https://dashboard.basstahali.com">{{ 'تسجيل الدخول' | translate }}</a>
+    </nav>
+  }
 </header>

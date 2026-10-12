@@ -1,16 +1,16 @@
-import { Service } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-@Service()
+@Injectable({ providedIn: 'root' })
 export class LoadingService {
+  private pending = 0;
   private loadingSubject = new BehaviorSubject<boolean>(false);
-  isLoading$ = this.loadingSubject.asObservable();
-
-  show() {
-    this.loadingSubject.next(true);
+  readonly isLoading$ = this.loadingSubject.asObservable();
+  show(): void {
+    if (++this.pending === 1) this.loadingSubject.next(true);
   }
-
-  hide() {
-    this.loadingSubject.next(false);
+  hide(): void {
+    this.pending = Math.max(0, this.pending - 1);
+    if (this.pending === 0) this.loadingSubject.next(false);
   }
 }

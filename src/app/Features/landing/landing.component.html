@@ -1,390 +1,92 @@
-<!-- Hero Component Animation -->
-<div data-aos="fade-down" data-aos-duration="1000">
-  <app-hero></app-hero>
-</div>
-
-<!-- Header 1 -->
-<app-section-header [title]="'المناهج الدراسية و الكورسات' | translate" data-aos="fade-down" data-aos-duration="800" />
-
-<div class="container mx-auto px-4">
-  <!-- تم ضبط الشبكة هنا لتصبح 3 كروت في الصف الواحد lg:grid-cols-3 -->
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-
-    <!-- عرض المناهج القادمة من الـ API ديناميكياً -->
-    @for (curriculum of curriculaList; track curriculum.id; let idx = $index) {
-      <a [routerLink]="['/curriculum', curriculum.id || curriculum._id]" class="block hover:no-underline cursor-pointer" [attr.data-aos]="'fade-up'" [attr.data-aos-delay]="(idx + 1) * 100">
-        <app-education-card
-          [title]="preferences.itemName(curriculum) || 'المنهج الدراسي'"
-          [subtitle]="(preferences.language() === 'en' ? curriculum.descriptionEn || curriculum.description : curriculum.descriptionAr || curriculum.description) || 'جميع المراحل الدراسية وفق أفضل المناهج مع نخبة من المدرسين.'"
-          iconBg="bg-blue-100"
-          iconColor="text-blue-600"
-          glowColor="bg-blue-300"
-          lineColor="bg-blue-500"
-          borderColor="hover:border-blue-300"
-          buttonColor="border-blue-500 text-blue-600 hover:bg-blue-600 hover:text-white">
-        </app-education-card>
-      </a>
-    }
-
-    <!-- الكورسات (ثابتة بجانب المناهج) -->
-    <a routerLink="/courses" class="block hover:no-underline" data-aos="fade-up" data-aos-delay="250">
-      <app-education-card
-        [title]="'الكورسات' | translate"
-        [subtitle]="'كورسات في اللغات، البرمجة، المهارات، والمواد الإثرائية لجميع الأعمار.' | translate"
-        iconBg="bg-[#F9B400]/20"
-        iconColor="text-[#F9B400]"
-        glowColor="bg-[#F9B400]/40"
-        lineColor="bg-[#F9B400]"
-        borderColor="hover:border-[#F9B400]"
-        buttonColor="border-[#F9B400] text-[#F9B400] hover:bg-[#F9B400] hover:text-black">
-      </app-education-card>
-    </a>
-
-  </div>
-</div>
-
-
-<!-- Header 2 -->
-<app-section-header [title]="'مميزات المنصة' | translate" data-aos="fade-down" data-aos-duration="800" />
-
-
-<section class="container mx-auto px-4 py-8">
-  <div class="relative overflow-hidden rounded-[32px] bg-gradient-to-r from-[#3D1A6D] via-[#4F2DB7] to-[#6A3FC8] p-8 md:p-10" data-aos="zoom-in" data-aos-duration="900">
-
-    <!-- Decorations -->
-    <div class="absolute -top-20 -right-20 w-72 h-72 bg-[#F9B400]/20 rounded-full blur-3xl"></div>
-    <div class="absolute -bottom-20 -left-20 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
-
-    <!-- Heading -->
-    <div class="relative text-center mb-10" data-aos="fade-up" data-aos-delay="150">
-      <span class="inline-flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full text-white text-sm font-semibold">
-        <i class="fa-solid fa-stars text-[#F9B400]"></i>
-        {{ 'لماذا بسطهالي؟' | translate }}
-      </span>
-
-      <h2 class="mt-5 text-3xl md:text-4xl font-black text-white">
-        {{ 'كل ما يحتاجه الطالب...' | translate }}
-        <span class="text-[#F9B400]">{{ 'في مكان واحد' | translate }}</span>
-      </h2>
-
-      <p class="mt-3 text-white/75 max-w-2xl mx-auto">
-        {{ 'منصة متكاملة تساعد الطالب وولي الأمر على متابعة العملية التعليمية بسهولة.' | translate }}
-      </p>
+<app-hero />
+<section class="content-section">
+  <div class="page-container">
+    <div class="mb-7 flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <p class="eyebrow">{{ 'منهجك، خطوتك الأولى' | translate }}</p>
+        <h2 class="section-title mt-2">{{ 'المناهج الدراسية' | translate }}</h2>
+        <p class="section-copy">
+          {{ 'اختر المنهج المناسب لك للبدء في رحلة التعلم مع بسطهالي' | translate }}
+        </p>
+      </div>
+      <a routerLink="/curriculum" class="text-sm font-bold text-[var(--brand)]"
+        >{{ 'عرض الكل' | translate }} <span aria-hidden="true">←</span></a
+      >
     </div>
-
-    <!-- Features Cards with Stagger Animation -->
-    <div class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-5">
-
-      <div class="group rounded-3xl bg-white/10 backdrop-blur-md border border-white/10 p-5 text-center hover:bg-white/20 transition-all duration-300 hover:-translate-y-2"
-           data-aos="fade-up" data-aos-delay="100">
-        <div class="w-14 h-14 rounded-2xl bg-[#F9B400] text-[#3D1A6D] flex items-center justify-center text-2xl mx-auto shadow-lg group-hover:scale-110 transition">
-          <i class="fa-solid fa-calendar-days"></i>
-        </div>
-        <h3 class="mt-4 font-bold text-white">{{ 'جدول الحصص' | translate }}</h3>
-        <p class="mt-2 text-sm text-white/70 leading-6">{{ 'تنظيم كامل للحصص والمواعيد.' | translate }}</p>
-      </div>
-
-      <div class="group rounded-3xl bg-white/10 backdrop-blur-md border border-white/10 p-5 text-center hover:bg-white/20 transition-all duration-300 hover:-translate-y-2"
-           data-aos="fade-up" data-aos-delay="200">
-        <div class="w-14 h-14 rounded-2xl bg-[#F9B400] text-[#3D1A6D] flex items-center justify-center text-2xl mx-auto shadow-lg group-hover:scale-110 transition">
-          <i class="fa-solid fa-bell"></i>
-        </div>
-        <h3 class="mt-4 font-bold text-white">{{ 'إشعارات ذكية' | translate }}</h3>
-        <p class="mt-2 text-sm text-white/70">{{ 'تنبيهات قبل الحصص والواجبات.' | translate }}</p>
-      </div>
-
-      <div class="group rounded-3xl bg-white/10 backdrop-blur-md border border-white/10 p-5 text-center hover:bg-white/20 transition-all duration-300 hover:-translate-y-2"
-           data-aos="fade-up" data-aos-delay="300">
-        <div class="w-14 h-14 rounded-2xl bg-[#F9B400] text-[#3D1A6D] flex items-center justify-center text-2xl mx-auto shadow-lg group-hover:scale-110 transition">
-          <i class="fa-solid fa-cloud-arrow-up"></i>
-        </div>
-        <h3 class="mt-4 font-bold text-white">{{ 'رفع الواجبات' | translate }}</h3>
-        <p class="mt-2 text-sm text-white/70">{{ 'رفع سريع وسهل للواجبات.' | translate }}</p>
-      </div>
-
-      <div class="group rounded-3xl bg-white/10 backdrop-blur-md border border-white/10 p-5 text-center hover:bg-white/20 transition-all duration-300 hover:-translate-y-2"
-           data-aos="fade-up" data-aos-delay="400">
-        <div class="w-14 h-14 rounded-2xl bg-[#F9B400] text-[#3D1A6D] flex items-center justify-center text-2xl mx-auto shadow-lg group-hover:scale-110 transition">
-          <i class="fa-solid fa-circle-check"></i>
-        </div>
-        <h3 class="mt-4 font-bold text-white">{{ 'تصحيح إلكتروني' | translate }}</h3>
-        <p class="mt-2 text-sm text-white/70">{{ 'تصحيح فوري مع ملاحظات المعلم.' | translate }}</p>
-      </div>
-
-      <div class="group rounded-3xl bg-white/10 backdrop-blur-md border border-white/10 p-5 text-center hover:bg-white/20 transition-all duration-300 hover:-translate-y-2"
-           data-aos="fade-up" data-aos-delay="500">
-        <div class="w-14 h-14 rounded-2xl bg-[#F9B400] text-[#3D1A6D] flex items-center justify-center text-2xl mx-auto shadow-lg group-hover:scale-110 transition">
-          <i class="fa-solid fa-user-group"></i>
-        </div>
-        <h3 class="mt-4 font-bold text-white">{{ 'متابعة ولي الأمر' | translate }}</h3>
-        <p class="mt-2 text-sm text-white/70">{{ 'متابعة مستمرة لمستوى الأبناء.' | translate }}</p>
-      </div>
-
-      <div class="group rounded-3xl bg-white/10 backdrop-blur-md border border-white/10 p-5 text-center hover:bg-white/20 transition-all duration-300 hover:-translate-y-2"
-           data-aos="fade-up" data-aos-delay="600">
-        <div class="w-14 h-14 rounded-2xl bg-[#F9B400] text-[#3D1A6D] flex items-center justify-center text-2xl mx-auto shadow-lg group-hover:scale-110 transition">
-          <i class="fa-solid fa-chart-line"></i>
-        </div>
-        <h3 class="mt-4 font-bold text-white">{{ 'تقارير الأداء' | translate }}</h3>
-        <p class="mt-2 text-sm text-white/70">{{ 'تحليل كامل لتقدم الطالب.' | translate }}</p>
-      </div>
-
+    <div class="grid gap-4 md:grid-cols-2">
+      @for (curriculum of curriculaList; track curriculum.id || curriculum._id) {
+        <a
+          [routerLink]="['/curriculum', curriculum.id || curriculum._id]"
+          class="surface-card flex items-center justify-between gap-4 transition hover:border-purple-300"
+          ><div>
+            <h3 class="text-xl font-bold text-[var(--ink)]">
+              {{ preferences.itemName(curriculum) }}
+            </h3>
+            <p class="section-copy text-sm">{{ 'استكشف المراحل والمواد الدراسية' | translate }}</p>
+          </div>
+          <span
+            class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[var(--soft)] text-[var(--brand)]"
+            aria-hidden="true"
+            >←</span
+          ></a
+        >
+      } @empty {
+        <a
+          routerLink="/curriculum"
+          class="surface-card md:col-span-2 flex items-center justify-between gap-4"
+          ><div>
+            <h3 class="text-lg font-bold">{{ 'استكشف المناهج الدراسية' | translate }}</h3>
+            <p class="section-copy text-sm">
+              {{ 'اختر المنهج المناسب لك للبدء في رحلة التعلم مع بسطهالي' | translate }}
+            </p>
+          </div>
+          <span aria-hidden="true">←</span></a
+        >
+      }
     </div>
   </div>
 </section>
-
-<!-- 3. Banner Section -->
-<section dir="ltr" class="w-full max-w-7xl mx-auto px-4 py-4" data-aos="zoom-in-up" data-aos-duration="800">
-  <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#4A148C] via-[#5E17EB] to-[#45129E] px-6 md:px-10 py-5 shadow-xl flex flex-col md:flex-row items-center justify-between gap-4">
-
-    <!-- البومة -->
-    <div class="relative flex items-center justify-center shrink-0" data-aos="fade-right" data-aos-delay="250">
-      <span class="absolute -top-2 left-4 text-yellow-300 animate-pulse">✦</span>
-      <span class="absolute bottom-2 right-2 text-purple-300">✦</span>
-      <img src="/images/owl-banner.png" [alt]="'بسطهالي' | translate" class="w-32 md:w-44 h-auto object-contain drop-shadow-xl" />
-    </div>
-
-    <!-- المحتوى -->
-    <div class="flex-1 flex flex-col md:items-end items-center text-center md:text-right text-white" data-aos="fade-left" data-aos-delay="350">
-      <span class="mb-2 inline-flex items-center rounded-full bg-yellow-400/20 border border-yellow-300/30 px-4 py-1 text-sm font-semibold text-yellow-200">
-        {{ '🎁 عرض لفترة محدودة' | translate }}
-      </span>
-      <h2 class="text-2xl md:text-4xl font-extrabold">
-        {{ 'جرّب أول حصة' | translate }} <span class="text-yellow-300">{{ 'مجانًا' | translate }}</span>
-      </h2>
-      <p class="mt-2 text-purple-100 text-base md:text-lg">
-        {{ 'احجز حصتك التجريبية المجانية وتعرّف على أسلوب الشرح قبل الاشتراك.' | translate }}
-      </p>
-      <div class="mt-4">
-        <a href="https://wa.me/971525250833?text=السلام%20عليكم،%20أرغب%20في%20حجز%20أول%20حصة%20تجريبية%20مجانية."
-           target="_blank"
-           rel="noopener noreferrer"
-           class="inline-flex items-center gap-3 bg-[#FFC107] hover:bg-[#FFC108] text-black font-bold px-7 py-3 rounded-2xl shadow-lg transition duration-300 hover:scale-105">
-          <i class="pi pi-whatsapp text-xl"></i>
-          {{ 'احجز الآن عبر واتساب' | translate }}
-        </a>
-      </div>
-    </div>
-
-    <!-- خلفية -->
-    <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-purple-400/20 rounded-full blur-3xl"></div>
-    <div class="absolute -top-10 -left-10 w-40 h-40 bg-indigo-400/20 rounded-full blur-3xl"></div>
-
-  </div>
-</section>
-
-<section class="relative py-20 md:py-28 overflow-hidden bg-slate-50">
-  <!-- Dynamic Background Glowing Blobs -->
-  <div class="absolute top-1/4 -right-20 w-80 h-80 bg-purple-200/40 rounded-full blur-3xl pointer-events-none"></div>
-  <div class="absolute bottom-10 -left-20 w-80 h-80 bg-amber-200/40 rounded-full blur-3xl pointer-events-none"></div>
-
-  <div class="container relative mx-auto px-4 max-w-7xl z-10">
-
-    <!-- Header Section -->
-    <div class="text-center max-w-3xl mx-auto mb-16 md:mb-20" data-aos="fade-down">
-      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-100 text-[#4F2DB7] text-sm font-bold mb-4 shadow-sm">
-        <i class="fa-solid fa-rocket text-[#F9B400]"></i>
-        <span>{{ 'كيف تبدأ معنا؟' | translate }}</span>
-      </span>
-
-      <h2 class="text-3xl md:text-5xl font-black text-slate-900 leading-tight">
-        {{ 'ابدأ رحلتك التعليمية في' | translate }} <span class="text-[#4F2DB7] relative inline-block">
-          {{ '4 خطوات' | translate }}
-          <svg class="absolute -bottom-2 right-0 w-full h-2 text-[#F9B400]" viewBox="0 0 100 20" preserveAspectRatio="none">
-            <path d="M0 15 Q 50 0, 100 15" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round"/>
-          </svg>
-        </span>
-      </h2>
-
-      <p class="mt-4 text-slate-600 text-base md:text-lg leading-relaxed">
-        {{ 'التسجيل في منصة بسطهالي لا يستغرق سوى دقائق قليلة، لتنطلق بعدها في تجربة تعليمية سلسة وممتعة.' | translate }}
-      </p>
-    </div>
-
-    <!-- Steps Timeline Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
-
-      <!-- Connection Line (Desktop) -->
-      <div class="hidden lg:block absolute top-1/2 right-[12%] left-[12%] h-1 bg-gradient-to-l from-purple-200 via-[#4F2DB7]/30 to-purple-200 -translate-y-8 z-0"></div>
-
-      <!-- Step 1 -->
-      <div class="relative group z-10" data-aos="fade-up" data-aos-delay="0">
-        <div class="h-full bg-white rounded-3xl p-8 border border-slate-200/80 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center">
-
-          <!-- Step Number Badge -->
-          <div class="absolute -top-4 right-6 w-9 h-9 rounded-2xl bg-[#F9B400] text-[#3D1A6D] text-sm font-black flex items-center justify-center shadow-md border-2 border-white">
-            01
-          </div>
-
-          <!-- Icon Circle -->
-          <div class="w-20 h-20 rounded-2xl bg-purple-50 text-[#4F2DB7] group-hover:bg-[#4F2DB7] group-hover:text-white transition-colors duration-300 flex items-center justify-center text-3xl shadow-inner mb-6">
-            <i class="fa-solid fa-user-plus"></i>
-          </div>
-
-          <h3 class="text-xl font-bold text-slate-900 mb-2">{{ 'أنشئ حسابك' | translate }}</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">
-            {{ 'قم بإنشاء حسابك الجديد بسهولة أو اطلب التسجيل المباشر عبر خدمة الواتساب.' | translate }}
-          </p>
-        </div>
-      </div>
-
-      <!-- Step 2 -->
-      <div class="relative group z-10" data-aos="fade-up" data-aos-delay="150">
-        <div class="h-full bg-white rounded-3xl p-8 border border-slate-200/80 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center">
-
-          <!-- Step Number Badge -->
-          <div class="absolute -top-4 right-6 w-9 h-9 rounded-2xl bg-[#F9B400] text-[#3D1A6D] text-sm font-black flex items-center justify-center shadow-md border-2 border-white">
-            02
-          </div>
-
-          <!-- Icon Circle -->
-          <div class="w-20 h-20 rounded-2xl bg-purple-50 text-[#4F2DB7] group-hover:bg-[#4F2DB7] group-hover:text-white transition-colors duration-300 flex items-center justify-center text-3xl shadow-inner mb-6">
-            <i class="fa-solid fa-book-open"></i>
-          </div>
-
-          <h3 class="text-xl font-bold text-slate-900 mb-2">{{ 'اختر المنهج' | translate }}</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">
-            {{ 'حدد الدولة، المنهج، والمرحلة الدراسية لتظهر لك الدروس والمواد المخصصة لك.' | translate }}
-          </p>
-        </div>
-      </div>
-
-      <!-- Step 3 -->
-      <div class="relative group z-10" data-aos="fade-up" data-aos-delay="300">
-        <div class="h-full bg-white rounded-3xl p-8 border border-slate-200/80 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center">
-
-          <!-- Step Number Badge -->
-          <div class="absolute -top-4 right-6 w-9 h-9 rounded-2xl bg-[#F9B400] text-[#3D1A6D] text-sm font-black flex items-center justify-center shadow-md border-2 border-white">
-            03
-          </div>
-
-          <!-- Icon Circle -->
-          <div class="w-20 h-20 rounded-2xl bg-purple-50 text-[#4F2DB7] group-hover:bg-[#4F2DB7] group-hover:text-white transition-colors duration-300 flex items-center justify-center text-3xl shadow-inner mb-6">
-            <i class="fa-solid fa-credit-card"></i>
-          </div>
-
-          <h3 class="text-xl font-bold text-slate-900 mb-2">{{ 'فعّل اشتراكك' | translate }}</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">
-            {{ 'اختر الباقة المناسبة لاحتياجاتك وأكمل عملية الاشتراك بخطوات آمنة وسريعة.' | translate }}
-          </p>
-        </div>
-      </div>
-
-      <!-- Step 4 -->
-      <div class="relative group z-10" data-aos="fade-up" data-aos-delay="450">
-        <div class="h-full bg-white rounded-3xl p-8 border border-slate-200/80 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center">
-
-          <!-- Step Number Badge -->
-          <div class="absolute -top-4 right-6 w-9 h-9 rounded-2xl bg-[#F9B400] text-[#3D1A6D] text-sm font-black flex items-center justify-center shadow-md border-2 border-white">
-            04
-          </div>
-
-          <!-- Icon Circle -->
-          <div class="w-20 h-20 rounded-2xl bg-purple-50 text-[#4F2DB7] group-hover:bg-[#4F2DB7] group-hover:text-white transition-colors duration-300 flex items-center justify-center text-3xl shadow-inner mb-6">
-            <i class="fa-solid fa-graduation-cap"></i>
-          </div>
-
-          <h3 class="text-xl font-bold text-slate-900 mb-2">{{ 'ابدأ التعلم' | translate }}</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">
-            {{ 'شاهد الشروحات التفاعلية، احضر الحصص، وأنجز الواجبات بسهولة للتفوق.' | translate }}
-          </p>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Call To Action Button -->
-    <div class="mt-16 text-center" data-aos="zoom-in" data-aos-delay="500">
-      <a
-        href="https://wa.me/971525250833"
-        target="_blank"
-        class="inline-flex items-center gap-3 bg-[#4F2DB7] hover:bg-[#3D1A6D] text-white font-bold py-4 px-8 rounded-2xl transition duration-300 shadow-xl shadow-purple-900/20 hover:scale-105">
-        <i class="fa-brands fa-whatsapp text-2xl text-[#25D366]"></i>
-        <span>{{ 'سجل حسابك الآن عبر الواتساب' | translate }}</span>
-      </a>
-    </div>
-
-  </div>
-</section>
-
-<!-- 5. ماذا يقول طلابنا -->
-<section class="max-w-6xl mx-auto px-4 py-8" data-aos="fade-up" data-aos-duration="800">
-  <app-section-header [title]="'ماذا يقول طلابنا؟' | translate" />
-
-  <div class="relative flex items-center px-2" (mouseenter)="stopAutoPlay()" (mouseleave)="startAutoPlay()">
-    <button (click)="scrollRight()" type="button" aria-label="Next"
-            class="absolute -right-2 md:-right-4 z-20 w-8 h-8 md:w-9 md:h-9 rounded-full bg-white shadow-md border border-purple-100 flex items-center justify-center text-purple-600 hover:bg-purple-50 transition-all focus:outline-none">
-      <i class="fa-solid fa-chevron-right text-xs md:text-sm"></i>
-    </button>
-
-    <div #sliderTrack class="flex gap-4 overflow-x-auto no-scrollbar scroll-smooth py-2 px-1 w-full"
-         style="scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;">
-      @for (item of testimonials; track item.id) {
-        <div class="w-[82%] sm:w-[48%] lg:w-[calc(33.333%-11px)] shrink-0 bg-[#f8f7ff] rounded-2xl p-4 md:p-5 text-center flex flex-col items-center justify-between border border-purple-50/60 shadow-xs relative"
-             style="scroll-snap-align: start;">
-          <div class="w-full text-right text-[#9b8bc4]/50 text-xl font-serif select-none leading-none">
-            <i class="fa-solid fa-quote-right"></i>
-          </div>
-
-          <p class="text-[#2a174a] font-bold text-xs md:text-sm leading-relaxed px-1 my-3 text-center">
-            {{ (item.quote) | translate }}
-          </p>
-
-          <div class="flex flex-col items-center mt-auto w-full">
-            <div class="flex text-amber-400 text-xs gap-1 mb-2">
-              @for (star of [1,2,3,4,5]; track star) {
-                <i class="fa-solid fa-star"></i>
-              }
-            </div>
-
-            <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#dcd5f7] p-0.5 mb-1.5 overflow-hidden flex items-center justify-center">
-              <img [src]="item.avatar" [alt]="item.name" class="w-full h-full object-cover rounded-full" />
-            </div>
-
-            <h4 class="font-bold text-[#2a174a] text-xs md:text-sm mb-0.5">{{ (item.name) | translate }}</h4>
-            <span class="text-[11px] font-medium text-[#6c5991]">{{ (item.grade) | translate }}</span>
-          </div>
+<section class="content-section border-y border-[var(--border)] bg-[var(--surface)]">
+  <div class="page-container">
+    <h2 class="section-title">{{ 'كيف تبدأ معنا؟' | translate }}</h2>
+    <div class="mt-8 grid gap-7 md:grid-cols-3">
+      @for (
+        step of [
+          { title: 'اختر منهجك', copy: 'حدد منهجك وصفك الدراسي للوصول إلى المواد المناسبة.' },
+          { title: 'تواصل معنا', copy: 'نساعدك في اختيار المعلم والحصة المناسبة لاحتياجك.' },
+          { title: 'ابدأ حصتك المباشرة', copy: 'تعلّم، اسأل وتفاعل مع معلمك من أي مكان.' },
+        ];
+        track step.title;
+        let index = $index
+      ) {
+        <div>
+          <span
+            class="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--soft)] font-bold text-[var(--brand)]"
+            >{{ index + 1 }}</span
+          >
+          <h3 class="text-lg font-bold">{{ step.title | translate }}</h3>
+          <p class="section-copy text-sm">{{ step.copy | translate }}</p>
         </div>
       }
     </div>
-
-    <button (click)="scrollLeft()" type="button" aria-label="Previous"
-            class="absolute -left-2 md:-left-4 z-20 w-8 h-8 md:w-9 md:h-9 rounded-full bg-white shadow-md border border-purple-100 flex items-center justify-center text-purple-600 hover:bg-purple-50 transition-all focus:outline-none">
-      <i class="fa-solid fa-chevron-left text-xs md:text-sm"></i>
-    </button>
   </div>
 </section>
-
-<!-- 6. WhatsApp CTA Section -->
-<section class="max-w-5xl mx-auto px-4 py-8" data-aos="zoom-in" data-aos-duration="800">
-  <div class="relative bg-gradient-to-r from-[#4c1d95] via-[#5b21b6] to-[#6d28d9] text-white rounded-[2rem] p-6 md:p-8 flex flex-col md:flex-row items-center justify-between shadow-xl overflow-hidden">
-
-    <i class="fa-solid fa-sparkles absolute top-4 right-8 text-white/20 text-xl pointer-events-none"></i>
-    <i class="fa-solid fa-star-of-life absolute bottom-4 right-1/4 text-white/10 text-xs pointer-events-none"></i>
-
-    <div class="flex flex-col items-center md:items-start text-center md:text-right z-10 w-full md:w-auto mb-6 md:mb-0" data-aos="fade-right" data-aos-delay="200">
-      <h2 class="text-2xl md:text-3xl font-extrabold mb-2 tracking-wide">
-        {{ 'تواصل معنا على واتساب' | translate }}
-      </h2>
-
-      <p class="text-white/80 text-sm md:text-base font-medium mb-6">
-        {{ 'نحن هنا لمساعدتك والإجابة على استفساراتك' | translate }}
+<section class="content-section">
+  <div
+    class="page-container soft-card flex flex-col justify-between gap-6 md:flex-row md:items-center"
+  >
+    <div>
+      <h2 class="section-title">{{ 'جرّب أول حصة' | translate }}</h2>
+      <p class="section-copy">
+        {{ 'احجز حصتك التجريبية المجانية وتعرّف على أسلوب الشرح قبل الاشتراك.' | translate }}
       </p>
-
-      <a href="https://wa.me/971525250833"
-         target="_blank"
-         rel="noopener noreferrer"
-         class="inline-flex items-center justify-center gap-2.5 bg-white text-[#4c1d95] hover:bg-gray-100 font-bold text-sm md:text-base px-8 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0">
-        <i class="fa-brands fa-whatsapp text-green-500 text-lg md:text-xl"></i>
-        <span>{{ 'تواصل معنا' | translate }}</span>
-      </a>
     </div>
-
-    <div class="relative z-10 flex items-center justify-center shrink-0" data-aos="zoom-in" data-aos-delay="300">
-      <div class="w-24 h-24 md:w-32 md:h-32 bg-gradient-to-tr from-green-600 to-green-400 rounded-full flex items-center justify-center shadow-2xl border-4 border-white/20 transform hover:scale-105 transition-transform duration-300">
-        <i class="fa-brands fa-whatsapp text-white text-5xl md:text-7xl drop-shadow-md"></i>
-      </div>
-    </div>
-
+    <a
+      href="https://wa.me/971525250833"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="primary-action shrink-0"
+      >{{ 'تواصل معنا' | translate }}</a
+    >
   </div>
 </section>

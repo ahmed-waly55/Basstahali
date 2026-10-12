@@ -1,5 +1,6 @@
+import { SKIP_ERROR_NOTIFICATION } from '../interceptors/loading-interceptor';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpContext } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment.development';
 
@@ -20,21 +21,25 @@ export interface TeacherFormRequest {
   providedIn: 'root', // لجعل الخدمة متاحة في كل التطبيق تلقائياً
 })
 export class TeacherService {
-
   constructor(private http: HttpClient) {}
 
   /**
    * POST: إرسال نموذج تسجيل مدرس جديد
    */
   submitTeacherForm(formData: TeacherFormRequest): Observable<any> {
-    return this.http.post<any>(`${environment.baseUrl}/api/v1/teacher-forms`, formData);
+    return this.http.post<any>(`${environment.baseUrl}/api/v1/teacher-forms`, formData, {
+      context: new HttpContext().set(SKIP_ERROR_NOTIFICATION, true),
+    });
   }
 
   /**
    * GET: متابعة حالة الطلب باستخدام معرف الطلب (requestId)
    */
-  getRequestStatus(requestId: string): Observable<any> {
-    return this.http.get<any>(`${environment.baseUrl}/api/v1/teacher-forms/${requestId}/status`);
+  getRequestStatus(requestId: string, whatsAppNumber?: string): Observable<any> {
+    return this.http.get<any>(
+      `${environment.baseUrl}/api/v1/teacher-forms/${encodeURIComponent(requestId)}/status`,
+      { params: whatsAppNumber ? { whatsAppNumber } : {} },
+    );
   }
 
   /**
@@ -48,13 +53,17 @@ export class TeacherService {
    * GET: جلب المراحل التعليمية التابعة لمنهج معين
    */
   getGradeLevels(curriculumId: string): Observable<any> {
-    return this.http.get<any>(`${environment.baseUrl}/api/v1/curricula/${curriculumId}/grade-levels`);
+    return this.http.get<any>(
+      `${environment.baseUrl}/api/v1/curricula/${encodeURIComponent(curriculumId)}/grade-levels`,
+    );
   }
 
   /**
    * GET: جلب المواد الدراسية التابعة لمرحلة تعليمية معينة
    */
   getSubjects(gradeLevelId: string): Observable<any> {
-    return this.http.get<any>(`${environment.baseUrl}/api/v1/grade-levels/${gradeLevelId}/subjects`);
+    return this.http.get<any>(
+      `${environment.baseUrl}/api/v1/grade-levels/${encodeURIComponent(gradeLevelId)}/subjects`,
+    );
   }
 }

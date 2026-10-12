@@ -1,11 +1,20 @@
+import { RouterLink } from '@angular/router';
+import { PageHeadingComponent } from '../../shared/components/page-heading/page-heading.component';
 import { TranslatePipe } from '../../core/services/translate.pipe';
-import { Component, OnInit, AfterViewInit, ChangeDetectionStrategy, inject, PLATFORM_ID } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  inject,
+  PLATFORM_ID,
+} from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import AOS from 'aos';
 
 @Component({
   selector: 'app-features',
-  imports: [TranslatePipe],
+  imports: [RouterLink, PageHeadingComponent, TranslatePipe],
   templateUrl: './features.component.html',
   changeDetection: ChangeDetectionStrategy.Default,
   styleUrl: './features.component.css',

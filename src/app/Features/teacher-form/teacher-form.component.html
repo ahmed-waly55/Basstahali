@@ -1,143 +1,169 @@
-<div class="min-h-screen bg-gradient-to-b from-purple-50/50 to-purple-100/30 py-10 px-4 sm:px-6 lg:px-8 font-sans">
-
-  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-
-    <!-- نموذج تسجيل مدرس جديد -->
-    <div class="bg-white rounded-3xl shadow-xl border border-purple-100 p-8">
-      <div class="text-center mb-8">
-        <h2 class="text-2xl font-bold text-purple-900">{{ 'طلب الانضمام' | translate }}</h2>
-        <p class="text-sm text-gray-500 mt-1">{{ 'انضم لمنصتنا الرائدة وعلم بطريقة أذكى' | translate }}</p>
-      </div>
-
-      <form [formGroup]="teacherForm" (ngSubmit)="onSubmit()" class="space-y-5">
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<app-page-heading title="انضم لهيئة التدريس" description="انضم لمنصتنا الرائدة وعلم بطريقة أذكى" />
+<section class="content-section">
+  <div class="page-container grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_340px]">
+    <form
+      [formGroup]="teacherForm"
+      (ngSubmit)="onSubmit()"
+      class="surface-card clean-form space-y-6"
+    >
+      <h2 class="text-xl font-bold">{{ 'طلب الانضمام' | translate }}</h2>
+      <fieldset class="space-y-4">
+        <legend class="mb-4 text-sm font-bold text-[var(--brand)]">
+          {{ 'بياناتك الشخصية' | translate }}
+        </legend>
+        <div class="grid gap-4 sm:grid-cols-2">
           <div>
-            <label class="block text-xs font-medium text-purple-900 mb-1">{{ 'الاسم الكامل' | translate }}</label>
-            <input type="text" formControlName="fullName"
-              class="w-full px-4 py-3 rounded-xl bg-purple-50/30 border border-purple-200 text-sm text-gray-800 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
-              [placeholder]="'الاسم الكامل' | translate">
+            <label for="teacher-name">{{ 'الاسم الكامل' | translate }}</label
+            ><input id="teacher-name" formControlName="fullName" autocomplete="name" />
+            @if (teacherForm.get('fullName')?.touched && teacherForm.get('fullName')?.invalid) {
+              <p class="field-error">{{ 'الاسم مطلوب.' | translate }}</p>
+            }
           </div>
           <div>
-            <label class="block text-xs font-medium text-purple-900 mb-1">{{ 'البريد الإلكتروني' | translate }}</label>
-            <input type="email" formControlName="email"
-              class="w-full px-4 py-3 rounded-xl bg-purple-50/30 border border-purple-200 text-sm text-gray-800 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
-              placeholder="example@domain.com">
+            <label for="teacher-email">{{ 'البريد الإلكتروني' | translate }}</label
+            ><input id="teacher-email" type="email" formControlName="email" autocomplete="email" />
+            @if (teacherForm.get('email')?.touched && teacherForm.get('email')?.invalid) {
+              <p class="field-error">{{ 'يرجى إدخال بريد إلكتروني صحيح.' | translate }}</p>
+            }
+          </div>
+          <div>
+            <label for="teacher-password">{{ 'كلمة المرور' | translate }}</label
+            ><input
+              id="teacher-password"
+              type="password"
+              formControlName="password"
+              autocomplete="new-password"
+            />
+            @if (teacherForm.get('password')?.touched && teacherForm.get('password')?.invalid) {
+              <p class="field-error">{{ 'كلمة المرور لا تقل عن 6 أحرف.' | translate }}</p>
+            }
+          </div>
+          <div>
+            <label for="teacher-whatsapp">{{ 'رقم الواتساب' | translate }}</label
+            ><input
+              id="teacher-whatsapp"
+              type="tel"
+              formControlName="whatsAppNumber"
+              autocomplete="tel"
+            />
           </div>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      </fieldset>
+      <fieldset class="border-t border-[var(--border)] pt-5">
+        <legend class="text-sm font-bold text-[var(--brand)]">
+          {{ 'المناهج والمواد التي تدرسها' | translate }}
+        </legend>
+        <div class="grid gap-4 mt-3 sm:grid-cols-2">
           <div>
-            <label class="block text-xs font-medium text-purple-900 mb-1">{{ 'كلمة المرور' | translate }}</label>
-            <input type="password" formControlName="password"
-              class="w-full px-4 py-3 rounded-xl bg-purple-50/30 border border-purple-200 text-sm text-gray-800 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
-              placeholder="••••••••">
+            <label for="teacher-curriculum">{{ 'المنهج الدراسي' | translate }}</label
+            ><select id="teacher-curriculum" formControlName="curriculumId">
+              <option value="">{{ 'اختر المنهج الدراسي' | translate }}</option>
+              @for (item of curriculaList; track item.id) {
+                <option [value]="item.id">{{ preferences.itemName(item) }}</option>
+              }
+            </select>
           </div>
           <div>
-            <label class="block text-xs font-medium text-purple-900 mb-1">{{ 'رقم الواتساب' | translate }}</label>
-            <input type="text" formControlName="whatsAppNumber"
-              class="w-full px-4 py-3 rounded-xl bg-purple-50/30 border border-purple-200 text-sm text-gray-800 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
-              placeholder="010XXXXXXXX">
+            <label for="teacher-grade">{{ 'المراحل الدراسية' | translate }}</label
+            ><select id="teacher-grade" formControlName="gradeLevelId">
+              <option value="">{{ 'اختر المرحلة الدراسية' | translate }}</option>
+              @for (grade of gradeLevelsList; track grade.id) {
+                <option [value]="grade.id">{{ preferences.itemName(grade) }}</option>
+              }
+            </select>
           </div>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="mt-5">
+          <p class="mb-3 text-sm font-semibold">
+            {{ 'المواد الدراسية (يمكن اختيار أكثر من مادة)' | translate }}
+          </p>
+          @if (!teacherForm.get('gradeLevelId')?.value) {
+            <p class="text-sm text-[var(--muted)]">
+              {{ 'يرجى اختيار المرحلة الدراسية أولاً لعرض المواد المتاحة.' | translate }}
+            </p>
+          } @else if (!subjectsList.length) {
+            <p class="text-sm text-[var(--muted)]">
+              {{ 'لا توجد مواد دراسية متاحة لهذه المرحلة.' | translate }}
+            </p>
+          } @else {
+            <div class="grid gap-2 sm:grid-cols-2">
+              @for (subject of subjectsList; track subject.id) {
+                <label
+                  class="flex! items-center gap-3 rounded-xl border border-[var(--border)] p-3 cursor-pointer"
+                  ><input
+                    type="checkbox"
+                    [checked]="isSubjectSelected(subject.id)"
+                    (change)="onSubjectCheckboxChange(subject.id, $event)"
+                  />{{ preferences.itemName(subject) }}</label
+                >
+              }
+            </div>
+          }
+        </div>
+      </fieldset>
+      <fieldset class="border-t border-[var(--border)] pt-5">
+        <legend class="text-sm font-bold text-[var(--brand)]">
+          {{ 'بيانات استلام مستحقاتك' | translate }}
+        </legend>
+        <div class="grid gap-4 mt-3 sm:grid-cols-2">
           <div>
-            <label class="block text-xs font-medium text-purple-900 mb-1">{{ 'طريقة الدفع المفضلة' | translate }}</label>
-            <select formControlName="payoutMethod"
-              class="w-full px-4 py-3 rounded-xl bg-purple-50/30 border border-purple-200 text-sm text-gray-800 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition">
-              <option value="" disabled selected>{{ 'اختر طريقة الدفع' | translate }}</option>
+            <label for="teacher-payout">{{ 'طريقة الدفع المفضلة' | translate }}</label
+            ><select id="teacher-payout" formControlName="payoutMethod">
+              <option value="">{{ 'اختر طريقة الدفع' | translate }}</option>
               <option value="Wallet">{{ 'محفظة إلكترونية (Wallet)' | translate }}</option>
               <option value="BankAccount">{{ 'حساب بنكي (BankAccount)' | translate }}</option>
             </select>
           </div>
           <div>
-            <label class="block text-xs font-medium text-purple-900 mb-1">{{ 'حساب الدفع' | translate }}</label>
-            <input type="text" formControlName="payoutAccount"
-              class="w-full px-4 py-3 rounded-xl bg-purple-50/30 border border-purple-200 text-sm text-gray-800 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
-              [placeholder]="'رقم الحساب أو المحفظة' | translate">
+            <label for="teacher-account">{{ 'حساب الدفع' | translate }}</label
+            ><input id="teacher-account" formControlName="payoutAccount" />
           </div>
         </div>
-
-        <!-- المنهج الدراسي -->
+      </fieldset>
+      <button
+        type="submit"
+        [disabled]="teacherForm.invalid || submitting"
+        class="primary-action w-full"
+      >
+        {{ (submitting ? 'جاري الإرسال...' : 'إرسال الطلب') | translate }}
+      </button>
+    </form>
+    <aside class="surface-card clean-form lg:sticky lg:top-24">
+      <h2 class="text-xl font-bold">{{ 'متابعة حالة طلبك' | translate }}</h2>
+      <p class="section-copy mb-6 text-sm">
+        {{ 'أدخل رقم الطلب الذي حصلت عليه بعد التسجيل لمعرفة حالته.' | translate }}
+      </p>
+      <form (ngSubmit)="checkStatus()" class="space-y-4">
         <div>
-          <label class="block text-xs font-medium text-purple-900 mb-1">{{ 'المنهج الدراسي' | translate }}</label>
-          <select formControlName="curriculumId"
-            class="w-full px-4 py-3 rounded-xl bg-purple-50/30 border border-purple-200 text-sm text-gray-800 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition">
-            <option value="" disabled selected>{{ 'اختر المنهج الدراسي' | translate }}</option>
-            @for (item of curriculaList; track item.id) {
-              <option [value]="item.id">{{ (preferences.itemName(item)) | translate }}</option>
-            }
-          </select>
+          <label for="status-request-id">{{ 'رقم الطلب' | translate }}</label
+          ><input
+            id="status-request-id"
+            name="status-request-id"
+            inputmode="numeric"
+            [(ngModel)]="requestIdInput"
+            (ngModelChange)="clearStatusResult()"
+            [placeholder]="'رقم الطلب الرقمي' | translate"
+          />
         </div>
-
-        <!-- المرحلة الدراسية -->
-        <div>
-          <label class="block text-xs font-medium text-purple-900 mb-1">{{ 'المستوى أو المرحلة الدراسية' | translate }}</label>
-          <select formControlName="gradeLevelId"
-            class="w-full px-4 py-3 rounded-xl bg-purple-50/30 border border-purple-200 text-sm text-gray-800 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition disabled:opacity-50">
-            <option value="" disabled selected>{{ 'اختر المرحلة الدراسية' | translate }}</option>
-            @for (grade of gradeLevelsList; track grade.id) {
-              <option [value]="grade.id">{{ (preferences.itemName(grade)) | translate }}</option>
-            }
-          </select>
-        </div>
-
-        <!-- المواد الدراسية (شيك بوكس متعددة) -->
-        <div>
-          <label class="block text-xs font-medium text-purple-900 mb-2">{{ 'المواد الدراسية (يمكن اختيار أكثر من مادة)' | translate }}</label>
-
-          @if (!teacherForm.get('gradeLevelId')?.value) {
-            <div class="p-4 bg-purple-50/30 border border-purple-200 rounded-xl text-center text-xs text-purple-400">
-              {{ 'يرجى اختيار المرحلة الدراسية أولاً لعرض المواد المتاحة.' | translate }}
-            </div>
-          } @else if (subjectsList.length === 0) {
-            <div class="p-4 bg-purple-50/30 border border-purple-200 rounded-xl text-center text-xs text-purple-400">
-              {{ 'لا توجد مواد دراسية متاحة لهذه المرحلة.' | translate }}
-            </div>
-          } @else {
-            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 max-h-48 overflow-y-auto p-2 bg-purple-50/30 border border-purple-200 rounded-xl">
-              @for (subject of subjectsList; track subject.id) {
-                <label class="flex items-center gap-2.5 p-2.5 bg-white border border-purple-100 rounded-lg cursor-pointer hover:border-purple-300 transition text-sm shadow-xs">
-                  <input type="checkbox"
-                    [checked]="isSubjectSelected(subject.id)"
-                    (change)="onSubjectCheckboxChange(subject.id, $event)"
-                    class="w-4 h-4 text-purple-600 border-purple-300 rounded focus:ring-purple-400">
-                  <span class="text-gray-700 select-none text-xs font-medium">{{ (preferences.itemName(subject)) | translate }}</span>
-                </label>
-              }
-            </div>
+        <button type="submit" [disabled]="statusLoading" class="secondary-action w-full">
+          {{ (statusLoading ? 'جارٍ التحميل...' : 'استعلام') | translate }}
+        </button>
+      </form>
+      @if (statusError) {
+        <p role="alert" class="field-error mt-5 leading-7">{{ statusError | translate }}</p>
+      }
+      @if (requestStatusResult) {
+        <div
+          role="status"
+          class="mt-5 rounded-2xl border border-[var(--border)] bg-[var(--soft)] p-5"
+        >
+          <p class="text-xs text-[var(--muted)]">{{ 'حالة الطلب' | translate }}</p>
+          <h3 class="mt-2 font-bold text-[var(--brand)]">{{ statusLabel | translate }}</h3>
+          @if (requestStatusResult.reason) {
+            <p class="mt-3 text-sm leading-7">{{ requestStatusResult.reason }}</p>
           }
         </div>
-
-        <!-- زر الإرسال -->
-        <button type="submit" [disabled]="teacherForm.invalid"
-          class="w-full py-3.5 bg-amber-400 hover:bg-amber-500 disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed text-gray-900 font-bold rounded-xl shadow-md transition duration-200 flex items-center justify-center gap-2 cursor-pointer">
-          <span>{{ 'إرسال الطلب' | translate }}</span>
-        </button>
-
-      </form>
-    </div>
-
-    <!-- متابعة حالة الطلب -->
-    <div class="bg-white rounded-3xl shadow-xl border border-purple-100 p-8">
-      <div class="text-center mb-8">
-        <h2 class="text-2xl font-bold text-purple-900">{{ 'متابعة حالة طلبك' | translate }}</h2>
-        <p class="text-sm text-gray-500 mt-1">{{ 'تابع خطوات قبول طلبك في المنصة لحظة بلحظة' | translate }}</p>
-      </div>
-
-      <div class="flex gap-2 mb-6">
-        <input type="text" [(ngModel)]="requestIdInput" name="requestIdInput" [placeholder]="'أدخل رقم الطلب (مثال: REQ-12345)' | translate"
-          class="flex-1 px-4 py-3 rounded-xl bg-purple-50/30 border border-purple-200 text-sm text-gray-800 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition">
-        <button (click)="checkStatus()"
-          class="px-6 py-3 bg-purple-700 hover:bg-purple-800 text-white font-medium rounded-xl transition duration-200 text-sm cursor-pointer shadow-md flex items-center justify-center min-w-[90px]">
-          <span>{{ 'استعلام' | translate }}</span>
-        </button>
-      </div>
-
-
-    </div>
-
+      }
+    </aside>
   </div>
-
-</div>
+</section>

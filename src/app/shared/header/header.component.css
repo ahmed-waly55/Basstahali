@@ -1,3 +1,199 @@
-button{
-    cursor: pointer;
+:host {
+  display: block;
+}
+.site-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.header-inner {
+  max-width: 1200px;
+  height: 80px;
+  margin: auto;
+  padding-inline: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.brand-link {
+  flex-shrink: 0;
+}
+.brand-logo {
+  width: 132px;
+  height: 66px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  font-size: 14px;
+  font-weight: 650;
+  color: var(--muted);
+}
+.desktop-nav a {
+  position: relative;
+  padding-block: 28px;
+  white-space: nowrap;
+}
+.desktop-nav a.active,
+.desktop-nav a:hover {
+  color: var(--brand);
+}
+.desktop-nav a.active::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 16px;
+  height: 3px;
+  border-radius: 3px;
+  background: #ffc107;
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.header-actions button {
+  height: 38px;
+  border-radius: 10px;
+  color: var(--brand);
+  cursor: pointer;
+}
+.language-button {
+  padding-inline: 10px;
+  font-size: 13px;
+  font-weight: 750;
+}
+.theme-button,
+.menu-button {
+  width: 38px;
+  display: grid;
+  place-items: center;
+}
+.header-actions svg {
+  width: 20px;
+  height: 20px;
+}
+.header-login {
+  padding: 11px 17px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 750;
+  background: #3b236d;
+  color: #fff;
+  white-space: nowrap;
+}
+.header-login span {
+  margin-inline-start: 8px;
+}
+.menu-button {
+  display: none !important;
+}
+.mobile-navigation {
+  display: none;
+}
+@media (max-width: 1023px) {
+  .desktop-nav {
+    display: none;
+  }
+  .menu-button {
+    display: grid !important;
+  }
+  .mobile-navigation {
+    display: grid;
+    max-height: calc(100dvh - 80px);
+    overflow: auto;
+    gap: 4px;
+    padding: 12px 24px 20px;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+  }
+  .mobile-navigation a {
+    padding: 12px;
+    color: var(--muted);
+    border-radius: 10px;
+    font-weight: 600;
+  }
+  .mobile-navigation a.active {
+    background: var(--soft);
+    color: var(--brand);
+  }
+}
+@media (max-width: 639px) {
+  .header-inner {
+    padding-inline: 16px;
+    gap: 12px;
+  }
+  .brand-logo {
+    width: 112px;
+    height: 56px;
+  }
+  .header-login {
+    display: none;
+  }
+  .header-actions {
+    gap: 3px;
+  }
+}
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+}
+.brand-owl {
+  position: relative;
+  display: block;
+  width: 49px;
+  height: 60px;
+  overflow: hidden;
+}
+.brand-owl img {
+  position: absolute;
+  width: 96px;
+  max-width: none;
+  height: 64px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+}
+.brand-wordmark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.brand-name {
+  font-size: 25px;
+  line-height: 1.4;
+  font-weight: 850;
+  color: var(--brand);
+}
+.brand-name span {
+  color: #e8a500;
+}
+.brand-english {
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+:host-context(html.dark) .brand-name {
+  color: #e3cfff;
+}
+:host-context(html.dark) .brand-name span {
+  color: #ffd04b;
+}
+.header-login {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.header-login svg {
+  width: 14px;
+  height: 14px;
 }
