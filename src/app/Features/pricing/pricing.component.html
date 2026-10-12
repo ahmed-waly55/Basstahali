@@ -1,208 +1,142 @@
-@if (isShow) {
-  <section class="py-12 md:py-16 bg-slate-50 relative overflow-hidden" dir="inherit">
-    <!-- Dynamic Background Decoration -->
-    <div
-      class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-purple-200/30 to-transparent rounded-full blur-3xl pointer-events-none"
-    ></div>
+<section class="py-12 md:py-16 bg-slate-50 relative overflow-hidden" dir="inherit">
+  <div
+    aria-hidden="true"
+    class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-purple-200/30 to-transparent rounded-full blur-3xl pointer-events-none"
+  ></div>
 
-    <div class="container mx-auto px-4 max-w-7xl relative z-10">
-      <!-- Section Header -->
-      <div class="text-center max-w-2xl mx-auto mb-10" data-aos="fade-down" data-aos-duration="800">
-        <span
-          class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-100 text-[#4F2DB7] text-sm font-bold mb-3"
-        >
-          <i class="fa-solid fa-tags"></i>
-          {{ 'خطط باقات متناسبة' | translate }}
-        </span>
-        <h1 class="text-3xl md:text-4xl font-black text-slate-900">
-          {{ 'اختر' | translate }}
-          <span class="text-[#4F2DB7]">{{ 'الباقة المناسبة لك' | translate }}</span>
-        </h1>
-        <p class="mt-3 text-slate-600 text-base md:text-lg">
-          {{
-            'خطط أسعار مرنة واضحة وبدون أي رسوم خفية. اختر الباقة التي تلبي احتياجاتك الدراسية.'
-              | translate
-          }}
-        </p>
+  <div class="container mx-auto px-4 max-w-7xl relative z-10">
+    <div class="text-center max-w-2xl mx-auto mb-10" data-aos="fade-down">
+      <span
+        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-100 text-[#4F2DB7] text-sm font-bold mb-3"
+      >
+        {{ 'باقات الحصص المباشرة' | translate }}
+      </span>
+      <h1 class="text-3xl md:text-4xl font-black text-slate-900 leading-relaxed">
+        {{ 'اختر' | translate }}
+        <span class="text-[#4F2DB7]">{{ 'الباقة المناسبة لك' | translate }}</span>
+      </h1>
+      <p class="mt-3 text-slate-600 text-base md:text-lg leading-relaxed">
+        {{ '4 مواد + مادة هدية، و8 حصص لكل مادة.' | translate }}
+      </p>
 
-        <!-- Billing Cycle Toggle Switch -->
-        <div class="mt-8 flex items-center justify-center gap-4">
-          <span
-            class="text-sm font-bold"
-            [class.text-slate-900]="!isAnnual"
-            [class.text-slate-400]="isAnnual"
-            >{{ 'شهري' | translate }}</span
-          >
-
+      <div
+        role="group"
+        [attr.aria-label]="'اختر المنهج' | translate"
+        class="mt-7 grid grid-cols-2 gap-2 p-2 rounded-2xl bg-white border border-slate-200 max-w-md mx-auto shadow-sm"
+      >
+        @for (curriculum of curricula; track curriculum.id) {
           <button
-            (click)="toggleBilling()"
             type="button"
-            class="relative w-16 h-8 bg-[#4F2DB7] rounded-full p-1 transition duration-300 focus:outline-none"
-            [attr.aria-label]="'تغيير نظام الدفع' | translate"
+            class="curriculum-option rounded-xl px-3 py-3 text-xs sm:text-sm font-bold transition-colors min-h-12"
+            [class.curriculum-option-active]="selectedCurriculum() === curriculum.id"
+            [attr.aria-pressed]="selectedCurriculum() === curriculum.id"
+            aria-controls="pricing-plans"
+            (click)="selectedCurriculum.set(curriculum.id)"
           >
-            <div
-              class="w-6 h-6 bg-white rounded-full shadow-md transform transition duration-300"
-              [class.-translate-x-8]="isAnnual"
-              [class.translate-x-0]="!isAnnual"
-            ></div>
+            {{ curriculum.name | translate }}
           </button>
-
-          <span
-            class="text-sm font-bold flex items-center gap-2"
-            [class.text-slate-900]="isAnnual"
-            [class.text-slate-400]="!isAnnual"
-          >
-            {{ 'سنوي' | translate }}
-            <span
-              class="bg-[#F9B400] text-[#3D1A6D] text-[11px] font-black px-2 py-0.5 rounded-full shadow-xs"
-              >{{ 'خصم 20%' | translate }}</span
-            >
-          </span>
-        </div>
-      </div>
-
-      <!-- Pricing Cards Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
-        @for (plan of plans; track plan.id; let i = $index) {
-          <div
-            class="relative bg-white rounded-3xl p-8 border transition-all duration-300 flex flex-col justify-between"
-            [ngClass]="{
-              'border-[#4F2DB7] shadow-2xl scale-105 z-20': plan.isPopular,
-              'border-slate-200 shadow-md hover:shadow-xl': !plan.isPopular,
-            }"
-            data-aos="fade-up"
-            [attr.data-aos-delay]="i * 150"
-          >
-            <!-- Popular Badge -->
-            @if (plan.isPopular) {
-              <div
-                class="absolute -top-4 right-1/2 translate-x-1/2 bg-gradient-to-r from-[#F9B400] to-amber-500 text-[#3D1A6D] text-xs font-black px-4 py-1.5 rounded-full shadow-lg flex items-center gap-1.5"
-              >
-                <i class="fa-solid fa-crown"></i>
-                <span>{{ 'الأكثر شعبية وحجزاً' | translate }}</span>
-              </div>
-            }
-
-            <div>
-              <!-- Header Info -->
-              <div class="text-right border-b border-slate-100 pb-6 mb-6">
-                <h3 class="text-xl font-bold text-slate-900 mb-2">{{ plan.name | translate }}</h3>
-                <p class="text-xs text-slate-500 leading-relaxed min-h-[36px]">
-                  {{ plan.description | translate }}
-                </p>
-
-                <!-- Price Box -->
-                <div class="mt-4 flex items-baseline gap-1">
-                  <span class="text-4xl font-black text-slate-900">
-                    {{ (isAnnual ? plan.annualPrice : plan.monthlyPrice) | translate }}
-                  </span>
-                  <span class="text-xs font-bold text-slate-500"
-                    >جنية / {{ (isAnnual ? 'سنوياً' : 'شهرياً') | translate }}</span
-                  >
-                </div>
-              </div>
-
-              <!-- Features List -->
-              <ul class="space-y-3.5 mb-8 text-right">
-                @for (feature of plan.features; track feature.text) {
-                  <li class="flex items-start gap-3 text-xs md:text-sm">
-                    @if (feature.included) {
-                      <div
-                        class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5"
-                      >
-                        <i class="fa-solid fa-check text-xs"></i>
-                      </div>
-                      <span class="text-slate-700 font-medium">{{ feature.text | translate }}</span>
-                    } @else {
-                      <div
-                        class="w-5 h-5 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center shrink-0 mt-0.5"
-                      >
-                        <i class="fa-solid fa-xmark text-xs"></i>
-                      </div>
-                      <span class="text-slate-400 line-through">{{
-                        feature.text | translate
-                      }}</span>
-                    }
-                  </li>
-                }
-              </ul>
-            </div>
-
-            <!-- Bottom Action Button -->
-            <a
-              [href]="getSubscribeLink(plan.name)"
-              target="_blank"
-              rel="noopener noreferrer"
-              [ngClass]="
-                plan.isPopular
-                  ? 'bg-[#4F2DB7] hover:bg-[#3D1A6D] text-white shadow-lg shadow-purple-200'
-                  : 'bg-slate-100 hover:bg-slate-200 text-slate-800'
-              "
-              class="w-full text-center font-bold text-xs md:text-sm py-3.5 px-6 rounded-2xl transition duration-300 block"
-            >
-              {{ plan.buttonText | translate }}
-            </a>
-          </div>
         }
       </div>
+    </div>
 
-      <!-- Contact note -->
-      <div class="mt-12 text-center text-xs text-slate-500" data-aos="fade-up">
-        <span>{{ 'هل تحتاج باقة خاصة لمجموعات أو مدارس؟' | translate }} </span>
-        <a
-          href="https://wa.me/971563306087"
-          target="_blank"
-          class="text-[#4F2DB7] font-bold underline hover:text-[#3D1A6D]"
-        >
-          {{ 'تواصل معنا للاستفسار عن الباقات المخصصة' | translate }}
-        </a>
+    <div id="pricing-plans" role="region" [attr.aria-label]="activeCurriculum().name | translate">
+      <h2 class="text-center text-xl font-bold text-[#4F2DB7] mb-6">
+        {{ activeCurriculum().name | translate }}
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch max-w-6xl mx-auto">
+        @for (plan of activeCurriculum().plans; track plan.id; let i = $index) {
+          <article
+            class="relative bg-white rounded-3xl p-6 lg:p-8 border border-slate-200 shadow-md hover:shadow-xl transition-shadow flex flex-col min-w-0"
+            data-aos="fade-up"
+            [attr.data-aos-delay]="i * 100"
+          >
+            <div class="border-b border-slate-100 pb-6 mb-6">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">{{ plan.name | translate }}</h3>
+              <p class="text-sm text-slate-500">{{ 'باقة 4 مواد + مادة هدية' | translate }}</p>
+              <div class="mt-5 flex flex-wrap items-baseline gap-2">
+                <span class="plan-price text-4xl font-black text-slate-900" dir="ltr">{{
+                  plan.price
+                }}</span>
+                <span class="text-sm font-bold text-slate-500">{{
+                  'درهم إماراتي' | translate
+                }}</span>
+              </div>
+              @if (plan.previousPrice) {
+                <div class="mt-3 flex flex-wrap items-center gap-3 text-sm">
+                  <span class="text-slate-500">
+                    {{ 'بدلاً من' | translate }}
+                    <s>{{ plan.previousPrice }} {{ 'درهم إماراتي' | translate }}</s>
+                  </span>
+                  <span
+                    class="inline-flex rounded-full bg-[#F9B400] px-2.5 py-1 text-xs font-bold text-[#3D1A6D]"
+                  >
+                    {{ 'خصم 20%' | translate }}
+                  </span>
+                </div>
+              }
+            </div>
+
+            <ul class="space-y-4 mb-8 text-sm">
+              @for (feature of features; track feature) {
+                <li class="flex items-center gap-3">
+                  <span
+                    class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0"
+                    aria-hidden="true"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      class="w-3.5 h-3.5"
+                    >
+                      <path d="m5 12 4 4L19 6" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                  <span class="text-slate-700 font-medium">{{ feature | translate }}</span>
+                </li>
+              }
+            </ul>
+
+            <a
+              [href]="getSubscribeLink(plan)"
+              target="_blank"
+              rel="noopener noreferrer"
+              [attr.aria-label]="
+                ('اشترك عبر واتساب' | translate) +
+                ' — ' +
+                (activeCurriculum().name | translate) +
+                ' — ' +
+                (plan.name | translate)
+              "
+              class="mt-auto w-full inline-flex items-center justify-center gap-2 text-center bg-[#4F2DB7] hover:bg-[#3D1A6D] text-white font-bold text-sm py-3.5 px-4 rounded-2xl transition-colors"
+            >
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                class="w-5 h-5 shrink-0"
+              >
+                <path
+                  d="M20 11.6a8 8 0 0 1-11.8 7L4 20l1.4-4.2A8 8 0 1 1 20 11.6Z"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M8.5 8.5c0 3.4 3.6 7 7 7l1-2-2-1-1 1c-1.2-.6-2.4-1.8-3-3l1-1-1-2-2 1Z"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              {{ 'اشترك عبر واتساب' | translate }}
+            </a>
+          </article>
+        }
       </div>
     </div>
-  </section>
-} @else {
-  <section class="py-16 md:py-24 bg-slate-50 relative overflow-hidden" dir="inherit">
-    <!-- Dynamic Background Decoration المتطابقة مع الباقات -->
-    <div
-      class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-purple-200/30 to-transparent rounded-full blur-3xl pointer-events-none"
-    ></div>
 
-    <div class="container mx-auto px-4 max-w-4xl relative z-10">
-      <div
-        class="bg-white rounded-3xl p-6 sm:p-10 md:p-14 shadow-xl border border-slate-100 text-center"
-        data-aos="fade-up"
-      >
-        <!-- Icon / Badge -->
-        <div
-          class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-purple-100 text-[#4F2DB7] text-2xl mb-6 shadow-inner"
-        >
-          <i class="fa-solid fa-hourglass-half"></i>
-        </div>
-
-        <!-- Title -->
-        <h1 class="text-3xl md:text-4xl font-black text-slate-900 mb-4">
-          {{ 'قريباً سوف يتم طرح' | translate }}
-          <span class="text-[#4F2DB7]">{{ 'خطط الأسعار' | translate }}</span>
-        </h1>
-
-        <!-- Description -->
-        <p class="text-slate-600 text-base md:text-lg max-w-xl mx-auto mb-8 leading-relaxed">
-          {{
-            'نحن نعمل حالياً على تجهيز باقات مميزة تناسب احتياجاتك. لمعرفة الخطط الحالية المتاحة والتفاصيل، يمكنك التواصل معنا مباشرة.'
-              | translate
-          }}
-        </p>
-
-        <!-- WhatsApp CTA Button (محدث بلون الموقع البنفسجي الموحد أو الأخد الأخضر الخاص بالواتساب حسب رغبتك، هنا مطابق لهوية الموقع) -->
-        <a
-          href="https://wa.me/971563306087?text=مرحباً، أود معرفة خطط الأسعار الحالية والباقات المتاحة"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex w-full sm:w-auto items-center justify-center gap-2 sm:gap-3 bg-[#4F2DB7] hover:bg-[#3D1A6D] text-white font-bold text-sm sm:text-base px-4 sm:px-8 py-4 rounded-2xl shadow-lg shadow-purple-200 transition duration-300"
-        >
-          <i class="fa-brands fa-whatsapp text-xl"></i>
-          <span>{{ 'التواصل مع فريق المبيعات عبر الواتساب' | translate }}</span>
-        </a>
-      </div>
-    </div>
-  </section>
-}
+    <p class="mt-8 text-center text-sm text-slate-500 leading-relaxed">
+      {{ 'اختر باقتك للتواصل معنا مباشرة عبر واتساب وإتمام الاشتراك.' | translate }}
+    </p>
+  </div>
+</section>

@@ -54,30 +54,30 @@ export class LandingComponent implements OnInit, OnDestroy {
   testimonials = [
     {
       id: 1,
-      quote: 'المنصة ساعدتني أذاكر بسهولة وأحسن مستواي بشكل كبير.',
+      quote: 'المدرس في بسطهالي يشرح لي بصبر وبطريقة واضحة، وإذا ما فهمت يعيدها لي لين توصل الفكرة.',
       name: 'محمد أحمد',
-      grade: 'الصف الثاني الثانوي',
+      grade: 'المرحلة الثانوية',
       avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Ahmed',
     },
     {
       id: 2,
-      quote: 'شرح المدرسين رائع والتصحيح الإلكتروني بيوفر وقت كبير.',
+      quote: 'مواعيد الحصص مرتبة وواضحة، وأعرف وش عندي من دروس. سهل عليّ أتابع بدون لخبطة.',
       name: 'سارة محمود',
-      grade: 'الصف الثالث الإعدادي',
+      grade: 'المرحلة المتوسطة',
       avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sara',
     },
     {
       id: 3,
-      quote: 'واجهة المنصة بسيطة والسهلة والدعم دائماً متعاون.',
+      quote: 'أقدر أسأل المدرس براحة، ويتابع معي ويقول لي وش أحتاج أراجع قبل الحصة الجاية.',
       name: 'أحمد علي',
-      grade: 'الصف الأول الثانوي',
+      grade: 'المرحلة الثانوية',
       avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Ali',
     },
     {
       id: 4,
-      quote: 'تجربة ممتازة والامتحانات التفاعلية ساعدتني جداً.',
+      quote: 'الشرح مبسّط والمتابعة بين الحصص واضحة، وأعرف وش فهمت ووش أحتاج أراجع.',
       name: 'منى حسن',
-      grade: 'الصف الثالث الثانوي',
+      grade: 'المرحلة الثانوية',
       avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Mona',
     },
   ];

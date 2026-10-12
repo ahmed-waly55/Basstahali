@@ -326,7 +326,22 @@ export const ENGLISH: Record<string, string> = {
   'اللغة العربية': 'Arabic',
   'المرحلة الإعدادية': 'Preparatory school',
   'المرحلة الابتدائية': 'Primary school',
+  'المرحلة المتوسطة': 'Middle school',
   'المرحلة الثانوية': 'Secondary school',
+  'المنهج الانترناشونال': 'International curriculum',
+  'المنهج الوزاري': 'UAE Ministry curriculum',
+  'باقات الحصص المباشرة': 'Live lesson packages',
+  '4 مواد + مادة هدية، و8 حصص لكل مادة.':
+    '4 subjects + 1 free subject, with 8 lessons per subject.',
+  'باقة 4 مواد + مادة هدية': '4 subjects + 1 free subject',
+  '4 مواد دراسية': '4 school subjects',
+  'مادة إضافية هدية': '1 extra subject for free',
+  '8 حصص لكل مادة': '8 lessons per subject',
+  'درهم إماراتي': 'AED',
+  'بدلاً من': 'Instead of',
+  'اشترك عبر واتساب': 'Subscribe via WhatsApp',
+  'اختر باقتك للتواصل معنا مباشرة عبر واتساب وإتمام الاشتراك.':
+    'Choose your package to contact us directly on WhatsApp and complete your subscription.',
   'المنصة ساعدتني أذاكر بسهولة وأحسن مستواي بشكل كبير.':
     'The platform made studying easier and really helped me improve.',
   'الوصول لكافة المواد والمناهج الدراسية': 'Access to all subjects and curricula',
@@ -506,4 +521,14 @@ export const ENGLISH: Record<string, string> = {
     'Check the application number you received after registering.',
   'المواد الدراسية': 'Subjects',
   'عرض التفاصيل': 'View details',
+  'المدرس في بسطهالي يشرح لي بصبر وبطريقة واضحة، وإذا ما فهمت يعيدها لي لين توصل الفكرة.':
+    "My teacher at Basstahali explains things patiently and clearly. If I don't understand, they explain it again until it makes sense.",
+  'مواعيد الحصص مرتبة وواضحة، وأعرف وش عندي من دروس. سهل عليّ أتابع بدون لخبطة.':
+    'Lesson times are organized and clear, so I know which lessons I have. It makes keeping up much easier.',
+  'أقدر أسأل المدرس براحة، ويتابع معي ويقول لي وش أحتاج أراجع قبل الحصة الجاية.':
+    'I feel comfortable asking my teacher questions. They follow up with me and tell me what to review before the next lesson.',
+  'الشرح مبسّط والمتابعة بين الحصص واضحة، وأعرف وش فهمت ووش أحتاج أراجع.':
+    'The explanations are simple and the follow-up between lessons is clear. I know what I understand and what I need to review.',
+  'شرح واضح، مواعيد مرتبة ومتابعة للدروس؛ تفاصيل تهمك كولي أمر.':
+    'Clear explanations, organized lesson times and follow-up: the details that matter to you as a parent.',
 };

@@ -1,108 +1,83 @@
-import { TranslatePipe } from '../../core/services/translate.pipe';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { Component, OnInit, ChangeDetectionStrategy, inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+  OnInit,
+  PLATFORM_ID,
+  signal,
+} from '@angular/core';
 import * as AOS from 'aos';
+import { PreferencesService } from '../../core/services/preferences.service';
+import { TranslatePipe } from '../../core/services/translate.pipe';
 
-export interface PlanFeature {
-  text: string;
-  included: boolean;
-}
+type CurriculumId = 'international' | 'ministerial';
 
-export interface PricingPlan {
+interface PricingPlan {
   id: string;
   name: string;
-  description: string;
-  monthlyPrice: number;
-  annualPrice: number;
-  isPopular: boolean;
-  buttonText: string;
-  features: PlanFeature[];
+  price: number;
+  previousPrice?: number;
+}
+
+interface CurriculumOffer {
+  id: CurriculumId;
+  name: string;
+  plans: readonly PricingPlan[];
 }
 
 @Component({
   selector: 'app-pricing',
   standalone: true,
-  imports: [TranslatePipe, CommonModule],
+  imports: [TranslatePipe],
   templateUrl: './pricing.component.html',
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './pricing.component.css',
 })
 export class PricingComponent implements OnInit {
   private platformId = inject(PLATFORM_ID);
+  private preferences = inject(PreferencesService);
 
-  isShow: boolean = false;
-  isAnnual = false;
-
-  plans: PricingPlan[] = [
+  readonly curricula: readonly CurriculumOffer[] = [
     {
-      id: 'basic',
-      name: 'الباقة الأساسية',
-      description: 'مثالية للطلاب الراغبين في متابعة مادة واحدة والحل التفاعلي.',
-      monthlyPrice: 149,
-      annualPrice: 119,
-      isPopular: false,
-      buttonText: 'اشترك في الأساسية',
-      features: [
-        { text: 'الوصول لمادة دراسية واحدة من اختيارك', included: true },
-        { text: 'جدول حصص أسبوعي وتنبيهات مخصصة', included: true },
-        { text: 'رفع الواجبات والتصحيح الإلكتروني', included: true },
-        { text: 'تقارير أداء دورية', included: false },
-        { text: 'متابعة مباشرة مع معلم الخاص', included: false },
+      id: 'international',
+      name: 'المنهج الانترناشونال',
+      plans: [
+        { id: 'primary', name: 'المرحلة الابتدائية', price: 800, previousPrice: 1000 },
+        { id: 'middle', name: 'المرحلة المتوسطة', price: 960, previousPrice: 1200 },
+        { id: 'secondary', name: 'المرحلة الثانوية', price: 1120, previousPrice: 1400 },
       ],
     },
     {
-      id: 'pro',
-      name: 'الباقة الشاملة',
-      description: 'الباقة الأكثر اختياراً لمتابعة جميع المواد مع متابعة ولي الأمر.',
-      monthlyPrice: 299,
-      annualPrice: 239,
-      isPopular: true,
-      buttonText: 'اشترك في الباقة الشاملة',
-      features: [
-        { text: 'الوصول لكافة المواد والمناهج الدراسية', included: true },
-        { text: 'جدول حصص ذكي مع إشعارات وتنبيهات', included: true },
-        { text: 'رفع الواجبات وتصحيح فوري ملاحظات', included: true },
-        { text: 'لوحة متابعة خاصة لولي الأمر وتقارير أداء', included: true },
-        { text: 'حذف الإعلانات والوصول للمواد الإثرائية', included: true },
-      ],
-    },
-    {
-      id: 'vip',
-      name: 'باقة التفوق (VIP)',
-      description: 'تغطية شاملة بالإضافة لحصص تفاعلية فردية ومدرس خاص.',
-      monthlyPrice: 499,
-      annualPrice: 399,
-      isPopular: false,
-      buttonText: 'اشترك في باقة التفوق',
-      features: [
-        { text: 'جميع مميزات الباقة الشاملة بالكامل', included: true },
-        { text: 'حصص مراجعة مباشرة خاصة قبل الامتحانات', included: true },
-        { text: 'معلم خاص للرد على الاستفسارات 24/7', included: true },
-        { text: 'نماذج امتحانات محلولة ومراجعات ليلة الامتحان', included: true },
-        { text: 'جلسات استشارية دورية مع ولي الأمر', included: true },
+      id: 'ministerial',
+      name: 'المنهج الوزاري',
+      plans: [
+        { id: 'primary', name: 'المرحلة الابتدائية', price: 640 },
+        { id: 'middle', name: 'المرحلة المتوسطة', price: 800 },
+        { id: 'secondary', name: 'المرحلة الثانوية', price: 960 },
       ],
     },
   ];
+  readonly selectedCurriculum = signal<CurriculumId>('international');
+  readonly activeCurriculum = computed(() =>
+    this.curricula.find((curriculum) => curriculum.id === this.selectedCurriculum())!,
+  );
+  readonly features = ['4 مواد دراسية', 'مادة إضافية هدية', '8 حصص لكل مادة'];
 
   ngOnInit(): void {
-    // التأكد من تشغيل AOS في المتصفح فقط لمنع مشاكل الـ SSR
     if (isPlatformBrowser(this.platformId)) {
-      AOS.init({
-        duration: 800,
-        once: true,
-      });
+      AOS.init({ duration: 800, once: true });
     }
   }
 
-  toggleBilling() {
-    this.isAnnual = !this.isAnnual;
-  }
-
-  getSubscribeLink(planName: string): string {
-    const cycle = this.isAnnual ? 'السنوي' : 'الشهري';
-    const message = encodeURIComponent(
-      `السلام عليكم، أرغب في الاشتراك في ${planName} بالنظام ${cycle}.`,
-    );
-    return `https://wa.me/971563306087?text=${message}`;
+  getSubscribeLink(plan: PricingPlan): string {
+    const curriculum = this.preferences.translate(this.activeCurriculum().name);
+    const stage = this.preferences.translate(plan.name);
+    const message =
+      this.preferences.language() === 'en'
+        ? `Hello, I would like to subscribe to the Basstahali ${curriculum} package for ${stage}: ${plan.price} AED, 4 subjects + 1 free subject, with 8 lessons per subject.`
+        : `السلام عليكم، أرغب في الاشتراك في باقة بسطهالي للمنهج ${curriculum.replace('المنهج ', '')}، ${stage}، بسعر ${plan.price} درهم إماراتي: 4 مواد + مادة هدية، و8 حصص لكل مادة.`;
+    return `https://wa.me/971563306087?text=${encodeURIComponent(message)}`;
   }
 }
