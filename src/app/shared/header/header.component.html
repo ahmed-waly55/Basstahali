@@ -7,13 +7,14 @@
       <a routerLink="/" class="flex items-center">
         <img
           src="images/logo.jpg"
-          alt="Basstahali"
+          [alt]="'بسطهالي — منصة تعليمية أونلاين' | translate"
           class="h-16 w-auto object-contain"
         />
       </a>
 
       <!-- Desktop Menu -->
-      <nav class="hidden lg:flex items-center gap-7">
+      <nav [attr.aria-label]="'القائمة الرئيسية' | translate" class="hidden 2xl:flex items-center gap-4">
+        <a routerLink="/curriculum" routerLinkActive="text-[#4F2DB7]" class="font-semibold text-gray-700 hover:text-[#4F2DB7] py-2">{{ 'المناهج' | translate }}</a>
 
         <a
           routerLink="/"
@@ -21,7 +22,7 @@
           [routerLinkActiveOptions]="{exact: true}"
           class="relative font-semibold text-gray-700 hover:text-[#4F2DB7] transition group py-2"
         >
-          الرئيسية
+          {{ 'الرئيسية' | translate }}
           <!-- الخط السفلي للرابط النشط -->
           <span
             routerLinkActive="!block"
@@ -35,7 +36,7 @@
           routerLinkActive="text-[#4F2DB7]"
           class="relative font-semibold text-gray-700 hover:text-[#4F2DB7] transition py-2"
         >
-الكورسات
+{{ 'الكورسات' | translate }}
           <span
             routerLinkActive="!block"
             class="hidden absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-1 rounded-full bg-[#4F2DB7]"
@@ -47,7 +48,7 @@
           routerLinkActive="text-[#4F2DB7]"
           class="relative font-semibold text-gray-700 hover:text-[#4F2DB7] transition py-2"
         >
-          المميزات
+          {{ 'المميزات' | translate }}
           <span
             routerLinkActive="!block"
             class="hidden absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-1 rounded-full bg-[#4F2DB7]"
@@ -59,7 +60,7 @@
           routerLinkActive="text-[#4F2DB7]"
           class="relative font-semibold text-gray-700 hover:text-[#4F2DB7] transition py-2"
         >
-          المدرسين
+          {{ 'المدرسين' | translate }}
           <span
             routerLinkActive="!block"
             class="hidden absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-1 rounded-full bg-[#4F2DB7]"
@@ -71,7 +72,7 @@
           routerLinkActive="text-[#4F2DB7]"
           class="relative font-semibold text-gray-700 hover:text-[#4F2DB7] transition py-2"
         >
-          الأسعار
+          {{ 'الأسعار' | translate }}
           <span
             routerLinkActive="!block"
             class="hidden absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-1 rounded-full bg-[#4F2DB7]"
@@ -83,7 +84,7 @@
           routerLinkActive="text-[#4F2DB7]"
           class="relative font-semibold text-gray-700 hover:text-[#4F2DB7] transition py-2"
         >
-          من نحن
+          {{ 'من نحن' | translate }}
           <span
             routerLinkActive="!block"
             class="hidden absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-1 rounded-full bg-[#4F2DB7]"
@@ -95,7 +96,7 @@
           routerLinkActive="text-[#4F2DB7]"
           class="relative font-semibold text-gray-700 hover:text-[#4F2DB7] transition py-2"
         >
-          تواصل معنا
+          {{ 'تواصل معنا' | translate }}
           <span
             routerLinkActive="!block"
             class="hidden absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-1 rounded-full bg-[#4F2DB7]"
@@ -105,14 +106,14 @@
       </nav>
 
       <!-- Desktop Buttons -->
-      <div class="hidden lg:flex items-center gap-4">
+      <div class="hidden 2xl:flex items-center gap-4">
 
        <a
   href="https://dashboard.basstahali.com"
   class="border-2 border-[#6D4BCE] text-[#4F2DB7] rounded-xl px-7 py-2.5 font-bold hover:bg-[#6D4BCE] hover:text-white transition flex items-center gap-2"
 >
   <i class="fa-solid fa-right-to-bracket"></i>
-  <span>تسجيل الدخول</span>
+  <span>{{ 'تسجيل الدخول' | translate }}</span>
 </a>
 
         <a
@@ -121,20 +122,29 @@
   class="bg-[#F9B400] text-black font-bold rounded-xl px-7 py-2.5 hover:bg-yellow-500 transition shadow-md flex items-center gap-2"
 >
   <i class="fa-brands fa-whatsapp"></i>
-  <span>ابدأ الآن</span>
+  <span>{{ 'ابدأ الآن' | translate }}</span>
 </a>
       </div>
 
+      <div class="flex shrink-0 items-center gap-2">
+        <button type="button" (click)="preferences.toggleLanguage()" class="rounded-xl border border-purple-100 px-3 py-2 text-sm font-bold text-[#3b236d]" [attr.aria-label]="preferences.language() === 'ar' ? 'Switch to English' : 'التبديل إلى العربية'">{{ preferences.language() === 'ar' ? 'EN' : 'عربي' }}</button>
+        <button type="button" (click)="preferences.toggleTheme()" class="flex h-10 w-10 items-center justify-center rounded-xl border border-purple-100 text-[#3b236d]" [attr.aria-pressed]="preferences.dark()" [attr.aria-label]="preferences.language() === 'ar' ? 'تبديل الوضع الداكن' : 'Toggle dark mode'">
+          <svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">@if (preferences.dark()) { <circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/> } @else { <path d="M20 14A8 8 0 0 1 10 4a8 8 0 1 0 10 10Z"/> }</svg>
+        </button>
+      </div>
       <!-- Mobile Hamburger Button -->
       <button
         (click)="toggleMenu()"
+        [attr.aria-expanded]="isMenuOpen"
+        aria-controls="mobile-navigation"
+        [attr.aria-label]="preferences.language() === 'ar' ? 'القائمة الرئيسية' : 'Main navigation'"
         type="button"
-        class="lg:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition focus:outline-none w-10 h-10 flex items-center justify-center text-2xl"
+        class="2xl:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition focus:outline-none w-10 h-10 flex items-center justify-center text-2xl"
       >
         @if (!isMenuOpen) {
-          <i class="fa-solid fa-bars"></i>
+          <svg aria-hidden="true" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
         } @else {
-          <i class="fa-solid fa-xmark"></i>
+          <svg aria-hidden="true" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 6 12 12M6 18 18 6"/></svg>
         }
       </button>
 
@@ -142,7 +152,7 @@
 
     <!-- Mobile Menu Dropdown -->
     <div
-      class="lg:hidden transition-all duration-300 ease-in-out border-t border-gray-100 overflow-hidden"
+      id="mobile-navigation" class="2xl:hidden max-h-[calc(100dvh-5rem)] overflow-y-auto transition-all duration-300 ease-in-out border-t border-gray-100"
       [class.block]="isMenuOpen"
       [class.hidden]="!isMenuOpen"
     >
@@ -155,16 +165,24 @@
           [routerLinkActiveOptions]="{exact: true}"
           class="text-gray-700 hover:text-[#4F2DB7] py-2.5 px-4 rounded-lg transition"
         >
-          الرئيسية
+          {{ 'الرئيسية' | translate }}
         </a>
 
         <a
+          routerLink="/curriculum"
+          (click)="closeMenu()"
+          routerLinkActive="text-[#4F2DB7] font-bold bg-gray-50"
+          class="text-gray-700 hover:text-[#4F2DB7] py-2.5 px-4 rounded-lg transition"
+        >
+         {{ 'المناهج الدراسية' | translate }}
+        </a>
+<a
           routerLink="/courses"
           (click)="closeMenu()"
           routerLinkActive="text-[#4F2DB7] font-bold bg-gray-50"
           class="text-gray-700 hover:text-[#4F2DB7] py-2.5 px-4 rounded-lg transition"
         >
-         الكورسات
+         {{ 'الكورسات' | translate }}
         </a>
 
         <a
@@ -173,7 +191,7 @@
           routerLinkActive="text-[#4F2DB7] font-bold bg-gray-50"
           class="text-gray-700 hover:text-[#4F2DB7] py-2.5 px-4 rounded-lg transition"
         >
-          المميزات
+          {{ 'المميزات' | translate }}
         </a>
 
         <a
@@ -182,7 +200,7 @@
           routerLinkActive="text-[#4F2DB7] font-bold bg-gray-50"
           class="text-gray-700 hover:text-[#4F2DB7] py-2.5 px-4 rounded-lg transition"
         >
-          المدرسين
+          {{ 'المدرسين' | translate }}
         </a>
 
         <a
@@ -191,7 +209,7 @@
           routerLinkActive="text-[#4F2DB7] font-bold bg-gray-50"
           class="text-gray-700 hover:text-[#4F2DB7] py-2.5 px-4 rounded-lg transition"
         >
-          الأسعار
+          {{ 'الأسعار' | translate }}
         </a>
 
         <a
@@ -200,7 +218,7 @@
           routerLinkActive="text-[#4F2DB7] font-bold bg-gray-50"
           class="text-gray-700 hover:text-[#4F2DB7] py-2.5 px-4 rounded-lg transition"
         >
-          من نحن
+          {{ 'من نحن' | translate }}
         </a>
 
         <a
@@ -209,7 +227,7 @@
           routerLinkActive="text-[#4F2DB7] font-bold bg-gray-50"
           class="text-gray-700 hover:text-[#4F2DB7] py-2.5 px-4 rounded-lg transition"
         >
-          تواصل معنا
+          {{ 'تواصل معنا' | translate }}
         </a>
 
         <!-- Mobile Buttons -->
@@ -219,7 +237,7 @@
   class="w-full text-center border-2 border-[#6D4BCE] text-[#4F2DB7] rounded-xl px-7 py-2.5 font-bold hover:bg-[#6D4BCE] hover:text-white transition flex items-center justify-center gap-2"
 >
   <i class="fa-solid fa-right-to-bracket"></i>
-  <span>تسجيل الدخول</span>
+  <span>{{ 'تسجيل الدخول' | translate }}</span>
 </a>
 
           <button
@@ -228,7 +246,7 @@
             class="w-full bg-[#F9B400] text-black font-bold rounded-xl py-2.5 hover:bg-yellow-500 transition shadow-md flex items-center justify-center gap-2"
           >
             <i class="fa-solid fa-rocket"></i>
-            <span>ابدأ الآن</span>
+            <span>{{ 'ابدأ الآن' | translate }}</span>
           </button>
         </div>
 

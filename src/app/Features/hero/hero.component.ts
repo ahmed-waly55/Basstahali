@@ -1,3 +1,5 @@
+import { LiveLessonComponent } from '../../shared/components/live-lesson/live-lesson.component';
+import { TranslatePipe } from '../../core/services/translate.pipe';
 import { isPlatformBrowser, NgClass } from '@angular/common';
 import {
   Component,
@@ -32,7 +34,7 @@ interface Feature {
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [NgClass, RouterLink],
+  imports: [LiveLessonComponent, TranslatePipe, NgClass, RouterLink],
   templateUrl: './hero.component.html',
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './hero.component.css',

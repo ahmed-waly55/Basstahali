@@ -1,6 +1,4 @@
-```txt
 User-agent: *
 Allow: /
 
 Sitemap: https://www.basstahali.com/sitemap.xml
-```

@@ -1,5 +1,5 @@
 @if(isShow){
-  <section class="py-12 md:py-16 bg-slate-50 relative overflow-hidden" dir="rtl">
+  <section class="py-12 md:py-16 bg-slate-50 relative overflow-hidden" dir="inherit">
   <!-- Dynamic Background Decoration -->
   <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-purple-200/30 to-transparent rounded-full blur-3xl pointer-events-none"></div>
 
@@ -9,24 +9,24 @@
     <div class="text-center max-w-2xl mx-auto mb-10" data-aos="fade-down" data-aos-duration="800">
       <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-100 text-[#4F2DB7] text-sm font-bold mb-3">
         <i class="fa-solid fa-tags"></i>
-        خطط باقات متناسبة
+        {{ 'خطط باقات متناسبة' | translate }}
       </span>
       <h2 class="text-3xl md:text-4xl font-black text-slate-900">
-        اختر <span class="text-[#4F2DB7]">الباقة المناسبة لك</span>
+        {{ 'اختر' | translate }} <span class="text-[#4F2DB7]">{{ 'الباقة المناسبة لك' | translate }}</span>
       </h2>
       <p class="mt-3 text-slate-600 text-base md:text-lg">
-        خطط أسعار مرنة واضحة وبدون أي رسوم خفية. اختر الباقة التي تلبي احتياجاتك الدراسية.
+        {{ 'خطط أسعار مرنة واضحة وبدون أي رسوم خفية. اختر الباقة التي تلبي احتياجاتك الدراسية.' | translate }}
       </p>
 
       <!-- Billing Cycle Toggle Switch -->
       <div class="mt-8 flex items-center justify-center gap-4">
-        <span class="text-sm font-bold" [class.text-slate-900]="!isAnnual" [class.text-slate-400]="isAnnual">شهري</span>
+        <span class="text-sm font-bold" [class.text-slate-900]="!isAnnual" [class.text-slate-400]="isAnnual">{{ 'شهري' | translate }}</span>
 
         <button
           (click)="toggleBilling()"
           type="button"
           class="relative w-16 h-8 bg-[#4F2DB7] rounded-full p-1 transition duration-300 focus:outline-none"
-          aria-label="تغيير نظام الدفع">
+          [attr.aria-label]="'تغيير نظام الدفع' | translate">
           <div
             class="w-6 h-6 bg-white rounded-full shadow-md transform transition duration-300"
             [class.-translate-x-8]="isAnnual"
@@ -35,8 +35,8 @@
         </button>
 
         <span class="text-sm font-bold flex items-center gap-2" [class.text-slate-900]="isAnnual" [class.text-slate-400]="!isAnnual">
-          سنوي
-          <span class="bg-[#F9B400] text-[#3D1A6D] text-[11px] font-black px-2 py-0.5 rounded-full shadow-xs">خصم 20%</span>
+          {{ 'سنوي' | translate }}
+          <span class="bg-[#F9B400] text-[#3D1A6D] text-[11px] font-black px-2 py-0.5 rounded-full shadow-xs">{{ 'خصم 20%' | translate }}</span>
         </span>
 
       </div>
@@ -58,22 +58,22 @@
           @if (plan.isPopular) {
             <div class="absolute -top-4 right-1/2 translate-x-1/2 bg-gradient-to-r from-[#F9B400] to-amber-500 text-[#3D1A6D] text-xs font-black px-4 py-1.5 rounded-full shadow-lg flex items-center gap-1.5">
               <i class="fa-solid fa-crown"></i>
-              <span>الأكثر شعبية وحجزاً</span>
+              <span>{{ 'الأكثر شعبية وحجزاً' | translate }}</span>
             </div>
           }
 
           <div>
             <!-- Header Info -->
             <div class="text-right border-b border-slate-100 pb-6 mb-6">
-              <h3 class="text-xl font-bold text-slate-900 mb-2">{{ plan.name }}</h3>
-              <p class="text-xs text-slate-500 leading-relaxed min-h-[36px]">{{ plan.description }}</p>
+              <h3 class="text-xl font-bold text-slate-900 mb-2">{{ (plan.name) | translate }}</h3>
+              <p class="text-xs text-slate-500 leading-relaxed min-h-[36px]">{{ (plan.description) | translate }}</p>
 
               <!-- Price Box -->
               <div class="mt-4 flex items-baseline gap-1">
                 <span class="text-4xl font-black text-slate-900">
-                  {{ isAnnual ? plan.annualPrice : plan.monthlyPrice }}
+                  {{ (isAnnual ? plan.annualPrice : plan.monthlyPrice) | translate }}
                 </span>
-                <span class="text-xs font-bold text-slate-500">جنية / {{ isAnnual ? 'سنوياً' : 'شهرياً' }}</span>
+                <span class="text-xs font-bold text-slate-500">جنية / {{ (isAnnual ? 'سنوياً' : 'شهرياً') | translate }}</span>
               </div>
             </div>
 
@@ -85,12 +85,12 @@
                     <div class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
                       <i class="fa-solid fa-check text-xs"></i>
                     </div>
-                    <span class="text-slate-700 font-medium">{{ feature.text }}</span>
+                    <span class="text-slate-700 font-medium">{{ (feature.text) | translate }}</span>
                   } @else {
                     <div class="w-5 h-5 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center shrink-0 mt-0.5">
                       <i class="fa-solid fa-xmark text-xs"></i>
                     </div>
-                    <span class="text-slate-400 line-through">{{ feature.text }}</span>
+                    <span class="text-slate-400 line-through">{{ (feature.text) | translate }}</span>
                   }
                 </li>
               }
@@ -106,7 +106,7 @@
               ? 'bg-[#4F2DB7] hover:bg-[#3D1A6D] text-white shadow-lg shadow-purple-200'
               : 'bg-slate-100 hover:bg-slate-200 text-slate-800'"
             class="w-full text-center font-bold text-xs md:text-sm py-3.5 px-6 rounded-2xl transition duration-300 block">
-            {{ plan.buttonText }}
+            {{ (plan.buttonText) | translate }}
           </a>
 
         </div>
@@ -115,9 +115,9 @@
 
     <!-- Contact note -->
     <div class="mt-12 text-center text-xs text-slate-500" data-aos="fade-up">
-      <span>هل تحتاج باقة خاصة لمجموعات أو مدارس؟ </span>
+      <span>{{ 'هل تحتاج باقة خاصة لمجموعات أو مدارس؟' | translate }} </span>
       <a href="https://wa.me/971525250833" target="_blank" class="text-[#4F2DB7] font-bold underline hover:text-[#3D1A6D]">
-        تواصل معنا للاستفسار عن الباقات المخصصة
+        {{ 'تواصل معنا للاستفسار عن الباقات المخصصة' | translate }}
       </a>
     </div>
 
@@ -126,7 +126,7 @@
 }
 
 @else {
-  <section class="py-16 md:py-24 bg-slate-50 relative overflow-hidden" dir="rtl">
+  <section class="py-16 md:py-24 bg-slate-50 relative overflow-hidden" dir="inherit">
     <!-- Dynamic Background Decoration المتطابقة مع الباقات -->
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-purple-200/30 to-transparent rounded-full blur-3xl pointer-events-none"></div>
 
@@ -140,12 +140,12 @@
 
         <!-- Title -->
         <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4">
-          قريباً سوف يتم طرح <span class="text-[#4F2DB7]">خطط الأسعار</span>
+          {{ 'قريباً سوف يتم طرح' | translate }} <span class="text-[#4F2DB7]">{{ 'خطط الأسعار' | translate }}</span>
         </h2>
 
         <!-- Description -->
         <p class="text-slate-600 text-base md:text-lg max-w-xl mx-auto mb-8 leading-relaxed">
-          نحن نعمل حالياً على تجهيز باقات مميزة تناسب احتياجاتك. لمعرفة الخطط الحالية المتاحة والتفاصيل، يمكنك التواصل معنا مباشرة.
+          {{ 'نحن نعمل حالياً على تجهيز باقات مميزة تناسب احتياجاتك. لمعرفة الخطط الحالية المتاحة والتفاصيل، يمكنك التواصل معنا مباشرة.' | translate }}
         </p>
 
         <!-- WhatsApp CTA Button (محدث بلون الموقع البنفسجي الموحد أو الأخد الأخضر الخاص بالواتساب حسب رغبتك، هنا مطابق لهوية الموقع) -->
@@ -155,7 +155,7 @@
           rel="noopener noreferrer"
           class="inline-flex items-center justify-center gap-3 bg-[#4F2DB7] hover:bg-[#3D1A6D] text-white font-bold text-base px-8 py-4 rounded-2xl shadow-lg shadow-purple-200 transition duration-300">
           <i class="fa-brands fa-whatsapp text-xl"></i>
-          <span>التواصل مع فريق المبيعات عبر الواتساب</span>
+          <span>{{ 'التواصل مع فريق المبيعات عبر الواتساب' | translate }}</span>
         </a>
 
       </div>

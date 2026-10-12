@@ -1,77 +1,42 @@
-import {
-  Component,
-  DestroyRef,
-  inject,
-  OnInit,
-  signal,
-  ChangeDetectorRef
-} from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterLink, ActivatedRoute } from '@angular/router';
+import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-
+import { catchError, combineLatest, map, of, startWith, Subject, switchMap, timeout } from 'rxjs';
 import { TeacherService } from '../../core/services/teacher.service';
+import { LearningCatalogComponent, LearningItem, learningItems } from '../../shared/components/learning-catalog/learning-catalog.component';
 
 @Component({
   selector: 'app-curriculum-details',
-  standalone: true,
-  imports: [
-    CommonModule,
-    RouterLink
-  ],
-  templateUrl: './curriculum-details.component.html'
+  imports: [LearningCatalogComponent],
+  templateUrl: './curriculum-details.component.html',
 })
 export class CurriculumDetailsComponent implements OnInit {
-
-  private teacherService = inject(TeacherService);
+  private service = inject(TeacherService);
   private route = inject(ActivatedRoute);
   private destroyRef = inject(DestroyRef);
-  private cdr = inject(ChangeDetectorRef);
-
+  private retryRequests = new Subject<void>();
   id: string | null = null;
-
-  // تحويل البيانات إلى Signal لضمان تحديث الـ View فوراً مع SSR
-  gradeLevels = signal<any[]>([]);
-
+  gradeLevels = signal<LearningItem[]>([]);
+  loading = signal(true);
+  failed = signal(false);
   ngOnInit(): void {
-    const paramSource = this.route.snapshot.paramMap.keys.length > 0
-      ? this.route.paramMap
-      : (this.route.parent?.paramMap ?? this.route.paramMap);
-
-    paramSource
-      .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe(params => {
-        const curriculumId = params.get('id') || params.get('curriculumId');
-
-        if (!curriculumId) {
-          console.error('Curriculum ID not found');
-          return;
-        }
-
-        this.id = curriculumId;
-        this.fetchGradeLevels(curriculumId);
-      });
+    combineLatest([this.route.paramMap, this.retryRequests.pipe(startWith(undefined))]).pipe(
+      switchMap(([params]) => {
+        this.id = params.get('id');
+        return this.request();
+      }), takeUntilDestroyed(this.destroyRef)
+    ).subscribe(result => this.complete(result));
   }
-
-  private fetchGradeLevels(curriculumId: string): void {
-    this.teacherService
-      .getGradeLevels(curriculumId)
-      .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe({
-        next: (response: any) => {
-          const data = response?.data ?? (Array.isArray(response) ? response : []);
-
-          // تحديث الـ Signal
-          this.gradeLevels.set(data);
-
-          // إخطار Angular صراحةً بوجود تحديث للواجهة
-          this.cdr.markForCheck();
-        },
-        error: (error) => {
-          console.error('Grade Levels API Error:', error);
-          this.gradeLevels.set([]);
-          this.cdr.markForCheck();
-        }
-      });
+  private request() {
+    if (!this.id) return of({ items: [] as LearningItem[], failed: true });
+    this.loading.set(true);
+    this.failed.set(false);
+    return this.service.getGradeLevels(this.id!).pipe(timeout(12000),
+      map(response => ({ items: learningItems(response), failed: false })),
+      catchError(() => of({ items: [] as LearningItem[], failed: true })));
   }
+  private complete(result: {items: LearningItem[]; failed: boolean}) {
+    this.gradeLevels.set(result.items); this.failed.set(result.failed); this.loading.set(false);
+  }
+  retry(): void { this.retryRequests.next(); }
 }

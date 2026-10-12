@@ -1,3 +1,4 @@
+import { TranslatePipe } from '../../core/services/translate.pipe';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, OnInit, ChangeDetectionStrategy, inject, PLATFORM_ID } from '@angular/core';
 import * as AOS from 'aos';
@@ -23,7 +24,7 @@ export interface Course {
 
 @Component({
   selector: 'app-courses',
-  imports: [CommonModule],
+  imports: [TranslatePipe, CommonModule],
   templateUrl: './courses.component.html',
   changeDetection: ChangeDetectionStrategy.Default,
   styleUrl: './courses.component.css',

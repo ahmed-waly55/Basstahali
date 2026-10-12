@@ -1,9 +1,10 @@
+import { TranslatePipe } from '../../core/services/translate.pipe';
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-not-found',
-  imports: [RouterLink],
+  imports: [TranslatePipe, RouterLink],
   templateUrl: './not-found.component.html',
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './not-found.component.css',

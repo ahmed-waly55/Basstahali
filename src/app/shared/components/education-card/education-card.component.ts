@@ -1,10 +1,11 @@
+import { TranslatePipe } from '../../../core/services/translate.pipe';
 import { Component, input, output, ChangeDetectionStrategy } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-education-card',
   standalone: true,
-  imports: [NgClass],
+  imports: [TranslatePipe, NgClass],
   templateUrl: './education-card.component.html',
   styleUrl: './education-card.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

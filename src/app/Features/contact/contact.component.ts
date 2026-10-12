@@ -1,3 +1,5 @@
+import { PreferencesService } from '../../core/services/preferences.service';
+import { TranslatePipe } from '../../core/services/translate.pipe';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, OnInit, ViewChild, ChangeDetectionStrategy, inject, PLATFORM_ID } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
@@ -6,12 +8,13 @@ import AOS from 'aos';
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [TranslatePipe, CommonModule, FormsModule],
   templateUrl: './contact.component.html',
   changeDetection: ChangeDetectionStrategy.Default,
   styleUrl: './contact.component.css',
 })
 export class ContactComponent implements OnInit {
+  preferences = inject(PreferencesService);
   private platformId = inject(PLATFORM_ID);
 
   // الوصول للنموذج مباشرة لتفادي خطأ undefined

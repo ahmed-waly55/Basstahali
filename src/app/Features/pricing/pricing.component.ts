@@ -1,3 +1,4 @@
+import { TranslatePipe } from '../../core/services/translate.pipe';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, OnInit, ChangeDetectionStrategy, inject, PLATFORM_ID } from '@angular/core';
 import * as AOS from 'aos';
@@ -21,7 +22,7 @@ export interface PricingPlan {
 @Component({
   selector: 'app-pricing',
   standalone: true,
-  imports: [CommonModule],
+  imports: [TranslatePipe, CommonModule],
   templateUrl: './pricing.component.html',
   changeDetection: ChangeDetectionStrategy.Default,
   styleUrl: './pricing.component.css',

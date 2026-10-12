@@ -1,4 +1,6 @@
-import { Component, OnInit, OnDestroy, ChangeDetectorRef, NgZone } from '@angular/core';
+import { PreferencesService } from '../../core/services/preferences.service';
+import { TranslatePipe } from '../../core/services/translate.pipe';
+import { Component, inject, OnInit, OnDestroy, ChangeDetectorRef, NgZone } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators, FormArray, FormsModule } from '@angular/forms';
 import { Subject, takeUntil } from 'rxjs';
@@ -8,11 +10,12 @@ import { TeacherService } from '../../core/services/teacher.service';
 @Component({
   selector: 'app-teacher-form',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule , FormsModule],
+  imports: [TranslatePipe, CommonModule, ReactiveFormsModule , FormsModule],
   templateUrl: './teacher-form.component.html',
   styleUrl: './teacher-form.component.css',
 })
 export class TeacherFormComponent implements OnInit, OnDestroy {
+  preferences = inject(PreferencesService);
 
   private destroy$ = new Subject<void>();
 
@@ -184,9 +187,9 @@ export class TeacherFormComponent implements OnInit, OnDestroy {
 
           Swal.fire({
             icon: 'success',
-            title: 'تم إرسال طلبك بنجاح!',
+            title: this.preferences.translate('تم إرسال طلبك بنجاح!'),
             text: `رقم الطلب الخاص بك هو: ${reqId}`,
-            confirmButtonText: 'حسناً',
+            confirmButtonText: this.preferences.translate('حسناً'),
             confirmButtonColor: '#7c3aed'
           });
           this.teacherForm.reset();
@@ -197,9 +200,9 @@ export class TeacherFormComponent implements OnInit, OnDestroy {
 
           Swal.fire({
             icon: 'error',
-            title: 'عذراً!',
+            title: this.preferences.translate('عذراً!'),
             text: errorMessage,
-            confirmButtonText: 'موافق',
+            confirmButtonText: this.preferences.translate('موافق'),
             confirmButtonColor: '#ef4444'
           });
           console.error(error);
@@ -212,9 +215,9 @@ export class TeacherFormComponent implements OnInit, OnDestroy {
     if (!this.requestIdInput || !this.requestIdInput.trim()) {
       Swal.fire({
         icon: 'warning',
-        title: 'تنبيه',
-        text: 'يرجى إدخال رقم الطلب أولاً للاستعلام.',
-        confirmButtonText: 'حسناً',
+        title: this.preferences.translate('تنبيه'),
+        text: this.preferences.translate('يرجى إدخال رقم الطلب أولاً للاستعلام.'),
+        confirmButtonText: this.preferences.translate('حسناً'),
         confirmButtonColor: '#7c3aed'
       });
       return;
@@ -232,14 +235,14 @@ export class TeacherFormComponent implements OnInit, OnDestroy {
 
           Swal.fire({
             icon: 'info',
-            title: 'حالة الطلب',
+            title: this.preferences.translate('حالة الطلب'),
             html: `
               <div style="text-align: right; direction: rtl;">
                 <p style="margin-bottom: 8px;"><b>رقم الطلب:</b> ${data.id || this.requestIdInput}</p>
                 <p><b>الحالة الحالية:</b> <span style="color: #d97706; font-weight: bold;">${data.status || data.data?.status || 'قيد المراجعة'}</span></p>
               </div>
             `,
-            confirmButtonText: 'إغلاق',
+            confirmButtonText: this.preferences.translate('إغلاق'),
             confirmButtonColor: '#7c3aed'
           });
         },
@@ -251,9 +254,9 @@ export class TeacherFormComponent implements OnInit, OnDestroy {
 
           Swal.fire({
             icon: 'error',
-            title: 'لم يتم العثور على الطلب',
-            text: 'تأكد من صحة رقم الطلب المدخل.',
-            confirmButtonText: 'حسناً',
+            title: this.preferences.translate('لم يتم العثور على الطلب'),
+            text: this.preferences.translate('تأكد من صحة رقم الطلب المدخل.'),
+            confirmButtonText: this.preferences.translate('حسناً'),
             confirmButtonColor: '#ef4444'
           });
           console.error(error);

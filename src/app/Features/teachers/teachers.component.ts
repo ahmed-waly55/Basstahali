@@ -1,3 +1,4 @@
+import { TranslatePipe } from '../../core/services/translate.pipe';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, OnInit, inject, PLATFORM_ID, ChangeDetectionStrategy } from '@angular/core';
 import * as AOS from 'aos';
@@ -17,7 +18,7 @@ export interface Teacher {
 @Component({
   selector: 'app-teachers',
   standalone: true,
-  imports: [CommonModule],
+  imports: [TranslatePipe, CommonModule],
   templateUrl: './teachers.component.html',
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './teachers.component.css',

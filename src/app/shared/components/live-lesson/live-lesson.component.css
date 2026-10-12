@@ -1,0 +1,20 @@
+:host { display: block; width: 100%; --lesson-scroll: .5; --scene-bg: #eee6fa; --scene-surface: #fff; }
+.lesson-scene { position: relative; max-width: 600px; margin-inline: auto; }
+.lesson-art { display: block; width: 100%; height: auto; overflow: visible; }
+.teacher-window { transform: translateY(calc((.5 - var(--lesson-scroll)) * 36px)); }
+.floating-book { transform: translateY(calc((var(--lesson-scroll) - .5) * 50px)) rotate(calc((var(--lesson-scroll) - .5) * 8deg)); transform-origin: 99px 215px; }
+.floating-star { transform: translateY(calc((.5 - var(--lesson-scroll)) * 65px)); }
+.student { transform: translateX(calc((var(--lesson-scroll) - .5) * 16px)); }
+.lesson-status { position: absolute; top: 0; inset-inline-end: 5%; display: flex; align-items: center; gap: 8px; background: var(--scene-surface); color: #3b236d; border: 1px solid #e8dcfa; border-radius: 99px; padding: 10px 18px; font-size: 13px; font-weight: 700; box-shadow: 0 8px 30px #3b236d0d; }
+.lesson-status span { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; }
+.lesson-caption { position: relative; display: flex; align-items: center; gap: 12px; width: fit-content; max-width: 95%; margin: -15px auto 0; padding: 14px 22px; border-radius: 20px; background: var(--scene-surface); color: #3b236d; box-shadow: 0 12px 40px #3b236d12; border: 1px solid #e8dcfa; }
+.lesson-caption strong { font-size: 15px; }.lesson-caption p { font-size: 12px; margin-top: 5px; color: #75628f; }
+.lesson-camera { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px; background: #ffc107; color: #3b236d; }
+:host.scene-visible .connection-line { animation: connection 3s linear infinite; }
+:host.scene-visible .student-arm { animation: typing 2s ease-in-out infinite; transform-origin: 216px 257px; }
+@keyframes connection { to { stroke-dashoffset: -45; } }
+@keyframes typing { 50% { transform: rotate(-3deg); } }
+:host-context(html.dark) { --scene-bg: #302041; --scene-surface: #241b34; }
+:host-context(html.dark) .lesson-status, :host-context(html.dark) .lesson-caption { color: #e8d9ff; border-color: #503868; }
+:host-context(html.dark) .lesson-caption p { color: #c8bdd7; }
+@media (prefers-reduced-motion: reduce) { .teacher-window, .floating-book, .floating-star, .student { transform: none; } .connection-line, .student-arm { animation: none !important; } }

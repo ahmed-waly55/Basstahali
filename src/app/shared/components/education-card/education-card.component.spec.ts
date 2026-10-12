@@ -13,6 +13,7 @@ describe('EducationCardComponent', () => {
     .compileComponents();
 
     fixture = TestBed.createComponent(EducationCardComponent);
+    fixture.componentRef.setInput('title', 'عنوان الاختبار');
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

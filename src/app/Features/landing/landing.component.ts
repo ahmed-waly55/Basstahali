@@ -1,3 +1,5 @@
+import { PreferencesService } from '../../core/services/preferences.service';
+import { TranslatePipe } from '../../core/services/translate.pipe';
 import {
   Component,
   ElementRef,
@@ -16,17 +18,18 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
 import { EducationCardComponent } from '../../shared/components/education-card/education-card.component';
 import AOS from 'aos';
 import { TeacherService } from '../../core/services/teacher.service';
-import { Subject, takeUntil } from 'rxjs';
+import { Subject, takeUntil, timeout } from 'rxjs';
 
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [CommonModule, HeroComponent, SectionHeaderComponent, EducationCardComponent, RouterLink],
+  imports: [TranslatePipe, CommonModule, HeroComponent, SectionHeaderComponent, EducationCardComponent, RouterLink],
   templateUrl: './landing.component.html',
   changeDetection: ChangeDetectionStrategy.Default,
   styleUrl: './landing.component.css',
 })
 export class LandingComponent implements OnInit, OnDestroy {
+  preferences = inject(PreferencesService);
   @ViewChild('sliderTrack') sliderTrack!: ElementRef<HTMLDivElement>;
 
   private teacherService = inject(TeacherService);
@@ -97,10 +100,11 @@ export class LandingComponent implements OnInit, OnDestroy {
 
   fetchCurricula(): void {
     this.teacherService.getCurricula()
-      .pipe(takeUntil(this.destroy$)) // ربط الاشتراك بـ destroy$ لإلغائه عند الخروج من الصفحة
+      .pipe(timeout(12000), takeUntil(this.destroy$)) // ربط الاشتراك بـ destroy$ لإلغائه عند الخروج من الصفحة
       .subscribe({
         next: (response: any) => {
-          this.curriculaList = response?.data || response || [];
+          const items = response?.res ?? response?.data ?? response;
+          this.curriculaList = Array.isArray(items) ? items : [];
           this.cdr.markForCheck();
         },
         error: (error) => {

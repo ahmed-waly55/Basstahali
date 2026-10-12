@@ -10,7 +10,7 @@
   href="https://wa.me/971525250833?text=السلام%20عليكم،%20أرغب%20في%20الاستفسار%20عن%20الخدمات."
   target="_blank"
   rel="noopener noreferrer"
-  aria-label="تواصل معنا عبر واتساب"
+  [attr.aria-label]="'تواصل معنا عبر واتساب' | translate"
   data-aos="fade-up"
   data-aos-delay="500"
   class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-[#25D366] text-white rounded-full shadow-2xl hover:bg-[#20ba5a] transition-all duration-300 hover:scale-110 active:scale-95 group"
@@ -23,7 +23,7 @@
 
   <!-- Tooltip (يظهر على اليسار عند التمرير بالماوس) -->
   <span class="absolute right-full mr-3 hidden md:group-hover:flex items-center whitespace-nowrap bg-gray-900 text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-    تواصل معنا مباشرة
+    {{ 'تواصل معنا مباشرة' | translate }}
   </span>
 </a>
   </div>

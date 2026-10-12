@@ -6,9 +6,9 @@
       <div class="toast-body">
         <div class="toast-content">
           @if (toast.title) {
-            <h4 class="toast-title">{{ toast.title }}</h4>
+            <h4 class="toast-title">{{ (toast.title) | translate }}</h4>
           }
-          <p class="toast-message">{{ toast.message }}</p>
+          <p class="toast-message">{{ (toast.message) | translate }}</p>
         </div>
 
         <button class="toast-close" (click)="toastService.remove(toast.id)">✕</button>

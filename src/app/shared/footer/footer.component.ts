@@ -1,10 +1,11 @@
+import { TranslatePipe } from '../../core/services/translate.pipe';
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
-  imports: [RouterLink, FormsModule],
+  imports: [TranslatePipe, RouterLink, FormsModule],
   templateUrl: './footer.component.html',
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './footer.component.css',

@@ -1,3 +1,4 @@
+import { PreferencesService } from './core/services/preferences.service';
 import { Component, signal, ChangeDetectionStrategy, inject, HostListener } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ToastComponent } from './core/components/toast/toast.component';
@@ -12,6 +13,7 @@ import { OwlLoaderComponent } from "./shared/components/owl-loader/owl-loader.co
   styleUrl: './app.css',
 })
 export class App {
+  readonly preferences = inject(PreferencesService);
   protected readonly title = signal('منصة بسطهالي');
   private toastService = inject(ToastService);
 

@@ -1,3 +1,4 @@
+import { provideRouter } from '@angular/router';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LandingLayoutComponent } from './landing-layout.component';
@@ -8,6 +9,7 @@ describe('LandingLayoutComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      providers: [provideRouter([])],
       imports: [LandingLayoutComponent]
     })
     .compileComponents();

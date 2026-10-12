@@ -12,22 +12,22 @@
 
         <h1>404</h1>
 
-        <h2>الصفحة غير موجودة</h2>
+        <h2>{{ 'الصفحة غير موجودة' | translate }}</h2>
 
         <p>
-            يبدو أن الصفحة التي تبحث عنها غير موجودة أو تم نقلها.
+            {{ 'يبدو أن الصفحة التي تبحث عنها غير موجودة أو تم نقلها.' | translate }}
         </p>
 
         <div class="buttons">
 
             <a routerLink="/" class="btn btn-primary">
                 <i class="fa-solid fa-house"></i>
-                العودة للرئيسية
+                {{ 'العودة للرئيسية' | translate }}
             </a>
 
             <a routerLink="/contact" class="btn btn-outline">
                 <i class="fa-brands fa-whatsapp"></i>
-                تواصل معنا
+                {{ 'تواصل معنا' | translate }}
             </a>
 
         </div>

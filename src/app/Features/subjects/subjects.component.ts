@@ -1,87 +1,45 @@
-import {
-  Component,
-  DestroyRef,
-  inject,
-  OnInit,
-  signal,
-  ChangeDetectorRef
-} from '@angular/core';
-import { CommonModule, Location } from '@angular/common';
-import { RouterLink, ActivatedRoute } from '@angular/router';
+import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-
+import { catchError, combineLatest, map, of, startWith, Subject, switchMap, timeout } from 'rxjs';
 import { TeacherService } from '../../core/services/teacher.service';
+import { LearningCatalogComponent, LearningItem, learningItems } from '../../shared/components/learning-catalog/learning-catalog.component';
 
 @Component({
   selector: 'app-subjects',
-  standalone: true,
-  imports: [
-    CommonModule,
-  ],
+  imports: [LearningCatalogComponent],
   templateUrl: './subjects.component.html',
-  styleUrl: './subjects.component.css'
+  styleUrl: './subjects.component.css',
 })
 export class SubjectsComponent implements OnInit {
-
-  private teacherService = inject(TeacherService);
+  private service = inject(TeacherService);
   private route = inject(ActivatedRoute);
   private destroyRef = inject(DestroyRef);
-  private cdr = inject(ChangeDetectorRef);
-  private location = inject(Location);
-
-  // تخزين معرف المرحلة الممرر في الـ URL (:subjectId)
+  private retryRequests = new Subject<void>();
   gradeLevelId: string | null = null;
-
-  // Signal لتخزين المواد وضمان التحديث المباشر مع الـ SSR
-  subjects = signal<any[]>([]);
-
+  backLink = signal('/curriculum');
+  subjects = signal<LearningItem[]>([]);
+  loading = signal(true);
+  failed = signal(false);
   ngOnInit(): void {
-    const paramSource = this.route.snapshot.paramMap.keys.length > 0
-      ? this.route.paramMap
-      : (this.route.parent?.paramMap ?? this.route.paramMap);
-
-    paramSource
-      .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe(params => {
-        // قراءة المعرف الممرر في المسار (مع دعم مسميات بديلة للأمان)
-        const id = params.get('subjectId') || params.get('id') || params.get('gradeLevelId');
-
-        if (!id) {
-          console.error('Grade level ID not found in route parameters');
-          return;
-        }
-
-        this.gradeLevelId = id;
-        this.fetchSubjects(id);
-      });
+    this.route.queryParamMap.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(params => {
+      const curriculum = params.get('curriculum');
+      this.backLink.set(curriculum ? '/curriculum/' + encodeURIComponent(curriculum) : '/curriculum');
+    });
+    combineLatest([this.route.paramMap, this.retryRequests.pipe(startWith(undefined))]).pipe(switchMap(([params]) => {
+      this.gradeLevelId = params.get('subjectId');
+      return this.request();
+    }), takeUntilDestroyed(this.destroyRef)).subscribe(result => this.complete(result));
   }
-
-  private fetchSubjects(gradeLevelId: string): void {
-    console.log('Fetching subjects for grade level ID:', gradeLevelId);
-
-    this.teacherService
-      .getSubjects(gradeLevelId)
-      .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe({
-        next: (response: any) => {
-          console.log('Subjects API Response:', response);
-
-          // استخراج المصفوفة سواء كانت داخل response.data أو كمصفوفة مباشرة
-          const data = response?.data ?? (Array.isArray(response) ? response : []);
-
-          this.subjects.set(data);
-          this.cdr.markForCheck();
-        },
-        error: (error) => {
-          console.error('Subjects API Error:', error);
-          this.subjects.set([]);
-          this.cdr.markForCheck();
-        }
-      });
+  private request() {
+    if (!this.gradeLevelId) return of({ items: [] as LearningItem[], failed: true });
+    this.loading.set(true); this.failed.set(false);
+    return this.service.getSubjects(this.gradeLevelId!).pipe(timeout(12000),
+      map(response => ({ items: learningItems(response), failed: false })),
+      catchError(() => of({ items: [] as LearningItem[], failed: true })));
   }
-
-  // الرجوع للخلف في تاريخ المتصفح
-  goBack(): void {
-    this.location.back();
+  private complete(result: {items: LearningItem[]; failed: boolean}) {
+    this.subjects.set(result.items); this.failed.set(result.failed); this.loading.set(false);
   }
+  retry(): void { this.retryRequests.next(); }
 }

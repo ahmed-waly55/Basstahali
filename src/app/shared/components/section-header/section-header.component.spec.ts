@@ -13,6 +13,7 @@ describe('SectionHeaderComponent', () => {
     .compileComponents();
 
     fixture = TestBed.createComponent(SectionHeaderComponent);
+    fixture.componentRef.setInput('title', 'عنوان الاختبار');
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

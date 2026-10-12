@@ -65,18 +65,18 @@
   <!-- Badge كود المنهج -->
   @if (badge()) {
     <span class="bg-[#f4f0fa] text-[#3b236d] text-xs font-bold px-3 py-1 rounded-full mb-3 z-10 border border-[#e1d5f2]">
-      {{ badge() }}
+      {{ (badge()) | translate }}
     </span>
   }
 
   <!-- عنوان الكارت -->
   <h2 class="text-[#3b236d] text-xl font-bold mb-3 z-10 line-clamp-1">
-    {{ title() }}
+    {{ (title()) | translate }}
   </h2>
 
   <!-- الوصف -->
   <p class="text-gray-500 text-sm mb-6 line-clamp-2 z-10 min-h-[40px] leading-relaxed flex-1">
-    {{ subtitle() }}
+    {{ (subtitle()) | translate }}
   </p>
 
   <!-- الزرار: بنفسجي ملكي ثابت بنص أبيض وبدون هوفر -->
@@ -98,7 +98,7 @@
     "
     [ngClass]="[buttonBg(), buttonTextColor()]"
   >
-    {{ buttonText() }}
+    {{ (buttonText()) | translate }}
   </button>
 
   <!-- خط سفلي اختياري -->

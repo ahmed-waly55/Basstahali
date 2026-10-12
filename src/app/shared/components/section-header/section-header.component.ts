@@ -1,8 +1,9 @@
+import { TranslatePipe } from '../../../core/services/translate.pipe';
 import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-section-header',
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './section-header.component.html',
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './section-header.component.css',

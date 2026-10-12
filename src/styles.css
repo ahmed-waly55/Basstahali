@@ -3,3 +3,30 @@
 @import 'tailwindcss';
 
 
+
+:root { color-scheme: light; }
+body { margin: 0; background: #faf8ff; color: #24163f; }
+a, button, input { -webkit-tap-highlight-color: transparent; }
+:where(a, button, input):focus-visible { outline: 3px solid #b48ce8; outline-offset: 4px; }
+.learning-catalog { min-height: 70vh; }
+.learning-catalog :where(h1, h2, h3, p) { overflow-wrap: anywhere; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+  [data-aos] { opacity: 1 !important; transform: none !important; }
+}
+
+html.dark { color-scheme: dark; }
+html.dark body { background: #151020; color: #f3edf9; }
+html.dark :where(.bg-white, .bg-white\/80) { background-color: #241b34; }
+html.dark :where(.bg-gray-50, .bg-slate-50, .bg-purple-50, .bg-\[\#faf8ff\], .bg-\[\#f4f0fa\], .bg-\[\#f0eafa\], .bg-\[\#F3EFFF\], .bg-\[\#F7F3FD\]) { background-color: #1d152b; }
+html.dark :where(.text-gray-500, .text-gray-600, .text-gray-700, .text-slate-500, .text-slate-600, .text-slate-700) { color: #c8bdd7; }
+html.dark :where(.text-\[\#3b236d\], .text-\[\#4F2DB7\], .text-\[\#2B1B54\], .text-\[\#3D1A6D\], .text-purple-900) { color: #dcc5ff; }
+html.dark :where(.border-gray-100, .border-purple-100, .border-purple-50, .border-\[\#E7DFFF\]) { border-color: #443152; }
+html.dark input, html.dark select, html.dark textarea { background: #21182f; color: #f3edf9; border-color: #604970; }
+html.dark .learning-catalog .bg-\[\#ffc107\] { color: #3b236d; }
+html.dark .learning-catalog .bg-amber-50 { background: #49371e; color: #ffda70; }
+html.dark section.bg-gradient-to-br { --tw-gradient-from: #21162f; --tw-gradient-via: #181020; --tw-gradient-to: #2b193c; }
+html[dir="ltr"] .text-right { text-align: left; }
+html[dir="ltr"] .lg\:text-right { text-align: left; }
+html.dark :where(.text-indigo-950, .text-purple-950, .text-gray-800, .text-gray-900, .text-slate-800, .text-slate-900) { color: #ecddff; }
+html.dark .learning-catalog .bg-yellow-400 { color: #3b236d; }
