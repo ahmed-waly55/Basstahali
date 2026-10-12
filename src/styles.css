@@ -1,6 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import './fonts.css';
 @import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Alexandria Variable', 'Inter Variable', Arial, sans-serif;
+}
+
+html {
+  font-family: var(--font-sans);
+}
+html[lang='en'] {
+  --font-sans: 'Inter Variable', 'Alexandria Variable', Arial, sans-serif;
+}
+:where(button, input, select, textarea) {
+  font-family: inherit;
+}
+.absolute.blur-2xl,
+.absolute.blur-3xl {
+  pointer-events: none;
+}
 
 :root {
   color-scheme: light;
@@ -35,93 +54,6 @@ input {
   }
 }
 
-html.dark {
-  color-scheme: dark;
-}
-html.dark body {
-  background: #151020;
-  color: #f3edf9;
-}
-html.dark :where(.bg-white, .bg-white\/80) {
-  background-color: #241b34;
-}
-html.dark
-  :where(
-    .bg-gray-50,
-    .bg-slate-50,
-    .bg-purple-50,
-    .bg-\[\#faf8ff\],
-    .bg-\[\#f4f0fa\],
-    .bg-\[\#f0eafa\],
-    .bg-\[\#F3EFFF\],
-    .bg-\[\#F7F3FD\]
-  ) {
-  background-color: #1d152b;
-}
-html.dark
-  :where(
-    .text-gray-500,
-    .text-gray-600,
-    .text-gray-700,
-    .text-slate-500,
-    .text-slate-600,
-    .text-slate-700
-  ) {
-  color: #c8bdd7;
-}
-html.dark
-  :where(
-    .text-\[\#3b236d\],
-    .text-\[\#4F2DB7\],
-    .text-\[\#2B1B54\],
-    .text-\[\#3D1A6D\],
-    .text-purple-900
-  ) {
-  color: #dcc5ff;
-}
-html.dark :where(.border-gray-100, .border-purple-100, .border-purple-50, .border-\[\#E7DFFF\]) {
-  border-color: #443152;
-}
-html.dark input,
-html.dark select,
-html.dark textarea {
-  background: #21182f;
-  color: #f3edf9;
-  border-color: #604970;
-}
-html.dark .learning-catalog .bg-\[\#ffc107\] {
-  color: #3b236d;
-}
-html.dark .learning-catalog .bg-amber-50 {
-  background: #49371e;
-  color: #ffda70;
-}
-html.dark section.bg-gradient-to-br {
-  --tw-gradient-from: #21162f;
-  --tw-gradient-via: #181020;
-  --tw-gradient-to: #2b193c;
-}
-html[dir='ltr'] .text-right {
-  text-align: left;
-}
-html[dir='ltr'] .lg\:text-right {
-  text-align: left;
-}
-html.dark
-  :where(
-    .text-indigo-950,
-    .text-purple-950,
-    .text-gray-800,
-    .text-gray-900,
-    .text-slate-800,
-    .text-slate-900
-  ) {
-  color: #ecddff;
-}
-html.dark .learning-catalog .bg-yellow-400 {
-  color: #3b236d;
-}
-
 :root {
   --surface: #fff;
   --page: #faf9fc;
@@ -132,14 +64,256 @@ html.dark .learning-catalog .bg-yellow-400 {
   --brand: #4f2db7;
 }
 html.dark {
+  color-scheme: dark;
   --surface: #241b34;
   --page: #171120;
   --soft: #30223f;
-  --border: #443152;
+  --border: #514060;
   --ink: #f1e9fa;
-  --muted: #bdb0ce;
+  --muted: #c8bdd7;
   --brand: #d6baff;
 }
+html.dark body {
+  background: var(--page);
+  color: var(--ink);
+}
+
+/* Keep the original light layouts; map their shared utility colors to dark surfaces. */
+html.dark :where(.bg-white, .bg-white\/80, .bg-white\/90, .bg-white\/95) {
+  background-color: var(--surface);
+}
+html.dark
+  :where(
+    .bg-gray-50,
+    .bg-gray-100,
+    .bg-slate-50,
+    .bg-slate-100,
+    .bg-purple-50,
+    .bg-purple-50\/30,
+    .bg-purple-100,
+    .bg-purple-100\/50,
+    .bg-indigo-50,
+    .bg-indigo-100,
+    .bg-\[\#faf8ff\],
+    .bg-\[\#f8f7ff\],
+    .bg-\[\#f4f0fa\],
+    .bg-\[\#f0eafa\],
+    .bg-\[\#dcd5f7\],
+    .bg-\[\#F3EFFF\],
+    .bg-\[\#F7F3FD\]
+  ) {
+  background-color: var(--soft);
+}
+html.dark :where(.bg-yellow-100, .bg-amber-50, .bg-amber-100) {
+  background-color: #3e301e;
+}
+html.dark :where(.bg-blue-100, .bg-blue-100\/50) {
+  background-color: #24334a;
+}
+html.dark :where(.bg-green-100, .bg-emerald-100) {
+  background-color: #203d34;
+}
+html.dark
+  :where(
+    .border-gray-100,
+    .border-gray-200,
+    .border-slate-100,
+    .border-slate-200,
+    .border-slate-200\/80,
+    .border-purple-50,
+    .border-purple-50\/60,
+    .border-purple-100,
+    .border-purple-200,
+    .border-purple-300,
+    .border-\[\#E7DFFF\],
+    .border-\[\#e1d5f2\]
+  ) {
+  border-color: var(--border);
+}
+html.dark :where(.text-black, .text-gray-800, .text-gray-900, .text-slate-800, .text-slate-900) {
+  color: var(--ink);
+}
+html.dark
+  :where(
+    .text-gray-400,
+    .text-gray-500,
+    .text-gray-600,
+    .text-gray-700,
+    .text-slate-400,
+    .text-slate-500,
+    .text-slate-600,
+    .text-slate-700,
+    .text-\[\#6c5991\]
+  ) {
+  color: var(--muted);
+}
+html.dark
+  :where(
+    .text-purple-400,
+    .text-purple-600,
+    .text-purple-900,
+    .text-purple-950,
+    .text-indigo-600,
+    .text-indigo-700,
+    .text-indigo-950,
+    .text-\[\#3b236d\],
+    .text-\[\#4F2DB7\],
+    .text-\[\#2B1B54\],
+    .text-\[\#3D1A6D\],
+    .text-\[\#4c1d95\],
+    .text-\[\#2a174a\]
+  ) {
+  color: var(--brand);
+}
+html.dark :where(.text-amber-600, .text-amber-800, .text-yellow-600) {
+  color: #ffda83;
+}
+html.dark :where(.text-blue-600, .text-\[\#2039A8\]) {
+  color: #a6c4ff;
+}
+html.dark :where(.text-green-500, .text-green-600, .text-emerald-600) {
+  color: #73dfb6;
+}
+html.dark :where(.text-red-600, .text-rose-500) {
+  color: #ff9aad;
+}
+
+/* Light gradient stops include form backgrounds and teacher photo placeholders. */
+html.dark
+  :where(
+    .from-white,
+    .from-purple-50\/50,
+    .from-purple-100,
+    .from-purple-200,
+    .from-purple-200\/30
+  ) {
+  --tw-gradient-from: var(--page);
+}
+html.dark .via-indigo-50\/40 {
+  --tw-gradient-via: var(--soft);
+}
+html.dark :where(.to-white, .to-indigo-50, .to-purple-100\/30, .to-purple-200) {
+  --tw-gradient-to: var(--soft);
+}
+html.dark :where(.bg-gradient-to-br, .bg-gradient-to-r.from-\[\#4A148C\]) {
+  --tw-gradient-from: #21162f;
+  --tw-gradient-via: #241731;
+  --tw-gradient-to: #38224b;
+}
+
+html.dark :where(input, select, textarea) {
+  background-color: #21182f;
+  color: var(--ink);
+  border-color: #705485;
+  accent-color: #b795ef;
+}
+html.dark :where(input, textarea)::placeholder {
+  color: #b9aac9;
+  opacity: 1;
+}
+html.dark :where(input, select, textarea):focus {
+  border-color: #b795ef;
+}
+html.dark :where(button, input, select, textarea):disabled {
+  color: #baabcc;
+}
+
+/* A pale hover utility must remain a dark surface when its interaction is active. */
+html.dark
+  :where(
+    .hover\:bg-gray-100,
+    .hover\:bg-slate-100,
+    .hover\:bg-slate-200,
+    .hover\:bg-indigo-50,
+    .hover\:bg-purple-50,
+    .hover\:bg-purple-100,
+    .hover\:bg-amber-50,
+    .hover\:bg-green-50
+  ):hover {
+  background-color: var(--soft);
+}
+html.dark
+  :where(
+    .hover\:border-purple-300,
+    .hover\:border-indigo-200,
+    .hover\:border-\[\#3b236d\]\/30
+  ):hover {
+  border-color: #a686d1;
+}
+html.dark
+  .group:hover
+  :where(
+    .group-hover\:bg-purple-600,
+    .group-hover\:bg-indigo-600,
+    .group-hover\:bg-\[\#3b236d\],
+    .group-hover\:bg-\[\#4F2DB7\]
+  ) {
+  background-color: #6941b2;
+  color: #fff;
+}
+html.dark
+  .group:hover
+  :where(
+    .group-hover\:bg-purple-600,
+    .group-hover\:bg-indigo-600,
+    .group-hover\:bg-\[\#3b236d\],
+    .group-hover\:bg-\[\#4F2DB7\]
+  )
+  * {
+  color: inherit;
+}
+html.dark .group:hover .group-hover\:bg-green-500 {
+  background-color: #147a57;
+  color: #fff;
+}
+html.dark .group:hover .group-hover\:bg-green-500 * {
+  color: inherit;
+}
+
+/* Gold actions and badges retain dark ink, including inherited icon/label colors. */
+html.dark
+  :where(
+    .bg-yellow-400,
+    .bg-amber-400,
+    .bg-amber-500,
+    .bg-\[\#F9B400\],
+    .bg-\[\#FFC107\],
+    .bg-\[\#ffc107\]
+  ) {
+  color: #2b1b44;
+}
+html.dark
+  :where(
+    .bg-yellow-400,
+    .bg-amber-400,
+    .bg-amber-500,
+    .bg-\[\#F9B400\],
+    .bg-\[\#FFC107\],
+    .bg-\[\#ffc107\]
+  )
+  * {
+  color: inherit;
+}
+html.dark :where(.hover\:bg-\[\#F9B400\], .hover\:bg-yellow-300):hover {
+  color: #2b1b44;
+}
+html.dark
+  .group:hover
+  :where(.group-hover\:bg-yellow-400, .group-hover\:bg-amber-500, .group-hover\:bg-\[\#ffc107\]) {
+  background-color: #ffc107;
+  color: #2b1b44;
+}
+html.dark
+  .group:hover
+  :where(.group-hover\:bg-yellow-400, .group-hover\:bg-amber-500, .group-hover\:bg-\[\#ffc107\])
+  * {
+  color: inherit;
+}
+html[dir='ltr'] .text-right,
+html[dir='ltr'] .lg\:text-right {
+  text-align: left;
+}
+
 .page-container {
   width: min(100% - 40px, 1152px);
   margin-inline: auto;

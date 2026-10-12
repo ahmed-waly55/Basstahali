@@ -1,0 +1,15 @@
+:host-context(html.dark) footer {
+  background: #21162f;
+}
+
+:host-context(html.dark) footer a.bg-white {
+  background: var(--soft);
+  color: var(--brand);
+  border: 1px solid var(--border);
+}
+
+:host-context(html.dark) footer a.bg-white:hover {
+  background: #ffc107;
+  color: #3b236d;
+  border-color: #ffc107;
+}

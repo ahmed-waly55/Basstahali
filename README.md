@@ -19,6 +19,8 @@ In the managed cloud environment, use `NODE_USE_ENV_PROXY=1` for Node HTTPS requ
 ## UI behaviour
 
 - Curricula, grade levels and subjects come from the existing API. The original catalog cards support loading, retry, empty results and Arabic/English names supplied by the API. No sample curriculum data is shipped.
+- All public pages, cards, forms, badges, hover states, footer and the 404 screen follow the selected theme. Gold actions retain dark text for contrast.
+- Arabic uses the self-hosted variable Alexandria font and English uses Inter; font files and their original OFL licenses are in `public/fonts`. No remote font stylesheet or new application dependency is required.
 - Language and theme controls are available in the header. Preferences are saved locally; the initial language is Arabic and the initial theme follows the device preference.
 - A photorealistic illustrative student image moves subtly with scrolling and respects reduced-motion settings. The generated marketing image is committed as an optimized WebP asset; the interaction uses Angular and CSS without an animation dependency.
 - The existing right-click and developer shortcut handlers are preserved. These are browser interactions, not a security boundary; sensitive information must stay on the backend.
