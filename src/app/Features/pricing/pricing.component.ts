@@ -67,7 +67,7 @@ export class PricingComponent implements OnInit {
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      AOS.init({ duration: 800, once: true });
+      AOS.init({ duration: 800, once: true, mirror: false });
     }
   }
 

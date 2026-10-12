@@ -521,6 +521,38 @@ export const ENGLISH: Record<string, string> = {
     'Check the application number you received after registering.',
   'المواد الدراسية': 'Subjects',
   'عرض التفاصيل': 'View details',
+  'عرض الآراء التالية': 'Show next testimonials',
+  'عرض الآراء السابقة': 'Show previous testimonials',
+  'إيقاف حركة الصورة': 'Pause image animation',
+  'تشغيل حركة الصورة': 'Play image animation',
+  'نماذج توضيحية مؤقتة وليست شهادات فعلية.':
+    'Temporary illustrative examples, not actual testimonials.',
+  'الشرح في بسطهالي خطوة بخطوة، والمدرس يعطيني أمثلة بسيطة لين أفهم الفكرة وأقدر أطبقها.':
+    'The explanations at Basstahali are step by step. My teacher gives me simple examples until I understand the idea and can apply it.',
+  'خالد عبدالله': 'Khalid Abdullah',
+  'يعجبني ترتيب الحصص في بسطهالي؛ أعرف وش بنراجع، والمدرس يربط الدرس الجديد باللي أخذناه قبل.':
+    'I like how lessons at Basstahali are organized. I know what we will review, and my teacher connects new lessons to what we covered before.',
+  'نورة سالم': 'Noura Salem',
+  'أقدر أسأل عن النقطة اللي مو واضحة، والمدرس يشرحها بأكثر من طريقة ويخليني أشارك في الحل.':
+    'I can ask about anything that is unclear. My teacher explains it in different ways and lets me take part in solving the problem.',
+  'راشد محمد': 'Rashed Mohamed',
+  'الحصة فيها تفاعل وأسئلة تناسبني، والمدرس يتأكد إني فهمت قبل ما ينتقل للجزء اللي بعده.':
+    'The lesson includes interaction and questions that suit me. My teacher checks that I understand before moving to the next part.',
+  'ريم علي': 'Reem Ali',
+  'المتابعة بعد الدرس واضحة؛ أعرف وش أتدرب عليه، ونراجع الأشياء اللي أحتاج فيها مساعدة بالحصة الجاية.':
+    'The follow-up after each lesson is clear. I know what to practise, and we review the things I need help with in the next lesson.',
+  'عبدالله يوسف': 'Abdullah Youssef',
+  'أسلوب الشرح مرتب وبدون استعجال، وتقسيم موضوع الدرس لأجزاء صغيرة يساعدني أركز وأفهم.':
+    'The explanations are organized and unhurried. Breaking the lesson topic into smaller parts helps me focus and understand.',
+  'دانة أحمد': 'Dana Ahmed',
+  'معلومات وسياسات بسطهالي': 'Basstahali information and policies',
+  'آخر تحديث': 'Last updated',
+  'صفحات السياسات': 'Policy pages',
+  'في هذه الصفحة': 'On this page',
+  'لديك سؤال؟': 'Have a question?',
+  'تواصل مع فريق بسطهالي للاستفسار عن السياسات أو تفاصيل الاشتراك.':
+    'Contact the Basstahali team with questions about policies or your subscription.',
+  'عرض الباقات والأسعار': 'View packages and pricing',
   'المدرس في بسطهالي يشرح لي بصبر وبطريقة واضحة، وإذا ما فهمت يعيدها لي لين توصل الفكرة.':
     "My teacher at Basstahali explains things patiently and clearly. If I don't understand, they explain it again until it makes sense.",
   'مواعيد الحصص مرتبة وواضحة، وأعرف وش عندي من دروس. سهل عليّ أتابع بدون لخبطة.':

@@ -13,6 +13,8 @@ export const routes: Routes = [
             { path: "teachers", loadComponent: () => import("./Features/teachers/teachers.component").then(m => m.TeachersComponent), title: "بسطهالي | المدرسين" },
             { path: "contact", loadComponent: () => import("./Features/contact/contact.component").then(m => m.ContactComponent), title: "بسطهالي | تواصل معنا" },
             { path: "pricing", loadComponent: () => import("./Features/pricing/pricing.component").then(m => m.PricingComponent), title: "بسطهالي | خطط الاشتراك" },
+            { path: "privacy", loadComponent: () => import("./Features/legal/legal.component").then(m => m.LegalComponent), data: { document: "privacy" }, title: "سياسة الخصوصية | بسطهالي" },
+            { path: "terms", loadComponent: () => import("./Features/legal/legal.component").then(m => m.LegalComponent), data: { document: "terms" }, title: "الشروط والأحكام | بسطهالي" },
             { path: "curriculum", loadComponent: () => import("./Features/curriculum/curriculum.component").then(m => m.CurriculumComponent), title: "بسطهالي | المناهج الدراسية" },
             { path: "curriculum/:id", loadComponent: () => import("./Features/curriculum-details/curriculum-details.component").then(m => m.CurriculumDetailsComponent), title: "بسطهالي | تفاصيل المنهج" },
             { path: "features", loadComponent: () => import("./Features/features/features.component").then(m => m.FeaturesComponent), title: "بسطهالي | مميزات المنصة" },

@@ -10,6 +10,29 @@
       class="lesson-photo"
     />
   </div>
+  @if (!reducedMotion()) {
+    <button
+      type="button"
+      class="lesson-motion-button"
+      (click)="toggleMotion()"
+      [attr.aria-label]="(motionPaused() ? 'تشغيل حركة الصورة' : 'إيقاف حركة الصورة') | translate"
+      [attr.title]="(motionPaused() ? 'تشغيل حركة الصورة' : 'إيقاف حركة الصورة') | translate"
+    >
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        @if (motionPaused()) {
+          <path stroke-linejoin="round" d="m9 5 11 7-11 7V5Z" />
+        } @else {
+          <path stroke-linecap="round" d="M9 5v14M15 5v14" />
+        }
+      </svg>
+    </button>
+  }
   <figcaption class="lesson-caption">
     <span class="live-dot" aria-hidden="true"></span>
     <div>

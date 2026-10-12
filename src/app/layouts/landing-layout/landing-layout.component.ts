@@ -1,5 +1,6 @@
 import { TranslatePipe } from '../../core/services/translate.pipe';
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { afterNextRender, Component, ChangeDetectionStrategy } from '@angular/core';
+import AOS from 'aos';
 import { HeaderComponent } from '../../shared/header/header.component';
 import { FooterComponent } from '../../shared/footer/footer.component';
 import { RouterOutlet } from '@angular/router';
@@ -11,4 +12,10 @@ import { RouterOutlet } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './landing-layout.component.css',
 })
-export class LandingLayoutComponent {}
+export class LandingLayoutComponent {
+  constructor() {
+    afterNextRender(() => {
+      AOS.init({ once: true, mirror: false });
+    });
+  }
+}

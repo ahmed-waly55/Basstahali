@@ -80,13 +80,56 @@ export class LandingComponent implements OnInit, OnDestroy {
       grade: 'المرحلة الثانوية',
       avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Mona',
     },
+    {
+      id: 5,
+      quote: 'الشرح في بسطهالي خطوة بخطوة، والمدرس يعطيني أمثلة بسيطة لين أفهم الفكرة وأقدر أطبقها.',
+      name: 'خالد عبدالله',
+      grade: 'المرحلة الابتدائية',
+      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Khalid',
+    },
+    {
+      id: 6,
+      quote: 'يعجبني ترتيب الحصص في بسطهالي؛ أعرف وش بنراجع، والمدرس يربط الدرس الجديد باللي أخذناه قبل.',
+      name: 'نورة سالم',
+      grade: 'المرحلة المتوسطة',
+      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Noura',
+    },
+    {
+      id: 7,
+      quote: 'أقدر أسأل عن النقطة اللي مو واضحة، والمدرس يشرحها بأكثر من طريقة ويخليني أشارك في الحل.',
+      name: 'راشد محمد',
+      grade: 'المرحلة الثانوية',
+      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Rashed',
+    },
+    {
+      id: 8,
+      quote: 'الحصة فيها تفاعل وأسئلة تناسبني، والمدرس يتأكد إني فهمت قبل ما ينتقل للجزء اللي بعده.',
+      name: 'ريم علي',
+      grade: 'المرحلة الابتدائية',
+      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Reem',
+    },
+    {
+      id: 9,
+      quote: 'المتابعة بعد الدرس واضحة؛ أعرف وش أتدرب عليه، ونراجع الأشياء اللي أحتاج فيها مساعدة بالحصة الجاية.',
+      name: 'عبدالله يوسف',
+      grade: 'المرحلة المتوسطة',
+      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Abdullah',
+    },
+    {
+      id: 10,
+      quote: 'أسلوب الشرح مرتب وبدون استعجال، وتقسيم موضوع الدرس لأجزاء صغيرة يساعدني أركز وأفهم.',
+      name: 'دانة أحمد',
+      grade: 'المرحلة الثانوية',
+      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Dana',
+    },
   ];
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       AOS.init({
         duration: 700,
-        once: false,
+        once: true,
+        mirror: false,
         offset: 100,
         easing: 'ease-in-out',
       });
@@ -153,7 +196,8 @@ export class LandingComponent implements OnInit, OnDestroy {
     if (Math.abs(el.scrollLeft) + el.clientWidth >= el.scrollWidth - 15) {
       el.scrollTo({ left: 0, behavior: 'smooth' });
     } else {
-      el.scrollBy({ left: -this.scrollStep, behavior: 'smooth' });
+      const direction = this.preferences.language() === 'ar' ? -1 : 1;
+      el.scrollBy({ left: direction * this.scrollStep, behavior: 'smooth' });
     }
   }
 
@@ -162,9 +206,11 @@ export class LandingComponent implements OnInit, OnDestroy {
     const el = this.sliderTrack.nativeElement;
 
     if (Math.abs(el.scrollLeft) <= 15) {
-      el.scrollTo({ left: -el.scrollWidth, behavior: 'smooth' });
+      const direction = this.preferences.language() === 'ar' ? -1 : 1;
+      el.scrollTo({ left: direction * el.scrollWidth, behavior: 'smooth' });
     } else {
-      el.scrollBy({ left: this.scrollStep, behavior: 'smooth' });
+      const direction = this.preferences.language() === 'ar' ? -1 : 1;
+      el.scrollBy({ left: -direction * this.scrollStep, behavior: 'smooth' });
     }
   }
 }

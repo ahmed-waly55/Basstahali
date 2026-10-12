@@ -28,4 +28,17 @@ describe('SEO metadata', () => {
     expect(doc.querySelector('meta[name="robots"]')?.getAttribute('content')).toBe('index, follow');
     expect(doc.querySelector('#page-breadcrumbs')).toBeNull();
   });
+
+  for (const [path, title] of [['privacy', 'سياسة الخصوصية'], ['terms', 'الشروط والأحكام']]) {
+    it(`indexes the ${path} page with its own title and canonical`, () => {
+      TestBed.configureTestingModule({ providers: [SeoTitleStrategy] });
+      const seo = TestBed.inject(SeoTitleStrategy);
+      const doc = TestBed.inject(DOCUMENT);
+      seo.updateTitle(snapshot(`/${path}?source=footer#section`, path));
+      expect(doc.title).toBe(`${title} | بسطهالي`);
+      expect(doc.querySelector('meta[name="robots"]')?.getAttribute('content')).toBe('index, follow');
+      expect(doc.querySelector('link[rel="canonical"]')?.getAttribute('href')).toBe(`https://www.basstahali.com/${path}`);
+      expect(doc.querySelector('#page-breadcrumbs')?.textContent).toContain(title);
+    });
+  }
 });

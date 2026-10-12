@@ -55,7 +55,7 @@ export class AboutComponent implements OnInit, AfterViewInit, OnDestroy {
     if (isPlatformBrowser(this.platformId)) {
       AOS.init({
         duration: 900,
-        once: false,
+        once: true,
         offset: 120,
         easing: 'ease-out-cubic',
         mirror: false,

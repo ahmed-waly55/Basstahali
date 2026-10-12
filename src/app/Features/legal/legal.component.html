@@ -1,0 +1,100 @@
+<div class="legal-page" dir="inherit">
+  <header class="legal-heading">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <nav [attr.aria-label]="'مسار الصفحة' | translate" class="legal-breadcrumb mb-6">
+        <a routerLink="/">{{ 'الرئيسية' | translate }}</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">{{ text(document.title) }}</span>
+      </nav>
+
+      <span class="legal-badge">{{ 'معلومات وسياسات بسطهالي' | translate }}</span>
+      <h1 class="mt-5 text-3xl sm:text-4xl font-black leading-relaxed">
+        {{ text(document.title) }}
+      </h1>
+      <p class="legal-intro mt-3 max-w-3xl text-base sm:text-lg leading-8">
+        {{ text(document.introduction) }}
+      </p>
+      <p class="legal-updated mt-5 text-sm">
+        {{ 'آخر تحديث' | translate }}:
+        <time datetime="2026-10-12">{{ text(updated) }}</time>
+      </p>
+
+      <nav [attr.aria-label]="'صفحات السياسات' | translate" class="mt-6 flex flex-wrap gap-3">
+        <a
+          routerLink="/privacy"
+          class="legal-tab"
+          [class.legal-tab-active]="kind === 'privacy'"
+          [attr.aria-current]="kind === 'privacy' ? 'page' : null"
+          >{{ 'سياسة الخصوصية' | translate }}</a
+        >
+        <a
+          routerLink="/terms"
+          class="legal-tab"
+          [class.legal-tab-active]="kind === 'terms'"
+          [attr.aria-current]="kind === 'terms' ? 'page' : null"
+          >{{ 'الشروط والأحكام' | translate }}</a
+        >
+      </nav>
+    </div>
+  </header>
+
+  <div class="legal-layout max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+    <aside class="legal-index">
+      <nav [attr.aria-label]="'في هذه الصفحة' | translate">
+        <h2 class="text-base font-bold mb-3">{{ 'في هذه الصفحة' | translate }}</h2>
+        <ol class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-1">
+          @for (section of document.sections; track section.id; let index = $index) {
+            <li>
+              <a
+                [href]="'/' + kind + '#' + section.id"
+                (click)="scrollToSection($event, section.id)"
+                class="legal-index-link"
+              >
+                <span class="legal-index-number" aria-hidden="true">{{ index + 1 }}</span>
+                <span>{{ text(section.title) }}</span>
+              </a>
+            </li>
+          }
+        </ol>
+      </nav>
+    </aside>
+
+    <article class="legal-document min-w-0" [attr.aria-label]="text(document.title)">
+      @for (section of document.sections; track section.id; let index = $index) {
+        <section [id]="section.id" class="legal-section" tabindex="-1">
+          <h2 class="text-xl sm:text-2xl font-bold leading-relaxed">
+            <span class="legal-section-number" aria-hidden="true">{{ index + 1 }}</span>
+            {{ text(section.title) }}
+          </h2>
+          @for (paragraph of section.paragraphs; track $index) {
+            <p class="mt-4 text-sm sm:text-base leading-8">{{ text(paragraph) }}</p>
+          }
+        </section>
+      }
+
+      <section class="legal-contact rounded-2xl p-5 sm:p-7 mt-8">
+        <h2 class="text-xl font-bold">{{ 'لديك سؤال؟' | translate }}</h2>
+        <p class="mt-3 text-sm sm:text-base leading-8">
+          {{ 'تواصل مع فريق بسطهالي للاستفسار عن السياسات أو تفاصيل الاشتراك.' | translate }}
+        </p>
+        <div class="mt-5 flex flex-col sm:flex-row sm:flex-wrap gap-3">
+          <a href="mailto:support@basstahali.com" class="legal-contact-email" dir="ltr">
+            support@basstahali.com
+          </a>
+          <a
+            href="https://wa.me/971563306087"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="legal-whatsapp"
+          >
+            {{ 'تواصل معنا عبر واتساب' | translate }}
+          </a>
+        </div>
+        <a routerLink="/pricing" class="legal-pricing mt-5 inline-block">
+          {{ 'عرض الباقات والأسعار' | translate }}
+          <span aria-hidden="true">↗</span>
+        </a>
+      </section>
+    </article>
+  </div>
+</div>

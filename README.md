@@ -22,7 +22,10 @@ In the managed cloud environment, use `NODE_USE_ENV_PROXY=1` for Node HTTPS requ
 - All public pages, cards, forms, badges, hover states, footer and the 404 screen follow the selected theme. Gold actions retain dark text for contrast.
 - Arabic uses the self-hosted variable Alexandria font and English uses Inter; font files and their original OFL licenses are in `public/fonts`. No remote font stylesheet or new application dependency is required.
 - Language and theme controls are available in the header. Preferences are saved locally; the initial language is Arabic and the initial theme follows the device preference.
-- A photorealistic illustrative student image moves subtly with scrolling and respects reduced-motion settings. The generated marketing image is committed as an optimized WebP asset; the interaction uses Angular and CSS without an animation dependency.
+- The photorealistic illustrative student image moves continuously while visible, with a pause/play control, gentle scroll movement and reduced-motion support. Motion pauses outside the viewport. The optimized WebP asset and the interaction use Angular and CSS without a new animation dependency.
+- AOS sections animate once and remain visible when scrolling back up. Phone headings and large paragraphs use smaller reading sizes while desktop sizes and form controls are preserved.
+- The landing feedback carousel contains ten clearly labelled, temporary illustrative examples. Its controls support Arabic and English scroll directions.
+- Privacy and terms pages are available at `/privacy` and `/terms`, in Arabic and English with the selected theme. They explain the existing registration, email/WhatsApp contact, browser preferences and external resources, including Google AdSense. Both pages have working footer links, their own SEO metadata and prerendered content.
 - The existing right-click and developer shortcut handlers are preserved. These are browser interactions, not a security boundary; sensitive information must stay on the backend.
 
 ## SEO and deployment

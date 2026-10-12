@@ -466,6 +466,27 @@ html[dir='ltr'] .lg\:text-right {
   accent-color: #4f2db7;
 }
 @media (max-width: 639px) {
+  main h1:not(.hero-clean h1):not(.not-found-container h1) {
+    font-size: 28px;
+    line-height: 1.5;
+  }
+  main :is(h2.text-2xl, h2.text-3xl, h2.text-4xl, h2.text-5xl, h2.text-6xl, .section-title) {
+    font-size: 22px;
+    line-height: 1.6;
+  }
+  main :is(h3.text-lg, h3.text-xl, h3.text-2xl, h3.text-3xl) {
+    font-size: 18px;
+  }
+  main :is(p.text-lg, p.text-xl, .page-intro, .section-copy) {
+    font-size: 14px;
+    line-height: 1.9;
+  }
+  main .plan-price {
+    font-size: 32px;
+  }
+  main h1 > i {
+    font-size: 28px;
+  }
   .page-heading {
     padding-block: 26px 32px;
   }

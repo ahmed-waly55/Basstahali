@@ -93,6 +93,7 @@ export class TeachersComponent implements OnInit {
       AOS.init({
         duration: 800,
         once: true,
+        mirror: false,
       });
     }
   }

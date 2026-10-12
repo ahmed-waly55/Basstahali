@@ -49,6 +49,7 @@ export class ContactComponent implements OnInit {
       AOS.init({
         duration: 800,
         once: true,
+        mirror: false,
       });
     }
   }
