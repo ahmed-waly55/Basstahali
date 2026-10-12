@@ -135,6 +135,6 @@ export class CoursesComponent implements OnInit {
 
   getEnrollWhatsAppLink(courseTitle: string): string {
     const message = encodeURIComponent(`السلام عليكم، أرغب في التسجيل في كورس: ${courseTitle}`);
-    return `https://wa.me/971525250833?text=${message}`;
+    return `https://wa.me/971563306087?text=${message}`;
   }
 }

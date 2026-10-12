@@ -1,46 +1,15 @@
-@if (loadingService.isLoading$ | async) {
-  <!-- شريط علوي بنفسجي هادئ -->
-  <div class="fixed top-0 left-0 right-0 h-1 bg-[#f4f0fa] z-50 overflow-hidden">
-    <div
-      class="h-full bg-gradient-to-r from-[#3b236d] via-[#9333ea] to-[#3b236d] animate-pulse"
-    ></div>
-  </div>
+@if (visible$ | async) {
+  <div class="request-progress" aria-hidden="true"><span></span></div>
 
-  <!-- خلفية الشاشة والبطاقة المركزية -->
-  <div
-    class="fixed inset-0 bg-[#1e1035]/20 backdrop-blur-[3px] z-40 flex items-center justify-center transition-all duration-300"
-    dir="inherit"
-  >
-    <div
-      class="bg-white/95 px-8 py-7 rounded-2xl shadow-xl shadow-[#3b236d]/5 border border-purple-100 flex flex-col items-center max-w-[240px] text-center"
-    >
-      <!-- حلقة الدوران وصورة البومة في المركز -->
-      <div class="relative w-20 h-20 flex items-center justify-center mb-4">
-        <!-- حلقة التحميل الناعمة (تدور حول البومة) -->
-        <div
-          class="absolute inset-0 border-[3px] border-[#f4f0fa] border-t-[#3b236d] border-r-[#3b236d] rounded-full animate-spin"
-        ></div>
-
-        <!-- خلفية دائرية للبومة مع تأثير نبض ناعم جداً -->
-        <div
-          class="w-14 h-14 rounded-full bg-[#f4f0fa] flex items-center justify-center p-2.5 shadow-inner"
-        >
-          <img
-            src="images/owl.png"
-            [alt]="'بسطهالي' | translate"
-            class="w-full h-full object-contain select-none pointer-events-none animate-pulse"
-          />
-        </div>
-      </div>
-
-      <!-- نصوص التحميل -->
-      <h3 class="text-[#3b236d] font-bold text-base tracking-wide">
-        {{ 'جارٍ التحميل...' | translate }}
-      </h3>
-
-      <p class="text-gray-400 text-xs mt-1">
-        {{ 'لحظات وتكون الصفحة جاهزة' | translate }}
-      </p>
+  <div class="request-status" role="status" aria-live="polite" aria-atomic="true" dir="inherit">
+    <span class="request-mascot" aria-hidden="true">
+      <span class="request-orbit"></span>
+      <span class="request-owl"><img src="images/owl.png" alt="" width="88" height="59" /></span>
+    </span>
+    <div class="request-copy">
+      <p class="request-title">{{ 'جارٍ التحميل...' | translate }}</p>
+      <p class="request-description">{{ 'بنجهّز لك كل التفاصيل' | translate }}</p>
     </div>
+    <span class="request-dots" aria-hidden="true"><i></i><i></i><i></i></span>
   </div>
 }

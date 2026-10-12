@@ -1,0 +1,38 @@
+.about-illustration__frame {
+  width: 100%;
+  max-width: 560px;
+}
+
+:host-context(html.dark) .about-illustration__frame {
+  overflow: hidden;
+  padding: 12px;
+  border: 1px solid rgba(178, 147, 239, 0.25);
+  border-radius: 32px;
+  background: linear-gradient(145deg, #3a2856, #241b34);
+  box-shadow: 0 20px 48px rgba(11, 6, 23, 0.28);
+}
+
+:host-context(html.dark) .about-illustration__image {
+  border-radius: 22px;
+}
+
+@media (max-width: 639px) {
+  :host-context(html.dark) .about-illustration__frame {
+    padding: 8px;
+    border-radius: 24px;
+  }
+
+  :host-context(html.dark) .about-illustration__image {
+    border-radius: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-illustration__image {
+    transition: none;
+  }
+
+  .about-illustration__image:hover {
+    transform: none;
+  }
+}

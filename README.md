@@ -37,4 +37,8 @@ The current backend Swagger contract and a read-only validation check require `w
 
 The HTTP interceptor counts concurrent API requests, handles cancellation, applies a 20-second timeout, preserves errors and never retries writes automatically. The teacher registration screen handles its own errors to avoid duplicate notifications. The contact form opens an email draft; it does not falsely claim delivery.
 
-The original page layouts were restored at the user’s request. The current header and photorealistic hero are retained; Courses is available in both desktop and mobile header navigation. API, status parsing, interceptor and SEO corrections are preserved. The header uses touch-friendly controls and a scrollable mobile menu below 1120px; branded notifications and confirmation dialogs follow the selected theme and fit narrow screens.
+API loading uses a slim progress bar and a compact, non-blocking status card with the Basstahali owl. The indicator appears after 180ms, cancels its pending reveal when requests finish, follows language/theme preferences and respects reduced motion. The hero copy and actions are centered in the single-column mobile/tablet layout. Public contact and WhatsApp links use +971 56 330 6087.
+
+The About illustration follows the selected theme: the original image is used in light mode and an optimized, locally stored dark WebP variant in dark mode. The illustration keeps the student, educational graphics and original Arabic labels.
+
+The original page layouts were restored at the user’s request. The current header and photorealistic hero are retained; Courses and Features are available in both desktop and mobile header navigation. API, status parsing, interceptor and SEO corrections are preserved. The header uses touch-friendly controls, a scrollable mobile menu below 1120px and a prominent gold mobile login button; branded notifications and confirmation dialogs follow the selected theme and fit narrow screens.

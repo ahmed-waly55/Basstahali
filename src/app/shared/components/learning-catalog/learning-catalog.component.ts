@@ -52,7 +52,7 @@ export class LearningCatalogComponent {
   }
   key(item: LearningItem): string | undefined { return item.id || item._id; }
   bookingLink(item: LearningItem): string {
-    return 'https://wa.me/971525250833?text=' + encodeURIComponent(`السلام عليكم، أرغب في الاستفسار عن حصص مادة ${this.name(item)} على بسطهالي`);
+    return 'https://wa.me/971563306087?text=' + encodeURIComponent(`السلام عليكم، أرغب في الاستفسار عن حصص مادة ${this.name(item)} على بسطهالي`);
   }
   private normalize(value: string): string {
     return value.trim().toLowerCase().normalize('NFKD').replace(/[\u064B-\u065F\u0670\u0640]/g, '').replace(/[أإآ]/g, 'ا').replace(/ى/g, 'ي');

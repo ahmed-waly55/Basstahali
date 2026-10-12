@@ -1,4 +1,5 @@
 import { TranslatePipe } from '../../core/services/translate.pipe';
+import { PreferencesService } from '../../core/services/preferences.service';
 import {
   Component,
   OnInit,
@@ -20,6 +21,7 @@ import AOS from 'aos';
   styleUrl: './about.component.css',
 })
 export class AboutComponent implements OnInit, AfterViewInit, OnDestroy {
+  readonly preferences = inject(PreferencesService);
   private platformId = inject(PLATFORM_ID);
 
   private refreshTimer?: ReturnType<typeof setTimeout>;

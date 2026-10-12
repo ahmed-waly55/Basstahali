@@ -103,6 +103,6 @@ export class PricingComponent implements OnInit {
     const message = encodeURIComponent(
       `السلام عليكم، أرغب في الاشتراك في ${planName} بالنظام ${cycle}.`,
     );
-    return `https://wa.me/971525250833?text=${message}`;
+    return `https://wa.me/971563306087?text=${message}`;
   }
 }

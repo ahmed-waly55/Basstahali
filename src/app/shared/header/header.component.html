@@ -18,6 +18,7 @@
       <a routerLink="/curriculum" routerLinkActive="active">{{ 'المناهج الدراسية' | translate }}</a>
       <a routerLink="/courses" routerLinkActive="active">{{ 'الكورسات' | translate }}</a>
       <a routerLink="/teachers" routerLinkActive="active">{{ 'المدرسين' | translate }}</a>
+      <a routerLink="/features" routerLinkActive="active">{{ 'المميزات' | translate }}</a>
       <a routerLink="/pricing" routerLinkActive="active">{{ 'الأسعار' | translate }}</a>
       <a routerLink="/about" routerLinkActive="active">{{ 'من نحن' | translate }}</a>
     </nav>
@@ -106,6 +107,7 @@
           { path: '/curriculum', label: 'المناهج الدراسية' },
           { path: '/courses', label: 'الكورسات' },
           { path: '/teachers', label: 'المدرسين' },
+          { path: '/features', label: 'المميزات' },
           { path: '/pricing', label: 'الأسعار' },
           { path: '/about', label: 'من نحن' },
           { path: '/contact', label: 'تواصل معنا' },
@@ -120,7 +122,18 @@
           >{{ link.label | translate }}</a
         >
       }
-      <a href="https://dashboard.basstahali.com">{{ 'تسجيل الدخول' | translate }}</a>
+      <a href="https://dashboard.basstahali.com" class="mobile-login"
+        >{{ 'تسجيل الدخول' | translate }}
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="m7 17 10-10M7 7h10v10" />
+        </svg>
+      </a>
     </nav>
   }
 </header>

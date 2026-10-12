@@ -110,6 +110,6 @@ export class TeachersComponent implements OnInit {
 
   getWhatsAppLink(teacherName: string): string {
     const message = encodeURIComponent(`السلام عليكم، أرغب في حجز حصة تجريبية مع ${teacherName}.`);
-    return `https://wa.me/971525250833?text=${message}`;
+    return `https://wa.me/971563306087?text=${message}`;
   }
 }

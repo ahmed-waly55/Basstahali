@@ -122,6 +122,9 @@ export const ENGLISH: Record<string, string> = {
   'جاءت فكرة': 'The idea behind',
   'جاري الإرسال...': 'Sending…',
   'جارٍ التحميل...': 'Loading…',
+  'بنجهّز لك كل التفاصيل': 'Getting everything ready for you',
+  'الخدمة استغرقت وقتًا أطول من المتوقع. حاول مرة أخرى.':
+    'The service took longer than expected. Please try again.',
   'جدول الحصص': 'Lesson schedule',
   'جرّب أول حصة': 'Try your first lesson',
   جنية: 'EGP',

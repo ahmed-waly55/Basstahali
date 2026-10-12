@@ -1,7 +1,7 @@
 import { isPlatformBrowser } from '@angular/common';
 import { HttpContextToken, HttpErrorResponse, HttpInterceptorFn } from '@angular/common/http';
 import { inject, PLATFORM_ID } from '@angular/core';
-import { catchError, defer, finalize, throwError, timeout } from 'rxjs';
+import { catchError, defer, finalize, throwError, timeout, TimeoutError } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { LoadingService } from '../services/loading.service';
 import { ToastService } from '../services/toast.service';
@@ -30,13 +30,15 @@ export const loadingInterceptor: HttpInterceptorFn = (request, next) => {
         if (browser && request.method !== 'GET' && !request.context.get(SKIP_ERROR_NOTIFICATION)) {
           const status = error instanceof HttpErrorResponse ? error.status : 0;
           const message =
-            status === 429
-              ? 'طلبات كثيرة، انتظر قليلًا ثم حاول مرة أخرى.'
-              : status === 401 || status === 403
-                ? 'تعذر إتمام الطلب. تأكد من صلاحية حسابك.'
-                : status >= 400 && status < 500
-                  ? 'راجع البيانات المدخلة وحاول مرة أخرى.'
-                  : 'تعذر الاتصال بالخدمة. حاول مرة أخرى بعد قليل.';
+            error instanceof TimeoutError
+              ? 'الخدمة استغرقت وقتًا أطول من المتوقع. حاول مرة أخرى.'
+              : status === 429
+                ? 'طلبات كثيرة، انتظر قليلًا ثم حاول مرة أخرى.'
+                : status === 401 || status === 403
+                  ? 'تعذر إتمام الطلب. تأكد من صلاحية حسابك.'
+                  : status >= 400 && status < 500
+                    ? 'راجع البيانات المدخلة وحاول مرة أخرى.'
+                    : 'تعذر الاتصال بالخدمة. حاول مرة أخرى بعد قليل.';
           toast.show(
             preferences.translate(message),
             'error',
