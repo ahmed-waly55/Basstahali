@@ -9,7 +9,7 @@ import { OwlLoaderComponent } from "./shared/components/owl-loader/owl-loader.co
   selector: 'app-root',
   imports: [RouterOutlet, ToastComponent, OwlLoaderComponent],
   templateUrl: './app.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.Default,
   styleUrl: './app.css',
 })
 export class App {

@@ -52,8 +52,8 @@ export const TERMS_DOCUMENT: LegalDocument = {
       },
       paragraphs: [
         {
-          ar: 'تعرض صفحة الباقات عروض المنهج الانترناشونال والمنهج الوزاري بحسب المرحلة الدراسية. تشمل الباقات المعروضة 4 مواد دراسية ومادة إضافية هدية، مع 8 حصص لكل مادة، وتُعرض الأسعار بالدرهم الإماراتي.',
-          en: 'The packages page presents International curriculum and UAE Ministry curriculum offers by school stage. The published packages include 4 school subjects and 1 extra subject for free, with 8 lessons per subject, and prices are shown in UAE dirhams.',
+          ar: 'تعرض صفحة الباقات عروض المنهج الانترناشونال والمنهج الوزاري بحسب المرحلة الدراسية. تشمل الباقات المعروضة 4 مواد دراسية ومادة إضافية هدية، مع 8 حصص لكل مادة. تظهر أسعار الباقات للزائر من مصر بالجنيه المصري بسعر تحويل ثابت 15 جنيهًا لكل درهم، وللزائر من باقي الدول بالدرهم الإماراتي.',
+          en: 'The packages page presents International curriculum and UAE Ministry curriculum offers by school stage. The published packages include 4 school subjects and 1 extra subject for free, with 8 lessons per subject. Package prices for visitors from Egypt are shown in EGP at a fixed conversion of EGP 15 per AED; visitors from other countries see prices in UAE dirhams.',
         },
         {
           ar: 'راجع تفاصيل الباقة والسعر والعرض الظاهر في صفحة الباقات، ثم أكّد مع الفريق المواد التي ستدرسها والمرحلة والمنهج المناسبين لك قبل الاشتراك.',

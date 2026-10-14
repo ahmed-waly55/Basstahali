@@ -11,6 +11,7 @@ import {
 import * as AOS from 'aos';
 import { PreferencesService } from '../../core/services/preferences.service';
 import { TranslatePipe } from '../../core/services/translate.pipe';
+import { VisitorPricingService } from '../../core/services/visitor-pricing.service';
 
 type CurriculumId = 'international' | 'ministerial';
 
@@ -38,6 +39,7 @@ interface CurriculumOffer {
 export class PricingComponent implements OnInit {
   private platformId = inject(PLATFORM_ID);
   private preferences = inject(PreferencesService);
+  readonly pricing = inject(VisitorPricingService);
 
   readonly curricula: readonly CurriculumOffer[] = [
     {
@@ -67,6 +69,7 @@ export class PricingComponent implements OnInit {
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
+      this.pricing.loadCountry();
       AOS.init({ duration: 800, once: true, mirror: false });
     }
   }
@@ -74,10 +77,17 @@ export class PricingComponent implements OnInit {
   getSubscribeLink(plan: PricingPlan): string {
     const curriculum = this.preferences.translate(this.activeCurriculum().name);
     const stage = this.preferences.translate(plan.name);
+    const price = this.pricing.amount(plan.price);
+    const currency =
+      this.preferences.language() === 'en'
+        ? this.pricing.isEgypt()
+          ? 'EGP'
+          : 'AED'
+        : this.pricing.currencyLabel();
     const message =
       this.preferences.language() === 'en'
-        ? `Hello, I would like to subscribe to the Basstahali ${curriculum} package for ${stage}: ${plan.price} AED, 4 subjects + 1 free subject, with 8 lessons per subject.`
-        : `السلام عليكم، أرغب في الاشتراك في باقة بسطهالي للمنهج ${curriculum.replace('المنهج ', '')}، ${stage}، بسعر ${plan.price} درهم إماراتي: 4 مواد + مادة هدية، و8 حصص لكل مادة.`;
+        ? `Hello, I would like to subscribe to the Basstahali ${curriculum} package for ${stage}: ${price} ${currency}, 4 subjects + 1 free subject, with 8 lessons per subject.`
+        : `السلام عليكم، أرغب في الاشتراك في باقة بسطهالي للمنهج ${curriculum.replace('المنهج ', '')}، ${stage}، بسعر ${price} ${currency}: 4 مواد + مادة هدية، و8 حصص لكل مادة.`;
     return `https://wa.me/971563306087?text=${encodeURIComponent(message)}`;
   }
 }

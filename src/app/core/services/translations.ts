@@ -338,6 +338,9 @@ export const ENGLISH: Record<string, string> = {
   'مادة إضافية هدية': '1 extra subject for free',
   '8 حصص لكل مادة': '8 lessons per subject',
   'درهم إماراتي': 'AED',
+  'جنيه مصري': 'EGP',
+  'أسعار مصر بالجنيه المصري، بسعر ثابت 15 جنيهًا لكل درهم.':
+    'Prices in Egypt are shown in EGP at a fixed rate of EGP 15 per AED.',
   'بدلاً من': 'Instead of',
   'اشترك عبر واتساب': 'Subscribe via WhatsApp',
   'اختر باقتك للتواصل معنا مباشرة عبر واتساب وإتمام الاشتراك.':

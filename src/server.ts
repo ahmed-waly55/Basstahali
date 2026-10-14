@@ -6,11 +6,18 @@ import {
 } from '@angular/ssr/node';
 import express from 'express';
 import { join } from 'node:path';
+import { COUNTRY_CACHE_CONTROL, visitorCountry } from './server/visitor-country';
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
 
 const app = express();
 const angularApp = new AngularNodeAppEngine();
+
+app.get('/api/visitor-country', (request, response) => {
+  response.setHeader('Cache-Control', COUNTRY_CACHE_CONTROL);
+  response.setHeader('Vary', 'x-vercel-ip-country');
+  response.json({ country: visitorCountry(request.headers) });
+});
 
 /**
  * Example Express Rest API endpoints can be defined here.

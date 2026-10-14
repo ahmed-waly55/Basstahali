@@ -1,10 +1,12 @@
 # Basstahali — بسطهالي
 
-Angular 22 and Tailwind CSS frontend for live online private lessons. Application dependencies and the npm lockfile are unchanged by the UI update.
+Angular 20.3 and Tailwind CSS frontend for live online private lessons.
 
 ## Development
 
-Use Node.js 24.15 or later in the 24.x line (validated with 24.19.0) and npm 11.10.0, as pinned in `package.json`.
+Use Node.js 20.19+, 22.12+, or 24+ (validated with 24.19.0) and npm 11.10.0. Angular framework packages stay on 20.3.x, Angular CLI/build/SSR on their compatible 20.3.x patches, and TypeScript on 5.9.x.
+
+The test builder uses Vitest 4.1.11 or later through the scoped `@angular/build` override in `package.json`. This retains Angular 20 while replacing the vulnerable Vitest 3 dependency tree. The checked-in lockfile records the validated versions; use `npm ci` for reproducible installation.
 
 ```bash
 npm ci
@@ -25,6 +27,7 @@ In the managed cloud environment, use `NODE_USE_ENV_PROXY=1` for Node HTTPS requ
 - The photorealistic illustrative student image moves continuously while visible, with a pause/play control, gentle scroll movement and reduced-motion support. Motion pauses outside the viewport. The optimized WebP asset and the interaction use Angular and CSS without a new animation dependency.
 - AOS sections animate once and remain visible when scrolling back up. Phone headings and large paragraphs use smaller reading sizes while desktop sizes and form controls are preserved.
 - The landing feedback carousel contains ten clearly labelled, temporary illustrative examples. Its controls support Arabic and English scroll directions.
+- Package prices use the visitor country supplied by Vercel's `x-vercel-ip-country` header through the same-origin `/api/visitor-country` serverless function. Egypt sees EGP at a fixed 15 EGP per AED, including former prices and WhatsApp subscription messages. All other countries and failed/unknown lookups retain AED. Language, timezone and GPS are not used to infer the country. Country responses are not cached. The standalone Node server exposes the same endpoint; local development without a hosting country header defaults to AED.
 - Privacy and terms pages are available at `/privacy` and `/terms`, in Arabic and English with the selected theme. They explain the existing registration, email/WhatsApp contact, browser preferences and external resources, including Google AdSense. Both pages have working footer links, their own SEO metadata and prerendered content.
 - The existing right-click and developer shortcut handlers are preserved. These are browser interactions, not a security boundary; sensitive information must stay on the backend.
 

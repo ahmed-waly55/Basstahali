@@ -18,6 +18,11 @@
       <p class="mt-3 text-slate-600 text-base md:text-lg leading-relaxed">
         {{ '4 مواد + مادة هدية، و8 حصص لكل مادة.' | translate }}
       </p>
+      @if (pricing.isEgypt()) {
+        <p class="mt-3 text-sm text-slate-500 leading-relaxed">
+          {{ 'أسعار مصر بالجنيه المصري، بسعر ثابت 15 جنيهًا لكل درهم.' | translate }}
+        </p>
+      }
 
       <div
         role="group"
@@ -55,17 +60,20 @@
               <p class="text-sm text-slate-500">{{ 'باقة 4 مواد + مادة هدية' | translate }}</p>
               <div class="mt-5 flex flex-wrap items-baseline gap-2">
                 <span class="plan-price text-4xl font-black text-slate-900" dir="ltr">{{
-                  plan.price
+                  pricing.amount(plan.price)
                 }}</span>
                 <span class="text-sm font-bold text-slate-500">{{
-                  'درهم إماراتي' | translate
+                  pricing.currencyLabel() | translate
                 }}</span>
               </div>
               @if (plan.previousPrice) {
                 <div class="mt-3 flex flex-wrap items-center gap-3 text-sm">
                   <span class="text-slate-500">
                     {{ 'بدلاً من' | translate }}
-                    <s>{{ plan.previousPrice }} {{ 'درهم إماراتي' | translate }}</s>
+                    <s
+                      >{{ pricing.amount(plan.previousPrice) }}
+                      {{ pricing.currencyLabel() | translate }}</s
+                    >
                   </span>
                   <span
                     class="inline-flex rounded-full bg-[#F9B400] px-2.5 py-1 text-xs font-bold text-[#3D1A6D]"

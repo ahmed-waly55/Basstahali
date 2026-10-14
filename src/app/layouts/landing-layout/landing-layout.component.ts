@@ -9,7 +9,7 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-landing-layout',
   imports: [TranslatePipe, HeaderComponent, FooterComponent, RouterOutlet],
   templateUrl: './landing-layout.component.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.Default,
   styleUrl: './landing-layout.component.css',
 })
 export class LandingLayoutComponent {

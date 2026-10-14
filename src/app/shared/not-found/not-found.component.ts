@@ -6,7 +6,7 @@ import { RouterLink } from '@angular/router';
   selector: 'app-not-found',
   imports: [TranslatePipe, RouterLink],
   templateUrl: './not-found.component.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.Default,
   styleUrl: './not-found.component.css',
 })
 export class NotFoundComponent {}

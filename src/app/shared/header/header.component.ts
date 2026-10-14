@@ -8,7 +8,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   selector: 'app-header',
   imports: [TranslatePipe, RouterLinkActive, RouterLink],
   templateUrl: './header.component.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.Default,
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {

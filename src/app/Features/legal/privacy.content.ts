@@ -73,6 +73,10 @@ export const PRIVACY_DOCUMENT: LegalDocument = {
           en: 'The website saves your Arabic or English language preference and your light or dark appearance preference in your browser’s local storage, so these choices can be kept for your next visit using the same browser.',
         },
         {
+          ar: 'تستخدم صفحة الباقات دولة الاتصال التي توفرها الاستضافة لعرض الأسعار بالجنيه المصري للزائر من مصر، وبالدرهم الإماراتي لباقي الدول. لا تحتاج هذه الميزة إلى إذن الوصول إلى موقعك الجغرافي الدقيق.',
+          en: 'The packages page uses the connection country provided by the hosting service to display prices in EGP for visitors from Egypt and in AED for other countries. This feature does not require permission to access your precise geographic location.',
+        },
+        {
           ar: 'يمكنك تغيير هذه التفضيلات من أدوات الموقع أو إزالة بيانات الموقع من إعدادات المتصفح. إزالة بيانات المتصفح تعيد ضبط التفضيلات المحلية، ولا تحذف طلبات الانضمام التي سبق إرسالها إلى الخدمة.',
           en: 'You can change these preferences using the website controls or remove website data in your browser settings. Removing browser data resets local preferences and does not delete applications already submitted to the service.',
         },

@@ -20,7 +20,7 @@ export class LegalComponent {
   readonly kind =
     inject(ActivatedRoute).snapshot.data['document'] === 'terms' ? 'terms' : 'privacy';
   readonly document = this.kind === 'terms' ? TERMS_DOCUMENT : PRIVACY_DOCUMENT;
-  readonly updated = { ar: '12 أكتوبر 2026', en: '12 October 2026' };
+  readonly updated = { ar: '14 أكتوبر 2026', en: '14 October 2026' };
 
   constructor() {
     afterNextRender(() => {

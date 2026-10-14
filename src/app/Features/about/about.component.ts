@@ -17,7 +17,7 @@ import AOS from 'aos';
   standalone: true,
   imports: [TranslatePipe],
   templateUrl: './about.component.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.Default,
   styleUrl: './about.component.css',
 })
 export class AboutComponent implements OnInit, AfterViewInit, OnDestroy {

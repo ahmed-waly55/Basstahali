@@ -7,7 +7,7 @@ import { RouterLink } from '@angular/router';
   selector: 'app-footer',
   imports: [TranslatePipe, RouterLink, FormsModule],
   templateUrl: './footer.component.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.Default,
   styleUrl: './footer.component.css',
 })
 export class FooterComponent {

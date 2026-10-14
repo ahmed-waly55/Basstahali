@@ -1,6 +1,9 @@
 import { provideRouter } from '@angular/router';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { PreferencesService } from '../../core/services/preferences.service';
+import { provideHttpClient } from '@angular/common/http';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import { VisitorPricingService } from '../../core/services/visitor-pricing.service';
 
 import { PricingComponent } from './pricing.component';
 
@@ -10,12 +13,16 @@ describe('PricingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      providers: [provideRouter([])],
+      providers: [provideRouter([]), provideHttpClient(), provideHttpClientTesting()],
       imports: [PricingComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(PricingComponent);
     component = fixture.componentInstance;
+    fixture.detectChanges();
+    TestBed.inject(HttpTestingController)
+      .expectOne('/api/visitor-country')
+      .flush({ country: 'AE' });
     await fixture.whenStable();
     TestBed.inject(PreferencesService).language.set('ar');
     fixture.detectChanges();
@@ -24,6 +31,35 @@ describe('PricingComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  afterEach(() => TestBed.inject(HttpTestingController).verify());
+
+  it('converts current and original prices for Egypt while keeping the discount', () => {
+    TestBed.inject(VisitorPricingService).country.set('EG');
+    fixture.detectChanges();
+    expect(renderedPrices()).toEqual([12000, 14400, 16800]);
+    const previous = Array.from(fixture.nativeElement.querySelectorAll('s')).map((price) =>
+      (price as HTMLElement).textContent?.trim(),
+    );
+    expect(previous).toEqual(['15000 جنيه مصري', '18000 جنيه مصري', '21000 جنيه مصري']);
+    expect(fixture.nativeElement.textContent).toContain('خصم 20%');
+    component.selectedCurriculum.set('ministerial');
+    fixture.detectChanges();
+    expect(renderedPrices()).toEqual([9600, 12000, 14400]);
+    expect(fixture.nativeElement.querySelectorAll('s').length).toBe(0);
+  });
+
+  for (const language of ['ar', 'en'] as const) {
+    it(`uses the Egyptian price and currency in WhatsApp in ${language}`, () => {
+      TestBed.inject(VisitorPricingService).country.set('EG');
+      TestBed.inject(PreferencesService).language.set(language);
+      fixture.detectChanges();
+      const link: HTMLAnchorElement = fixture.nativeElement.querySelector('article a');
+      const message = new URL(link.href).searchParams.get('text')!;
+      expect(message).toContain(language === 'ar' ? '12000 جنيه مصري' : '12000 EGP');
+      expect(message).not.toContain('800 AED');
+    });
+  }
 
   function renderedPrices(): number[] {
     return Array.from(fixture.nativeElement.querySelectorAll('.plan-price')).map((price) =>

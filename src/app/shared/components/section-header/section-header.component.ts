@@ -5,7 +5,7 @@ import { Component, input, ChangeDetectionStrategy } from '@angular/core';
   selector: 'app-section-header',
   imports: [TranslatePipe],
   templateUrl: './section-header.component.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.Default,
   styleUrl: './section-header.component.css',
 })
 export class SectionHeaderComponent {

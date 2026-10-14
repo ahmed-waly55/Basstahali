@@ -20,7 +20,7 @@ export interface Teacher {
   standalone: true,
   imports: [TranslatePipe, CommonModule],
   templateUrl: './teachers.component.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.Default,
   styleUrl: './teachers.component.css',
 })
 export class TeachersComponent implements OnInit {
