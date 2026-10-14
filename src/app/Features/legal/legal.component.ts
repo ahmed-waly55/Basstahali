@@ -7,8 +7,8 @@ import {
   LOCALE_ID,
 } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { PRIVACY_DOCUMENT } from './privacy.content';
-import { TERMS_DOCUMENT } from './terms.content';
+import { privacyDocument } from './privacy.content';
+import { termsDocument } from './terms.content';
 
 @Component({
   selector: 'app-legal',
@@ -22,7 +22,7 @@ export class LegalComponent {
   private readonly locale = inject(LOCALE_ID);
   readonly kind =
     inject(ActivatedRoute).snapshot.data['document'] === 'terms' ? 'terms' : 'privacy';
-  readonly document = this.kind === 'terms' ? TERMS_DOCUMENT : PRIVACY_DOCUMENT;
+  readonly document = this.kind === 'terms' ? termsDocument() : privacyDocument();
   readonly updated = new Intl.DateTimeFormat(this.locale, {
     day: 'numeric',
     month: 'long',

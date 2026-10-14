@@ -1,14 +1,18 @@
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { afterNextRender, inject, Injectable, LOCALE_ID, PLATFORM_ID, signal } from '@angular/core';
+import { switchApplicationLanguage, switchingLanguage } from '../i18n/locale-runtime';
+import { ToastService } from './toast.service';
 
 @Injectable({ providedIn: 'root' })
 export class PreferencesService {
   private readonly document = inject(DOCUMENT);
   private readonly browser = isPlatformBrowser(inject(PLATFORM_ID));
+  private readonly toast = inject(ToastService);
   readonly language = signal<'ar' | 'en'>(
     inject(LOCALE_ID).startsWith('en') ? 'en' : 'ar',
   ).asReadonly();
   readonly dark = signal(false);
+  readonly switchingLanguage = switchingLanguage;
 
   constructor() {
     this.applyLocale();
@@ -36,10 +40,9 @@ export class PreferencesService {
 
   toggleLanguage(): void {
     if (!this.browser) return;
-    const location = this.document.location;
-    const path = location.pathname.replace(/^\/en(?=\/|$)/, '') || '/';
-    const targetPath = this.language() === 'ar' ? `/en${path}` : path;
-    location.assign(targetPath + location.search + location.hash);
+    void switchApplicationLanguage(this.language() === 'ar' ? 'en' : 'ar').catch(() => {
+      this.toast.show($localize`:@@m_e0465a89fde9:تعذر تحميل البيانات`, 'error');
+    });
   }
 
   toggleTheme(): void {

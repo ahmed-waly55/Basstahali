@@ -1,6 +1,8 @@
-import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
-import { App } from './app/app';
+import { registerLocaleBootstrap, startLocaleApplication } from './app/core/i18n/locale-runtime';
 
-bootstrapApplication(App, appConfig)
-  .catch((err) => console.error(err));
+registerLocaleBootstrap(async (locale, hydrate) => {
+  const { bootstrapLocale } = await import('./bootstrap');
+  return bootstrapLocale(locale, hydrate);
+});
+
+startLocaleApplication().catch((error) => console.error(error));

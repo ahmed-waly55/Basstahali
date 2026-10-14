@@ -6,10 +6,15 @@
       class="brand-link"
       [attr.aria-label]="messages.m_b986d8fb163c"
       ><span class="brand-owl"><img src="images/owl.png" alt="" width="96" height="64" /></span
-      ><span class="brand-wordmark"
-        ><span class="brand-name" dir="rtl">بسط<span>هالي</span></span
-        ><span class="brand-english">Basstahali</span></span
-      ></a
+      ><span class="brand-wordmark">
+        @if (preferences.language() === 'ar') {
+          <span class="brand-name" dir="rtl">بسط<span>هالي</span></span>
+          <span class="brand-subtitle" dir="ltr">Basstahali</span>
+        } @else {
+          <span class="brand-name brand-latin" dir="ltr">Bassta<span>hali</span></span>
+          <span class="brand-subtitle brand-arabic" dir="rtl">بسطهالي</span>
+        }
+      </span></a
     >
     <nav class="desktop-nav" [attr.aria-label]="messages.m_cb75b65677d5">
       <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">{{
@@ -27,6 +32,8 @@
         type="button"
         (click)="preferences.toggleLanguage()"
         class="language-button"
+        [disabled]="preferences.switchingLanguage()"
+        [attr.aria-busy]="preferences.switchingLanguage()"
         [attr.aria-label]="
           preferences.language() === 'ar' ? 'Switch to English' : messages.m_2aaf2c72e715
         "

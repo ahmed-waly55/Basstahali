@@ -32,18 +32,6 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
-      "i18n": {
-        "sourceLocale": {
-          "code": "ar",
-          "subPath": ""
-        },
-        "locales": {
-          "en": {
-            "translation": "src/locale/messages.en.xlf",
-            "subPath": "en"
-          }
-        }
-      },
       "architect": {
         "build": {
           "builder": "@angular/build:application",
@@ -67,11 +55,11 @@
             },
             "ssr": {
               "entry": "src/server.ts"
-            }
+            },
+            "localize": false
           },
           "configurations": {
             "production": {
-              "localize": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -84,17 +72,13 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all",
-              "i18nMissingTranslation": "error"
+              "outputHashing": "all"
             },
             "development": {
               "localize": false,
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
-            },
-            "en": {
-              "localize": ["en"]
             }
           },
           "defaultConfiguration": "production"
@@ -107,9 +91,6 @@
             },
             "development": {
               "buildTarget": "basstahali:build:development"
-            },
-            "en": {
-              "buildTarget": "basstahali:build:development,en"
             }
           },
           "defaultConfiguration": "development"
@@ -133,6 +114,9 @@
             "outFile": "messages.xlf"
           }
         }
+      },
+      "i18n": {
+        "sourceLocale": "ar"
       }
     }
   }

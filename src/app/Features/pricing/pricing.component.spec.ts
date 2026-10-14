@@ -2,6 +2,7 @@ import { provideRouter } from '@angular/router';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import { vi } from 'vitest';
 import { VisitorPricingService } from '../../core/services/visitor-pricing.service';
 
 import { PricingComponent } from './pricing.component';
@@ -10,7 +11,12 @@ describe('PricingComponent', () => {
   let component: PricingComponent;
   let fixture: ComponentFixture<PricingComponent>;
 
+  const options = Intl.DateTimeFormat().resolvedOptions();
   beforeEach(async () => {
+    vi.spyOn(Intl.DateTimeFormat.prototype, 'resolvedOptions').mockReturnValue({
+      ...options,
+      timeZone: 'Asia/Dubai',
+    });
     await TestBed.configureTestingModule({
       providers: [provideRouter([]), provideHttpClient(), provideHttpClientTesting()],
       imports: [PricingComponent],
@@ -19,9 +25,6 @@ describe('PricingComponent', () => {
     fixture = TestBed.createComponent(PricingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    TestBed.inject(HttpTestingController)
-      .expectOne('/api/visitor-country')
-      .flush({ country: 'AE' });
     await fixture.whenStable();
     fixture.detectChanges();
   });
@@ -30,10 +33,21 @@ describe('PricingComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  afterEach(() => TestBed.inject(HttpTestingController).verify());
+  afterEach(() => {
+    TestBed.inject(HttpTestingController).verify();
+    vi.restoreAllMocks();
+  });
+
+  function egyptianDevice(): void {
+    vi.mocked(Intl.DateTimeFormat.prototype.resolvedOptions).mockReturnValue({
+      ...options,
+      timeZone: 'Africa/Cairo',
+    });
+    TestBed.inject(VisitorPricingService).detectDeviceTimeZone();
+  }
 
   it('converts current and original prices for Egypt while keeping the discount', () => {
-    TestBed.inject(VisitorPricingService).country.set('EG');
+    egyptianDevice();
     fixture.detectChanges();
     expect(renderedPrices()).toEqual([12000, 14400, 16800]);
     const previous = Array.from(fixture.nativeElement.querySelectorAll('s')).map((price) =>
@@ -52,7 +66,7 @@ describe('PricingComponent', () => {
 
   for (const language of ['ar'] as const) {
     it(`uses the Egyptian price and currency in WhatsApp in ${language}`, () => {
-      TestBed.inject(VisitorPricingService).country.set('EG');
+      egyptianDevice();
       fixture.detectChanges();
       const link: HTMLAnchorElement = fixture.nativeElement.querySelector('article a');
       const message = new URL(link.href).searchParams.get('text')!;

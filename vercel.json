@@ -1,6 +1,9 @@
 {
+  "redirects": [
+    { "source": "/en/:path*(/?)", "destination": "/:path*", "permanent": true },
+    { "source": "/ar/:path*(/?)", "destination": "/:path*", "permanent": true }
+  ],
   "rewrites": [
-    { "source": "/en(/.*)?", "destination": "/en/index.html" },
-    { "source": "/((?!api/).*)", "destination": "/index.html" }
+    { "source": "/((?!api/|i118/).*)", "destination": "/index.html" }
   ]
 }

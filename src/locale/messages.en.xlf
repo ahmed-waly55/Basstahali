@@ -2354,8 +2354,8 @@
         <note category="location">src/app/Features/legal/privacy.content.ts:35</note>
       </notes>
       <segment state="translated">
-        <source>تحدد لغة الموقع من رابط الصفحة العربية أو الإنجليزية. ويحفظ الموقع تفضيل المظهر الفاتح أو الداكن في التخزين المحلي لمتصفحك للاحتفاظ به عند الزيارة التالية من المتصفح نفسه.</source>
-        <target>The page URL determines whether the site is in Arabic or English. The site stores your light or dark theme preference in your browser’s local storage for future visits in the same browser.</target>
+        <source>يحفظ الموقع اختيار اللغة العربية أو الإنجليزية وتفضيل المظهر الفاتح أو الداكن في التخزين المحلي لمتصفحك للاحتفاظ بهذه الاختيارات عند الزيارة التالية من المتصفح نفسه.</source>
+        <target>The site stores your Arabic or English language choice and light or dark theme preference in your browser’s local storage for future visits in the same browser.</target>
       </segment>
     </unit>
     <unit id="m_3a7aedca421f">
@@ -2363,8 +2363,8 @@
         <note category="location">src/app/Features/legal/privacy.content.ts:36</note>
       </notes>
       <segment state="translated">
-        <source>تستخدم صفحة الباقات دولة الاتصال التي توفرها الاستضافة لعرض الأسعار بالجنيه المصري للزائر من مصر، وبالدرهم الإماراتي لباقي الدول. لا تحتاج هذه الميزة إلى إذن الوصول إلى موقعك الجغرافي الدقيق.</source>
-        <target>The packages page uses the connection country provided by the hosting service to display prices in EGP for visitors from Egypt and in AED for other countries. This feature does not require permission to access your precise geographic location.</target>
+        <source>تقرأ صفحة الباقات المنطقة الزمنية المضبوطة على جهازك من المتصفح. إذا كانت توقيت القاهرة (Africa/Cairo)، تظهر الأسعار بالجنيه المصري بسعر 15 جنيهًا لكل درهم؛ ولأي توقيت آخر أو عند تعذر قراءته تظهر بالدرهم الإماراتي. يعتمد ذلك على إعداد الجهاز، ولا يحتاج إلى إذن الموقع الجغرافي أو تحديد الدولة من عنوان الشبكة.</source>
+        <target>The packages page reads your device’s time zone from your browser. Prices appear in EGP at a fixed rate of 15 Egyptian pounds per dirham when the time zone is Cairo (Africa/Cairo); they appear in AED for other time zones or if the time zone cannot be read. This uses your device settings and does not require location permission or determine your country from your IP address.</target>
       </segment>
     </unit>
     <unit id="m_4c590c659be8">

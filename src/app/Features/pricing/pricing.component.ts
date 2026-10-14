@@ -1,5 +1,6 @@
 import { isPlatformBrowser } from '@angular/common';
 import {
+  afterNextRender,
   ChangeDetectionStrategy,
   Component,
   computed,
@@ -112,9 +113,12 @@ export class PricingComponent implements OnInit {
     $localize`:@@m_eea6aa3b02f5:8 حصص لكل مادة`,
   ];
 
+  constructor() {
+    afterNextRender(() => this.pricing.detectDeviceTimeZone());
+  }
+
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      this.pricing.loadCountry();
       AOS.init({ duration: 800, once: true, mirror: false });
     }
   }

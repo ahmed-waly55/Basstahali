@@ -1,10 +1,14 @@
 import { DOCUMENT } from '@angular/common';
 import { LOCALE_ID } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
+import { clearTranslations, loadTranslations } from '@angular/localize';
 import { RouterStateSnapshot } from '@angular/router';
 import { SeoTitleStrategy } from './seo-title.strategy';
 
 describe('SEO metadata', () => {
+  beforeEach(() => clearTranslations());
+  afterEach(() => clearTranslations());
+
   function snapshot(url: string, path: string) {
     return {
       url,
@@ -45,7 +49,7 @@ describe('SEO metadata', () => {
     seo.updateTitle(snapshot('/', ''));
     expect(doc.querySelector('meta[name="robots"]')?.getAttribute('content')).toBe('index, follow');
     expect(doc.querySelector('#page-breadcrumbs')).toBeNull();
-    expect(doc.querySelectorAll('link[hreflang]').length).toBe(3);
+    expect(doc.querySelector('link[hreflang]')).toBeNull();
   });
 
   for (const [path, title] of [
@@ -69,28 +73,30 @@ describe('SEO metadata', () => {
   }
 
   for (const locale of ['ar', 'en']) {
-    it(`advertises both languages and keeps ${locale} canonicals and breadcrumb URLs together`, () => {
+    it(`keeps the same canonical and breadcrumb URLs for ${locale} without invented locale URLs`, () => {
       configure(locale);
       const seo = TestBed.inject(SeoTitleStrategy);
       const doc = TestBed.inject(DOCUMENT);
+      const obsoleteAlternate = doc.createElement('link');
+      obsoleteAlternate.rel = 'alternate';
+      obsoleteAlternate.hreflang = 'en';
+      obsoleteAlternate.href = 'https://www.basstahali.com/en/subjects/grade-123';
+      doc.head.appendChild(obsoleteAlternate);
+      const obsoleteOgAlternate = doc.createElement('meta');
+      obsoleteOgAlternate.setAttribute('property', 'og:locale:alternate');
+      obsoleteOgAlternate.content = 'en_US';
+      doc.head.appendChild(obsoleteOgAlternate);
       seo.updateTitle(snapshot('/subjects/grade-123?campaign=example#materials', 'subjects/:id'));
       const origin = 'https://www.basstahali.com';
-      const home = `${origin}${locale === 'en' ? '/en/' : '/'}`;
-      const canonical = `${origin}${locale === 'en' ? '/en' : ''}/subjects/grade-123`;
+      const home = `${origin}/`;
+      const canonical = `${origin}/subjects/grade-123`;
       expect(doc.querySelector('link[rel="canonical"]')?.getAttribute('href')).toBe(canonical);
       expect(doc.querySelector('meta[property="og:url"]')?.getAttribute('content')).toBe(canonical);
       expect(doc.querySelector('meta[property="og:locale"]')?.getAttribute('content')).toBe(
         locale === 'en' ? 'en_US' : 'ar_AE',
       );
-      expect(doc.querySelector('link[hreflang="ar"]')?.getAttribute('href')).toBe(
-        `${origin}/subjects/grade-123`,
-      );
-      expect(doc.querySelector('link[hreflang="en"]')?.getAttribute('href')).toBe(
-        `${origin}/en/subjects/grade-123`,
-      );
-      expect(doc.querySelector('link[hreflang="x-default"]')?.getAttribute('href')).toBe(
-        `${origin}/subjects/grade-123`,
-      );
+      expect(doc.querySelector('link[hreflang]')).toBeNull();
+      expect(doc.querySelector('meta[property="og:locale:alternate"]')).toBeNull();
       const breadcrumbs = JSON.parse(doc.querySelector('#page-breadcrumbs')!.textContent!);
       expect(breadcrumbs.itemListElement.map((entry: { item: string }) => entry.item)).toEqual([
         home,
@@ -98,22 +104,42 @@ describe('SEO metadata', () => {
         canonical,
       ]);
       seo.updateTitle(snapshot('/pricing', 'pricing'));
-      expect(doc.querySelectorAll('link[hreflang]').length).toBe(3);
+      expect(doc.querySelector('link[hreflang]')).toBeNull();
     });
   }
 
-  it('uses one English prefix and a stable English home URL', () => {
-    configure('en-US');
-    const seo = TestBed.inject(SeoTitleStrategy);
+  it('uses freshly loaded native translations when the application changes language', () => {
+    configure();
     const doc = TestBed.inject(DOCUMENT);
-    seo.updateTitle(snapshot('/en/privacy/', 'privacy'));
-    expect(doc.querySelector('link[rel="canonical"]')?.getAttribute('href')).toBe(
-      'https://www.basstahali.com/en/privacy',
+    TestBed.inject(SeoTitleStrategy).updateTitle(snapshot('/privacy', 'privacy'));
+    expect(doc.title).toBe('سياسة الخصوصية | بسطهالي');
+
+    loadTranslations({
+      m_55ac61564737: 'Privacy policy | Basstahali',
+      m_0e99ada47889: 'Read about privacy on Basstahali.',
+      m_70b341c96b9c: 'Basstahali',
+    });
+    TestBed.resetTestingModule();
+    configure('en');
+    TestBed.inject(SeoTitleStrategy).updateTitle(snapshot('/privacy', 'privacy'));
+    expect(doc.title).toBe('Privacy policy | Basstahali');
+    expect(doc.querySelector('meta[name="description"]')?.getAttribute('content')).toBe(
+      'Read about privacy on Basstahali.',
     );
-    seo.updateTitle(snapshot('/en/', ''));
     expect(doc.querySelector('link[rel="canonical"]')?.getAttribute('href')).toBe(
-      'https://www.basstahali.com/en/',
+      'https://www.basstahali.com/privacy',
     );
-    expect(doc.querySelector('#page-breadcrumbs')).toBeNull();
+    expect(doc.querySelector('meta[property="og:locale"]')?.getAttribute('content')).toBe('en_US');
+    expect(doc.querySelector('#page-breadcrumbs')?.textContent).toContain('Privacy policy');
+
+    clearTranslations();
+    TestBed.resetTestingModule();
+    configure();
+    TestBed.inject(SeoTitleStrategy).updateTitle(snapshot('/privacy', 'privacy'));
+    expect(doc.title).toBe('سياسة الخصوصية | بسطهالي');
+    expect(doc.querySelector('meta[property="og:locale"]')?.getAttribute('content')).toBe('ar_AE');
+    expect(doc.querySelector('link[rel="canonical"]')?.getAttribute('href')).toBe(
+      'https://www.basstahali.com/privacy',
+    );
   });
 });
