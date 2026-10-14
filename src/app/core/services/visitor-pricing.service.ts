@@ -10,7 +10,11 @@ export class VisitorPricingService {
   private requested = false;
   readonly country = signal<string | null>(null);
   readonly isEgypt = computed(() => this.country() === 'EG');
-  readonly currencyLabel = computed(() => (this.isEgypt() ? 'جنيه مصري' : 'درهم إماراتي'));
+  readonly currencyLabel = computed(() =>
+    this.isEgypt()
+      ? $localize`:@@m_c5dd280359ea:جنيه مصري`
+      : $localize`:@@m_3e3938408415:درهم إماراتي`,
+  );
 
   loadCountry(): void {
     if (this.requested || !isPlatformBrowser(this.platformId)) return;

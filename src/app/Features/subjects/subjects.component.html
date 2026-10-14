@@ -12,21 +12,19 @@
       <span class="text-xl transform group-hover:translate-x-1 transition-transform">{{
         preferences.language() === 'ar' ? '→' : '←'
       }}</span>
-      {{ preferences.language() === 'en' ? 'Back to grades' : 'عودة للمراحل' }}
+      {{ messages.m_fcc5af28cc61 }}
     </a>
 
     <!-- العنوان والوصف -->
     <h1
       class="text-[#3b236d] text-3xl md:text-4xl font-extrabold mb-3 mt-10 md:mt-0 text-center tracking-tight"
     >
-      {{ preferences.language() === 'en' ? 'School subjects' : 'المواد الدراسية' }}
+      {{ messages.m_aa2d5b333df8 }}
     </h1>
 
     <p class="text-gray-600 text-base md:text-lg text-center max-w-md">
       {{
-        preferences.language() === 'en'
-          ? 'Choose a subject to explore available courses and teachers.'
-          : 'اختر المادة الدراسية للاطلاع على الكورسات والمعلمين المتاحين'
+        messages.m_61d2d6667029
       }}
     </p>
 
@@ -36,7 +34,7 @@
   <!-- عرض المواد الدراسية -->
   @if (loading()) {
     <div role="status" aria-live="polite">
-      <p class="mb-6 text-center text-gray-600">{{ 'جارٍ التحميل...' | translate }}</p>
+      <p class="mb-6 text-center text-gray-600">{{ messages.m_cee8f138e31b }}</p>
       <div
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8"
         aria-hidden="true"
@@ -65,17 +63,17 @@
         !
       </div>
       <h2 class="text-2xl font-bold text-[#3b236d] mb-3">
-        {{ 'تعذر تحميل البيانات' | translate }}
+        {{ messages.m_e0465a89fde9 }}
       </h2>
       <p class="text-gray-500 leading-relaxed">
-        {{ 'حاول مرة أخرى بعد التأكد من اتصالك بالإنترنت.' | translate }}
+        {{ messages.m_c736c9f1496a }}
       </p>
       <button
         type="button"
         (click)="retry()"
         class="bg-[#3b236d] hover:bg-[#2d1a54] text-white font-bold py-3 px-8 rounded-xl transition-colors cursor-pointer shadow-md inline-block mt-6"
       >
-        {{ 'إعادة المحاولة' | translate }}
+        {{ messages.m_2e47b5f289f1 }}
       </button>
     </div>
   } @else if (subjects().length > 0) {
@@ -120,36 +118,20 @@
           <p class="text-gray-500 text-sm mb-6 line-clamp-2 z-10 min-h-[40px] leading-relaxed">
             {{
               itemDescription(subject) ||
-                (preferences.language() === 'en'
-                  ? 'Explore subject lessons, revision and experienced teachers.'
-                  : 'استكشف شروحات ومراجعات المادة وأفضل المدرسين المعتمدين.')
+                (messages.m_7f4924f6db25)
             }}
           </p>
 
-          <!-- زر الإجراء -->
-          <!-- <button
-            type="button"
-            class="
-              w-full
-              mt-auto
-              bg-[#3b236d]
-              hover:bg-[#2d1a54]
-              text-white
-              group-hover:bg-[#ffc107]
-              group-hover:text-black
-              font-bold
-              py-3
-              px-4
-              rounded-xl
-              transition-all
-              duration-300
-              shadow-sm
-              z-10
-              cursor-pointer
-            "
+          <a
+            [href]="bookingLink(subject)"
+            [attr.aria-label]="bookingAriaLabel(subject)"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="subject-booking relative z-10 mt-auto inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#ffc107] px-4 py-3 text-sm font-bold text-[#2d1a54] shadow-sm transition hover:bg-amber-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ffc107]"
           >
-            {{ preferences.language() === 'en' ? 'Explore subject' : 'تصفح المادة' }}
-          </button> -->
+            <i class="fa-brands fa-whatsapp text-xl" aria-hidden="true"></i>
+            <span>{{ bookingLabel }}</span>
+          </a>
         </div>
       }
     </div>
@@ -167,14 +149,12 @@
       </div>
 
       <h3 class="text-2xl font-bold text-[#3b236d] mb-2">
-        {{ preferences.language() === 'en' ? 'No subjects available' : 'لا توجد مواد دراسية' }}
+        {{ messages.m_5a8a2f79d0dd }}
       </h3>
 
       <p class="text-gray-500 mb-8 leading-relaxed">
         {{
-          preferences.language() === 'en'
-            ? 'No subjects have been added for this grade yet. Try again later or choose another grade.'
-            : 'لم يتم إضافة مواد دراسية لهذه المرحلة حتى الآن، يرجى المحاولة لاحقاً أو اختيار مرحلة أخرى.'
+          messages.m_538347e9fa1c
         }}
       </p>
 
@@ -182,7 +162,7 @@
         [routerLink]="backLink()"
         class="bg-[#3b236d] hover:bg-[#2d1a54] text-white font-bold py-3 px-8 rounded-xl transition-colors cursor-pointer shadow-md"
       >
-        {{ preferences.language() === 'en' ? 'Back to grades' : 'العودة للمراحل السابقة' }}
+        {{ messages.m_17540430bc8a }}
       </a>
     </div>
   }

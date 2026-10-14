@@ -32,11 +32,24 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": {
+          "code": "ar",
+          "subPath": ""
+        },
+        "locales": {
+          "en": {
+            "translation": "src/locale/messages.en.xlf",
+            "subPath": "en"
+          }
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular/build:application",
           "options": {
             "browser": "src/main.ts",
+            "polyfills": ["@angular/localize/init"],
             "tsConfig": "tsconfig.app.json",
             "allowedCommonJsDependencies": ["aos"],
             "assets": [
@@ -58,6 +71,7 @@
           },
           "configurations": {
             "production": {
+              "localize": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -70,12 +84,17 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "i18nMissingTranslation": "error"
             },
             "development": {
+              "localize": false,
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "en": {
+              "localize": ["en"]
             }
           },
           "defaultConfiguration": "production"
@@ -88,6 +107,9 @@
             },
             "development": {
               "buildTarget": "basstahali:build:development"
+            },
+            "en": {
+              "buildTarget": "basstahali:build:development,en"
             }
           },
           "defaultConfiguration": "development"
@@ -100,6 +122,15 @@
             "runner": "vitest",
             "providersFile": "src/test-providers.ts",
             "setupFiles": ["src/test-setup.ts"]
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular/build:extract-i18n",
+          "options": {
+            "buildTarget": "basstahali:build:development",
+            "format": "xlf2",
+            "outputPath": "src/locale",
+            "outFile": "messages.xlf"
           }
         }
       }

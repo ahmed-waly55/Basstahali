@@ -1,6 +1,5 @@
 import { provideRouter } from '@angular/router';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { PreferencesService } from '../../core/services/preferences.service';
 import { provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { VisitorPricingService } from '../../core/services/visitor-pricing.service';
@@ -24,7 +23,6 @@ describe('PricingComponent', () => {
       .expectOne('/api/visitor-country')
       .flush({ country: 'AE' });
     await fixture.whenStable();
-    TestBed.inject(PreferencesService).language.set('ar');
     fixture.detectChanges();
   });
 
@@ -46,13 +44,15 @@ describe('PricingComponent', () => {
     component.selectedCurriculum.set('ministerial');
     fixture.detectChanges();
     expect(renderedPrices()).toEqual([9600, 12000, 14400]);
-    expect(fixture.nativeElement.querySelectorAll('s').length).toBe(0);
+    const ministerialPrevious = Array.from(fixture.nativeElement.querySelectorAll('s')).map(
+      (price) => (price as HTMLElement).textContent?.trim(),
+    );
+    expect(ministerialPrevious).toEqual(['12000 جنيه مصري', '15000 جنيه مصري', '18000 جنيه مصري']);
   });
 
-  for (const language of ['ar', 'en'] as const) {
+  for (const language of ['ar'] as const) {
     it(`uses the Egyptian price and currency in WhatsApp in ${language}`, () => {
       TestBed.inject(VisitorPricingService).country.set('EG');
-      TestBed.inject(PreferencesService).language.set(language);
       fixture.detectChanges();
       const link: HTMLAnchorElement = fixture.nativeElement.querySelector('article a');
       const message = new URL(link.href).searchParams.get('text')!;
@@ -80,21 +80,32 @@ describe('PricingComponent', () => {
     expect(text).not.toMatch(/قريباً|جنية|شهري|سنوي/);
   });
 
-  it('switches to the ministerial offers without inventing previous prices', async () => {
+  it('switches to the ministerial offers with their prices before the 20% discount', async () => {
     const buttons = fixture.nativeElement.querySelectorAll('.curriculum-option');
     buttons[1].click();
     await fixture.whenStable();
     expect(renderedPrices()).toEqual([640, 800, 960]);
-    expect(fixture.nativeElement.querySelectorAll('s').length).toBe(0);
+    const originalPrices = Array.from(fixture.nativeElement.querySelectorAll('s')).map((price) =>
+      (price as HTMLElement).textContent?.trim(),
+    );
+    expect(originalPrices).toEqual(['800 درهم إماراتي', '1000 درهم إماراتي', '1200 درهم إماراتي']);
+    expect(fixture.nativeElement.textContent.match(/خصم 20%/g)?.length).toBe(3);
     expect(buttons[1].getAttribute('aria-pressed')).toBe('true');
     expect(buttons[0].getAttribute('aria-pressed')).toBe('false');
   });
 
-  for (const language of ['ar', 'en'] as const) {
+  it('keeps the final prices of all six packages exactly 20% below their original prices', () => {
+    const plans = component.curricula.flatMap((curriculum) => curriculum.plans);
+    expect(plans.length).toBe(6);
+    plans.forEach((plan) => {
+      expect(plan.previousPrice).toBeDefined();
+      expect(plan.price * 100).toBe(plan.previousPrice! * 80);
+    });
+  });
+
+  for (const language of ['ar'] as const) {
     for (const curriculumId of ['international', 'ministerial'] as const) {
       it(`opens WhatsApp with every ${curriculumId} stage and its exact price in ${language}`, () => {
-        const preferences = TestBed.inject(PreferencesService);
-        preferences.language.set(language);
         component.selectedCurriculum.set(curriculumId);
         fixture.detectChanges();
         const curriculum = component.activeCurriculum();
@@ -108,8 +119,8 @@ describe('PricingComponent', () => {
           expect(links[index].target).toBe('_blank');
           expect(links[index].rel).toContain('noopener');
           const message = url.searchParams.get('text')!;
-          expect(message).toContain(preferences.translate(curriculum.name).replace('المنهج ', ''));
-          expect(message).toContain(preferences.translate(plan.name));
+          expect(message).toContain(curriculum.name);
+          expect(message).toContain(plan.name);
           expect(message).toContain(`${plan.price} ${language === 'ar' ? 'درهم إماراتي' : 'AED'}`);
           expect(message).toContain(
             language === 'ar' ? '4 مواد + مادة هدية' : '4 subjects + 1 free subject',

@@ -7,16 +7,13 @@
         <a routerLink="/" class="block">
           <img
             src="images/owl.png"
-            [alt]="'بسطهالي' | translate"
+            [alt]="messages.m_70b341c96b9c"
             class="h-24 w-auto object-contain"
           />
         </a>
 
         <p class="text-white/80 leading-8 text-sm max-w-sm">
-          {{
-            'منصة تعليمية تساعد الطلاب على التعلم بسهولة وتحقيق أفضل النتائج من خلال تجربة تعليمية حديثة ومميزة.'
-              | translate
-          }}
+          {{ messages.m_724341e8f3eb }}
         </p>
       </div>
 
@@ -24,37 +21,37 @@
       <div class="grid grid-cols-2 gap-8">
         <div>
           <h3 class="text-xl font-bold mb-5">
-            {{ 'روابط سريعة' | translate }}
+            {{ messages.m_6e58cd380220 }}
           </h3>
 
           <ul class="space-y-3 text-white/80 text-sm">
             <li>
               <a routerLink="/" class="hover:text-yellow-300 transition">
-                {{ 'الرئيسية' | translate }}
+                {{ messages.m_b986d8fb163c }}
               </a>
             </li>
 
             <li>
               <a routerLink="/courses" class="hover:text-yellow-300 transition">
-                {{ 'المراحل الدراسية' | translate }}
+                {{ messages.m_e56a7b103ef6 }}
               </a>
             </li>
 
             <li>
               <a routerLink="/features" class="hover:text-yellow-300 transition">
-                {{ 'المميزات' | translate }}
+                {{ messages.m_ec15ec94c35d }}
               </a>
             </li>
 
             <li>
               <a routerLink="/teachers" class="hover:text-yellow-300 transition">
-                {{ 'المدرسين' | translate }}
+                {{ messages.m_43edaf712d07 }}
               </a>
             </li>
 
             <li>
               <a routerLink="/teacher-form" class="hover:text-yellow-300 transition">
-                {{ 'انضم لهيئة التدريس' | translate }}
+                {{ messages.m_2e84aea0e101 }}
               </a>
             </li>
           </ul>
@@ -62,25 +59,25 @@
 
         <div>
           <h3 class="text-xl font-bold mb-5">
-            {{ 'الدعم' | translate }}
+            {{ messages.m_c380b562310d }}
           </h3>
 
           <ul class="space-y-3 text-white/80 text-sm">
             <li>
               <a routerLink="/privacy" class="hover:text-yellow-300 transition">
-                {{ 'سياسة الخصوصية' | translate }}
+                {{ messages.m_8b7b36b70cdd }}
               </a>
             </li>
 
             <li>
               <a routerLink="/terms" class="hover:text-yellow-300 transition">
-                {{ 'الشروط والأحكام' | translate }}
+                {{ messages.m_bec6c46de276 }}
               </a>
             </li>
 
             <li>
               <a routerLink="/about" fragment="faq" class="hover:text-yellow-300 transition">
-                {{ 'الأسئلة الشائعة' | translate }}
+                {{ messages.m_90b224ff944b }}
               </a>
             </li>
           </ul>
@@ -91,7 +88,7 @@
 
       <div>
         <h3 class="text-xl font-bold mb-5">
-          {{ 'تواصل معنا' | translate }}
+          {{ messages.m_988638232136 }}
         </h3>
 
         <div class="space-y-4 text-white/90 text-sm">
@@ -104,14 +101,16 @@
           <div class="flex items-center gap-3">
             <i class="fa-solid fa-envelope text-xl"></i>
 
-            <span> info@basstahali.com </span>
+            <a href="mailto:basstahali@gmail.com" dir="ltr" class="break-all hover:text-[#ffc107]"
+              >basstahali&#64;gmail.com</a
+            >
           </div>
 
           <div class="flex items-center gap-3">
             <i class="fa-solid fa-location-dot text-xl"></i>
 
             <span>
-              {{ 'الامارات العربية المتحدة، دبي' | translate }}
+              {{ messages.m_54db1b890699 }}
             </span>
           </div>
         </div>
@@ -155,7 +154,7 @@
     <!-- Copyright -->
 
     <div class="text-center text-sm text-white/70 mt-6">
-      جميع الحقوق محفوظة © {{ currentYear | translate }} بسطهالي
+      {{ copyright }}
     </div>
   </div>
 </footer>

@@ -1,46 +1,15 @@
 <div
-  class="
-    group
-    relative
-    overflow-hidden
-    bg-white
-    border
-    border-gray-100
-    rounded-2xl
-    p-6
-    shadow-sm
-    hover:shadow-xl
-    hover:shadow-[#3b236d]/10
-    hover:-translate-y-1.5
-    transition-all
-    duration-300
-    flex
-    flex-col
-    items-center
-    text-center
-    h-full
-  "
+  class="group relative overflow-hidden bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:shadow-[#3b236d]/10 hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-center text-center h-full"
   [ngClass]="borderColor()"
 >
-
   <!-- فقاعة ديكورية بنفسجية هادئة في الزاوية -->
-  <div class="absolute -top-10 -right-10 w-24 h-24 bg-[#f4f0fa] rounded-full group-hover:scale-150 transition-transform duration-500 -z-0"></div>
+  <div
+    class="absolute -top-10 -right-10 w-24 h-24 bg-[#f4f0fa] rounded-full group-hover:scale-150 transition-transform duration-500 -z-0"
+  ></div>
 
   <!-- الأيقونة -->
   <div
-    class="
-      w-20
-      h-20
-      rounded-2xl
-      flex
-      items-center
-      justify-center
-      mb-4
-      transition-colors
-      duration-300
-      shadow-sm
-      z-10
-    "
+    class="w-20 h-20 rounded-2xl flex items-center justify-center mb-4 transition-colors duration-300 shadow-sm z-10"
     [ngClass]="iconBg()"
   >
     <ng-content select="[icon]">
@@ -64,46 +33,35 @@
 
   <!-- Badge كود المنهج -->
   @if (badge()) {
-    <span class="bg-[#f4f0fa] text-[#3b236d] text-xs font-bold px-3 py-1 rounded-full mb-3 z-10 border border-[#e1d5f2]">
-      {{ (badge()) | translate }}
+    <span
+      class="bg-[#f4f0fa] text-[#3b236d] text-xs font-bold px-3 py-1 rounded-full mb-3 z-10 border border-[#e1d5f2]"
+    >
+      {{ badge() }}
     </span>
   }
 
   <!-- عنوان الكارت -->
   <h2 class="text-[#3b236d] text-xl font-bold mb-3 z-10 line-clamp-1">
-    {{ (title()) | translate }}
+    {{ title() }}
   </h2>
 
   <!-- الوصف -->
   <p class="text-gray-500 text-sm mb-6 line-clamp-2 z-10 min-h-[40px] leading-relaxed flex-1">
-    {{ (subtitle()) | translate }}
+    {{ subtitle() }}
   </p>
 
   <!-- الزرار: بنفسجي ملكي ثابت بنص أبيض وبدون هوفر -->
   <button
     (click)="onExploreClick()"
     type="button"
-    class="
-      w-full
-      mt-auto
-      font-bold
-      py-3
-      px-4
-      rounded-xl
-      shadow-sm
-      z-10
-      block
-      text-center
-      cursor-pointer
-    "
+    class="w-full mt-auto font-bold py-3 px-4 rounded-xl shadow-sm z-10 block text-center cursor-pointer"
     [ngClass]="[buttonBg(), buttonTextColor()]"
   >
-    {{ (buttonText()) | translate }}
+    {{ buttonText() }}
   </button>
 
   <!-- خط سفلي اختياري -->
   @if (showBottomLine()) {
     <div class="absolute bottom-0 left-0 h-1 w-full" [ngClass]="lineColor()"></div>
   }
-
 </div>

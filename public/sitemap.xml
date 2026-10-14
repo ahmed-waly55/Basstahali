@@ -1,14 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.basstahali.com/</loc></url>
-  <url><loc>https://www.basstahali.com/curriculum</loc></url>
-  <url><loc>https://www.basstahali.com/courses</loc></url>
-  <url><loc>https://www.basstahali.com/features</loc></url>
-  <url><loc>https://www.basstahali.com/teachers</loc></url>
-  <url><loc>https://www.basstahali.com/pricing</loc></url>
-  <url><loc>https://www.basstahali.com/about</loc></url>
-  <url><loc>https://www.basstahali.com/contact</loc></url>
-  <url><loc>https://www.basstahali.com/privacy</loc></url>
-  <url><loc>https://www.basstahali.com/terms</loc></url>
-  <url><loc>https://www.basstahali.com/teacher-form</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.basstahali.com/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.basstahali.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.basstahali.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.basstahali.com/" />
+  </url>
+  <url>
+    <loc>https://www.basstahali.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.basstahali.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.basstahali.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.basstahali.com/" />
+  </url>
+  <url>
+    <loc>https://www.basstahali.com/about</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.basstahali.com/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.basstahali.com/en/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.basstahali.com/about" />
+  </url>
+  <url>
+    <loc>https://www.basstahali.com/en/about</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.basstahali.com/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.basstahali.com/en/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.basstahali.com/about" />
+  </url>
+  <url>
+    <loc>https://www.basstahali.com/curriculum</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.basstahali.com/curriculum" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.basstahali.com/en/curriculum" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.basstahali.com/curriculum" />
+  </url>
+  <url>
+    <loc>https://www.basstahali.com/en/curriculum</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.basstahali.com/curriculum" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.basstahali.com/en/curriculum" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.basstahali.com/curriculum" />
+  </url>
+  <url>
+    <loc>https://www.basstahali.com/courses</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.basstahali.com/courses" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.basstahali.com/en/courses" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.basstahali.com/courses" />
+  </url>
+  <url>
+    <loc>https://www.basstahali.com/en/courses</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.basstahali.com/courses" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.basstahali.com/en/courses" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.basstahali.com/courses" />
+  </url>
+  <url>
+    <loc>https://www.basstahali.com/teachers</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.basstahali.com/teachers" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.basstahali.com/en/teachers" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.basstahali.com/teachers" />
+  </url>
+  <url>
+    <loc>https://www.basstahali.com/en/teachers</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.basstahali.com/teachers" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.basstahali.com/en/teachers" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.basstahali.com/teachers" />
+  </url>
+  <url>
+    <loc>https://www.basstahali.com/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.basstahali.com/pricing" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.basstahali.com/en/pricing" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.basstahali.com/pricing" />
+  </url>
+  <url>
+    <loc>https://www.basstahali.com/en/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.basstahali.com/pricing" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.basstahali.com/en/pricing" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.basstahali.com/pricing" />
+  </url>
+  <url>
+    <loc>https://www.basstahali.com/features</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.basstahali.com/features" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.basstahali.com/en/features" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.basstahali.com/features" />
+  </url>
+  <url>
+    <loc>https://www.basstahali.com/en/features</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.basstahali.com/features" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.basstahali.com/en/features" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.basstahali.com/features" />
+  </url>
+  <url>
+    <loc>https://www.basstahali.com/contact</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.basstahali.com/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.basstahali.com/en/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.basstahali.com/contact" />
+  </url>
+  <url>
+    <loc>https://www.basstahali.com/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.basstahali.com/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.basstahali.com/en/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.basstahali.com/contact" />
+  </url>
+  <url>
+    <loc>https://www.basstahali.com/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.basstahali.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.basstahali.com/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.basstahali.com/privacy" />
+  </url>
+  <url>
+    <loc>https://www.basstahali.com/en/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.basstahali.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.basstahali.com/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.basstahali.com/privacy" />
+  </url>
+  <url>
+    <loc>https://www.basstahali.com/terms</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.basstahali.com/terms" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.basstahali.com/en/terms" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.basstahali.com/terms" />
+  </url>
+  <url>
+    <loc>https://www.basstahali.com/en/terms</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.basstahali.com/terms" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.basstahali.com/en/terms" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.basstahali.com/terms" />
+  </url>
+  <url>
+    <loc>https://www.basstahali.com/teacher-form</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.basstahali.com/teacher-form" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.basstahali.com/en/teacher-form" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.basstahali.com/teacher-form" />
+  </url>
+  <url>
+    <loc>https://www.basstahali.com/en/teacher-form</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.basstahali.com/teacher-form" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.basstahali.com/en/teacher-form" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.basstahali.com/teacher-form" />
+  </url>
 </urlset>

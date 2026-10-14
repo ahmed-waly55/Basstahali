@@ -1,16 +1,11 @@
-export interface LegalText {
-  ar: string;
-  en: string;
-}
-
 export interface LegalSection {
   id: string;
-  title: LegalText;
-  paragraphs: readonly LegalText[];
+  title: string;
+  paragraphs: readonly string[];
 }
 
 export interface LegalDocument {
-  title: LegalText;
-  introduction: LegalText;
+  title: string;
+  introduction: string;
   sections: readonly LegalSection[];
 }

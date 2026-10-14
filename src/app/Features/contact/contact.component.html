@@ -18,7 +18,7 @@
         >
           <i class="fa-solid fa-circle-check text-lg"></i>
         </div>
-        <span class="text-sm font-medium">{{ toast.message | translate }}</span>
+        <span class="text-sm font-medium">{{ toast.message }}</span>
       </div>
 
       <button
@@ -38,16 +38,14 @@
         class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-100 text-[#4F2DB7] text-sm font-bold mb-3"
       >
         <i class="fa-solid fa-headset"></i>
-        {{ 'دائماً في خدمتك' | translate }}
+        {{ messages.m_9558283b468d }}
       </span>
       <h1 class="text-3xl md:text-4xl font-black text-slate-900">
-        {{ 'تواصل' | translate }} <span class="text-[#4F2DB7]">{{ 'معنا' | translate }}</span>
+        {{ messages.m_3e0489cbf4d1 }}
+        <span class="text-[#4F2DB7]">{{ messages.m_1848e4c3a18f }}</span>
       </h1>
       <p class="mt-3 text-slate-600 text-base md:text-lg">
-        {{
-          'هل لديك استفسار أو تحتاج إلى مساعدة؟ فريقنا جاهز للرد على جميع أسئلتك في أسرع وقت.'
-            | translate
-        }}
+        {{ messages.m_881d28ce21c9 }}
       </p>
     </div>
 
@@ -61,7 +59,7 @@
             class="absolute -bottom-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"
           ></div>
 
-          <h3 class="text-2xl font-bold mb-6 text-white">{{ 'معلومات التواصل' | translate }}</h3>
+          <h3 class="text-2xl font-bold mb-6 text-white">{{ messages.m_097a879115b1 }}</h3>
 
           <div class="space-y-6">
             <div class="flex items-start gap-3 sm:gap-4">
@@ -72,7 +70,7 @@
               </div>
               <div class="min-w-0 flex-1">
                 <h4 class="text-xs text-purple-200 font-semibold mb-1">
-                  {{ 'الهاتف / واتساب' | translate }}
+                  {{ messages.m_add7d016d30f }}
                 </h4>
                 <a
                   href="https://wa.me/971563306087"
@@ -93,14 +91,14 @@
               </div>
               <div class="min-w-0 flex-1">
                 <h4 class="text-xs text-purple-200 font-semibold mb-1">
-                  {{ 'البريد الإلكتروني' | translate }}
+                  {{ messages.m_0915ef8ea533 }}
                 </h4>
                 <a
-                  href="mailto:support@basstahali.com"
+                  href="mailto:basstahali@gmail.com"
                   class="block break-words text-sm sm:text-base font-bold hover:text-[#F9B400] transition"
                   dir="ltr"
                 >
-                  support&#64;basstahali.com
+                  basstahali&#64;gmail.com
                 </a>
               </div>
             </div>
@@ -113,10 +111,10 @@
               </div>
               <div class="min-w-0 flex-1">
                 <h4 class="text-xs text-purple-200 font-semibold mb-1">
-                  {{ 'الموقع' | translate }}
+                  {{ messages.m_ae2039744d1f }}
                 </h4>
                 <p class="text-sm font-medium leading-relaxed">
-                  {{ 'الإمارات العربية المتحدة' | translate }}
+                  {{ messages.m_f6fcef2c495b }}
                 </p>
               </div>
             </div>
@@ -124,7 +122,7 @@
 
           <div class="mt-8 pt-6 border-t border-white/15">
             <h4 class="text-xs text-purple-200 font-semibold mb-3">
-              {{ 'تابعنا على شبكات التواصل' | translate }}
+              {{ messages.m_5fc2d6940b78 }}
             </h4>
             <div class="flex items-center gap-3">
               <a
@@ -163,14 +161,14 @@
         data-aos="fade-left"
         data-aos-duration="800"
       >
-        <h3 class="text-2xl font-bold text-slate-800 mb-6">{{ 'أرسل لنا رسالة' | translate }}</h3>
+        <h3 class="text-2xl font-bold text-slate-800 mb-6">{{ messages.m_8a31c1a876a3 }}</h3>
 
         <form (ngSubmit)="onSubmit()" #contactForm="ngForm" class="space-y-5">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <!-- Name Input -->
             <div>
               <label class="block text-sm font-bold text-slate-700 mb-2"
-                >{{ 'الاسم بالكامل' | translate }} <span class="text-rose-500">*</span></label
+                >{{ messages.m_c25d47561bec }} <span class="text-rose-500">*</span></label
               >
               <input
                 type="text"
@@ -188,15 +186,15 @@
                     (nameControl.dirty || nameControl.touched)
                   ),
                 }"
-                [placeholder]="'أدخل اسمك الكريم' | translate"
+                [placeholder]="messages.m_0499f346f405"
               />
               @if (nameControl.invalid && (nameControl.dirty || nameControl.touched)) {
                 <p class="text-rose-500 text-xs mt-1 font-medium">
                   @if (nameControl.errors?.['required']) {
-                    الاسم مطلوب.
+                    {{ validation.nameRequired }}
                   }
                   @if (nameControl.errors?.['minlength']) {
-                    يجب أن يتكون الاسم من 3 أحرف على الأقل.
+                    {{ validation.nameLength }}
                   }
                 </p>
               }
@@ -205,7 +203,7 @@
             <!-- Phone Input -->
             <div>
               <label class="block text-sm font-bold text-slate-700 mb-2"
-                >{{ 'رقم الهاتف' | translate }} <span class="text-rose-500">*</span></label
+                >{{ messages.m_211cce4ca4ef }} <span class="text-rose-500">*</span></label
               >
               <input
                 type="tel"
@@ -227,7 +225,7 @@
               />
               @if (phoneControl.invalid && (phoneControl.dirty || phoneControl.touched)) {
                 <p class="text-rose-500 text-xs mt-1 font-medium">
-                  {{ 'رقم الهاتف مطلوب.' | translate }}
+                  {{ messages.m_a11b17485f35 }}
                 </p>
               }
             </div>
@@ -236,7 +234,7 @@
           <!-- Email Input -->
           <div>
             <label class="block text-sm font-bold text-slate-700 mb-2"
-              >{{ 'البريد الإلكتروني' | translate }} <span class="text-rose-500">*</span></label
+              >{{ messages.m_0915ef8ea533 }} <span class="text-rose-500">*</span></label
             >
             <input
               type="email"
@@ -259,10 +257,10 @@
             @if (emailControl.invalid && (emailControl.dirty || emailControl.touched)) {
               <p class="text-rose-500 text-xs mt-1 font-medium">
                 @if (emailControl.errors?.['required']) {
-                  البريد الإلكتروني مطلوب.
+                  {{ validation.emailRequired }}
                 }
                 @if (emailControl.errors?.['email']) {
-                  يرجى إدخال بريد إلكتروني صحيح.
+                  {{ validation.emailInvalid }}
                 }
               </p>
             }
@@ -271,24 +269,24 @@
           <!-- Subject Input -->
           <div>
             <label class="block text-sm font-bold text-slate-700 mb-2">{{
-              'موضوع الرسالة' | translate
+              messages.m_46c4079468f0
             }}</label>
             <select
               [(ngModel)]="formData.subject"
               name="subject"
               class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#4F2DB7] focus:bg-white transition"
             >
-              <option value="general">{{ 'استفسار عام' | translate }}</option>
-              <option value="courses">{{ 'استفسار عن المناهج والكورسات' | translate }}</option>
-              <option value="tech">{{ 'مشكلة تقنية في المنصة' | translate }}</option>
-              <option value="other">{{ 'موضوع آخر' | translate }}</option>
+              <option value="general">{{ messages.m_10abd58851b1 }}</option>
+              <option value="courses">{{ messages.m_7740a2ed65a8 }}</option>
+              <option value="tech">{{ messages.m_9fefbe40ac00 }}</option>
+              <option value="other">{{ messages.m_44fb9984749d }}</option>
             </select>
           </div>
 
           <!-- Message Input -->
           <div>
             <label class="block text-sm font-bold text-slate-700 mb-2"
-              >{{ 'الرسالة' | translate }} <span class="text-rose-500">*</span></label
+              >{{ messages.m_bf04bed9b3fa }} <span class="text-rose-500">*</span></label
             >
             <textarea
               [(ngModel)]="formData.message"
@@ -306,15 +304,15 @@
                   (messageControl.dirty || messageControl.touched)
                 ),
               }"
-              [placeholder]="'اكتب رسالتك هنا بالتفصيل...' | translate"
+              [placeholder]="messages.m_ea5b08e4316a"
             ></textarea>
             @if (messageControl.invalid && (messageControl.dirty || messageControl.touched)) {
               <p class="text-rose-500 text-xs mt-1 font-medium">
                 @if (messageControl.errors?.['required']) {
-                  محتوى الرسالة مطلوب.
+                  {{ validation.messageRequired }}
                 }
                 @if (messageControl.errors?.['minlength']) {
-                  يجب أن تكون الرسالة من 5 أحرف على الأقل.
+                  {{ validation.messageLength }}
                 }
               </p>
             }
@@ -328,10 +326,10 @@
           >
             @if (isSubmitting) {
               <i class="fa-solid fa-circle-notch animate-spin text-white"></i>
-              <span>{{ 'جاري الإرسال...' | translate }}</span>
+              <span>{{ messages.m_b303cc20c191 }}</span>
             } @else {
               <i class="fa-solid fa-paper-plane"></i>
-              <span>{{ 'فتح الرسالة في البريد' | translate }}</span>
+              <span>{{ messages.m_df0ee33a777c }}</span>
             }
           </button>
         </form>

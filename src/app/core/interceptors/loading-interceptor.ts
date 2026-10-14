@@ -5,7 +5,6 @@ import { catchError, defer, finalize, throwError, timeout, TimeoutError } from '
 import { environment } from '../../../environments/environment';
 import { LoadingService } from '../services/loading.service';
 import { ToastService } from '../services/toast.service';
-import { PreferencesService } from '../services/preferences.service';
 
 /** Opt out for background requests or components that already present their own errors. */
 export const SKIP_LOADING = new HttpContextToken(() => false);
@@ -14,7 +13,6 @@ export const SKIP_ERROR_NOTIFICATION = new HttpContextToken(() => false);
 export const loadingInterceptor: HttpInterceptorFn = (request, next) => {
   const loading = inject(LoadingService);
   const toast = inject(ToastService);
-  const preferences = inject(PreferencesService);
   const browser = isPlatformBrowser(inject(PLATFORM_ID));
   const apiUrl = new URL(environment.baseUrl);
   const url = new URL(request.url, apiUrl);
@@ -31,19 +29,15 @@ export const loadingInterceptor: HttpInterceptorFn = (request, next) => {
           const status = error instanceof HttpErrorResponse ? error.status : 0;
           const message =
             error instanceof TimeoutError
-              ? 'الخدمة استغرقت وقتًا أطول من المتوقع. حاول مرة أخرى.'
+              ? $localize`:@@m_59e4530ad466:الخدمة استغرقت وقتًا أطول من المتوقع. حاول مرة أخرى.`
               : status === 429
-                ? 'طلبات كثيرة، انتظر قليلًا ثم حاول مرة أخرى.'
+                ? $localize`:@@m_4176c61da5b7:طلبات كثيرة، انتظر قليلًا ثم حاول مرة أخرى.`
                 : status === 401 || status === 403
-                  ? 'تعذر إتمام الطلب. تأكد من صلاحية حسابك.'
+                  ? $localize`:@@m_5efe47224313:تعذر إتمام الطلب. تأكد من صلاحية حسابك.`
                   : status >= 400 && status < 500
-                    ? 'راجع البيانات المدخلة وحاول مرة أخرى.'
-                    : 'تعذر الاتصال بالخدمة. حاول مرة أخرى بعد قليل.';
-          toast.show(
-            preferences.translate(message),
-            'error',
-            preferences.translate('تعذر إتمام الطلب'),
-          );
+                    ? $localize`:@@m_544af2ef9df7:راجع البيانات المدخلة وحاول مرة أخرى.`
+                    : $localize`:@@m_1657a1247635:تعذر الاتصال بالخدمة. حاول مرة أخرى بعد قليل.`;
+          toast.show(message, 'error', $localize`:@@m_d2e677c87f94:تعذر إتمام الطلب`);
         }
         // Preserve the original error; never log bodies, attach unrequested credentials, or replay writes.
         return throwError(() => error);

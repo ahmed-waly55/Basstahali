@@ -9,24 +9,24 @@
       <span
         class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-100 text-[#4F2DB7] text-sm font-bold mb-3"
       >
-        {{ 'باقات الحصص المباشرة' | translate }}
+        {{ messages.m_cc7c628c0943 }}
       </span>
       <h1 class="text-3xl md:text-4xl font-black text-slate-900 leading-relaxed">
-        {{ 'اختر' | translate }}
-        <span class="text-[#4F2DB7]">{{ 'الباقة المناسبة لك' | translate }}</span>
+        {{ messages.m_f08dbdfff820 }}
+        <span class="text-[#4F2DB7]">{{ messages.m_99839e1179a7 }}</span>
       </h1>
       <p class="mt-3 text-slate-600 text-base md:text-lg leading-relaxed">
-        {{ '4 مواد + مادة هدية، و8 حصص لكل مادة.' | translate }}
+        {{ messages.m_277a62a440ec }}
       </p>
       @if (pricing.isEgypt()) {
         <p class="mt-3 text-sm text-slate-500 leading-relaxed">
-          {{ 'أسعار مصر بالجنيه المصري، بسعر ثابت 15 جنيهًا لكل درهم.' | translate }}
+          {{ messages.m_48e0ece017eb }}
         </p>
       }
 
       <div
         role="group"
-        [attr.aria-label]="'اختر المنهج' | translate"
+        [attr.aria-label]="messages.m_3d2fb6a4d73c"
         class="mt-7 grid grid-cols-2 gap-2 p-2 rounded-2xl bg-white border border-slate-200 max-w-md mx-auto shadow-sm"
       >
         @for (curriculum of curricula; track curriculum.id) {
@@ -38,15 +38,15 @@
             aria-controls="pricing-plans"
             (click)="selectedCurriculum.set(curriculum.id)"
           >
-            {{ curriculum.name | translate }}
+            {{ curriculum.name }}
           </button>
         }
       </div>
     </div>
 
-    <div id="pricing-plans" role="region" [attr.aria-label]="activeCurriculum().name | translate">
+    <div id="pricing-plans" role="region" [attr.aria-label]="activeCurriculum().name">
       <h2 class="text-center text-xl font-bold text-[#4F2DB7] mb-6">
-        {{ activeCurriculum().name | translate }}
+        {{ activeCurriculum().name }}
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch max-w-6xl mx-auto">
         @for (plan of activeCurriculum().plans; track plan.id; let i = $index) {
@@ -56,29 +56,24 @@
             [attr.data-aos-delay]="i * 100"
           >
             <div class="border-b border-slate-100 pb-6 mb-6">
-              <h3 class="text-xl font-bold text-slate-900 mb-2">{{ plan.name | translate }}</h3>
-              <p class="text-sm text-slate-500">{{ 'باقة 4 مواد + مادة هدية' | translate }}</p>
+              <h3 class="text-xl font-bold text-slate-900 mb-2">{{ plan.name }}</h3>
+              <p class="text-sm text-slate-500">{{ messages.m_692fc0d89aa0 }}</p>
               <div class="mt-5 flex flex-wrap items-baseline gap-2">
                 <span class="plan-price text-4xl font-black text-slate-900" dir="ltr">{{
                   pricing.amount(plan.price)
                 }}</span>
-                <span class="text-sm font-bold text-slate-500">{{
-                  pricing.currencyLabel() | translate
-                }}</span>
+                <span class="text-sm font-bold text-slate-500">{{ pricing.currencyLabel() }}</span>
               </div>
               @if (plan.previousPrice) {
                 <div class="mt-3 flex flex-wrap items-center gap-3 text-sm">
                   <span class="text-slate-500">
-                    {{ 'بدلاً من' | translate }}
-                    <s
-                      >{{ pricing.amount(plan.previousPrice) }}
-                      {{ pricing.currencyLabel() | translate }}</s
-                    >
+                    {{ messages.m_b596c59ccd7f }}
+                    <s>{{ pricing.amount(plan.previousPrice) }} {{ pricing.currencyLabel() }}</s>
                   </span>
                   <span
                     class="inline-flex rounded-full bg-[#F9B400] px-2.5 py-1 text-xs font-bold text-[#3D1A6D]"
                   >
-                    {{ 'خصم 20%' | translate }}
+                    {{ messages.m_d80c2c9d5035 }}
                   </span>
                 </div>
               }
@@ -101,7 +96,7 @@
                       <path d="m5 12 4 4L19 6" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                   </span>
-                  <span class="text-slate-700 font-medium">{{ feature | translate }}</span>
+                  <span class="text-slate-700 font-medium">{{ feature }}</span>
                 </li>
               }
             </ul>
@@ -111,11 +106,7 @@
               target="_blank"
               rel="noopener noreferrer"
               [attr.aria-label]="
-                ('اشترك عبر واتساب' | translate) +
-                ' — ' +
-                (activeCurriculum().name | translate) +
-                ' — ' +
-                (plan.name | translate)
+                messages.m_5500f35d67a3 + ' — ' + activeCurriculum().name + ' — ' + plan.name
               "
               class="mt-auto w-full inline-flex items-center justify-center gap-2 text-center bg-[#4F2DB7] hover:bg-[#3D1A6D] text-white font-bold text-sm py-3.5 px-4 rounded-2xl transition-colors"
             >
@@ -136,7 +127,7 @@
                   stroke-linejoin="round"
                 />
               </svg>
-              {{ 'اشترك عبر واتساب' | translate }}
+              {{ messages.m_5500f35d67a3 }}
             </a>
           </article>
         }
@@ -144,7 +135,7 @@
     </div>
 
     <p class="mt-8 text-center text-sm text-slate-500 leading-relaxed">
-      {{ 'اختر باقتك للتواصل معنا مباشرة عبر واتساب وإتمام الاشتراك.' | translate }}
+      {{ messages.m_7babcfaf69c7 }}
     </p>
   </div>
 </section>

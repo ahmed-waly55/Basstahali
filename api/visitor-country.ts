@@ -1,5 +1,5 @@
 import type { IncomingMessage, ServerResponse } from 'node:http';
-import { COUNTRY_CACHE_CONTROL, visitorCountry } from '../src/server/visitor-country';
+import { COUNTRY_CACHE_CONTROL, visitorCountry } from '../src/server/visitor-country.js';
 
 export default function handler(request: IncomingMessage, response: ServerResponse): void {
   response.setHeader('Cache-Control', COUNTRY_CACHE_CONTROL);

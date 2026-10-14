@@ -1,0 +1,4488 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="ar" trgLang="en">
+  <file id="ngi18n" original="ng.template">
+    <unit id="m_550e1a6e8428">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:24</note>
+      </notes>
+      <segment state="translated">
+        <source>منصة تعليمية عربية</source>
+        <target>An Arabic learning platform</target>
+      </segment>
+    </unit>
+    <unit id="m_629d28fb5255">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:25</note>
+        <note category="location">src/app/shared/header/header.component.ts:21</note>
+      </notes>
+      <segment state="translated">
+        <source>من نحن</source>
+        <target>About us</target>
+      </segment>
+    </unit>
+    <unit id="m_aef2099d8967">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:26</note>
+      </notes>
+      <segment state="translated">
+        <source>في</source>
+        <target>in</target>
+      </segment>
+    </unit>
+    <unit id="m_70b341c96b9c">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:27</note>
+        <note category="location">src/app/Features/hero/hero.component.ts:17</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:90</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:139</note>
+        <note category="location">src/app/shared/footer/footer.component.ts:27</note>
+      </notes>
+      <segment state="translated">
+        <source>بسطهالي</source>
+        <target>Basstahali</target>
+      </segment>
+    </unit>
+    <unit id="m_ce66c330dee6">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:28</note>
+      </notes>
+      <segment state="translated">
+        <source>نؤمن أن التعلم يجب أن يكون بسيطًا، ممتعًا، ومتوافقًا مع احتياجات كل طالب، لذلك نسعى لبناء تجربة تعليمية حديثة تجمع بين التكنولوجيا وأفضل المعلمين في مكان واحد.</source>
+        <target>We believe learning should be simple, enjoyable and tailored to each student, bringing technology and great teachers together.</target>
+      </segment>
+    </unit>
+    <unit id="m_b3ab54d33323">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:29</note>
+      </notes>
+      <segment state="translated">
+        <source>قصتنا</source>
+        <target>Our story</target>
+      </segment>
+    </unit>
+    <unit id="m_64334b87da19">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:30</note>
+      </notes>
+      <segment state="translated">
+        <source>بدأت الفكرة من معاناة الطلاب</source>
+        <target>Inspired by students' challenges</target>
+      </segment>
+    </unit>
+    <unit id="m_ca3d1135c158">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:31</note>
+      </notes>
+      <segment state="translated">
+        <source>جاءت فكرة</source>
+        <target>The idea behind</target>
+      </segment>
+    </unit>
+    <unit id="m_c57df5bd49a6">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:32</note>
+      </notes>
+      <segment state="translated">
+        <source>من رغبة حقيقية في تقديم تجربة تعليمية مختلفة. لاحظنا أن الكثير من الطلاب يواجهون صعوبة في الوصول إلى محتوى تعليمي منظم، ومدرسين متميزين، ومتابعة مستمرة لمستواهم الدراسي، مما يجعل رحلة التعلم أكثر تعقيدًا.</source>
+        <target>came from a desire for better learning. Students needed organised content, excellent teachers and consistent support to make learning simpler.</target>
+      </segment>
+    </unit>
+    <unit id="m_b95e1c7f056d">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:33</note>
+      </notes>
+      <segment state="translated">
+        <source>لذلك أنشأنا منصة تجمع كل ما يحتاجه الطالب في مكان واحد، بدايةً من الدروس التعليمية والواجبات والاختبارات وحتى متابعة الأداء، لنساعد الطلاب على التعلم بطريقة أسهل، وأكثر تنظيمًا، وأكثر فاعلية.</source>
+        <target>We built a platform that brings lessons, assignments, quizzes and progress tracking together for easier, more organised learning.</target>
+      </segment>
+    </unit>
+    <unit id="m_c1b8105ad1f9">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:34</note>
+      </notes>
+      <segment state="translated">
+        <source>تعلم أسهل</source>
+        <target>Easier learning</target>
+      </segment>
+    </unit>
+    <unit id="m_b5e97a869b82">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:35</note>
+      </notes>
+      <segment state="translated">
+        <source>محتوى تعليمي منظم وواضح يساعد الطالب على الفهم بسرعة.</source>
+        <target>Clear, organised content for better understanding.</target>
+      </segment>
+    </unit>
+    <unit id="m_1f782c0ec747">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:36</note>
+      </notes>
+      <segment state="translated">
+        <source>متابعة ذكية</source>
+        <target>Smart progress tracking</target>
+      </segment>
+    </unit>
+    <unit id="m_045139e887f0">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:37</note>
+      </notes>
+      <segment state="translated">
+        <source>تقارير وإحصائيات دقيقة لمتابعة مستوى الطالب أولًا بأول.</source>
+        <target>Detailed reports to keep track of student progress.</target>
+      </segment>
+    </unit>
+    <unit id="m_2f7c58b3ce2a">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:38</note>
+        <note category="location">src/app/Features/features/features.component.ts:45</note>
+      </notes>
+      <segment state="translated">
+        <source>نتائج أفضل</source>
+        <target>Better results</target>
+      </segment>
+    </unit>
+    <unit id="m_2fe6c081ea45">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:39</note>
+      </notes>
+      <segment state="translated">
+        <source>أدوات تعليمية حديثة تساعد الطالب على تحقيق أفضل النتائج.</source>
+        <target>Modern learning tools to help students achieve their best.</target>
+      </segment>
+    </unit>
+    <unit id="m_575e2332b05e">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:40</note>
+      </notes>
+      <segment state="translated">
+        <source>رؤيتنا ورسالتنا</source>
+        <target>Our vision and mission</target>
+      </segment>
+    </unit>
+    <unit id="m_118d336b7441">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:41</note>
+      </notes>
+      <segment state="translated">
+        <source>نبني مستقبل التعليم الرقمي</source>
+        <target>Building the future of digital learning</target>
+      </segment>
+    </unit>
+    <unit id="m_3ad3619602bd">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:42</note>
+      </notes>
+      <segment state="translated">
+        <source>نسعى لتقديم تجربة تعليمية متكاملة تساعد الطلاب على التعلم بسهولة، وتمكن المعلمين من تقديم محتوى تعليمي متميز داخل بيئة رقمية حديثة.</source>
+        <target>We bring students and teachers together in a modern digital environment for better learning.</target>
+      </segment>
+    </unit>
+    <unit id="m_fe1ccd2ebf31">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:43</note>
+      </notes>
+      <segment state="translated">
+        <source>رؤيتنا</source>
+        <target>Our vision</target>
+      </segment>
+    </unit>
+    <unit id="m_41c4e99d5744">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:44</note>
+      </notes>
+      <segment state="translated">
+        <source>أن تصبح</source>
+        <target>To become</target>
+      </segment>
+    </unit>
+    <unit id="m_f24aff809eda">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:45</note>
+      </notes>
+      <segment state="translated">
+        <source>المنصة التعليمية الأولى في الوطن العربي، من خلال تقديم تجربة تعلم حديثة تعتمد على التكنولوجيا، وتوفر محتوى تعليمي عالي الجودة يناسب جميع الطلاب.</source>
+        <target>A leading learning platform in the Arab world, combining technology with quality educational content for every student.</target>
+      </segment>
+    </unit>
+    <unit id="m_9c36679ec227">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:46</note>
+      </notes>
+      <segment state="translated">
+        <source>رسالتنا</source>
+        <target>Our mission</target>
+      </segment>
+    </unit>
+    <unit id="m_beb4d0cd6e70">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:47</note>
+      </notes>
+      <segment state="translated">
+        <source>تمكين الطلاب من الوصول إلى تعليم متميز في أي وقت ومن أي مكان، مع توفير أدوات ذكية تساعدهم على التطور، وتمكن المعلمين من متابعة تقدم طلابهم بسهولة.</source>
+        <target>Empowering students to access quality education anywhere, with smart tools for learning and teacher-led progress tracking.</target>
+      </segment>
+    </unit>
+    <unit id="m_733f81a21615">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:48</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:89</note>
+      </notes>
+      <segment state="translated">
+        <source>مميزات المنصة</source>
+        <target>Platform features</target>
+      </segment>
+    </unit>
+    <unit id="m_f23766d56fb0">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:49</note>
+      </notes>
+      <segment state="translated">
+        <source>لماذا يختارنا الطلاب؟</source>
+        <target>Why students choose us</target>
+      </segment>
+    </unit>
+    <unit id="m_76911024e48e">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:50</note>
+      </notes>
+      <segment state="translated">
+        <source>لأننا نوفر تجربة تعليمية متكاملة تجمع بين جودة المحتوى، سهولة الاستخدام، والمتابعة المستمرة لتحقيق أفضل النتائج.</source>
+        <target>Quality content, simple tools and continuous support to help you achieve your best.</target>
+      </segment>
+    </unit>
+    <unit id="m_fcaf4653205b">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:51</note>
+      </notes>
+      <segment state="translated">
+        <source>دروس بجودة عالية</source>
+        <target>High-quality lessons</target>
+      </segment>
+    </unit>
+    <unit id="m_e4175debe428">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:52</note>
+      </notes>
+      <segment state="translated">
+        <source>محتوى احترافي مقدم بواسطة نخبة من أفضل المعلمين مع شرح مبسط يناسب جميع المستويات.</source>
+        <target>Quality content and clear explanations from experienced teachers for every level.</target>
+      </segment>
+    </unit>
+    <unit id="m_76730e1a40ba">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:53</note>
+      </notes>
+      <segment state="translated">
+        <source>اختبارات تفاعلية</source>
+        <target>Interactive quizzes</target>
+      </segment>
+    </unit>
+    <unit id="m_015618f508bc">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:54</note>
+      </notes>
+      <segment state="translated">
+        <source>اختبارات ذكية تساعد الطالب على قياس مستواه والحصول على نتائج فورية مع تحليل الأداء.</source>
+        <target>Smart quizzes with instant results and performance insights.</target>
+      </segment>
+    </unit>
+    <unit id="m_77e71c2d7cba">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:55</note>
+        <note category="location">src/app/Features/features/features.component.ts:33</note>
+      </notes>
+      <segment state="translated">
+        <source>متابعة الأداء</source>
+        <target>Track progress</target>
+      </segment>
+    </unit>
+    <unit id="m_bb07c2c47a4d">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:56</note>
+      </notes>
+      <segment state="translated">
+        <source>تقارير وإحصائيات دقيقة لمتابعة تقدم الطالب ومعرفة نقاط القوة والجوانب التي تحتاج إلى تطوير.</source>
+        <target>Detailed reports to identify strengths and areas for improvement.</target>
+      </segment>
+    </unit>
+    <unit id="m_7d6b273c6b53">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:57</note>
+      </notes>
+      <segment state="translated">
+        <source>نخبة من المعلمين</source>
+        <target>Expert teachers</target>
+      </segment>
+    </unit>
+    <unit id="m_8d246f28bb70">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:58</note>
+      </notes>
+      <segment state="translated">
+        <source>فريق من المعلمين ذوي الخبرة يقدمون محتوى تعليمي متميز يساعد الطلاب على تحقيق أفضل النتائج.</source>
+        <target>Experienced teachers helping students achieve their best.</target>
+      </segment>
+    </unit>
+    <unit id="m_90b224ff944b">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:59</note>
+        <note category="location">src/app/shared/footer/footer.component.ts:24</note>
+      </notes>
+      <segment state="translated">
+        <source>الأسئلة الشائعة</source>
+        <target>Frequently asked questions</target>
+      </segment>
+    </unit>
+    <unit id="m_9f5d9ed75f12">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:60</note>
+      </notes>
+      <segment state="translated">
+        <source>كل ما تريد معرفته عن بسطهالي</source>
+        <target>Everything you need to know about Basstahali</target>
+      </segment>
+    </unit>
+    <unit id="m_1e723c79a7d7">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:61</note>
+      </notes>
+      <segment state="translated">
+        <source>إذا لم تجد إجابة لسؤالك يمكنك التواصل مع فريق الدعم في أي وقت.</source>
+        <target>Can't find your answer? Contact our support team.</target>
+      </segment>
+    </unit>
+    <unit id="m_98df5c78e7dd">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:72</note>
+      </notes>
+      <segment state="translated">
+        <source>ما هي منصة بسطهالي؟</source>
+        <target>What is Basstahali?</target>
+      </segment>
+    </unit>
+    <unit id="m_0a5d67f04d14">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:73</note>
+      </notes>
+      <segment state="translated">
+        <source>بسطهالي هي منصة تعليمية إلكترونية تقدم الدروس والواجبات والاختبارات التفاعلية لمساعدة الطلاب على تحسين مستواهم الدراسي.</source>
+        <target>Basstahali offers online lessons, assignments and interactive quizzes to help students improve.</target>
+      </segment>
+    </unit>
+    <unit id="m_590e36a6c427">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:76</note>
+      </notes>
+      <segment state="translated">
+        <source>هل يمكنني الدراسة من الهاتف المحمول؟</source>
+        <target>Can I study on my phone?</target>
+      </segment>
+    </unit>
+    <unit id="m_c4d22165438e">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:77</note>
+      </notes>
+      <segment state="translated">
+        <source>نعم، يمكنك استخدام المنصة من الهاتف أو الجهاز اللوحي أو الكمبيوتر.</source>
+        <target>Yes. Use the platform on a phone, tablet or computer.</target>
+      </segment>
+    </unit>
+    <unit id="m_6210bf4bb967">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:80</note>
+      </notes>
+      <segment state="translated">
+        <source>هل جميع المواد الدراسية متوفرة؟</source>
+        <target>Are all subjects available?</target>
+      </segment>
+    </unit>
+    <unit id="m_e0d2612f5e85">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:81</note>
+      </notes>
+      <segment state="translated">
+        <source>نوفر المواد الدراسية حسب المنهج والصف الدراسي ويتم إضافة محتوى جديد باستمرار.</source>
+        <target>Subjects are available by curriculum and grade, with new content added regularly.</target>
+      </segment>
+    </unit>
+    <unit id="m_326ad6d38abc">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:84</note>
+      </notes>
+      <segment state="translated">
+        <source>كيف أتابع تقدمي الدراسي؟</source>
+        <target>How do I track my progress?</target>
+      </segment>
+    </unit>
+    <unit id="m_2a51fa2be112">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:85</note>
+      </notes>
+      <segment state="translated">
+        <source>توفر المنصة تقارير وإحصائيات توضح نتائج الاختبارات والواجبات ومستوى التقدم.</source>
+        <target>The platform provides reports on quizzes, assignments and learning progress.</target>
+      </segment>
+    </unit>
+    <unit id="m_e68bf79615f2">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:88</note>
+      </notes>
+      <segment state="translated">
+        <source>هل يمكن لولي الأمر متابعة الطالب؟</source>
+        <target>Can parents track progress?</target>
+      </segment>
+    </unit>
+    <unit id="m_bbc6465028fa">
+      <notes>
+        <note category="location">src/app/Features/about/about.component.ts:89</note>
+      </notes>
+      <segment state="translated">
+        <source>نعم، يمكن لولي الأمر متابعة مستوى الطالب ونتائجه والاطلاع على التقارير.</source>
+        <target>Yes. Parents can follow progress, results and reports.</target>
+      </segment>
+    </unit>
+    <unit id="contactNameRequired">
+      <notes>
+        <note category="location">src/app/Features/contact/contact.component.ts:24</note>
+      </notes>
+      <segment state="translated">
+        <source>الاسم مطلوب.</source>
+        <target>Name is required.</target>
+      </segment>
+    </unit>
+    <unit id="contactNameLength">
+      <notes>
+        <note category="location">src/app/Features/contact/contact.component.ts:25</note>
+      </notes>
+      <segment state="translated">
+        <source>يجب أن يتكون الاسم من 3 أحرف على الأقل.</source>
+        <target>Name must contain at least 3 characters.</target>
+      </segment>
+    </unit>
+    <unit id="contactEmailRequired">
+      <notes>
+        <note category="location">src/app/Features/contact/contact.component.ts:26</note>
+      </notes>
+      <segment state="translated">
+        <source>البريد الإلكتروني مطلوب.</source>
+        <target>Email is required.</target>
+      </segment>
+    </unit>
+    <unit id="contactEmailInvalid">
+      <notes>
+        <note category="location">src/app/Features/contact/contact.component.ts:27</note>
+      </notes>
+      <segment state="translated">
+        <source>يرجى إدخال بريد إلكتروني صحيح.</source>
+        <target>Please enter a valid email address.</target>
+      </segment>
+    </unit>
+    <unit id="contactMessageRequired">
+      <notes>
+        <note category="location">src/app/Features/contact/contact.component.ts:28</note>
+      </notes>
+      <segment state="translated">
+        <source>محتوى الرسالة مطلوب.</source>
+        <target>Message is required.</target>
+      </segment>
+    </unit>
+    <unit id="contactMessageLength">
+      <notes>
+        <note category="location">src/app/Features/contact/contact.component.ts:29</note>
+      </notes>
+      <segment state="translated">
+        <source>يجب أن تكون الرسالة من 5 أحرف على الأقل.</source>
+        <target>Message must contain at least 5 characters.</target>
+      </segment>
+    </unit>
+    <unit id="m_9558283b468d">
+      <notes>
+        <note category="location">src/app/Features/contact/contact.component.ts:32</note>
+      </notes>
+      <segment state="translated">
+        <source>دائماً في خدمتك</source>
+        <target>Always here to help</target>
+      </segment>
+    </unit>
+    <unit id="m_3e0489cbf4d1">
+      <notes>
+        <note category="location">src/app/Features/contact/contact.component.ts:33</note>
+      </notes>
+      <segment state="translated">
+        <source>تواصل</source>
+        <target>Get in touch</target>
+      </segment>
+    </unit>
+    <unit id="m_1848e4c3a18f">
+      <notes>
+        <note category="location">src/app/Features/contact/contact.component.ts:34</note>
+      </notes>
+      <segment state="translated">
+        <source>معنا</source>
+        <target>with us</target>
+      </segment>
+    </unit>
+    <unit id="m_881d28ce21c9">
+      <notes>
+        <note category="location">src/app/Features/contact/contact.component.ts:35</note>
+      </notes>
+      <segment state="translated">
+        <source>هل لديك استفسار أو تحتاج إلى مساعدة؟ فريقنا جاهز للرد على جميع أسئلتك في أسرع وقت.</source>
+        <target>Have a question? Our team is ready to help.</target>
+      </segment>
+    </unit>
+    <unit id="m_097a879115b1">
+      <notes>
+        <note category="location">src/app/Features/contact/contact.component.ts:36</note>
+      </notes>
+      <segment state="translated">
+        <source>معلومات التواصل</source>
+        <target>Contact information</target>
+      </segment>
+    </unit>
+    <unit id="m_add7d016d30f">
+      <notes>
+        <note category="location">src/app/Features/contact/contact.component.ts:37</note>
+      </notes>
+      <segment state="translated">
+        <source>الهاتف / واتساب</source>
+        <target>Phone / WhatsApp</target>
+      </segment>
+    </unit>
+    <unit id="m_0915ef8ea533">
+      <notes>
+        <note category="location">src/app/Features/contact/contact.component.ts:38</note>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:50</note>
+      </notes>
+      <segment state="translated">
+        <source>البريد الإلكتروني</source>
+        <target>Email address</target>
+      </segment>
+    </unit>
+    <unit id="m_ae2039744d1f">
+      <notes>
+        <note category="location">src/app/Features/contact/contact.component.ts:39</note>
+      </notes>
+      <segment state="translated">
+        <source>الموقع</source>
+        <target>Location</target>
+      </segment>
+    </unit>
+    <unit id="m_f6fcef2c495b">
+      <notes>
+        <note category="location">src/app/Features/contact/contact.component.ts:40</note>
+      </notes>
+      <segment state="translated">
+        <source>الإمارات العربية المتحدة</source>
+        <target>United Arab Emirates</target>
+      </segment>
+    </unit>
+    <unit id="m_5fc2d6940b78">
+      <notes>
+        <note category="location">src/app/Features/contact/contact.component.ts:41</note>
+      </notes>
+      <segment state="translated">
+        <source>تابعنا على شبكات التواصل</source>
+        <target>Follow us</target>
+      </segment>
+    </unit>
+    <unit id="m_8a31c1a876a3">
+      <notes>
+        <note category="location">src/app/Features/contact/contact.component.ts:42</note>
+      </notes>
+      <segment state="translated">
+        <source>أرسل لنا رسالة</source>
+        <target>Send us a message</target>
+      </segment>
+    </unit>
+    <unit id="m_c25d47561bec">
+      <notes>
+        <note category="location">src/app/Features/contact/contact.component.ts:43</note>
+      </notes>
+      <segment state="translated">
+        <source>الاسم بالكامل</source>
+        <target>Full name</target>
+      </segment>
+    </unit>
+    <unit id="m_211cce4ca4ef">
+      <notes>
+        <note category="location">src/app/Features/contact/contact.component.ts:44</note>
+      </notes>
+      <segment state="translated">
+        <source>رقم الهاتف</source>
+        <target>Phone number</target>
+      </segment>
+    </unit>
+    <unit id="m_a11b17485f35">
+      <notes>
+        <note category="location">src/app/Features/contact/contact.component.ts:45</note>
+      </notes>
+      <segment state="translated">
+        <source>رقم الهاتف مطلوب.</source>
+        <target>Phone number is required.</target>
+      </segment>
+    </unit>
+    <unit id="m_46c4079468f0">
+      <notes>
+        <note category="location">src/app/Features/contact/contact.component.ts:46</note>
+      </notes>
+      <segment state="translated">
+        <source>موضوع الرسالة</source>
+        <target>Message topic</target>
+      </segment>
+    </unit>
+    <unit id="m_10abd58851b1">
+      <notes>
+        <note category="location">src/app/Features/contact/contact.component.ts:47</note>
+      </notes>
+      <segment state="translated">
+        <source>استفسار عام</source>
+        <target>General enquiry</target>
+      </segment>
+    </unit>
+    <unit id="m_7740a2ed65a8">
+      <notes>
+        <note category="location">src/app/Features/contact/contact.component.ts:48</note>
+      </notes>
+      <segment state="translated">
+        <source>استفسار عن المناهج والكورسات</source>
+        <target>Curriculum and course enquiry</target>
+      </segment>
+    </unit>
+    <unit id="m_9fefbe40ac00">
+      <notes>
+        <note category="location">src/app/Features/contact/contact.component.ts:49</note>
+      </notes>
+      <segment state="translated">
+        <source>مشكلة تقنية في المنصة</source>
+        <target>Technical support</target>
+      </segment>
+    </unit>
+    <unit id="m_44fb9984749d">
+      <notes>
+        <note category="location">src/app/Features/contact/contact.component.ts:50</note>
+      </notes>
+      <segment state="translated">
+        <source>موضوع آخر</source>
+        <target>Other</target>
+      </segment>
+    </unit>
+    <unit id="m_bf04bed9b3fa">
+      <notes>
+        <note category="location">src/app/Features/contact/contact.component.ts:51</note>
+      </notes>
+      <segment state="translated">
+        <source>الرسالة</source>
+        <target>Message</target>
+      </segment>
+    </unit>
+    <unit id="m_b303cc20c191">
+      <notes>
+        <note category="location">src/app/Features/contact/contact.component.ts:52</note>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:65</note>
+      </notes>
+      <segment state="translated">
+        <source>جاري الإرسال...</source>
+        <target>Sending…</target>
+      </segment>
+    </unit>
+    <unit id="m_df0ee33a777c">
+      <notes>
+        <note category="location">src/app/Features/contact/contact.component.ts:53</note>
+      </notes>
+      <segment state="translated">
+        <source>فتح الرسالة في البريد</source>
+        <target>Open email draft</target>
+      </segment>
+    </unit>
+    <unit id="m_0499f346f405">
+      <notes>
+        <note category="location">src/app/Features/contact/contact.component.ts:54</note>
+      </notes>
+      <segment state="translated">
+        <source>أدخل اسمك الكريم</source>
+        <target>Enter your name</target>
+      </segment>
+    </unit>
+    <unit id="m_ea5b08e4316a">
+      <notes>
+        <note category="location">src/app/Features/contact/contact.component.ts:55</note>
+      </notes>
+      <segment state="translated">
+        <source>اكتب رسالتك هنا بالتفصيل...</source>
+        <target>Write your message here…</target>
+      </segment>
+    </unit>
+    <unit id="m_632baa1f8a32">
+      <notes>
+        <note category="location">src/app/Features/contact/contact.component.ts:97</note>
+      </notes>
+      <segment state="translated">
+        <source>استفسار من بسطهالي</source>
+        <target>Basstahali enquiry</target>
+      </segment>
+    </unit>
+    <unit id="courseLessonsLabel">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:32</note>
+      </notes>
+      <segment state="translated">
+        <source>درس</source>
+        <target>lessons</target>
+      </segment>
+    </unit>
+    <unit id="m_370e5a7c84ab">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:35</note>
+      </notes>
+      <segment state="translated">
+        <source>المناهج والمسارات التعليمية</source>
+        <target>Curricula and learning pathways</target>
+      </segment>
+    </unit>
+    <unit id="m_a0ee55410b16">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:36</note>
+      </notes>
+      <segment state="translated">
+        <source>استكشف</source>
+        <target>Explore</target>
+      </segment>
+    </unit>
+    <unit id="m_cf8fb985b213">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:37</note>
+      </notes>
+      <segment state="translated">
+        <source>أحدث الكورسات والمواد</source>
+        <target>Latest courses and subjects</target>
+      </segment>
+    </unit>
+    <unit id="m_7a5ffd5900ff">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:38</note>
+      </notes>
+      <segment state="translated">
+        <source>محتوى تعليمي شامل ومبسط مصمم خصيصاً لمساعدة الطلاب على التفوق الدراسي واجتياز الاختبارات.</source>
+        <target>Clear, comprehensive learning content to help students succeed at school and in exams.</target>
+      </segment>
+    </unit>
+    <unit id="m_f10712b64992">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:39</note>
+      </notes>
+      <segment state="translated">
+        <source>جنية</source>
+        <target>EGP</target>
+      </segment>
+    </unit>
+    <unit id="m_83fe3c1c8573">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:40</note>
+      </notes>
+      <segment state="translated">
+        <source>المعلم المسؤول</source>
+        <target>Teacher</target>
+      </segment>
+    </unit>
+    <unit id="m_9c34042f2935">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:41</note>
+      </notes>
+      <segment state="translated">
+        <source>تفاصيل المنهج</source>
+        <target>Curriculum details</target>
+      </segment>
+    </unit>
+    <unit id="m_0fba16800630">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:42</note>
+      </notes>
+      <segment state="translated">
+        <source>اشترك الآن</source>
+        <target>Subscribe now</target>
+      </segment>
+    </unit>
+    <unit id="m_11fdef2dc5f8">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:50</note>
+        <note category="location">src/app/Features/teachers/teachers.component.ts:40</note>
+      </notes>
+      <segment state="translated">
+        <source>الكل</source>
+        <target>All</target>
+      </segment>
+    </unit>
+    <unit id="m_2b7e1606aeba">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:51</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:115</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:129</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:136</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:157</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:178</note>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:74</note>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:98</note>
+      </notes>
+      <segment state="translated">
+        <source>المرحلة الثانوية</source>
+        <target>Secondary school</target>
+      </segment>
+    </unit>
+    <unit id="m_3eb87a1f7668">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:52</note>
+      </notes>
+      <segment state="translated">
+        <source>المرحلة الإعدادية</source>
+        <target>Preparatory school</target>
+      </segment>
+    </unit>
+    <unit id="m_36d9c98fcafd">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:53</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:143</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:164</note>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:62</note>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:86</note>
+      </notes>
+      <segment state="translated">
+        <source>المرحلة الابتدائية</source>
+        <target>Primary school</target>
+      </segment>
+    </unit>
+    <unit id="m_fe287a2a471e">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:59</note>
+      </notes>
+      <segment state="translated">
+        <source>شرح مادة الرياضيات المتقدمة - الصف الثاني عشر</source>
+        <target>Advanced mathematics — Grade 12</target>
+      </segment>
+    </unit>
+    <unit id="m_f96df112ac2a">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:60</note>
+      </notes>
+      <segment state="translated">
+        <source>الصف 12 متقدم</source>
+        <target>Grade 12 Advanced</target>
+      </segment>
+    </unit>
+    <unit id="m_825de8950251">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:61</note>
+        <note category="location">src/app/Features/teachers/teachers.component.ts:41</note>
+        <note category="location">src/app/Features/teachers/teachers.component.ts:51</note>
+      </notes>
+      <segment state="translated">
+        <source>الرياضيات</source>
+        <target>Mathematics</target>
+      </segment>
+    </unit>
+    <unit id="m_bac8def995b8">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:67</note>
+      </notes>
+      <segment state="translated">
+        <source>18 ساعة</source>
+        <target>18 hours</target>
+      </segment>
+    </unit>
+    <unit id="m_e9b3e19631b5">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:70</note>
+      </notes>
+      <segment state="translated">
+        <source>شرح كامل للمنهج شاملاً التفاضل والتكامل، مع حل نماذج الامتحانات السابقة بالتفصيل.</source>
+        <target>Full curriculum coverage including calculus and worked exam papers.</target>
+      </segment>
+    </unit>
+    <unit id="m_891c08556834">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:72</note>
+        <note category="location">src/app/Features/teachers/teachers.component.ts:50</note>
+      </notes>
+      <segment state="translated">
+        <source>أ. أحمد سليمان</source>
+        <target>Ahmed Suleiman</target>
+      </segment>
+    </unit>
+    <unit id="m_1929def8710a">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:79</note>
+      </notes>
+      <segment state="translated">
+        <source>أساسيات الفيزياء وتطبيقاتها - الصف الحادي عشر</source>
+        <target>Physics fundamentals and applications — Grade 11</target>
+      </segment>
+    </unit>
+    <unit id="m_1cabdca3f6c2">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:80</note>
+      </notes>
+      <segment state="translated">
+        <source>الصف 11</source>
+        <target>Grade 11</target>
+      </segment>
+    </unit>
+    <unit id="m_81f1d571624a">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:81</note>
+      </notes>
+      <segment state="translated">
+        <source>الفيزياء</source>
+        <target>Physics</target>
+      </segment>
+    </unit>
+    <unit id="m_2e1dfe6cf489">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:87</note>
+      </notes>
+      <segment state="translated">
+        <source>14 ساعة</source>
+        <target>14 hours</target>
+      </segment>
+    </unit>
+    <unit id="m_4955ab10f746">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:90</note>
+      </notes>
+      <segment state="translated">
+        <source>تغطية شاملة لمفاهيم الحركة والقوى والطاقة مع تجارب تفاعلية ومسائل محلولة.</source>
+        <target>Explore motion, forces and energy with interactive examples and solved exercises.</target>
+      </segment>
+    </unit>
+    <unit id="m_e0258574b3da">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:92</note>
+        <note category="location">src/app/Features/teachers/teachers.component.ts:74</note>
+      </notes>
+      <segment state="translated">
+        <source>د. محمد الكردي</source>
+        <target>Dr Mohamed Al Kurdi</target>
+      </segment>
+    </unit>
+    <unit id="m_73a12781014e">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:99</note>
+      </notes>
+      <segment state="translated">
+        <source>كورس تأسيس واستعداد اختبارات الإنجليزية - المرحلة الإعدادية</source>
+        <target>English foundations and exam preparation — Preparatory school</target>
+      </segment>
+    </unit>
+    <unit id="m_6589f55bb252">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:100</note>
+      </notes>
+      <segment state="translated">
+        <source>الصف 7 - 9</source>
+        <target>Grades 7–9</target>
+      </segment>
+    </unit>
+    <unit id="m_fb090c279a7d">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:101</note>
+        <note category="location">src/app/Features/teachers/teachers.component.ts:63</note>
+      </notes>
+      <segment state="translated">
+        <source>اللغة الإنجليزية</source>
+        <target>English</target>
+      </segment>
+    </unit>
+    <unit id="m_6e8ab6de038f">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:107</note>
+      </notes>
+      <segment state="translated">
+        <source>10 ساعات</source>
+        <target>10 hours</target>
+      </segment>
+    </unit>
+    <unit id="m_5d1a2f0f9214">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:110</note>
+      </notes>
+      <segment state="translated">
+        <source>تطوير مهارات القراءة، الكتابة، والقواعد الأساسية لتأهيل الطالب لاختبارات الفصل.</source>
+        <target>Develop reading, writing and grammar skills for school assessments.</target>
+      </segment>
+    </unit>
+    <unit id="m_44dcaf6c0e96">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:112</note>
+        <note category="location">src/app/Features/teachers/teachers.component.ts:62</note>
+      </notes>
+      <segment state="translated">
+        <source>أ. سارة محمود</source>
+        <target>Sara Mahmoud</target>
+      </segment>
+    </unit>
+    <unit id="courseEnrollMessage">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:148</note>
+      </notes>
+      <segment state="translated">
+        <source>السلام عليكم، أرغب في التسجيل في كورس: <ph id="0" equiv="COURSE" disp="courseTitle" /></source>
+        <target>Hello, I would like to enrol in the course: <ph id="0" equiv="COURSE" disp="courseTitle" /></target>
+      </segment>
+    </unit>
+    <unit id="m_a9fe55e11e10">
+      <notes>
+        <note category="location">src/app/Features/curriculum-details/curriculum-details.component.ts:19</note>
+      </notes>
+      <segment state="translated">
+        <source>عودة للمناهج</source>
+        <target>Back to curricula</target>
+      </segment>
+    </unit>
+    <unit id="m_e56a7b103ef6">
+      <notes>
+        <note category="location">src/app/Features/curriculum-details/curriculum-details.component.ts:20</note>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:33</note>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:92</note>
+        <note category="location">src/app/shared/footer/footer.component.ts:17</note>
+      </notes>
+      <segment state="translated">
+        <source>المراحل الدراسية</source>
+        <target>School grades</target>
+      </segment>
+    </unit>
+    <unit id="m_8463b885352e">
+      <notes>
+        <note category="location">src/app/Features/curriculum-details/curriculum-details.component.ts:21</note>
+      </notes>
+      <segment state="translated">
+        <source>اختر المرحلة الدراسية المناسبة لك للاطلاع على كافة المواد</source>
+        <target>Choose your grade to explore its subjects.</target>
+      </segment>
+    </unit>
+    <unit id="m_cee8f138e31b">
+      <notes>
+        <note category="location">src/app/Features/curriculum-details/curriculum-details.component.ts:22</note>
+        <note category="location">src/app/Features/curriculum/curriculum.component.ts:22</note>
+        <note category="location">src/app/Features/subjects/subjects.component.ts:37</note>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:69</note>
+        <note category="location">src/app/shared/components/owl-loader/owl-loader.component.ts:14</note>
+      </notes>
+      <segment state="translated">
+        <source>جارٍ التحميل...</source>
+        <target>Loading…</target>
+      </segment>
+    </unit>
+    <unit id="m_e0465a89fde9">
+      <notes>
+        <note category="location">src/app/Features/curriculum-details/curriculum-details.component.ts:23</note>
+        <note category="location">src/app/Features/curriculum/curriculum.component.ts:23</note>
+        <note category="location">src/app/Features/subjects/subjects.component.ts:38</note>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:43</note>
+      </notes>
+      <segment state="translated">
+        <source>تعذر تحميل البيانات</source>
+        <target>Unable to load data</target>
+      </segment>
+    </unit>
+    <unit id="m_c736c9f1496a">
+      <notes>
+        <note category="location">src/app/Features/curriculum-details/curriculum-details.component.ts:24</note>
+        <note category="location">src/app/Features/curriculum/curriculum.component.ts:24</note>
+        <note category="location">src/app/Features/subjects/subjects.component.ts:39</note>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:44</note>
+      </notes>
+      <segment state="translated">
+        <source>حاول مرة أخرى بعد التأكد من اتصالك بالإنترنت.</source>
+        <target>Check your internet connection and try again.</target>
+      </segment>
+    </unit>
+    <unit id="m_2e47b5f289f1">
+      <notes>
+        <note category="location">src/app/Features/curriculum-details/curriculum-details.component.ts:25</note>
+        <note category="location">src/app/Features/curriculum/curriculum.component.ts:25</note>
+        <note category="location">src/app/Features/subjects/subjects.component.ts:40</note>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:45</note>
+      </notes>
+      <segment state="translated">
+        <source>إعادة المحاولة</source>
+        <target>Try again</target>
+      </segment>
+    </unit>
+    <unit id="m_903e510c1f81">
+      <notes>
+        <note category="location">src/app/Features/curriculum-details/curriculum-details.component.ts:26</note>
+      </notes>
+      <segment state="translated">
+        <source>استكشف المواد والمقررات الدراسية المتاحة لهذه المرحلة.</source>
+        <target>Explore the subjects and courses available for this grade.</target>
+      </segment>
+    </unit>
+    <unit id="m_77b90efee27e">
+      <notes>
+        <note category="location">src/app/Features/curriculum-details/curriculum-details.component.ts:27</note>
+      </notes>
+      <segment state="translated">
+        <source>عرض المواد</source>
+        <target>View subjects</target>
+      </segment>
+    </unit>
+    <unit id="m_7aad98c6764d">
+      <notes>
+        <note category="location">src/app/Features/curriculum-details/curriculum-details.component.ts:28</note>
+      </notes>
+      <segment state="translated">
+        <source>لا توجد مراحل دراسية</source>
+        <target>No school grades available</target>
+      </segment>
+    </unit>
+    <unit id="m_aaa04a0ad894">
+      <notes>
+        <note category="location">src/app/Features/curriculum-details/curriculum-details.component.ts:29</note>
+      </notes>
+      <segment state="translated">
+        <source>لم يتم العثور على مراحل دراسية لهذا المنهج حالياً، يرجى التحقق من المنهج المختار.</source>
+        <target>No school grades are available for this curriculum yet. Please check your selected curriculum.</target>
+      </segment>
+    </unit>
+    <unit id="m_33fe9feecbfc">
+      <notes>
+        <note category="location">src/app/Features/curriculum-details/curriculum-details.component.ts:30</note>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:34</note>
+      </notes>
+      <segment state="translated">
+        <source>العودة للمناهج</source>
+        <target>Back to curricula</target>
+      </segment>
+    </unit>
+    <unit id="m_1ea7464560c3">
+      <notes>
+        <note category="location">src/app/Features/curriculum/curriculum.component.ts:20</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:147</note>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:32</note>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:91</note>
+        <note category="location">src/app/shared/header/header.component.ts:16</note>
+      </notes>
+      <segment state="translated">
+        <source>المناهج الدراسية</source>
+        <target>School curricula</target>
+      </segment>
+    </unit>
+    <unit id="m_5c5d07d4d933">
+      <notes>
+        <note category="location">src/app/Features/curriculum/curriculum.component.ts:21</note>
+      </notes>
+      <segment state="translated">
+        <source>اختر المنهج المناسب لك للبدء في رحلة التعلم مع بسطهالي</source>
+        <target>Choose your curriculum and start learning with Basstahali.</target>
+      </segment>
+    </unit>
+    <unit id="m_a7f5f8c5721a">
+      <notes>
+        <note category="location">src/app/Features/curriculum/curriculum.component.ts:26</note>
+      </notes>
+      <segment state="translated">
+        <source>استكشف المقررات والمراحل التعليمية المتوافقة مع هذا المنهج.</source>
+        <target>Explore the grades and subjects available for this curriculum.</target>
+      </segment>
+    </unit>
+    <unit id="m_69b7747432b9">
+      <notes>
+        <note category="location">src/app/Features/curriculum/curriculum.component.ts:27</note>
+      </notes>
+      <segment state="translated">
+        <source>عرض المراحل الدراسية</source>
+        <target>View school grades</target>
+      </segment>
+    </unit>
+    <unit id="m_4d255e9aaa04">
+      <notes>
+        <note category="location">src/app/Features/curriculum/curriculum.component.ts:28</note>
+      </notes>
+      <segment state="translated">
+        <source>لا توجد مناهج متاحة</source>
+        <target>No curricula available</target>
+      </segment>
+    </unit>
+    <unit id="m_7d7ecb52137b">
+      <notes>
+        <note category="location">src/app/Features/curriculum/curriculum.component.ts:29</note>
+      </notes>
+      <segment state="translated">
+        <source>لم يتم العثور على مناهج دراسية حالياً، أو جاري تحميل البيانات...</source>
+        <target>No school curricula are available yet.</target>
+      </segment>
+    </unit>
+    <unit id="m_3e2613344fbb">
+      <notes>
+        <note category="location">src/app/Features/features/features.component.ts:21</note>
+      </notes>
+      <segment state="translated">
+        <source>✨ مميزات المنصة</source>
+        <target>✨ Platform features</target>
+      </segment>
+    </unit>
+    <unit id="m_2289557b218d">
+      <notes>
+        <note category="location">src/app/Features/features/features.component.ts:22</note>
+      </notes>
+      <segment state="translated">
+        <source>تعلم بطريقة</source>
+        <target>Learn</target>
+      </segment>
+    </unit>
+    <unit id="m_8294fdc18a04">
+      <notes>
+        <note category="location">src/app/Features/features/features.component.ts:23</note>
+      </notes>
+      <segment state="translated">
+        <source>حديثة وذكية</source>
+        <target>modern and smart</target>
+      </segment>
+    </unit>
+    <unit id="m_3b74128c572d">
+      <notes>
+        <note category="location">src/app/Features/features/features.component.ts:24</note>
+      </notes>
+      <segment state="translated">
+        <source>منصة متكاملة تساعدك على الدراسة بسهولة مع أفضل الأدوات التعليمية.</source>
+        <target>Study with ease using a complete set of learning tools.</target>
+      </segment>
+    </unit>
+    <unit id="m_873fb428db5d">
+      <notes>
+        <note category="location">src/app/Features/features/features.component.ts:25</note>
+      </notes>
+      <segment state="translated">
+        <source>حصص مباشرة</source>
+        <target>Live lessons</target>
+      </segment>
+    </unit>
+    <unit id="m_27ffc1784766">
+      <notes>
+        <note category="location">src/app/Features/features/features.component.ts:26</note>
+      </notes>
+      <segment state="translated">
+        <source>تابع الحصص مع معلمك مباشرة وتفاعل أثناء الشرح.</source>
+        <target>Join live lessons and interact with your teacher.</target>
+      </segment>
+    </unit>
+    <unit id="m_83553bb62e39">
+      <notes>
+        <note category="location">src/app/Features/features/features.component.ts:27</note>
+      </notes>
+      <segment state="translated">
+        <source>الواجبات والاختبارات</source>
+        <target>Assignments and quizzes</target>
+      </segment>
+    </unit>
+    <unit id="m_98d37e226f0f">
+      <notes>
+        <note category="location">src/app/Features/features/features.component.ts:28</note>
+      </notes>
+      <segment state="translated">
+        <source>تطبيقات وواجبات تفاعلية بعد كل درس للتأكد من فهمك للأنشطة.</source>
+        <target>Interactive practice and assignments after each lesson to strengthen understanding.</target>
+      </segment>
+    </unit>
+    <unit id="m_0dbdbfbe4184">
+      <notes>
+        <note category="location">src/app/Features/features/features.component.ts:29</note>
+      </notes>
+      <segment state="translated">
+        <source>أسعار مميزة</source>
+        <target>Great value</target>
+      </segment>
+    </unit>
+    <unit id="m_2b35a9f797f9">
+      <notes>
+        <note category="location">src/app/Features/features/features.component.ts:30</note>
+      </notes>
+      <segment state="translated">
+        <source>اشتراكات وأسعار تنافسية تناسب الجميع مع باقات توفيرية مختلفة.</source>
+        <target>Flexible subscriptions and great-value plans for everyone.</target>
+      </segment>
+    </unit>
+    <unit id="m_b96bdff59215">
+      <notes>
+        <note category="location">src/app/Features/features/features.component.ts:31</note>
+      </notes>
+      <segment state="translated">
+        <source>إعادة مشاهدة الدروس</source>
+        <target>Replay lessons</target>
+      </segment>
+    </unit>
+    <unit id="m_d5bd81c94107">
+      <notes>
+        <note category="location">src/app/Features/features/features.component.ts:32</note>
+      </notes>
+      <segment state="translated">
+        <source>يمكنك مراجعة الدرس أكثر من مرة في أي وقت يناسبك.</source>
+        <target>Replay lessons whenever you need.</target>
+      </segment>
+    </unit>
+    <unit id="m_3dc492fe034a">
+      <notes>
+        <note category="location">src/app/Features/features/features.component.ts:34</note>
+      </notes>
+      <segment state="translated">
+        <source>تقارير دورية توضح مستواك وتساعدك على التطور المستمر.</source>
+        <target>Regular reports to help you track and improve your progress.</target>
+      </segment>
+    </unit>
+    <unit id="m_96eec79d41e9">
+      <notes>
+        <note category="location">src/app/Features/features/features.component.ts:35</note>
+      </notes>
+      <segment state="translated">
+        <source>تجربة تعليمية احترافية</source>
+        <target>A professional learning experience</target>
+      </segment>
+    </unit>
+    <unit id="m_2dbd66a10c32">
+      <notes>
+        <note category="location">src/app/Features/features/features.component.ts:36</note>
+      </notes>
+      <segment state="translated">
+        <source>كل ما تحتاجه داخل مكان واحد لتبدأ رحلتك التعليمية بثقة.</source>
+        <target>Everything you need to start learning with confidence.</target>
+      </segment>
+    </unit>
+    <unit id="m_ed8bdd1c116a">
+      <notes>
+        <note category="location">src/app/Features/features/features.component.ts:37</note>
+      </notes>
+      <segment state="translated">
+        <source>⭐ لماذا تختار بسطهالي؟</source>
+        <target>⭐ Why choose Basstahali?</target>
+      </segment>
+    </unit>
+    <unit id="m_239b3af2cb54">
+      <notes>
+        <note category="location">src/app/Features/features/features.component.ts:38</note>
+      </notes>
+      <segment state="translated">
+        <source>أكثر من مجرد</source>
+        <target>More than just</target>
+      </segment>
+    </unit>
+    <unit id="m_0591fbe12437">
+      <notes>
+        <note category="location">src/app/Features/features/features.component.ts:39</note>
+      </notes>
+      <segment state="translated">
+        <source>منصة تعليمية</source>
+        <target>a learning platform</target>
+      </segment>
+    </unit>
+    <unit id="m_fc9b9b9f1159">
+      <notes>
+        <note category="location">src/app/Features/features/features.component.ts:40</note>
+      </notes>
+      <segment state="translated">
+        <source>نوفر لك بيئة تعليمية متكاملة تجمع بين الجودة، السهولة، والتقنيات الحديثة لتجعل التعلم أكثر متعة وفاعلية.</source>
+        <target>Quality teaching and modern tools that make learning easier and more enjoyable.</target>
+      </segment>
+    </unit>
+    <unit id="m_0351acf03aef">
+      <notes>
+        <note category="location">src/app/Features/features/features.component.ts:41</note>
+      </notes>
+      <segment state="translated">
+        <source>محتوى منظم</source>
+        <target>Organised content</target>
+      </segment>
+    </unit>
+    <unit id="m_0f212632a5f9">
+      <notes>
+        <note category="location">src/app/Features/features/features.component.ts:42</note>
+      </notes>
+      <segment state="translated">
+        <source>كل شيء مرتب لتصل للمعلومة بسرعة.</source>
+        <target>Everything organised for easy access.</target>
+      </segment>
+    </unit>
+    <unit id="m_ce201836cbdc">
+      <notes>
+        <note category="location">src/app/Features/features/features.component.ts:43</note>
+      </notes>
+      <segment state="translated">
+        <source>خطط أسعار مرنة</source>
+        <target>Flexible pricing plans</target>
+      </segment>
+    </unit>
+    <unit id="m_909668fb0616">
+      <notes>
+        <note category="location">src/app/Features/features/features.component.ts:44</note>
+      </notes>
+      <segment state="translated">
+        <source>باقات تناسب ميزانيتك مع إمكانية التجديد والشراء بسهولة.</source>
+        <target>Plans to suit your budget, with easy renewal.</target>
+      </segment>
+    </unit>
+    <unit id="m_0e279d290714">
+      <notes>
+        <note category="location">src/app/Features/features/features.component.ts:46</note>
+      </notes>
+      <segment state="translated">
+        <source>ساعد نفسك على تحقيق أفضل أداء باستمرار.</source>
+        <target>Keep working towards your best.</target>
+      </segment>
+    </unit>
+    <unit id="m_68bec9ba1925">
+      <notes>
+        <note category="location">src/app/Features/hero/hero.component.ts:13</note>
+      </notes>
+      <segment state="translated">
+        <source>حصص خصوصية مباشرة أونلاين</source>
+        <target>Live online private lessons</target>
+      </segment>
+    </unit>
+    <unit id="m_95a966298ef2">
+      <notes>
+        <note category="location">src/app/Features/hero/hero.component.ts:14</note>
+      </notes>
+      <segment state="translated">
+        <source>تعلّم بطريقة</source>
+        <target>Learn</target>
+      </segment>
+    </unit>
+    <unit id="m_d45f133f0ef5">
+      <notes>
+        <note category="location">src/app/Features/hero/hero.component.ts:15</note>
+      </notes>
+      <segment state="translated">
+        <source>أذكى</source>
+        <target>smarter</target>
+      </segment>
+    </unit>
+    <unit id="m_f3c3b73b8039">
+      <notes>
+        <note category="location">src/app/Features/hero/hero.component.ts:16</note>
+      </notes>
+      <segment state="translated">
+        <source>مع</source>
+        <target>with</target>
+      </segment>
+    </unit>
+    <unit id="m_3e9667c28bdc">
+      <notes>
+        <note category="location">src/app/Features/hero/hero.component.ts:18</note>
+      </notes>
+      <segment state="translated">
+        <source>تعلّم مع معلمك في حصص خصوصية مباشرة أونلاين، بشرح مبسط للمناهج الخليجية وتفاعل ومتابعة تناسب احتياجك الدراسي.</source>
+        <target>Learn with your teacher in live online private lessons, with clear explanations of Gulf curricula and support tailored to your needs.</target>
+      </segment>
+    </unit>
+    <unit id="m_aba6c5b565c5">
+      <notes>
+        <note category="location">src/app/Features/hero/hero.component.ts:19</note>
+      </notes>
+      <segment state="translated">
+        <source>استكشف المناهج الدراسية</source>
+        <target>Explore curricula</target>
+      </segment>
+    </unit>
+    <unit id="m_e77a95f1187f">
+      <notes>
+        <note category="location">src/app/Features/hero/hero.component.ts:20</note>
+        <note category="location">src/app/Features/teachers/teachers.component.ts:31</note>
+      </notes>
+      <segment state="translated">
+        <source>احجز حصة تجريبية</source>
+        <target>Book a trial lesson</target>
+      </segment>
+    </unit>
+    <unit id="m_f449cfcc4709">
+      <notes>
+        <note category="location">src/app/Features/hero/hero.component.ts:21</note>
+      </notes>
+      <segment state="translated">
+        <source>شرح مباشر · تفاعل حقيقي · فهم أبسط</source>
+        <target>Live teaching · Real interaction · Clearer understanding</target>
+      </segment>
+    </unit>
+    <unit id="landingTrialMessage">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:41</note>
+      </notes>
+      <segment state="translated">
+        <source>السلام عليكم، أرغب في حجز أول حصة تجريبية مجانية.</source>
+        <target>Hello, I would like to book my first free trial lesson.</target>
+      </segment>
+    </unit>
+    <unit id="m_4dc778bb0709">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:45</note>
+      </notes>
+      <segment state="translated">
+        <source>لماذا بسطهالي؟</source>
+        <target>Why Basstahali?</target>
+      </segment>
+    </unit>
+    <unit id="m_ef1f81cc2219">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:46</note>
+      </notes>
+      <segment state="translated">
+        <source>كل ما يحتاجه الطالب...</source>
+        <target>Everything a student needs…</target>
+      </segment>
+    </unit>
+    <unit id="m_149eab48f8d5">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:47</note>
+      </notes>
+      <segment state="translated">
+        <source>في مكان واحد</source>
+        <target>in one place</target>
+      </segment>
+    </unit>
+    <unit id="m_bc25e99f9ae0">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:48</note>
+      </notes>
+      <segment state="translated">
+        <source>منصة متكاملة تساعد الطالب وولي الأمر على متابعة العملية التعليمية بسهولة.</source>
+        <target>A complete platform for students and parents to stay on top of learning.</target>
+      </segment>
+    </unit>
+    <unit id="m_df67c0ff5d15">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:49</note>
+      </notes>
+      <segment state="translated">
+        <source>جدول الحصص</source>
+        <target>Lesson schedule</target>
+      </segment>
+    </unit>
+    <unit id="m_3196feca54ae">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:50</note>
+      </notes>
+      <segment state="translated">
+        <source>تنظيم كامل للحصص والمواعيد.</source>
+        <target>Keep lessons and schedules organised.</target>
+      </segment>
+    </unit>
+    <unit id="m_cc40179ce00c">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:51</note>
+      </notes>
+      <segment state="translated">
+        <source>إشعارات ذكية</source>
+        <target>Smart notifications</target>
+      </segment>
+    </unit>
+    <unit id="m_8d63fdbb70ec">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:52</note>
+      </notes>
+      <segment state="translated">
+        <source>تنبيهات قبل الحصص والواجبات.</source>
+        <target>Reminders for lessons and assignments.</target>
+      </segment>
+    </unit>
+    <unit id="m_2dca077cc935">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:53</note>
+      </notes>
+      <segment state="translated">
+        <source>رفع الواجبات</source>
+        <target>Upload assignments</target>
+      </segment>
+    </unit>
+    <unit id="m_fe7466316c5b">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:54</note>
+      </notes>
+      <segment state="translated">
+        <source>رفع سريع وسهل للواجبات.</source>
+        <target>Submit assignments quickly and easily.</target>
+      </segment>
+    </unit>
+    <unit id="m_10bd43535d5c">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:55</note>
+      </notes>
+      <segment state="translated">
+        <source>تصحيح إلكتروني</source>
+        <target>Digital marking</target>
+      </segment>
+    </unit>
+    <unit id="m_7cb12f66df00">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:56</note>
+      </notes>
+      <segment state="translated">
+        <source>تصحيح فوري مع ملاحظات المعلم.</source>
+        <target>Instant marking with teacher feedback.</target>
+      </segment>
+    </unit>
+    <unit id="m_93253eaf4991">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:57</note>
+      </notes>
+      <segment state="translated">
+        <source>متابعة ولي الأمر</source>
+        <target>Parent updates</target>
+      </segment>
+    </unit>
+    <unit id="m_81e5a00e0c5a">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:58</note>
+      </notes>
+      <segment state="translated">
+        <source>متابعة مستمرة لمستوى الأبناء.</source>
+        <target>Stay informed about your child's progress.</target>
+      </segment>
+    </unit>
+    <unit id="m_a2991806009f">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:59</note>
+      </notes>
+      <segment state="translated">
+        <source>تقارير الأداء</source>
+        <target>Progress reports</target>
+      </segment>
+    </unit>
+    <unit id="m_4c202b92e8cc">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:60</note>
+      </notes>
+      <segment state="translated">
+        <source>تحليل كامل لتقدم الطالب.</source>
+        <target>Detailed insights into student progress.</target>
+      </segment>
+    </unit>
+    <unit id="m_7127659cb735">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:61</note>
+      </notes>
+      <segment state="translated">
+        <source>🎁 عرض لفترة محدودة</source>
+        <target>🎁 Limited-time offer</target>
+      </segment>
+    </unit>
+    <unit id="m_6dc1b1365af6">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:62</note>
+      </notes>
+      <segment state="translated">
+        <source>جرّب أول حصة</source>
+        <target>Try your first lesson</target>
+      </segment>
+    </unit>
+    <unit id="m_fb97e075faae">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:63</note>
+      </notes>
+      <segment state="translated">
+        <source>مجانًا</source>
+        <target>for free</target>
+      </segment>
+    </unit>
+    <unit id="m_14e4a20dfd7c">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:64</note>
+      </notes>
+      <segment state="translated">
+        <source>احجز حصتك التجريبية المجانية وتعرّف على أسلوب الشرح قبل الاشتراك.</source>
+        <target>Book a free trial lesson and experience our teaching before subscribing.</target>
+      </segment>
+    </unit>
+    <unit id="m_8f7716d77474">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:65</note>
+      </notes>
+      <segment state="translated">
+        <source>احجز الآن عبر واتساب</source>
+        <target>Book on WhatsApp</target>
+      </segment>
+    </unit>
+    <unit id="m_84a67ee91b0f">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:66</note>
+      </notes>
+      <segment state="translated">
+        <source>كيف تبدأ معنا؟</source>
+        <target>How to get started</target>
+      </segment>
+    </unit>
+    <unit id="m_9602e81690c9">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:67</note>
+      </notes>
+      <segment state="translated">
+        <source>ابدأ رحلتك التعليمية في</source>
+        <target>Start your learning journey with</target>
+      </segment>
+    </unit>
+    <unit id="m_5324c02ad8af">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:68</note>
+      </notes>
+      <segment state="translated">
+        <source>4 خطوات</source>
+        <target>4 steps</target>
+      </segment>
+    </unit>
+    <unit id="m_29499543fd3e">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:69</note>
+      </notes>
+      <segment state="translated">
+        <source>التسجيل في منصة بسطهالي لا يستغرق سوى دقائق قليلة، لتنطلق بعدها في تجربة تعليمية سلسة وممتعة.</source>
+        <target>Join Basstahali in just a few minutes and start a smooth, enjoyable learning experience.</target>
+      </segment>
+    </unit>
+    <unit id="m_e27bdf84c680">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:70</note>
+      </notes>
+      <segment state="translated">
+        <source>أنشئ حسابك</source>
+        <target>Create your account</target>
+      </segment>
+    </unit>
+    <unit id="m_bdc93726daf6">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:71</note>
+      </notes>
+      <segment state="translated">
+        <source>قم بإنشاء حسابك الجديد بسهولة أو اطلب التسجيل المباشر عبر خدمة الواتساب.</source>
+        <target>Create an account or register directly through WhatsApp.</target>
+      </segment>
+    </unit>
+    <unit id="m_3d2fb6a4d73c">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:72</note>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:49</note>
+      </notes>
+      <segment state="translated">
+        <source>اختر المنهج</source>
+        <target>Choose your curriculum</target>
+      </segment>
+    </unit>
+    <unit id="m_7016c886ae15">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:73</note>
+      </notes>
+      <segment state="translated">
+        <source>حدد الدولة، المنهج، والمرحلة الدراسية لتظهر لك الدروس والمواد المخصصة لك.</source>
+        <target>Choose your country, curriculum and grade to find the right lessons and subjects.</target>
+      </segment>
+    </unit>
+    <unit id="m_67f49e701485">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:74</note>
+      </notes>
+      <segment state="translated">
+        <source>فعّل اشتراكك</source>
+        <target>Activate your subscription</target>
+      </segment>
+    </unit>
+    <unit id="m_67cf62749c77">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:75</note>
+      </notes>
+      <segment state="translated">
+        <source>اختر الباقة المناسبة لاحتياجاتك وأكمل عملية الاشتراك بخطوات آمنة وسريعة.</source>
+        <target>Choose the plan that suits you and subscribe in a few simple steps.</target>
+      </segment>
+    </unit>
+    <unit id="m_e04f5380ec6a">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:76</note>
+      </notes>
+      <segment state="translated">
+        <source>ابدأ التعلم</source>
+        <target>Start learning</target>
+      </segment>
+    </unit>
+    <unit id="m_df5c55d4e104">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:77</note>
+      </notes>
+      <segment state="translated">
+        <source>شاهد الشروحات التفاعلية، احضر الحصص، وأنجز الواجبات بسهولة للتفوق.</source>
+        <target>Watch explanations, attend lessons and complete assignments to reach your goals.</target>
+      </segment>
+    </unit>
+    <unit id="m_8dc5631ffac6">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:78</note>
+      </notes>
+      <segment state="translated">
+        <source>سجل حسابك الآن عبر الواتساب</source>
+        <target>Register on WhatsApp</target>
+      </segment>
+    </unit>
+    <unit id="m_36a64f47675d">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:79</note>
+      </notes>
+      <segment state="translated">
+        <source>نماذج توضيحية مؤقتة وليست شهادات فعلية.</source>
+        <target>Temporary illustrative examples, not actual testimonials.</target>
+      </segment>
+    </unit>
+    <unit id="m_526d124bec7b">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:80</note>
+      </notes>
+      <segment state="translated">
+        <source>شرح واضح، مواعيد مرتبة ومتابعة للدروس؛ تفاصيل تهمك كولي أمر.</source>
+        <target>Clear explanations, organized lesson times and follow-up: the details that matter to you as a parent.</target>
+      </segment>
+    </unit>
+    <unit id="m_d0c08f94b14b">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:81</note>
+      </notes>
+      <segment state="translated">
+        <source>تواصل معنا على واتساب</source>
+        <target>Contact us on WhatsApp</target>
+      </segment>
+    </unit>
+    <unit id="m_4c00a66d7eae">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:82</note>
+      </notes>
+      <segment state="translated">
+        <source>نحن هنا لمساعدتك والإجابة على استفساراتك</source>
+        <target>We're here to help and answer your questions</target>
+      </segment>
+    </unit>
+    <unit id="m_988638232136">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:83</note>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:62</note>
+        <note category="location">src/app/shared/footer/footer.component.ts:25</note>
+        <note category="location">src/app/shared/header/header.component.ts:27</note>
+        <note category="location">src/app/shared/not-found/not-found.component.ts:16</note>
+      </notes>
+      <segment state="translated">
+        <source>تواصل معنا</source>
+        <target>Contact us</target>
+      </segment>
+    </unit>
+    <unit id="m_48b4fb1a68d2">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:84</note>
+      </notes>
+      <segment state="translated">
+        <source>المناهج الدراسية و الكورسات</source>
+        <target>Curricula and courses</target>
+      </segment>
+    </unit>
+    <unit id="m_173cce3ff639">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:85</note>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:58</note>
+      </notes>
+      <segment state="translated">
+        <source>المنهج الدراسي</source>
+        <target>Curriculum</target>
+      </segment>
+    </unit>
+    <unit id="m_33dca1b609ba">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:86</note>
+      </notes>
+      <segment state="translated">
+        <source>جميع المراحل الدراسية وفق أفضل المناهج مع نخبة من المدرسين.</source>
+        <target>School grades and curricula with experienced teachers.</target>
+      </segment>
+    </unit>
+    <unit id="m_5b82b7079a31">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:87</note>
+        <note category="location">src/app/shared/header/header.component.ts:17</note>
+      </notes>
+      <segment state="translated">
+        <source>الكورسات</source>
+        <target>Courses</target>
+      </segment>
+    </unit>
+    <unit id="m_a73730be0c2b">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:88</note>
+      </notes>
+      <segment state="translated">
+        <source>كورسات في اللغات، البرمجة، المهارات، والمواد الإثرائية لجميع الأعمار.</source>
+        <target>Courses in languages, programming, skills and enrichment for all ages.</target>
+      </segment>
+    </unit>
+    <unit id="m_4df49eb87a01">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:91</note>
+      </notes>
+      <segment state="translated">
+        <source>ماذا يقول طلابنا؟</source>
+        <target>What our students say</target>
+      </segment>
+    </unit>
+    <unit id="m_a784688c7932">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:92</note>
+      </notes>
+      <segment state="translated">
+        <source>عرض الآراء السابقة</source>
+        <target>Show previous testimonials</target>
+      </segment>
+    </unit>
+    <unit id="m_0926efa89f4b">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:93</note>
+      </notes>
+      <segment state="translated">
+        <source>عرض الآراء التالية</source>
+        <target>Show next testimonials</target>
+      </segment>
+    </unit>
+    <unit id="m_7cffafea78a5">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:113</note>
+      </notes>
+      <segment state="translated">
+        <source>المدرس في بسطهالي يشرح لي بصبر وبطريقة واضحة، وإذا ما فهمت يعيدها لي لين توصل الفكرة.</source>
+        <target>My teacher at Basstahali explains things patiently and clearly. If I don't understand, they explain it again until it makes sense.</target>
+      </segment>
+    </unit>
+    <unit id="m_352642e38041">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:114</note>
+      </notes>
+      <segment state="translated">
+        <source>محمد أحمد</source>
+        <target>Mohamed Ahmed</target>
+      </segment>
+    </unit>
+    <unit id="m_79f0a9f1e96a">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:120</note>
+      </notes>
+      <segment state="translated">
+        <source>مواعيد الحصص مرتبة وواضحة، وأعرف وش عندي من دروس. سهل عليّ أتابع بدون لخبطة.</source>
+        <target>Lesson times are organized and clear, so I know which lessons I have. It makes keeping up much easier.</target>
+      </segment>
+    </unit>
+    <unit id="m_91f027d449b5">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:121</note>
+      </notes>
+      <segment state="translated">
+        <source>سارة محمود</source>
+        <target>Sara Mahmoud</target>
+      </segment>
+    </unit>
+    <unit id="m_667eb688d965">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:122</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:150</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:171</note>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:68</note>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:92</note>
+      </notes>
+      <segment state="translated">
+        <source>المرحلة المتوسطة</source>
+        <target>Middle school</target>
+      </segment>
+    </unit>
+    <unit id="m_892d713066d9">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:127</note>
+      </notes>
+      <segment state="translated">
+        <source>أقدر أسأل المدرس براحة، ويتابع معي ويقول لي وش أحتاج أراجع قبل الحصة الجاية.</source>
+        <target>I feel comfortable asking my teacher questions. They follow up with me and tell me what to review before the next lesson.</target>
+      </segment>
+    </unit>
+    <unit id="m_a55c9b9fcfac">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:128</note>
+      </notes>
+      <segment state="translated">
+        <source>أحمد علي</source>
+        <target>Ahmed Ali</target>
+      </segment>
+    </unit>
+    <unit id="m_190907e88318">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:134</note>
+      </notes>
+      <segment state="translated">
+        <source>الشرح مبسّط والمتابعة بين الحصص واضحة، وأعرف وش فهمت ووش أحتاج أراجع.</source>
+        <target>The explanations are simple and the follow-up between lessons is clear. I know what I understand and what I need to review.</target>
+      </segment>
+    </unit>
+    <unit id="m_783bf98e019d">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:135</note>
+      </notes>
+      <segment state="translated">
+        <source>منى حسن</source>
+        <target>Mona Hassan</target>
+      </segment>
+    </unit>
+    <unit id="m_c36fee5d9b33">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:141</note>
+      </notes>
+      <segment state="translated">
+        <source>الشرح في بسطهالي خطوة بخطوة، والمدرس يعطيني أمثلة بسيطة لين أفهم الفكرة وأقدر أطبقها.</source>
+        <target>The explanations at Basstahali are step by step. My teacher gives me simple examples until I understand the idea and can apply it.</target>
+      </segment>
+    </unit>
+    <unit id="m_1362ee3bfea0">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:142</note>
+      </notes>
+      <segment state="translated">
+        <source>خالد عبدالله</source>
+        <target>Khalid Abdullah</target>
+      </segment>
+    </unit>
+    <unit id="m_d9ba9c39b212">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:148</note>
+      </notes>
+      <segment state="translated">
+        <source>يعجبني ترتيب الحصص في بسطهالي؛ أعرف وش بنراجع، والمدرس يربط الدرس الجديد باللي أخذناه قبل.</source>
+        <target>I like how lessons at Basstahali are organized. I know what we will review, and my teacher connects new lessons to what we covered before.</target>
+      </segment>
+    </unit>
+    <unit id="m_3b7fe8f7d63c">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:149</note>
+      </notes>
+      <segment state="translated">
+        <source>نورة سالم</source>
+        <target>Noura Salem</target>
+      </segment>
+    </unit>
+    <unit id="m_67cafca4ba7f">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:155</note>
+      </notes>
+      <segment state="translated">
+        <source>أقدر أسأل عن النقطة اللي مو واضحة، والمدرس يشرحها بأكثر من طريقة ويخليني أشارك في الحل.</source>
+        <target>I can ask about anything that is unclear. My teacher explains it in different ways and lets me take part in solving the problem.</target>
+      </segment>
+    </unit>
+    <unit id="m_d80f0914ef30">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:156</note>
+      </notes>
+      <segment state="translated">
+        <source>راشد محمد</source>
+        <target>Rashed Mohamed</target>
+      </segment>
+    </unit>
+    <unit id="m_53650cac55e1">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:162</note>
+      </notes>
+      <segment state="translated">
+        <source>الحصة فيها تفاعل وأسئلة تناسبني، والمدرس يتأكد إني فهمت قبل ما ينتقل للجزء اللي بعده.</source>
+        <target>The lesson includes interaction and questions that suit me. My teacher checks that I understand before moving to the next part.</target>
+      </segment>
+    </unit>
+    <unit id="m_0bce60e39c1b">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:163</note>
+      </notes>
+      <segment state="translated">
+        <source>ريم علي</source>
+        <target>Reem Ali</target>
+      </segment>
+    </unit>
+    <unit id="m_4720807d959e">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:169</note>
+      </notes>
+      <segment state="translated">
+        <source>المتابعة بعد الدرس واضحة؛ أعرف وش أتدرب عليه، ونراجع الأشياء اللي أحتاج فيها مساعدة بالحصة الجاية.</source>
+        <target>The follow-up after each lesson is clear. I know what to practise, and we review the things I need help with in the next lesson.</target>
+      </segment>
+    </unit>
+    <unit id="m_2f1ca697c894">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:170</note>
+      </notes>
+      <segment state="translated">
+        <source>عبدالله يوسف</source>
+        <target>Abdullah Youssef</target>
+      </segment>
+    </unit>
+    <unit id="m_bf18f2217d43">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:176</note>
+      </notes>
+      <segment state="translated">
+        <source>أسلوب الشرح مرتب وبدون استعجال، وتقسيم موضوع الدرس لأجزاء صغيرة يساعدني أركز وأفهم.</source>
+        <target>The explanations are organized and unhurried. Breaking the lesson topic into smaller parts helps me focus and understand.</target>
+      </segment>
+    </unit>
+    <unit id="m_a9ac2c69fe66">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:177</note>
+      </notes>
+      <segment state="translated">
+        <source>دانة أحمد</source>
+        <target>Dana Ahmed</target>
+      </segment>
+    </unit>
+    <unit id="m_b598140d68a4">
+      <notes>
+        <note category="location">src/app/Features/legal/legal.component.ts:33</note>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:63</note>
+      </notes>
+      <segment state="translated">
+        <source>مسار الصفحة</source>
+        <target>Breadcrumb</target>
+      </segment>
+    </unit>
+    <unit id="m_b986d8fb163c">
+      <notes>
+        <note category="location">src/app/Features/legal/legal.component.ts:34</note>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:31</note>
+        <note category="location">src/app/shared/footer/footer.component.ts:16</note>
+        <note category="location">src/app/shared/header/header.component.ts:15</note>
+      </notes>
+      <segment state="translated">
+        <source>الرئيسية</source>
+        <target>Home</target>
+      </segment>
+    </unit>
+    <unit id="m_d398f5116515">
+      <notes>
+        <note category="location">src/app/Features/legal/legal.component.ts:35</note>
+      </notes>
+      <segment state="translated">
+        <source>معلومات وسياسات بسطهالي</source>
+        <target>Basstahali information and policies</target>
+      </segment>
+    </unit>
+    <unit id="m_2723fb0ddcdf">
+      <notes>
+        <note category="location">src/app/Features/legal/legal.component.ts:36</note>
+      </notes>
+      <segment state="translated">
+        <source>آخر تحديث</source>
+        <target>Last updated</target>
+      </segment>
+    </unit>
+    <unit id="m_f7687b7e329b">
+      <notes>
+        <note category="location">src/app/Features/legal/legal.component.ts:37</note>
+      </notes>
+      <segment state="translated">
+        <source>صفحات السياسات</source>
+        <target>Policy pages</target>
+      </segment>
+    </unit>
+    <unit id="m_8b7b36b70cdd">
+      <notes>
+        <note category="location">src/app/Features/legal/legal.component.ts:38</note>
+        <note category="location">src/app/Features/legal/privacy.content.ts:4</note>
+        <note category="location">src/app/shared/footer/footer.component.ts:22</note>
+      </notes>
+      <segment state="translated">
+        <source>سياسة الخصوصية</source>
+        <target>Privacy policy</target>
+      </segment>
+    </unit>
+    <unit id="m_bec6c46de276">
+      <notes>
+        <note category="location">src/app/Features/legal/legal.component.ts:39</note>
+        <note category="location">src/app/Features/legal/terms.content.ts:4</note>
+        <note category="location">src/app/shared/footer/footer.component.ts:23</note>
+      </notes>
+      <segment state="translated">
+        <source>الشروط والأحكام</source>
+        <target>Terms and conditions</target>
+      </segment>
+    </unit>
+    <unit id="m_80b8f8c418da">
+      <notes>
+        <note category="location">src/app/Features/legal/legal.component.ts:40</note>
+      </notes>
+      <segment state="translated">
+        <source>في هذه الصفحة</source>
+        <target>On this page</target>
+      </segment>
+    </unit>
+    <unit id="m_af97bb006377">
+      <notes>
+        <note category="location">src/app/Features/legal/legal.component.ts:41</note>
+      </notes>
+      <segment state="translated">
+        <source>لديك سؤال؟</source>
+        <target>Have a question?</target>
+      </segment>
+    </unit>
+    <unit id="m_208c0dc965eb">
+      <notes>
+        <note category="location">src/app/Features/legal/legal.component.ts:42</note>
+      </notes>
+      <segment state="translated">
+        <source>تواصل مع فريق بسطهالي للاستفسار عن السياسات أو تفاصيل الاشتراك.</source>
+        <target>Contact the Basstahali team for questions about policies or subscription details.</target>
+      </segment>
+    </unit>
+    <unit id="m_a01613b4c618">
+      <notes>
+        <note category="location">src/app/Features/legal/legal.component.ts:43</note>
+        <note category="location">src/app/layouts/landing-layout/landing-layout.component.ts:17</note>
+      </notes>
+      <segment state="translated">
+        <source>تواصل معنا عبر واتساب</source>
+        <target>Contact us on WhatsApp</target>
+      </segment>
+    </unit>
+    <unit id="m_c4bfa628d3e0">
+      <notes>
+        <note category="location">src/app/Features/legal/legal.component.ts:44</note>
+      </notes>
+      <segment state="translated">
+        <source>عرض الباقات والأسعار</source>
+        <target>View packages and prices</target>
+      </segment>
+    </unit>
+    <unit id="m_f51fce2b9d36">
+      <notes>
+        <note category="location">src/app/Features/legal/privacy.content.ts:5</note>
+      </notes>
+      <segment state="translated">
+        <source>توضح هذه الصفحة المعلومات التي يقدمها المستخدم عبر موقع بسطهالي، وكيفية التواصل وحفظ تفضيلات التصفح واستخدام الخدمات الخارجية. نهدف إلى مساعدة ولي الأمر والمدرس على فهم المعلومات التي يختار مشاركتها أثناء استخدام الموقع.</source>
+        <target>This page explains the information users provide through the Basstahali website, how contact options work, how browsing preferences are saved, and how external services are used. It helps parents and teachers understand the information they choose to share when using the website.</target>
+      </segment>
+    </unit>
+    <unit id="m_88d9c9294e46">
+      <notes>
+        <note category="location">src/app/Features/legal/privacy.content.ts:9</note>
+      </notes>
+      <segment state="translated">
+        <source>المعلومات التي تقدمها</source>
+        <target>Information you provide</target>
+      </segment>
+    </unit>
+    <unit id="m_bcae5e4a07ec">
+      <notes>
+        <note category="location">src/app/Features/legal/privacy.content.ts:11</note>
+      </notes>
+      <segment state="translated">
+        <source>يطلب نموذج الانضمام للمدرسين الاسم الكامل، البريد الإلكتروني، كلمة المرور، رقم واتساب، طريقة استلام المستحقات وبيانات الحساب، إلى جانب المنهج والمرحلة الدراسية والمواد التي يدرسها المدرس.</source>
+        <target>The teacher application form asks for a full name, email address, password, WhatsApp number, payout method and payout account details, as well as the curriculum, school stage and subjects the teacher teaches.</target>
+      </segment>
+    </unit>
+    <unit id="m_540927b5fb69">
+      <notes>
+        <note category="location">src/app/Features/legal/privacy.content.ts:12</note>
+      </notes>
+      <segment state="translated">
+        <source>عند إرسال نموذج الانضمام، تُرسل المعلومات التي أدخلتها إلى بسطهالي ضمن طلبك. يرجى تقديم بيانات صحيحة والاقتصار على المعلومات المطلوبة في حقول النموذج.</source>
+        <target>When you submit the teacher application form, the information you entered is sent to Basstahali as part of your application. Please provide accurate details and limit your submission to the information requested by the form.</target>
+      </segment>
+    </unit>
+    <unit id="m_42adaa1941dc">
+      <notes>
+        <note category="location">src/app/Features/legal/privacy.content.ts:17</note>
+      </notes>
+      <segment state="translated">
+        <source>بيانات طلب الانضمام ومتابعته</source>
+        <target>Application information and status</target>
+      </segment>
+    </unit>
+    <unit id="m_758d17649636">
+      <notes>
+        <note category="location">src/app/Features/legal/privacy.content.ts:19</note>
+      </notes>
+      <segment state="translated">
+        <source>تُرفق بيانات المدرس وتخصصاته وبيانات استلام المستحقات بطلب الانضمام. اختيار المنهج والمرحلة والمواد يساعد على تحديد ما يقدمه المدرس، ولا يحتاج تصفح قوائم المناهج العامة إلى إرسال نموذج انضمام.</source>
+        <target>Teacher details, teaching selections and payout information are included in the application. Curriculum, stage and subject selections identify what the teacher offers. Browsing the public curriculum lists does not require submitting a teacher application.</target>
+      </segment>
+    </unit>
+    <unit id="m_2c7efb14c290">
+      <notes>
+        <note category="location">src/app/Features/legal/privacy.content.ts:20</note>
+      </notes>
+      <segment state="translated">
+        <source>تعرض صفحة متابعة الطلب الحالة التي تعيدها الخدمة عند الاستعلام برقم الطلب. قد تتطلب الخدمة رقم واتساب المسجل للتحقق من الاستعلام. احتفظ برقم طلبك وتجنب نشره مع بياناتك الشخصية في أماكن عامة.</source>
+        <target>The application status page displays the status returned by the service when checking an application number. The service may require the registered WhatsApp number to validate the enquiry. Keep your application number and avoid posting it alongside your personal information in public places.</target>
+      </segment>
+    </unit>
+    <unit id="m_08f51c19f964">
+      <notes>
+        <note category="location">src/app/Features/legal/privacy.content.ts:25</note>
+      </notes>
+      <segment state="translated">
+        <source>التواصل عبر البريد وواتساب</source>
+        <target>Contact by email and WhatsApp</target>
+      </segment>
+    </unit>
+    <unit id="m_527246fc4d6b">
+      <notes>
+        <note category="location">src/app/Features/legal/privacy.content.ts:27</note>
+      </notes>
+      <segment state="translated">
+        <source>يتيح نموذج التواصل إدخال الاسم ورقم الهاتف والبريد الإلكتروني وموضوع الرسالة ونصها. زر النموذج يفتح مسودة في تطبيق البريد لديك إلى basstahali@gmail.com، ويضع بيانات النموذج في الرسالة. يمكنك مراجعتها قبل إرسالها من تطبيق البريد؛ الموقع لا يرسل الرسالة نيابةً عنك.</source>
+        <target>The contact form lets you enter a name, phone number, email address, subject and message. Its button opens a draft addressed to basstahali@gmail.com in your email application and includes the form details in the message. You can review it before sending it from your email application; the website does not send the message on your behalf.</target>
+      </segment>
+    </unit>
+    <unit id="m_96e57725b13c">
+      <notes>
+        <note category="location">src/app/Features/legal/privacy.content.ts:28</note>
+      </notes>
+      <segment state="translated">
+        <source>تنتقل روابط الاستفسار والاشتراك إلى واتساب على الرقم +971 56 330 6087، وقد تتضمن رسالة جاهزة عن الباقة أو الخدمة التي اخترتها. راجع الرسالة قبل إرسالها. استخدام البريد وواتساب يخضع أيضًا لسياسات وإعدادات مزودي هذه الخدمات.</source>
+        <target>Enquiry and subscription links open WhatsApp for +971 56 330 6087 and may include a prepared message about the package or service you selected. Review the message before sending it. Email and WhatsApp use is also subject to those providers’ policies and settings.</target>
+      </segment>
+    </unit>
+    <unit id="m_b309d2f33542">
+      <notes>
+        <note category="location">src/app/Features/legal/privacy.content.ts:33</note>
+      </notes>
+      <segment state="translated">
+        <source>تفضيلات اللغة والمظهر</source>
+        <target>Language and appearance preferences</target>
+      </segment>
+    </unit>
+    <unit id="m_7d1fdb12e082">
+      <notes>
+        <note category="location">src/app/Features/legal/privacy.content.ts:35</note>
+      </notes>
+      <segment state="translated">
+        <source>تحدد لغة الموقع من رابط الصفحة العربية أو الإنجليزية. ويحفظ الموقع تفضيل المظهر الفاتح أو الداكن في التخزين المحلي لمتصفحك للاحتفاظ به عند الزيارة التالية من المتصفح نفسه.</source>
+        <target>The page URL determines whether the site is in Arabic or English. The site stores your light or dark theme preference in your browser’s local storage for future visits in the same browser.</target>
+      </segment>
+    </unit>
+    <unit id="m_3a7aedca421f">
+      <notes>
+        <note category="location">src/app/Features/legal/privacy.content.ts:36</note>
+      </notes>
+      <segment state="translated">
+        <source>تستخدم صفحة الباقات دولة الاتصال التي توفرها الاستضافة لعرض الأسعار بالجنيه المصري للزائر من مصر، وبالدرهم الإماراتي لباقي الدول. لا تحتاج هذه الميزة إلى إذن الوصول إلى موقعك الجغرافي الدقيق.</source>
+        <target>The packages page uses the connection country provided by the hosting service to display prices in EGP for visitors from Egypt and in AED for other countries. This feature does not require permission to access your precise geographic location.</target>
+      </segment>
+    </unit>
+    <unit id="m_4c590c659be8">
+      <notes>
+        <note category="location">src/app/Features/legal/privacy.content.ts:37</note>
+      </notes>
+      <segment state="translated">
+        <source>يمكنك تغيير هذه التفضيلات من أدوات الموقع أو إزالة بيانات الموقع من إعدادات المتصفح. إزالة بيانات المتصفح تعيد ضبط التفضيلات المحلية، ولا تحذف طلبات الانضمام التي سبق إرسالها إلى الخدمة.</source>
+        <target>You can change these preferences using the website controls or remove website data in your browser settings. Removing browser data resets local preferences and does not delete applications already submitted to the service.</target>
+      </segment>
+    </unit>
+    <unit id="m_8ecd147707a7">
+      <notes>
+        <note category="location">src/app/Features/legal/privacy.content.ts:42</note>
+      </notes>
+      <segment state="translated">
+        <source>المحتوى والروابط الخارجية</source>
+        <target>External content and links</target>
+      </segment>
+    </unit>
+    <unit id="m_0b23eea99bcf">
+      <notes>
+        <note category="location">src/app/Features/legal/privacy.content.ts:44</note>
+      </notes>
+      <segment state="translated">
+        <source>قد تُحمّل بعض الصور والأيقونات وملفات العرض من خدمات خارجية، منها DiceBear وUnsplash وcdnjs. تتضمن الصفحة أيضًا ملفًا خارجيًا من Google AdSense. تحميل مورد خارجي ينشئ اتصالًا بمزوده، وقد يتضمن طلب التحميل معلومات مثل عنوان الشبكة ونوع المتصفح؛ تخضع معالجة هذه الطلبات لسياسة المزود.</source>
+        <target>Some images, icons and display resources may load from external services, including DiceBear, Unsplash and cdnjs. The page also includes an external Google AdSense script. Loading an external resource creates a connection to its provider, and the request may include information such as a network address and browser type. The provider’s policy governs its processing of these requests.</target>
+      </segment>
+    </unit>
+    <unit id="m_e18a2109f5bf">
+      <notes>
+        <note category="location">src/app/Features/legal/privacy.content.ts:45</note>
+      </notes>
+      <segment state="translated">
+        <source>قد تستخدم الخدمات الخارجية ملفات تعريف الارتباط وفق سياساتها وإعداداتها. يمكنك إدارة هذه الملفات أو حظرها من إعدادات المتصفح، مع مراعاة أن بعض وظائف الخدمات الخارجية قد تتأثر.</source>
+        <target>External services may use cookies according to their policies and settings. You can manage or block these cookies in your browser settings, although this may affect some features of external services.</target>
+      </segment>
+    </unit>
+    <unit id="m_774d76e8f694">
+      <notes>
+        <note category="location">src/app/Features/legal/privacy.content.ts:46</note>
+      </notes>
+      <segment state="translated">
+        <source>روابط Facebook وInstagram وTikTok وWhatsApp تنقلك إلى خدمات خارج موقع بسطهالي. راجع سياسة الخصوصية وإعدادات المشاركة في الخدمة الخارجية قبل إرسال معلومات شخصية أو متابعة الحسابات من خلالها.</source>
+        <target>Facebook, Instagram, TikTok and WhatsApp links take you to services outside the Basstahali website. Review the external service’s privacy policy and sharing settings before sending personal information or following accounts through it.</target>
+      </segment>
+    </unit>
+    <unit id="m_e2eed203870d">
+      <notes>
+        <note category="location">src/app/Features/legal/privacy.content.ts:51</note>
+      </notes>
+      <segment state="translated">
+        <source>الطلاب القاصرون ومشاركة ولي الأمر</source>
+        <target>Younger students and parental involvement</target>
+      </segment>
+    </unit>
+    <unit id="m_2ebd2b79096c">
+      <notes>
+        <note category="location">src/app/Features/legal/privacy.content.ts:53</note>
+      </notes>
+      <segment state="translated">
+        <source>لأن الخدمة التعليمية قد يستخدمها طلاب قاصرون، نشجع ولي الأمر على المشاركة في اختيار الحصص ومراجعة التواصل والحجز، ومساعدة الطالب على تحديد المعلومات المناسبة للمشاركة.</source>
+        <target>Because the learning service may be used by younger students, we encourage parents or guardians to take part in choosing lessons, reviewing communications and bookings, and helping students decide what information is appropriate to share.</target>
+      </segment>
+    </unit>
+    <unit id="m_7221a6965d41">
+      <notes>
+        <note category="location">src/app/Features/legal/privacy.content.ts:54</note>
+      </notes>
+      <segment state="translated">
+        <source>اكتفِ بالمعلومات اللازمة للاستفسار أو ترتيب الدراسة. تجنب إرسال صور خاصة للطالب أو وثائق هوية أو معلومات صحية حساسة عبر الرسائل، وراجع ما يشاركه الطالب مع الخدمات الخارجية.</source>
+        <target>Share only the information needed for an enquiry or to arrange learning. Avoid sending private student images, identity documents or sensitive health information through messages, and review what the student shares with external services.</target>
+      </segment>
+    </unit>
+    <unit id="m_72604b76383a">
+      <notes>
+        <note category="location">src/app/Features/legal/privacy.content.ts:59</note>
+      </notes>
+      <segment state="translated">
+        <source>مشاركة المعلومات بعناية</source>
+        <target>Sharing information carefully</target>
+      </segment>
+    </unit>
+    <unit id="m_2862b895fc5b">
+      <notes>
+        <note category="location">src/app/Features/legal/privacy.content.ts:61</note>
+      </notes>
+      <segment state="translated">
+        <source>استخدم كلمة مرور لا تستخدمها لحسابات أخرى، ولا ترسلها عبر البريد أو واتساب. أدخل بيانات استلام المستحقات المطلوبة في حقول نموذج المدرس، وتجنب إدخال كلمات مرور الخدمات المالية أو الرموز السرية للبطاقات.</source>
+        <target>Use a password that you do not use for other accounts, and do not send it by email or WhatsApp. Enter the requested payout information in the teacher form fields, and avoid entering passwords for financial services or card PINs.</target>
+      </segment>
+    </unit>
+    <unit id="m_b1aa0359563a">
+      <notes>
+        <note category="location">src/app/Features/legal/privacy.content.ts:66</note>
+      </notes>
+      <segment state="translated">
+        <source>الاستفسارات وطلب تصحيح البيانات</source>
+        <target>Enquiries and requests to correct information</target>
+      </segment>
+    </unit>
+    <unit id="m_c7983029e49f">
+      <notes>
+        <note category="location">src/app/Features/legal/privacy.content.ts:68</note>
+      </notes>
+      <segment state="translated">
+        <source>إذا كان لديك سؤال عن هذه الصفحة أو رغبت في طلب تصحيح معلومات قدمتها، تواصل عبر basstahali@gmail.com أو واتساب +971 56 330 6087. اشرح موضوع طلبك والتصحيح المطلوب بإيجاز، واذكر رقم الطلب عند الحاجة دون إرفاق كلمة مرور أو معلومات مالية حساسة.</source>
+        <target>If you have a question about this page or would like to request a correction to information you provided, contact basstahali@gmail.com or WhatsApp +971 56 330 6087. Briefly explain your request and the correction you are seeking, and include an application number when needed without attaching a password or sensitive financial information.</target>
+      </segment>
+    </unit>
+    <unit id="m_592918b57dd2">
+      <notes>
+        <note category="location">src/app/Features/legal/terms.content.ts:5</note>
+      </notes>
+      <segment state="translated">
+        <source>توضح هذه الشروط كيفية استخدام بسطهالي والاستفسار عن باقات الحصص الخصوصية المباشرة أونلاين وترتيب الاشتراك فيها. يرجى قراءتها والتأكد من تفاصيل الباقة مع فريقنا قبل تأكيد الاشتراك.</source>
+        <target>These terms explain how to use Basstahali, enquire about live online private lesson packages, and arrange a subscription. Please read them and confirm the package details with our team before confirming your subscription.</target>
+      </segment>
+    </unit>
+    <unit id="m_f52b13d61867">
+      <notes>
+        <note category="location">src/app/Features/legal/terms.content.ts:9</note>
+      </notes>
+      <segment state="translated">
+        <source>الاستخدام التعليمي وولي الأمر</source>
+        <target>Educational use and guardians</target>
+      </segment>
+    </unit>
+    <unit id="m_069cbdbdf83c">
+      <notes>
+        <note category="location">src/app/Features/legal/terms.content.ts:11</note>
+      </notes>
+      <segment state="translated">
+        <source>بسطهالي منصة للحصص الخصوصية المباشرة أونلاين، تساعد الطلاب على فهم موادهم الدراسية والتفاعل مع معلميهم. استخدم المنصة ووسائل التواصل المرتبطة بها للأغراض التعليمية وترتيب الحصص.</source>
+        <target>Basstahali is a platform for live online private lessons that helps students understand their school subjects and interact with their teachers. Use the platform and its associated communication channels for educational purposes and to arrange lessons.</target>
+      </segment>
+    </unit>
+    <unit id="m_64673d0fd534">
+      <notes>
+        <note category="location">src/app/Features/legal/terms.content.ts:12</note>
+      </notes>
+      <segment state="translated">
+        <source>إذا كان الطالب قاصرًا، يجب أن يتولى ولي أمره تنسيق الاشتراك وتأكيد تفاصيله والتواصل مع الفريق عند الحاجة، مع متابعة استخدام الطالب للمنصة والحصص.</source>
+        <target>If a student is a minor, their parent or guardian must coordinate the subscription, confirm its details, and contact the team when needed, while overseeing the student’s use of the platform and participation in lessons.</target>
+      </segment>
+    </unit>
+    <unit id="m_5a2b65bae7ea">
+      <notes>
+        <note category="location">src/app/Features/legal/terms.content.ts:17</note>
+      </notes>
+      <segment state="translated">
+        <source>صحة البيانات وطلبات انضمام المعلمين</source>
+        <target>Accurate information and teacher applications</target>
+      </segment>
+    </unit>
+    <unit id="m_f4a278e834f9">
+      <notes>
+        <note category="location">src/app/Features/legal/terms.content.ts:19</note>
+      </notes>
+      <segment state="translated">
+        <source>قدّم بيانات صحيحة عند التواصل أو التسجيل أو طلب الاشتراك، وأبلغ الفريق إذا تغيّرت المعلومات اللازمة لترتيب الحصص أو التواصل معك. حافظ على سرية بيانات تسجيل دخولك.</source>
+        <target>Provide accurate information when contacting us, registering, or requesting a subscription, and tell the team if information needed to arrange lessons or contact you changes. Keep your login credentials confidential.</target>
+      </segment>
+    </unit>
+    <unit id="m_7f590f05b0f6">
+      <notes>
+        <note category="location">src/app/Features/legal/terms.content.ts:20</note>
+      </notes>
+      <segment state="translated">
+        <source>يجب على المتقدم للانضمام إلى هيئة التدريس تقديم معلومات صحيحة عن نفسه والمواد والمناهج التي يرغب في تدريسها. إرسال الطلب أو الحصول على رقم طلب لا يعني قبوله؛ تُعرف نتيجة الطلب من متابعة حالته أو التواصل مع الفريق.</source>
+        <target>Applicants to join our teachers must provide accurate information about themselves and the subjects and curricula they wish to teach. Submitting an application or receiving an application number does not mean acceptance; the outcome can be checked through application tracking or by contacting the team.</target>
+      </segment>
+    </unit>
+    <unit id="m_0f91404720af">
+      <notes>
+        <note category="location">src/app/Features/legal/terms.content.ts:25</note>
+      </notes>
+      <segment state="translated">
+        <source>الباقات والأسعار المعروضة</source>
+        <target>Published packages and prices</target>
+      </segment>
+    </unit>
+    <unit id="m_d32b8dc711f5">
+      <notes>
+        <note category="location">src/app/Features/legal/terms.content.ts:27</note>
+      </notes>
+      <segment state="translated">
+        <source>تعرض صفحة الباقات عروض المنهج الانترناشونال والمنهج الوزاري بحسب المرحلة الدراسية. تشمل الباقات المعروضة 4 مواد دراسية ومادة إضافية هدية، مع 8 حصص لكل مادة. تظهر أسعار الباقات للزائر من مصر بالجنيه المصري بسعر تحويل ثابت 15 جنيهًا لكل درهم، وللزائر من باقي الدول بالدرهم الإماراتي.</source>
+        <target>The packages page presents International curriculum and UAE Ministry curriculum offers by school stage. The published packages include 4 school subjects and 1 extra subject for free, with 8 lessons per subject. Package prices for visitors from Egypt are shown in EGP at a fixed conversion of EGP 15 per AED; visitors from other countries see prices in UAE dirhams.</target>
+      </segment>
+    </unit>
+    <unit id="m_421bfa14f51b">
+      <notes>
+        <note category="location">src/app/Features/legal/terms.content.ts:28</note>
+      </notes>
+      <segment state="translated">
+        <source>راجع تفاصيل الباقة والسعر والعرض الظاهر في صفحة الباقات، ثم أكّد مع الفريق المواد التي ستدرسها والمرحلة والمنهج المناسبين لك قبل الاشتراك.</source>
+        <target>Review the package details, price, and offer shown on the packages page, then confirm the subjects you will study and the appropriate school stage and curriculum with the team before subscribing.</target>
+      </segment>
+    </unit>
+    <unit id="m_208f13e387cd">
+      <notes>
+        <note category="location">src/app/Features/legal/terms.content.ts:33</note>
+      </notes>
+      <segment state="translated">
+        <source>ترتيب الاشتراك وتأكيد التفاصيل</source>
+        <target>Arranging a subscription and confirming details</target>
+      </segment>
+    </unit>
+    <unit id="m_2b6fdf41bc73">
+      <notes>
+        <note category="location">src/app/Features/legal/terms.content.ts:35</note>
+      </notes>
+      <segment state="translated">
+        <source>زر الاشتراك يفتح واتساب للتواصل مع فريق بسطهالي بشأن الباقة المختارة. قبل أي دفع، تأكد مع الفريق من المواد وعدد الحصص والمواعيد والسعر النهائي للباقة.</source>
+        <target>The subscription button opens WhatsApp to contact the Basstahali team about the selected package. Before making any payment, confirm the subjects, number of lessons, schedule, and final package price with the team.</target>
+      </segment>
+    </unit>
+    <unit id="m_ff615e7ea02f">
+      <notes>
+        <note category="location">src/app/Features/legal/terms.content.ts:36</note>
+      </notes>
+      <segment state="translated">
+        <source>احتفظ بتأكيد تفاصيل الاشتراك والمراسلات المتعلقة به لتتمكن من الرجوع إليها عند ترتيب الحصص أو طلب المساعدة.</source>
+        <target>Keep your subscription details confirmation and related correspondence so you can refer to them when arranging lessons or requesting help.</target>
+      </segment>
+    </unit>
+    <unit id="m_1eb53b54176a">
+      <notes>
+        <note category="location">src/app/Features/legal/terms.content.ts:41</note>
+      </notes>
+      <segment state="translated">
+        <source>الحصص والمواعيد</source>
+        <target>Lessons and schedules</target>
+      </segment>
+    </unit>
+    <unit id="m_d556d581508d">
+      <notes>
+        <note category="location">src/app/Features/legal/terms.content.ts:43</note>
+      </notes>
+      <segment state="translated">
+        <source>تُرتّب مواعيد الحصص بالتواصل مع الفريق وفق المواد والباقة المتفق عليها. التزم بالمواعيد المؤكدة، وتواصل مبكرًا إذا واجهتك مشكلة في الحضور أو احتجت إلى طلب تغيير الموعد.</source>
+        <target>Lesson times are arranged with the team according to the agreed subjects and package. Attend at the confirmed times, and contact us early if you have difficulty attending or need to request a schedule change.</target>
+      </segment>
+    </unit>
+    <unit id="m_a1aa7d3c54c2">
+      <notes>
+        <note category="location">src/app/Features/legal/terms.content.ts:44</note>
+      </notes>
+      <segment state="translated">
+        <source>للمشاركة في الحصص المباشرة، جهّز جهازًا مناسبًا واتصالًا بالإنترنت يسمح لك بمتابعة الشرح والتفاعل، وأبلغ الفريق عند وجود مشكلة تقنية تؤثر على حضورك.</source>
+        <target>To participate in live lessons, prepare a suitable device and an internet connection that allows you to follow the explanation and interact, and tell the team if a technical issue affects your attendance.</target>
+      </segment>
+    </unit>
+    <unit id="m_50fdfe9c1d29">
+      <notes>
+        <note category="location">src/app/Features/legal/terms.content.ts:49</note>
+      </notes>
+      <segment state="translated">
+        <source>احترام الطلاب والمعلمين</source>
+        <target>Respect for students and teachers</target>
+      </segment>
+    </unit>
+    <unit id="m_82f7bec69f36">
+      <notes>
+        <note category="location">src/app/Features/legal/terms.content.ts:51</note>
+      </notes>
+      <segment state="translated">
+        <source>تعامل باحترام مع المعلمين والطلاب وفريق الدعم. تجنّب الإساءة أو التنمّر أو تعطيل الحصة أو إرسال محتوى غير مناسب، وحافظ على بيئة تساعد الجميع على التعلم.</source>
+        <target>Treat teachers, students, and the support team respectfully. Avoid abuse, bullying, disrupting lessons, or sending inappropriate content, and help maintain an environment where everyone can learn.</target>
+      </segment>
+    </unit>
+    <unit id="m_75670425d887">
+      <notes>
+        <note category="location">src/app/Features/legal/terms.content.ts:52</note>
+      </notes>
+      <segment state="translated">
+        <source>احترم خصوصية المشاركين، ولا تنشر بيانات التواصل الخاصة بهم أو صورهم أو محادثاتهم دون إذنهم. وجّه الاستفسارات أو المشكلات المتعلقة بالحصة إلى فريق بسطهالي.</source>
+        <target>Respect participants’ privacy and do not publish their contact details, images, or conversations without their permission. Direct lesson-related questions or issues to the Basstahali team.</target>
+      </segment>
+    </unit>
+    <unit id="m_7a1890675029">
+      <notes>
+        <note category="location">src/app/Features/legal/terms.content.ts:57</note>
+      </notes>
+      <segment state="translated">
+        <source>حقوق المحتوى وتسجيل الحصص</source>
+        <target>Content rights and lesson recordings</target>
+      </segment>
+    </unit>
+    <unit id="m_b9b82a2f0dce">
+      <notes>
+        <note category="location">src/app/Features/legal/terms.content.ts:59</note>
+      </notes>
+      <segment state="translated">
+        <source>تظل حقوق المحتوى والمواد التعليمية لأصحابها. استخدم المواد التي تُتاح لك في الحصص لأغراض تعلمك الشخصي، ولا تشاركها أو تعيد نشرها أو تبيعها دون إذن صاحب الحق.</source>
+        <target>Content and educational materials remain the property of their respective rights holders. Use materials made available to you in lessons for your personal learning, and do not share, republish, or sell them without the rights holder’s permission.</target>
+      </segment>
+    </unit>
+    <unit id="m_32daafd40a3c">
+      <notes>
+        <note category="location">src/app/Features/legal/terms.content.ts:60</note>
+      </notes>
+      <segment state="translated">
+        <source>لا تسجّل الحصص أو تصوّرها أو تشارك تسجيلاتها دون الحصول على إذن من أصحاب المحتوى والمشاركين المعنيين.</source>
+        <target>Do not record or capture lessons, or share lesson recordings, without permission from the content rights holders and the participants concerned.</target>
+      </segment>
+    </unit>
+    <unit id="m_90053139767d">
+      <notes>
+        <note category="location">src/app/Features/legal/terms.content.ts:65</note>
+      </notes>
+      <segment state="translated">
+        <source>الإلغاء والتأجيل والاسترداد والتواصل</source>
+        <target>Cancellation, rescheduling, refunds, and contact</target>
+      </segment>
+    </unit>
+    <unit id="m_67f0c76636b5">
+      <notes>
+        <note category="location">src/app/Features/legal/terms.content.ts:67</note>
+      </notes>
+      <segment state="translated">
+        <source>قبل تأكيد الاشتراك، اطلب من الفريق توضيح شروط الإلغاء والتأجيل والاسترداد التي تنطبق على الباقة التي اخترتها. إذا رغبت في تغيير الاشتراك أو واجهت مشكلة بعد تأكيده، تواصل مع الفريق لشرح طلبك ومراجعة التفاصيل المتفق عليها.</source>
+        <target>Before confirming your subscription, ask the team to explain the cancellation, rescheduling, and refund conditions that apply to your selected package. If you wish to change your subscription or encounter an issue after confirmation, contact the team to explain your request and review the agreed details.</target>
+      </segment>
+    </unit>
+    <unit id="m_ebcfd555374e">
+      <notes>
+        <note category="location">src/app/Features/legal/terms.content.ts:68</note>
+      </notes>
+      <segment state="translated">
+        <source>للاستفسار عن هذه الشروط أو تفاصيل الاشتراك، تواصل معنا عبر واتساب على +971563306087 أو البريد الإلكتروني basstahali@gmail.com.</source>
+        <target>For questions about these terms or subscription details, contact us on WhatsApp at +971563306087 or by email at basstahali@gmail.com.</target>
+      </segment>
+    </unit>
+    <unit id="m_cc7c628c0943">
+      <notes>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:39</note>
+      </notes>
+      <segment state="translated">
+        <source>باقات الحصص المباشرة</source>
+        <target>Live lesson packages</target>
+      </segment>
+    </unit>
+    <unit id="m_f08dbdfff820">
+      <notes>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:40</note>
+      </notes>
+      <segment state="translated">
+        <source>اختر</source>
+        <target>Choose</target>
+      </segment>
+    </unit>
+    <unit id="m_99839e1179a7">
+      <notes>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:41</note>
+      </notes>
+      <segment state="translated">
+        <source>الباقة المناسبة لك</source>
+        <target>the right plan for you</target>
+      </segment>
+    </unit>
+    <unit id="m_277a62a440ec">
+      <notes>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:42</note>
+      </notes>
+      <segment state="translated">
+        <source>4 مواد + مادة هدية، و8 حصص لكل مادة.</source>
+        <target>4 subjects + 1 free subject, with 8 lessons per subject.</target>
+      </segment>
+    </unit>
+    <unit id="m_48e0ece017eb">
+      <notes>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:43</note>
+      </notes>
+      <segment state="translated">
+        <source>أسعار مصر بالجنيه المصري، بسعر ثابت 15 جنيهًا لكل درهم.</source>
+        <target>Prices in Egypt are shown in EGP at a fixed rate of EGP 15 per AED.</target>
+      </segment>
+    </unit>
+    <unit id="m_692fc0d89aa0">
+      <notes>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:44</note>
+      </notes>
+      <segment state="translated">
+        <source>باقة 4 مواد + مادة هدية</source>
+        <target>4 subjects + 1 free subject</target>
+      </segment>
+    </unit>
+    <unit id="m_b596c59ccd7f">
+      <notes>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:45</note>
+      </notes>
+      <segment state="translated">
+        <source>بدلاً من</source>
+        <target>Instead of</target>
+      </segment>
+    </unit>
+    <unit id="m_d80c2c9d5035">
+      <notes>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:46</note>
+      </notes>
+      <segment state="translated">
+        <source>خصم 20%</source>
+        <target>20% off</target>
+      </segment>
+    </unit>
+    <unit id="m_5500f35d67a3">
+      <notes>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:47</note>
+      </notes>
+      <segment state="translated">
+        <source>اشترك عبر واتساب</source>
+        <target>Subscribe via WhatsApp</target>
+      </segment>
+    </unit>
+    <unit id="m_7babcfaf69c7">
+      <notes>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:48</note>
+      </notes>
+      <segment state="translated">
+        <source>اختر باقتك للتواصل معنا مباشرة عبر واتساب وإتمام الاشتراك.</source>
+        <target>Choose your package to contact us directly on WhatsApp and complete your subscription.</target>
+      </segment>
+    </unit>
+    <unit id="m_6e69637a22ec">
+      <notes>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:58</note>
+      </notes>
+      <segment state="translated">
+        <source>المنهج الانترناشونال</source>
+        <target>International curriculum</target>
+      </segment>
+    </unit>
+    <unit id="m_eef96d9971e1">
+      <notes>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:82</note>
+      </notes>
+      <segment state="translated">
+        <source>المنهج الوزاري</source>
+        <target>UAE Ministry curriculum</target>
+      </segment>
+    </unit>
+    <unit id="m_5e686ab66049">
+      <notes>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:110</note>
+      </notes>
+      <segment state="translated">
+        <source>4 مواد دراسية</source>
+        <target>4 school subjects</target>
+      </segment>
+    </unit>
+    <unit id="m_4fdaa3026c04">
+      <notes>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:111</note>
+      </notes>
+      <segment state="translated">
+        <source>مادة إضافية هدية</source>
+        <target>1 extra subject for free</target>
+      </segment>
+    </unit>
+    <unit id="m_eea6aa3b02f5">
+      <notes>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:112</note>
+      </notes>
+      <segment state="translated">
+        <source>8 حصص لكل مادة</source>
+        <target>8 lessons per subject</target>
+      </segment>
+    </unit>
+    <unit id="pricingWhatsapp">
+      <notes>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:127</note>
+      </notes>
+      <segment state="translated">
+        <source>السلام عليكم، أرغب في الاشتراك في باقة بسطهالي <ph id="0" equiv="CURRICULUM" disp="curriculum" />، <ph id="1" equiv="STAGE" disp="stage" />، بسعر <ph id="2" equiv="PRICE" disp="price" /> <ph id="3" equiv="CURRENCY" disp="currency" />: 4 مواد + مادة هدية، و8 حصص لكل مادة.</source>
+        <target>Hello, I would like to subscribe to the Basstahali <ph id="0" equiv="CURRICULUM" disp="curriculum" /> package for <ph id="1" equiv="STAGE" disp="stage" />: <ph id="2" equiv="PRICE" disp="price" /> <ph id="3" equiv="CURRENCY" disp="currency" />, 4 subjects + 1 free subject, with 8 lessons per subject.</target>
+      </segment>
+    </unit>
+    <unit id="m_fcc5af28cc61">
+      <notes>
+        <note category="location">src/app/Features/subjects/subjects.component.ts:34</note>
+      </notes>
+      <segment state="translated">
+        <source>عودة للمراحل</source>
+        <target>Back to grades</target>
+      </segment>
+    </unit>
+    <unit id="m_aa2d5b333df8">
+      <notes>
+        <note category="location">src/app/Features/subjects/subjects.component.ts:35</note>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:93</note>
+      </notes>
+      <segment state="translated">
+        <source>المواد الدراسية</source>
+        <target>School subjects</target>
+      </segment>
+    </unit>
+    <unit id="m_61d2d6667029">
+      <notes>
+        <note category="location">src/app/Features/subjects/subjects.component.ts:36</note>
+      </notes>
+      <segment state="translated">
+        <source>اختر المادة الدراسية للاطلاع على الكورسات والمعلمين المتاحين</source>
+        <target>Choose a subject to explore available courses and teachers.</target>
+      </segment>
+    </unit>
+    <unit id="m_7f4924f6db25">
+      <notes>
+        <note category="location">src/app/Features/subjects/subjects.component.ts:41</note>
+      </notes>
+      <segment state="translated">
+        <source>استكشف شروحات ومراجعات المادة وأفضل المدرسين المعتمدين.</source>
+        <target>Explore subject lessons, revision and experienced teachers.</target>
+      </segment>
+    </unit>
+    <unit id="m_1e4c02d0094d">
+      <notes>
+        <note category="location">src/app/Features/subjects/subjects.component.ts:42</note>
+      </notes>
+      <segment state="translated">
+        <source>تصفح المادة</source>
+        <target>Explore subject</target>
+      </segment>
+    </unit>
+    <unit id="m_5a8a2f79d0dd">
+      <notes>
+        <note category="location">src/app/Features/subjects/subjects.component.ts:43</note>
+      </notes>
+      <segment state="translated">
+        <source>لا توجد مواد دراسية</source>
+        <target>No subjects available</target>
+      </segment>
+    </unit>
+    <unit id="m_538347e9fa1c">
+      <notes>
+        <note category="location">src/app/Features/subjects/subjects.component.ts:44</note>
+      </notes>
+      <segment state="translated">
+        <source>لم يتم إضافة مواد دراسية لهذه المرحلة حتى الآن، يرجى المحاولة لاحقاً أو اختيار مرحلة أخرى.</source>
+        <target>No subjects have been added for this grade yet. Try again later or choose another grade.</target>
+      </segment>
+    </unit>
+    <unit id="m_17540430bc8a">
+      <notes>
+        <note category="location">src/app/Features/subjects/subjects.component.ts:45</note>
+      </notes>
+      <segment state="translated">
+        <source>العودة للمراحل السابقة</source>
+        <target>Back to grades</target>
+      </segment>
+    </unit>
+    <unit id="subjectBookingAction">
+      <notes>
+        <note category="location">src/app/Features/subjects/subjects.component.ts:60</note>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:85</note>
+      </notes>
+      <segment state="translated">
+        <source>احجز المادة عبر واتساب</source>
+        <target>Book via WhatsApp</target>
+      </segment>
+    </unit>
+    <unit id="m_c487aa009b97">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:47</note>
+      </notes>
+      <segment state="translated">
+        <source>طلب الانضمام</source>
+        <target>Teacher application</target>
+      </segment>
+    </unit>
+    <unit id="m_81dd7c16d7c7">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:48</note>
+      </notes>
+      <segment state="translated">
+        <source>انضم لمنصتنا الرائدة وعلم بطريقة أذكى</source>
+        <target>Join our platform and teach smarter</target>
+      </segment>
+    </unit>
+    <unit id="m_e19b16bdb71a">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:49</note>
+      </notes>
+      <segment state="translated">
+        <source>الاسم الكامل</source>
+        <target>Full name</target>
+      </segment>
+    </unit>
+    <unit id="m_7ba22cf7e99d">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:51</note>
+      </notes>
+      <segment state="translated">
+        <source>كلمة المرور</source>
+        <target>Password</target>
+      </segment>
+    </unit>
+    <unit id="m_6a2b8df8483a">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:52</note>
+      </notes>
+      <segment state="translated">
+        <source>رقم الواتساب</source>
+        <target>WhatsApp number</target>
+      </segment>
+    </unit>
+    <unit id="m_3fd0d66f7b3b">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:53</note>
+      </notes>
+      <segment state="translated">
+        <source>طريقة الدفع المفضلة</source>
+        <target>Preferred payout method</target>
+      </segment>
+    </unit>
+    <unit id="m_c073b7b6bd0e">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:54</note>
+      </notes>
+      <segment state="translated">
+        <source>اختر طريقة الدفع</source>
+        <target>Choose a payment method</target>
+      </segment>
+    </unit>
+    <unit id="m_d6c70fa86ae6">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:55</note>
+      </notes>
+      <segment state="translated">
+        <source>محفظة إلكترونية (Wallet)</source>
+        <target>Digital wallet</target>
+      </segment>
+    </unit>
+    <unit id="m_4b8a64045d21">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:56</note>
+      </notes>
+      <segment state="translated">
+        <source>حساب بنكي (BankAccount)</source>
+        <target>Bank account</target>
+      </segment>
+    </unit>
+    <unit id="m_309e352a442d">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:57</note>
+      </notes>
+      <segment state="translated">
+        <source>حساب الدفع</source>
+        <target>Payout account</target>
+      </segment>
+    </unit>
+    <unit id="m_e3c20fce1b7e">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:59</note>
+      </notes>
+      <segment state="translated">
+        <source>اختر المنهج الدراسي</source>
+        <target>Choose a curriculum</target>
+      </segment>
+    </unit>
+    <unit id="m_008f7f5eff27">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:60</note>
+      </notes>
+      <segment state="translated">
+        <source>المستوى أو المرحلة الدراسية</source>
+        <target>Level or grade</target>
+      </segment>
+    </unit>
+    <unit id="m_f0065a356387">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:61</note>
+      </notes>
+      <segment state="translated">
+        <source>اختر المرحلة الدراسية</source>
+        <target>Choose your grade</target>
+      </segment>
+    </unit>
+    <unit id="m_87e502d1caf5">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:62</note>
+      </notes>
+      <segment state="translated">
+        <source>المواد الدراسية (يمكن اختيار أكثر من مادة)</source>
+        <target>Subjects (select one or more)</target>
+      </segment>
+    </unit>
+    <unit id="m_062161fbd262">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:63</note>
+      </notes>
+      <segment state="translated">
+        <source>يرجى اختيار المرحلة الدراسية أولاً لعرض المواد المتاحة.</source>
+        <target>Choose a grade first to see available subjects.</target>
+      </segment>
+    </unit>
+    <unit id="m_17239dab0c30">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:64</note>
+      </notes>
+      <segment state="translated">
+        <source>لا توجد مواد دراسية متاحة لهذه المرحلة.</source>
+        <target>No subjects are available for this grade yet.</target>
+      </segment>
+    </unit>
+    <unit id="m_b347c2553b57">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:66</note>
+      </notes>
+      <segment state="translated">
+        <source>إرسال الطلب</source>
+        <target>Submit application</target>
+      </segment>
+    </unit>
+    <unit id="m_e72c2dc9bbfd">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:67</note>
+      </notes>
+      <segment state="translated">
+        <source>متابعة حالة طلبك</source>
+        <target>Track your application</target>
+      </segment>
+    </unit>
+    <unit id="m_fef858d1a60a">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:68</note>
+      </notes>
+      <segment state="translated">
+        <source>تابع خطوات قبول طلبك في المنصة لحظة بلحظة</source>
+        <target>Follow the progress of your application</target>
+      </segment>
+    </unit>
+    <unit id="m_f6f85d3316dc">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:70</note>
+      </notes>
+      <segment state="translated">
+        <source>استعلام</source>
+        <target>Check status</target>
+      </segment>
+    </unit>
+    <unit id="m_6909e60c6bf7">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:71</note>
+      </notes>
+      <segment state="translated">
+        <source>حالة الطلب</source>
+        <target>Application status</target>
+      </segment>
+    </unit>
+    <unit id="m_e20fd49cb3bd">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:72</note>
+      </notes>
+      <segment state="translated">
+        <source>رقم الحساب أو المحفظة</source>
+        <target>Bank account or wallet number</target>
+      </segment>
+    </unit>
+    <unit id="m_d4630f175c88">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:73</note>
+      </notes>
+      <segment state="translated">
+        <source>رقم الطلب</source>
+        <target>Application number</target>
+      </segment>
+    </unit>
+    <unit id="m_1944e9e9bf40">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:74</note>
+      </notes>
+      <segment state="translated">
+        <source>رقم الطلب الرقمي</source>
+        <target>Numeric application number</target>
+      </segment>
+    </unit>
+    <unit id="m_560a4e05f8f6">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:99</note>
+      </notes>
+      <segment state="translated">
+        <source>تم قبول طلبك</source>
+        <target>Application approved</target>
+      </segment>
+    </unit>
+    <unit id="m_1176fd725375">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:101</note>
+      </notes>
+      <segment state="translated">
+        <source>تم رفض الطلب</source>
+        <target>Application rejected</target>
+      </segment>
+    </unit>
+    <unit id="m_03fa409d803f">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:102</note>
+      </notes>
+      <segment state="translated">
+        <source>الطلب قيد المراجعة</source>
+        <target>Application under review</target>
+      </segment>
+    </unit>
+    <unit id="m_f53f6891cd38">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:285</note>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:289</note>
+      </notes>
+      <segment state="translated">
+        <source>تم إرسال طلبك بنجاح!</source>
+        <target>Application submitted!</target>
+      </segment>
+    </unit>
+    <unit id="m_a0afebb40750">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:288</note>
+      </notes>
+      <segment state="translated">
+        <source>رقم الطلب الخاص بك</source>
+        <target>Your application number</target>
+      </segment>
+    </unit>
+    <unit id="m_d4c6598d6ffa">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:290</note>
+      </notes>
+      <segment state="translated">
+        <source>حسناً</source>
+        <target>OK</target>
+      </segment>
+    </unit>
+    <unit id="m_6b3d0ba6ee57">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:298</note>
+      </notes>
+      <segment state="translated">
+        <source>حدث خطأ أثناء إرسال الطلب، تأكد من صحة البيانات والمحاولة مرة أخرى.</source>
+        <target>Unable to submit. Check your details and try again.</target>
+      </segment>
+    </unit>
+    <unit id="m_c31fcf9712cd">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:302</note>
+      </notes>
+      <segment state="translated">
+        <source>عذراً!</source>
+        <target>Something went wrong</target>
+      </segment>
+    </unit>
+    <unit id="m_90725495747d">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:304</note>
+      </notes>
+      <segment state="translated">
+        <source>موافق</source>
+        <target>OK</target>
+      </segment>
+    </unit>
+    <unit id="m_5bf826c5e57c">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:316</note>
+      </notes>
+      <segment state="translated">
+        <source>إغلاق</source>
+        <target>Close</target>
+      </segment>
+    </unit>
+    <unit id="m_82b83ce7db40">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:338</note>
+      </notes>
+      <segment state="translated">
+        <source>أدخل رقم الطلب الرقمي الذي حصلت عليه بعد التسجيل.</source>
+        <target>Enter the numeric application number you received after registering.</target>
+      </segment>
+    </unit>
+    <unit id="m_5140c1716194">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:355</note>
+      </notes>
+      <segment state="translated">
+        <source>تعذر قراءة حالة الطلب. حاول مرة أخرى أو تواصل مع الدعم.</source>
+        <target>We couldn't read your application status. Try again or contact support.</target>
+      </segment>
+    </unit>
+    <unit id="m_9cca2848e618">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:362</note>
+      </notes>
+      <segment state="translated">
+        <source>تعذر متابعة الطلب حاليًا. تواصل مع الدعم للمساعدة.</source>
+        <target>We cannot check this application right now. Contact support for help.</target>
+      </segment>
+    </unit>
+    <unit id="m_843595f06a90">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:364</note>
+      </notes>
+      <segment state="translated">
+        <source>تأكد من رقم الطلب الذي حصلت عليه بعد التسجيل.</source>
+        <target>Check the application number you received after registering.</target>
+      </segment>
+    </unit>
+    <unit id="m_1657a1247635">
+      <notes>
+        <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:365</note>
+        <note category="location">src/app/core/interceptors/loading-interceptor.ts:39</note>
+      </notes>
+      <segment state="translated">
+        <source>تعذر الاتصال بالخدمة. حاول مرة أخرى بعد قليل.</source>
+        <target>Unable to reach the service. Please try again shortly.</target>
+      </segment>
+    </unit>
+    <unit id="m_42511e811727">
+      <notes>
+        <note category="location">src/app/Features/teachers/teachers.component.ts:27</note>
+      </notes>
+      <segment state="translated">
+        <source>نخبة المعلمين</source>
+        <target>Expert teachers</target>
+      </segment>
+    </unit>
+    <unit id="m_5d49f82ea5e2">
+      <notes>
+        <note category="location">src/app/Features/teachers/teachers.component.ts:28</note>
+      </notes>
+      <segment state="translated">
+        <source>تعرّف على</source>
+        <target>Meet</target>
+      </segment>
+    </unit>
+    <unit id="m_937a6388d61f">
+      <notes>
+        <note category="location">src/app/Features/teachers/teachers.component.ts:29</note>
+      </notes>
+      <segment state="translated">
+        <source>معلمينا المميزين</source>
+        <target>Our teachers</target>
+      </segment>
+    </unit>
+    <unit id="m_3810be9607bc">
+      <notes>
+        <note category="location">src/app/Features/teachers/teachers.component.ts:30</note>
+      </notes>
+      <segment state="translated">
+        <source>مجموعة من كبار المعلمين المعتمدين والمتميزين في تبسيط المناهج الدراسية وكورسات التأسيس.</source>
+        <target>Experienced teachers who simplify school curricula and foundation courses.</target>
+      </segment>
+    </unit>
+    <unit id="m_c6c05368e364">
+      <notes>
+        <note category="location">src/app/Features/teachers/teachers.component.ts:32</note>
+      </notes>
+      <segment state="translated">
+        <source>تقييم</source>
+        <target>reviews</target>
+      </segment>
+    </unit>
+    <unit id="m_95f9ba614417">
+      <notes>
+        <note category="location">src/app/Features/teachers/teachers.component.ts:42</note>
+      </notes>
+      <segment state="translated">
+        <source>العلوم والفيزياء</source>
+        <target>Science and physics</target>
+      </segment>
+    </unit>
+    <unit id="m_f3ed5f4b2426">
+      <notes>
+        <note category="location">src/app/Features/teachers/teachers.component.ts:43</note>
+      </notes>
+      <segment state="translated">
+        <source>اللغات</source>
+        <target>Languages</target>
+      </segment>
+    </unit>
+    <unit id="m_8080ee6f48cc">
+      <notes>
+        <note category="location">src/app/Features/teachers/teachers.component.ts:44</note>
+        <note category="location">src/app/Features/teachers/teachers.component.ts:87</note>
+      </notes>
+      <segment state="translated">
+        <source>اللغة العربية</source>
+        <target>Arabic</target>
+      </segment>
+    </unit>
+    <unit id="m_745183abfda1">
+      <notes>
+        <note category="location">src/app/Features/teachers/teachers.component.ts:58</note>
+      </notes>
+      <segment state="translated">
+        <source>متخصص في تدريس المناهج الإماراتية ومساعدة الطلاب على تفوقهم في القدرات والاختبارات الوطنية.</source>
+        <target>Specialising in UAE curricula and supporting students in national assessments.</target>
+      </segment>
+    </unit>
+    <unit id="m_34eab978f4b1">
+      <notes>
+        <note category="location">src/app/Features/teachers/teachers.component.ts:70</note>
+      </notes>
+      <segment state="translated">
+        <source>خبرة طويلة في تأسيس اللغات والتجهيز لاختبارات IELTS والمحادثة بطرق مبسطة.</source>
+        <target>Experienced in language foundations, IELTS preparation and conversational English.</target>
+      </segment>
+    </unit>
+    <unit id="m_241cff48b6b0">
+      <notes>
+        <note category="location">src/app/Features/teachers/teachers.component.ts:75</note>
+      </notes>
+      <segment state="translated">
+        <source>الفيزياء والعلوم</source>
+        <target>Physics and science</target>
+      </segment>
+    </unit>
+    <unit id="m_ebe1bc9c8688">
+      <notes>
+        <note category="location">src/app/Features/teachers/teachers.component.ts:82</note>
+      </notes>
+      <segment state="translated">
+        <source>أسلوب تبسيطي فريد يحول المفاهيم المعقدة إلى تجارب ذهنية وتطبيقات عملية ممتعة.</source>
+        <target>Clear explanations that turn complex ideas into engaging practical examples.</target>
+      </segment>
+    </unit>
+    <unit id="m_e2ac7994ecdc">
+      <notes>
+        <note category="location">src/app/Features/teachers/teachers.component.ts:86</note>
+      </notes>
+      <segment state="translated">
+        <source>أ. مريم العلي</source>
+        <target>Maryam Al Ali</target>
+      </segment>
+    </unit>
+    <unit id="m_26d9a3c5ac17">
+      <notes>
+        <note category="location">src/app/Features/teachers/teachers.component.ts:94</note>
+      </notes>
+      <segment state="translated">
+        <source>متخصصة في النحو والتأسيس القوي في القراءة والكتابة والفرق بين التعبير والبلاغة.</source>
+        <target>Specialising in grammar, reading, writing and Arabic expression.</target>
+      </segment>
+    </unit>
+    <unit id="m_923f12161978">
+      <notes>
+        <note category="location">src/app/Features/teachers/teachers.component.ts:122</note>
+      </notes>
+      <segment state="translated">
+        <source>السلام عليكم، أرغب في حجز حصة تجريبية مع <ph id="0" equiv="TEACHER_NAME" disp="teacherName" />.</source>
+        <target>Hello, I would like to book a trial lesson with <ph id="0" equiv="TEACHER_NAME" disp="teacherName" />.</target>
+      </segment>
+    </unit>
+    <unit id="m_9d201bb3e2b2">
+      <notes>
+        <note category="location">src/app/Features/teachers/teachers.component.ts:128</note>
+      </notes>
+      <segment state="translated">
+        <source>🎓 خبرة <ph id="0" equiv="EXPERIENCE" disp="experience" /> سنوات</source>
+        <target>🎓 <ph id="0" equiv="EXPERIENCE" disp="experience" /> years of experience</target>
+      </segment>
+    </unit>
+    <unit id="m_7753e57af83a">
+      <notes>
+        <note category="location">src/app/app.routes.ts:11</note>
+      </notes>
+      <segment state="translated">
+        <source>بسطهالي | منصة تعليمية ذكية لشرح المناهج الدراسية</source>
+        <target>Basstahali | Live online tutoring</target>
+      </segment>
+    </unit>
+    <unit id="m_069ebefa6d9b">
+      <notes>
+        <note category="location">src/app/app.routes.ts:27</note>
+      </notes>
+      <segment state="translated">
+        <source>بسطهالي | الدورات التعليمية</source>
+        <target>Basstahali | Courses</target>
+      </segment>
+    </unit>
+    <unit id="m_b35fc6460fd6">
+      <notes>
+        <note category="location">src/app/app.routes.ts:33</note>
+      </notes>
+      <segment state="translated">
+        <source>بسطهالي | المدرسين</source>
+        <target>Basstahali | Teachers</target>
+      </segment>
+    </unit>
+    <unit id="m_e6f562d1a4fb">
+      <notes>
+        <note category="location">src/app/app.routes.ts:39</note>
+      </notes>
+      <segment state="translated">
+        <source>بسطهالي | تواصل معنا</source>
+        <target>Basstahali | Contact us</target>
+      </segment>
+    </unit>
+    <unit id="m_daf607e9a7e6">
+      <notes>
+        <note category="location">src/app/app.routes.ts:45</note>
+      </notes>
+      <segment state="translated">
+        <source>بسطهالي | خطط الاشتراك</source>
+        <target>Basstahali | Pricing plans</target>
+      </segment>
+    </unit>
+    <unit id="m_55ac61564737">
+      <notes>
+        <note category="location">src/app/app.routes.ts:52</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:40</note>
+      </notes>
+      <segment state="translated">
+        <source>سياسة الخصوصية | بسطهالي</source>
+        <target>Privacy policy | Basstahali</target>
+      </segment>
+    </unit>
+    <unit id="m_dd16c0c56bb1">
+      <notes>
+        <note category="location">src/app/app.routes.ts:59</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:44</note>
+      </notes>
+      <segment state="translated">
+        <source>الشروط والأحكام | بسطهالي</source>
+        <target>Terms and conditions | Basstahali</target>
+      </segment>
+    </unit>
+    <unit id="m_7918eec1b680">
+      <notes>
+        <note category="location">src/app/app.routes.ts:65</note>
+      </notes>
+      <segment state="translated">
+        <source>بسطهالي | المناهج الدراسية</source>
+        <target>Basstahali | Curricula</target>
+      </segment>
+    </unit>
+    <unit id="m_40ee6fa3c738">
+      <notes>
+        <note category="location">src/app/app.routes.ts:73</note>
+      </notes>
+      <segment state="translated">
+        <source>بسطهالي | تفاصيل المنهج</source>
+        <target>Basstahali | Curriculum details</target>
+      </segment>
+    </unit>
+    <unit id="m_5b50ccab86d7">
+      <notes>
+        <note category="location">src/app/app.routes.ts:79</note>
+      </notes>
+      <segment state="translated">
+        <source>بسطهالي | مميزات المنصة</source>
+        <target>Basstahali | Features</target>
+      </segment>
+    </unit>
+    <unit id="m_9feeb9e44e0e">
+      <notes>
+        <note category="location">src/app/app.routes.ts:87</note>
+      </notes>
+      <segment state="translated">
+        <source>بسطهالي | المنهاج الدراسية </source>
+        <target>Basstahali | Curricula</target>
+      </segment>
+    </unit>
+    <unit id="m_f086ce8440c2">
+      <notes>
+        <note category="location">src/app/app.routes.ts:93</note>
+      </notes>
+      <segment state="translated">
+        <source>بسطهالي | المواد الدراسية</source>
+        <target>Basstahali | Subjects</target>
+      </segment>
+    </unit>
+    <unit id="m_8f4471606ed6">
+      <notes>
+        <note category="location">src/app/app.ts:17</note>
+      </notes>
+      <segment state="translated">
+        <source>منصة بسطهالي</source>
+        <target>Basstahali</target>
+      </segment>
+    </unit>
+    <unit id="m_5cf592fd8f8d">
+      <notes>
+        <note category="location">src/app/app.ts:38</note>
+      </notes>
+      <segment state="translated">
+        <source>عذراً، النقر بالزر الأيمن غير مسموح به.</source>
+        <target>Right-click is disabled on this website.</target>
+      </segment>
+    </unit>
+    <unit id="m_3e67e304c9a9">
+      <notes>
+        <note category="location">src/app/app.ts:40</note>
+        <note category="location">src/app/app.ts:57</note>
+        <note category="location">src/app/app.ts:70</note>
+      </notes>
+      <segment state="translated">
+        <source>تنبيه أمني</source>
+        <target>Security notice</target>
+      </segment>
+    </unit>
+    <unit id="m_4ccf2cfc8c51">
+      <notes>
+        <note category="location">src/app/app.ts:55</note>
+      </notes>
+      <segment state="translated">
+        <source>أدوات المطورين محظورة في هذا الموقع!</source>
+        <target>Developer tool shortcuts are disabled on this website.</target>
+      </segment>
+    </unit>
+    <unit id="m_75fd13df6ef5">
+      <notes>
+        <note category="location">src/app/app.ts:68</note>
+      </notes>
+      <segment state="translated">
+        <source>هذا الإجراء غير مسموح به!</source>
+        <target>This action is disabled.</target>
+      </segment>
+    </unit>
+    <unit id="m_a7193d7d019c">
+      <notes>
+        <note category="location">src/app/core/components/toast/toast.component.ts:15</note>
+      </notes>
+      <segment state="translated">
+        <source>إغلاق التنبيه</source>
+        <target>Dismiss notification</target>
+      </segment>
+    </unit>
+    <unit id="m_59e4530ad466">
+      <notes>
+        <note category="location">src/app/core/interceptors/loading-interceptor.ts:32</note>
+      </notes>
+      <segment state="translated">
+        <source>الخدمة استغرقت وقتًا أطول من المتوقع. حاول مرة أخرى.</source>
+        <target>The service took longer than expected. Please try again.</target>
+      </segment>
+    </unit>
+    <unit id="m_4176c61da5b7">
+      <notes>
+        <note category="location">src/app/core/interceptors/loading-interceptor.ts:34</note>
+      </notes>
+      <segment state="translated">
+        <source>طلبات كثيرة، انتظر قليلًا ثم حاول مرة أخرى.</source>
+        <target>Too many requests. Please wait and try again.</target>
+      </segment>
+    </unit>
+    <unit id="m_5efe47224313">
+      <notes>
+        <note category="location">src/app/core/interceptors/loading-interceptor.ts:36</note>
+      </notes>
+      <segment state="translated">
+        <source>تعذر إتمام الطلب. تأكد من صلاحية حسابك.</source>
+        <target>Unable to complete the request. Check your account access.</target>
+      </segment>
+    </unit>
+    <unit id="m_544af2ef9df7">
+      <notes>
+        <note category="location">src/app/core/interceptors/loading-interceptor.ts:38</note>
+      </notes>
+      <segment state="translated">
+        <source>راجع البيانات المدخلة وحاول مرة أخرى.</source>
+        <target>Check your details and try again.</target>
+      </segment>
+    </unit>
+    <unit id="m_d2e677c87f94">
+      <notes>
+        <note category="location">src/app/core/interceptors/loading-interceptor.ts:40</note>
+      </notes>
+      <segment state="translated">
+        <source>تعذر إتمام الطلب</source>
+        <target>Unable to complete the request</target>
+      </segment>
+    </unit>
+    <unit id="m_f12f3ea7ff7d">
+      <notes>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:8</note>
+      </notes>
+      <segment state="translated">
+        <source>بسطهالي | حصص أونلاين وشرح مبسط للمناهج الدراسية</source>
+        <target>Basstahali | Live online lessons and clear curriculum explanations</target>
+      </segment>
+    </unit>
+    <unit id="m_15abae32d48b">
+      <notes>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:9</note>
+      </notes>
+      <segment state="translated">
+        <source>بسطهالي منصة تعليمية أونلاين لشرح المناهج الخليجية، مع حصص مباشرة ومعلمين متخصصين ومتابعة تساعد الطلاب على الفهم والتفوق.</source>
+        <target>Basstahali is an online learning platform for Gulf curricula, with live lessons, specialist teachers, and follow-up support to help students understand and succeed.</target>
+      </segment>
+    </unit>
+    <unit id="m_7f11203def7a">
+      <notes>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:12</note>
+      </notes>
+      <segment state="translated">
+        <source>عن بسطهالي | منصة تعليمية للمناهج الخليجية</source>
+        <target>About Basstahali | Online learning for Gulf curricula</target>
+      </segment>
+    </unit>
+    <unit id="m_a356a56cde09">
+      <notes>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:13</note>
+      </notes>
+      <segment state="translated">
+        <source>تعرّف على بسطهالي ورسالتنا في تبسيط المناهج الدراسية وتقديم حصص أونلاين ومتابعة تعليمية للطلاب.</source>
+        <target>Learn about Basstahali and our mission to simplify school curricula with online lessons and ongoing learning support.</target>
+      </segment>
+    </unit>
+    <unit id="m_bc12097aab75">
+      <notes>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:16</note>
+      </notes>
+      <segment state="translated">
+        <source>المناهج الدراسية | بسطهالي</source>
+        <target>School curricula | Basstahali</target>
+      </segment>
+    </unit>
+    <unit id="m_13a48af1623b">
+      <notes>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:17</note>
+      </notes>
+      <segment state="translated">
+        <source>استكشف المناهج الدراسية على بسطهالي واختر منهجك للوصول إلى المراحل والمواد الدراسية والحصص المناسبة لك.</source>
+        <target>Explore school curricula on Basstahali and choose yours to find the right grades, subjects, and lessons.</target>
+      </segment>
+    </unit>
+    <unit id="m_e52b7d295413">
+      <notes>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:20</note>
+      </notes>
+      <segment state="translated">
+        <source>الدورات والحصص التعليمية | بسطهالي</source>
+        <target>Courses and online lessons | Basstahali</target>
+      </segment>
+    </unit>
+    <unit id="m_0348c472f08a">
+      <notes>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:21</note>
+      </notes>
+      <segment state="translated">
+        <source>استكشف الدورات والحصص التعليمية على بسطهالي وتواصل معنا لاختيار الحصة المناسبة لاحتياجك الدراسي.</source>
+        <target>Explore courses and lessons on Basstahali and contact us to choose a lesson that fits your learning needs.</target>
+      </segment>
+    </unit>
+    <unit id="m_0427fec64ea7">
+      <notes>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:24</note>
+      </notes>
+      <segment state="translated">
+        <source>المعلمون والحصص الأونلاين | بسطهالي</source>
+        <target>Teachers and live online lessons | Basstahali</target>
+      </segment>
+    </unit>
+    <unit id="m_49645387dc69">
+      <notes>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:25</note>
+      </notes>
+      <segment state="translated">
+        <source>تعرّف على معلمي بسطهالي وتواصل معنا لحجز حصص تعليمية أونلاين تناسب منهجك ومرحلتك الدراسية.</source>
+        <target>Meet Basstahali teachers and contact us to book online lessons for your curriculum and school grade.</target>
+      </segment>
+    </unit>
+    <unit id="m_ec1f5a01a8eb">
+      <notes>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:28</note>
+      </notes>
+      <segment state="translated">
+        <source>باقات الحصص للمنهج الانترناشونال والوزاري | بسطهالي</source>
+        <target>International and Ministry curriculum lesson packages | Basstahali</target>
+      </segment>
+    </unit>
+    <unit id="m_1278d3c02b66">
+      <notes>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:29</note>
+      </notes>
+      <segment state="translated">
+        <source>باقات بسطهالي للمنهج الانترناشونال والوزاري: 4 مواد ومادة هدية، و8 حصص لكل مادة، بأسعار تبدأ من 640 درهم إماراتي. اشترك مباشرة عبر واتساب.</source>
+        <target>Basstahali International and Ministry curriculum packages include 4 subjects plus 1 free, with 8 lessons per subject, from AED 640. Subscribe directly via WhatsApp.</target>
+      </segment>
+    </unit>
+    <unit id="m_bec6ce12f4dc">
+      <notes>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:32</note>
+      </notes>
+      <segment state="translated">
+        <source>مميزات منصة بسطهالي التعليمية</source>
+        <target>Basstahali learning platform features</target>
+      </segment>
+    </unit>
+    <unit id="m_3011e3c6829c">
+      <notes>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:33</note>
+      </notes>
+      <segment state="translated">
+        <source>اكتشف مميزات بسطهالي في تبسيط الشرح والمتابعة التعليمية والتواصل مع المعلمين لدعم رحلة التعلم.</source>
+        <target>Discover how Basstahali supports learning through clear explanations, progress follow-up, and communication with teachers.</target>
+      </segment>
+    </unit>
+    <unit id="m_d9ccfb4b572f">
+      <notes>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:36</note>
+      </notes>
+      <segment state="translated">
+        <source>تواصل مع بسطهالي | الاستفسار عن الحصص</source>
+        <target>Contact Basstahali | Lesson enquiries</target>
+      </segment>
+    </unit>
+    <unit id="m_e5add1196391">
+      <notes>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:37</note>
+      </notes>
+      <segment state="translated">
+        <source>تواصل مع فريق بسطهالي للاستفسار عن المناهج والحصص الأونلاين والاشتراكات التعليمية.</source>
+        <target>Contact the Basstahali team to ask about curricula, online lessons, and learning subscriptions.</target>
+      </segment>
+    </unit>
+    <unit id="m_0e99ada47889">
+      <notes>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:41</note>
+      </notes>
+      <segment state="translated">
+        <source>تعرّف على بيانات التسجيل والتواصل وتفضيلات اللغة والمظهر في بسطهالي، والخدمات الخارجية وطرق التواصل بشأن خصوصيتك.</source>
+        <target>Learn about registration and contact data, language and theme preferences, external services, and how to contact Basstahali about your privacy.</target>
+      </segment>
+    </unit>
+    <unit id="m_0655c0c1e36f">
+      <notes>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:45</note>
+      </notes>
+      <segment state="translated">
+        <source>اطّلع على شروط استخدام بسطهالي والحصص الأونلاين، وتفاصيل الاشتراك والتواصل بشأن المواعيد والإلغاء والمتابعة.</source>
+        <target>Read the terms for using Basstahali and its online lessons, including subscriptions, scheduling, cancellations, and support.</target>
+      </segment>
+    </unit>
+    <unit id="m_70ae199b58d2">
+      <notes>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:48</note>
+      </notes>
+      <segment state="translated">
+        <source>انضم كمعلم إلى بسطهالي</source>
+        <target>Join Basstahali as a teacher</target>
+      </segment>
+    </unit>
+    <unit id="m_439ac974363a">
+      <notes>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:49</note>
+      </notes>
+      <segment state="translated">
+        <source>قدّم طلب الانضمام إلى فريق معلمي بسطهالي وتابع حالة طلبك عبر المنصة.</source>
+        <target>Apply to join the Basstahali teaching team and track your application through the platform.</target>
+      </segment>
+    </unit>
+    <unit id="m_f8a6a577545b">
+      <notes>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:69</note>
+      </notes>
+      <segment state="translated">
+        <source>المراحل الدراسية | بسطهالي</source>
+        <target>School grades | Basstahali</target>
+      </segment>
+    </unit>
+    <unit id="m_59354bda7c94">
+      <notes>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:70</note>
+      </notes>
+      <segment state="translated">
+        <source>اختر المرحلة والصف الدراسي على بسطهالي للوصول إلى المواد الدراسية المناسبة لمنهجك.</source>
+        <target>Choose your school stage and grade on Basstahali to find the subjects for your curriculum.</target>
+      </segment>
+    </unit>
+    <unit id="m_c14ab189dff7">
+      <notes>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:74</note>
+      </notes>
+      <segment state="translated">
+        <source>المواد الدراسية | بسطهالي</source>
+        <target>School subjects | Basstahali</target>
+      </segment>
+    </unit>
+    <unit id="m_17b9403cb86c">
+      <notes>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:75</note>
+      </notes>
+      <segment state="translated">
+        <source>استكشف مواد صفك الدراسي على بسطهالي وتواصل معنا للاستفسار عن الشروحات والحصص الأونلاين.</source>
+        <target>Explore subjects for your school grade on Basstahali and contact us about explanations and live online lessons.</target>
+      </segment>
+    </unit>
+    <unit id="m_df57cf4af71a">
+      <notes>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:83</note>
+      </notes>
+      <segment state="translated">
+        <source>الصفحة غير موجودة | بسطهالي</source>
+        <target>Page not found | Basstahali</target>
+      </segment>
+    </unit>
+    <unit id="m_cb26f571b00c">
+      <notes>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:84</note>
+      </notes>
+      <segment state="translated">
+        <source>الصفحة المطلوبة غير موجودة. استكشف المناهج والحصص التعليمية على بسطهالي.</source>
+        <target>The page you requested could not be found. Explore curricula and online lessons on Basstahali.</target>
+      </segment>
+    </unit>
+    <unit id="m_c5dd280359ea">
+      <notes>
+        <note category="location">src/app/core/services/visitor-pricing.service.ts:15</note>
+      </notes>
+      <segment state="translated">
+        <source>جنيه مصري</source>
+        <target>EGP</target>
+      </segment>
+    </unit>
+    <unit id="m_3e3938408415">
+      <notes>
+        <note category="location">src/app/core/services/visitor-pricing.service.ts:16</note>
+      </notes>
+      <segment state="translated">
+        <source>درهم إماراتي</source>
+        <target>AED</target>
+      </segment>
+    </unit>
+    <unit id="m_f3323560539a">
+      <notes>
+        <note category="location">src/app/layouts/landing-layout/landing-layout.component.ts:16</note>
+      </notes>
+      <segment state="translated">
+        <source>تواصل معنا مباشرة</source>
+        <target>Contact us directly</target>
+      </segment>
+    </unit>
+    <unit id="m_82d08494ad78">
+      <notes>
+        <note category="location">src/app/layouts/landing-layout/landing-layout.component.ts:21</note>
+      </notes>
+      <segment state="translated">
+        <source>السلام عليكم، أرغب في الاستفسار عن الخدمات.</source>
+        <target>Hello, I would like to ask about your services.</target>
+      </segment>
+    </unit>
+    <unit id="m_932d8ab1c163">
+      <notes>
+        <note category="location">src/app/shared/components/education-card/education-card.component.ts:16</note>
+      </notes>
+      <segment state="translated">
+        <source>عرض التفاصيل</source>
+        <target>View details</target>
+      </segment>
+    </unit>
+    <unit id="m_fc0f6f348438">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:35</note>
+      </notes>
+      <segment state="translated">
+        <source>العودة للمراحل</source>
+        <target>Back to grades</target>
+      </segment>
+    </unit>
+    <unit id="m_17f5a7b2b1e1">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:36</note>
+      </notes>
+      <segment state="translated">
+        <source>اختر المنهج المناسب لك</source>
+        <target>Choose your curriculum</target>
+      </segment>
+    </unit>
+    <unit id="m_9568ca9a2b18">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:37</note>
+      </notes>
+      <segment state="translated">
+        <source>في أي صف تدرس؟</source>
+        <target>Which grade are you in?</target>
+      </segment>
+    </unit>
+    <unit id="m_e8d4848d70d7">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:38</note>
+      </notes>
+      <segment state="translated">
+        <source>ماذا تريد أن تتعلم؟</source>
+        <target>What would you like to learn?</target>
+      </segment>
+    </unit>
+    <unit id="m_aa7099e27834">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:39</note>
+      </notes>
+      <segment state="translated">
+        <source>من</source>
+        <target>of</target>
+      </segment>
+    </unit>
+    <unit id="m_fe30fd1d6cb8">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:40</note>
+      </notes>
+      <segment state="translated">
+        <source>متاح للتصفح</source>
+        <target>available</target>
+      </segment>
+    </unit>
+    <unit id="m_b7cd28953c33">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:41</note>
+      </notes>
+      <segment state="translated">
+        <source>بحث في</source>
+        <target>Search</target>
+      </segment>
+    </unit>
+    <unit id="m_730c04f9f7c9">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:42</note>
+      </notes>
+      <segment state="translated">
+        <source>جاري تحميل</source>
+        <target>Loading</target>
+      </segment>
+    </unit>
+    <unit id="m_3a6bbb407f01">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:46</note>
+      </notes>
+      <segment state="translated">
+        <source>منهج دراسي</source>
+        <target>Curriculum</target>
+      </segment>
+    </unit>
+    <unit id="m_ff11d6178d73">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:47</note>
+      </notes>
+      <segment state="translated">
+        <source>مرحلة دراسية</source>
+        <target>Grade</target>
+      </segment>
+    </unit>
+    <unit id="m_7ea037d430bc">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:48</note>
+      </notes>
+      <segment state="translated">
+        <source>مادة دراسية</source>
+        <target>Subject</target>
+      </segment>
+    </unit>
+    <unit id="m_29fc2ee50825">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:49</note>
+      </notes>
+      <segment state="translated">
+        <source>تعرّف على المراحل الدراسية واختر ما يناسب رحلتك التعليمية.</source>
+        <target>Explore the grades and find your next step in learning.</target>
+      </segment>
+    </unit>
+    <unit id="m_a26265e1c5e4">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:50</note>
+      </notes>
+      <segment state="translated">
+        <source>كل مواد صفك في مكان واحد، لخطوة أسهل نحو التفوق.</source>
+        <target>All your grade's subjects in one place, for a simpler path to success.</target>
+      </segment>
+    </unit>
+    <unit id="m_08f70f3decd3">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:51</note>
+      </notes>
+      <segment state="translated">
+        <source>شرح مبسط ومتابعة تساعدك على فهم المادة بثقة.</source>
+        <target>Clear explanations and support to help you learn with confidence.</target>
+      </segment>
+    </unit>
+    <unit id="m_27873d8c70fc">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:52</note>
+      </notes>
+      <segment state="translated">
+        <source>استكشف المراحل</source>
+        <target>Explore grades</target>
+      </segment>
+    </unit>
+    <unit id="m_718591f8c558">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:53</note>
+      </notes>
+      <segment state="translated">
+        <source>استكشف المواد</source>
+        <target>Explore subjects</target>
+      </segment>
+    </unit>
+    <unit id="m_15f659f6da6d">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:54</note>
+      </notes>
+      <segment state="translated">
+        <source>استفسر عن الحصص</source>
+        <target>Enquire about lessons</target>
+      </segment>
+    </unit>
+    <unit id="m_8d88b0583d4d">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:55</note>
+      </notes>
+      <segment state="translated">
+        <source>لا توجد نتائج مطابقة</source>
+        <target>No matching results</target>
+      </segment>
+    </unit>
+    <unit id="m_fca727a94d64">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:56</note>
+      </notes>
+      <segment state="translated">
+        <source>لا توجد بيانات متاحة حاليًا</source>
+        <target>Nothing available yet</target>
+      </segment>
+    </unit>
+    <unit id="m_9c11c23a1864">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:57</note>
+      </notes>
+      <segment state="translated">
+        <source>جرّب اسمًا آخر أو اعرض كل النتائج.</source>
+        <target>Try another name or show all results.</target>
+      </segment>
+    </unit>
+    <unit id="m_f2e0d175e64f">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:58</note>
+      </notes>
+      <segment state="translated">
+        <source>يمكنك العودة لاحقًا أو التواصل معنا لمعرفة الخيارات المتاحة.</source>
+        <target>Check back later or contact us for available options.</target>
+      </segment>
+    </unit>
+    <unit id="m_d36294e5abb3">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:59</note>
+      </notes>
+      <segment state="translated">
+        <source>عرض الكل</source>
+        <target>Show all</target>
+      </segment>
+    </unit>
+    <unit id="m_24ad3009f7b1">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:60</note>
+      </notes>
+      <segment state="translated">
+        <source>محتاج مساعدة في اختيارك؟</source>
+        <target>Need help choosing?</target>
+      </segment>
+    </unit>
+    <unit id="m_9216e40a4838">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:61</note>
+      </notes>
+      <segment state="translated">
+        <source>فريق بسطهالي معك لاختيار المنهج والحصة المناسبة لاحتياجك.</source>
+        <target>Our team will help you choose the curriculum and lessons that suit you.</target>
+      </segment>
+    </unit>
+    <unit id="m_2cadbb3d0c3c">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:64</note>
+      </notes>
+      <segment state="translated">
+        <source>خطوات اختيار المادة</source>
+        <target>Steps to choose a subject</target>
+      </segment>
+    </unit>
+    <unit id="m_fc86abfa98de">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:65</note>
+      </notes>
+      <segment state="translated">
+        <source>اكتب الاسم هنا…</source>
+        <target>Search by name…</target>
+      </segment>
+    </unit>
+    <unit id="m_ea2000f61b88">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:66</note>
+      </notes>
+      <segment state="translated">
+        <source>عرض مراحل </source>
+        <target>View grades for </target>
+      </segment>
+    </unit>
+    <unit id="m_9464e5061743">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:67</note>
+      </notes>
+      <segment state="translated">
+        <source>عرض مواد </source>
+        <target>View subjects for </target>
+      </segment>
+    </unit>
+    <unit id="m_0a0cd68992bf">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:68</note>
+      </notes>
+      <segment state="translated">
+        <source>استفسر عن حصص </source>
+        <target>Enquire about lessons in </target>
+      </segment>
+    </unit>
+    <unit id="catalogStepCurriculum">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:72</note>
+      </notes>
+      <segment state="translated">
+        <source>المنهج</source>
+        <target>Curriculum</target>
+      </segment>
+    </unit>
+    <unit id="catalogStepGrade">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:73</note>
+      </notes>
+      <segment state="translated">
+        <source>المرحلة</source>
+        <target>Grade</target>
+      </segment>
+    </unit>
+    <unit id="catalogStepSubject">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:74</note>
+      </notes>
+      <segment state="translated">
+        <source>المادة</source>
+        <target>Subject</target>
+      </segment>
+    </unit>
+    <unit id="m_099c60df29f8">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:99</note>
+      </notes>
+      <segment state="translated">
+        <source>منهجك، بطريقتك. اختر المنهج الدراسي وابدأ رحلتك مع بسطهالي خطوة بخطوة.</source>
+        <target>Your curriculum, your way. Choose a curriculum and take your next step with Basstahali.</target>
+      </segment>
+    </unit>
+    <unit id="m_352bf616a99b">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:100</note>
+      </notes>
+      <segment state="translated">
+        <source>كل مرحلة بداية جديدة. اختر صفك الدراسي للوصول إلى المواد المناسبة لك.</source>
+        <target>Every grade is a fresh start. Choose your grade to find the right subjects.</target>
+      </segment>
+    </unit>
+    <unit id="m_f469eaa7f455">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:101</note>
+      </notes>
+      <segment state="translated">
+        <source>فهم أبسط، وثقة أكبر. اكتشف مواد مرحلتك وتواصل معنا لحجز الحصة المناسبة.</source>
+        <target>Learn with confidence. Explore your subjects and ask us about the right lessons for you.</target>
+      </segment>
+    </unit>
+    <unit id="m_4093b51f686a">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:118</note>
+      </notes>
+      <segment state="translated">
+        <source>بدون اسم</source>
+        <target>Unnamed</target>
+      </segment>
+    </unit>
+    <unit id="subjectBookingMessage">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/subject-booking.ts:11</note>
+      </notes>
+      <segment state="translated">
+        <source>السلام عليكم، أرغب في حجز مادة <ph id="0" equiv="SUBJECT" disp="subjectName" /> على منصة بسطهالي.</source>
+        <target>Hello, I would like to book <ph id="0" equiv="SUBJECT" disp="subjectName" /> on Basstahali.</target>
+      </segment>
+    </unit>
+    <unit id="subjectBookingGrade">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/subject-booking.ts:14</note>
+      </notes>
+      <segment state="translated">
+        <source>المرحلة: <ph id="0" equiv="GRADE" disp="context.gradeName" /></source>
+        <target>Grade: <ph id="0" equiv="GRADE" disp="context.gradeName" /></target>
+      </segment>
+    </unit>
+    <unit id="subjectBookingCurriculum">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/subject-booking.ts:18</note>
+      </notes>
+      <segment state="translated">
+        <source>المنهج: <ph id="0" equiv="CURRICULUM" disp="context.curriculumName" /></source>
+        <target>Curriculum: <ph id="0" equiv="CURRICULUM" disp="context.curriculumName" /></target>
+      </segment>
+    </unit>
+    <unit id="subjectBookingAria">
+      <notes>
+        <note category="location">src/app/shared/components/learning-catalog/subject-booking.ts:25</note>
+      </notes>
+      <segment state="translated">
+        <source>احجز مادة <ph id="0" equiv="SUBJECT" disp="subjectName" /> عبر واتساب</source>
+        <target>Book <ph id="0" equiv="SUBJECT" disp="subjectName" /> via WhatsApp</target>
+      </segment>
+    </unit>
+    <unit id="m_e904fc08c213">
+      <notes>
+        <note category="location">src/app/shared/components/live-lesson/live-lesson.component.ts:12</note>
+      </notes>
+      <segment state="translated">
+        <source>حصتك المباشرة، أينما كنت</source>
+        <target>Your live lesson, wherever you are</target>
+      </segment>
+    </unit>
+    <unit id="m_bf191a2e66ac">
+      <notes>
+        <note category="location">src/app/shared/components/live-lesson/live-lesson.component.ts:13</note>
+      </notes>
+      <segment state="translated">
+        <source>معلمك معك خطوة بخطوة</source>
+        <target>Your teacher, with you at every step</target>
+      </segment>
+    </unit>
+    <unit id="m_8e049b4425e8">
+      <notes>
+        <note category="location">src/app/shared/components/live-lesson/live-lesson.component.ts:14</note>
+      </notes>
+      <segment state="translated">
+        <source>طالب يتابع حصة خصوصية مباشرة مع معلمه على اللابتوب</source>
+        <target>A student attending a live private lesson with a teacher on a laptop</target>
+      </segment>
+    </unit>
+    <unit id="m_e876cfcf685e">
+      <notes>
+        <note category="location">src/app/shared/components/live-lesson/live-lesson.component.ts:15</note>
+      </notes>
+      <segment state="translated">
+        <source>تشغيل حركة الصورة</source>
+        <target>Play image animation</target>
+      </segment>
+    </unit>
+    <unit id="m_e6e04ccf1248">
+      <notes>
+        <note category="location">src/app/shared/components/live-lesson/live-lesson.component.ts:16</note>
+      </notes>
+      <segment state="translated">
+        <source>إيقاف حركة الصورة</source>
+        <target>Pause image animation</target>
+      </segment>
+    </unit>
+    <unit id="m_38417eeccdce">
+      <notes>
+        <note category="location">src/app/shared/components/owl-loader/owl-loader.component.ts:15</note>
+      </notes>
+      <segment state="translated">
+        <source>بنجهّز لك كل التفاصيل</source>
+        <target>Getting everything ready for you</target>
+      </segment>
+    </unit>
+    <unit id="m_724341e8f3eb">
+      <notes>
+        <note category="location">src/app/shared/footer/footer.component.ts:14</note>
+      </notes>
+      <segment state="translated">
+        <source>منصة تعليمية تساعد الطلاب على التعلم بسهولة وتحقيق أفضل النتائج من خلال تجربة تعليمية حديثة ومميزة.</source>
+        <target>A modern learning platform that makes studying easier and helps students achieve their best.</target>
+      </segment>
+    </unit>
+    <unit id="m_6e58cd380220">
+      <notes>
+        <note category="location">src/app/shared/footer/footer.component.ts:15</note>
+      </notes>
+      <segment state="translated">
+        <source>روابط سريعة</source>
+        <target>Quick links</target>
+      </segment>
+    </unit>
+    <unit id="m_ec15ec94c35d">
+      <notes>
+        <note category="location">src/app/shared/footer/footer.component.ts:18</note>
+        <note category="location">src/app/shared/header/header.component.ts:19</note>
+      </notes>
+      <segment state="translated">
+        <source>المميزات</source>
+        <target>Features</target>
+      </segment>
+    </unit>
+    <unit id="m_43edaf712d07">
+      <notes>
+        <note category="location">src/app/shared/footer/footer.component.ts:19</note>
+        <note category="location">src/app/shared/header/header.component.ts:18</note>
+      </notes>
+      <segment state="translated">
+        <source>المدرسين</source>
+        <target>Teachers</target>
+      </segment>
+    </unit>
+    <unit id="m_2e84aea0e101">
+      <notes>
+        <note category="location">src/app/shared/footer/footer.component.ts:20</note>
+      </notes>
+      <segment state="translated">
+        <source>انضم لهيئة التدريس</source>
+        <target>Join our teachers</target>
+      </segment>
+    </unit>
+    <unit id="m_c380b562310d">
+      <notes>
+        <note category="location">src/app/shared/footer/footer.component.ts:21</note>
+      </notes>
+      <segment state="translated">
+        <source>الدعم</source>
+        <target>Support</target>
+      </segment>
+    </unit>
+    <unit id="m_54db1b890699">
+      <notes>
+        <note category="location">src/app/shared/footer/footer.component.ts:26</note>
+      </notes>
+      <segment state="translated">
+        <source>الامارات العربية المتحدة، دبي</source>
+        <target>Dubai, United Arab Emirates</target>
+      </segment>
+    </unit>
+    <unit id="footerCopyright">
+      <notes>
+        <note category="location">src/app/shared/footer/footer.component.ts:32</note>
+      </notes>
+      <segment state="translated">
+        <source>جميع الحقوق محفوظة © <ph id="0" equiv="YEAR" disp="this.currentYear" /> بسطهالي</source>
+        <target>All rights reserved © <ph id="0" equiv="YEAR" disp="this.currentYear" /> Basstahali</target>
+      </segment>
+    </unit>
+    <unit id="m_d3d452110c4d">
+      <notes>
+        <note category="location">src/app/shared/header/header.component.ts:20</note>
+      </notes>
+      <segment state="translated">
+        <source>الأسعار</source>
+        <target>Pricing</target>
+      </segment>
+    </unit>
+    <unit id="m_404841693fc2">
+      <notes>
+        <note category="location">src/app/shared/header/header.component.ts:22</note>
+      </notes>
+      <segment state="translated">
+        <source>عربي</source>
+        <target>عربي</target>
+      </segment>
+    </unit>
+    <unit id="m_8c6117b67c8b">
+      <notes>
+        <note category="location">src/app/shared/header/header.component.ts:23</note>
+      </notes>
+      <segment state="translated">
+        <source>تسجيل الدخول</source>
+        <target>Log in</target>
+      </segment>
+    </unit>
+    <unit id="m_cb75b65677d5">
+      <notes>
+        <note category="location">src/app/shared/header/header.component.ts:24</note>
+      </notes>
+      <segment state="translated">
+        <source>القائمة الرئيسية</source>
+        <target>Main navigation</target>
+      </segment>
+    </unit>
+    <unit id="m_2aaf2c72e715">
+      <notes>
+        <note category="location">src/app/shared/header/header.component.ts:25</note>
+      </notes>
+      <segment state="translated">
+        <source>التبديل إلى العربية</source>
+        <target>التبديل إلى العربية</target>
+      </segment>
+    </unit>
+    <unit id="m_d77b19407de9">
+      <notes>
+        <note category="location">src/app/shared/header/header.component.ts:26</note>
+      </notes>
+      <segment state="translated">
+        <source>تبديل الوضع الداكن</source>
+        <target>Toggle dark mode</target>
+      </segment>
+    </unit>
+    <unit id="m_7299fd5cbe92">
+      <notes>
+        <note category="location">src/app/shared/not-found/not-found.component.ts:13</note>
+      </notes>
+      <segment state="translated">
+        <source>الصفحة غير موجودة</source>
+        <target>Page not found</target>
+      </segment>
+    </unit>
+    <unit id="m_973513694f91">
+      <notes>
+        <note category="location">src/app/shared/not-found/not-found.component.ts:14</note>
+      </notes>
+      <segment state="translated">
+        <source>يبدو أن الصفحة التي تبحث عنها غير موجودة أو تم نقلها.</source>
+        <target>The page you are looking for is unavailable or has moved.</target>
+      </segment>
+    </unit>
+    <unit id="m_3fb5312625d8">
+      <notes>
+        <note category="location">src/app/shared/not-found/not-found.component.ts:15</note>
+      </notes>
+      <segment state="translated">
+        <source>العودة للرئيسية</source>
+        <target>Back to home</target>
+      </segment>
+    </unit>
+  </file>
+</xliff>

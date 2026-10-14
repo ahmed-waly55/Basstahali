@@ -5,9 +5,9 @@
     <!-- نموذج تسجيل مدرس جديد -->
     <div class="bg-white rounded-3xl shadow-xl border border-purple-100 p-5 sm:p-8">
       <div class="text-center mb-8">
-        <h1 class="text-2xl font-bold text-purple-900">{{ 'طلب الانضمام' | translate }}</h1>
+        <h1 class="text-2xl font-bold text-purple-900">{{ messages.m_c487aa009b97 }}</h1>
         <p class="text-sm text-gray-500 mt-1">
-          {{ 'انضم لمنصتنا الرائدة وعلم بطريقة أذكى' | translate }}
+          {{ messages.m_81dd7c16d7c7 }}
         </p>
       </div>
 
@@ -15,7 +15,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label for="teacher-name" class="block text-xs font-medium text-purple-900 mb-1">{{
-              'الاسم الكامل' | translate
+              messages.m_e19b16bdb71a
             }}</label>
             <input
               type="text"
@@ -23,12 +23,12 @@
               formControlName="fullName"
               autocomplete="name"
               class="w-full px-4 py-3 rounded-xl bg-purple-50/30 border border-purple-200 text-sm text-gray-800 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
-              [placeholder]="'الاسم الكامل' | translate"
+              [placeholder]="messages.m_e19b16bdb71a"
             />
           </div>
           <div>
             <label for="teacher-email" class="block text-xs font-medium text-purple-900 mb-1">{{
-              'البريد الإلكتروني' | translate
+              messages.m_0915ef8ea533
             }}</label>
             <input
               type="email"
@@ -44,7 +44,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label for="teacher-password" class="block text-xs font-medium text-purple-900 mb-1">{{
-              'كلمة المرور' | translate
+              messages.m_7ba22cf7e99d
             }}</label>
             <input
               type="password"
@@ -57,7 +57,7 @@
           </div>
           <div>
             <label for="teacher-whatsapp" class="block text-xs font-medium text-purple-900 mb-1">{{
-              'رقم الواتساب' | translate
+              messages.m_6a2b8df8483a
             }}</label>
             <input
               type="tel"
@@ -73,28 +73,28 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label for="teacher-payout" class="block text-xs font-medium text-purple-900 mb-1">{{
-              'طريقة الدفع المفضلة' | translate
+              messages.m_3fd0d66f7b3b
             }}</label>
             <select
               id="teacher-payout"
               formControlName="payoutMethod"
               class="w-full px-4 py-3 rounded-xl bg-purple-50/30 border border-purple-200 text-sm text-gray-800 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
             >
-              <option value="" disabled selected>{{ 'اختر طريقة الدفع' | translate }}</option>
-              <option value="Wallet">{{ 'محفظة إلكترونية (Wallet)' | translate }}</option>
-              <option value="BankAccount">{{ 'حساب بنكي (BankAccount)' | translate }}</option>
+              <option value="" disabled selected>{{ messages.m_c073b7b6bd0e }}</option>
+              <option value="Wallet">{{ messages.m_d6c70fa86ae6 }}</option>
+              <option value="BankAccount">{{ messages.m_4b8a64045d21 }}</option>
             </select>
           </div>
           <div>
             <label for="teacher-account" class="block text-xs font-medium text-purple-900 mb-1">{{
-              'حساب الدفع' | translate
+              messages.m_309e352a442d
             }}</label>
             <input
               type="text"
               id="teacher-account"
               formControlName="payoutAccount"
               class="w-full px-4 py-3 rounded-xl bg-purple-50/30 border border-purple-200 text-sm text-gray-800 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
-              [placeholder]="'رقم الحساب أو المحفظة' | translate"
+              [placeholder]="messages.m_e20fd49cb3bd"
             />
           </div>
         </div>
@@ -102,16 +102,16 @@
         <!-- المنهج الدراسي -->
         <div>
           <label for="teacher-curriculum" class="block text-xs font-medium text-purple-900 mb-1">{{
-            'المنهج الدراسي' | translate
+            messages.m_173cce3ff639
           }}</label>
           <select
             id="teacher-curriculum"
             formControlName="curriculumId"
             class="w-full px-4 py-3 rounded-xl bg-purple-50/30 border border-purple-200 text-sm text-gray-800 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
           >
-            <option value="" disabled selected>{{ 'اختر المنهج الدراسي' | translate }}</option>
+            <option value="" disabled selected>{{ messages.m_e3c20fce1b7e }}</option>
             @for (item of curriculaList; track item.id) {
-              <option [value]="item.id">{{ preferences.itemName(item) | translate }}</option>
+              <option [value]="item.id">{{ preferences.itemName(item) }}</option>
             }
           </select>
         </div>
@@ -119,16 +119,16 @@
         <!-- المرحلة الدراسية -->
         <div>
           <label for="teacher-grade" class="block text-xs font-medium text-purple-900 mb-1">{{
-            'المستوى أو المرحلة الدراسية' | translate
+            messages.m_008f7f5eff27
           }}</label>
           <select
             id="teacher-grade"
             formControlName="gradeLevelId"
             class="w-full px-4 py-3 rounded-xl bg-purple-50/30 border border-purple-200 text-sm text-gray-800 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition disabled:opacity-50"
           >
-            <option value="" disabled selected>{{ 'اختر المرحلة الدراسية' | translate }}</option>
+            <option value="" disabled selected>{{ messages.m_f0065a356387 }}</option>
             @for (grade of gradeLevelsList; track grade.id) {
-              <option [value]="grade.id">{{ preferences.itemName(grade) | translate }}</option>
+              <option [value]="grade.id">{{ preferences.itemName(grade) }}</option>
             }
           </select>
         </div>
@@ -136,20 +136,20 @@
         <!-- المواد الدراسية (شيك بوكس متعددة) -->
         <div>
           <label class="block text-xs font-medium text-purple-900 mb-2">{{
-            'المواد الدراسية (يمكن اختيار أكثر من مادة)' | translate
+            messages.m_87e502d1caf5
           }}</label>
 
           @if (!teacherForm.get('gradeLevelId')?.value) {
             <div
               class="p-4 bg-purple-50/30 border border-purple-200 rounded-xl text-center text-xs text-purple-400"
             >
-              {{ 'يرجى اختيار المرحلة الدراسية أولاً لعرض المواد المتاحة.' | translate }}
+              {{ messages.m_062161fbd262 }}
             </div>
           } @else if (subjectsList.length === 0) {
             <div
               class="p-4 bg-purple-50/30 border border-purple-200 rounded-xl text-center text-xs text-purple-400"
             >
-              {{ 'لا توجد مواد دراسية متاحة لهذه المرحلة.' | translate }}
+              {{ messages.m_17239dab0c30 }}
             </div>
           } @else {
             <div
@@ -166,7 +166,7 @@
                     class="shrink-0 w-4 h-4 text-purple-600 border-purple-300 rounded focus:ring-purple-400"
                   />
                   <span class="min-w-0 break-words text-gray-700 select-none text-xs font-medium">{{
-                    preferences.itemName(subject) | translate
+                    preferences.itemName(subject)
                   }}</span>
                 </label>
               }
@@ -180,7 +180,7 @@
           [disabled]="teacherForm.invalid || submitting"
           class="w-full py-3.5 bg-amber-400 hover:bg-amber-500 disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed text-gray-900 font-bold rounded-xl shadow-md transition duration-200 flex items-center justify-center gap-2 cursor-pointer"
         >
-          <span>{{ (submitting ? 'جاري الإرسال...' : 'إرسال الطلب') | translate }}</span>
+          <span>{{ submitting ? messages.m_b303cc20c191 : messages.m_b347c2553b57 }}</span>
         </button>
       </form>
     </div>
@@ -188,23 +188,23 @@
     <!-- متابعة حالة الطلب -->
     <div class="bg-white rounded-3xl shadow-xl border border-purple-100 p-5 sm:p-8">
       <div class="text-center mb-8">
-        <h2 class="text-2xl font-bold text-purple-900">{{ 'متابعة حالة طلبك' | translate }}</h2>
+        <h2 class="text-2xl font-bold text-purple-900">{{ messages.m_e72c2dc9bbfd }}</h2>
         <p class="text-sm text-gray-500 mt-1">
-          {{ 'تابع خطوات قبول طلبك في المنصة لحظة بلحظة' | translate }}
+          {{ messages.m_fef858d1a60a }}
         </p>
       </div>
 
       <div class="flex gap-2 mb-6">
         <input
           id="status-request-id"
-          [attr.aria-label]="'رقم الطلب' | translate"
+          [attr.aria-label]="messages.m_d4630f175c88"
           type="text"
           inputmode="numeric"
           (ngModelChange)="clearStatusResult()"
           (keyup.enter)="checkStatus()"
           [(ngModel)]="requestIdInput"
           name="requestIdInput"
-          [placeholder]="'رقم الطلب الرقمي' | translate"
+          [placeholder]="messages.m_1944e9e9bf40"
           class="flex-1 min-w-0 px-4 py-3 rounded-xl bg-purple-50/30 border border-purple-200 text-sm text-gray-800 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
         />
         <button
@@ -213,22 +213,22 @@
           (click)="checkStatus()"
           class="px-6 py-3 bg-purple-700 hover:bg-purple-800 text-white font-medium rounded-xl transition duration-200 text-sm cursor-pointer shadow-md flex items-center justify-center min-w-[90px]"
         >
-          <span>{{ (statusLoading ? 'جارٍ التحميل...' : 'استعلام') | translate }}</span>
+          <span>{{ statusLoading ? messages.m_cee8f138e31b : messages.m_f6f85d3316dc }}</span>
         </button>
       </div>
 
       @if (statusError) {
         <p role="alert" class="mt-4 text-sm leading-7 text-red-600">
-          {{ statusError | translate }}
+          {{ statusError }}
         </p>
       }
       @if (requestStatusResult) {
         <div role="status" class="mt-4 rounded-xl border border-purple-100 bg-purple-50/30 p-5">
-          <p class="text-xs text-gray-500">{{ 'حالة الطلب' | translate }}</p>
-          <h3 class="mt-2 font-bold text-purple-900">{{ statusLabel | translate }}</h3>
+          <p class="text-xs text-gray-500">{{ messages.m_6909e60c6bf7 }}</p>
+          <h3 class="mt-2 font-bold text-purple-900">{{ statusLabel }}</h3>
           @if (requestStatusResult.reason) {
             <p class="mt-3 text-sm leading-7 text-gray-600">
-              {{ requestStatusResult.reason | translate }}
+              {{ requestStatusResult.reason }}
             </p>
           }
         </div>

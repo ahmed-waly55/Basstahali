@@ -14,17 +14,14 @@
         class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-100 text-[#4F2DB7] text-sm font-bold mb-3"
       >
         <i class="fa-solid fa-chalkboard-user"></i>
-        {{ 'نخبة المعلمين' | translate }}
+        {{ messages.m_42511e811727 }}
       </span>
       <h1 class="text-3xl md:text-4xl font-black text-slate-900">
-        {{ 'تعرّف على' | translate }}
-        <span class="text-[#4F2DB7]">{{ 'معلمينا المميزين' | translate }}</span>
+        {{ messages.m_5d49f82ea5e2 }}
+        <span class="text-[#4F2DB7]">{{ messages.m_937a6388d61f }}</span>
       </h1>
       <p class="mt-3 text-slate-600 text-base md:text-lg">
-        {{
-          'مجموعة من كبار المعلمين المعتمدين والمتميزين في تبسيط المناهج الدراسية وكورسات التأسيس.'
-            | translate
-        }}
+        {{ messages.m_3810be9607bc }}
       </p>
     </div>
 
@@ -45,7 +42,7 @@
           "
           class="px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-300"
         >
-          {{ subject.name | translate }}
+          {{ subject.name }}
         </button>
       }
     </div>
@@ -73,14 +70,14 @@
               <span
                 class="absolute top-3 right-3 bg-white/90 backdrop-blur-md text-[#3D1A6D] text-xs font-black px-3 py-1 rounded-full shadow-sm"
               >
-                🎓 خبرة {{ teacher.experience | translate }} سنوات
+                {{ experienceLabel(teacher.experience) }}
               </span>
 
               <!-- Subject Tag -->
               <span
                 class="absolute bottom-3 left-3 bg-[#F9B400] text-[#3D1A6D] text-xs font-black px-3 py-1 rounded-full shadow-sm"
               >
-                {{ teacher.subject | translate }}
+                {{ teacher.subject }}
               </span>
             </div>
 
@@ -91,20 +88,18 @@
                 <div class="flex text-amber-400 text-xs">
                   <i class="fa-solid fa-star"></i>
                 </div>
-                <span class="text-xs font-bold text-slate-700">{{
-                  teacher.rating | translate
-                }}</span>
+                <span class="text-xs font-bold text-slate-700">{{ teacher.rating }}</span>
                 <span class="text-[11px] text-slate-400"
-                  >({{ teacher.reviewsCount | translate }} تقييم)</span
+                  >({{ teacher.reviewsCount }} {{ messages.m_c6c05368e364 }})</span
                 >
               </div>
 
               <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#4F2DB7] transition">
-                {{ teacher.name | translate }}
+                {{ teacher.name }}
               </h3>
 
               <p class="text-xs text-slate-500 mt-1 leading-relaxed line-clamp-2">
-                {{ teacher.bio | translate }}
+                {{ teacher.bio }}
               </p>
             </div>
           </div>
@@ -119,7 +114,7 @@
               class="flex-1 inline-flex items-center justify-center gap-2 bg-[#4F2DB7] hover:bg-[#3D1A6D] text-white text-xs font-bold py-2.5 px-4 rounded-xl shadow-md transition duration-300"
             >
               <i class="fa-brands fa-whatsapp text-sm text-green-400"></i>
-              <span>{{ 'احجز حصة تجريبية' | translate }}</span>
+              <span>{{ messages.m_e77a95f1187f }}</span>
             </a>
           </div>
         </div>

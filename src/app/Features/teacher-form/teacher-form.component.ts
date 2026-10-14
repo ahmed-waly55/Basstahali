@@ -1,5 +1,4 @@
 import { PreferencesService } from '../../core/services/preferences.service';
-import { TranslatePipe } from '../../core/services/translate.pipe';
 import { Component, inject, OnInit, OnDestroy, ChangeDetectorRef, NgZone } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
@@ -39,11 +38,42 @@ export function registrationResult(response: any): RegistrationResult | null {
 @Component({
   selector: 'app-teacher-form',
   standalone: true,
-  imports: [TranslatePipe, CommonModule, ReactiveFormsModule, FormsModule],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule],
   templateUrl: './teacher-form.component.html',
   styleUrl: './teacher-form.component.css',
 })
 export class TeacherFormComponent implements OnInit, OnDestroy {
+  readonly messages = {
+    m_c487aa009b97: $localize`:@@m_c487aa009b97:طلب الانضمام`,
+    m_81dd7c16d7c7: $localize`:@@m_81dd7c16d7c7:انضم لمنصتنا الرائدة وعلم بطريقة أذكى`,
+    m_e19b16bdb71a: $localize`:@@m_e19b16bdb71a:الاسم الكامل`,
+    m_0915ef8ea533: $localize`:@@m_0915ef8ea533:البريد الإلكتروني`,
+    m_7ba22cf7e99d: $localize`:@@m_7ba22cf7e99d:كلمة المرور`,
+    m_6a2b8df8483a: $localize`:@@m_6a2b8df8483a:رقم الواتساب`,
+    m_3fd0d66f7b3b: $localize`:@@m_3fd0d66f7b3b:طريقة الدفع المفضلة`,
+    m_c073b7b6bd0e: $localize`:@@m_c073b7b6bd0e:اختر طريقة الدفع`,
+    m_d6c70fa86ae6: $localize`:@@m_d6c70fa86ae6:محفظة إلكترونية (Wallet)`,
+    m_4b8a64045d21: $localize`:@@m_4b8a64045d21:حساب بنكي (BankAccount)`,
+    m_309e352a442d: $localize`:@@m_309e352a442d:حساب الدفع`,
+    m_173cce3ff639: $localize`:@@m_173cce3ff639:المنهج الدراسي`,
+    m_e3c20fce1b7e: $localize`:@@m_e3c20fce1b7e:اختر المنهج الدراسي`,
+    m_008f7f5eff27: $localize`:@@m_008f7f5eff27:المستوى أو المرحلة الدراسية`,
+    m_f0065a356387: $localize`:@@m_f0065a356387:اختر المرحلة الدراسية`,
+    m_87e502d1caf5: $localize`:@@m_87e502d1caf5:المواد الدراسية (يمكن اختيار أكثر من مادة)`,
+    m_062161fbd262: $localize`:@@m_062161fbd262:يرجى اختيار المرحلة الدراسية أولاً لعرض المواد المتاحة.`,
+    m_17239dab0c30: $localize`:@@m_17239dab0c30:لا توجد مواد دراسية متاحة لهذه المرحلة.`,
+    m_b303cc20c191: $localize`:@@m_b303cc20c191:جاري الإرسال...`,
+    m_b347c2553b57: $localize`:@@m_b347c2553b57:إرسال الطلب`,
+    m_e72c2dc9bbfd: $localize`:@@m_e72c2dc9bbfd:متابعة حالة طلبك`,
+    m_fef858d1a60a: $localize`:@@m_fef858d1a60a:تابع خطوات قبول طلبك في المنصة لحظة بلحظة`,
+    m_cee8f138e31b: $localize`:@@m_cee8f138e31b:جارٍ التحميل...`,
+    m_f6f85d3316dc: $localize`:@@m_f6f85d3316dc:استعلام`,
+    m_6909e60c6bf7: $localize`:@@m_6909e60c6bf7:حالة الطلب`,
+    m_e20fd49cb3bd: $localize`:@@m_e20fd49cb3bd:رقم الحساب أو المحفظة`,
+    m_d4630f175c88: $localize`:@@m_d4630f175c88:رقم الطلب`,
+    m_1944e9e9bf40: $localize`:@@m_1944e9e9bf40:رقم الطلب الرقمي`,
+  };
+
   preferences = inject(PreferencesService);
 
   private destroy$ = new Subject<void>();
@@ -66,10 +96,10 @@ export class TeacherFormComponent implements OnInit, OnDestroy {
   private statusSubscription?: Subscription;
   get statusLabel(): string {
     return this.requestStatusResult?.status === 'Approved'
-      ? 'تم قبول طلبك'
+      ? $localize`:@@m_560a4e05f8f6:تم قبول طلبك`
       : this.requestStatusResult?.status === 'Rejected'
-        ? 'تم رفض الطلب'
-        : 'الطلب قيد المراجعة';
+        ? $localize`:@@m_1176fd725375:تم رفض الطلب`
+        : $localize`:@@m_03fa409d803f:الطلب قيد المراجعة`;
   }
   clearStatusResult(): void {
     this.statusSubscription?.unsubscribe();
@@ -252,12 +282,12 @@ export class TeacherFormComponent implements OnInit, OnDestroy {
 
           this.showAlert({
             icon: 'success',
-            title: this.preferences.translate('تم إرسال طلبك بنجاح!'),
+            title: $localize`:@@m_f53f6891cd38:تم إرسال طلبك بنجاح!`,
             text:
               reqId !== undefined && reqId !== null
-                ? `${this.preferences.translate('رقم الطلب الخاص بك')}: ${reqId}`
-                : this.preferences.translate('تم إرسال طلبك بنجاح!'),
-            confirmButtonText: this.preferences.translate('حسناً'),
+                ? `${$localize`:@@m_a0afebb40750:رقم الطلب الخاص بك`}: ${reqId}`
+                : $localize`:@@m_f53f6891cd38:تم إرسال طلبك بنجاح!`,
+            confirmButtonText: $localize`:@@m_d4c6598d6ffa:حسناً`,
           });
           this.teacherForm.reset();
           this.clearSubjectIds();
@@ -265,13 +295,13 @@ export class TeacherFormComponent implements OnInit, OnDestroy {
         error: (error) => {
           const errorMessage =
             error?.error?.message ||
-            'حدث خطأ أثناء إرسال الطلب، تأكد من صحة البيانات والمحاولة مرة أخرى.';
+            $localize`:@@m_6b3d0ba6ee57:حدث خطأ أثناء إرسال الطلب، تأكد من صحة البيانات والمحاولة مرة أخرى.`;
 
           this.showAlert({
             icon: 'error',
-            title: this.preferences.translate('عذراً!'),
+            title: $localize`:@@m_c31fcf9712cd:عذراً!`,
             text: errorMessage,
-            confirmButtonText: this.preferences.translate('موافق'),
+            confirmButtonText: $localize`:@@m_90725495747d:موافق`,
           });
           console.error(error);
         },
@@ -283,7 +313,7 @@ export class TeacherFormComponent implements OnInit, OnDestroy {
       ...options,
       buttonsStyling: false,
       showCloseButton: true,
-      closeButtonAriaLabel: this.preferences.translate('إغلاق'),
+      closeButtonAriaLabel: $localize`:@@m_5bf826c5e57c:إغلاق`,
       backdrop: 'rgba(20, 12, 37, 0.5)',
       customClass: {
         popup: 'basstahali-dialog',
@@ -305,7 +335,7 @@ export class TeacherFormComponent implements OnInit, OnDestroy {
       this.statusWhatsAppInput.trim() ||
       String(this.teacherForm.get('whatsAppNumber')?.value ?? '').trim();
     if (!/^[1-9]\d*$/.test(requestId) || Number(requestId) > 2147483647) {
-      this.statusError = 'أدخل رقم الطلب الرقمي الذي حصلت عليه بعد التسجيل.';
+      this.statusError = $localize`:@@m_82b83ce7db40:أدخل رقم الطلب الرقمي الذي حصلت عليه بعد التسجيل.`;
       return;
     }
     this.statusLoading = true;
@@ -322,17 +352,17 @@ export class TeacherFormComponent implements OnInit, OnDestroy {
         next: (response) => {
           this.requestStatusResult = registrationResult(response);
           if (!this.requestStatusResult)
-            this.statusError = 'تعذر قراءة حالة الطلب. حاول مرة أخرى أو تواصل مع الدعم.';
+            this.statusError = $localize`:@@m_5140c1716194:تعذر قراءة حالة الطلب. حاول مرة أخرى أو تواصل مع الدعم.`;
           this.cdr.markForCheck();
         },
         error: (error) => {
           this.statusError =
             error.status === 400 &&
             error.error?.errors?.some((item: any) => item.field === 'whatsAppNumber')
-              ? 'تعذر متابعة الطلب حاليًا. تواصل مع الدعم للمساعدة.'
+              ? $localize`:@@m_9cca2848e618:تعذر متابعة الطلب حاليًا. تواصل مع الدعم للمساعدة.`
               : error.status === 400 || error.status === 403 || error.status === 404
-                ? 'تأكد من رقم الطلب الذي حصلت عليه بعد التسجيل.'
-                : 'تعذر الاتصال بالخدمة. حاول مرة أخرى بعد قليل.';
+                ? $localize`:@@m_843595f06a90:تأكد من رقم الطلب الذي حصلت عليه بعد التسجيل.`
+                : $localize`:@@m_1657a1247635:تعذر الاتصال بالخدمة. حاول مرة أخرى بعد قليل.`;
           this.cdr.markForCheck();
         },
       });

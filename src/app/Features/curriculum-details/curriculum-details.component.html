@@ -12,21 +12,19 @@
       <span class="text-xl transform group-hover:translate-x-1 transition-transform">{{
         preferences.language() === 'ar' ? '→' : '←'
       }}</span>
-      {{ preferences.language() === 'en' ? 'Back to curricula' : 'عودة للمناهج' }}
+      {{ messages.m_a9fe55e11e10 }}
     </a>
 
     <!-- العنوان والوصف -->
     <h1
       class="text-[#3b236d] text-3xl md:text-4xl font-extrabold mb-3 mt-10 md:mt-0 text-center tracking-tight"
     >
-      {{ preferences.language() === 'en' ? 'School grades' : 'المراحل الدراسية' }}
+      {{ messages.m_e56a7b103ef6 }}
     </h1>
 
     <p class="text-gray-600 text-base md:text-lg text-center max-w-md">
       {{
-        preferences.language() === 'en'
-          ? 'Choose your grade to explore its subjects.'
-          : 'اختر المرحلة الدراسية المناسبة لك للاطلاع على كافة المواد'
+        messages.m_8463b885352e
       }}
     </p>
 
@@ -37,7 +35,7 @@
   <!-- عرض المراحل الدراسية -->
   @if (loading()) {
     <div role="status" aria-live="polite">
-      <p class="mb-6 text-center text-gray-600">{{ 'جارٍ التحميل...' | translate }}</p>
+      <p class="mb-6 text-center text-gray-600">{{ messages.m_cee8f138e31b }}</p>
       <div
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8"
         aria-hidden="true"
@@ -66,17 +64,17 @@
         !
       </div>
       <h2 class="text-2xl font-bold text-[#3b236d] mb-3">
-        {{ 'تعذر تحميل البيانات' | translate }}
+        {{ messages.m_e0465a89fde9 }}
       </h2>
       <p class="text-gray-500 leading-relaxed">
-        {{ 'حاول مرة أخرى بعد التأكد من اتصالك بالإنترنت.' | translate }}
+        {{ messages.m_c736c9f1496a }}
       </p>
       <button
         type="button"
         (click)="retry()"
         class="bg-[#3b236d] hover:bg-[#2d1a54] text-white font-bold py-3 px-8 rounded-xl transition-colors cursor-pointer shadow-md inline-block mt-6"
       >
-        {{ 'إعادة المحاولة' | translate }}
+        {{ messages.m_2e47b5f289f1 }}
       </button>
     </div>
   } @else if (gradeLevels().length > 0) {
@@ -131,9 +129,7 @@
           <p class="text-gray-500 text-sm mb-6 line-clamp-2 z-10 min-h-[40px] leading-relaxed">
             {{
               itemDescription(grade) ||
-                (preferences.language() === 'en'
-                  ? 'Explore the subjects and courses available for this grade.'
-                  : 'استكشف المواد والمقررات الدراسية المتاحة لهذه المرحلة.')
+                (messages.m_903e510c1f81)
             }}
           </p>
 
@@ -143,7 +139,7 @@
             [queryParams]="{ curriculum: id }"
             class="w-full mt-auto bg-[#3b236d] hover:bg-[#2d1a54] text-white font-bold py-3 px-4 rounded-xl transition-all duration-300 shadow-sm z-10 block text-center cursor-pointer"
           >
-            {{ preferences.language() === 'en' ? 'View subjects' : 'عرض المواد' }}
+            {{ messages.m_77b90efee27e }}
           </a>
         </div>
       }
@@ -163,15 +159,13 @@
 
       <h3 class="text-2xl font-bold text-[#3b236d] mb-2">
         {{
-          preferences.language() === 'en' ? 'No school grades available' : 'لا توجد مراحل دراسية'
+          messages.m_7aad98c6764d
         }}
       </h3>
 
       <p class="text-gray-500 mb-8 leading-relaxed">
         {{
-          preferences.language() === 'en'
-            ? 'No school grades are available for this curriculum yet. Please check your selected curriculum.'
-            : 'لم يتم العثور على مراحل دراسية لهذا المنهج حالياً، يرجى التحقق من المنهج المختار.'
+          messages.m_aaa04a0ad894
         }}
       </p>
 
@@ -179,7 +173,7 @@
         routerLink="/curriculum"
         class="bg-[#3b236d] hover:bg-[#2d1a54] text-white font-bold py-3 px-8 rounded-xl transition-colors cursor-pointer shadow-md inline-block"
       >
-        {{ preferences.language() === 'en' ? 'Back to curricula' : 'العودة للمناهج' }}
+        {{ messages.m_33fe9feecbfc }}
       </a>
     </div>
   }

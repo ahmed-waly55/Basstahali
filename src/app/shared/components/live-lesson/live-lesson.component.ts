@@ -1,14 +1,21 @@
 import { afterNextRender, Component, DestroyRef, ElementRef, inject, signal } from '@angular/core';
-import { TranslatePipe } from '../../../core/services/translate.pipe';
 
 @Component({
   selector: 'app-live-lesson',
-  imports: [TranslatePipe],
+  imports: [],
   templateUrl: './live-lesson.component.html',
   styleUrl: './live-lesson.component.css',
   host: { '[class.motion-paused]': 'motionPaused()' },
 })
 export class LiveLessonComponent {
+  readonly messages = {
+    m_e904fc08c213: $localize`:@@m_e904fc08c213:حصتك المباشرة، أينما كنت`,
+    m_bf191a2e66ac: $localize`:@@m_bf191a2e66ac:معلمك معك خطوة بخطوة`,
+    m_8e049b4425e8: $localize`:@@m_8e049b4425e8:طالب يتابع حصة خصوصية مباشرة مع معلمه على اللابتوب`,
+    m_e876cfcf685e: $localize`:@@m_e876cfcf685e:تشغيل حركة الصورة`,
+    m_e6e04ccf1248: $localize`:@@m_e6e04ccf1248:إيقاف حركة الصورة`,
+  };
+
   private host = inject(ElementRef<HTMLElement>);
   private destroy = inject(DestroyRef);
   readonly motionPaused = signal(false);

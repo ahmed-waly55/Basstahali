@@ -3,7 +3,7 @@
 
 <!-- Header 1 -->
 <app-section-header
-  [title]="'المناهج الدراسية و الكورسات' | translate"
+  [title]="messages.m_48b4fb1a68d2"
   data-aos="fade-down"
   data-aos-duration="800"
 />
@@ -20,10 +20,8 @@
         [attr.data-aos-delay]="(idx + 1) * 100"
       >
         <app-education-card
-          [title]="preferences.itemName(curriculum) || 'المنهج الدراسي'"
-          [subtitle]="
-            curriculum.description || 'جميع المراحل الدراسية وفق أفضل المناهج مع نخبة من المدرسين.'
-          "
+          [title]="preferences.itemName(curriculum) || messages.m_173cce3ff639"
+          [subtitle]="curriculum.description || messages.m_33dca1b609ba"
           iconBg="bg-blue-100"
           iconColor="text-blue-600"
           glowColor="bg-blue-300"
@@ -43,10 +41,8 @@
       data-aos-delay="250"
     >
       <app-education-card
-        [title]="'الكورسات' | translate"
-        [subtitle]="
-          'كورسات في اللغات، البرمجة، المهارات، والمواد الإثرائية لجميع الأعمار.' | translate
-        "
+        [title]="messages.m_5b82b7079a31"
+        [subtitle]="messages.m_a73730be0c2b"
         iconBg="bg-[#F9B400]/20"
         iconColor="text-[#F9B400]"
         glowColor="bg-[#F9B400]/40"
@@ -61,7 +57,7 @@
 
 <!-- Header 2 -->
 <app-section-header
-  [title]="'مميزات المنصة' | translate"
+  [title]="messages.m_733f81a21615"
   data-aos="fade-down"
   data-aos-duration="800"
 />
@@ -82,18 +78,16 @@
         class="inline-flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full text-white text-sm font-semibold"
       >
         <i class="fa-solid fa-stars text-[#F9B400]"></i>
-        {{ 'لماذا بسطهالي؟' | translate }}
+        {{ messages.m_4dc778bb0709 }}
       </span>
 
       <h2 class="mt-5 text-3xl md:text-4xl font-black text-white">
-        {{ 'كل ما يحتاجه الطالب...' | translate }}
-        <span class="text-[#F9B400]">{{ 'في مكان واحد' | translate }}</span>
+        {{ messages.m_ef1f81cc2219 }}
+        <span class="text-[#F9B400]">{{ messages.m_149eab48f8d5 }}</span>
       </h2>
 
       <p class="mt-3 text-white/75 max-w-2xl mx-auto">
-        {{
-          'منصة متكاملة تساعد الطالب وولي الأمر على متابعة العملية التعليمية بسهولة.' | translate
-        }}
+        {{ messages.m_bc25e99f9ae0 }}
       </p>
     </div>
 
@@ -109,9 +103,9 @@
         >
           <i class="fa-solid fa-calendar-days"></i>
         </div>
-        <h3 class="mt-4 font-bold text-white">{{ 'جدول الحصص' | translate }}</h3>
+        <h3 class="mt-4 font-bold text-white">{{ messages.m_df67c0ff5d15 }}</h3>
         <p class="mt-2 text-sm text-white/70 leading-6">
-          {{ 'تنظيم كامل للحصص والمواعيد.' | translate }}
+          {{ messages.m_3196feca54ae }}
         </p>
       </div>
 
@@ -125,8 +119,8 @@
         >
           <i class="fa-solid fa-bell"></i>
         </div>
-        <h3 class="mt-4 font-bold text-white">{{ 'إشعارات ذكية' | translate }}</h3>
-        <p class="mt-2 text-sm text-white/70">{{ 'تنبيهات قبل الحصص والواجبات.' | translate }}</p>
+        <h3 class="mt-4 font-bold text-white">{{ messages.m_cc40179ce00c }}</h3>
+        <p class="mt-2 text-sm text-white/70">{{ messages.m_8d63fdbb70ec }}</p>
       </div>
 
       <div
@@ -139,8 +133,8 @@
         >
           <i class="fa-solid fa-cloud-arrow-up"></i>
         </div>
-        <h3 class="mt-4 font-bold text-white">{{ 'رفع الواجبات' | translate }}</h3>
-        <p class="mt-2 text-sm text-white/70">{{ 'رفع سريع وسهل للواجبات.' | translate }}</p>
+        <h3 class="mt-4 font-bold text-white">{{ messages.m_2dca077cc935 }}</h3>
+        <p class="mt-2 text-sm text-white/70">{{ messages.m_fe7466316c5b }}</p>
       </div>
 
       <div
@@ -153,8 +147,8 @@
         >
           <i class="fa-solid fa-circle-check"></i>
         </div>
-        <h3 class="mt-4 font-bold text-white">{{ 'تصحيح إلكتروني' | translate }}</h3>
-        <p class="mt-2 text-sm text-white/70">{{ 'تصحيح فوري مع ملاحظات المعلم.' | translate }}</p>
+        <h3 class="mt-4 font-bold text-white">{{ messages.m_10bd43535d5c }}</h3>
+        <p class="mt-2 text-sm text-white/70">{{ messages.m_7cb12f66df00 }}</p>
       </div>
 
       <div
@@ -167,8 +161,8 @@
         >
           <i class="fa-solid fa-user-group"></i>
         </div>
-        <h3 class="mt-4 font-bold text-white">{{ 'متابعة ولي الأمر' | translate }}</h3>
-        <p class="mt-2 text-sm text-white/70">{{ 'متابعة مستمرة لمستوى الأبناء.' | translate }}</p>
+        <h3 class="mt-4 font-bold text-white">{{ messages.m_93253eaf4991 }}</h3>
+        <p class="mt-2 text-sm text-white/70">{{ messages.m_81e5a00e0c5a }}</p>
       </div>
 
       <div
@@ -181,8 +175,8 @@
         >
           <i class="fa-solid fa-chart-line"></i>
         </div>
-        <h3 class="mt-4 font-bold text-white">{{ 'تقارير الأداء' | translate }}</h3>
-        <p class="mt-2 text-sm text-white/70">{{ 'تحليل كامل لتقدم الطالب.' | translate }}</p>
+        <h3 class="mt-4 font-bold text-white">{{ messages.m_a2991806009f }}</h3>
+        <p class="mt-2 text-sm text-white/70">{{ messages.m_4c202b92e8cc }}</p>
       </div>
     </div>
   </div>
@@ -208,7 +202,7 @@
       <span class="absolute bottom-2 right-2 text-purple-300">✦</span>
       <img
         src="/images/owl-banner.png"
-        [alt]="'بسطهالي' | translate"
+        [alt]="messages.m_70b341c96b9c"
         class="w-32 md:w-44 h-auto object-contain drop-shadow-xl"
       />
     </div>
@@ -222,24 +216,24 @@
       <span
         class="mb-2 inline-flex items-center rounded-full bg-yellow-400/20 border border-yellow-300/30 px-4 py-1 text-sm font-semibold text-yellow-200"
       >
-        {{ '🎁 عرض لفترة محدودة' | translate }}
+        {{ messages.m_7127659cb735 }}
       </span>
       <h2 class="text-2xl md:text-4xl font-extrabold">
-        {{ 'جرّب أول حصة' | translate }}
-        <span class="text-yellow-300">{{ 'مجانًا' | translate }}</span>
+        {{ messages.m_6dc1b1365af6 }}
+        <span class="text-yellow-300">{{ messages.m_fb97e075faae }}</span>
       </h2>
       <p class="mt-2 text-purple-100 text-base md:text-lg">
-        {{ 'احجز حصتك التجريبية المجانية وتعرّف على أسلوب الشرح قبل الاشتراك.' | translate }}
+        {{ messages.m_14e4a20dfd7c }}
       </p>
       <div class="mt-4">
         <a
-          href="https://wa.me/971563306087?text=السلام%20عليكم،%20أرغب%20في%20حجز%20أول%20حصة%20تجريبية%20مجانية."
+          [href]="trialBookingLink"
           target="_blank"
           rel="noopener noreferrer"
           class="inline-flex items-center gap-3 bg-[#FFC107] hover:bg-[#FFC108] text-black font-bold px-7 py-3 rounded-2xl shadow-lg transition duration-300 hover:scale-105"
         >
           <i class="pi pi-whatsapp text-xl"></i>
-          {{ 'احجز الآن عبر واتساب' | translate }}
+          {{ messages.m_8f7716d77474 }}
         </a>
       </div>
     </div>
@@ -268,13 +262,13 @@
         class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-100 text-[#4F2DB7] text-sm font-bold mb-4 shadow-sm"
       >
         <i class="fa-solid fa-rocket text-[#F9B400]"></i>
-        <span>{{ 'كيف تبدأ معنا؟' | translate }}</span>
+        <span>{{ messages.m_84a67ee91b0f }}</span>
       </span>
 
       <h2 class="text-3xl md:text-5xl font-black text-slate-900 leading-tight">
-        {{ 'ابدأ رحلتك التعليمية في' | translate }}
+        {{ messages.m_9602e81690c9 }}
         <span class="text-[#4F2DB7] relative inline-block">
-          {{ '4 خطوات' | translate }}
+          {{ messages.m_5324c02ad8af }}
           <svg
             class="absolute -bottom-2 right-0 w-full h-2 text-[#F9B400]"
             viewBox="0 0 100 20"
@@ -292,10 +286,7 @@
       </h2>
 
       <p class="mt-4 text-slate-600 text-base md:text-lg leading-relaxed">
-        {{
-          'التسجيل في منصة بسطهالي لا يستغرق سوى دقائق قليلة، لتنطلق بعدها في تجربة تعليمية سلسة وممتعة.'
-            | translate
-        }}
+        {{ messages.m_29499543fd3e }}
       </p>
     </div>
 
@@ -325,11 +316,9 @@
             <i class="fa-solid fa-user-plus"></i>
           </div>
 
-          <h3 class="text-xl font-bold text-slate-900 mb-2">{{ 'أنشئ حسابك' | translate }}</h3>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">{{ messages.m_e27bdf84c680 }}</h3>
           <p class="text-slate-500 text-sm leading-relaxed">
-            {{
-              'قم بإنشاء حسابك الجديد بسهولة أو اطلب التسجيل المباشر عبر خدمة الواتساب.' | translate
-            }}
+            {{ messages.m_bdc93726daf6 }}
           </p>
         </div>
       </div>
@@ -353,12 +342,9 @@
             <i class="fa-solid fa-book-open"></i>
           </div>
 
-          <h3 class="text-xl font-bold text-slate-900 mb-2">{{ 'اختر المنهج' | translate }}</h3>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">{{ messages.m_3d2fb6a4d73c }}</h3>
           <p class="text-slate-500 text-sm leading-relaxed">
-            {{
-              'حدد الدولة، المنهج، والمرحلة الدراسية لتظهر لك الدروس والمواد المخصصة لك.'
-                | translate
-            }}
+            {{ messages.m_7016c886ae15 }}
           </p>
         </div>
       </div>
@@ -382,11 +368,9 @@
             <i class="fa-solid fa-credit-card"></i>
           </div>
 
-          <h3 class="text-xl font-bold text-slate-900 mb-2">{{ 'فعّل اشتراكك' | translate }}</h3>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">{{ messages.m_67f49e701485 }}</h3>
           <p class="text-slate-500 text-sm leading-relaxed">
-            {{
-              'اختر الباقة المناسبة لاحتياجاتك وأكمل عملية الاشتراك بخطوات آمنة وسريعة.' | translate
-            }}
+            {{ messages.m_67cf62749c77 }}
           </p>
         </div>
       </div>
@@ -410,9 +394,9 @@
             <i class="fa-solid fa-graduation-cap"></i>
           </div>
 
-          <h3 class="text-xl font-bold text-slate-900 mb-2">{{ 'ابدأ التعلم' | translate }}</h3>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">{{ messages.m_e04f5380ec6a }}</h3>
           <p class="text-slate-500 text-sm leading-relaxed">
-            {{ 'شاهد الشروحات التفاعلية، احضر الحصص، وأنجز الواجبات بسهولة للتفوق.' | translate }}
+            {{ messages.m_df5c55d4e104 }}
           </p>
         </div>
       </div>
@@ -426,7 +410,7 @@
         class="inline-flex items-center gap-3 bg-[#4F2DB7] hover:bg-[#3D1A6D] text-white font-bold py-4 px-8 rounded-2xl transition duration-300 shadow-xl shadow-purple-900/20 hover:scale-105"
       >
         <i class="fa-brands fa-whatsapp text-2xl text-[#25D366]"></i>
-        <span>{{ 'سجل حسابك الآن عبر الواتساب' | translate }}</span>
+        <span>{{ messages.m_8dc5631ffac6 }}</span>
       </a>
     </div>
   </div>
@@ -434,14 +418,14 @@
 
 <!-- 5. ماذا يقول طلابنا -->
 <section class="max-w-6xl mx-auto px-4 py-8" data-aos="fade-up" data-aos-duration="800">
-  <app-section-header [title]="'ماذا يقول طلابنا؟' | translate" />
+  <app-section-header [title]="messages.m_4df49eb87a01" />
 
   <p class="max-w-2xl mx-auto mb-3 text-center text-sm font-semibold text-[#4F2DB7]">
-    {{ 'نماذج توضيحية مؤقتة وليست شهادات فعلية.' | translate }}
+    {{ messages.m_36a64f47675d }}
   </p>
 
   <p class="max-w-2xl mx-auto mb-6 text-center text-sm md:text-base leading-relaxed text-slate-600">
-    {{ 'شرح واضح، مواعيد مرتبة ومتابعة للدروس؛ تفاصيل تهمك كولي أمر.' | translate }}
+    {{ messages.m_526d124bec7b }}
   </p>
 
   <div
@@ -453,7 +437,7 @@
       (click)="preferences.language() === 'ar' ? scrollRight() : scrollLeft()"
       type="button"
       [attr.aria-label]="
-        (preferences.language() === 'ar' ? 'عرض الآراء السابقة' : 'عرض الآراء التالية') | translate
+        preferences.language() === 'ar' ? messages.m_a784688c7932 : messages.m_0926efa89f4b
       "
       class="absolute -right-2 md:-right-4 z-20 w-8 h-8 md:w-9 md:h-9 rounded-full bg-white shadow-md border border-purple-100 flex items-center justify-center text-purple-600 hover:bg-purple-50 transition-all focus:outline-none"
     >
@@ -479,7 +463,7 @@
           <p
             class="text-[#2a174a] font-bold text-xs md:text-sm leading-relaxed px-1 my-3 text-center"
           >
-            {{ item.quote | translate }}
+            {{ item.quote }}
           </p>
 
           <div class="flex flex-col items-center mt-auto w-full">
@@ -494,15 +478,15 @@
             >
               <img
                 [src]="item.avatar"
-                [alt]="item.name | translate"
+                [alt]="item.name"
                 class="w-full h-full object-cover rounded-full"
               />
             </div>
 
             <h4 class="font-bold text-[#2a174a] text-xs md:text-sm mb-0.5">
-              {{ item.name | translate }}
+              {{ item.name }}
             </h4>
-            <span class="text-[11px] font-medium text-[#6c5991]">{{ item.grade | translate }}</span>
+            <span class="text-[11px] font-medium text-[#6c5991]">{{ item.grade }}</span>
           </div>
         </div>
       }
@@ -512,7 +496,7 @@
       (click)="preferences.language() === 'ar' ? scrollLeft() : scrollRight()"
       type="button"
       [attr.aria-label]="
-        (preferences.language() === 'ar' ? 'عرض الآراء التالية' : 'عرض الآراء السابقة') | translate
+        preferences.language() === 'ar' ? messages.m_0926efa89f4b : messages.m_a784688c7932
       "
       class="absolute -left-2 md:-left-4 z-20 w-8 h-8 md:w-9 md:h-9 rounded-full bg-white shadow-md border border-purple-100 flex items-center justify-center text-purple-600 hover:bg-purple-50 transition-all focus:outline-none"
     >
@@ -539,11 +523,11 @@
       data-aos-delay="200"
     >
       <h2 class="text-2xl md:text-3xl font-extrabold mb-2 tracking-wide">
-        {{ 'تواصل معنا على واتساب' | translate }}
+        {{ messages.m_d0c08f94b14b }}
       </h2>
 
       <p class="text-white/80 text-sm md:text-base font-medium mb-6">
-        {{ 'نحن هنا لمساعدتك والإجابة على استفساراتك' | translate }}
+        {{ messages.m_4c00a66d7eae }}
       </p>
 
       <a
@@ -553,7 +537,7 @@
         class="inline-flex items-center justify-center gap-2.5 bg-white text-[#4c1d95] hover:bg-gray-100 font-bold text-sm md:text-base px-8 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0"
       >
         <i class="fa-brands fa-whatsapp text-green-500 text-lg md:text-xl"></i>
-        <span>{{ 'تواصل معنا' | translate }}</span>
+        <span>{{ messages.m_988638232136 }}</span>
       </a>
     </div>
 
