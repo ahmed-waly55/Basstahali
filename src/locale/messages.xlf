@@ -644,14 +644,6 @@
         <source>استفسار من بسطهالي</source>
       </segment>
     </unit>
-    <unit id="courseLessonsLabel">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:32</note>
-      </notes>
-      <segment>
-        <source>درس</source>
-      </segment>
-    </unit>
     <unit id="m_370e5a7c84ab">
       <notes>
         <note category="location">src/app/Features/courses/courses.component.ts:35</note>
@@ -682,30 +674,6 @@
       </notes>
       <segment>
         <source>محتوى تعليمي شامل ومبسط مصمم خصيصاً لمساعدة الطلاب على التفوق الدراسي واجتياز الاختبارات.</source>
-      </segment>
-    </unit>
-    <unit id="m_f10712b64992">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:39</note>
-      </notes>
-      <segment>
-        <source>جنية</source>
-      </segment>
-    </unit>
-    <unit id="m_83fe3c1c8573">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:40</note>
-      </notes>
-      <segment>
-        <source>المعلم المسؤول</source>
-      </segment>
-    </unit>
-    <unit id="m_9c34042f2935">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:41</note>
-      </notes>
-      <segment>
-        <source>تفاصيل المنهج</source>
       </segment>
     </unit>
     <unit id="m_0fba16800630">
@@ -740,14 +708,6 @@
         <source>المرحلة الثانوية</source>
       </segment>
     </unit>
-    <unit id="m_3eb87a1f7668">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:52</note>
-      </notes>
-      <segment>
-        <source>المرحلة الإعدادية</source>
-      </segment>
-    </unit>
     <unit id="m_36d9c98fcafd">
       <notes>
         <note category="location">src/app/Features/courses/courses.component.ts:53</note>
@@ -760,22 +720,6 @@
         <source>المرحلة الابتدائية</source>
       </segment>
     </unit>
-    <unit id="m_fe287a2a471e">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:59</note>
-      </notes>
-      <segment>
-        <source>شرح مادة الرياضيات المتقدمة - الصف الثاني عشر</source>
-      </segment>
-    </unit>
-    <unit id="m_f96df112ac2a">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:60</note>
-      </notes>
-      <segment>
-        <source>الصف 12 متقدم</source>
-      </segment>
-    </unit>
     <unit id="m_825de8950251">
       <notes>
         <note category="location">src/app/Features/courses/courses.component.ts:61</note>
@@ -784,22 +728,6 @@
       </notes>
       <segment>
         <source>الرياضيات</source>
-      </segment>
-    </unit>
-    <unit id="m_bac8def995b8">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:67</note>
-      </notes>
-      <segment>
-        <source>18 ساعة</source>
-      </segment>
-    </unit>
-    <unit id="m_e9b3e19631b5">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:70</note>
-      </notes>
-      <segment>
-        <source>شرح كامل للمنهج شاملاً التفاضل والتكامل، مع حل نماذج الامتحانات السابقة بالتفصيل.</source>
       </segment>
     </unit>
     <unit id="m_891c08556834">
@@ -811,46 +739,6 @@
         <source>أ. أحمد سليمان</source>
       </segment>
     </unit>
-    <unit id="m_1929def8710a">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:79</note>
-      </notes>
-      <segment>
-        <source>أساسيات الفيزياء وتطبيقاتها - الصف الحادي عشر</source>
-      </segment>
-    </unit>
-    <unit id="m_1cabdca3f6c2">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:80</note>
-      </notes>
-      <segment>
-        <source>الصف 11</source>
-      </segment>
-    </unit>
-    <unit id="m_81f1d571624a">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:81</note>
-      </notes>
-      <segment>
-        <source>الفيزياء</source>
-      </segment>
-    </unit>
-    <unit id="m_2e1dfe6cf489">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:87</note>
-      </notes>
-      <segment>
-        <source>14 ساعة</source>
-      </segment>
-    </unit>
-    <unit id="m_4955ab10f746">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:90</note>
-      </notes>
-      <segment>
-        <source>تغطية شاملة لمفاهيم الحركة والقوى والطاقة مع تجارب تفاعلية ومسائل محلولة.</source>
-      </segment>
-    </unit>
     <unit id="m_e0258574b3da">
       <notes>
         <note category="location">src/app/Features/courses/courses.component.ts:92</note>
@@ -860,22 +748,6 @@
         <source>د. محمد الكردي</source>
       </segment>
     </unit>
-    <unit id="m_73a12781014e">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:99</note>
-      </notes>
-      <segment>
-        <source>كورس تأسيس واستعداد اختبارات الإنجليزية - المرحلة الإعدادية</source>
-      </segment>
-    </unit>
-    <unit id="m_6589f55bb252">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:100</note>
-      </notes>
-      <segment>
-        <source>الصف 7 - 9</source>
-      </segment>
-    </unit>
     <unit id="m_fb090c279a7d">
       <notes>
         <note category="location">src/app/Features/courses/courses.component.ts:101</note>
@@ -883,22 +755,6 @@
       </notes>
       <segment>
         <source>اللغة الإنجليزية</source>
-      </segment>
-    </unit>
-    <unit id="m_6e8ab6de038f">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:107</note>
-      </notes>
-      <segment>
-        <source>10 ساعات</source>
-      </segment>
-    </unit>
-    <unit id="m_5d1a2f0f9214">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:110</note>
-      </notes>
-      <segment>
-        <source>تطوير مهارات القراءة، الكتابة، والقواعد الأساسية لتأهيل الطالب لاختبارات الفصل.</source>
       </segment>
     </unit>
     <unit id="m_44dcaf6c0e96">
@@ -3121,22 +2977,6 @@
         <source>استكشف المناهج الدراسية على بسطهالي واختر منهجك للوصول إلى المراحل والمواد الدراسية والحصص المناسبة لك.</source>
       </segment>
     </unit>
-    <unit id="m_e52b7d295413">
-      <notes>
-        <note category="location">src/app/core/services/seo-title.strategy.ts:20</note>
-      </notes>
-      <segment>
-        <source>الدورات والحصص التعليمية | بسطهالي</source>
-      </segment>
-    </unit>
-    <unit id="m_0348c472f08a">
-      <notes>
-        <note category="location">src/app/core/services/seo-title.strategy.ts:21</note>
-      </notes>
-      <segment>
-        <source>استكشف الدورات والحصص التعليمية على بسطهالي وتواصل معنا لاختيار الحصة المناسبة لاحتياجك الدراسي.</source>
-      </segment>
-    </unit>
     <unit id="m_0427fec64ea7">
       <notes>
         <note category="location">src/app/core/services/seo-title.strategy.ts:24</note>
@@ -3961,6 +3801,222 @@
       </notes>
       <segment>
         <source>أم آدم</source>
+      </segment>
+    </unit>
+    <unit id="courseDetailsAction">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:29</note>
+      </notes>
+      <segment>
+        <source>تفاصيل الكورس</source>
+      </segment>
+    </unit>
+    <unit id="courseLessonsCount">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:31</note>
+      </notes>
+      <segment>
+        <source>عدد الحصص</source>
+      </segment>
+    </unit>
+    <unit id="courseLessonsPending">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:32</note>
+      </notes>
+      <segment>
+        <source>يُحدَّد عند الحجز</source>
+      </segment>
+    </unit>
+    <unit id="coursePriceFrom">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:33</note>
+      </notes>
+      <segment>
+        <source>يبدأ من</source>
+      </segment>
+    </unit>
+    <unit id="courseCategoryProgramming">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:42</note>
+      </notes>
+      <segment>
+        <source>البرمجة</source>
+      </segment>
+    </unit>
+    <unit id="courseCategoryLanguages">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:43</note>
+      </notes>
+      <segment>
+        <source>اللغات</source>
+      </segment>
+    </unit>
+    <unit id="courseTitleProgramming">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:50</note>
+      </notes>
+      <segment>
+        <source>كورس البرمجة</source>
+      </segment>
+    </unit>
+    <unit id="courseDescriptionProgramming">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:55</note>
+      </notes>
+      <segment>
+        <source>تعلّم البرمجة وتدرّب على كتابة الأكواد وحل المشكلات.</source>
+      </segment>
+    </unit>
+    <unit id="courseTitleEnglish">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:59</note>
+      </notes>
+      <segment>
+        <source>كورس اللغة الإنجليزية</source>
+      </segment>
+    </unit>
+    <unit id="courseDescriptionEnglish">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:64</note>
+      </notes>
+      <segment>
+        <source>تدرّب على التواصل باللغة الإنجليزية من خلال المحادثة والقراءة والكتابة.</source>
+      </segment>
+    </unit>
+    <unit id="courseTitleGerman">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:68</note>
+      </notes>
+      <segment>
+        <source>كورس اللغة الألمانية</source>
+      </segment>
+    </unit>
+    <unit id="courseSubjectGerman">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:69</note>
+      </notes>
+      <segment>
+        <source>اللغة الألمانية</source>
+      </segment>
+    </unit>
+    <unit id="courseDescriptionGerman">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:73</note>
+      </notes>
+      <segment>
+        <source>تعلّم اللغة الألمانية وتدرّب على استخدامها في مواقف الحياة اليومية.</source>
+      </segment>
+    </unit>
+    <unit id="courseTitleItalian">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:77</note>
+      </notes>
+      <segment>
+        <source>كورس اللغة الإيطالية</source>
+      </segment>
+    </unit>
+    <unit id="courseSubjectItalian">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:78</note>
+      </notes>
+      <segment>
+        <source>اللغة الإيطالية</source>
+      </segment>
+    </unit>
+    <unit id="courseDescriptionItalian">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:82</note>
+      </notes>
+      <segment>
+        <source>تدرّب على فهم اللغة الإيطالية والتعبير بها في محادثات بسيطة.</source>
+      </segment>
+    </unit>
+    <unit id="courseTitleFrench">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:86</note>
+      </notes>
+      <segment>
+        <source>كورس اللغة الفرنسية</source>
+      </segment>
+    </unit>
+    <unit id="courseSubjectFrench">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:87</note>
+      </notes>
+      <segment>
+        <source>اللغة الفرنسية</source>
+      </segment>
+    </unit>
+    <unit id="courseDescriptionFrench">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:91</note>
+      </notes>
+      <segment>
+        <source>تعلّم اللغة الفرنسية من خلال التدريب على المحادثة والقراءة والكتابة.</source>
+      </segment>
+    </unit>
+    <unit id="courseTitleArabic">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:95</note>
+      </notes>
+      <segment>
+        <source>كورس اللغة العربية</source>
+      </segment>
+    </unit>
+    <unit id="courseSubjectArabic">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:96</note>
+      </notes>
+      <segment>
+        <source>اللغة العربية</source>
+      </segment>
+    </unit>
+    <unit id="courseDescriptionArabic">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:100</note>
+      </notes>
+      <segment>
+        <source>طوّر مهاراتك في القراءة والكتابة والتعبير باللغة العربية.</source>
+      </segment>
+    </unit>
+    <unit id="courseTitleMath">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:104</note>
+      </notes>
+      <segment>
+        <source>كورس الماث</source>
+      </segment>
+    </unit>
+    <unit id="courseDescriptionMath">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:109</note>
+      </notes>
+      <segment>
+        <source>تدرّب على فهم الأفكار الرياضية وحل المسائل خطوة بخطوة.</source>
+      </segment>
+    </unit>
+    <unit id="courseDetailsMessage">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:150</note>
+      </notes>
+      <segment>
+        <source>السلام عليكم، أرغب في معرفة تفاصيل الكورس: <ph id="0" equiv="COURSE" disp="courseTitle" /></source>
+      </segment>
+    </unit>
+    <unit id="coursesSeoTitle">
+      <notes>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:20</note>
+      </notes>
+      <segment>
+        <source>كورسات اللغات والبرمجة والماث | بسطهالي</source>
+      </segment>
+    </unit>
+    <unit id="coursesSeoDescription">
+      <notes>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:21</note>
+      </notes>
+      <segment>
+        <source>كورسات الإنجليزية والألمانية والإيطالية والفرنسية والعربية والبرمجة والماث مع بسطهالي، في حصص مباشرة أونلاين بأسعار تبدأ من 5000 جنيه مصري. احجز عبر واتساب.</source>
       </segment>
     </unit>
   </file>

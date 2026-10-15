@@ -723,15 +723,6 @@
         <target>Basstahali enquiry</target>
       </segment>
     </unit>
-    <unit id="courseLessonsLabel">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:32</note>
-      </notes>
-      <segment state="translated">
-        <source>درس</source>
-        <target>lessons</target>
-      </segment>
-    </unit>
     <unit id="m_370e5a7c84ab">
       <notes>
         <note category="location">src/app/Features/courses/courses.component.ts:35</note>
@@ -766,33 +757,6 @@
       <segment state="translated">
         <source>محتوى تعليمي شامل ومبسط مصمم خصيصاً لمساعدة الطلاب على التفوق الدراسي واجتياز الاختبارات.</source>
         <target>Clear, comprehensive learning content to help students succeed at school and in exams.</target>
-      </segment>
-    </unit>
-    <unit id="m_f10712b64992">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:39</note>
-      </notes>
-      <segment state="translated">
-        <source>جنية</source>
-        <target>EGP</target>
-      </segment>
-    </unit>
-    <unit id="m_83fe3c1c8573">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:40</note>
-      </notes>
-      <segment state="translated">
-        <source>المعلم المسؤول</source>
-        <target>Teacher</target>
-      </segment>
-    </unit>
-    <unit id="m_9c34042f2935">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:41</note>
-      </notes>
-      <segment state="translated">
-        <source>تفاصيل المنهج</source>
-        <target>Curriculum details</target>
       </segment>
     </unit>
     <unit id="m_0fba16800630">
@@ -830,15 +794,6 @@
         <target>Secondary school</target>
       </segment>
     </unit>
-    <unit id="m_3eb87a1f7668">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:52</note>
-      </notes>
-      <segment state="translated">
-        <source>المرحلة الإعدادية</source>
-        <target>Preparatory school</target>
-      </segment>
-    </unit>
     <unit id="m_36d9c98fcafd">
       <notes>
         <note category="location">src/app/Features/courses/courses.component.ts:53</note>
@@ -852,24 +807,6 @@
         <target>Primary school</target>
       </segment>
     </unit>
-    <unit id="m_fe287a2a471e">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:59</note>
-      </notes>
-      <segment state="translated">
-        <source>شرح مادة الرياضيات المتقدمة - الصف الثاني عشر</source>
-        <target>Advanced mathematics — Grade 12</target>
-      </segment>
-    </unit>
-    <unit id="m_f96df112ac2a">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:60</note>
-      </notes>
-      <segment state="translated">
-        <source>الصف 12 متقدم</source>
-        <target>Grade 12 Advanced</target>
-      </segment>
-    </unit>
     <unit id="m_825de8950251">
       <notes>
         <note category="location">src/app/Features/courses/courses.component.ts:61</note>
@@ -879,24 +816,6 @@
       <segment state="translated">
         <source>الرياضيات</source>
         <target>Mathematics</target>
-      </segment>
-    </unit>
-    <unit id="m_bac8def995b8">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:67</note>
-      </notes>
-      <segment state="translated">
-        <source>18 ساعة</source>
-        <target>18 hours</target>
-      </segment>
-    </unit>
-    <unit id="m_e9b3e19631b5">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:70</note>
-      </notes>
-      <segment state="translated">
-        <source>شرح كامل للمنهج شاملاً التفاضل والتكامل، مع حل نماذج الامتحانات السابقة بالتفصيل.</source>
-        <target>Full curriculum coverage including calculus and worked exam papers.</target>
       </segment>
     </unit>
     <unit id="m_891c08556834">
@@ -909,51 +828,6 @@
         <target>Ahmed Suleiman</target>
       </segment>
     </unit>
-    <unit id="m_1929def8710a">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:79</note>
-      </notes>
-      <segment state="translated">
-        <source>أساسيات الفيزياء وتطبيقاتها - الصف الحادي عشر</source>
-        <target>Physics fundamentals and applications — Grade 11</target>
-      </segment>
-    </unit>
-    <unit id="m_1cabdca3f6c2">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:80</note>
-      </notes>
-      <segment state="translated">
-        <source>الصف 11</source>
-        <target>Grade 11</target>
-      </segment>
-    </unit>
-    <unit id="m_81f1d571624a">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:81</note>
-      </notes>
-      <segment state="translated">
-        <source>الفيزياء</source>
-        <target>Physics</target>
-      </segment>
-    </unit>
-    <unit id="m_2e1dfe6cf489">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:87</note>
-      </notes>
-      <segment state="translated">
-        <source>14 ساعة</source>
-        <target>14 hours</target>
-      </segment>
-    </unit>
-    <unit id="m_4955ab10f746">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:90</note>
-      </notes>
-      <segment state="translated">
-        <source>تغطية شاملة لمفاهيم الحركة والقوى والطاقة مع تجارب تفاعلية ومسائل محلولة.</source>
-        <target>Explore motion, forces and energy with interactive examples and solved exercises.</target>
-      </segment>
-    </unit>
     <unit id="m_e0258574b3da">
       <notes>
         <note category="location">src/app/Features/courses/courses.component.ts:92</note>
@@ -964,24 +838,6 @@
         <target>Dr Mohamed Al Kurdi</target>
       </segment>
     </unit>
-    <unit id="m_73a12781014e">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:99</note>
-      </notes>
-      <segment state="translated">
-        <source>كورس تأسيس واستعداد اختبارات الإنجليزية - المرحلة الإعدادية</source>
-        <target>English foundations and exam preparation — Preparatory school</target>
-      </segment>
-    </unit>
-    <unit id="m_6589f55bb252">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:100</note>
-      </notes>
-      <segment state="translated">
-        <source>الصف 7 - 9</source>
-        <target>Grades 7–9</target>
-      </segment>
-    </unit>
     <unit id="m_fb090c279a7d">
       <notes>
         <note category="location">src/app/Features/courses/courses.component.ts:101</note>
@@ -990,24 +846,6 @@
       <segment state="translated">
         <source>اللغة الإنجليزية</source>
         <target>English</target>
-      </segment>
-    </unit>
-    <unit id="m_6e8ab6de038f">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:107</note>
-      </notes>
-      <segment state="translated">
-        <source>10 ساعات</source>
-        <target>10 hours</target>
-      </segment>
-    </unit>
-    <unit id="m_5d1a2f0f9214">
-      <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:110</note>
-      </notes>
-      <segment state="translated">
-        <source>تطوير مهارات القراءة، الكتابة، والقواعد الأساسية لتأهيل الطالب لاختبارات الفصل.</source>
-        <target>Develop reading, writing and grammar skills for school assessments.</target>
       </segment>
     </unit>
     <unit id="m_44dcaf6c0e96">
@@ -3501,24 +3339,6 @@
         <target>Explore school curricula on Basstahali and choose yours to find the right grades, subjects, and lessons.</target>
       </segment>
     </unit>
-    <unit id="m_e52b7d295413">
-      <notes>
-        <note category="location">src/app/core/services/seo-title.strategy.ts:20</note>
-      </notes>
-      <segment state="translated">
-        <source>الدورات والحصص التعليمية | بسطهالي</source>
-        <target>Courses and online lessons | Basstahali</target>
-      </segment>
-    </unit>
-    <unit id="m_0348c472f08a">
-      <notes>
-        <note category="location">src/app/core/services/seo-title.strategy.ts:21</note>
-      </notes>
-      <segment state="translated">
-        <source>استكشف الدورات والحصص التعليمية على بسطهالي وتواصل معنا لاختيار الحصة المناسبة لاحتياجك الدراسي.</source>
-        <target>Explore courses and lessons on Basstahali and contact us to choose a lesson that fits your learning needs.</target>
-      </segment>
-    </unit>
     <unit id="m_0427fec64ea7">
       <notes>
         <note category="location">src/app/core/services/seo-title.strategy.ts:24</note>
@@ -4446,6 +4266,249 @@
       <segment state="translated">
         <source>أم آدم</source>
         <target>Umm Adam</target>
+      </segment>
+    </unit>
+    <unit id="courseDetailsAction">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:29</note>
+      </notes>
+      <segment state="translated">
+        <source>تفاصيل الكورس</source>
+        <target>Course details</target>
+      </segment>
+    </unit>
+    <unit id="courseLessonsCount">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:31</note>
+      </notes>
+      <segment state="translated">
+        <source>عدد الحصص</source>
+        <target>Number of lessons</target>
+      </segment>
+    </unit>
+    <unit id="courseLessonsPending">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:32</note>
+      </notes>
+      <segment state="translated">
+        <source>يُحدَّد عند الحجز</source>
+        <target>Determined when booking</target>
+      </segment>
+    </unit>
+    <unit id="coursePriceFrom">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:33</note>
+      </notes>
+      <segment state="translated">
+        <source>يبدأ من</source>
+        <target>From</target>
+      </segment>
+    </unit>
+    <unit id="courseCategoryProgramming">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:42</note>
+      </notes>
+      <segment state="translated">
+        <source>البرمجة</source>
+        <target>Programming</target>
+      </segment>
+    </unit>
+    <unit id="courseCategoryLanguages">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:43</note>
+      </notes>
+      <segment state="translated">
+        <source>اللغات</source>
+        <target>Languages</target>
+      </segment>
+    </unit>
+    <unit id="courseTitleProgramming">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:50</note>
+      </notes>
+      <segment state="translated">
+        <source>كورس البرمجة</source>
+        <target>Programming course</target>
+      </segment>
+    </unit>
+    <unit id="courseDescriptionProgramming">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:55</note>
+      </notes>
+      <segment state="translated">
+        <source>تعلّم البرمجة وتدرّب على كتابة الأكواد وحل المشكلات.</source>
+        <target>Learn programming and practise writing code and solving problems.</target>
+      </segment>
+    </unit>
+    <unit id="courseTitleEnglish">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:59</note>
+      </notes>
+      <segment state="translated">
+        <source>كورس اللغة الإنجليزية</source>
+        <target>English language course</target>
+      </segment>
+    </unit>
+    <unit id="courseDescriptionEnglish">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:64</note>
+      </notes>
+      <segment state="translated">
+        <source>تدرّب على التواصل باللغة الإنجليزية من خلال المحادثة والقراءة والكتابة.</source>
+        <target>Practise communicating in English through conversation, reading and writing.</target>
+      </segment>
+    </unit>
+    <unit id="courseTitleGerman">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:68</note>
+      </notes>
+      <segment state="translated">
+        <source>كورس اللغة الألمانية</source>
+        <target>German language course</target>
+      </segment>
+    </unit>
+    <unit id="courseSubjectGerman">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:69</note>
+      </notes>
+      <segment state="translated">
+        <source>اللغة الألمانية</source>
+        <target>German</target>
+      </segment>
+    </unit>
+    <unit id="courseDescriptionGerman">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:73</note>
+      </notes>
+      <segment state="translated">
+        <source>تعلّم اللغة الألمانية وتدرّب على استخدامها في مواقف الحياة اليومية.</source>
+        <target>Learn German and practise using it in everyday situations.</target>
+      </segment>
+    </unit>
+    <unit id="courseTitleItalian">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:77</note>
+      </notes>
+      <segment state="translated">
+        <source>كورس اللغة الإيطالية</source>
+        <target>Italian language course</target>
+      </segment>
+    </unit>
+    <unit id="courseSubjectItalian">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:78</note>
+      </notes>
+      <segment state="translated">
+        <source>اللغة الإيطالية</source>
+        <target>Italian</target>
+      </segment>
+    </unit>
+    <unit id="courseDescriptionItalian">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:82</note>
+      </notes>
+      <segment state="translated">
+        <source>تدرّب على فهم اللغة الإيطالية والتعبير بها في محادثات بسيطة.</source>
+        <target>Practise understanding Italian and expressing yourself in simple conversations.</target>
+      </segment>
+    </unit>
+    <unit id="courseTitleFrench">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:86</note>
+      </notes>
+      <segment state="translated">
+        <source>كورس اللغة الفرنسية</source>
+        <target>French language course</target>
+      </segment>
+    </unit>
+    <unit id="courseSubjectFrench">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:87</note>
+      </notes>
+      <segment state="translated">
+        <source>اللغة الفرنسية</source>
+        <target>French</target>
+      </segment>
+    </unit>
+    <unit id="courseDescriptionFrench">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:91</note>
+      </notes>
+      <segment state="translated">
+        <source>تعلّم اللغة الفرنسية من خلال التدريب على المحادثة والقراءة والكتابة.</source>
+        <target>Learn French by practising conversation, reading and writing.</target>
+      </segment>
+    </unit>
+    <unit id="courseTitleArabic">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:95</note>
+      </notes>
+      <segment state="translated">
+        <source>كورس اللغة العربية</source>
+        <target>Arabic language course</target>
+      </segment>
+    </unit>
+    <unit id="courseSubjectArabic">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:96</note>
+      </notes>
+      <segment state="translated">
+        <source>اللغة العربية</source>
+        <target>Arabic</target>
+      </segment>
+    </unit>
+    <unit id="courseDescriptionArabic">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:100</note>
+      </notes>
+      <segment state="translated">
+        <source>طوّر مهاراتك في القراءة والكتابة والتعبير باللغة العربية.</source>
+        <target>Develop your reading, writing and communication skills in Arabic.</target>
+      </segment>
+    </unit>
+    <unit id="courseTitleMath">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:104</note>
+      </notes>
+      <segment state="translated">
+        <source>كورس الماث</source>
+        <target>Maths course</target>
+      </segment>
+    </unit>
+    <unit id="courseDescriptionMath">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:109</note>
+      </notes>
+      <segment state="translated">
+        <source>تدرّب على فهم الأفكار الرياضية وحل المسائل خطوة بخطوة.</source>
+        <target>Practise understanding mathematical ideas and solving problems step by step.</target>
+      </segment>
+    </unit>
+    <unit id="courseDetailsMessage">
+      <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:150</note>
+      </notes>
+      <segment state="translated">
+        <source>السلام عليكم، أرغب في معرفة تفاصيل الكورس: <ph id="0" equiv="COURSE" disp="courseTitle" /></source>
+        <target>Hello, I would like to know the details of the course: <ph id="0" equiv="COURSE" disp="courseTitle" /></target>
+      </segment>
+    </unit>
+    <unit id="coursesSeoTitle">
+      <notes>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:20</note>
+      </notes>
+      <segment state="translated">
+        <source>كورسات اللغات والبرمجة والماث | بسطهالي</source>
+        <target>Language, programming and maths courses | Basstahali</target>
+      </segment>
+    </unit>
+    <unit id="coursesSeoDescription">
+      <notes>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:21</note>
+      </notes>
+      <segment state="translated">
+        <source>كورسات الإنجليزية والألمانية والإيطالية والفرنسية والعربية والبرمجة والماث مع بسطهالي، في حصص مباشرة أونلاين بأسعار تبدأ من 5000 جنيه مصري. احجز عبر واتساب.</source>
+        <target>Learn English, German, Italian, French, Arabic, programming and maths in live online lessons with Basstahali. Courses start at EGP 5,000. Book via WhatsApp.</target>
       </segment>
     </unit>
   </file>

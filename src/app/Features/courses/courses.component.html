@@ -35,6 +35,7 @@
         <button
           (click)="selectCategory(cat.id)"
           type="button"
+          [attr.aria-pressed]="selectedCategory === cat.id"
           [class]="
             selectedCategory === cat.id
               ? 'bg-[#4F2DB7] text-white shadow-lg scale-105'
@@ -51,7 +52,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       @for (course of filteredCourses; track course.id; let i = $index) {
         <div
-          class="group bg-white rounded-3xl border border-slate-100 shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between overflow-hidden"
+          class="course-card group bg-white rounded-3xl border border-slate-100 shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between overflow-hidden"
           data-aos="fade-up"
           [attr.data-aos-delay]="(i % 3) * 150"
         >
@@ -61,18 +62,16 @@
               <img
                 [src]="course.thumbnail"
                 [alt]="course.title"
+                [attr.loading]="i === 0 ? 'eager' : 'lazy'"
+                [attr.fetchpriority]="i === 0 ? 'high' : 'auto'"
+                decoding="async"
+                width="1672"
+                height="941"
                 class="w-full h-full object-cover group-hover:scale-108 transition duration-500"
               />
               <div
                 class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"
               ></div>
-
-              <!-- Badge (Grade / Level) -->
-              <span
-                class="absolute top-4 right-4 bg-white/95 backdrop-blur-md text-[#3D1A6D] text-xs font-black px-3 py-1 rounded-full shadow-md"
-              >
-                {{ course.grade }}
-              </span>
 
               <!-- Badge (Subject Tag) -->
               <span
@@ -82,30 +81,23 @@
               </span>
 
               <!-- Price Tag Floating -->
-              <div class="absolute bottom-3 right-4 text-white">
+              <div class="course-price absolute bottom-3 right-4 text-white">
+                <span class="block text-xs font-bold mb-0.5">{{ messages.coursePriceFrom }}</span>
                 <span class="text-2xl font-black">{{ course.price }}</span>
-                <span class="text-xs font-bold mr-1">{{ messages.m_f10712b64992 }}</span>
+                <span class="text-xs font-bold ms-1">{{ messages.m_c5dd280359ea }}</span>
               </div>
             </div>
 
             <!-- Content Area -->
-            <div class="p-6 text-right">
-              <!-- Rating & Stats -->
-              <div class="flex items-center justify-between text-xs text-slate-500 mb-3">
-                <div class="flex items-center gap-1">
-                  <i class="fa-solid fa-star text-amber-400"></i>
-                  <span class="font-bold text-slate-800">{{ course.rating }}</span>
-                  <span>({{ course.reviewsCount }})</span>
-                </div>
-                <div class="flex items-center gap-3">
-                  <span
-                    ><i class="fa-regular fa-file-video text-[#4F2DB7] ml-1"></i>
-                    {{ course.lessonsCount }} {{ lessonLabel }}</span
-                  >
-                  <span
-                    ><i class="fa-regular fa-clock text-[#4F2DB7] ml-1"></i>
-                    {{ course.duration }}</span
-                  >
+            <div class="p-6 text-start">
+              <!-- Lesson count is confirmed with the team when booking. -->
+              <div class="text-xs text-slate-500 mb-3">
+                <div class="course-lesson-count flex flex-wrap items-center gap-1.5">
+                  <i class="fa-regular fa-file-video text-[#4F2DB7]" aria-hidden="true"></i>
+                  <span>{{ messages.courseLessonsCount }}:</span>
+                  <span class="font-bold">
+                    {{ messages.courseLessonsPending }}
+                  </span>
                 </div>
               </div>
 
@@ -119,35 +111,23 @@
               <p class="text-xs text-slate-500 mt-2 leading-relaxed line-clamp-2">
                 {{ course.description }}
               </p>
-
-              <!-- Instructor Info -->
-              <div class="mt-4 pt-4 border-t border-slate-100 flex items-center gap-3">
-                <img
-                  [src]="course.instructor.avatar"
-                  [alt]="course.instructor.name"
-                  class="w-8 h-8 rounded-full object-cover border border-purple-200"
-                />
-                <div class="text-xs">
-                  <span class="text-slate-400 block text-[10px]">{{
-                    messages.m_83fe3c1c8573
-                  }}</span>
-                  <span class="font-bold text-slate-700">{{ course.instructor.name }}</span>
-                </div>
-              </div>
             </div>
           </div>
 
           <!-- Bottom Action Buttons -->
           <div class="p-6 pt-0 flex items-center gap-3">
             <a
-              [href]="'/course/' + course.id"
+              [href]="getDetailsWhatsAppLink(course.title)"
+              target="_blank"
+              rel="noopener noreferrer"
               class="flex-1 text-center bg-purple-50 hover:bg-purple-100 text-[#4F2DB7] font-bold text-xs py-3 px-4 rounded-xl transition duration-300"
             >
-              {{ messages.m_9c34042f2935 }}
+              {{ messages.courseDetailsAction }}
             </a>
             <a
               [href]="getEnrollWhatsAppLink(course.title)"
               target="_blank"
+              rel="noopener noreferrer"
               class="flex-1 text-center bg-[#4F2DB7] hover:bg-[#3D1A6D] text-white font-bold text-xs py-3 px-4 rounded-xl shadow-md transition duration-300"
             >
               {{ messages.m_0fba16800630 }}
