@@ -36,6 +36,15 @@ let activeApp: ApplicationRef | undefined;
 let activeLocale: ApplicationLocale = 'ar';
 let startup: Promise<ApplicationRef> | undefined;
 let transition: Promise<void> | undefined;
+const teardownBarriers = new Set<() => Promise<void>>();
+
+/** Let a rotating login session settle before replacing the application's injector. */
+export function registerLocaleTeardownBarrier(barrier: () => Promise<void>): () => void {
+  teardownBarriers.add(barrier);
+  return () => {
+    teardownBarriers.delete(barrier);
+  };
+}
 
 export function registerLocaleBootstrap(callback: LocaleBootstrap): void {
   bootstrapLocale = callback;
@@ -327,6 +336,7 @@ export function switchApplicationLanguage(target: ApplicationLocale): Promise<vo
 async function changeLanguage(target: ApplicationLocale): Promise<void> {
   if (!activeApp) throw new Error('The application has not started.');
   const translations = await readCatalog(target);
+  await Promise.all(Array.from(teardownBarriers, (barrier) => barrier()));
   const previousLocale = activeLocale;
   const previousTranslations = catalogs.get(previousLocale) ?? {};
   const scrollX = window.scrollX;

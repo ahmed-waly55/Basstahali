@@ -12,6 +12,14 @@ const browserDistFolder = join(import.meta.dirname, '../browser');
 const app = express();
 const angularApp = new AngularNodeAppEngine();
 
+app.use((req, res, next) => {
+  if (req.path === '/login' || /^\/student(?:\/|$)/.test(req.path)) {
+    res.setHeader('Cache-Control', 'private, no-store');
+    res.setHeader('X-Robots-Tag', 'noindex, nofollow');
+  }
+  next();
+});
+
 /**
  * Example Express Rest API endpoints can be defined here.
  * Uncomment and define endpoints as necessary.

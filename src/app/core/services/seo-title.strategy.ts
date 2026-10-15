@@ -4,6 +4,14 @@ import { Meta, Title } from '@angular/platform-browser';
 import { RouterStateSnapshot, TitleStrategy } from '@angular/router';
 
 const pageMetadata: Record<string, () => [string, string]> = {
+  login: () => [
+    $localize`:@@authLoginSeoTitle:تسجيل الدخول | بسطهالي`,
+    $localize`:@@authLoginSeoDescription:سجّل الدخول إلى حساب الطالب في بسطهالي لمتابعة حصصك وكورساتك وواجباتك.`,
+  ],
+  student: () => [
+    $localize`:@@studentDashboardSeoTitle:لوحة الطالب | بسطهالي`,
+    $localize`:@@studentDashboardSeoDescription:مساحتك لمتابعة الحصص والكورسات والواجبات والاختبارات والتواصل مع المعلمين على بسطهالي.`,
+  ],
   '': () => [
     $localize`:@@m_f12f3ea7ff7d:بسطهالي | حصص أونلاين وشرح مبسط للمناهج الدراسية`,
     $localize`:@@m_15abae32d48b:بسطهالي منصة تعليمية أونلاين لشرح المناهج الخليجية، مع حصص مباشرة ومعلمين متخصصين ومتابعة تساعد الطلاب على الفهم والتفوق.`,
@@ -76,6 +84,7 @@ export class SeoTitleStrategy extends TitleStrategy {
     let leaf = snapshot.root;
     while (leaf.firstChild) leaf = leaf.firstChild;
     const notFound = leaf.routeConfig?.path === '**' || !page;
+    const privatePage = section === 'student' || section === 'login';
     const [title, description] = notFound
       ? [
           $localize`:@@m_df57cf4af71a:الصفحة غير موجودة | بسطهالي`,
@@ -89,7 +98,7 @@ export class SeoTitleStrategy extends TitleStrategy {
     this.meta.updateTag({ name: 'description', content: description });
     this.meta.updateTag({
       name: 'robots',
-      content: notFound ? 'noindex, follow' : 'index, follow',
+      content: privatePage ? 'noindex, nofollow' : notFound ? 'noindex, follow' : 'index, follow',
     });
     this.meta.updateTag({ property: 'og:title', content: title });
     this.meta.updateTag({ property: 'og:description', content: description });
@@ -113,7 +122,7 @@ export class SeoTitleStrategy extends TitleStrategy {
       .forEach((link) => link.remove());
 
     this.document.getElementById('page-breadcrumbs')?.remove();
-    if (path !== '/' && !notFound) {
+    if (path !== '/' && !notFound && !privatePage) {
       const entries = [
         {
           '@type': 'ListItem',

@@ -1,0 +1,181 @@
+.student-welcome {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: clamp(1.4rem, 3vw, 2.2rem);
+  border-radius: 1.6rem;
+  color: #fff;
+  background: linear-gradient(115deg, #512fa3, #32175b);
+  overflow: hidden;
+}
+.student-welcome-content {
+  position: relative;
+  z-index: 1;
+  max-width: 37rem;
+}
+.student-welcome-eyebrow {
+  color: #ffe5a1;
+  font-size: 0.75rem;
+  font-weight: 650;
+}
+.student-welcome h1 {
+  margin: 0.6rem 0;
+  font-size: clamp(1.35rem, 2vw, 1.85rem);
+  font-weight: 800;
+  line-height: 1.7;
+}
+.student-welcome p {
+  margin: 0;
+  max-width: 31rem;
+  color: #e4d8f8;
+  font-size: 0.8rem;
+  line-height: 1.95;
+}
+.student-welcome-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 44px;
+  margin-block-start: 1.3rem;
+  padding: 0.6rem 1rem;
+  border-radius: 0.75rem;
+  background: #ffd15c;
+  color: #35204d;
+  font-size: 0.75rem;
+  font-weight: 750;
+  text-decoration: none;
+}
+:host-context(html[dir='ltr']) .student-welcome-button > span {
+  transform: rotate(180deg);
+}
+.student-welcome-decoration {
+  flex: 0 0 145px;
+  width: 145px;
+  transform: rotate(-7deg);
+}
+.student-welcome-decoration svg {
+  width: 100%;
+}
+.student-overview-stats {
+  margin-block: 1.3rem;
+}
+.student-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  gap: 0.9rem;
+}
+.student-stat {
+  position: relative;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 1.15rem;
+  background: var(--surface);
+}
+.student-stat-marker {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  margin-block-end: 0.8rem;
+  border-radius: 0.6rem;
+  background: var(--soft);
+  color: var(--brand);
+}
+.student-stat p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.8;
+}
+.student-stat strong {
+  display: block;
+  margin-block-start: 0.35rem;
+  color: var(--ink);
+  font-size: 1.7rem;
+  font-weight: 800;
+  line-height: 1.4;
+}
+.student-stat strong span {
+  font-size: 1rem;
+}
+.student-quick-section {
+  margin-block-start: 1.8rem;
+}
+.student-quick-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-block-start: 1rem;
+}
+.student-quick-grid a {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 0.8rem;
+  padding: 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 1.1rem;
+  background: var(--surface);
+  text-decoration: none;
+}
+.student-quick-grid a:hover {
+  border-color: var(--brand);
+}
+.student-quick-grid a > span {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 0.75rem;
+  color: var(--brand);
+  background: var(--soft);
+  font-size: 1.2rem;
+}
+.student-quick-grid strong {
+  color: var(--ink);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.8;
+}
+@media (max-width: 767px) {
+  .student-quick-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .student-welcome-decoration {
+    flex-basis: 95px;
+    width: 95px;
+  }
+}
+@media (max-width: 479px) {
+  .student-welcome-decoration {
+    display: none;
+  }
+  .student-stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .student-stat {
+    padding: 1rem;
+  }
+  .student-stat strong {
+    font-size: 1.45rem;
+  }
+}
+
+.student-overview-help {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-block-start: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+  background: var(--soft);
+}
+.student-overview-help .student-description {
+  max-width: 29rem;
+  font-size: 0.8rem;
+}

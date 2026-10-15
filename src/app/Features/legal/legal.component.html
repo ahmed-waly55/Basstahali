@@ -16,7 +16,7 @@
       </p>
       <p class="legal-updated mt-5 text-sm">
         {{ i18n.m_2723fb0ddcdf }}:
-        <time datetime="2026-10-14">{{ updated }}</time>
+        <time [attr.datetime]="updatedIso">{{ updated }}</time>
       </p>
 
       <nav [attr.aria-label]="i18n.m_f7687b7e329b" class="mt-6 flex flex-wrap gap-3">

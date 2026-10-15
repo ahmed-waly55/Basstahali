@@ -4511,5 +4511,2158 @@
         <target>Learn English, German, Italian, French, Arabic, programming and maths in live online lessons with Basstahali. Courses start at EGP 5,000. Book via WhatsApp.</target>
       </segment>
     </unit>
+    <unit id="privacyStudentAccountTitle">
+      <notes>
+        <note category="location">src/app/Features/legal/privacy.content.ts:26</note>
+      </notes>
+      <segment state="translated">
+        <source>حساب الطالب والجلسة</source>
+        <target>Student account and session</target>
+      </segment>
+    </unit>
+    <unit id="privacyStudentLoginData">
+      <notes>
+        <note category="location">src/app/Features/legal/privacy.content.ts:28</note>
+      </notes>
+      <segment state="translated">
+        <source>عند تسجيل الدخول، يُرسل اسم المستخدم وكلمة المرور إلى خدمة بسطهالي للتحقق من الحساب. لا تحفظ واجهة الموقع كلمة المرور في تخزين المتصفح.</source>
+        <target>When you sign in, your username and password are sent to the Basstahali service to verify your account. The website interface does not save your password in browser storage.</target>
+      </segment>
+    </unit>
+    <unit id="privacyStudentSessionData">
+      <notes>
+        <note category="location">src/app/Features/legal/privacy.content.ts:29</note>
+      </notes>
+      <segment state="translated">
+        <source>تُحفظ رموز جلسة الدخول ومعرّف التبويب في تخزين الجلسة في المتصفح (sessionStorage) لإبقاء حسابك مفتوحًا وتجديد الجلسة. تسجيل الخروج يمسح الجلسة من هذا التبويب ويطلب إنهاءها لدى الخدمة. لا تشارك رموز الجلسة مع الآخرين.</source>
+        <target>Sign-in session tokens and a tab identifier are saved in the browser’s session storage (sessionStorage) to keep your account signed in and renew the session. Signing out clears the session from this tab and requests that the service end it. Do not share session tokens with others.</target>
+      </segment>
+    </unit>
+    <unit id="privacyStudentDashboardData">
+      <notes>
+        <note category="location">src/app/Features/legal/privacy.content.ts:30</note>
+      </notes>
+      <segment state="translated">
+        <source>تعرض لوحة الطالب بيانات حسابه وحصصه وكورساته وواجباته واختباراته من الخدمة بعد تسجيل الدخول. تُرسل الرسائل وإجابات الاختبارات والملفات وطلبات الطالب إلى الخدمة عندما يختار إرسالها من اللوحة.</source>
+        <target>After you sign in, the student dashboard displays your account details, lessons, courses, assignments and exams from the service. Messages, exam answers, files and student requests are sent to the service when you choose to submit them through the dashboard.</target>
+      </segment>
+    </unit>
+    <unit id="authLoginBadge">
+      <notes>
+        <note category="location">src/app/Features/login/login.component.ts:29</note>
+      </notes>
+      <segment state="translated">
+        <source>مساحة الطالب</source>
+        <target>Student space</target>
+      </segment>
+    </unit>
+    <unit id="authLoginIntroTitle">
+      <notes>
+        <note category="location">src/app/Features/login/login.component.ts:30</note>
+      </notes>
+      <segment state="translated">
+        <source>مساحتك للتعلّم</source>
+        <target>Your learning space</target>
+      </segment>
+    </unit>
+    <unit id="authLoginIntroDescription">
+      <notes>
+        <note category="location">src/app/Features/login/login.component.ts:31</note>
+      </notes>
+      <segment state="translated">
+        <source>ادخل لحسابك وتابع رحلتك مع بسطهالي.</source>
+        <target>Sign in to your account and continue your journey with Basstahali.</target>
+      </segment>
+    </unit>
+    <unit id="authLoginTitle">
+      <notes>
+        <note category="location">src/app/Features/login/login.component.ts:32</note>
+      </notes>
+      <segment state="translated">
+        <source>أهلًا بعودتك</source>
+        <target>Welcome back</target>
+      </segment>
+    </unit>
+    <unit id="authLoginDescription">
+      <notes>
+        <note category="location">src/app/Features/login/login.component.ts:33</note>
+      </notes>
+      <segment state="translated">
+        <source>سجّل دخولك للوصول إلى حسابك الدراسي.</source>
+        <target>Sign in to access your learning account.</target>
+      </segment>
+    </unit>
+    <unit id="authLoginUsername">
+      <notes>
+        <note category="location">src/app/Features/login/login.component.ts:34</note>
+      </notes>
+      <segment state="translated">
+        <source>اسم المستخدم</source>
+        <target>Username</target>
+      </segment>
+    </unit>
+    <unit id="authLoginUsernamePlaceholder">
+      <notes>
+        <note category="location">src/app/Features/login/login.component.ts:35</note>
+      </notes>
+      <segment state="translated">
+        <source>أدخل اسم المستخدم</source>
+        <target>Enter your username</target>
+      </segment>
+    </unit>
+    <unit id="authLoginUsernameRequired">
+      <notes>
+        <note category="location">src/app/Features/login/login.component.ts:36</note>
+      </notes>
+      <segment state="translated">
+        <source>أدخل اسم المستخدم.</source>
+        <target>Enter your username.</target>
+      </segment>
+    </unit>
+    <unit id="authLoginPassword">
+      <notes>
+        <note category="location">src/app/Features/login/login.component.ts:37</note>
+      </notes>
+      <segment state="translated">
+        <source>كلمة المرور</source>
+        <target>Password</target>
+      </segment>
+    </unit>
+    <unit id="authLoginPasswordPlaceholder">
+      <notes>
+        <note category="location">src/app/Features/login/login.component.ts:38</note>
+      </notes>
+      <segment state="translated">
+        <source>أدخل كلمة المرور</source>
+        <target>Enter your password</target>
+      </segment>
+    </unit>
+    <unit id="authLoginPasswordRequired">
+      <notes>
+        <note category="location">src/app/Features/login/login.component.ts:39</note>
+      </notes>
+      <segment state="translated">
+        <source>أدخل كلمة المرور.</source>
+        <target>Enter your password.</target>
+      </segment>
+    </unit>
+    <unit id="authLoginShowPassword">
+      <notes>
+        <note category="location">src/app/Features/login/login.component.ts:40</note>
+      </notes>
+      <segment state="translated">
+        <source>إظهار كلمة المرور</source>
+        <target>Show password</target>
+      </segment>
+    </unit>
+    <unit id="authLoginHidePassword">
+      <notes>
+        <note category="location">src/app/Features/login/login.component.ts:41</note>
+      </notes>
+      <segment state="translated">
+        <source>إخفاء كلمة المرور</source>
+        <target>Hide password</target>
+      </segment>
+    </unit>
+    <unit id="authLoginSubmit">
+      <notes>
+        <note category="location">src/app/Features/login/login.component.ts:42</note>
+      </notes>
+      <segment state="translated">
+        <source>تسجيل الدخول</source>
+        <target>Sign in</target>
+      </segment>
+    </unit>
+    <unit id="authLoginPending">
+      <notes>
+        <note category="location">src/app/Features/login/login.component.ts:43</note>
+      </notes>
+      <segment state="translated">
+        <source>جارٍ تسجيل الدخول...</source>
+        <target>Signing in...</target>
+      </segment>
+    </unit>
+    <unit id="authLoginRetry">
+      <notes>
+        <note category="location">src/app/Features/login/login.component.ts:44</note>
+      </notes>
+      <segment state="translated">
+        <source>إعادة المحاولة</source>
+        <target>Try again</target>
+      </segment>
+    </unit>
+    <unit id="authLoginErrorTitle">
+      <notes>
+        <note category="location">src/app/Features/login/login.component.ts:45</note>
+      </notes>
+      <segment state="translated">
+        <source>تعذر تسجيل الدخول</source>
+        <target>Unable to sign in</target>
+      </segment>
+    </unit>
+    <unit id="authLoginInvalidCredentials">
+      <notes>
+        <note category="location">src/app/Features/login/login.component.ts:46</note>
+      </notes>
+      <segment state="translated">
+        <source>اسم المستخدم أو كلمة المرور غير صحيحة.</source>
+        <target>The username or password is incorrect.</target>
+      </segment>
+    </unit>
+    <unit id="authLoginStudentOnly">
+      <notes>
+        <note category="location">src/app/Features/login/login.component.ts:47</note>
+      </notes>
+      <segment state="translated">
+        <source>هذه المساحة مخصصة لحسابات الطلاب. تواصل معنا للمساعدة.</source>
+        <target>This space is for student accounts. Contact us for help.</target>
+      </segment>
+    </unit>
+    <unit id="authLoginInvalidResponse">
+      <notes>
+        <note category="location">src/app/Features/login/login.component.ts:48</note>
+      </notes>
+      <segment state="translated">
+        <source>تعذر إكمال تسجيل الدخول. حاول مرة أخرى.</source>
+        <target>Unable to complete sign-in. Please try again.</target>
+      </segment>
+    </unit>
+    <unit id="authLoginSessionExpired">
+      <notes>
+        <note category="location">src/app/Features/login/login.component.ts:49</note>
+      </notes>
+      <segment state="translated">
+        <source>انتهت صلاحية جلستك. سجّل الدخول من جديد.</source>
+        <target>Your session has expired. Please sign in again.</target>
+      </segment>
+    </unit>
+    <unit id="authLoginUnavailable">
+      <notes>
+        <note category="location">src/app/Features/login/login.component.ts:50</note>
+      </notes>
+      <segment state="translated">
+        <source>تعذر الاتصال بالمنصة. تحقق من اتصالك ثم حاول مرة أخرى.</source>
+        <target>Unable to connect to the platform. Check your connection and try again.</target>
+      </segment>
+    </unit>
+    <unit id="authLoginHelp">
+      <notes>
+        <note category="location">src/app/Features/login/login.component.ts:51</note>
+      </notes>
+      <segment state="translated">
+        <source>تحتاج مساعدة في الدخول؟</source>
+        <target>Need help signing in?</target>
+      </segment>
+    </unit>
+    <unit id="authLoginSupport">
+      <notes>
+        <note category="location">src/app/Features/login/login.component.ts:52</note>
+      </notes>
+      <segment state="translated">
+        <source>تواصل معنا على واتساب</source>
+        <target>Contact us on WhatsApp</target>
+      </segment>
+    </unit>
+    <unit id="authLoginNewAccount">
+      <notes>
+        <note category="location">src/app/Features/login/login.component.ts:53</note>
+      </notes>
+      <segment state="translated">
+        <source>ليس لديك حساب؟</source>
+        <target>Don't have an account?</target>
+      </segment>
+    </unit>
+    <unit id="authLoginRegister">
+      <notes>
+        <note category="location">src/app/Features/login/login.component.ts:54</note>
+      </notes>
+      <segment state="translated">
+        <source>اطلب التسجيل</source>
+        <target>Request an account</target>
+      </segment>
+    </unit>
+    <unit id="authLoginSupportMessage">
+      <notes>
+        <note category="location">src/app/Features/login/login.component.ts:60</note>
+      </notes>
+      <segment state="translated">
+        <source>السلام عليكم، أحتاج مساعدة في الدخول إلى حسابي على بسطهالي.</source>
+        <target>Hello, I need help signing in to my Basstahali account.</target>
+      </segment>
+    </unit>
+    <unit id="authLoginRegistrationMessage">
+      <notes>
+        <note category="location">src/app/Features/login/login.component.ts:65</note>
+      </notes>
+      <segment state="translated">
+        <source>السلام عليكم، أرغب في إنشاء حساب طالب على بسطهالي.</source>
+        <target>Hello, I would like to create a student account on Basstahali.</target>
+      </segment>
+    </unit>
+    <unit id="studentActivitySupport">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:105</note>
+      </notes>
+      <segment state="translated">
+        <source>تحتاج مساعدة؟</source>
+        <target>Need help?</target>
+      </segment>
+    </unit>
+    <unit id="studentActivitySupportLink">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:106</note>
+      </notes>
+      <segment state="translated">
+        <source>تواصل مع فريق بسطهالي</source>
+        <target>Contact the Basstahali team</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityEyebrow">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:107</note>
+      </notes>
+      <segment state="translated">
+        <source>مساحتي التعليمية</source>
+        <target>My learning space</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityMessagesIntro">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:108</note>
+      </notes>
+      <segment state="translated">
+        <source>تابع محادثاتك وأرسل أسئلتك في مكان واحد.</source>
+        <target>Keep track of your conversations and send your questions in one place.</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityExamsIntro">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:109</note>
+      </notes>
+      <segment state="translated">
+        <source>تدرّب على مواد اشتراكك وتابع اختباراتك ونتائجك.</source>
+        <target>Practise the subjects in your subscription and keep track of your exams and results.</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityAssignmentsIntro">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:110</note>
+      </notes>
+      <segment state="translated">
+        <source>راجع الواجبات واحفظ إجابتك أو أرسلها للمتابعة.</source>
+        <target>Review your assignments and save or submit your answers for follow-up.</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityRefresh">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:111</note>
+      </notes>
+      <segment state="translated">
+        <source>تحديث</source>
+        <target>Refresh</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityLoading">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:112</note>
+      </notes>
+      <segment state="translated">
+        <source>جارٍ تحميل بياناتك…</source>
+        <target>Loading your information…</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityRetry">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:113</note>
+      </notes>
+      <segment state="translated">
+        <source>إعادة المحاولة</source>
+        <target>Try again</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityConversations">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:114</note>
+      </notes>
+      <segment state="translated">
+        <source>المحادثات</source>
+        <target>Conversations</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityNoConversations">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:115</note>
+      </notes>
+      <segment state="translated">
+        <source>لا توجد محادثات لعرضها حاليًا.</source>
+        <target>There are no conversations to show right now.</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityRetryRead">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:116</note>
+      </notes>
+      <segment state="translated">
+        <source>تحديث حالة القراءة</source>
+        <target>Update read status</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityMessagesLoading">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:117</note>
+      </notes>
+      <segment state="translated">
+        <source>جارٍ تحميل الرسائل…</source>
+        <target>Loading messages…</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityRetryMessages">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:118</note>
+      </notes>
+      <segment state="translated">
+        <source>إعادة تحميل الرسائل</source>
+        <target>Reload messages</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityNoMessages">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:119</note>
+      </notes>
+      <segment state="translated">
+        <source>لا توجد رسائل في هذه المحادثة بعد.</source>
+        <target>There are no messages in this conversation yet.</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityPreviousMessages">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:120</note>
+      </notes>
+      <segment state="translated">
+        <source>السابق</source>
+        <target>Previous</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityNextMessages">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:121</note>
+      </notes>
+      <segment state="translated">
+        <source>التالي</source>
+        <target>Next</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityConversationClosed">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:122</note>
+      </notes>
+      <segment state="translated">
+        <source>هذه المحادثة مغلقة للرسائل الجديدة.</source>
+        <target>This conversation is closed to new messages.</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityYourMessage">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:123</note>
+      </notes>
+      <segment state="translated">
+        <source>رسالتك</source>
+        <target>Your message</target>
+      </segment>
+    </unit>
+    <unit id="studentActivitySendingMessage">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:124</note>
+      </notes>
+      <segment state="translated">
+        <source>جارٍ الإرسال…</source>
+        <target>Sending…</target>
+      </segment>
+    </unit>
+    <unit id="studentActivitySendMessage">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:125</note>
+      </notes>
+      <segment state="translated">
+        <source>إرسال الرسالة</source>
+        <target>Send message</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityChooseConversation">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:126</note>
+      </notes>
+      <segment state="translated">
+        <source>اختر محادثة</source>
+        <target>Choose a conversation</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityChooseConversationHelp">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:127</note>
+      </notes>
+      <segment state="translated">
+        <source>ستظهر الرسائل هنا بعد اختيار محادثة من قائمتك.</source>
+        <target>Messages will appear here when you choose a conversation from your list.</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityCreateHeading">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:128</note>
+      </notes>
+      <segment state="translated">
+        <source>اختبار تدريبي جديد</source>
+        <target>New practice exam</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityCreateHelp">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:129</note>
+      </notes>
+      <segment state="translated">
+        <source>اختر مادة من مواد اشتراكك، وحدد عدد الأسئلة ومستوى الصعوبة.</source>
+        <target>Choose a subject from your subscription, then select the number of questions and difficulty level.</target>
+      </segment>
+    </unit>
+    <unit id="studentActivitySubjectsLoading">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:130</note>
+      </notes>
+      <segment state="translated">
+        <source>جارٍ تحميل المواد…</source>
+        <target>Loading subjects…</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityRetrySubjects">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:131</note>
+      </notes>
+      <segment state="translated">
+        <source>إعادة تحميل المواد</source>
+        <target>Reload subjects</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityNoExamSubjects">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:132</note>
+      </notes>
+      <segment state="translated">
+        <source>لم تتوفر مواد مرتبطة باشتراكك لإنشاء اختبار. يمكنك متابعة الاختبارات الموجودة أدناه.</source>
+        <target>There are no subjects linked to your subscription for creating an exam. You can still view your existing exams below.</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityExamSubject">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:133</note>
+      </notes>
+      <segment state="translated">
+        <source>المادة</source>
+        <target>Subject</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityChooseSubject">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:134</note>
+      </notes>
+      <segment state="translated">
+        <source>اختر من مواد اشتراكك</source>
+        <target>Choose from your enrolled subjects</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityQuestionCount">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:135</note>
+      </notes>
+      <segment state="translated">
+        <source>عدد الأسئلة</source>
+        <target>Number of questions</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityDifficulty">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:136</note>
+      </notes>
+      <segment state="translated">
+        <source>الصعوبة</source>
+        <target>Difficulty</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityEasy">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:137</note>
+      </notes>
+      <segment state="translated">
+        <source>سهل</source>
+        <target>Easy</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityMedium">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:138</note>
+      </notes>
+      <segment state="translated">
+        <source>متوسط</source>
+        <target>Medium</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityHard">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:139</note>
+      </notes>
+      <segment state="translated">
+        <source>صعب</source>
+        <target>Hard</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityCreatingExam">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:140</note>
+      </notes>
+      <segment state="translated">
+        <source>جارٍ الإنشاء…</source>
+        <target>Creating…</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityCreateExam">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:141</note>
+      </notes>
+      <segment state="translated">
+        <source>إنشاء الاختبار</source>
+        <target>Create exam</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityNoExams">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:142</note>
+      </notes>
+      <segment state="translated">
+        <source>لا توجد اختبارات في حسابك حاليًا.</source>
+        <target>There are no exams in your account right now.</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityOpenExam">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:143</note>
+      </notes>
+      <segment state="translated">
+        <source>عرض الاختبار</source>
+        <target>View exam</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityCloseExam">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:144</note>
+      </notes>
+      <segment state="translated">
+        <source>إغلاق التفاصيل</source>
+        <target>Close details</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityExamAlreadySent">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:145</note>
+      </notes>
+      <segment state="translated">
+        <source>تم إرسال إجابات هذا الاختبار.</source>
+        <target>Your answers to this exam have been submitted.</target>
+      </segment>
+    </unit>
+    <unit id="studentActivitySubmittingExam">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:146</note>
+      </notes>
+      <segment state="translated">
+        <source>جارٍ إرسال الإجابات…</source>
+        <target>Submitting answers…</target>
+      </segment>
+    </unit>
+    <unit id="studentActivitySubmitExam">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:147</note>
+      </notes>
+      <segment state="translated">
+        <source>إرسال الإجابات</source>
+        <target>Submit answers</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityExamQuestionsUnavailable">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:148</note>
+      </notes>
+      <segment state="translated">
+        <source>أسئلة هذا الاختبار غير متاحة للإجابة في حسابك حاليًا. حدّث القائمة أو تواصل مع الدعم للمساعدة.</source>
+        <target>You cannot answer this exam's questions in your account right now. Refresh the list or contact support for help.</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityNoAssignments">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:149</note>
+      </notes>
+      <segment state="translated">
+        <source>لا توجد واجبات لعرضها حاليًا.</source>
+        <target>There are no assignments to show right now.</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityOpenAssignment">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:150</note>
+      </notes>
+      <segment state="translated">
+        <source>عرض الواجب</source>
+        <target>View assignment</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityCloseAssignment">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:151</note>
+      </notes>
+      <segment state="translated">
+        <source>إغلاق التفاصيل</source>
+        <target>Close details</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityAttachedFile">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:152</note>
+      </notes>
+      <segment state="translated">
+        <source>فتح الملف المرفق</source>
+        <target>Open attached file</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityAssignmentAnswer">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:153</note>
+      </notes>
+      <segment state="translated">
+        <source>إجابتك</source>
+        <target>Your answer</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityAssignmentFile">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:154</note>
+      </notes>
+      <segment state="translated">
+        <source>إرفاق ملف للإجابة</source>
+        <target>Attach an answer file</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityUpdateAssignment">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:155</note>
+      </notes>
+      <segment state="translated">
+        <source>لدي إجابة سابقة لهذا الواجب وأريد تحديثها</source>
+        <target>I have already answered this assignment and want to update my answer</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityAssignmentHelp">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:156</note>
+      </notes>
+      <segment state="translated">
+        <source>اكتب إجابتك أو أرفق ملفًا. حفظ المسودة يتيح لك إرسال الإجابة لاحقًا.</source>
+        <target>Write your answer or attach a file. Save a draft to submit your answer later.</target>
+      </segment>
+    </unit>
+    <unit id="studentActivitySavingDraft">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:157</note>
+      </notes>
+      <segment state="translated">
+        <source>جارٍ الحفظ…</source>
+        <target>Saving…</target>
+      </segment>
+    </unit>
+    <unit id="studentActivitySaveDraft">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:158</note>
+      </notes>
+      <segment state="translated">
+        <source>حفظ المسودة</source>
+        <target>Save draft</target>
+      </segment>
+    </unit>
+    <unit id="studentActivitySubmittingAssignment">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:159</note>
+      </notes>
+      <segment state="translated">
+        <source>جارٍ إرسال الإجابة…</source>
+        <target>Submitting answer…</target>
+      </segment>
+    </unit>
+    <unit id="studentActivitySubmitAssignment">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:160</note>
+      </notes>
+      <segment state="translated">
+        <source>إرسال الإجابة</source>
+        <target>Submit answer</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityAssignmentUnavailable">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:161</note>
+      </notes>
+      <segment state="translated">
+        <source>بيانات هذا الواجب غير مكتملة للإرسال. حدّث القائمة أو تواصل مع الدعم.</source>
+        <target>This assignment is missing information needed for submission. Refresh the list or contact support.</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityPreviousPage">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:162</note>
+      </notes>
+      <segment state="translated">
+        <source>السابق</source>
+        <target>Previous</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityNextPage">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:163</note>
+      </notes>
+      <segment state="translated">
+        <source>التالي</source>
+        <target>Next</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityMessagePages">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:164</note>
+      </notes>
+      <segment state="translated">
+        <source>صفحات الرسائل</source>
+        <target>Message pages</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityListPages">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:165</note>
+      </notes>
+      <segment state="translated">
+        <source>صفحات القائمة</source>
+        <target>List pages</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityMessagesTitle">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:166</note>
+      </notes>
+      <segment state="translated">
+        <source>الرسائل</source>
+        <target>Messages</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityExamsTitle">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:167</note>
+      </notes>
+      <segment state="translated">
+        <source>اختباراتي</source>
+        <target>My exams</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityAssignmentsTitle">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:168</note>
+      </notes>
+      <segment state="translated">
+        <source>الواجبات</source>
+        <target>Assignments</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityConversationFallback">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:169</note>
+      </notes>
+      <segment state="translated">
+        <source>محادثة</source>
+        <target>Conversation</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityExamFallback">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:170</note>
+      </notes>
+      <segment state="translated">
+        <source>اختبار</source>
+        <target>Exam</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityAssignmentFallback">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:171</note>
+      </notes>
+      <segment state="translated">
+        <source>واجب دراسي</source>
+        <target>Assignment</target>
+      </segment>
+    </unit>
+    <unit id="studentActivitySenderFallback">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:172</note>
+      </notes>
+      <segment state="translated">
+        <source>المرسل</source>
+        <target>Sender</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityYou">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:173</note>
+      </notes>
+      <segment state="translated">
+        <source>أنت</source>
+        <target>You</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityUnavailable">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:174</note>
+      </notes>
+      <segment state="translated">
+        <source>غير متاح</source>
+        <target>Not available</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityLoadFailed">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:175</note>
+      </notes>
+      <segment state="translated">
+        <source>تعذر تحميل البيانات. أعد المحاولة.</source>
+        <target>Unable to load the information. Please try again.</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityMessageFailed">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:176</note>
+      </notes>
+      <segment state="translated">
+        <source>تعذر إرسال الرسالة. احتفظنا بالنص لتعيد المحاولة.</source>
+        <target>Unable to send the message. Your text has been kept so you can try again.</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityMessageSent">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:177</note>
+      </notes>
+      <segment state="translated">
+        <source>تم إرسال رسالتك.</source>
+        <target>Your message has been sent.</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityReadFailed">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:178</note>
+      </notes>
+      <segment state="translated">
+        <source>تعذر تحديث حالة قراءة المحادثة.</source>
+        <target>Unable to update the conversation’s read status.</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityExamFailed">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:179</note>
+      </notes>
+      <segment state="translated">
+        <source>تعذر إرسال الإجابات. احتفظنا بإجاباتك لتعيد المحاولة.</source>
+        <target>Unable to submit your answers. They have been kept so you can try again.</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityExamSent">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:180</note>
+      </notes>
+      <segment state="translated">
+        <source>تم إرسال إجاباتك. ستظهر النتيجة عند إتاحتها من المنصة.</source>
+        <target>Your answers have been submitted. Your result will appear when it is made available by the platform.</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityCreateFailed">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:181</note>
+      </notes>
+      <segment state="translated">
+        <source>تعذر إنشاء الاختبار. راجع الخيارات وأعد المحاولة.</source>
+        <target>Unable to create the exam. Check your choices and try again.</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityExamCreated">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:182</note>
+      </notes>
+      <segment state="translated">
+        <source>تم إنشاء الاختبار. حدّث القائمة لعرض الاختبار إذا لم يظهر بعد.</source>
+        <target>The exam has been created. Refresh the list if it has not appeared yet.</target>
+      </segment>
+    </unit>
+    <unit id="studentActivitySubjectsFailed">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:183</note>
+      </notes>
+      <segment state="translated">
+        <source>تعذر تحميل مواد اشتراكك.</source>
+        <target>Unable to load the subjects in your subscription.</target>
+      </segment>
+    </unit>
+    <unit id="studentActivitySaveFailed">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:184</note>
+      </notes>
+      <segment state="translated">
+        <source>تعذر حفظ الإجابة. احتفظنا بالنص والملف لتعيد المحاولة.</source>
+        <target>Unable to save your answer. Your text and file have been kept so you can try again.</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityDraftSaved">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:185</note>
+      </notes>
+      <segment state="translated">
+        <source>تم حفظ المسودة.</source>
+        <target>Your draft has been saved.</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityAssignmentSent">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:186</note>
+      </notes>
+      <segment state="translated">
+        <source>تم إرسال إجابة الواجب.</source>
+        <target>Your assignment answer has been submitted.</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityPage">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:235</note>
+      </notes>
+      <segment state="translated">
+        <source>الصفحة <ph id="0" equiv="page" disp="value"/></source>
+        <target>Page <ph id="0" equiv="page" disp="value"/></target>
+      </segment>
+    </unit>
+    <unit id="studentActivityUnread">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:239</note>
+      </notes>
+      <segment state="translated">
+        <source><ph id="0" equiv="count" disp="count"/> غير مقروءة</source>
+        <target><ph id="0" equiv="count" disp="count"/> unread</target>
+      </segment>
+    </unit>
+    <unit id="studentActivityDueDate">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:243</note>
+      </notes>
+      <segment state="translated">
+        <source>الموعد: <ph id="0" equiv="date" disp="this.dateLabel(value)"/></source>
+        <target>Due: <ph id="0" equiv="date" disp="this.dateLabel(value)"/></target>
+      </segment>
+    </unit>
+    <unit id="studentActivityScore">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:248</note>
+      </notes>
+      <segment state="translated">
+        <source>الدرجة: <ph id="0" equiv="score" disp="score"/></source>
+        <target>Score: <ph id="0" equiv="score" disp="score"/></target>
+      </segment>
+    </unit>
+    <unit id="studentActivityScoreWithMax">
+      <notes>
+        <note category="location">src/app/Features/student-activity/student-activity.component.ts:249</note>
+      </notes>
+      <segment state="translated">
+        <source>الدرجة: <ph id="0" equiv="score" disp="score"/> / <ph id="1" equiv="max" disp="maximum"/></source>
+        <target>Score: <ph id="0" equiv="score" disp="score"/> / <ph id="1" equiv="max" disp="maximum"/></target>
+      </segment>
+    </unit>
+    <unit id="student_security">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:3</note>
+      </notes>
+      <segment state="translated">
+        <source>أمان الحساب</source>
+        <target>Account security</target>
+      </segment>
+    </unit>
+    <unit id="student_changePassword">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:4</note>
+      </notes>
+      <segment state="translated">
+        <source>تغيير كلمة المرور</source>
+        <target>Change password</target>
+      </segment>
+    </unit>
+    <unit id="student_passwordIntro">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:5</note>
+      </notes>
+      <segment state="translated">
+        <source>غيّر كلمة مرور حسابك من هنا، واستخدم كلمة لا تشاركها مع أي شخص.</source>
+        <target>Change your account password here, and choose one you do not share with anyone.</target>
+      </segment>
+    </unit>
+    <unit id="student_currentPassword">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:6</note>
+      </notes>
+      <segment state="translated">
+        <source>كلمة المرور الحالية</source>
+        <target>Current password</target>
+      </segment>
+    </unit>
+    <unit id="student_newPassword">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:7</note>
+      </notes>
+      <segment state="translated">
+        <source>كلمة المرور الجديدة</source>
+        <target>New password</target>
+      </segment>
+    </unit>
+    <unit id="student_confirmPassword">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:8</note>
+      </notes>
+      <segment state="translated">
+        <source>تأكيد كلمة المرور الجديدة</source>
+        <target>Confirm new password</target>
+      </segment>
+    </unit>
+    <unit id="student_required">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:9</note>
+      </notes>
+      <segment state="translated">
+        <source>هذا الحقل مطلوب.</source>
+        <target>This field is required.</target>
+      </segment>
+    </unit>
+    <unit id="student_passwordMismatch">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:10</note>
+      </notes>
+      <segment state="translated">
+        <source>تأكيد كلمة المرور لا يطابق كلمة المرور الجديدة.</source>
+        <target>Password confirmation does not match your new password.</target>
+      </segment>
+    </unit>
+    <unit id="student_savingPassword">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:11</note>
+      </notes>
+      <segment state="translated">
+        <source>جارٍ تغيير كلمة المرور…</source>
+        <target>Changing password…</target>
+      </segment>
+    </unit>
+    <unit id="student_passwordChanged">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:12</note>
+      </notes>
+      <segment state="translated">
+        <source>تم تغيير كلمة المرور بنجاح.</source>
+        <target>Your password has been changed.</target>
+      </segment>
+    </unit>
+    <unit id="student_passwordFailed">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:13</note>
+      </notes>
+      <segment state="translated">
+        <source>تعذر تغيير كلمة المرور. تأكد من البيانات وحاول مرة أخرى.</source>
+        <target>We could not change your password. Check your details and try again.</target>
+      </segment>
+    </unit>
+    <unit id="student_portal">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:14</note>
+      </notes>
+      <segment state="translated">
+        <source>مساحة الطالب</source>
+        <target>Student space</target>
+      </segment>
+    </unit>
+    <unit id="student_nav">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:15</note>
+      </notes>
+      <segment state="translated">
+        <source>التنقل في مساحة الطالب</source>
+        <target>Student space navigation</target>
+      </segment>
+    </unit>
+    <unit id="student_overview">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:16</note>
+      </notes>
+      <segment state="translated">
+        <source>الرئيسية</source>
+        <target>Overview</target>
+      </segment>
+    </unit>
+    <unit id="student_schedule">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:17</note>
+      </notes>
+      <segment state="translated">
+        <source>جدولي الدراسي</source>
+        <target>My timetable</target>
+      </segment>
+    </unit>
+    <unit id="student_courses">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:18</note>
+      </notes>
+      <segment state="translated">
+        <source>موادي الدراسية</source>
+        <target>My subjects</target>
+      </segment>
+    </unit>
+    <unit id="student_assignments">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:19</note>
+      </notes>
+      <segment state="translated">
+        <source>الواجبات</source>
+        <target>Assignments</target>
+      </segment>
+    </unit>
+    <unit id="student_exams">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:20</note>
+      </notes>
+      <segment state="translated">
+        <source>الاختبارات</source>
+        <target>Exams</target>
+      </segment>
+    </unit>
+    <unit id="student_messages">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:21</note>
+      </notes>
+      <segment state="translated">
+        <source>الرسائل</source>
+        <target>Messages</target>
+      </segment>
+    </unit>
+    <unit id="student_profile">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:22</note>
+      </notes>
+      <segment state="translated">
+        <source>الملف الشخصي</source>
+        <target>Profile</target>
+      </segment>
+    </unit>
+    <unit id="student_home">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:23</note>
+      </notes>
+      <segment state="translated">
+        <source>موقع بسطهالي</source>
+        <target>Basstahali website</target>
+      </segment>
+    </unit>
+    <unit id="student_logout">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:24</note>
+      </notes>
+      <segment state="translated">
+        <source>تسجيل الخروج</source>
+        <target>Sign out</target>
+      </segment>
+    </unit>
+    <unit id="student_loggingOut">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:25</note>
+      </notes>
+      <segment state="translated">
+        <source>جارٍ تسجيل الخروج…</source>
+        <target>Signing out…</target>
+      </segment>
+    </unit>
+    <unit id="student_theme">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:26</note>
+      </notes>
+      <segment state="translated">
+        <source>تغيير المظهر</source>
+        <target>Change theme</target>
+      </segment>
+    </unit>
+    <unit id="student_language">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:27</note>
+      </notes>
+      <segment state="translated">
+        <source>تغيير اللغة</source>
+        <target>Change language</target>
+      </segment>
+    </unit>
+    <unit id="student_help">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:28</note>
+      </notes>
+      <segment state="translated">
+        <source>نحتاج نساعدك؟</source>
+        <target>Need a hand?</target>
+      </segment>
+    </unit>
+    <unit id="student_helpText">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:29</note>
+      </notes>
+      <segment state="translated">
+        <source>فريق بسطهالي معك لترتيب دراستك والإجابة عن استفساراتك.</source>
+        <target>The Basstahali team is here to help organise your studies and answer your questions.</target>
+      </segment>
+    </unit>
+    <unit id="student_whatsapp">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:30</note>
+      </notes>
+      <segment state="translated">
+        <source>تواصل عبر واتساب</source>
+        <target>Contact us on WhatsApp</target>
+      </segment>
+    </unit>
+    <unit id="student_supportMessage">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:31</note>
+      </notes>
+      <segment state="translated">
+        <source>السلام عليكم، أحتاج مساعدة بخصوص حسابي كطالب في بسطهالي.</source>
+        <target>Hello, I need help with my Basstahali student account.</target>
+      </segment>
+    </unit>
+    <unit id="student_welcome">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:32</note>
+      </notes>
+      <segment state="translated">
+        <source>أهلًا بك،</source>
+        <target>Welcome,</target>
+      </segment>
+    </unit>
+    <unit id="student_welcomeFallback">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:33</note>
+      </notes>
+      <segment state="translated">
+        <source>أهلًا بك في مساحة الطالب</source>
+        <target>Welcome to your student space</target>
+      </segment>
+    </unit>
+    <unit id="student_welcomeText">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:34</note>
+      </notes>
+      <segment state="translated">
+        <source>خطوتك الجاية تبدأ من هنا. تابع حصصك وموادك، وخلك مستعد لكل درس.</source>
+        <target>Your next step starts here. Keep track of your lessons and subjects, and get ready for every class.</target>
+      </segment>
+    </unit>
+    <unit id="student_learningToday">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:35</note>
+      </notes>
+      <segment state="translated">
+        <source>خلّ التعلّم جزءًا من يومك</source>
+        <target>Make learning part of your day</target>
+      </segment>
+    </unit>
+    <unit id="student_today">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:36</note>
+      </notes>
+      <segment state="translated">
+        <source>اليوم</source>
+        <target>Today</target>
+      </segment>
+    </unit>
+    <unit id="student_todaysLessons">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:37</note>
+      </notes>
+      <segment state="translated">
+        <source>حصص اليوم</source>
+        <target>Today's lessons</target>
+      </segment>
+    </unit>
+    <unit id="student_viewSchedule">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:38</note>
+      </notes>
+      <segment state="translated">
+        <source>عرض الجدول كاملًا</source>
+        <target>View full timetable</target>
+      </segment>
+    </unit>
+    <unit id="student_quickAccess">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:39</note>
+      </notes>
+      <segment state="translated">
+        <source>كل اللي تحتاجه لدراستك</source>
+        <target>Everything you need for your studies</target>
+      </segment>
+    </unit>
+    <unit id="student_myLearning">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:40</note>
+      </notes>
+      <segment state="translated">
+        <source>رحلتي الدراسية</source>
+        <target>My learning journey</target>
+      </segment>
+    </unit>
+    <unit id="student_myLearningText">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:41</note>
+      </notes>
+      <segment state="translated">
+        <source>لمحة عن بيانات دراستك كما تظهر في حسابك.</source>
+        <target>An overview of the study information in your account.</target>
+      </segment>
+    </unit>
+    <unit id="student_loading">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:42</note>
+      </notes>
+      <segment state="translated">
+        <source>جارٍ تحميل بياناتك…</source>
+        <target>Loading your information…</target>
+      </segment>
+    </unit>
+    <unit id="student_loadFailed">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:43</note>
+      </notes>
+      <segment state="translated">
+        <source>تعذر تحميل البيانات الآن. جرّب مرة ثانية.</source>
+        <target>Unable to load the information right now. Please try again.</target>
+      </segment>
+    </unit>
+    <unit id="student_retry">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:44</note>
+      </notes>
+      <segment state="translated">
+        <source>حاول مرة أخرى</source>
+        <target>Try again</target>
+      </segment>
+    </unit>
+    <unit id="student_noStats">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:45</note>
+      </notes>
+      <segment state="translated">
+        <source>لا تتوفر إحصاءات دراسية في حسابك حاليًا.</source>
+        <target>There are no study statistics available in your account right now.</target>
+      </segment>
+    </unit>
+    <unit id="student_noLessonsToday">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:46</note>
+      </notes>
+      <segment state="translated">
+        <source>ما عندك حصص مسجلة لهذا اليوم.</source>
+        <target>You have no lessons scheduled for today.</target>
+      </segment>
+    </unit>
+    <unit id="student_noLessons">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:47</note>
+      </notes>
+      <segment state="translated">
+        <source>ما فيه حصص مسجلة في التاريخ المختار.</source>
+        <target>There are no lessons scheduled for the selected date.</target>
+      </segment>
+    </unit>
+    <unit id="student_noCourses">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:48</note>
+      </notes>
+      <segment state="translated">
+        <source>ما فيه مواد مرتبطة بحسابك حاليًا. تواصل معنا إذا كنت مشتركًا وتحتاج مساعدة.</source>
+        <target>There are no subjects linked to your account right now. Contact us if you have a subscription and need help.</target>
+      </segment>
+    </unit>
+    <unit id="student_noProfile">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:49</note>
+      </notes>
+      <segment state="translated">
+        <source>لا تتوفر بيانات الملف الشخصي حاليًا.</source>
+        <target>Profile information is not available right now.</target>
+      </segment>
+    </unit>
+    <unit id="student_scheduleText">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:50</note>
+      </notes>
+      <segment state="translated">
+        <source>اختر يومك وتابع مواعيد حصصك وروابط الانضمام المتاحة.</source>
+        <target>Choose a day to see your lesson times and available joining links.</target>
+      </segment>
+    </unit>
+    <unit id="student_date">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:51</note>
+      </notes>
+      <segment state="translated">
+        <source>تاريخ الحصص</source>
+        <target>Lesson date</target>
+      </segment>
+    </unit>
+    <unit id="student_lesson">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:52</note>
+      </notes>
+      <segment state="translated">
+        <source>حصة دراسية</source>
+        <target>Lesson</target>
+      </segment>
+    </unit>
+    <unit id="student_subject">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:53</note>
+      </notes>
+      <segment state="translated">
+        <source>المادة</source>
+        <target>Subject</target>
+      </segment>
+    </unit>
+    <unit id="student_teacher">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:54</note>
+      </notes>
+      <segment state="translated">
+        <source>المعلم</source>
+        <target>Teacher</target>
+      </segment>
+    </unit>
+    <unit id="student_time">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:55</note>
+      </notes>
+      <segment state="translated">
+        <source>الموعد</source>
+        <target>Time</target>
+      </segment>
+    </unit>
+    <unit id="student_status">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:56</note>
+      </notes>
+      <segment state="translated">
+        <source>الحالة</source>
+        <target>Status</target>
+      </segment>
+    </unit>
+    <unit id="student_join">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:57</note>
+      </notes>
+      <segment state="translated">
+        <source>انضم للحصة</source>
+        <target>Join lesson</target>
+      </segment>
+    </unit>
+    <unit id="student_joinUnavailable">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:58</note>
+      </notes>
+      <segment state="translated">
+        <source>رابط الحصة غير متاح حاليًا</source>
+        <target>The lesson link is not available right now</target>
+      </segment>
+    </unit>
+    <unit id="student_opensNewTab">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:59</note>
+      </notes>
+      <segment state="translated">
+        <source>يفتح في نافذة جديدة</source>
+        <target>Opens in a new window</target>
+      </segment>
+    </unit>
+    <unit id="student_previous">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:60</note>
+      </notes>
+      <segment state="translated">
+        <source>السابق</source>
+        <target>Previous</target>
+      </segment>
+    </unit>
+    <unit id="student_next">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:61</note>
+      </notes>
+      <segment state="translated">
+        <source>التالي</source>
+        <target>Next</target>
+      </segment>
+    </unit>
+    <unit id="student_page">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:62</note>
+      </notes>
+      <segment state="translated">
+        <source>صفحة</source>
+        <target>Page</target>
+      </segment>
+    </unit>
+    <unit id="student_of">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:63</note>
+      </notes>
+      <segment state="translated">
+        <source>من</source>
+        <target>of</target>
+      </segment>
+    </unit>
+    <unit id="student_lessons">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:64</note>
+      </notes>
+      <segment state="translated">
+        <source>حصة</source>
+        <target>lessons</target>
+      </segment>
+    </unit>
+    <unit id="student_coursesText">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:65</note>
+      </notes>
+      <segment state="translated">
+        <source>موادك المسجل فيها وتفاصيلها المتاحة، في مكان واحد.</source>
+        <target>Your enrolled subjects and their available details, all in one place.</target>
+      </segment>
+    </unit>
+    <unit id="student_remainingSessions">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:66</note>
+      </notes>
+      <segment state="translated">
+        <source>الحصص المتبقية</source>
+        <target>Remaining lessons</target>
+      </segment>
+    </unit>
+    <unit id="student_totalSessions">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:67</note>
+      </notes>
+      <segment state="translated">
+        <source>إجمالي الحصص</source>
+        <target>Total lessons</target>
+      </segment>
+    </unit>
+    <unit id="student_usedSessions">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:68</note>
+      </notes>
+      <segment state="translated">
+        <source>الحصص المستخدمة</source>
+        <target>Used lessons</target>
+      </segment>
+    </unit>
+    <unit id="student_courseCount">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:69</note>
+      </notes>
+      <segment state="translated">
+        <source>المواد المسجل فيها</source>
+        <target>Enrolled subjects</target>
+      </segment>
+    </unit>
+    <unit id="student_upcomingSessions">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:70</note>
+      </notes>
+      <segment state="translated">
+        <source>الحصص القادمة</source>
+        <target>Upcoming lessons</target>
+      </segment>
+    </unit>
+    <unit id="student_attendanceRate">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:71</note>
+      </notes>
+      <segment state="translated">
+        <source>نسبة الحضور</source>
+        <target>Attendance rate</target>
+      </segment>
+    </unit>
+    <unit id="student_completedAssignments">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:72</note>
+      </notes>
+      <segment state="translated">
+        <source>الواجبات المكتملة</source>
+        <target>Completed assignments</target>
+      </segment>
+    </unit>
+    <unit id="student_pendingAssignments">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:73</note>
+      </notes>
+      <segment state="translated">
+        <source>الواجبات المتبقية</source>
+        <target>Remaining assignments</target>
+      </segment>
+    </unit>
+    <unit id="student_progress">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:74</note>
+      </notes>
+      <segment state="translated">
+        <source>نسبة الإنجاز</source>
+        <target>Progress</target>
+      </segment>
+    </unit>
+    <unit id="student_course">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:75</note>
+      </notes>
+      <segment state="translated">
+        <source>مادة دراسية</source>
+        <target>Subject</target>
+      </segment>
+    </unit>
+    <unit id="student_profileText">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:76</note>
+      </notes>
+      <segment state="translated">
+        <source>بيانات حسابك وتفاصيل اشتراكك المسجلة لدى بسطهالي.</source>
+        <target>Your account information and subscription details registered with Basstahali.</target>
+      </segment>
+    </unit>
+    <unit id="student_personalInfo">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:77</note>
+      </notes>
+      <segment state="translated">
+        <source>البيانات الشخصية</source>
+        <target>Personal information</target>
+      </segment>
+    </unit>
+    <unit id="student_fullName">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:78</note>
+      </notes>
+      <segment state="translated">
+        <source>الاسم الكامل</source>
+        <target>Full name</target>
+      </segment>
+    </unit>
+    <unit id="student_email">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:79</note>
+      </notes>
+      <segment state="translated">
+        <source>البريد الإلكتروني</source>
+        <target>Email address</target>
+      </segment>
+    </unit>
+    <unit id="student_phone">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:80</note>
+      </notes>
+      <segment state="translated">
+        <source>رقم الهاتف</source>
+        <target>Phone number</target>
+      </segment>
+    </unit>
+    <unit id="student_parentInfo">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:81</note>
+      </notes>
+      <segment state="translated">
+        <source>بيانات ولي الأمر</source>
+        <target>Parent information</target>
+      </segment>
+    </unit>
+    <unit id="student_parentName">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:82</note>
+      </notes>
+      <segment state="translated">
+        <source>اسم ولي الأمر</source>
+        <target>Parent's name</target>
+      </segment>
+    </unit>
+    <unit id="student_parentPhone">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:83</note>
+      </notes>
+      <segment state="translated">
+        <source>هاتف ولي الأمر</source>
+        <target>Parent's phone number</target>
+      </segment>
+    </unit>
+    <unit id="student_educationInfo">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:84</note>
+      </notes>
+      <segment state="translated">
+        <source>البيانات الدراسية</source>
+        <target>Study information</target>
+      </segment>
+    </unit>
+    <unit id="student_curriculum">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:85</note>
+      </notes>
+      <segment state="translated">
+        <source>المنهج</source>
+        <target>Curriculum</target>
+      </segment>
+    </unit>
+    <unit id="student_stage">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:86</note>
+      </notes>
+      <segment state="translated">
+        <source>المرحلة الدراسية</source>
+        <target>School stage</target>
+      </segment>
+    </unit>
+    <unit id="student_grade">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:87</note>
+      </notes>
+      <segment state="translated">
+        <source>الصف الدراسي</source>
+        <target>School grade</target>
+      </segment>
+    </unit>
+    <unit id="student_subscription">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:88</note>
+      </notes>
+      <segment state="translated">
+        <source>تفاصيل الاشتراك</source>
+        <target>Subscription details</target>
+      </segment>
+    </unit>
+    <unit id="student_creditBalance">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:89</note>
+      </notes>
+      <segment state="translated">
+        <source>رصيد الحصص</source>
+        <target>Lesson balance</target>
+      </segment>
+    </unit>
+    <unit id="student_expiration">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:90</note>
+      </notes>
+      <segment state="translated">
+        <source>تاريخ انتهاء الاشتراك</source>
+        <target>Subscription expiry date</target>
+      </segment>
+    </unit>
+    <unit id="student_notProvided">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:91</note>
+      </notes>
+      <segment state="translated">
+        <source>غير متوفر</source>
+        <target>Not available</target>
+      </segment>
+    </unit>
+    <unit id="student_updateProfile">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:92</note>
+      </notes>
+      <segment state="translated">
+        <source>تحتاج تعدّل بياناتك؟</source>
+        <target>Need to update your information?</target>
+      </segment>
+    </unit>
+    <unit id="student_updateProfileText">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:93</note>
+      </notes>
+      <segment state="translated">
+        <source>تواصل مع فريق بسطهالي لمراجعة بيانات حسابك وتصحيحها.</source>
+        <target>Contact the Basstahali team to review and correct your account information.</target>
+      </segment>
+    </unit>
+    <unit id="student_scheduled">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:94</note>
+      </notes>
+      <segment state="translated">
+        <source>مجدولة</source>
+        <target>Scheduled</target>
+      </segment>
+    </unit>
+    <unit id="student_completed">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:95</note>
+      </notes>
+      <segment state="translated">
+        <source>مكتملة</source>
+        <target>Completed</target>
+      </segment>
+    </unit>
+    <unit id="student_cancelled">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:96</note>
+      </notes>
+      <segment state="translated">
+        <source>ملغاة</source>
+        <target>Cancelled</target>
+      </segment>
+    </unit>
+    <unit id="student_active">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:97</note>
+      </notes>
+      <segment state="translated">
+        <source>نشطة</source>
+        <target>Active</target>
+      </segment>
+    </unit>
+    <unit id="student_pending">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:98</note>
+      </notes>
+      <segment state="translated">
+        <source>قيد الانتظار</source>
+        <target>Pending</target>
+      </segment>
+    </unit>
+    <unit id="student_inactive">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:99</note>
+      </notes>
+      <segment state="translated">
+        <source>غير نشطة</source>
+        <target>Inactive</target>
+      </segment>
+    </unit>
+    <unit id="student_expired">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:100</note>
+      </notes>
+      <segment state="translated">
+        <source>منتهية</source>
+        <target>Expired</target>
+      </segment>
+    </unit>
+    <unit id="student_inProgress">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:101</note>
+      </notes>
+      <segment state="translated">
+        <source>جارية</source>
+        <target>In progress</target>
+      </segment>
+    </unit>
+    <unit id="student_paid">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:102</note>
+      </notes>
+      <segment state="translated">
+        <source>مدفوع</source>
+        <target>Paid</target>
+      </segment>
+    </unit>
+    <unit id="student_unpaid">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:103</note>
+      </notes>
+      <segment state="translated">
+        <source>غير مدفوع</source>
+        <target>Unpaid</target>
+      </segment>
+    </unit>
+    <unit id="student_payment">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:104</note>
+      </notes>
+      <segment state="translated">
+        <source>حالة الدفع</source>
+        <target>Payment status</target>
+      </segment>
+    </unit>
+    <unit id="student_account">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:105</note>
+      </notes>
+      <segment state="translated">
+        <source>حساب الطالب</source>
+        <target>Student account</target>
+      </segment>
+    </unit>
+    <unit id="student_accountMenu">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:106</note>
+      </notes>
+      <segment state="translated">
+        <source>أدوات الحساب</source>
+        <target>Account tools</target>
+      </segment>
+    </unit>
+    <unit id="student_skip">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:107</note>
+      </notes>
+      <segment state="translated">
+        <source>انتقل إلى المحتوى</source>
+        <target>Skip to content</target>
+      </segment>
+    </unit>
+    <unit id="student_currentPage">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:108</note>
+      </notes>
+      <segment state="translated">
+        <source>الصفحة الحالية</source>
+        <target>Current page</target>
+      </segment>
+    </unit>
+    <unit id="student_refresh">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:109</note>
+      </notes>
+      <segment state="translated">
+        <source>تحديث</source>
+        <target>Refresh</target>
+      </segment>
+    </unit>
+    <unit id="student_percentage">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:110</note>
+      </notes>
+      <segment state="translated">
+        <source>٪</source>
+        <target>%</target>
+      </segment>
+    </unit>
+    <unit id="student_scheduledAt">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:111</note>
+      </notes>
+      <segment state="translated">
+        <source>الموعد المحدد</source>
+        <target>Scheduled time</target>
+      </segment>
+    </unit>
+    <unit id="student_courseDescription">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:112</note>
+      </notes>
+      <segment state="translated">
+        <source>تابع جدول حصص المادة من صفحة جدولي الدراسي.</source>
+        <target>See the subject's lesson timetable on the My timetable page.</target>
+      </segment>
+    </unit>
+    <unit id="student_viewAssignments">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:113</note>
+      </notes>
+      <segment state="translated">
+        <source>تابع واجباتك</source>
+        <target>View your assignments</target>
+      </segment>
+    </unit>
+    <unit id="student_viewExams">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:114</note>
+      </notes>
+      <segment state="translated">
+        <source>تابع اختباراتك</source>
+        <target>View your exams</target>
+      </segment>
+    </unit>
+    <unit id="student_viewMessages">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:115</note>
+      </notes>
+      <segment state="translated">
+        <source>راجع رسائلك</source>
+        <target>Read your messages</target>
+      </segment>
+    </unit>
+    <unit id="student_pagination">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:116</note>
+      </notes>
+      <segment state="translated">
+        <source>التنقل بين صفحات الحصص</source>
+        <target>Lesson pagination</target>
+      </segment>
+    </unit>
+    <unit id="student_dateError">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:117</note>
+      </notes>
+      <segment state="translated">
+        <source>اختر تاريخًا صحيحًا لعرض الحصص.</source>
+        <target>Choose a valid date to view the lessons.</target>
+      </segment>
+    </unit>
+    <unit id="studentDashboardSeoTitle">
+      <notes>
+        <note category="location">src/app/app.routes.ts:14</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:12</note>
+      </notes>
+      <segment state="translated">
+        <source>لوحة الطالب | بسطهالي</source>
+        <target>Student dashboard | Basstahali</target>
+      </segment>
+    </unit>
+    <unit id="authLoginSeoTitle">
+      <notes>
+        <note category="location">src/app/app.routes.ts:69</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:8</note>
+      </notes>
+      <segment state="translated">
+        <source>تسجيل الدخول | بسطهالي</source>
+        <target>Sign in | Basstahali</target>
+      </segment>
+    </unit>
+    <unit id="authLoginSeoDescription">
+      <notes>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:9</note>
+      </notes>
+      <segment state="translated">
+        <source>سجّل الدخول إلى حساب الطالب في بسطهالي لمتابعة حصصك وكورساتك وواجباتك.</source>
+        <target>Sign in to your Basstahali student account to keep track of your lessons, courses and assignments.</target>
+      </segment>
+    </unit>
+    <unit id="studentDashboardSeoDescription">
+      <notes>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:13</note>
+      </notes>
+      <segment state="translated">
+        <source>مساحتك لمتابعة الحصص والكورسات والواجبات والاختبارات والتواصل مع المعلمين على بسطهالي.</source>
+        <target>Your space to keep track of lessons, courses, assignments and exams, and communicate with teachers on Basstahali.</target>
+      </segment>
+    </unit>
+    <unit id="studentDashboardLink">
+      <notes>
+        <note category="location">src/app/shared/header/header.component.ts:29</note>
+      </notes>
+      <segment state="translated">
+        <source>لوحة الطالب</source>
+        <target>Student dashboard</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

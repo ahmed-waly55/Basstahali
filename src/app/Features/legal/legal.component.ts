@@ -23,12 +23,13 @@ export class LegalComponent {
   readonly kind =
     inject(ActivatedRoute).snapshot.data['document'] === 'terms' ? 'terms' : 'privacy';
   readonly document = this.kind === 'terms' ? termsDocument() : privacyDocument();
+  readonly updatedIso = this.kind === 'privacy' ? '2026-10-16' : '2026-10-14';
   readonly updated = new Intl.DateTimeFormat(this.locale, {
     day: 'numeric',
     month: 'long',
     year: 'numeric',
     timeZone: 'UTC',
-  }).format(new Date(Date.UTC(2026, 9, 14)));
+  }).format(new Date(this.updatedIso + 'T00:00:00Z'));
   readonly i18n = {
     m_b598140d68a4: $localize`:@@m_b598140d68a4:مسار الصفحة`,
     m_b986d8fb163c: $localize`:@@m_b986d8fb163c:الرئيسية`,

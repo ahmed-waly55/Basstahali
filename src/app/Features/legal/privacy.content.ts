@@ -22,6 +22,15 @@ export function privacyDocument(): LegalDocument {
         ],
       },
       {
+        id: 'student-account',
+        title: $localize`:@@privacyStudentAccountTitle:حساب الطالب والجلسة`,
+        paragraphs: [
+          $localize`:@@privacyStudentLoginData:عند تسجيل الدخول، يُرسل اسم المستخدم وكلمة المرور إلى خدمة بسطهالي للتحقق من الحساب. لا تحفظ واجهة الموقع كلمة المرور في تخزين المتصفح.`,
+          $localize`:@@privacyStudentSessionData:تُحفظ رموز جلسة الدخول ومعرّف التبويب في تخزين الجلسة في المتصفح (sessionStorage) لإبقاء حسابك مفتوحًا وتجديد الجلسة. تسجيل الخروج يمسح الجلسة من هذا التبويب ويطلب إنهاءها لدى الخدمة. لا تشارك رموز الجلسة مع الآخرين.`,
+          $localize`:@@privacyStudentDashboardData:تعرض لوحة الطالب بيانات حسابه وحصصه وكورساته وواجباته واختباراته من الخدمة بعد تسجيل الدخول. تُرسل الرسائل وإجابات الاختبارات والملفات وطلبات الطالب إلى الخدمة عندما يختار إرسالها من اللوحة.`,
+        ],
+      },
+      {
         id: 'contact-and-whatsapp',
         title: $localize`:@@m_08f51c19f964:التواصل عبر البريد وواتساب`,
         paragraphs: [

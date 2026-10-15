@@ -1,0 +1,224 @@
+<header class="student-page-heading">
+  <p class="student-eyebrow">{{ copy.portal }}</p>
+  <h1 class="student-heading">{{ copy.profile }}</h1>
+  <p class="student-description">{{ copy.profileText }}</p>
+</header>
+<div [attr.aria-busy]="loading()">
+  @if (loading()) {
+    <div class="student-panel student-state" role="status">
+      <span class="student-spinner" aria-hidden="true"></span>
+      <p>{{ copy.loading }}</p>
+    </div>
+  } @else if (error()) {
+    <div class="student-panel student-state" role="alert">
+      <p>{{ copy.loadFailed }}</p>
+      <button type="button" class="student-button student-button-secondary" (click)="load()">
+        {{ copy.retry }}
+      </button>
+    </div>
+  } @else if (profile(); as student) {
+    <section class="student-panel">
+      <h2 class="student-panel-title">{{ copy.personalInfo }}</h2>
+      <dl class="student-fields">
+        <div>
+          <dt>{{ copy.fullName }}</dt>
+          <dd>{{ student.fullName || copy.notProvided }}</dd>
+        </div>
+        <div>
+          <dt>{{ copy.email }}</dt>
+          <dd>
+            <bdi>{{ student.email || copy.notProvided }}</bdi>
+          </dd>
+        </div>
+        <div>
+          <dt>{{ copy.phone }}</dt>
+          <dd>
+            <bdi>{{ student.phoneNumber || copy.notProvided }}</bdi>
+          </dd>
+        </div>
+      </dl>
+    </section>
+    <section class="student-panel">
+      <h2 class="student-panel-title">{{ copy.parentInfo }}</h2>
+      <dl class="student-fields">
+        <div>
+          <dt>{{ copy.parentName }}</dt>
+          <dd>{{ student.parentName || copy.notProvided }}</dd>
+        </div>
+        <div>
+          <dt>{{ copy.parentPhone }}</dt>
+          <dd>
+            <bdi>{{ student.parentPhoneNumber || copy.notProvided }}</bdi>
+          </dd>
+        </div>
+      </dl>
+    </section>
+    <section class="student-panel">
+      <h2 class="student-panel-title">{{ copy.educationInfo }}</h2>
+      <dl class="student-fields">
+        <div>
+          <dt>{{ copy.curriculum }}</dt>
+          <dd>{{ student.curriculumName || copy.notProvided }}</dd>
+        </div>
+        <div>
+          <dt>{{ copy.stage }}</dt>
+          <dd>{{ student.educationStageName || copy.notProvided }}</dd>
+        </div>
+        <div>
+          <dt>{{ copy.grade }}</dt>
+          <dd>{{ student.gradeLevelName || copy.notProvided }}</dd>
+        </div>
+      </dl>
+    </section>
+    <section class="student-panel">
+      <h2 class="student-panel-title">{{ copy.subscription }}</h2>
+      <dl class="student-fields">
+        <div>
+          <dt>{{ copy.creditBalance }}</dt>
+          <dd>{{ number(student.sessionCreditBalance) }}</dd>
+        </div>
+        <div>
+          <dt>{{ copy.expiration }}</dt>
+          <dd>{{ date(student.expirationDate) }}</dd>
+        </div>
+        <div>
+          <dt>{{ copy.status }}</dt>
+          <dd>{{ statusLabel(student.status) }}</dd>
+        </div>
+      </dl>
+    </section>
+    <aside class="student-profile-support">
+      <div>
+        <h2>{{ copy.updateProfile }}</h2>
+        <p>{{ copy.updateProfileText }}</p>
+      </div>
+      <a
+        [href]="supportLink"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="student-button student-button-secondary"
+        >{{ copy.whatsapp }}
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          aria-hidden="true"
+        >
+          <path d="M7 17 17 7M7 7h10v10" /></svg
+      ></a>
+    </aside>
+  } @else {
+    <div class="student-panel student-state">
+      <p>{{ copy.noProfile }}</p>
+    </div>
+  }
+</div>
+<section class="student-panel student-password-panel">
+  <p class="student-eyebrow">{{ copy.security }}</p>
+  <h2 class="student-panel-title">{{ copy.changePassword }}</h2>
+  <p class="student-description">{{ copy.passwordIntro }}</p>
+  <form
+    [formGroup]="passwordForm"
+    (ngSubmit)="changePassword()"
+    class="student-password-form"
+    [attr.aria-busy]="changingPassword()"
+  >
+    <div>
+      <label for="student-current-password">{{ copy.currentPassword }}</label
+      ><input
+        id="student-current-password"
+        type="password"
+        formControlName="currentPassword"
+        autocomplete="current-password"
+        [readOnly]="changingPassword()"
+        [attr.aria-invalid]="
+          passwordForm.controls.currentPassword.touched &&
+          passwordForm.controls.currentPassword.invalid
+        "
+        [attr.aria-describedby]="
+          passwordForm.controls.currentPassword.touched &&
+          passwordForm.controls.currentPassword.invalid
+            ? 'student-current-password-error'
+            : null
+        "
+      />
+      @if (
+        passwordForm.controls.currentPassword.touched &&
+        passwordForm.controls.currentPassword.invalid
+      ) {
+        <p id="student-current-password-error" class="student-form-error">{{ copy.required }}</p>
+      }
+    </div>
+    <div>
+      <label for="student-new-password">{{ copy.newPassword }}</label
+      ><input
+        id="student-new-password"
+        type="password"
+        formControlName="newPassword"
+        autocomplete="new-password"
+        [readOnly]="changingPassword()"
+        [attr.aria-invalid]="
+          passwordForm.controls.newPassword.touched && passwordForm.controls.newPassword.invalid
+        "
+        [attr.aria-describedby]="
+          passwordForm.controls.newPassword.touched && passwordForm.controls.newPassword.invalid
+            ? 'student-new-password-error'
+            : null
+        "
+      />
+      @if (passwordForm.controls.newPassword.touched && passwordForm.controls.newPassword.invalid) {
+        <p id="student-new-password-error" class="student-form-error">{{ copy.required }}</p>
+      }
+    </div>
+    <div>
+      <label for="student-confirm-password">{{ copy.confirmPassword }}</label
+      ><input
+        id="student-confirm-password"
+        type="password"
+        formControlName="confirmation"
+        autocomplete="new-password"
+        [readOnly]="changingPassword()"
+        [attr.aria-invalid]="
+          passwordForm.controls.confirmation.touched &&
+          (passwordForm.controls.confirmation.invalid || passwordForm.hasError('passwordMismatch'))
+        "
+        [attr.aria-describedby]="
+          passwordForm.controls.confirmation.touched &&
+          (passwordForm.controls.confirmation.invalid || passwordForm.hasError('passwordMismatch'))
+            ? 'student-confirm-password-error'
+            : null
+        "
+      />
+      @if (
+        passwordForm.controls.confirmation.touched &&
+        (passwordForm.controls.confirmation.invalid || passwordForm.hasError('passwordMismatch'))
+      ) {
+        <p id="student-confirm-password-error" class="student-form-error">
+          {{
+            passwordForm.controls.confirmation.hasError('required')
+              ? copy.required
+              : copy.passwordMismatch
+          }}
+        </p>
+      }
+    </div>
+    @if (passwordError()) {
+      <p class="student-password-feedback student-form-error" role="alert">
+        {{ copy.passwordFailed }}
+      </p>
+    }
+    @if (passwordSuccess()) {
+      <p class="student-password-feedback student-password-success" role="status">
+        {{ copy.passwordChanged }}
+      </p>
+    }
+    <div class="student-password-submit">
+      <button type="submit" class="student-button" [disabled]="changingPassword()">
+        {{ changingPassword() ? copy.savingPassword : copy.changePassword }}
+      </button>
+    </div>
+  </form>
+</section>

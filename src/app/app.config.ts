@@ -13,6 +13,7 @@ import { createRoutes } from './app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { loadingInterceptor } from './core/interceptors/loading-interceptor';
+import { authInterceptor } from './core/auth/auth.interceptor';
 
 export function createAppConfig(locale: 'ar' | 'en' = 'ar', hydrate = true): ApplicationConfig {
   return {
@@ -23,7 +24,7 @@ export function createAppConfig(locale: 'ar' | 'en' = 'ar', hydrate = true): App
       { provide: TitleStrategy, useClass: SeoTitleStrategy },
       provideRouter(createRoutes(), withInMemoryScrolling({ scrollPositionRestoration: 'top' })),
       ...(hydrate ? [provideClientHydration(withEventReplay())] : []),
-      provideHttpClient(withFetch(), withInterceptors([loadingInterceptor])),
+      provideHttpClient(withFetch(), withInterceptors([authInterceptor, loadingInterceptor])),
     ],
   };
 }

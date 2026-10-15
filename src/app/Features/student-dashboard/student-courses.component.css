@@ -1,0 +1,119 @@
+.student-courses-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem;
+}
+.student-course-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 1.4rem;
+  background: var(--surface);
+}
+.student-course-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-block-end: 1.2rem;
+}
+.student-course-icon {
+  display: grid;
+  place-items: center;
+  width: 47px;
+  height: 47px;
+  flex-shrink: 0;
+  border-radius: 1rem;
+  color: var(--brand);
+  background: var(--soft);
+}
+.student-course-icon svg {
+  width: 25px;
+  height: 25px;
+}
+.student-course-card h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  font-weight: 750;
+  overflow-wrap: anywhere;
+}
+.student-course-teacher {
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.9;
+}
+.student-course-remaining {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  margin: 1rem 0 0;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+.student-course-remaining strong {
+  color: var(--ink);
+  font-size: 1.1rem;
+}
+.student-course-progress {
+  margin-block-start: 1rem;
+}
+.student-course-progress > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+.student-course-progress strong {
+  color: var(--brand);
+}
+.student-course-progress progress {
+  display: block;
+  width: 100%;
+  height: 6px;
+  margin-block-start: 0.6rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--soft);
+  accent-color: var(--brand);
+}
+.student-course-progress progress::-webkit-progress-bar {
+  border-radius: 999px;
+  background: var(--soft);
+}
+.student-course-progress progress::-webkit-progress-value {
+  border-radius: 999px;
+  background: var(--brand);
+}
+.student-course-progress progress::-moz-progress-bar {
+  border-radius: 999px;
+  background: var(--brand);
+}
+.student-course-description {
+  margin: 1rem 0 1.2rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.9;
+}
+.student-course-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-block-start: auto;
+}
+@media (max-width: 639px) {
+  .student-courses-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .student-course-card {
+    padding: 1.25rem;
+  }
+}

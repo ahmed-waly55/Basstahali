@@ -2,6 +2,7 @@ import { ElementRef, HostListener, inject } from '@angular/core';
 import { PreferencesService } from '../../core/services/preferences.service';
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { AuthService } from '../../core/auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -25,11 +26,13 @@ export class HeaderComponent {
     m_2aaf2c72e715: $localize`:@@m_2aaf2c72e715:التبديل إلى العربية`,
     m_d77b19407de9: $localize`:@@m_d77b19407de9:تبديل الوضع الداكن`,
     m_988638232136: $localize`:@@m_988638232136:تواصل معنا`,
+    studentDashboardLink: $localize`:@@studentDashboardLink:لوحة الطالب`,
   };
 
   private readonly element = inject<ElementRef<HTMLElement>>(ElementRef);
   private readonly desktopBreakpoint = 1120;
   preferences = inject(PreferencesService);
+  readonly auth = inject(AuthService);
   isMenuOpen = false;
 
   toggleMenu(): void {

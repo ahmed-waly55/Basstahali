@@ -26,8 +26,8 @@ In the managed cloud environment, use `NODE_USE_ENV_PROXY=1` for Node HTTPS requ
 - Language and theme controls are available in the header. Preferences are saved locally; the initial language is Arabic and the initial theme follows the device preference.
 - The photorealistic illustrative student image moves continuously while visible, with a pause/play control, gentle scroll movement and reduced-motion support. Motion pauses outside the viewport. The optimized WebP asset and the interaction use Angular and CSS without a new animation dependency.
 - AOS sections animate once and remain visible when scrolling back up. Phone headings and large paragraphs use smaller reading sizes while desktop sizes and form controls are preserved.
-- The landing feedback carousel contains ten clearly labelled, temporary illustrative examples. Its controls support Arabic and English scroll directions.
-- Package prices use the visitor country supplied by Vercel's `x-vercel-ip-country` header through the same-origin `/api/visitor-country` serverless function. Egypt sees EGP at a fixed 15 EGP per AED, including former prices and WhatsApp subscription messages. All other countries and failed/unknown lookups retain AED. Language, timezone and GPS are not used to infer the country. Country responses are not cached. The standalone Node server exposes the same endpoint; local development without a hosting country header defaults to AED.
+- The landing feedback carousel contains the eight real parent/student comments supplied by the platform owner. Its controls support Arabic and English scroll directions.
+- Package prices use the device timezone: `Africa/Cairo` shows EGP at a fixed 15 EGP per AED, including former prices and WhatsApp subscription messages; other timezones retain AED. Course catalog prices are separately specified in EGP.
 - Privacy and terms pages are available at `/privacy` and `/terms`, in Arabic and English with the selected theme. They explain the existing registration, email/WhatsApp contact, browser preferences and external resources, including Google AdSense. Both pages have working footer links, their own SEO metadata and prerendered content.
 - The existing right-click and developer shortcut handlers are preserved. These are browser interactions, not a security boundary; sensitive information must stay on the backend.
 
@@ -36,6 +36,14 @@ In the managed cloud environment, use `NODE_USE_ENV_PROXY=1` for Node HTTPS requ
 The app sets route-specific titles, descriptions, canonical URLs, social metadata and breadcrumb structured data. Arabic remains the primary server-rendered language. The robots file and static sitemap list valid public routes; unknown routes are marked `noindex`.
 
 Run the generated Node SSR server to render live API-backed curriculum and subject pages for crawlers. The existing `vercel.json` uses an SPA fallback; that deployment must be configured for Angular SSR to deliver server-rendered dynamic pages. Static hosting depends on client rendering for those pages. Verify the production canonical hostname and submit `https://www.basstahali.com/sitemap.xml` through Google Search Console after deployment. Search ranking is not guaranteed by technical SEO changes.
+
+## Student account
+
+`/login` uses the documented username/password/device authentication API. The protected `/student` area includes an overview, daily schedule and class links, enrolled courses, assignments, practice exams, messages and account details/password changes. It follows the existing Arabic/English runtime translation and light/dark preferences without new dependencies.
+
+Sessions and the per-tab device identifier use `sessionStorage`, with a browser memory fallback when storage is unavailable. Passwords are never persisted. API bearer tokens are restricted to the configured API origin; concurrent requests share token refresh, and writes are not automatically replayed. A language switch waits for an in-flight refresh before recreating Angular. Account pages use client rendering, `noindex, nofollow` and private/no-store response headers.
+
+Student entity IDs come from the own-profile endpoint, independently of the authentication user ID. Private requests bypass SSR transfer caching. Undocumented response shapes are read through explicit known fields, with empty/error states for unavailable data rather than invented balances or scores. Confirm `/profile/student`, `/dashboards/student` and the other private response fields with an authorized test account when backend sample responses become available; integration tests use mocked accounts and never create live student activity.
 
 ## Application status API
 

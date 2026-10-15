@@ -1,7 +1,58 @@
 import { Routes } from '@angular/router';
+import { studentGuard } from './core/auth/auth.guard';
 
 export function createRoutes(): Routes {
   return [
+    {
+      path: 'student',
+      canActivate: [studentGuard],
+      canActivateChild: [studentGuard],
+      loadComponent: () =>
+        import('./Features/student-dashboard/student-shell.component').then(
+          (m) => m.StudentShellComponent,
+        ),
+      title: $localize`:@@studentDashboardSeoTitle:لوحة الطالب | بسطهالي`,
+      children: [
+        {
+          path: '',
+          pathMatch: 'full',
+          loadComponent: () =>
+            import('./Features/student-dashboard/student-overview.component').then(
+              (m) => m.StudentOverviewComponent,
+            ),
+        },
+        {
+          path: 'schedule',
+          loadComponent: () =>
+            import('./Features/student-dashboard/student-schedule.component').then(
+              (m) => m.StudentScheduleComponent,
+            ),
+        },
+        {
+          path: 'courses',
+          loadComponent: () =>
+            import('./Features/student-dashboard/student-courses.component').then(
+              (m) => m.StudentCoursesComponent,
+            ),
+        },
+        {
+          path: 'profile',
+          loadComponent: () =>
+            import('./Features/student-dashboard/student-profile.component').then(
+              (m) => m.StudentProfileComponent,
+            ),
+        },
+        ...(['messages', 'exams', 'assignments'] as const).map((section) => ({
+          path: section,
+          data: { section },
+          loadComponent: () =>
+            import('./Features/student-activity/student-activity.component').then(
+              (m) => m.StudentActivityComponent,
+            ),
+        })),
+        { path: '**', redirectTo: '' },
+      ],
+    },
     // Landing Layout
     {
       path: '',
@@ -11,6 +62,12 @@ export function createRoutes(): Routes {
         ),
       title: $localize`:@@m_7753e57af83a:بسطهالي | منصة تعليمية ذكية لشرح المناهج الدراسية`,
       children: [
+        {
+          path: 'login',
+          loadComponent: () =>
+            import('./Features/login/login.component').then((m) => m.LoginComponent),
+          title: $localize`:@@authLoginSeoTitle:تسجيل الدخول | بسطهالي`,
+        },
         {
           path: '',
           loadComponent: () =>

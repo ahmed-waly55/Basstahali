@@ -1,0 +1,134 @@
+<header class="student-page-heading">
+  <p class="student-eyebrow">{{ copy.portal }}</p>
+  <h1 class="student-heading">{{ copy.schedule }}</h1>
+  <p class="student-description">{{ copy.scheduleText }}</p>
+</header>
+<section class="student-panel" [attr.aria-busy]="loading()">
+  <div class="student-schedule-toolbar">
+    <div class="student-date-picker">
+      <label for="student-schedule-date" class="student-field-label">{{ copy.date }}</label>
+      <div class="student-date-controls">
+        <input
+          id="student-schedule-date"
+          type="date"
+          class="student-select-date"
+          [value]="selectedDate()"
+          (change)="changeDate($event)"
+          [attr.aria-invalid]="invalidDate()"
+          [attr.aria-describedby]="invalidDate() ? 'student-date-error' : null"
+        /><button
+          type="button"
+          class="student-button student-button-secondary"
+          (click)="today()"
+          [disabled]="loading()"
+        >
+          {{ copy.today }}
+        </button>
+      </div>
+      @if (invalidDate()) {
+        <p id="student-date-error" class="student-date-error" role="alert">{{ copy.dateError }}</p>
+      }
+    </div>
+    <button
+      type="button"
+      class="student-button student-button-secondary"
+      (click)="load()"
+      [disabled]="loading()"
+    >
+      {{ copy.refresh }}
+    </button>
+  </div>
+  <h2 class="student-schedule-day">{{ date(selectedDate()) }}</h2>
+  @if (loading()) {
+    <div class="student-state" role="status">
+      <span class="student-spinner" aria-hidden="true"></span>
+      <p>{{ copy.loading }}</p>
+    </div>
+  } @else if (error()) {
+    <div class="student-state" role="alert">
+      <p>{{ copy.loadFailed }}</p>
+      <button type="button" class="student-button student-button-secondary" (click)="load()">
+        {{ copy.retry }}
+      </button>
+    </div>
+  } @else if (!page()?.items?.length) {
+    <div class="student-state">
+      <p>{{ copy.noLessons }}</p>
+    </div>
+  } @else {
+    <div class="student-lesson-list">
+      @for (lesson of page()!.items; track $index) {
+        <article class="student-lesson">
+          <div>
+            <h3>{{ lesson.subjectName || lesson.courseName || copy.lesson }}</h3>
+            <div class="student-lesson-details">
+              <span>{{ copy.teacher }}: {{ lesson.teacherName || copy.notProvided }}</span
+              ><bdi>{{ lessonTime(lesson) }}</bdi>
+            </div>
+            <div class="student-schedule-tags">
+              @if (lesson.status) {
+                <span class="student-tag">{{ copy.status }}: {{ statusLabel(lesson.status) }}</span>
+              }
+              @if (lesson.paymentStatus) {
+                <span class="student-tag"
+                  >{{ copy.payment }}: {{ statusLabel(lesson.paymentStatus) }}</span
+                >
+              }
+            </div>
+          </div>
+          <div class="student-lesson-actions">
+            @if (safeLink(lesson.classLink); as link) {
+              <a
+                [href]="link"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="student-button"
+                [attr.title]="copy.opensNewTab"
+                >{{ copy.join }}
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  aria-hidden="true"
+                >
+                  <path d="M7 17 17 7M7 7h10v10" /></svg
+              ></a>
+            } @else {
+              <span class="student-small student-muted">{{ copy.joinUnavailable }}</span>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  }
+  @if (!loading() && !error() && showPagination()) {
+    <nav class="student-pagination" [attr.aria-label]="copy.pagination">
+      <span class="student-small student-muted"
+        >{{ copy.page }} {{ number(pageNumber()) }}
+        @if (page()?.totalPages !== null && page()?.totalPages !== undefined) {
+          {{ copy.of }} {{ number(page()!.totalPages!) }}
+        }
+      </span>
+      <div class="student-pagination-buttons">
+        <button
+          type="button"
+          class="student-button student-button-secondary"
+          (click)="changePage(-1)"
+          [disabled]="!hasPrevious()"
+        >
+          {{ copy.previous }}</button
+        ><button
+          type="button"
+          class="student-button student-button-secondary"
+          (click)="changePage(1)"
+          [disabled]="!hasNext()"
+        >
+          {{ copy.next }}
+        </button>
+      </div>
+    </nav>
+  }
+</section>

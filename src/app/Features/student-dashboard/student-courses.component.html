@@ -1,0 +1,101 @@
+<header class="student-page-heading">
+  <p class="student-eyebrow">{{ copy.portal }}</p>
+  <h1 class="student-heading">{{ copy.courses }}</h1>
+  <p class="student-description">{{ copy.coursesText }}</p>
+</header>
+<section [attr.aria-busy]="loading()" [attr.aria-label]="copy.courses">
+  @if (loading()) {
+    <div class="student-panel student-state" role="status">
+      <span class="student-spinner" aria-hidden="true"></span>
+      <p>{{ copy.loading }}</p>
+    </div>
+  } @else if (error()) {
+    <div class="student-panel student-state" role="alert">
+      <p>{{ copy.loadFailed }}</p>
+      <button type="button" class="student-button student-button-secondary" (click)="load()">
+        {{ copy.retry }}
+      </button>
+    </div>
+  } @else if (!courses().length) {
+    <div class="student-panel student-state">
+      <p>{{ copy.noCourses }}</p>
+      <a routerLink="/student/schedule" class="student-button student-button-secondary">{{
+        copy.schedule
+      }}</a>
+    </div>
+  } @else {
+    <div class="student-courses-grid">
+      @for (course of courses(); track $index) {
+        <article class="student-course-card">
+          <div class="student-course-top">
+            <span class="student-course-icon" aria-hidden="true"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M12 5c-3-2-6-2-10-1v15c4-1 7-1 10 1m0-15c3-2 6-2 10-1v15c-4-1-7-1-10 1V5Z"
+                /></svg
+            ></span>
+            @if (course.status) {
+              <span class="student-tag">{{ statusLabel(course.status) }}</span>
+            }
+          </div>
+          <h2>{{ name(course) }}</h2>
+          @if (course.teacherName) {
+            <p class="student-course-teacher">{{ copy.teacher }}: {{ course.teacherName }}</p>
+          }
+          @if (course.remainingSessions !== null) {
+            <p class="student-course-remaining">
+              <span>{{ copy.remainingSessions }}</span
+              ><strong>{{ number(course.remainingSessions) }}</strong>
+            </p>
+          }
+          @if (validProgress(course.progress)) {
+            <div class="student-course-progress">
+              <div>
+                <span>{{ copy.progress }}</span
+                ><strong>{{ number(course.progress!) }}{{ copy.percentage }}</strong>
+              </div>
+              <progress
+                [value]="course.progress"
+                max="100"
+                [attr.aria-label]="copy.progress"
+              ></progress>
+            </div>
+          }
+          <p class="student-course-description">{{ copy.courseDescription }}</p>
+          <div class="student-course-actions">
+            <a routerLink="/student/schedule" class="student-button student-button-secondary">{{
+              copy.schedule
+            }}</a>
+            @if (safeLink(course.classLink); as link) {
+              <a
+                [href]="link"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="student-button"
+                [attr.title]="copy.opensNewTab"
+                >{{ copy.join }}
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  aria-hidden="true"
+                >
+                  <path d="M7 17 17 7M7 7h10v10" /></svg
+              ></a>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  }
+</section>

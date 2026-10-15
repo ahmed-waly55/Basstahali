@@ -1,0 +1,107 @@
+.student-profile-support {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-block: 1.3rem;
+  padding: 1.4rem;
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+  background: var(--soft);
+}
+.student-profile-support h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 750;
+  line-height: 1.8;
+}
+.student-profile-support p {
+  margin: 0.4rem 0 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.9;
+}
+.student-password-panel {
+  margin-block-start: 1.3rem;
+}
+.student-password-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem;
+  max-width: 48rem;
+  margin-block-start: 1.5rem;
+}
+.student-password-form label {
+  display: block;
+  margin-block-end: 0.5rem;
+  color: var(--ink);
+  font-size: 0.75rem;
+  font-weight: 650;
+  line-height: 1.8;
+}
+.student-password-form input {
+  width: 100%;
+  min-height: 46px;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.9rem;
+}
+.student-password-form input[aria-invalid='true'] {
+  border-color: var(--brand);
+}
+.student-form-error {
+  margin: 0.45rem 0 0;
+  color: var(--brand);
+  font-size: 0.7rem;
+  line-height: 1.8;
+}
+.student-password-feedback,
+.student-password-submit {
+  grid-column: 1 / -1;
+}
+.student-password-success {
+  margin: 0;
+  padding: 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--soft);
+  color: var(--ink);
+  font-size: 0.8rem;
+  line-height: 1.8;
+}
+@media (max-width: 639px) {
+  .student-password-form {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.student-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.4rem 1.75rem;
+  margin: 1.2rem 0 0;
+}
+.student-fields dt {
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.8;
+}
+.student-fields dd {
+  margin: 0.35rem 0 0;
+  color: var(--ink);
+  font-size: 0.875rem;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 639px) {
+  .student-fields {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.1rem;
+  }
+}

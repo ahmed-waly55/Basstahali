@@ -91,6 +91,42 @@ describe('Native Angular runtime locale switching', () => {
     expect(fetchCatalog).toHaveBeenCalledTimes(2);
   });
 
+  it('waits for token rotation before destroying the current application and releases its barrier', async () => {
+    const previousApp = application();
+    const bootstrap = vi.fn(async () => previousApp);
+    runtime.registerLocaleBootstrap(bootstrap);
+    await runtime.startLocaleApplication();
+    let finish!: () => void;
+    const pending = new Promise<void>((resolve) => {
+      finish = resolve;
+    });
+    const barrier = vi.fn(() => pending);
+    const release = runtime.registerLocaleTeardownBarrier(barrier);
+    const change = runtime.switchApplicationLanguage('en');
+    await vi.waitFor(() => expect(barrier).toHaveBeenCalledOnce());
+    expect(previousApp.destroy).not.toHaveBeenCalled();
+    expect(localStorage.getItem('basstahali-language')).toBeNull();
+    finish();
+    await change;
+    expect(previousApp.destroy).toHaveBeenCalledOnce();
+    release();
+    await runtime.switchApplicationLanguage('ar');
+    expect(barrier).toHaveBeenCalledOnce();
+  });
+
+  it('preserves the current view when a teardown barrier fails', async () => {
+    const previousApp = application();
+    runtime.registerLocaleBootstrap(async () => previousApp);
+    await runtime.startLocaleApplication();
+    runtime.registerLocaleTeardownBarrier(() =>
+      Promise.reject(new Error('Session is unavailable')),
+    );
+    await expect(runtime.switchApplicationLanguage('en')).rejects.toThrow('Session is unavailable');
+    expect(previousApp.destroy).not.toHaveBeenCalled();
+    expect(localStorage.getItem('basstahali-language')).toBeNull();
+    expect(runtime.switchingLanguage()).toBe(false);
+  });
+
   it('keeps the current app and preference if the requested catalog is unavailable or invalid', async () => {
     const previousApp = application();
     const bootstrap = vi.fn(async () => previousApp);

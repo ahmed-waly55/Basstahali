@@ -64,8 +64,11 @@
           }
         </svg>
       </button>
-      <a href="https://dashboard.basstahali.com" class="header-login"
-        >{{ messages.m_8c6117b67c8b }}
+      <a
+        [routerLink]="auth.isAuthenticated() ? '/student' : '/login'"
+        class="header-login"
+        (click)="closeMenu()"
+        >{{ auth.isAuthenticated() ? messages.studentDashboardLink : messages.m_8c6117b67c8b }}
         <svg
           aria-hidden="true"
           viewBox="0 0 24 24"
@@ -127,8 +130,11 @@
           >{{ link.label }}</a
         >
       }
-      <a href="https://dashboard.basstahali.com" class="mobile-login"
-        >{{ messages.m_8c6117b67c8b }}
+      <a
+        [routerLink]="auth.isAuthenticated() ? '/student' : '/login'"
+        class="mobile-login"
+        (click)="closeMenu()"
+        >{{ auth.isAuthenticated() ? messages.studentDashboardLink : messages.m_8c6117b67c8b }}
         <svg
           aria-hidden="true"
           viewBox="0 0 24 24"

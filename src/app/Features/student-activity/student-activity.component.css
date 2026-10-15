@@ -1,0 +1,200 @@
+:host {
+  display: block;
+  min-width: 0;
+}
+.activity-page {
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+.activity-panel,
+.activity-message,
+.activity-feedback,
+.activity-question {
+  border: 1px solid var(--border);
+}
+.activity-panel {
+  background: var(--surface);
+}
+.activity-panel h2 {
+  font-size: 18px;
+  line-height: 1.7;
+  font-weight: 750;
+}
+.activity-eyebrow,
+.activity-message-sender,
+.activity-text-button,
+.activity-support a {
+  color: var(--brand);
+}
+.activity-intro,
+.activity-help,
+.activity-state,
+.activity-preview,
+.activity-support,
+.activity-empty-selection,
+time,
+.activity-pagination {
+  color: var(--muted);
+}
+.activity-button {
+  border: 1px solid transparent;
+  background: #4f2db7;
+  color: #fff;
+}
+.activity-button:hover {
+  background: #3b236d;
+}
+.activity-button-secondary {
+  background: var(--soft);
+  border-color: var(--border);
+  color: var(--brand);
+}
+.activity-button-secondary:hover {
+  background: var(--surface);
+  border-color: var(--brand);
+}
+.activity-button-gold,
+.activity-unread {
+  background: #ffc107;
+  color: #2b1b44;
+}
+.activity-button-gold:hover {
+  background: #ffd04b;
+}
+.activity-page :where(button, input, textarea, select):disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.activity-page :where(button, a, input, select, textarea):focus-visible {
+  outline: 3px solid #b795ef;
+  outline-offset: 3px;
+}
+.activity-error {
+  background: #fff0f3;
+  color: #9e2444;
+  border-color: #edb8c5;
+}
+.activity-success {
+  background: #edf9f2;
+  color: #1a6642;
+  border-color: #b0d9c3;
+}
+.activity-conversations > h2 {
+  padding-inline: 8px;
+  margin-bottom: 14px;
+}
+.activity-conversation {
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--ink);
+}
+.activity-conversation:hover,
+.activity-conversation.activity-selected {
+  background: var(--soft);
+  border-color: var(--border);
+}
+.activity-message,
+.activity-tag,
+.activity-question-number {
+  background: var(--soft);
+}
+.activity-tag,
+.activity-question-number {
+  color: var(--brand);
+}
+.activity-message-mine {
+  background: var(--page);
+  justify-self: end;
+}
+.activity-empty-selection svg {
+  width: 48px;
+  height: 48px;
+  color: var(--brand);
+}
+.activity-empty-selection p {
+  max-width: 320px;
+  font-size: 14px;
+  line-height: 1.9;
+}
+.activity-form label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.9;
+  margin-bottom: 7px;
+}
+.activity-form :where(input:not([type='checkbox']):not([type='radio']), textarea, select) {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 46px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--page);
+  color: var(--ink);
+  padding: 11px 13px;
+  font: inherit;
+  font-size: 14px;
+}
+.activity-form textarea {
+  resize: vertical;
+  line-height: 1.9;
+}
+.activity-form input[type='file'] {
+  overflow: hidden;
+  line-height: 1.8;
+}
+.activity-message-form {
+  border-color: var(--border);
+}
+.activity-form > .activity-button {
+  justify-self: start;
+}
+.activity-card .activity-button {
+  margin-top: auto;
+}
+.activity-exam-options > .activity-button {
+  grid-column: 1/-1;
+}
+.activity-form .activity-choice {
+  display: flex;
+  margin: 0;
+  font-weight: 500;
+}
+.activity-choice :where(input[type='checkbox'], input[type='radio']) {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+  accent-color: #6941b2;
+}
+.activity-choice span {
+  min-width: 0;
+}
+.activity-support a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+:host-context(html.dark) .activity-error {
+  background: #3c2333;
+  color: #ffafbf;
+  border-color: #754459;
+}
+:host-context(html.dark) .activity-success {
+  background: #203a31;
+  color: #91e2ba;
+  border-color: #3c7058;
+}
+@media (max-width: 600px) {
+  .activity-header > .activity-button {
+    padding-inline: 12px;
+    flex-shrink: 0;
+  }
+  .activity-form :where(input:not([type='checkbox']):not([type='radio']), textarea, select) {
+    font-size: 16px;
+  }
+  .activity-exam-options > .activity-button,
+  .activity-actions .activity-button {
+    width: 100%;
+  }
+}

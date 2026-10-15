@@ -1,9 +1,23 @@
 {
+  "headers": [
+    {
+      "source": "/login",
+      "headers": [
+        { "key": "Cache-Control", "value": "private, no-store" },
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    },
+    {
+      "source": "/student/:path*",
+      "headers": [
+        { "key": "Cache-Control", "value": "private, no-store" },
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    }
+  ],
   "redirects": [
     { "source": "/en/:path*(/?)", "destination": "/:path*", "permanent": true },
     { "source": "/ar/:path*(/?)", "destination": "/:path*", "permanent": true }
   ],
-  "rewrites": [
-    { "source": "/((?!api/|i118/).*)", "destination": "/index.html" }
-  ]
+  "rewrites": [{ "source": "/((?!api/|i118/).*)", "destination": "/index.html" }]
 }

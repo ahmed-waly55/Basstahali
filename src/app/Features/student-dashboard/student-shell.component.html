@@ -1,0 +1,148 @@
+<div class="student-shell" dir="inherit">
+  <a class="student-skip" [routerLink]="[]" fragment="student-content">{{ copy.skip }}</a>
+  <header class="student-topbar">
+    <a routerLink="/student" class="student-brand" [attr.aria-label]="copy.portal">
+      <span class="student-brand-owl"
+        ><img src="images/owl.png" alt="" width="96" height="64"
+      /></span>
+      <span>
+        @if (preferences.language() === 'ar') {
+          <strong>بسط<span>هالي</span></strong>
+        } @else {
+          <strong class="student-brand-latin" dir="ltr">Bassta<span>hali</span></strong>
+        }
+        <small>{{ copy.portal }}</small></span
+      >
+    </a>
+    <div class="student-topbar-tools" role="group" [attr.aria-label]="copy.accountMenu">
+      <button
+        type="button"
+        class="student-tool"
+        [disabled]="preferences.switchingLanguage()"
+        (click)="preferences.toggleLanguage()"
+        [attr.aria-label]="copy.language"
+      >
+        {{ preferences.language() === 'ar' ? 'EN' : 'عربي' }}
+      </button>
+      <button
+        type="button"
+        class="student-tool student-theme"
+        (click)="preferences.toggleTheme()"
+        [attr.aria-label]="copy.theme"
+        [attr.aria-pressed]="preferences.dark()"
+      >
+        @if (preferences.dark()) {
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"
+            />
+          </svg>
+        } @else {
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            aria-hidden="true"
+          >
+            <path d="M21 12.8A9 9 0 0 1 11.2 3 9 9 0 1 0 21 12.8Z" />
+          </svg>
+        }
+      </button>
+      <a class="student-site-link inline-flex items-center gap-1" routerLink="/"
+        >{{ copy.home }}
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          aria-hidden="true"
+        >
+          <path d="M7 17 17 7M7 7h10v10" /></svg
+      ></a>
+      <button
+        type="button"
+        class="student-logout"
+        (click)="logout()"
+        [disabled]="signingOut()"
+        [attr.aria-label]="signingOut() ? copy.loggingOut : copy.logout"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          aria-hidden="true"
+        >
+          <path d="M9 5H4v14h5m6-14 5 7-5 7m-5-7h10" />
+        </svg>
+        <span>{{ signingOut() ? copy.loggingOut : copy.logout }}</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="student-layout">
+    <aside class="student-sidebar">
+      <div class="student-account">
+        <span class="student-avatar" aria-hidden="true">{{
+          (auth.user()?.fullName || auth.user()?.userName || 'ب').slice(0, 1)
+        }}</span>
+        <div>
+          <p>{{ auth.user()?.fullName || auth.user()?.userName || copy.account }}</p>
+          <span>{{ copy.myLearning }}</span>
+        </div>
+      </div>
+      <nav class="student-navigation" [attr.aria-label]="copy.nav">
+        @for (item of navigation; track item.path) {
+          <a
+            [routerLink]="item.path"
+            routerLinkActive="student-nav-active"
+            [routerLinkActiveOptions]="{ exact: item.exact }"
+            ariaCurrentWhenActive="page"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.65"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path [attr.d]="item.icon" />
+            </svg>
+            <span>{{ item.label }}</span>
+          </a>
+        }
+      </nav>
+      <div class="student-sidebar-help">
+        <span class="student-help-symbol" aria-hidden="true">✦</span>
+        <h2>{{ copy.help }}</h2>
+        <p>{{ copy.helpText }}</p>
+        <a [href]="supportLink" target="_blank" rel="noopener noreferrer"
+          >{{ copy.whatsapp }}
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            aria-hidden="true"
+          >
+            <path d="M7 17 17 7M7 7h10v10" /></svg
+        ></a>
+      </div>
+    </aside>
+    <main id="student-content" class="student-content" tabindex="-1"><router-outlet /></main>
+  </div>
+</div>

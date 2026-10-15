@@ -1,0 +1,729 @@
+<section class="activity-page min-w-0" [attr.aria-busy]="loading()">
+  <header class="activity-header flex items-start justify-between gap-4 mb-6 max-[600px]:gap-2.5">
+    <div>
+      <p class="activity-eyebrow text-xs font-bold leading-[1.8] mb-1.5">{{ copy.eyebrow }}</p>
+      <h1 class="text-[clamp(1.65rem,4vw,2.25rem)] leading-[1.5] font-extrabold">{{ title() }}</h1>
+      @switch (section()) {
+        @case ('messages') {
+          <p class="activity-intro text-sm leading-[1.9] mt-1.5 max-w-[680px]">
+            {{ copy.messagesIntro }}
+          </p>
+        }
+        @case ('exams') {
+          <p class="activity-intro text-sm leading-[1.9] mt-1.5 max-w-[680px]">
+            {{ copy.examsIntro }}
+          </p>
+        }
+        @case ('assignments') {
+          <p class="activity-intro text-sm leading-[1.9] mt-1.5 max-w-[680px]">
+            {{ copy.assignmentsIntro }}
+          </p>
+        }
+      }
+    </div>
+    <button
+      type="button"
+      class="activity-button activity-button-secondary inline-flex items-center justify-center gap-2 min-h-11 rounded-xl px-[18px] py-[11px] text-[13px] font-bold leading-[1.6] cursor-pointer touch-manipulation"
+      (click)="reload()"
+      [disabled]="loading() || actionPending()"
+    >
+      {{ copy.refresh }}
+    </button>
+  </header>
+
+  @if (notice()) {
+    <p
+      class="activity-feedback activity-success rounded-[14px] px-[18px] py-[14px] mb-[18px] text-sm leading-[1.9]"
+      role="status"
+    >
+      {{ notice() }}
+    </p>
+  }
+  @if (actionError()) {
+    <p
+      class="activity-feedback activity-error rounded-[14px] px-[18px] py-[14px] mb-[18px] text-sm leading-[1.9]"
+      role="alert"
+    >
+      {{ actionError() }}
+    </p>
+  }
+  @if (loading()) {
+    <p class="activity-state py-5 text-sm leading-[1.9]" role="status">{{ copy.loading }}</p>
+  }
+  @if (error()) {
+    <div
+      class="activity-feedback activity-error rounded-[14px] px-[18px] py-[14px] mb-[18px] text-sm leading-[1.9]"
+      role="alert"
+    >
+      <p>{{ error() }}</p>
+      <button
+        type="button"
+        class="activity-button activity-button-secondary inline-flex items-center justify-center gap-2 min-h-11 rounded-xl px-[18px] py-[11px] text-[13px] font-bold leading-[1.6] cursor-pointer touch-manipulation"
+        (click)="reload()"
+        [disabled]="loading() || actionPending()"
+      >
+        {{ copy.retry }}
+      </button>
+    </div>
+  }
+
+  @switch (section()) {
+    @case ('messages') {
+      <div
+        class="activity-messages-layout grid grid-cols-[minmax(230px,.8fr)_minmax(0,1.6fr)] gap-5 items-start max-[1000px]:grid-cols-1"
+      >
+        <div
+          class="activity-panel activity-conversations min-w-0 rounded-[22px] p-6 max-[600px]:rounded-[18px] max-[600px]:p-[18px] px-3 py-5 max-[600px]:px-2.5 max-[600px]:py-[18px]"
+        >
+          <h2>{{ copy.conversations }}</h2>
+          @if (conversations(); as list) {
+            @if (!list.items.length && !loading()) {
+              <p class="activity-state py-5 text-sm leading-[1.9]">{{ copy.noConversations }}</p>
+            }
+            <div
+              class="activity-conversation-list grid gap-1.5 max-[1000px]:max-h-[310px] max-[1000px]:overflow-y-auto"
+            >
+              @for (conversation of list.items; track conversation.id ?? $index) {
+                <button
+                  type="button"
+                  class="activity-conversation w-full grid gap-1.5 px-3 py-[14px] text-start rounded-[14px] cursor-pointer"
+                  [class.activity-selected]="
+                    !!conversation.id && selectedConversation()?.id === conversation.id
+                  "
+                  [attr.aria-pressed]="
+                    !!conversation.id && selectedConversation()?.id === conversation.id
+                  "
+                  [disabled]="!conversation.id || actionPending() || loading()"
+                  (click)="selectConversation(conversation)"
+                >
+                  <span
+                    class="activity-row flex items-start justify-between gap-2 max-[600px]:flex-wrap"
+                  >
+                    <strong class="text-sm leading-[1.8]">{{
+                      conversationTitle(conversation)
+                    }}</strong>
+                    @if (conversation.unreadCount !== null && conversation.unreadCount > 0) {
+                      <span
+                        class="activity-unread shrink-0 max-w-full px-[7px] py-[3px] rounded-lg text-[10px] font-bold"
+                        >{{ unreadLabel(conversation.unreadCount) }}</span
+                      >
+                    }
+                  </span>
+                  @if (conversation.lastMessage) {
+                    <span class="activity-preview text-xs leading-[1.8] line-clamp-2">{{
+                      conversation.lastMessage
+                    }}</span>
+                  }
+                  @if (conversation.updatedAt) {
+                    <time class="text-[11px]">{{ dateLabel(conversation.updatedAt) }}</time>
+                  }
+                </button>
+              }
+            </div>
+          }
+        </div>
+
+        <div
+          class="activity-panel activity-thread min-w-0 rounded-[22px] p-6 max-[600px]:rounded-[18px] max-[600px]:p-[18px]"
+        >
+          @if (selectedConversation(); as conversation) {
+            <header
+              class="activity-detail-heading flex items-center justify-between gap-4 mb-5 max-[600px]:flex-wrap max-[600px]:gap-1.5"
+            >
+              <div>
+                <h2>{{ conversationTitle(conversation) }}</h2>
+                @if (conversation.status) {
+                  <p
+                    class="activity-tag inline-block w-fit px-[9px] py-1 rounded-lg text-[11px] leading-[1.7] mt-1.5"
+                  >
+                    {{ conversation.status }}
+                  </p>
+                }
+              </div>
+            </header>
+            @if (readError()) {
+              <div
+                class="activity-feedback activity-error rounded-[14px] px-[18px] py-[14px] mb-[18px] text-sm leading-[1.9]"
+                role="alert"
+              >
+                <p>{{ readError() }}</p>
+                <button
+                  type="button"
+                  class="activity-text-button min-h-10 border-0 bg-transparent py-2 text-[13px] underline underline-offset-4 cursor-pointer"
+                  (click)="markRead()"
+                >
+                  {{ copy.retryRead }}
+                </button>
+              </div>
+            }
+            @if (messageLoading()) {
+              <p class="activity-state py-5 text-sm leading-[1.9]" role="status">
+                {{ copy.messagesLoading }}
+              </p>
+            }
+            @if (messageError()) {
+              <div
+                class="activity-feedback activity-error rounded-[14px] px-[18px] py-[14px] mb-[18px] text-sm leading-[1.9]"
+                role="alert"
+              >
+                <p>{{ messageError() }}</p>
+                <button
+                  type="button"
+                  class="activity-text-button min-h-10 border-0 bg-transparent py-2 text-[13px] underline underline-offset-4 cursor-pointer"
+                  (click)="loadMessages()"
+                  [disabled]="messageLoading()"
+                >
+                  {{ copy.retryMessages }}
+                </button>
+              </div>
+            } @else if (messages(); as page) {
+              @if (!page.items.length && !messageLoading()) {
+                <p class="activity-state py-5 text-sm leading-[1.9]">{{ copy.noMessages }}</p>
+              }
+              <ol
+                class="activity-message-list grid gap-[14px] p-0 my-5 list-none max-h-[550px] overflow-y-auto overscroll-contain"
+                aria-live="polite"
+              >
+                @for (message of page.items; track message.id ?? $index) {
+                  <li
+                    class="activity-message max-w-[90%] min-w-0 px-4 py-[14px] rounded-2xl justify-self-start max-[600px]:max-w-full"
+                    [class.activity-message-mine]="message.isMine === true"
+                  >
+                    <p class="activity-message-sender text-[11px] font-bold mb-1.5">
+                      {{ message.isMine === true ? copy.you : message.senderName || copy.sender }}
+                    </p>
+                    <p class="activity-message-body whitespace-pre-wrap text-sm leading-[1.9] mb-2">
+                      {{ message.body || copy.unavailable }}
+                    </p>
+                    @if (message.createdAt) {
+                      <time class="text-[11px]">{{ dateLabel(message.createdAt) }}</time>
+                    }
+                  </li>
+                }
+              </ol>
+              @if (messagePage() > 1 || hasMoreMessages()) {
+                <nav
+                  class="activity-pagination flex flex-wrap items-center justify-center gap-3 mt-6 text-xs"
+                  [attr.aria-label]="copy.messagePages"
+                >
+                  <button
+                    type="button"
+                    class="activity-button activity-button-secondary inline-flex items-center justify-center gap-2 min-h-11 rounded-xl px-[18px] py-[11px] text-[13px] font-bold leading-[1.6] cursor-pointer touch-manipulation"
+                    [disabled]="messagePage() === 1 || messageLoading() || actionPending()"
+                    (click)="loadMessages(messagePage() - 1)"
+                  >
+                    {{ copy.previousMessages }}
+                  </button>
+                  <span>{{ pageLabel(messagePage()) }}</span>
+                  <button
+                    type="button"
+                    class="activity-button activity-button-secondary inline-flex items-center justify-center gap-2 min-h-11 rounded-xl px-[18px] py-[11px] text-[13px] font-bold leading-[1.6] cursor-pointer touch-manipulation"
+                    [disabled]="!hasMoreMessages() || messageLoading() || actionPending()"
+                    (click)="loadMessages(messagePage() + 1)"
+                  >
+                    {{ copy.nextMessages }}
+                  </button>
+                </nav>
+              }
+            }
+            @if (conversationClosed()) {
+              <p class="activity-state py-5 text-sm leading-[1.9]">{{ copy.conversationClosed }}</p>
+            } @else {
+              <form
+                class="activity-form activity-message-form grid gap-4 pt-[18px] border-t"
+                (ngSubmit)="sendMessage()"
+              >
+                <label [for]="'studentActivityMessage-' + conversation.id">{{
+                  copy.yourMessage
+                }}</label>
+                <textarea
+                  [id]="'studentActivityMessage-' + conversation.id"
+                  [name]="'studentActivityMessage-' + conversation.id"
+                  rows="4"
+                  [(ngModel)]="messageBody"
+                  [disabled]="actionPending()"
+                  required
+                ></textarea>
+                <button
+                  type="submit"
+                  class="activity-button inline-flex items-center justify-center gap-2 min-h-11 rounded-xl px-[18px] py-[11px] text-[13px] font-bold leading-[1.6] cursor-pointer touch-manipulation"
+                  [disabled]="!messageBody.trim() || actionPending() || messageLoading()"
+                >
+                  @if (actionPending() && actionKind() === 'message') {
+                    <span>{{ copy.sendingMessage }}</span>
+                  } @else {
+                    <span>{{ copy.sendMessage }}</span>
+                  }
+                </button>
+              </form>
+            }
+          } @else {
+            <div
+              class="activity-empty-selection min-h-[290px] flex flex-col items-center justify-center gap-3 text-center"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                aria-hidden="true"
+              >
+                <path d="M20 11.5a8 8 0 0 1-11.5 7.2L4 20l1.3-4.5A8 8 0 1 1 20 11.5Z" />
+              </svg>
+              <h2>{{ copy.chooseConversation }}</h2>
+              <p>{{ copy.chooseConversationHelp }}</p>
+            </div>
+          }
+        </div>
+      </div>
+    }
+
+    @case ('exams') {
+      <section
+        class="activity-panel activity-create-exam min-w-0 rounded-[22px] p-6 max-[600px]:rounded-[18px] max-[600px]:p-[18px] grid gap-5 mb-6"
+        aria-labelledby="studentActivityCreateHeading"
+      >
+        <div>
+          <h2 id="studentActivityCreateHeading">{{ copy.createHeading }}</h2>
+          <p class="activity-help text-sm leading-[1.9]">{{ copy.createHelp }}</p>
+        </div>
+        @if (subjectsLoading()) {
+          <p class="activity-state py-5 text-sm leading-[1.9]" role="status">
+            {{ copy.subjectsLoading }}
+          </p>
+        }
+        @if (subjectsError()) {
+          <div
+            class="activity-feedback activity-error rounded-[14px] px-[18px] py-[14px] mb-[18px] text-sm leading-[1.9]"
+            role="alert"
+          >
+            <p>{{ subjectsError() }}</p>
+            <button
+              type="button"
+              class="activity-text-button min-h-10 border-0 bg-transparent py-2 text-[13px] underline underline-offset-4 cursor-pointer"
+              (click)="loadSubjects()"
+              [disabled]="subjectsLoading() || actionPending()"
+            >
+              {{ copy.retrySubjects }}
+            </button>
+          </div>
+        } @else if (!subjectsLoading() && !subjects().length) {
+          <p class="activity-state py-5 text-sm leading-[1.9]">{{ copy.noExamSubjects }}</p>
+        }
+        @if (subjects().length) {
+          <form
+            class="activity-form activity-exam-options grid gap-4 grid-cols-[minmax(0,1.5fr)_minmax(0,.8fr)_minmax(0,.8fr)] items-end max-[600px]:grid-cols-1"
+            (ngSubmit)="createExam()"
+          >
+            <div>
+              <label for="studentActivityExamSubject">{{ copy.examSubject }}</label>
+              <select
+                id="studentActivityExamSubject"
+                name="studentActivityExamSubject"
+                [(ngModel)]="examSubjectId"
+                [disabled]="actionPending() || subjectsLoading()"
+                required
+              >
+                <option value="">{{ copy.chooseSubject }}</option>
+                @for (subject of subjects(); track subject.id) {
+                  <option [value]="subject.id">{{ subjectName(subject) }}</option>
+                }
+              </select>
+            </div>
+            <div>
+              <label for="studentActivityQuestionCount">{{ copy.questionCount }}</label>
+              <select
+                id="studentActivityQuestionCount"
+                name="studentActivityQuestionCount"
+                [(ngModel)]="examQuestionCount"
+                [disabled]="actionPending()"
+              >
+                <option [ngValue]="5">5</option>
+                <option [ngValue]="10">10</option>
+                <option [ngValue]="20">20</option>
+              </select>
+            </div>
+            <div>
+              <label for="studentActivityDifficulty">{{ copy.difficulty }}</label>
+              <select
+                id="studentActivityDifficulty"
+                name="studentActivityDifficulty"
+                [(ngModel)]="examDifficulty"
+                [disabled]="actionPending()"
+              >
+                <option value="Easy">{{ copy.easy }}</option>
+                <option value="Medium">{{ copy.medium }}</option>
+                <option value="Hard">{{ copy.hard }}</option>
+              </select>
+            </div>
+            <button
+              type="submit"
+              class="activity-button activity-button-gold inline-flex items-center justify-center gap-2 min-h-11 rounded-xl px-[18px] py-[11px] text-[13px] font-bold leading-[1.6] cursor-pointer touch-manipulation"
+              [disabled]="!examSubjectId || actionPending() || subjectsLoading()"
+            >
+              @if (actionPending() && actionKind() === 'create') {
+                <span>{{ copy.creatingExam }}</span>
+              } @else {
+                <span>{{ copy.createExam }}</span>
+              }
+            </button>
+          </form>
+        }
+      </section>
+
+      @if (exams(); as list) {
+        @if (!list.items.length && !loading()) {
+          <p
+            class="activity-panel activity-state min-w-0 rounded-[22px] p-6 max-[600px]:rounded-[18px] max-[600px]:p-[18px] py-5 text-sm leading-[1.9]"
+          >
+            {{ copy.noExams }}
+          </p>
+        }
+        <div class="activity-cards grid grid-cols-2 gap-[18px] max-[600px]:grid-cols-1">
+          @for (exam of visibleExams(); track exam.id ?? $index) {
+            <article
+              class="activity-panel activity-card min-w-0 rounded-[22px] p-6 max-[600px]:rounded-[18px] max-[600px]:p-[18px] flex flex-col items-start gap-2.5"
+            >
+              @if (exam.subjectName) {
+                <p class="activity-eyebrow text-xs font-bold leading-[1.8] mb-1.5">
+                  {{ exam.subjectName }}
+                </p>
+              }
+              <h2>{{ exam.title || copy.exam }}</h2>
+              @if (exam.status) {
+                <span
+                  class="activity-tag inline-block w-fit px-[9px] py-1 rounded-lg text-[11px] leading-[1.7] mt-1.5"
+                  >{{ exam.status }}</span
+                >
+              }
+              @if (exam.description) {
+                <p class="activity-help text-sm leading-[1.9]">{{ exam.description }}</p>
+              }
+              @if (exam.dueDate) {
+                <p class="activity-help text-sm leading-[1.9]">{{ dueDateLabel(exam.dueDate) }}</p>
+              }
+              @if (exam.score !== null) {
+                <p class="activity-score text-lg font-[750] leading-[1.8]">
+                  {{ scoreLabel(exam.score, exam.maxScore) }}
+                </p>
+              }
+              <button
+                type="button"
+                class="activity-button activity-button-secondary inline-flex items-center justify-center gap-2 min-h-11 rounded-xl px-[18px] py-[11px] text-[13px] font-bold leading-[1.6] cursor-pointer touch-manipulation"
+                [disabled]="actionPending()"
+                (click)="selectExam(exam)"
+              >
+                {{ copy.openExam }}
+              </button>
+            </article>
+          }
+        </div>
+      }
+      @if (selectedExam(); as exam) {
+        <section
+          class="activity-panel activity-detail min-w-0 rounded-[22px] p-6 max-[600px]:rounded-[18px] max-[600px]:p-[18px] mt-6"
+          aria-labelledby="studentActivityExamHeading"
+        >
+          <header
+            class="activity-detail-heading flex items-center justify-between gap-4 mb-5 max-[600px]:flex-wrap max-[600px]:gap-1.5"
+          >
+            <h2 id="studentActivityExamHeading">{{ exam.title || copy.exam }}</h2>
+            <button
+              type="button"
+              class="activity-text-button min-h-10 border-0 bg-transparent py-2 text-[13px] underline underline-offset-4 cursor-pointer"
+              [disabled]="actionPending()"
+              (click)="selectedExam.set(null)"
+            >
+              {{ copy.closeExam }}
+            </button>
+          </header>
+          @if (exam.description) {
+            <p class="activity-help text-sm leading-[1.9]">{{ exam.description }}</p>
+          }
+          @if (examSubmitted(exam)) {
+            <p class="activity-state py-5 text-sm leading-[1.9]">{{ copy.examAlreadySent }}</p>
+            @if (exam.score !== null) {
+              <p class="activity-score text-lg font-[750] leading-[1.8]">
+                {{ scoreLabel(exam.score, exam.maxScore) }}
+              </p>
+            }
+          } @else if (examCanBeAnswered(exam)) {
+            <form class="activity-form grid gap-4" (ngSubmit)="submitExam()">
+              @for (
+                question of exam.questions;
+                track question.id ?? $index;
+                let questionIndex = $index
+              ) {
+                @if (question.id; as questionId) {
+                  <fieldset
+                    class="activity-question min-w-0 rounded-2xl p-[18px] my-2 max-[600px]:p-[14px]"
+                    [disabled]="actionPending()"
+                  >
+                    <legend class="max-w-full px-1.5 text-[15px] font-bold leading-[2]">
+                      <span
+                        class="activity-question-number inline-flex items-center justify-center min-w-[26px] min-h-[26px] px-1.5 rounded-lg text-xs me-2"
+                        aria-hidden="true"
+                        >{{ questionIndex + 1 }}</span
+                      >{{ question.text }}
+                    </legend>
+                    @if (questionHasOptions(question)) {
+                      @for (option of question.options; track option.id ?? $index) {
+                        <label
+                          class="activity-choice flex items-start gap-2.5 py-2.5 font-medium"
+                          [for]="
+                            'studentActivityQuestion-' +
+                            exam.id +
+                            '-' +
+                            questionId +
+                            '-option-' +
+                            $index
+                          "
+                        >
+                          <input
+                            type="radio"
+                            [id]="
+                              'studentActivityQuestion-' +
+                              exam.id +
+                              '-' +
+                              questionId +
+                              '-option-' +
+                              $index
+                            "
+                            [name]="'studentActivityQuestion-' + exam.id + '-' + questionId"
+                            [value]="optionValue(option)"
+                            [ngModel]="answers[questionId] || ''"
+                            (ngModelChange)="setAnswer(questionId, $event)"
+                            required
+                          />
+                          <span>{{ option.text }}</span>
+                        </label>
+                      }
+                    } @else {
+                      <textarea
+                        [id]="'studentActivityExamAnswer-' + exam.id + '-' + questionId"
+                        [name]="'studentActivityExamAnswer-' + exam.id + '-' + questionId"
+                        [attr.aria-label]="question.text"
+                        rows="3"
+                        [ngModel]="answers[questionId] || ''"
+                        (ngModelChange)="setAnswer(questionId, $event)"
+                        required
+                      ></textarea>
+                    }
+                  </fieldset>
+                }
+              }
+              <button
+                type="submit"
+                class="activity-button inline-flex items-center justify-center gap-2 min-h-11 rounded-xl px-[18px] py-[11px] text-[13px] font-bold leading-[1.6] cursor-pointer touch-manipulation"
+                [disabled]="actionPending() || !allQuestionsAnswered(exam)"
+              >
+                @if (actionPending() && actionKind() === 'exam') {
+                  <span>{{ copy.submittingExam }}</span>
+                } @else {
+                  <span>{{ copy.submitExam }}</span>
+                }
+              </button>
+            </form>
+          } @else {
+            <p class="activity-state py-5 text-sm leading-[1.9]">
+              {{ copy.examQuestionsUnavailable }}
+            </p>
+          }
+        </section>
+      }
+    }
+
+    @case ('assignments') {
+      @if (assignments(); as list) {
+        @if (!list.items.length && !loading()) {
+          <p
+            class="activity-panel activity-state min-w-0 rounded-[22px] p-6 max-[600px]:rounded-[18px] max-[600px]:p-[18px] py-5 text-sm leading-[1.9]"
+          >
+            {{ copy.noAssignments }}
+          </p>
+        }
+        <div class="activity-cards grid grid-cols-2 gap-[18px] max-[600px]:grid-cols-1">
+          @for (assignment of visibleAssignments(); track assignment.id ?? $index) {
+            <article
+              class="activity-panel activity-card min-w-0 rounded-[22px] p-6 max-[600px]:rounded-[18px] max-[600px]:p-[18px] flex flex-col items-start gap-2.5"
+            >
+              @if (assignment.subjectName) {
+                <p class="activity-eyebrow text-xs font-bold leading-[1.8] mb-1.5">
+                  {{ assignment.subjectName }}
+                </p>
+              }
+              <h2>{{ assignment.title || copy.assignment }}</h2>
+              @if (assignment.status) {
+                <span
+                  class="activity-tag inline-block w-fit px-[9px] py-1 rounded-lg text-[11px] leading-[1.7] mt-1.5"
+                  >{{ assignment.status }}</span
+                >
+              }
+              @if (assignment.description) {
+                <p class="activity-help text-sm leading-[1.9]">{{ assignment.description }}</p>
+              }
+              @if (assignment.dueDate) {
+                <p class="activity-help text-sm leading-[1.9]">
+                  {{ dueDateLabel(assignment.dueDate) }}
+                </p>
+              }
+              @if (assignment.grade !== null) {
+                <p class="activity-score text-lg font-[750] leading-[1.8]">
+                  {{ scoreLabel(assignment.grade, assignment.maxGrade) }}
+                </p>
+              }
+              <button
+                type="button"
+                class="activity-button activity-button-secondary inline-flex items-center justify-center gap-2 min-h-11 rounded-xl px-[18px] py-[11px] text-[13px] font-bold leading-[1.6] cursor-pointer touch-manipulation"
+                [disabled]="actionPending()"
+                (click)="selectAssignment(assignment)"
+              >
+                {{ copy.openAssignment }}
+              </button>
+            </article>
+          }
+        </div>
+      }
+      @if (selectedAssignment(); as assignment) {
+        <section
+          class="activity-panel activity-detail min-w-0 rounded-[22px] p-6 max-[600px]:rounded-[18px] max-[600px]:p-[18px] mt-6"
+          aria-labelledby="studentActivityAssignmentHeading"
+        >
+          <header
+            class="activity-detail-heading flex items-center justify-between gap-4 mb-5 max-[600px]:flex-wrap max-[600px]:gap-1.5"
+          >
+            <h2 id="studentActivityAssignmentHeading">{{ assignment.title || copy.assignment }}</h2>
+            <button
+              type="button"
+              class="activity-text-button min-h-10 border-0 bg-transparent py-2 text-[13px] underline underline-offset-4 cursor-pointer"
+              [disabled]="actionPending()"
+              (click)="selectedAssignment.set(null)"
+            >
+              {{ copy.closeAssignment }}
+            </button>
+          </header>
+          @if (assignment.description) {
+            <p
+              class="activity-help activity-preserve-lines text-sm leading-[1.9] whitespace-pre-wrap mb-4"
+            >
+              {{ assignment.description }}
+            </p>
+          }
+          @if (safeFileUrl(assignment.fileUrl); as fileUrl) {
+            <a
+              class="activity-text-button activity-file-link min-h-10 border-0 bg-transparent py-2 text-[13px] underline underline-offset-4 cursor-pointer inline-flex mt-1 mb-4"
+              [href]="fileUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              >{{ copy.attachedFile }}</a
+            >
+          }
+          @if (assignment.id) {
+            <form class="activity-form grid gap-4" (ngSubmit)="saveAssignment(true)">
+              <div>
+                <label [for]="'studentActivityAssignmentAnswer-' + assignment.id">{{
+                  copy.assignmentAnswer
+                }}</label>
+                <textarea
+                  [id]="'studentActivityAssignmentAnswer-' + assignment.id"
+                  [name]="'studentActivityAssignmentAnswer-' + assignment.id"
+                  rows="6"
+                  [(ngModel)]="assignmentText"
+                  [disabled]="actionPending()"
+                ></textarea>
+              </div>
+              <div>
+                <label [for]="'studentActivityAssignmentFile-' + assignment.id">{{
+                  copy.assignmentFile
+                }}</label>
+                <input
+                  type="file"
+                  #assignmentFileInput
+                  [id]="'studentActivityAssignmentFile-' + assignment.id"
+                  [name]="'studentActivityAssignmentFile-' + assignment.id"
+                  (change)="chooseFile($event)"
+                  [disabled]="actionPending()"
+                />
+                @if (assignmentFile) {
+                  <p class="activity-help text-sm leading-[1.9]">{{ assignmentFile.name }}</p>
+                }
+              </div>
+              <label
+                class="activity-choice flex items-start gap-2.5 py-2.5 font-medium"
+                [for]="'studentActivityUpdateAssignment-' + assignment.id"
+              >
+                <input
+                  type="checkbox"
+                  [id]="'studentActivityUpdateAssignment-' + assignment.id"
+                  [name]="'studentActivityUpdateAssignment-' + assignment.id"
+                  [(ngModel)]="updateAssignment"
+                  [disabled]="actionPending()"
+                />
+                <span>{{ copy.updateAssignment }}</span>
+              </label>
+              <p class="activity-help text-sm leading-[1.9]">{{ copy.assignmentHelp }}</p>
+              <div class="activity-actions flex flex-wrap gap-3">
+                <button
+                  type="button"
+                  class="activity-button activity-button-secondary inline-flex items-center justify-center gap-2 min-h-11 rounded-xl px-[18px] py-[11px] text-[13px] font-bold leading-[1.6] cursor-pointer touch-manipulation"
+                  (click)="saveAssignment(false)"
+                  [disabled]="!assignmentHasAnswer() || actionPending()"
+                >
+                  @if (actionPending() && actionKind() === 'draft') {
+                    <span>{{ copy.savingDraft }}</span>
+                  } @else {
+                    <span>{{ copy.saveDraft }}</span>
+                  }
+                </button>
+                <button
+                  type="submit"
+                  class="activity-button inline-flex items-center justify-center gap-2 min-h-11 rounded-xl px-[18px] py-[11px] text-[13px] font-bold leading-[1.6] cursor-pointer touch-manipulation"
+                  [disabled]="!assignmentHasAnswer() || actionPending()"
+                >
+                  @if (actionPending() && actionKind() === 'assignment') {
+                    <span>{{ copy.submittingAssignment }}</span>
+                  } @else {
+                    <span>{{ copy.submitAssignment }}</span>
+                  }
+                </button>
+              </div>
+            </form>
+          } @else {
+            <p class="activity-state py-5 text-sm leading-[1.9]">
+              {{ copy.assignmentUnavailable }}
+            </p>
+          }
+        </section>
+      }
+    }
+  }
+
+  @if (page() > 1 || hasNextPage()) {
+    <nav
+      class="activity-pagination flex flex-wrap items-center justify-center gap-3 mt-6 text-xs"
+      [attr.aria-label]="copy.listPages"
+    >
+      <button
+        type="button"
+        class="activity-button activity-button-secondary inline-flex items-center justify-center gap-2 min-h-11 rounded-xl px-[18px] py-[11px] text-[13px] font-bold leading-[1.6] cursor-pointer touch-manipulation"
+        [disabled]="page() === 1 || loading() || actionPending()"
+        (click)="changePage(-1)"
+      >
+        {{ copy.previousPage }}
+      </button>
+      <span>{{ pageLabel(page()) }}</span>
+      <button
+        type="button"
+        class="activity-button activity-button-secondary inline-flex items-center justify-center gap-2 min-h-11 rounded-xl px-[18px] py-[11px] text-[13px] font-bold leading-[1.6] cursor-pointer touch-manipulation"
+        [disabled]="!hasNextPage() || loading() || actionPending()"
+        (click)="changePage(1)"
+      >
+        {{ copy.nextPage }}
+      </button>
+    </nav>
+  }
+  <p class="activity-support text-xs leading-[1.9] mt-7 text-center">
+    {{ copy.support }} <a href="mailto:basstahali@gmail.com">{{ copy.supportLink }}</a
+    >.
+  </p>
+</section>

@@ -1,0 +1,194 @@
+<section class="student-welcome" [attr.aria-label]="copy.overview">
+  <div class="student-welcome-content">
+    <span class="student-welcome-eyebrow">{{ copy.learningToday }}</span>
+    <h1>
+      @if (auth.user()?.fullName || auth.user()?.userName) {
+        {{ copy.welcome }} {{ auth.user()?.fullName || auth.user()?.userName }}
+      } @else {
+        {{ copy.welcomeFallback }}
+      }
+    </h1>
+    <p>{{ copy.welcomeText }}</p>
+    <a routerLink="/student/schedule" class="student-welcome-button"
+      >{{ copy.viewSchedule }} <span aria-hidden="true">←</span></a
+    >
+  </div>
+  <div class="student-welcome-decoration" aria-hidden="true">
+    <svg viewBox="0 0 120 120" fill="none">
+      <rect
+        x="23"
+        y="18"
+        width="74"
+        height="82"
+        rx="14"
+        fill="white"
+        fill-opacity=".13"
+        stroke="white"
+        stroke-opacity=".5"
+        stroke-width="2"
+      />
+      <path
+        d="M41 47h37M41 62h26M41 77h17"
+        stroke="white"
+        stroke-width="5"
+        stroke-linecap="round"
+      />
+      <circle cx="89" cy="90" r="22" fill="#FFD15C" />
+      <path
+        d="m79 90 7 7 13-14"
+        stroke="#3D1A6D"
+        stroke-width="4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </div>
+</section>
+
+<section
+  class="student-overview-stats"
+  [attr.aria-label]="copy.myLearning"
+  [attr.aria-busy]="statsLoading()"
+>
+  @if (statsLoading()) {
+    <div class="student-panel student-state" role="status">
+      <span class="student-spinner" aria-hidden="true"></span>
+      <p>{{ copy.loading }}</p>
+    </div>
+  } @else if (statsError()) {
+    <div class="student-panel student-state" role="alert">
+      <p>{{ copy.loadFailed }}</p>
+      <button type="button" class="student-button student-button-secondary" (click)="loadStats()">
+        {{ copy.retry }}
+      </button>
+    </div>
+  } @else if (stats().length) {
+    <div class="student-stat-grid">
+      @for (stat of stats(); track stat.key) {
+        <article class="student-stat">
+          <span class="student-stat-marker" aria-hidden="true">✦</span>
+          <p>{{ copy[stat.key] }}</p>
+          <strong
+            >{{ number(stat.value) }}
+            @if (stat.key === 'attendanceRate') {
+              <span>{{ copy.percentage }}</span>
+            }
+          </strong>
+        </article>
+      }
+    </div>
+  } @else {
+    <div class="student-panel student-state">
+      <p>{{ copy.noStats }}</p>
+    </div>
+  }
+</section>
+
+<section class="student-panel" [attr.aria-busy]="lessonsLoading()">
+  <div class="student-section-header">
+    <div>
+      <p class="student-eyebrow">{{ date(today) }}</p>
+      <h2 class="student-panel-title">{{ copy.todaysLessons }}</h2>
+    </div>
+    <a routerLink="/student/schedule" class="student-link">{{ copy.viewSchedule }}</a>
+  </div>
+  @if (lessonsLoading()) {
+    <div class="student-state" role="status">
+      <span class="student-spinner" aria-hidden="true"></span>
+      <p>{{ copy.loading }}</p>
+    </div>
+  } @else if (lessonsError()) {
+    <div class="student-state" role="alert">
+      <p>{{ copy.loadFailed }}</p>
+      <button type="button" class="student-button student-button-secondary" (click)="loadLessons()">
+        {{ copy.retry }}
+      </button>
+    </div>
+  } @else if (!sessions().length) {
+    <div class="student-state">
+      <p>{{ copy.noLessonsToday }}</p>
+    </div>
+  } @else {
+    <div class="student-lesson-list">
+      @for (lesson of sessions(); track $index) {
+        <article class="student-lesson">
+          <div>
+            <h3>{{ lesson.subjectName || lesson.courseName || copy.lesson }}</h3>
+            <div class="student-lesson-details">
+              @if (lesson.teacherName) {
+                <span>{{ copy.teacher }}: {{ lesson.teacherName }}</span>
+              }
+              <bdi>{{ lessonTime(lesson) }}</bdi>
+              @if (lesson.status) {
+                <span class="student-tag">{{ statusLabel(lesson.status) }}</span>
+              }
+            </div>
+          </div>
+          <div class="student-lesson-actions">
+            @if (safeLink(lesson.classLink); as link) {
+              <a
+                [href]="link"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="student-button"
+                [attr.title]="copy.opensNewTab"
+                >{{ copy.join }}
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  aria-hidden="true"
+                >
+                  <path d="M7 17 17 7M7 7h10v10" /></svg
+              ></a>
+            } @else {
+              <span class="student-small student-muted">{{ copy.joinUnavailable }}</span>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  }
+</section>
+
+<section class="student-quick-section">
+  <h2 class="student-panel-title">{{ copy.quickAccess }}</h2>
+  <div class="student-quick-grid">
+    <a routerLink="/student/courses"
+      ><span aria-hidden="true">▤</span><strong>{{ copy.courses }}</strong></a
+    ><a routerLink="/student/assignments"
+      ><span aria-hidden="true">✓</span><strong>{{ copy.viewAssignments }}</strong></a
+    ><a routerLink="/student/exams"
+      ><span aria-hidden="true">✎</span><strong>{{ copy.viewExams }}</strong></a
+    ><a routerLink="/student/messages"
+      ><span aria-hidden="true">✉</span><strong>{{ copy.viewMessages }}</strong></a
+    >
+  </div>
+</section>
+
+<aside class="student-overview-help">
+  <div>
+    <h2 class="student-panel-title">{{ copy.help }}</h2>
+    <p class="student-description">{{ copy.helpText }}</p>
+  </div>
+  <a
+    [href]="supportLink"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="student-button student-button-secondary"
+    >{{ copy.whatsapp }}
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.8"
+      aria-hidden="true"
+    >
+      <path d="M7 17 17 7M7 7h10v10" /></svg
+  ></a>
+</aside>
