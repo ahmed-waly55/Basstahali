@@ -4358,5 +4358,95 @@
         <target>Umm Rakan</target>
       </segment>
     </unit>
+    <unit id="parentFeedbackMajed">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:141</note>
+      </notes>
+      <segment state="translated">
+        <source>يعطيكم ألف عافية، ماجد وايد استفاد من الشرح وفهم الدرس بسرعة ما شاء الله</source>
+        <target>Thank you so much. Majed benefited a lot from the explanation and understood the lesson quickly, mashallah.</target>
+      </segment>
+    </unit>
+    <unit id="parentMotherMajed">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:142</note>
+      </notes>
+      <segment state="translated">
+        <source>أم ماجد</source>
+        <target>Umm Majed</target>
+      </segment>
+    </unit>
+    <unit id="parentFeedbackHala">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:147</note>
+      </notes>
+      <segment state="translated">
+        <source>مشكورين وما قصرتوا، حلا كانت مستانسة بالحصة وحبت أسلوب المعلمة وايد</source>
+        <target>Thank you for all your help. Hala enjoyed the lesson and really liked the teacher’s approach.</target>
+      </segment>
+    </unit>
+    <unit id="parentMotherHala">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:148</note>
+      </notes>
+      <segment state="translated">
+        <source>أم حلا</source>
+        <target>Umm Hala</target>
+      </segment>
+    </unit>
+    <unit id="parentFeedbackKhadija">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:153</note>
+      </notes>
+      <segment state="translated">
+        <source>الحمد لله خديجة درجاتها فرقت وايد بعد المتابعة معاكم، جزاكم الله خير</source>
+        <target>Thank God, Khadija’s grades have improved a lot with your follow-up. May God reward you.</target>
+      </segment>
+    </unit>
+    <unit id="parentMotherKhadija">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:154</note>
+      </notes>
+      <segment state="translated">
+        <source>أم خديجة</source>
+        <target>Umm Khadija</target>
+      </segment>
+    </unit>
+    <unit id="parentFeedbackMohammedContinuing">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:159</note>
+      </notes>
+      <segment state="translated">
+        <source>الشرح كان ممتاز ومبسط جداً، وإن شاء الله بنكمل باقي المواد معاكم</source>
+        <target>The explanation was excellent and very easy to understand. God willing, we will continue with you for the other subjects.</target>
+      </segment>
+    </unit>
+    <unit id="parentReviewerMohammed">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:160</note>
+      </notes>
+      <segment state="translated">
+        <source>محمد</source>
+        <target>Mohammed</target>
+      </segment>
+    </unit>
+    <unit id="parentFeedbackAdam">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:165</note>
+      </notes>
+      <segment state="translated">
+        <source>تسلمون على الاهتمام، آدم صار متحمس للحصص وتركيزه وايد أحسن الحين</source>
+        <target>Thank you for your care. Adam is now excited about the lessons and his concentration is much better.</target>
+      </segment>
+    </unit>
+    <unit id="parentMotherAdam">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:166</note>
+      </notes>
+      <segment state="translated">
+        <source>أم آدم</source>
+        <target>Umm Adam</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

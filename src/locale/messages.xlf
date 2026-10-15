@@ -3883,5 +3883,85 @@
         <source>أم راكان</source>
       </segment>
     </unit>
+    <unit id="parentFeedbackMajed">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:141</note>
+      </notes>
+      <segment>
+        <source>يعطيكم ألف عافية، ماجد وايد استفاد من الشرح وفهم الدرس بسرعة ما شاء الله</source>
+      </segment>
+    </unit>
+    <unit id="parentMotherMajed">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:142</note>
+      </notes>
+      <segment>
+        <source>أم ماجد</source>
+      </segment>
+    </unit>
+    <unit id="parentFeedbackHala">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:147</note>
+      </notes>
+      <segment>
+        <source>مشكورين وما قصرتوا، حلا كانت مستانسة بالحصة وحبت أسلوب المعلمة وايد</source>
+      </segment>
+    </unit>
+    <unit id="parentMotherHala">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:148</note>
+      </notes>
+      <segment>
+        <source>أم حلا</source>
+      </segment>
+    </unit>
+    <unit id="parentFeedbackKhadija">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:153</note>
+      </notes>
+      <segment>
+        <source>الحمد لله خديجة درجاتها فرقت وايد بعد المتابعة معاكم، جزاكم الله خير</source>
+      </segment>
+    </unit>
+    <unit id="parentMotherKhadija">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:154</note>
+      </notes>
+      <segment>
+        <source>أم خديجة</source>
+      </segment>
+    </unit>
+    <unit id="parentFeedbackMohammedContinuing">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:159</note>
+      </notes>
+      <segment>
+        <source>الشرح كان ممتاز ومبسط جداً، وإن شاء الله بنكمل باقي المواد معاكم</source>
+      </segment>
+    </unit>
+    <unit id="parentReviewerMohammed">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:160</note>
+      </notes>
+      <segment>
+        <source>محمد</source>
+      </segment>
+    </unit>
+    <unit id="parentFeedbackAdam">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:165</note>
+      </notes>
+      <segment>
+        <source>تسلمون على الاهتمام، آدم صار متحمس للحصص وتركيزه وايد أحسن الحين</source>
+      </segment>
+    </unit>
+    <unit id="parentMotherAdam">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:166</note>
+      </notes>
+      <segment>
+        <source>أم آدم</source>
+      </segment>
+    </unit>
   </file>
 </xliff>

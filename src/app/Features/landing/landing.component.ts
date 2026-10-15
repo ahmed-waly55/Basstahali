@@ -136,6 +136,36 @@ export class LandingComponent implements OnInit, OnDestroy {
       name: $localize`:@@parentMotherRakan:أم راكان`,
       role: $localize`:@@parentFeedbackRole:ولية أمر`,
     },
+    {
+      id: 4,
+      quote: $localize`:@@parentFeedbackMajed:يعطيكم ألف عافية، ماجد وايد استفاد من الشرح وفهم الدرس بسرعة ما شاء الله`,
+      name: $localize`:@@parentMotherMajed:أم ماجد`,
+      role: $localize`:@@parentFeedbackRole:ولية أمر`,
+    },
+    {
+      id: 5,
+      quote: $localize`:@@parentFeedbackHala:مشكورين وما قصرتوا، حلا كانت مستانسة بالحصة وحبت أسلوب المعلمة وايد`,
+      name: $localize`:@@parentMotherHala:أم حلا`,
+      role: $localize`:@@parentFeedbackRole:ولية أمر`,
+    },
+    {
+      id: 6,
+      quote: $localize`:@@parentFeedbackKhadija:الحمد لله خديجة درجاتها فرقت وايد بعد المتابعة معاكم، جزاكم الله خير`,
+      name: $localize`:@@parentMotherKhadija:أم خديجة`,
+      role: $localize`:@@parentFeedbackRole:ولية أمر`,
+    },
+    {
+      id: 7,
+      quote: $localize`:@@parentFeedbackMohammedContinuing:الشرح كان ممتاز ومبسط جداً، وإن شاء الله بنكمل باقي المواد معاكم`,
+      name: $localize`:@@parentReviewerMohammed:محمد`,
+      role: '',
+    },
+    {
+      id: 8,
+      quote: $localize`:@@parentFeedbackAdam:تسلمون على الاهتمام، آدم صار متحمس للحصص وتركيزه وايد أحسن الحين`,
+      name: $localize`:@@parentMotherAdam:أم آدم`,
+      role: $localize`:@@parentFeedbackRole:ولية أمر`,
+    },
   ];
 
   ngOnInit(): void {
