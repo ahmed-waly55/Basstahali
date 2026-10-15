@@ -10,9 +10,8 @@ describe('FooterComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       providers: [provideRouter([])],
-      imports: [FooterComponent]
-    })
-    .compileComponents();
+      imports: [FooterComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(FooterComponent);
     component = fixture.componentInstance;
@@ -21,5 +20,12 @@ describe('FooterComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('links the curricula quick link to curricula instead of courses', () => {
+    const link: HTMLAnchorElement = fixture.nativeElement.querySelector('a[href="/curriculum"]');
+    expect(link).toBeTruthy();
+    expect(link.textContent).toContain('المناهج الدراسية');
+    expect(fixture.nativeElement.querySelector('a[href="/courses"]')).toBeNull();
   });
 });

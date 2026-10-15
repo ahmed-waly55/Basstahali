@@ -1621,14 +1621,6 @@
         <source>سجل حسابك الآن عبر الواتساب</source>
       </segment>
     </unit>
-    <unit id="m_36a64f47675d">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:79</note>
-      </notes>
-      <segment>
-        <source>نماذج توضيحية مؤقتة وليست شهادات فعلية.</source>
-      </segment>
-    </unit>
     <unit id="m_526d124bec7b">
       <notes>
         <note category="location">src/app/Features/landing/landing.component.ts:80</note>
@@ -1731,38 +1723,6 @@
         <source>عرض الآراء التالية</source>
       </segment>
     </unit>
-    <unit id="m_7cffafea78a5">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:113</note>
-      </notes>
-      <segment>
-        <source>المدرس في بسطهالي يشرح لي بصبر وبطريقة واضحة، وإذا ما فهمت يعيدها لي لين توصل الفكرة.</source>
-      </segment>
-    </unit>
-    <unit id="m_352642e38041">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:114</note>
-      </notes>
-      <segment>
-        <source>محمد أحمد</source>
-      </segment>
-    </unit>
-    <unit id="m_79f0a9f1e96a">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:120</note>
-      </notes>
-      <segment>
-        <source>مواعيد الحصص مرتبة وواضحة، وأعرف وش عندي من دروس. سهل عليّ أتابع بدون لخبطة.</source>
-      </segment>
-    </unit>
-    <unit id="m_91f027d449b5">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:121</note>
-      </notes>
-      <segment>
-        <source>سارة محمود</source>
-      </segment>
-    </unit>
     <unit id="m_667eb688d965">
       <notes>
         <note category="location">src/app/Features/landing/landing.component.ts:122</note>
@@ -1773,134 +1733,6 @@
       </notes>
       <segment>
         <source>المرحلة المتوسطة</source>
-      </segment>
-    </unit>
-    <unit id="m_892d713066d9">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:127</note>
-      </notes>
-      <segment>
-        <source>أقدر أسأل المدرس براحة، ويتابع معي ويقول لي وش أحتاج أراجع قبل الحصة الجاية.</source>
-      </segment>
-    </unit>
-    <unit id="m_a55c9b9fcfac">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:128</note>
-      </notes>
-      <segment>
-        <source>أحمد علي</source>
-      </segment>
-    </unit>
-    <unit id="m_190907e88318">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:134</note>
-      </notes>
-      <segment>
-        <source>الشرح مبسّط والمتابعة بين الحصص واضحة، وأعرف وش فهمت ووش أحتاج أراجع.</source>
-      </segment>
-    </unit>
-    <unit id="m_783bf98e019d">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:135</note>
-      </notes>
-      <segment>
-        <source>منى حسن</source>
-      </segment>
-    </unit>
-    <unit id="m_c36fee5d9b33">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:141</note>
-      </notes>
-      <segment>
-        <source>الشرح في بسطهالي خطوة بخطوة، والمدرس يعطيني أمثلة بسيطة لين أفهم الفكرة وأقدر أطبقها.</source>
-      </segment>
-    </unit>
-    <unit id="m_1362ee3bfea0">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:142</note>
-      </notes>
-      <segment>
-        <source>خالد عبدالله</source>
-      </segment>
-    </unit>
-    <unit id="m_d9ba9c39b212">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:148</note>
-      </notes>
-      <segment>
-        <source>يعجبني ترتيب الحصص في بسطهالي؛ أعرف وش بنراجع، والمدرس يربط الدرس الجديد باللي أخذناه قبل.</source>
-      </segment>
-    </unit>
-    <unit id="m_3b7fe8f7d63c">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:149</note>
-      </notes>
-      <segment>
-        <source>نورة سالم</source>
-      </segment>
-    </unit>
-    <unit id="m_67cafca4ba7f">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:155</note>
-      </notes>
-      <segment>
-        <source>أقدر أسأل عن النقطة اللي مو واضحة، والمدرس يشرحها بأكثر من طريقة ويخليني أشارك في الحل.</source>
-      </segment>
-    </unit>
-    <unit id="m_d80f0914ef30">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:156</note>
-      </notes>
-      <segment>
-        <source>راشد محمد</source>
-      </segment>
-    </unit>
-    <unit id="m_53650cac55e1">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:162</note>
-      </notes>
-      <segment>
-        <source>الحصة فيها تفاعل وأسئلة تناسبني، والمدرس يتأكد إني فهمت قبل ما ينتقل للجزء اللي بعده.</source>
-      </segment>
-    </unit>
-    <unit id="m_0bce60e39c1b">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:163</note>
-      </notes>
-      <segment>
-        <source>ريم علي</source>
-      </segment>
-    </unit>
-    <unit id="m_4720807d959e">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:169</note>
-      </notes>
-      <segment>
-        <source>المتابعة بعد الدرس واضحة؛ أعرف وش أتدرب عليه، ونراجع الأشياء اللي أحتاج فيها مساعدة بالحصة الجاية.</source>
-      </segment>
-    </unit>
-    <unit id="m_2f1ca697c894">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:170</note>
-      </notes>
-      <segment>
-        <source>عبدالله يوسف</source>
-      </segment>
-    </unit>
-    <unit id="m_bf18f2217d43">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:176</note>
-      </notes>
-      <segment>
-        <source>أسلوب الشرح مرتب وبدون استعجال، وتقسيم موضوع الدرس لأجزاء صغيرة يساعدني أركز وأفهم.</source>
-      </segment>
-    </unit>
-    <unit id="m_a9ac2c69fe66">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:177</note>
-      </notes>
-      <segment>
-        <source>دانة أحمد</source>
       </segment>
     </unit>
     <unit id="m_b598140d68a4">
@@ -3993,6 +3825,62 @@
       </notes>
       <segment>
         <source>العودة للرئيسية</source>
+      </segment>
+    </unit>
+    <unit id="parentFeedbackMohammed">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:123</note>
+      </notes>
+      <segment>
+        <source>الحمد لله محمد مبسوط، وغدًا بإذن الله نتفق على الرياضيات والأحياء.</source>
+      </segment>
+    </unit>
+    <unit id="parentMotherMohammed">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:124</note>
+      </notes>
+      <segment>
+        <source>أم محمد</source>
+      </segment>
+    </unit>
+    <unit id="parentFeedbackRole">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:125</note>
+      </notes>
+      <segment>
+        <source>ولية أمر</source>
+      </segment>
+    </unit>
+    <unit id="parentFeedbackMaha">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:129</note>
+      </notes>
+      <segment>
+        <source>وايد مشكورين على الحصة، معلمة مها مثل العسل ما شاء الله.</source>
+      </segment>
+    </unit>
+    <unit id="parentMotherHarib">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:130</note>
+      </notes>
+      <segment>
+        <source>أم حارب</source>
+      </segment>
+    </unit>
+    <unit id="parentFeedbackRakan">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:135</note>
+      </notes>
+      <segment>
+        <source>راكان كان مبسوط مع المهندسة.</source>
+      </segment>
+    </unit>
+    <unit id="parentMotherRakan">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:136</note>
+      </notes>
+      <segment>
+        <source>أم راكان</source>
       </segment>
     </unit>
   </file>

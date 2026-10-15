@@ -10,9 +10,46 @@
 
 <div class="container mx-auto px-4">
   <!-- تم ضبط الشبكة هنا لتصبح 3 كروت في الصف الواحد lg:grid-cols-3 -->
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto"
+    [attr.aria-busy]="curriculaLoading"
+  >
+    @if (curriculaLoading) {
+      <div
+        class="md:col-span-2 rounded-2xl border border-purple-100 bg-purple-50 p-8 text-center text-purple-900"
+        role="status"
+      >
+        {{ messages.m_cee8f138e31b }}
+      </div>
+    } @else if (curriculaFailed) {
+      <div
+        class="md:col-span-2 rounded-2xl border border-purple-100 bg-purple-50 p-8 text-center"
+        role="alert"
+      >
+        <p class="font-bold text-purple-900">{{ messages.m_e0465a89fde9 }}</p>
+        <p class="mt-2 text-sm text-slate-600">{{ messages.m_c736c9f1496a }}</p>
+        <button
+          type="button"
+          (click)="fetchCurricula()"
+          class="mt-4 rounded-xl bg-[#4F2DB7] px-5 py-3 text-sm font-bold text-white"
+        >
+          {{ messages.m_2e47b5f289f1 }}
+        </button>
+      </div>
+    } @else if (!curriculaList.length) {
+      <div
+        class="md:col-span-2 rounded-2xl border border-purple-100 bg-purple-50 p-8 text-center text-purple-900"
+        role="status"
+      >
+        {{ messages.m_4d255e9aaa04 }}
+      </div>
+    }
     <!-- عرض المناهج القادمة من الـ API ديناميكياً -->
-    @for (curriculum of curriculaList; track curriculum.id; let idx = $index) {
+    @for (
+      curriculum of curriculaList;
+      track curriculum.id || curriculum._id || $index;
+      let idx = $index
+    ) {
       <a
         [routerLink]="['/curriculum', curriculum.id || curriculum._id]"
         class="block hover:no-underline cursor-pointer"
@@ -420,10 +457,6 @@
 <section class="max-w-6xl mx-auto px-4 py-8" data-aos="fade-up" data-aos-duration="800">
   <app-section-header [title]="messages.m_4df49eb87a01" />
 
-  <p class="max-w-2xl mx-auto mb-3 text-center text-sm font-semibold text-[#4F2DB7]">
-    {{ messages.m_36a64f47675d }}
-  </p>
-
   <p class="max-w-2xl mx-auto mb-6 text-center text-sm md:text-base leading-relaxed text-slate-600">
     {{ messages.m_526d124bec7b }}
   </p>
@@ -467,26 +500,16 @@
           </p>
 
           <div class="flex flex-col items-center mt-auto w-full">
-            <div class="flex text-amber-400 text-xs gap-1 mb-2">
-              @for (star of [1, 2, 3, 4, 5]; track star) {
-                <i class="fa-solid fa-star"></i>
-              }
-            </div>
-
             <div
               class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#dcd5f7] p-0.5 mb-1.5 overflow-hidden flex items-center justify-center"
             >
-              <img
-                [src]="item.avatar"
-                [alt]="item.name"
-                class="w-full h-full object-cover rounded-full"
-              />
+              <i class="fa-solid fa-user text-xl text-[#6c5991]" aria-hidden="true"></i>
             </div>
 
             <h4 class="font-bold text-[#2a174a] text-xs md:text-sm mb-0.5">
               {{ item.name }}
             </h4>
-            <span class="text-[11px] font-medium text-[#6c5991]">{{ item.grade }}</span>
+            <span class="text-[11px] font-medium text-[#6c5991]">{{ item.role }}</span>
           </div>
         </div>
       }

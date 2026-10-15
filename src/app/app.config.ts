@@ -11,7 +11,7 @@ import { SeoTitleStrategy } from './core/services/seo-title.strategy';
 
 import { createRoutes } from './app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
-import { provideHttpClient, withInterceptors } from '@angular/common/http'; // <-- بدون withFetch
+import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { loadingInterceptor } from './core/interceptors/loading-interceptor';
 
 export function createAppConfig(locale: 'ar' | 'en' = 'ar', hydrate = true): ApplicationConfig {
@@ -23,7 +23,7 @@ export function createAppConfig(locale: 'ar' | 'en' = 'ar', hydrate = true): App
       { provide: TitleStrategy, useClass: SeoTitleStrategy },
       provideRouter(createRoutes(), withInMemoryScrolling({ scrollPositionRestoration: 'top' })),
       ...(hydrate ? [provideClientHydration(withEventReplay())] : []),
-      provideHttpClient(withInterceptors([loadingInterceptor])),
+      provideHttpClient(withFetch(), withInterceptors([loadingInterceptor])),
     ],
   };
 }

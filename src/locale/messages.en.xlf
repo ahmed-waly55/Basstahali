@@ -1817,15 +1817,6 @@
         <target>Register on WhatsApp</target>
       </segment>
     </unit>
-    <unit id="m_36a64f47675d">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:79</note>
-      </notes>
-      <segment state="translated">
-        <source>نماذج توضيحية مؤقتة وليست شهادات فعلية.</source>
-        <target>Temporary illustrative examples, not actual testimonials.</target>
-      </segment>
-    </unit>
     <unit id="m_526d124bec7b">
       <notes>
         <note category="location">src/app/Features/landing/landing.component.ts:80</note>
@@ -1940,42 +1931,6 @@
         <target>Show next testimonials</target>
       </segment>
     </unit>
-    <unit id="m_7cffafea78a5">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:113</note>
-      </notes>
-      <segment state="translated">
-        <source>المدرس في بسطهالي يشرح لي بصبر وبطريقة واضحة، وإذا ما فهمت يعيدها لي لين توصل الفكرة.</source>
-        <target>My teacher at Basstahali explains things patiently and clearly. If I don't understand, they explain it again until it makes sense.</target>
-      </segment>
-    </unit>
-    <unit id="m_352642e38041">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:114</note>
-      </notes>
-      <segment state="translated">
-        <source>محمد أحمد</source>
-        <target>Mohamed Ahmed</target>
-      </segment>
-    </unit>
-    <unit id="m_79f0a9f1e96a">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:120</note>
-      </notes>
-      <segment state="translated">
-        <source>مواعيد الحصص مرتبة وواضحة، وأعرف وش عندي من دروس. سهل عليّ أتابع بدون لخبطة.</source>
-        <target>Lesson times are organized and clear, so I know which lessons I have. It makes keeping up much easier.</target>
-      </segment>
-    </unit>
-    <unit id="m_91f027d449b5">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:121</note>
-      </notes>
-      <segment state="translated">
-        <source>سارة محمود</source>
-        <target>Sara Mahmoud</target>
-      </segment>
-    </unit>
     <unit id="m_667eb688d965">
       <notes>
         <note category="location">src/app/Features/landing/landing.component.ts:122</note>
@@ -1987,150 +1942,6 @@
       <segment state="translated">
         <source>المرحلة المتوسطة</source>
         <target>Middle school</target>
-      </segment>
-    </unit>
-    <unit id="m_892d713066d9">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:127</note>
-      </notes>
-      <segment state="translated">
-        <source>أقدر أسأل المدرس براحة، ويتابع معي ويقول لي وش أحتاج أراجع قبل الحصة الجاية.</source>
-        <target>I feel comfortable asking my teacher questions. They follow up with me and tell me what to review before the next lesson.</target>
-      </segment>
-    </unit>
-    <unit id="m_a55c9b9fcfac">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:128</note>
-      </notes>
-      <segment state="translated">
-        <source>أحمد علي</source>
-        <target>Ahmed Ali</target>
-      </segment>
-    </unit>
-    <unit id="m_190907e88318">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:134</note>
-      </notes>
-      <segment state="translated">
-        <source>الشرح مبسّط والمتابعة بين الحصص واضحة، وأعرف وش فهمت ووش أحتاج أراجع.</source>
-        <target>The explanations are simple and the follow-up between lessons is clear. I know what I understand and what I need to review.</target>
-      </segment>
-    </unit>
-    <unit id="m_783bf98e019d">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:135</note>
-      </notes>
-      <segment state="translated">
-        <source>منى حسن</source>
-        <target>Mona Hassan</target>
-      </segment>
-    </unit>
-    <unit id="m_c36fee5d9b33">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:141</note>
-      </notes>
-      <segment state="translated">
-        <source>الشرح في بسطهالي خطوة بخطوة، والمدرس يعطيني أمثلة بسيطة لين أفهم الفكرة وأقدر أطبقها.</source>
-        <target>The explanations at Basstahali are step by step. My teacher gives me simple examples until I understand the idea and can apply it.</target>
-      </segment>
-    </unit>
-    <unit id="m_1362ee3bfea0">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:142</note>
-      </notes>
-      <segment state="translated">
-        <source>خالد عبدالله</source>
-        <target>Khalid Abdullah</target>
-      </segment>
-    </unit>
-    <unit id="m_d9ba9c39b212">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:148</note>
-      </notes>
-      <segment state="translated">
-        <source>يعجبني ترتيب الحصص في بسطهالي؛ أعرف وش بنراجع، والمدرس يربط الدرس الجديد باللي أخذناه قبل.</source>
-        <target>I like how lessons at Basstahali are organized. I know what we will review, and my teacher connects new lessons to what we covered before.</target>
-      </segment>
-    </unit>
-    <unit id="m_3b7fe8f7d63c">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:149</note>
-      </notes>
-      <segment state="translated">
-        <source>نورة سالم</source>
-        <target>Noura Salem</target>
-      </segment>
-    </unit>
-    <unit id="m_67cafca4ba7f">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:155</note>
-      </notes>
-      <segment state="translated">
-        <source>أقدر أسأل عن النقطة اللي مو واضحة، والمدرس يشرحها بأكثر من طريقة ويخليني أشارك في الحل.</source>
-        <target>I can ask about anything that is unclear. My teacher explains it in different ways and lets me take part in solving the problem.</target>
-      </segment>
-    </unit>
-    <unit id="m_d80f0914ef30">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:156</note>
-      </notes>
-      <segment state="translated">
-        <source>راشد محمد</source>
-        <target>Rashed Mohamed</target>
-      </segment>
-    </unit>
-    <unit id="m_53650cac55e1">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:162</note>
-      </notes>
-      <segment state="translated">
-        <source>الحصة فيها تفاعل وأسئلة تناسبني، والمدرس يتأكد إني فهمت قبل ما ينتقل للجزء اللي بعده.</source>
-        <target>The lesson includes interaction and questions that suit me. My teacher checks that I understand before moving to the next part.</target>
-      </segment>
-    </unit>
-    <unit id="m_0bce60e39c1b">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:163</note>
-      </notes>
-      <segment state="translated">
-        <source>ريم علي</source>
-        <target>Reem Ali</target>
-      </segment>
-    </unit>
-    <unit id="m_4720807d959e">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:169</note>
-      </notes>
-      <segment state="translated">
-        <source>المتابعة بعد الدرس واضحة؛ أعرف وش أتدرب عليه، ونراجع الأشياء اللي أحتاج فيها مساعدة بالحصة الجاية.</source>
-        <target>The follow-up after each lesson is clear. I know what to practise, and we review the things I need help with in the next lesson.</target>
-      </segment>
-    </unit>
-    <unit id="m_2f1ca697c894">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:170</note>
-      </notes>
-      <segment state="translated">
-        <source>عبدالله يوسف</source>
-        <target>Abdullah Youssef</target>
-      </segment>
-    </unit>
-    <unit id="m_bf18f2217d43">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:176</note>
-      </notes>
-      <segment state="translated">
-        <source>أسلوب الشرح مرتب وبدون استعجال، وتقسيم موضوع الدرس لأجزاء صغيرة يساعدني أركز وأفهم.</source>
-        <target>The explanations are organized and unhurried. Breaking the lesson topic into smaller parts helps me focus and understand.</target>
-      </segment>
-    </unit>
-    <unit id="m_a9ac2c69fe66">
-      <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:177</note>
-      </notes>
-      <segment state="translated">
-        <source>دانة أحمد</source>
-        <target>Dana Ahmed</target>
       </segment>
     </unit>
     <unit id="m_b598140d68a4">
@@ -4482,6 +4293,69 @@
       <segment state="translated">
         <source>العودة للرئيسية</source>
         <target>Back to home</target>
+      </segment>
+    </unit>
+    <unit id="parentFeedbackMohammed">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:123</note>
+      </notes>
+      <segment state="translated">
+        <source>الحمد لله محمد مبسوط، وغدًا بإذن الله نتفق على الرياضيات والأحياء.</source>
+        <target>Thank God, Mohammed is happy. Tomorrow, God willing, we will arrange mathematics and biology lessons.</target>
+      </segment>
+    </unit>
+    <unit id="parentMotherMohammed">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:124</note>
+      </notes>
+      <segment state="translated">
+        <source>أم محمد</source>
+        <target>Umm Mohammed</target>
+      </segment>
+    </unit>
+    <unit id="parentFeedbackRole">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:125</note>
+      </notes>
+      <segment state="translated">
+        <source>ولية أمر</source>
+        <target>Parent</target>
+      </segment>
+    </unit>
+    <unit id="parentFeedbackMaha">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:129</note>
+      </notes>
+      <segment state="translated">
+        <source>وايد مشكورين على الحصة، معلمة مها مثل العسل ما شاء الله.</source>
+        <target>Thank you so much for the lesson. Teacher Maha is so lovely, mashallah.</target>
+      </segment>
+    </unit>
+    <unit id="parentMotherHarib">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:130</note>
+      </notes>
+      <segment state="translated">
+        <source>أم حارب</source>
+        <target>Umm Harib</target>
+      </segment>
+    </unit>
+    <unit id="parentFeedbackRakan">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:135</note>
+      </notes>
+      <segment state="translated">
+        <source>راكان كان مبسوط مع المهندسة.</source>
+        <target>Rakan was happy with the engineer.</target>
+      </segment>
+    </unit>
+    <unit id="parentMotherRakan">
+      <notes>
+        <note category="location">src/app/Features/landing/landing.component.ts:136</note>
+      </notes>
+      <segment state="translated">
+        <source>أم راكان</source>
+        <target>Umm Rakan</target>
       </segment>
     </unit>
   </file>

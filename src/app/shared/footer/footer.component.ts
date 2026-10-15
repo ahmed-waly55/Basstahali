@@ -14,7 +14,7 @@ export class FooterComponent {
     m_724341e8f3eb: $localize`:@@m_724341e8f3eb:منصة تعليمية تساعد الطلاب على التعلم بسهولة وتحقيق أفضل النتائج من خلال تجربة تعليمية حديثة ومميزة.`,
     m_6e58cd380220: $localize`:@@m_6e58cd380220:روابط سريعة`,
     m_b986d8fb163c: $localize`:@@m_b986d8fb163c:الرئيسية`,
-    m_e56a7b103ef6: $localize`:@@m_e56a7b103ef6:المراحل الدراسية`,
+    m_1ea7464560c3: $localize`:@@m_1ea7464560c3:المناهج الدراسية`,
     m_ec15ec94c35d: $localize`:@@m_ec15ec94c35d:المميزات`,
     m_43edaf712d07: $localize`:@@m_43edaf712d07:المدرسين`,
     m_2e84aea0e101: $localize`:@@m_2e84aea0e101:انضم لهيئة التدريس`,

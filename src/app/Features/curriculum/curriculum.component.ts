@@ -1,6 +1,6 @@
 import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { timeout } from 'rxjs';
+import { Subscription, timeout } from 'rxjs';
 import { RouterLink } from '@angular/router';
 import { TeacherService } from '../../core/services/teacher.service';
 import { PreferencesService } from '../../core/services/preferences.service';
@@ -32,6 +32,7 @@ export class CurriculumComponent implements OnInit {
   preferences = inject(PreferencesService);
   private service = inject(TeacherService);
   private destroyRef = inject(DestroyRef);
+  private curriculaRequest?: Subscription;
   CurriculmData = signal<LearningItem[]>([]);
   loading = signal(true);
   failed = signal(false);
@@ -46,9 +47,10 @@ export class CurriculumComponent implements OnInit {
     this.getCurriculm();
   }
   getCurriculm(): void {
+    this.curriculaRequest?.unsubscribe();
     this.loading.set(true);
     this.failed.set(false);
-    this.service
+    this.curriculaRequest = this.service
       .getCurricula()
       .pipe(timeout(12000), takeUntilDestroyed(this.destroyRef))
       .subscribe({

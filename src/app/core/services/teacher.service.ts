@@ -2,7 +2,7 @@ import { SKIP_ERROR_NOTIFICATION } from '../interceptors/loading-interceptor';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpContext } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from '../../../environments/environment.development';
+import { environment } from '../../../environments/environment';
 
 // واجهة البيانات (TypeScript Interfaces) لضمان صحة البيانات المطابقة للـ API
 export interface TeacherFormRequest {
@@ -46,7 +46,11 @@ export class TeacherService {
    * GET: جلب قائمة المناهج الدراسية
    */
   getCurricula(): Observable<any> {
-    return this.http.get<any>(`${environment.baseUrl}/api/v1/curricula`);
+    return this.http.get<any>(`${environment.baseUrl}/api/v1/curricula`, {
+      // The public catalogue can change after prerendering. Always fetch its current contents.
+      transferCache: false,
+      cache: 'no-store',
+    });
   }
 
   /**

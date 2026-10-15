@@ -1,5 +1,8 @@
 import { PreferencesService } from '../../core/services/preferences.service';
-import { learningItems } from '../../shared/components/learning-catalog/learning-catalog.component';
+import {
+  LearningItem,
+  learningItems,
+} from '../../shared/components/learning-catalog/learning-catalog.component';
 import {
   Component,
   ElementRef,
@@ -18,7 +21,7 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
 import { EducationCardComponent } from '../../shared/components/education-card/education-card.component';
 import AOS from 'aos';
 import { TeacherService } from '../../core/services/teacher.service';
-import { Subject, takeUntil, timeout } from 'rxjs';
+import { Subject, Subscription, takeUntil, timeout } from 'rxjs';
 
 @Component({
   selector: 'app-landing',
@@ -42,6 +45,11 @@ export class LandingComponent implements OnInit, OnDestroy {
     );
 
   readonly messages = {
+    m_cee8f138e31b: $localize`:@@m_cee8f138e31b:جارٍ التحميل...`,
+    m_e0465a89fde9: $localize`:@@m_e0465a89fde9:تعذر تحميل البيانات`,
+    m_c736c9f1496a: $localize`:@@m_c736c9f1496a:حاول مرة أخرى بعد التأكد من اتصالك بالإنترنت.`,
+    m_2e47b5f289f1: $localize`:@@m_2e47b5f289f1:إعادة المحاولة`,
+    m_4d255e9aaa04: $localize`:@@m_4d255e9aaa04:لا توجد مناهج متاحة`,
     m_4dc778bb0709: $localize`:@@m_4dc778bb0709:لماذا بسطهالي؟`,
     m_ef1f81cc2219: $localize`:@@m_ef1f81cc2219:كل ما يحتاجه الطالب...`,
     m_149eab48f8d5: $localize`:@@m_149eab48f8d5:في مكان واحد`,
@@ -76,7 +84,6 @@ export class LandingComponent implements OnInit, OnDestroy {
     m_e04f5380ec6a: $localize`:@@m_e04f5380ec6a:ابدأ التعلم`,
     m_df5c55d4e104: $localize`:@@m_df5c55d4e104:شاهد الشروحات التفاعلية، احضر الحصص، وأنجز الواجبات بسهولة للتفوق.`,
     m_8dc5631ffac6: $localize`:@@m_8dc5631ffac6:سجل حسابك الآن عبر الواتساب`,
-    m_36a64f47675d: $localize`:@@m_36a64f47675d:نماذج توضيحية مؤقتة وليست شهادات فعلية.`,
     m_526d124bec7b: $localize`:@@m_526d124bec7b:شرح واضح، مواعيد مرتبة ومتابعة للدروس؛ تفاصيل تهمك كولي أمر.`,
     m_d0c08f94b14b: $localize`:@@m_d0c08f94b14b:تواصل معنا على واتساب`,
     m_4c00a66d7eae: $localize`:@@m_4c00a66d7eae:نحن هنا لمساعدتك والإجابة على استفساراتك`,
@@ -101,82 +108,33 @@ export class LandingComponent implements OnInit, OnDestroy {
   private router = inject(Router);
   private cdr = inject(ChangeDetectorRef);
   private destroy$ = new Subject<void>(); // Subject لإيقاف الاشتراكات
+  private curriculaRequest?: Subscription;
 
   autoPlayInterval: any;
   scrollStep = 300;
 
-  curriculaList: any[] = [];
+  curriculaList: LearningItem[] = [];
+  curriculaLoading = true;
+  curriculaFailed = false;
 
-  testimonials = [
+  readonly testimonials = [
     {
       id: 1,
-      quote: $localize`:@@m_7cffafea78a5:المدرس في بسطهالي يشرح لي بصبر وبطريقة واضحة، وإذا ما فهمت يعيدها لي لين توصل الفكرة.`,
-      name: $localize`:@@m_352642e38041:محمد أحمد`,
-      grade: $localize`:@@m_2b7e1606aeba:المرحلة الثانوية`,
-      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Ahmed',
+      quote: $localize`:@@parentFeedbackMohammed:الحمد لله محمد مبسوط، وغدًا بإذن الله نتفق على الرياضيات والأحياء.`,
+      name: $localize`:@@parentMotherMohammed:أم محمد`,
+      role: $localize`:@@parentFeedbackRole:ولية أمر`,
     },
     {
       id: 2,
-      quote: $localize`:@@m_79f0a9f1e96a:مواعيد الحصص مرتبة وواضحة، وأعرف وش عندي من دروس. سهل عليّ أتابع بدون لخبطة.`,
-      name: $localize`:@@m_91f027d449b5:سارة محمود`,
-      grade: $localize`:@@m_667eb688d965:المرحلة المتوسطة`,
-      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sara',
+      quote: $localize`:@@parentFeedbackMaha:وايد مشكورين على الحصة، معلمة مها مثل العسل ما شاء الله.`,
+      name: $localize`:@@parentMotherHarib:أم حارب`,
+      role: $localize`:@@parentFeedbackRole:ولية أمر`,
     },
     {
       id: 3,
-      quote: $localize`:@@m_892d713066d9:أقدر أسأل المدرس براحة، ويتابع معي ويقول لي وش أحتاج أراجع قبل الحصة الجاية.`,
-      name: $localize`:@@m_a55c9b9fcfac:أحمد علي`,
-      grade: $localize`:@@m_2b7e1606aeba:المرحلة الثانوية`,
-      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Ali',
-    },
-    {
-      id: 4,
-      quote: $localize`:@@m_190907e88318:الشرح مبسّط والمتابعة بين الحصص واضحة، وأعرف وش فهمت ووش أحتاج أراجع.`,
-      name: $localize`:@@m_783bf98e019d:منى حسن`,
-      grade: $localize`:@@m_2b7e1606aeba:المرحلة الثانوية`,
-      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Mona',
-    },
-    {
-      id: 5,
-      quote: $localize`:@@m_c36fee5d9b33:الشرح في بسطهالي خطوة بخطوة، والمدرس يعطيني أمثلة بسيطة لين أفهم الفكرة وأقدر أطبقها.`,
-      name: $localize`:@@m_1362ee3bfea0:خالد عبدالله`,
-      grade: $localize`:@@m_36d9c98fcafd:المرحلة الابتدائية`,
-      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Khalid',
-    },
-    {
-      id: 6,
-      quote: $localize`:@@m_d9ba9c39b212:يعجبني ترتيب الحصص في بسطهالي؛ أعرف وش بنراجع، والمدرس يربط الدرس الجديد باللي أخذناه قبل.`,
-      name: $localize`:@@m_3b7fe8f7d63c:نورة سالم`,
-      grade: $localize`:@@m_667eb688d965:المرحلة المتوسطة`,
-      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Noura',
-    },
-    {
-      id: 7,
-      quote: $localize`:@@m_67cafca4ba7f:أقدر أسأل عن النقطة اللي مو واضحة، والمدرس يشرحها بأكثر من طريقة ويخليني أشارك في الحل.`,
-      name: $localize`:@@m_d80f0914ef30:راشد محمد`,
-      grade: $localize`:@@m_2b7e1606aeba:المرحلة الثانوية`,
-      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Rashed',
-    },
-    {
-      id: 8,
-      quote: $localize`:@@m_53650cac55e1:الحصة فيها تفاعل وأسئلة تناسبني، والمدرس يتأكد إني فهمت قبل ما ينتقل للجزء اللي بعده.`,
-      name: $localize`:@@m_0bce60e39c1b:ريم علي`,
-      grade: $localize`:@@m_36d9c98fcafd:المرحلة الابتدائية`,
-      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Reem',
-    },
-    {
-      id: 9,
-      quote: $localize`:@@m_4720807d959e:المتابعة بعد الدرس واضحة؛ أعرف وش أتدرب عليه، ونراجع الأشياء اللي أحتاج فيها مساعدة بالحصة الجاية.`,
-      name: $localize`:@@m_2f1ca697c894:عبدالله يوسف`,
-      grade: $localize`:@@m_667eb688d965:المرحلة المتوسطة`,
-      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Abdullah',
-    },
-    {
-      id: 10,
-      quote: $localize`:@@m_bf18f2217d43:أسلوب الشرح مرتب وبدون استعجال، وتقسيم موضوع الدرس لأجزاء صغيرة يساعدني أركز وأفهم.`,
-      name: $localize`:@@m_a9ac2c69fe66:دانة أحمد`,
-      grade: $localize`:@@m_2b7e1606aeba:المرحلة الثانوية`,
-      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Dana',
+      quote: $localize`:@@parentFeedbackRakan:راكان كان مبسوط مع المهندسة.`,
+      name: $localize`:@@parentMotherRakan:أم راكان`,
+      role: $localize`:@@parentFeedbackRole:ولية أمر`,
     },
   ];
 
@@ -210,16 +168,24 @@ export class LandingComponent implements OnInit, OnDestroy {
   }
 
   fetchCurricula(): void {
-    this.teacherService
+    this.curriculaRequest?.unsubscribe();
+    this.curriculaLoading = true;
+    this.curriculaFailed = false;
+    this.curriculaList = [];
+    this.cdr.markForCheck();
+    this.curriculaRequest = this.teacherService
       .getCurricula()
       .pipe(timeout(12000), takeUntil(this.destroy$)) // ربط الاشتراك بـ destroy$ لإلغائه عند الخروج من الصفحة
       .subscribe({
-        next: (response: any) => {
+        next: (response) => {
           this.curriculaList = learningItems(response);
+          this.curriculaLoading = false;
           this.cdr.markForCheck();
         },
-        error: (error) => {
-          console.error('خطأ في جلب المناهج:', error);
+        error: () => {
+          this.curriculaFailed = true;
+          this.curriculaLoading = false;
+          this.cdr.markForCheck();
         },
       });
   }
