@@ -5933,5 +5933,101 @@
         <source>لوحة الطالب</source>
       </segment>
     </unit>
+    <unit id="student_userName">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:3</note>
+      </notes>
+      <segment>
+        <source>اسم المستخدم</source>
+      </segment>
+    </unit>
+    <unit id="student_subscriptionBySessions">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:4</note>
+      </notes>
+      <segment>
+        <source>اشتراك حسب عدد الحصص</source>
+      </segment>
+    </unit>
+    <unit id="student_subscriptionStarted">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:5</note>
+      </notes>
+      <segment>
+        <source>بداية الاشتراك</source>
+      </segment>
+    </unit>
+    <unit id="student_regularCreditBalance">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:6</note>
+      </notes>
+      <segment>
+        <source>رصيد الحصص الأساسية</source>
+      </segment>
+    </unit>
+    <unit id="student_courseCreditBalance">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:7</note>
+      </notes>
+      <segment>
+        <source>رصيد حصص الكورسات</source>
+      </segment>
+    </unit>
+    <unit id="student_compensatoryCreditBalance">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:8</note>
+      </notes>
+      <segment>
+        <source>رصيد الحصص التعويضية</source>
+      </segment>
+    </unit>
+    <unit id="student_compensatoryCreditsAdded">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:9</note>
+      </notes>
+      <segment>
+        <source>إجمالي الحصص التعويضية المضافة</source>
+      </segment>
+    </unit>
+    <unit id="student_compensatoryCredits">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:10</note>
+      </notes>
+      <segment>
+        <source>الحصص التعويضية</source>
+      </segment>
+    </unit>
+    <unit id="student_creditQuantity">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:11</note>
+      </notes>
+      <segment>
+        <source>عدد الحصص المضافة</source>
+      </segment>
+    </unit>
+    <unit id="student_creditRemaining">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:12</note>
+      </notes>
+      <segment>
+        <source>الرصيد المتبقي</source>
+      </segment>
+    </unit>
+    <unit id="student_creditAddedAt">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:13</note>
+      </notes>
+      <segment>
+        <source>تاريخ الإضافة</source>
+      </segment>
+    </unit>
+    <unit id="student_creditExpiresAt">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:14</note>
+      </notes>
+      <segment>
+        <source>تاريخ انتهاء الرصيد</source>
+      </segment>
+    </unit>
   </file>
 </xliff>

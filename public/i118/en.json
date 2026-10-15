@@ -731,6 +731,18 @@
     "authLoginSeoTitle": "Sign in | Basstahali",
     "authLoginSeoDescription": "Sign in to your Basstahali student account to keep track of your lessons, courses and assignments.",
     "studentDashboardSeoDescription": "Your space to keep track of lessons, courses, assignments and exams, and communicate with teachers on Basstahali.",
-    "studentDashboardLink": "Student dashboard"
+    "studentDashboardLink": "Student dashboard",
+    "student_userName": "Username",
+    "student_subscriptionBySessions": "Lesson-based subscription",
+    "student_subscriptionStarted": "Subscription start date",
+    "student_regularCreditBalance": "Regular lesson credits",
+    "student_courseCreditBalance": "Course lesson credits",
+    "student_compensatoryCreditBalance": "Compensatory lesson credits",
+    "student_compensatoryCreditsAdded": "Total compensatory credits added",
+    "student_compensatoryCredits": "Compensatory lessons",
+    "student_creditQuantity": "Credits added",
+    "student_creditRemaining": "Remaining credits",
+    "student_creditAddedAt": "Date added",
+    "student_creditExpiresAt": "Credit expiry date"
   }
 }

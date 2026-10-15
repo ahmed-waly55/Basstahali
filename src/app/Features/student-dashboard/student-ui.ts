@@ -1,5 +1,17 @@
 export function createStudentCopy() {
   return {
+    userName: $localize`:@@student_userName:اسم المستخدم`,
+    subscriptionBySessions: $localize`:@@student_subscriptionBySessions:اشتراك حسب عدد الحصص`,
+    subscriptionStarted: $localize`:@@student_subscriptionStarted:بداية الاشتراك`,
+    regularCreditBalance: $localize`:@@student_regularCreditBalance:رصيد الحصص الأساسية`,
+    courseCreditBalance: $localize`:@@student_courseCreditBalance:رصيد حصص الكورسات`,
+    compensatoryCreditBalance: $localize`:@@student_compensatoryCreditBalance:رصيد الحصص التعويضية`,
+    compensatoryCreditsAdded: $localize`:@@student_compensatoryCreditsAdded:إجمالي الحصص التعويضية المضافة`,
+    compensatoryCredits: $localize`:@@student_compensatoryCredits:الحصص التعويضية`,
+    creditQuantity: $localize`:@@student_creditQuantity:عدد الحصص المضافة`,
+    creditRemaining: $localize`:@@student_creditRemaining:الرصيد المتبقي`,
+    creditAddedAt: $localize`:@@student_creditAddedAt:تاريخ الإضافة`,
+    creditExpiresAt: $localize`:@@student_creditExpiresAt:تاريخ انتهاء الرصيد`,
     security: $localize`:@@student_security:أمان الحساب`,
     changePassword: $localize`:@@student_changePassword:تغيير كلمة المرور`,
     passwordIntro: $localize`:@@student_passwordIntro:غيّر كلمة مرور حسابك من هنا، واستخدم كلمة لا تشاركها مع أي شخص.`,

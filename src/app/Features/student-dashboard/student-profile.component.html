@@ -30,6 +30,14 @@
             <bdi>{{ student.email || copy.notProvided }}</bdi>
           </dd>
         </div>
+        @if (student.userName) {
+          <div>
+            <dt>{{ copy.userName }}</dt>
+            <dd>
+              <bdi>{{ student.userName }}</bdi>
+            </dd>
+          </div>
+        }
         <div>
           <dt>{{ copy.phone }}</dt>
           <dd>
@@ -72,11 +80,64 @@
     </section>
     <section class="student-panel">
       <h2 class="student-panel-title">{{ copy.subscription }}</h2>
+      @if (student.subscriptionMode?.toLowerCase() === 'sessions') {
+        <p class="student-subscription-mode">
+          <span class="student-tag">{{ copy.subscriptionBySessions }}</span>
+        </p>
+      }
       <dl class="student-fields">
+        @if (student.sessions.totalSessions != null) {
+          <div>
+            <dt>{{ copy.totalSessions }}</dt>
+            <dd>{{ number(student.sessions.totalSessions) }}</dd>
+          </div>
+        }
+        @if (student.sessions.usedSessions != null) {
+          <div>
+            <dt>{{ copy.usedSessions }}</dt>
+            <dd>{{ number(student.sessions.usedSessions) }}</dd>
+          </div>
+        }
+        @if (student.sessions.remainingSessions != null) {
+          <div>
+            <dt>{{ copy.remainingSessions }}</dt>
+            <dd>{{ number(student.sessions.remainingSessions) }}</dd>
+          </div>
+        }
         <div>
           <dt>{{ copy.creditBalance }}</dt>
           <dd>{{ number(student.sessionCreditBalance) }}</dd>
         </div>
+        @if (student.regularSessionCreditBalance != null) {
+          <div>
+            <dt>{{ copy.regularCreditBalance }}</dt>
+            <dd>{{ number(student.regularSessionCreditBalance) }}</dd>
+          </div>
+        }
+        @if (student.courseSessionCreditBalance != null) {
+          <div>
+            <dt>{{ copy.courseCreditBalance }}</dt>
+            <dd>{{ number(student.courseSessionCreditBalance) }}</dd>
+          </div>
+        }
+        @if (student.compensatorySessionCreditBalance != null) {
+          <div>
+            <dt>{{ copy.compensatoryCreditBalance }}</dt>
+            <dd>{{ number(student.compensatorySessionCreditBalance) }}</dd>
+          </div>
+        }
+        @if (student.compensatoryCreditsAdded != null) {
+          <div>
+            <dt>{{ copy.compensatoryCreditsAdded }}</dt>
+            <dd>{{ number(student.compensatoryCreditsAdded) }}</dd>
+          </div>
+        }
+        @if (student.subscriptionStartedAt) {
+          <div>
+            <dt>{{ copy.subscriptionStarted }}</dt>
+            <dd>{{ date(student.subscriptionStartedAt) }}</dd>
+          </div>
+        }
         <div>
           <dt>{{ copy.expiration }}</dt>
           <dd>{{ date(student.expirationDate) }}</dd>
@@ -87,6 +148,53 @@
         </div>
       </dl>
     </section>
+    @if (student.compensatoryCredits.length) {
+      <section class="student-panel">
+        <h2 class="student-panel-title">{{ copy.compensatoryCredits }}</h2>
+        <div class="student-credit-list">
+          @for (credit of student.compensatoryCredits; track $index) {
+            <article class="student-credit-entry">
+              @if (credit.reason || credit.status) {
+                <div class="student-credit-heading">
+                  @if (credit.reason) {
+                    <h3>{{ credit.reason }}</h3>
+                  }
+                  @if (credit.status) {
+                    <span class="student-tag">{{ statusLabel(credit.status) }}</span>
+                  }
+                </div>
+              }
+              <dl class="student-fields">
+                @if (credit.quantity != null) {
+                  <div>
+                    <dt>{{ copy.creditQuantity }}</dt>
+                    <dd>{{ number(credit.quantity) }}</dd>
+                  </div>
+                }
+                @if (credit.remaining != null) {
+                  <div>
+                    <dt>{{ copy.creditRemaining }}</dt>
+                    <dd>{{ number(credit.remaining) }}</dd>
+                  </div>
+                }
+                @if (credit.addedAt) {
+                  <div>
+                    <dt>{{ copy.creditAddedAt }}</dt>
+                    <dd>{{ date(credit.addedAt) }}</dd>
+                  </div>
+                }
+                @if (credit.expiresAt) {
+                  <div>
+                    <dt>{{ copy.creditExpiresAt }}</dt>
+                    <dd>{{ date(credit.expiresAt) }}</dd>
+                  </div>
+                }
+              </dl>
+            </article>
+          }
+        </div>
+      </section>
+    }
     <aside class="student-profile-support">
       <div>
         <h2>{{ copy.updateProfile }}</h2>

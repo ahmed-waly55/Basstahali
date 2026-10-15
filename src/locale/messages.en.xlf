@@ -6664,5 +6664,113 @@
         <target>Student dashboard</target>
       </segment>
     </unit>
+    <unit id="student_userName">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:3</note>
+      </notes>
+      <segment state="translated">
+        <source>اسم المستخدم</source>
+        <target>Username</target>
+      </segment>
+    </unit>
+    <unit id="student_subscriptionBySessions">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:4</note>
+      </notes>
+      <segment state="translated">
+        <source>اشتراك حسب عدد الحصص</source>
+        <target>Lesson-based subscription</target>
+      </segment>
+    </unit>
+    <unit id="student_subscriptionStarted">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:5</note>
+      </notes>
+      <segment state="translated">
+        <source>بداية الاشتراك</source>
+        <target>Subscription start date</target>
+      </segment>
+    </unit>
+    <unit id="student_regularCreditBalance">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:6</note>
+      </notes>
+      <segment state="translated">
+        <source>رصيد الحصص الأساسية</source>
+        <target>Regular lesson credits</target>
+      </segment>
+    </unit>
+    <unit id="student_courseCreditBalance">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:7</note>
+      </notes>
+      <segment state="translated">
+        <source>رصيد حصص الكورسات</source>
+        <target>Course lesson credits</target>
+      </segment>
+    </unit>
+    <unit id="student_compensatoryCreditBalance">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:8</note>
+      </notes>
+      <segment state="translated">
+        <source>رصيد الحصص التعويضية</source>
+        <target>Compensatory lesson credits</target>
+      </segment>
+    </unit>
+    <unit id="student_compensatoryCreditsAdded">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:9</note>
+      </notes>
+      <segment state="translated">
+        <source>إجمالي الحصص التعويضية المضافة</source>
+        <target>Total compensatory credits added</target>
+      </segment>
+    </unit>
+    <unit id="student_compensatoryCredits">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:10</note>
+      </notes>
+      <segment state="translated">
+        <source>الحصص التعويضية</source>
+        <target>Compensatory lessons</target>
+      </segment>
+    </unit>
+    <unit id="student_creditQuantity">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:11</note>
+      </notes>
+      <segment state="translated">
+        <source>عدد الحصص المضافة</source>
+        <target>Credits added</target>
+      </segment>
+    </unit>
+    <unit id="student_creditRemaining">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:12</note>
+      </notes>
+      <segment state="translated">
+        <source>الرصيد المتبقي</source>
+        <target>Remaining credits</target>
+      </segment>
+    </unit>
+    <unit id="student_creditAddedAt">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:13</note>
+      </notes>
+      <segment state="translated">
+        <source>تاريخ الإضافة</source>
+        <target>Date added</target>
+      </segment>
+    </unit>
+    <unit id="student_creditExpiresAt">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:14</note>
+      </notes>
+      <segment state="translated">
+        <source>تاريخ انتهاء الرصيد</source>
+        <target>Credit expiry date</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

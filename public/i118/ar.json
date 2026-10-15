@@ -731,6 +731,18 @@
     "authLoginSeoTitle": "تسجيل الدخول | بسطهالي",
     "authLoginSeoDescription": "سجّل الدخول إلى حساب الطالب في بسطهالي لمتابعة حصصك وكورساتك وواجباتك.",
     "studentDashboardSeoDescription": "مساحتك لمتابعة الحصص والكورسات والواجبات والاختبارات والتواصل مع المعلمين على بسطهالي.",
-    "studentDashboardLink": "لوحة الطالب"
+    "studentDashboardLink": "لوحة الطالب",
+    "student_userName": "اسم المستخدم",
+    "student_subscriptionBySessions": "اشتراك حسب عدد الحصص",
+    "student_subscriptionStarted": "بداية الاشتراك",
+    "student_regularCreditBalance": "رصيد الحصص الأساسية",
+    "student_courseCreditBalance": "رصيد حصص الكورسات",
+    "student_compensatoryCreditBalance": "رصيد الحصص التعويضية",
+    "student_compensatoryCreditsAdded": "إجمالي الحصص التعويضية المضافة",
+    "student_compensatoryCredits": "الحصص التعويضية",
+    "student_creditQuantity": "عدد الحصص المضافة",
+    "student_creditRemaining": "الرصيد المتبقي",
+    "student_creditAddedAt": "تاريخ الإضافة",
+    "student_creditExpiresAt": "تاريخ انتهاء الرصيد"
   }
 }

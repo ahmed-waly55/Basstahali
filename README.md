@@ -43,7 +43,9 @@ Run the generated Node SSR server to render live API-backed curriculum and subje
 
 Sessions and the per-tab device identifier use `sessionStorage`, with a browser memory fallback when storage is unavailable. Passwords are never persisted. API bearer tokens are restricted to the configured API origin; concurrent requests share token refresh, and writes are not automatically replayed. A language switch waits for an in-flight refresh before recreating Angular. Account pages use client rendering, `noindex, nofollow` and private/no-store response headers.
 
-Student entity IDs come from the own-profile endpoint, independently of the authentication user ID. Private requests bypass SSR transfer caching. Undocumented response shapes are read through explicit known fields, with empty/error states for unavailable data rather than invented balances or scores. Confirm `/profile/student`, `/dashboards/student` and the other private response fields with an authorized test account when backend sample responses become available; integration tests use mocked accounts and never create live student activity.
+Course requests use the student entity ID from the own-profile endpoint, independently of the authentication user ID. The daily timetable calls `/schedules/daily` directly with the selected calendar day and pagination, using the authenticated Student API without its optional student filter; a profile failure cannot prevent this request. Profile details include nested session totals, separate regular/course/compensatory balances and compensatory credit history, preserving real zero values.
+
+Private requests bypass SSR transfer caching. Undocumented response shapes are read through explicit known fields, with empty/error states for unavailable data rather than invented balances or scores. Validate the private APIs with an authorized test account when backend sample responses become available; integration tests use mocked accounts and never create live student activity.
 
 ## Application status API
 

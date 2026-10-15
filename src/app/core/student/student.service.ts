@@ -121,12 +121,15 @@ export function adaptStudentProfile(value: unknown): StudentProfile {
   const raw = requiredRecord(value);
   const record = studentRecord(raw['student']) ?? studentRecord(raw['profile']) ?? raw;
   const user = studentRecord(raw['user']);
+  const sessions = studentRecord(record['sessions']) ?? studentRecord(raw['sessions']);
+  const credits = field(record, 'compensatoryCredits');
   // An authentication user ID is not the student entity ID. Only this own-profile endpoint supplies it.
   const studentId = text(raw, 'studentId') ?? text(record, 'studentId', 'id');
   if (!studentId)
     throw new StudentDataError('The own student profile does not contain a student identifier.');
   return {
     studentId,
+    userName: text(record, 'userName') ?? (user ? text(user, 'userName') : null),
     fullName: text(record, 'fullName', 'name') ?? (user ? text(user, 'fullName') : null),
     email: text(record, 'email') ?? (user ? text(user, 'email') : null),
     phoneNumber: text(record, 'phoneNumber'),
@@ -137,6 +140,35 @@ export function adaptStudentProfile(value: unknown): StudentProfile {
       text(record, 'educationStageName', 'stageName') ?? nestedName(record, 'educationStage'),
     gradeLevelName: text(record, 'gradeLevelName', 'gradeName') ?? nestedName(record, 'gradeLevel'),
     sessionCreditBalance: number(record, 'sessionCreditBalance'),
+    sessions: {
+      totalSessions: sessions ? number(sessions, 'totalSessions') : null,
+      usedSessions: sessions ? number(sessions, 'usedSessions') : null,
+      remainingSessions: sessions ? number(sessions, 'remainingSessions') : null,
+    },
+    subscriptionMode: text(record, 'subscriptionMode'),
+    regularSessionCreditBalance: number(record, 'regularSessionCreditBalance'),
+    courseSessionCreditBalance: number(record, 'courseSessionCreditBalance'),
+    compensatorySessionCreditBalance: number(record, 'compensatorySessionCreditBalance'),
+    compensatoryCreditsAdded: number(record, 'compensatoryCreditsAdded'),
+    subscriptionStartedAt: text(record, 'subscriptionStartedAt'),
+    compensatoryCredits: Array.isArray(credits)
+      ? credits.flatMap((value) => {
+          const credit = studentRecord(value);
+          return credit
+            ? [
+                {
+                  id: text(credit, 'id'),
+                  quantity: number(credit, 'quantity'),
+                  remaining: number(credit, 'remaining'),
+                  reason: text(credit, 'reason'),
+                  addedAt: text(credit, 'addedAt'),
+                  expiresAt: text(credit, 'expiresAt'),
+                  status: text(credit, 'status'),
+                },
+              ]
+            : [];
+        })
+      : [],
     expirationDate: text(record, 'expirationDate'),
     status: text(record, 'status'),
     raw,
@@ -344,11 +376,9 @@ export class StudentService {
       )
         throw new StudentDataError('Invalid schedule date.');
       const params = pageParams(pageNumber, pageSize).set('date', date);
-      return this.getProfile().pipe(
-        switchMap((profile) =>
-          this.get('/schedules/daily', params.set('studentId', profile.studentId)),
-        ),
-      );
+      // The Student API identifies the signed-in student from the bearer token.
+      // Its optional studentId filter is unnecessary here; profile loading must not block the timetable.
+      return this.get('/schedules/daily', params);
     }).pipe(map((value) => adaptStudentPage(value, adaptSession, ['sessions', 'schedules'])));
   }
   getConversations(pageNumber = 1, pageSize = 10): Observable<StudentPage<StudentConversation>> {

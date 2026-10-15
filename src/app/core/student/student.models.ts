@@ -13,6 +13,7 @@ export interface StudentPage<T> {
 
 export interface StudentProfile {
   studentId: string;
+  userName: string | null;
   fullName: string | null;
   email: string | null;
   phoneNumber: string | null;
@@ -22,9 +23,31 @@ export interface StudentProfile {
   educationStageName: string | null;
   gradeLevelName: string | null;
   sessionCreditBalance: number | null;
+  sessions: {
+    totalSessions: number | null;
+    usedSessions: number | null;
+    remainingSessions: number | null;
+  };
+  subscriptionMode: string | null;
+  regularSessionCreditBalance: number | null;
+  courseSessionCreditBalance: number | null;
+  compensatorySessionCreditBalance: number | null;
+  compensatoryCreditsAdded: number | null;
+  subscriptionStartedAt: string | null;
+  compensatoryCredits: StudentCompensatoryCredit[];
   expirationDate: string | null;
   status: string | null;
   raw: StudentRecord;
+}
+
+export interface StudentCompensatoryCredit {
+  id: string | null;
+  quantity: number | null;
+  remaining: number | null;
+  reason: string | null;
+  addedAt: string | null;
+  expiresAt: string | null;
+  status: string | null;
 }
 
 export type StudentStatKey =

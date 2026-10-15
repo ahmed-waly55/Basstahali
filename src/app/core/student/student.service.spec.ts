@@ -1,4 +1,4 @@
-import { provideHttpClient, withFetch } from '@angular/common/http';
+import { HttpErrorResponse, provideHttpClient, withFetch } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { environment } from '../../../environments/environment';
@@ -57,6 +57,100 @@ describe('StudentService private data', () => {
     );
   });
 
+  it('reads the actual profile shape, including zero balances and compensatory credits', () => {
+    const profile = adaptStudentProfile({
+      id: 'own-student',
+      userId: 'different-auth-user',
+      userName: 'student.test',
+      fullName: 'Test student',
+      phoneNumber: '0500000000',
+      parentName: 'Test parent',
+      parentPhoneNumber: '0500000001',
+      gradeLevelId: 'grade-id',
+      curriculumId: 'curriculum-id',
+      educationStageId: null,
+      sessionCreditBalance: 2,
+      expirationDate: null,
+      status: 'Active',
+      sessions: { totalSessions: 2, usedSessions: 0, remainingSessions: 2 },
+      subscriptionMode: 'Sessions',
+      regularSessionCreditBalance: 0,
+      courseSessionCreditBalance: 0,
+      compensatorySessionCreditBalance: 2,
+      compensatoryCreditsAdded: 2,
+      subscriptionStartedAt: null,
+      teacherAssignments: [
+        { subjectId: 'subject-id', teacherName: 'Test teacher', sessionPrice: 20, currency: 'EGP' },
+      ],
+      compensatoryCredits: [
+        {
+          id: 'credit-id',
+          quantity: 2,
+          remaining: 2,
+          reason: '2',
+          addedAt: '2026-10-15T23:23:57.6879512+00:00',
+          expiresAt: '2026-11-29T23:23:57.6879513+00:00',
+          status: 'Active',
+        },
+      ],
+    });
+    expect(profile.studentId).toBe('own-student');
+    expect(profile.userName).toBe('student.test');
+    expect(profile.sessions).toEqual({ totalSessions: 2, usedSessions: 0, remainingSessions: 2 });
+    expect(profile.regularSessionCreditBalance).toBe(0);
+    expect(profile.courseSessionCreditBalance).toBe(0);
+    expect(profile.compensatorySessionCreditBalance).toBe(2);
+    expect(profile.compensatoryCreditsAdded).toBe(2);
+    expect(profile.compensatoryCredits[0]).toEqual({
+      id: 'credit-id',
+      quantity: 2,
+      remaining: 2,
+      reason: '2',
+      addedAt: '2026-10-15T23:23:57.6879512+00:00',
+      expiresAt: '2026-11-29T23:23:57.6879513+00:00',
+      status: 'Active',
+    });
+    expect(profile.expirationDate).toBeNull();
+    expect(profile.subscriptionStartedAt).toBeNull();
+    expect(profile.curriculumName).toBeNull();
+    expect(profile.gradeLevelName).toBeNull();
+    expect(profile.educationStageName).toBeNull();
+  });
+
+  it('keeps omitted credit details unknown instead of inventing zero balances or credit history', () => {
+    const profile = adaptStudentProfile({ id: 'own-student', compensatoryCredits: [null] });
+    expect(profile.sessions).toEqual({
+      totalSessions: null,
+      usedSessions: null,
+      remainingSessions: null,
+    });
+    expect(profile.regularSessionCreditBalance).toBeNull();
+    expect(profile.courseSessionCreditBalance).toBeNull();
+    expect(profile.compensatorySessionCreditBalance).toBeNull();
+    expect(profile.compensatoryCredits).toEqual([]);
+  });
+
+  it('reads nested session statistics without losing an actual used-session count of zero', () => {
+    let dashboard: StudentDashboard | undefined;
+    service.getDashboard().subscribe((value) => (dashboard = value));
+    backend.expectOne(base + '/dashboards/student').flush({
+      success: true,
+      data: {
+        id: 'own-student',
+        userId: 'different-user',
+        sessionCreditBalance: 2,
+        sessions: { totalSessions: 2, usedSessions: 0, remainingSessions: 2 },
+      },
+      errors: null,
+      traceId: null,
+    });
+    expect(dashboard?.stats.filter((stat) => stat.value !== null)).toEqual([
+      { key: 'totalSessions', value: 2 },
+      { key: 'usedSessions', value: 0 },
+      { key: 'remainingSessions', value: 2 },
+    ]);
+  });
+
   it('scopes courses to a fresh own profile response and encodes its entity identifier', () => {
     service.getCourses().subscribe();
     const profile = backend.expectOne(base + '/profile/student');
@@ -86,14 +180,12 @@ describe('StudentService private data', () => {
     expect(failure).toBeInstanceOf(StudentDataError);
   });
 
-  it('requests the chosen local calendar day and documented pagination for the own student', () => {
+  it('requests the student timetable immediately without waiting for a profile request', () => {
     let page: StudentPage<StudentSession> | undefined;
     service.getDailySchedule('2026-10-15', 2, 10).subscribe((value) => (page = value));
-    backend
-      .expectOne(base + '/profile/student')
-      .flush({ success: true, data: { id: 'own-student' } });
+    backend.expectNone(base + '/profile/student');
     const request = backend.expectOne((request) => request.url === base + '/schedules/daily');
-    expect(request.request.params.get('studentId')).toBe('own-student');
+    expect(request.request.params.get('studentId')).toBeNull();
     expect(request.request.params.get('date')).toBe('2026-10-15');
     expect(request.request.params.get('PageNumber')).toBe('2');
     expect(request.request.params.get('PageSize')).toBe('10');
@@ -102,7 +194,20 @@ describe('StudentService private data', () => {
     request.flush({
       success: true,
       data: {
-        items: [{ id: 'session', classLink: 'javascript:alert(1)' }],
+        items: [
+          {
+            id: 'session',
+            studentId: 'own-student',
+            subjectName: 'Mathematics',
+            teacherName: 'Test teacher',
+            date: '2026-10-15',
+            startTime: '18:00:00',
+            endTime: '19:00:00',
+            status: 'Scheduled',
+            paymentStatus: 'Paid',
+            classLink: 'javascript:alert(1)',
+          },
+        ],
         pageNumber: 2,
         pageSize: 10,
         totalCount: 23,
@@ -114,7 +219,34 @@ describe('StudentService private data', () => {
     expect(page?.totalCount).toBe(23);
     expect(page?.hasNextPage).toBe(true);
     expect(page?.items[0].classLink).toBeNull();
-    expect(page?.items[0].teacherName).toBeNull();
+    expect(page?.items[0].teacherName).toBe('Test teacher');
+    expect(page?.items[0].subjectName).toBe('Mathematics');
+    expect(page?.items[0].date).toBe('2026-10-15');
+  });
+
+  it('still requests the timetable when the independent profile endpoint has failed', () => {
+    service.getProfile().subscribe({ error: () => {} });
+    backend
+      .expectOne(base + '/profile/student')
+      .flush(null, { status: 500, statusText: 'Server error' });
+    let page: StudentPage<StudentSession> | undefined;
+    service.getDailySchedule('2026-10-16').subscribe((value) => (page = value));
+    backend.expectNone(base + '/profile/student');
+    backend
+      .expectOne((request) => request.url === base + '/schedules/daily')
+      .flush({ success: true, data: { items: null, totalCount: 0, pageNumber: 1, totalPages: 0 } });
+    expect(page?.items).toEqual([]);
+    expect(page?.totalCount).toBe(0);
+  });
+
+  it('preserves timetable HTTP failures rather than reporting an empty list', () => {
+    let failure: unknown;
+    service.getDailySchedule('2026-10-16').subscribe({ error: (error) => (failure = error) });
+    backend
+      .expectOne((request) => request.url === base + '/schedules/daily')
+      .flush({ success: false }, { status: 403, statusText: 'Forbidden' });
+    expect(failure).toBeInstanceOf(HttpErrorResponse);
+    expect((failure as HttpErrorResponse).status).toBe(403);
   });
 
   it('rejects impossible dates without making any request', () => {

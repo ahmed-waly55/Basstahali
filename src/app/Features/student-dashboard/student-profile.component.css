@@ -105,3 +105,35 @@
     gap: 1.1rem;
   }
 }
+
+.student-subscription-mode {
+  margin: 0.8rem 0 0;
+}
+.student-credit-list {
+  display: grid;
+  gap: 1rem;
+  margin-block-start: 1.2rem;
+}
+.student-credit-entry {
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+}
+.student-credit-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.student-credit-heading h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+.student-credit-entry .student-fields {
+  margin-block-start: 0.8rem;
+}
