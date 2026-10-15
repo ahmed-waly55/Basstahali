@@ -509,13 +509,7 @@
             <h4 class="font-bold text-[#2a174a] text-xs md:text-sm mb-0.5">
               {{ item.name }}
             </h4>
-            @if (item.isIllustrative) {
-              <span class="text-xs md:text-sm font-semibold leading-relaxed text-[#6c5991]">
-                {{ messages.parentFeedbackIllustrativeLabel }}
-              </span>
-            } @else {
-              <span class="text-[11px] font-medium text-[#6c5991]">{{ item.role }}</span>
-            }
+            <span class="text-[11px] font-medium text-[#6c5991]">{{ item.role }}</span>
           </div>
         </div>
       }
