@@ -98,6 +98,7 @@ export class LandingComponent implements OnInit, OnDestroy {
     m_4df49eb87a01: $localize`:@@m_4df49eb87a01:ماذا يقول طلابنا؟`,
     m_a784688c7932: $localize`:@@m_a784688c7932:عرض الآراء السابقة`,
     m_0926efa89f4b: $localize`:@@m_0926efa89f4b:عرض الآراء التالية`,
+    parentFeedbackIllustrativeLabel: $localize`:@@parentFeedbackIllustrativeLabel:مثال توضيحي، وليس شهادة فعلية`,
   };
 
   preferences = inject(PreferencesService);
@@ -123,18 +124,51 @@ export class LandingComponent implements OnInit, OnDestroy {
       quote: $localize`:@@parentFeedbackMohammed:الحمد لله محمد مبسوط، وغدًا بإذن الله نتفق على الرياضيات والأحياء.`,
       name: $localize`:@@parentMotherMohammed:أم محمد`,
       role: $localize`:@@parentFeedbackRole:ولية أمر`,
+      isIllustrative: false,
     },
     {
       id: 2,
       quote: $localize`:@@parentFeedbackMaha:وايد مشكورين على الحصة، معلمة مها مثل العسل ما شاء الله.`,
       name: $localize`:@@parentMotherHarib:أم حارب`,
       role: $localize`:@@parentFeedbackRole:ولية أمر`,
+      isIllustrative: false,
     },
     {
       id: 3,
       quote: $localize`:@@parentFeedbackRakan:راكان كان مبسوط مع المهندسة.`,
       name: $localize`:@@parentMotherRakan:أم راكان`,
       role: $localize`:@@parentFeedbackRole:ولية أمر`,
+      isIllustrative: false,
+    },
+    {
+      id: 4,
+      quote: $localize`:@@parentDraftHamdanQuote:وايد مشكورين، المعلمة ما قصّرت وشرحها واضح، الله يعطيها العافية.`,
+      name: $localize`:@@parentDraftHamdanName:أم حمدان`,
+      isIllustrative: true,
+    },
+    {
+      id: 5,
+      quote: $localize`:@@parentDraftLilyQuote:الحمد لله كانت مرتاحة في الحصة، وقدرت تسأل عن اللي ما فهمته.`,
+      name: $localize`:@@parentDraftLilyName:أم لي لي`,
+      isIllustrative: true,
+    },
+    {
+      id: 6,
+      quote: $localize`:@@parentDraftHalaQuote:شرح المهندسة حلو وبهدوء، يعطيكم العافية.`,
+      name: $localize`:@@parentDraftHalaName:أم حلا`,
+      isIllustrative: true,
+    },
+    {
+      id: 7,
+      quote: $localize`:@@parentDraftMohammedQuote:مشكورين على ترتيب الموعد، الوقت كان مناسب لنا.`,
+      name: $localize`:@@parentDraftMohammedName:محمد`,
+      isIllustrative: true,
+    },
+    {
+      id: 8,
+      quote: $localize`:@@parentDraftMariamQuote:ما قصّرتوا في الرد والمتابعة، جزاكم الله خير.`,
+      name: $localize`:@@parentDraftMariamName:مريم علي`,
+      isIllustrative: true,
     },
   ];
 

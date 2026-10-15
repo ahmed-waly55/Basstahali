@@ -1,4 +1,6 @@
 .legal-page {
+  /* Fixed header: 80px content + 1px border, followed by a 24px gap. */
+  --legal-sticky-offset: calc(81px + 1.5rem);
   background: var(--page);
   color: var(--ink);
   overflow-wrap: anywhere;
@@ -103,7 +105,7 @@
 }
 
 .legal-section {
-  scroll-margin-top: 7rem;
+  scroll-margin-top: var(--legal-sticky-offset);
   padding: 1.5rem 0;
 }
 
@@ -172,7 +174,13 @@
 
   .legal-index {
     position: sticky;
-    top: 7rem;
+    top: var(--legal-sticky-offset);
+    align-self: start;
+    max-height: calc(100vh - var(--legal-sticky-offset) - 1rem);
+    max-height: calc(100dvh - var(--legal-sticky-offset) - 1rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
   }
 
   .legal-document {
