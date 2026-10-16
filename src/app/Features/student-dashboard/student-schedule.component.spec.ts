@@ -1,6 +1,7 @@
 import { LOCALE_ID } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { of, Subject, throwError } from 'rxjs';
+import { AuthService } from '../../core/auth/auth.service';
 import type {
   StudentHomeSchedule,
   StudentPage,
@@ -8,6 +9,7 @@ import type {
 } from '../../core/student/student.models';
 import { StudentService } from '../../core/student/student.service';
 import { StudentScheduleComponent } from './student-schedule.component';
+import { lessonPresentation } from './student-lesson-display';
 
 function page(
   items: StudentSession[] = [],
@@ -60,7 +62,10 @@ describe('StudentScheduleComponent full and filtered schedule', () => {
     api = { getHomeSchedule: vi.fn(() => of(home())), getSchedule: vi.fn(() => of(page())) };
     TestBed.configureTestingModule({
       imports: [StudentScheduleComponent],
-      providers: [{ provide: StudentService, useValue: api }],
+      providers: [
+        { provide: StudentService, useValue: api },
+        { provide: AuthService, useValue: { hasSession: () => true } },
+      ],
     });
   });
 
@@ -144,7 +149,7 @@ describe('StudentScheduleComponent full and filtered schedule', () => {
     component.changeDate({ target: { value: '2026-10-20' } } as unknown as Event);
     expect(api.getSchedule).toHaveBeenLastCalledWith('2026-10-20', 1, 10);
     component.changeView('all');
-    expect(api.getHomeSchedule).toHaveBeenCalledTimes(2);
+    expect(api.getHomeSchedule).toHaveBeenCalledTimes(1);
     expect(component.pageNumber()).toBe(1);
   });
 
@@ -174,29 +179,24 @@ describe('StudentScheduleComponent full and filtered schedule', () => {
     const fixture = TestBed.createComponent(StudentScheduleComponent);
     expect(full.observed).toBe(true);
     fixture.componentInstance.changeView('day');
-    expect(full.observed).toBe(false);
+    // The shared full timetable stays available to the shell notice while this page changes mode.
+    expect(full.observed).toBe(true);
     expect(day.observed).toBe(true);
     full.next(home([lesson('Old result')]));
     expect(fixture.componentInstance.lessons()).toEqual([]);
     day.next(page([lesson('Current result')]));
     day.complete();
     expect(fixture.componentInstance.lessons()[0].subjectName).toBe('Current result');
-    expect(fixture.componentInstance.homeSchedule()).toBeNull();
+    expect(fixture.componentInstance.homeSchedule()?.items[0].subjectName).toBe('Old result');
     fixture.destroy();
     expect(day.observed).toBe(false);
   });
 
-  it('uses a supplied occurrence time only when no explicit time range is available', () => {
-    const component = TestBed.createComponent(StudentScheduleComponent).componentInstance;
-    const item = { ...lesson('الرياضيات'), timeSlot: null, occurrenceAt: '2026-10-16T14:30:00Z' };
-    const expected = new Intl.DateTimeFormat(TestBed.inject(LOCALE_ID), {
-      hour: 'numeric',
-      minute: '2-digit',
-    }).format(new Date(item.occurrenceAt));
-    expect(component.lessonTime(item)).toBe(expected);
-    expect(component.lessonTime({ ...item, occurrenceAt: '2026-10-16' })).toBe(
-      component.copy.notProvided,
-    );
+  it('converts an authoritative occurrence instead of displaying the API clock unchanged', () => {
+    const item = { ...lesson('الرياضيات'), occurrenceAt: '2026-10-16T14:30:00Z' };
+    const row = lessonPresentation(item, { timeZone: 'Asia/Dubai' }, TestBed.inject(LOCALE_ID));
+    expect(row.clock).toBe('06:30');
+    expect(row.timing.time).toBe('18:30');
   });
 
   it('shows supplied weekdays and recurrence without inventing dates, status or identifiers', () => {
@@ -211,13 +211,43 @@ describe('StudentScheduleComponent full and filtered schedule', () => {
     }).format(new Date(Date.UTC(2024, 0, 7)));
     expect(item.textContent).toContain(expectedWeekday);
     expect(item.textContent).toContain(fixture.componentInstance.copy.recurrenceWeekly);
-    expect(item.textContent).toContain('10:00 – 11:00');
+    expect(item.querySelector('.student-clock')?.textContent).toBeTruthy();
     expect(item.textContent).not.toContain('2024');
     expect(item.textContent).not.toContain(fixture.componentInstance.copy.status + ':');
     expect(root.textContent).not.toContain('private-session-id');
     expect(root.textContent).not.toContain('private-student-id');
-    expect(root.querySelector('a[target=_blank]')?.getAttribute('href')).toBe(
+    expect(root.querySelector('a[target=_blank]')).toBeNull();
+    expect(root.querySelectorAll('thead th[scope=col]')).toHaveLength(4);
+  });
+
+  it('reveals the join link on the clock boundary without another API call and removes it at the end', () => {
+    const start = Date.parse('2026-10-16T17:00:00Z');
+    const now = vi.spyOn(Date, 'now').mockReturnValue(start - 10 * 60_000 - 1_000);
+    api.getHomeSchedule.mockReturnValue(
+      of(
+        home([
+          {
+            ...lesson('الرياضيات'),
+            occurrenceAt: '2026-10-16T17:00:00Z',
+            endTime: '21:00:00',
+          },
+        ]),
+      ),
+    );
+    const fixture = TestBed.createComponent(StudentScheduleComponent);
+    fixture.detectChanges();
+    expect(fixture.nativeElement.querySelector('.student-join-button')).toBeNull();
+    now.mockReturnValue(start - 10 * 60_000);
+    window.dispatchEvent(new Event('focus'));
+    fixture.detectChanges();
+    expect(fixture.nativeElement.querySelector('.student-join-button')?.getAttribute('href')).toBe(
       'https://meet.example.com/lesson',
     );
+    expect(api.getHomeSchedule).toHaveBeenCalledTimes(1);
+    now.mockReturnValue(Date.parse('2026-10-16T18:00:00Z'));
+    window.dispatchEvent(new Event('focus'));
+    fixture.detectChanges();
+    expect(fixture.nativeElement.querySelector('.student-join-button')).toBeNull();
+    now.mockRestore();
   });
 });

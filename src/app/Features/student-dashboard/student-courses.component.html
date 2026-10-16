@@ -73,26 +73,6 @@
             <a routerLink="/student/schedule" class="student-button student-button-secondary">{{
               copy.schedule
             }}</a>
-            @if (safeLink(course.classLink); as link) {
-              <a
-                [href]="link"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="student-button"
-                [attr.title]="copy.opensNewTab"
-                >{{ copy.join }}
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  aria-hidden="true"
-                >
-                  <path d="M7 17 17 7M7 7h10v10" /></svg
-              ></a>
-            }
           </div>
         </article>
       }

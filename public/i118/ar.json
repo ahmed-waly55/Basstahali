@@ -758,6 +758,16 @@
     "student_recurrenceUntil": "حتى",
     "authSessionExpiredTitle": "انتهت صلاحية الجلسة",
     "authSessionExpiredMessage": "انتهت صلاحية جلستك. سجّل الدخول مرة أخرى للمتابعة.",
-    "authSessionExpiredConfirm": "تسجيل الدخول"
+    "authSessionExpiredConfirm": "تسجيل الدخول",
+    "student_lessonBannerNotices": "تنبيهات الحصص المتاحة",
+    "student_lessonBannerStarting": "حصتك تبدأ قريبًا",
+    "student_lessonBannerLive": "حصتك جارية الآن",
+    "student_lessonBannerTimeZone": "بتوقيت جهازك",
+    "student_scheduleDay": "اليوم",
+    "student_deviceTime": "المواعيد بتوقيت جهازك",
+    "student_sourceDate": "تاريخ الحصص بتوقيت مصر",
+    "student_sourceDateHint": "اختر يوم الحصص في مصر؛ يظهر موعد كل حصة بتوقيت جهازك.",
+    "student_joinWindow": "يظهر زر الانضمام قبل بداية الحصة بـ10 دقائق.",
+    "student_timePending": "الموعد قيد التأكيد"
   }
 }

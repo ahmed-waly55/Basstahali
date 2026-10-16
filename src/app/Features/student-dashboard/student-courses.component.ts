@@ -12,7 +12,7 @@ import { finalize, Subscription } from 'rxjs';
 import { PreferencesService } from '../../core/services/preferences.service';
 import { StudentService } from '../../core/student/student.service';
 import type { StudentCourse } from '../../core/student/student.models';
-import { createStudentCopy, safeLessonLink, studentStatus } from './student-ui';
+import { createStudentCopy, studentStatus } from './student-ui';
 
 @Component({
   selector: 'app-student-courses',
@@ -27,7 +27,6 @@ export class StudentCoursesComponent {
   readonly courses = signal<StudentCourse[]>([]);
   readonly loading = signal(false);
   readonly error = signal(false);
-  readonly safeLink = safeLessonLink;
   readonly statusLabel = studentStatus;
   private readonly locale = inject(LOCALE_ID);
   private readonly api = inject(StudentService);

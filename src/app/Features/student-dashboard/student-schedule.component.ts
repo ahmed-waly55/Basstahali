@@ -10,20 +10,14 @@ import {
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { finalize, Subscription } from 'rxjs';
 import { StudentService } from '../../core/student/student.service';
-import type {
-  StudentHomeSchedule,
-  StudentPage,
-  StudentSession,
-} from '../../core/student/student.models';
+import type { StudentPage, StudentSession } from '../../core/student/student.models';
 import {
-  createStudentCopy,
-  localStudentDay,
-  validStudentDay,
-  safeLessonLink,
-  studentDate,
-  studentStatus,
-  studentTime,
-} from './student-ui';
+  lessonPresentation,
+  studentSourceDay,
+  studentTimeZoneLabel,
+} from './student-lesson-display';
+import { StudentTimetableService } from './student-timetable.service';
+import { createStudentCopy, validStudentDay, studentDate, studentStatus } from './student-ui';
 
 @Component({
   selector: 'app-student-schedule',
@@ -34,20 +28,38 @@ import {
 export class StudentScheduleComponent {
   readonly copy = createStudentCopy();
   readonly locale = inject(LOCALE_ID);
-  readonly selectedDate = signal(localStudentDay());
+  readonly timetable = inject(StudentTimetableService);
+  readonly selectedDate = signal(studentSourceDay());
   readonly view = signal<'all' | 'day'>('all');
   readonly pageSize = 10;
   readonly pageNumber = signal(1);
   readonly page = signal<StudentPage<StudentSession> | null>(null);
-  readonly homeSchedule = signal<StudentHomeSchedule | null>(null);
+  readonly homeSchedule = this.timetable.home;
   readonly lessons = computed(() =>
     this.view() === 'all' ? (this.homeSchedule()?.items ?? []) : (this.page()?.items ?? []),
   );
   readonly loading = signal(false);
   readonly error = signal(false);
   readonly invalidDate = signal(false);
-  readonly safeLink = safeLessonLink;
   readonly statusLabel = studentStatus;
+  readonly timeZoneLabel = computed(() =>
+    studentTimeZoneLabel(this.timetable.timeZone(), this.locale, this.timetable.now()),
+  );
+  readonly rows = computed(() =>
+    this.lessons().map((lesson) =>
+      lessonPresentation(
+        lesson,
+        {
+          now: this.timetable.now(),
+          timeZone: this.timetable.timeZone(),
+          weekStart: this.view() === 'all' ? this.homeSchedule()?.weekStart : null,
+          weekEnd: this.view() === 'all' ? this.homeSchedule()?.weekEnd : null,
+          selectedDate: this.view() === 'day' ? this.selectedDate() : null,
+        },
+        this.locale,
+      ),
+    ),
+  );
   readonly hasNext = computed(() => {
     if (this.view() !== 'day') return false;
     const page = this.page();
@@ -77,7 +89,7 @@ export class StudentScheduleComponent {
   private request?: Subscription;
 
   constructor() {
-    this.load();
+    this.load(false);
   }
 
   date(value: string | null): string {
@@ -86,39 +98,6 @@ export class StudentScheduleComponent {
   number(value: number): string {
     return new Intl.NumberFormat(this.locale).format(value);
   }
-  lessonTime(lesson: StudentSession): string {
-    const start = studentTime(lesson.startTime, this.locale);
-    const end = studentTime(lesson.endTime, this.locale);
-    if (start) return [start, end].filter(Boolean).join(' – ');
-    if (lesson.timeRange || lesson.timeSlot) return lesson.timeRange || lesson.timeSlot!;
-    if (lesson.occurrenceAt && /T\d{2}:\d{2}/.test(lesson.occurrenceAt)) {
-      const occurrence = new Date(lesson.occurrenceAt);
-      if (Number.isFinite(occurrence.getTime())) {
-        return new Intl.DateTimeFormat(this.locale, { hour: 'numeric', minute: '2-digit' }).format(
-          occurrence,
-        );
-      }
-    }
-    return this.copy.notProvided;
-  }
-
-  lessonDay(lesson: StudentSession): string | null {
-    const date = lesson.date || lesson.occurrenceAt;
-    if (date) {
-      const label = studentDate(date, this.locale);
-      if (label !== this.copy.notProvided) return label;
-    }
-    const day = lesson.dayOfWeek || lesson.day;
-    if (!day) return null;
-    const weekdays = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
-    const index = weekdays.indexOf(day.trim().toLowerCase());
-    return index < 0
-      ? day
-      : new Intl.DateTimeFormat(this.locale, { weekday: 'long', timeZone: 'UTC' }).format(
-          new Date(Date.UTC(2024, 0, 7 + index)),
-        );
-  }
-
   recurrence(lesson: StudentSession): string | null {
     const labels: Record<string, string> = {
       once: this.copy.recurrenceOnce,
@@ -141,7 +120,7 @@ export class StudentScheduleComponent {
     this.view.set(view);
     this.invalidDate.set(false);
     this.pageNumber.set(1);
-    this.load();
+    this.load(false);
   }
 
   changeDate(event: Event): void {
@@ -154,7 +133,7 @@ export class StudentScheduleComponent {
   }
 
   today(): void {
-    this.selectedDate.set(localStudentDay());
+    this.selectedDate.set(studentSourceDay());
     this.view.set('day');
     this.invalidDate.set(false);
     this.pageNumber.set(1);
@@ -167,21 +146,20 @@ export class StudentScheduleComponent {
     this.load();
   }
 
-  load(): void {
+  load(force = true): void {
     this.request?.unsubscribe();
     this.loading.set(true);
     this.error.set(false);
     this.page.set(null);
-    this.homeSchedule.set(null);
     if (this.view() === 'all') {
-      this.request = this.api
-        .getHomeSchedule()
+      this.request = this.timetable
+        .fullSchedule(force)
         .pipe(
           takeUntilDestroyed(this.destroyRef),
           finalize(() => this.loading.set(false)),
         )
         .subscribe({
-          next: (schedule) => this.homeSchedule.set(schedule),
+          next: () => {},
           error: () => this.error.set(true),
         });
       return;

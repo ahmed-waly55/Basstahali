@@ -1,0 +1,58 @@
+@if (lessons().length) {
+  <section
+    class="lesson-notices"
+    role="status"
+    aria-live="polite"
+    aria-atomic="false"
+    [attr.aria-label]="bannerCopy.notices"
+  >
+    @for (item of lessons(); track $index) {
+      <div class="lesson-notice">
+        <span class="lesson-notice-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+            <path
+              d="M15 8H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2Zm2 3 4-3v11l-4-3M7 3h6m-3 0v5"
+            />
+          </svg>
+        </span>
+        <div class="lesson-notice-content">
+          <p class="lesson-notice-label">{{ item.label }}</p>
+          <h2>{{ item.lesson.subjectName || item.lesson.courseName || copy.lesson }}</h2>
+          <div class="lesson-notice-details">
+            @if (item.lesson.teacherName) {
+              <span>{{ item.lesson.teacherName }}</span>
+            }
+            <time [attr.datetime]="item.dateTime">{{ item.time }}</time>
+          </div>
+          <p class="lesson-notice-zone">
+            {{ bannerCopy.timeZone }} <span dir="ltr">{{ item.timing.timeZone }}</span>
+          </p>
+        </div>
+        <a
+          class="lesson-notice-join"
+          [href]="item.href"
+          target="_blank"
+          rel="noopener noreferrer"
+          [attr.aria-label]="
+            copy.join +
+            ' — ' +
+            (item.lesson.subjectName || item.lesson.courseName || copy.lesson) +
+            ' — ' +
+            copy.opensNewTab
+          "
+        >
+          {{ copy.join }}
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            aria-hidden="true"
+          >
+            <path d="M7 17 17 7M7 7h10v10" />
+          </svg>
+        </a>
+      </div>
+    }
+  </section>
+}

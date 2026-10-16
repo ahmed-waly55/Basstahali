@@ -25,12 +25,7 @@
   font-weight: 750;
   line-height: 1.8;
 }
-.student-schedule-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-block-start: 0.75rem;
-}
+
 .student-date-error {
   max-width: 23rem;
   margin: 0;
@@ -99,4 +94,182 @@
 .student-schedule-switch input:focus-visible + span {
   outline: 3px solid #b48ce8;
   outline-offset: 2px;
+}
+
+.student-time-zone {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-block-start: 1.3rem;
+  padding: 0.8rem 1rem;
+  border-radius: 0.8rem;
+  background: var(--soft);
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.9;
+}
+.student-time-zone svg {
+  flex-shrink: 0;
+  color: var(--brand);
+}
+.student-time-zone strong {
+  color: var(--brand);
+  margin-inline-start: 0.4rem;
+}
+.student-schedule-hint,
+.student-join-hint {
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.9;
+}
+.student-join-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0 0;
+}
+.student-join-hint > span {
+  color: var(--brand);
+  font-size: 1.2rem;
+}
+.student-timetable-wrap {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 1.1rem;
+}
+.student-timetable {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  text-align: center;
+}
+thead {
+  background: #301264;
+  color: white;
+}
+thead th {
+  padding: 1rem 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 650;
+}
+thead span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+}
+thead svg {
+  width: 21px;
+  height: 21px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+thead th + th {
+  border-inline-start: 1px solid #ffffff30;
+}
+tbody tr {
+  display: table-row;
+  background: var(--surface);
+}
+tbody tr:nth-child(even) {
+  background: var(--soft);
+}
+tbody tr > * {
+  padding: 1.2rem 0.65rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+tbody tr > * + * {
+  border-inline-start: 1px solid var(--border);
+}
+tbody tr:last-child > * {
+  border-bottom: 0;
+}
+.student-lesson-ready {
+  background: var(--soft);
+}
+.student-subject-icon {
+  display: block;
+  margin-block-end: 0.3rem;
+  font-size: 1.65rem;
+  line-height: 1.2;
+  color: #b38100;
+}
+.student-subject-name {
+  display: block;
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 800;
+  line-height: 1.7;
+}
+td strong {
+  color: var(--ink);
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.8;
+}
+.student-cell-note {
+  display: block;
+  margin-block-start: 0.3rem;
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 500;
+  line-height: 1.7;
+}
+.student-clock {
+  display: block;
+  color: var(--ink);
+  font-size: 1.3rem;
+  font-weight: 850;
+  line-height: 1.3;
+}
+.student-join-button {
+  min-height: 38px;
+  margin-block-start: 0.7rem;
+  padding: 0.45rem 0.65rem;
+  font-size: 0.7rem;
+}
+@media (max-width: 639px) {
+  .student-panel {
+    padding: 1rem 0.65rem;
+  }
+  thead th {
+    padding: 0.85rem 0.2rem;
+    font-size: 0.67rem;
+  }
+  thead span {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  thead svg {
+    width: 18px;
+    height: 18px;
+  }
+  tbody tr > * {
+    padding: 0.9rem 0.3rem;
+  }
+  .student-subject-name {
+    font-size: 0.75rem;
+  }
+  td strong {
+    font-size: 0.7rem;
+  }
+  .student-clock {
+    font-size: 1rem;
+  }
+  .student-cell-note {
+    font-size: 0.6rem;
+  }
+  .student-subject-icon {
+    font-size: 1.25rem;
+  }
+  .student-end-time {
+    display: none;
+  }
+  .student-join-button {
+    padding-inline: 0.3rem;
+    font-size: 0.6rem;
+    gap: 0.2rem;
+  }
 }

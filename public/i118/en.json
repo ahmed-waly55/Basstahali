@@ -758,6 +758,16 @@
     "student_recurrenceUntil": "Until",
     "authSessionExpiredTitle": "Session expired",
     "authSessionExpiredMessage": "Your session has expired. Sign in again to continue.",
-    "authSessionExpiredConfirm": "Sign in"
+    "authSessionExpiredConfirm": "Sign in",
+    "student_lessonBannerNotices": "Available lesson notices",
+    "student_lessonBannerStarting": "Your lesson starts soon",
+    "student_lessonBannerLive": "Your lesson is in progress",
+    "student_lessonBannerTimeZone": "Your device timezone",
+    "student_scheduleDay": "Day",
+    "student_deviceTime": "Times are shown in your device time zone",
+    "student_sourceDate": "Lesson date in Egypt",
+    "student_sourceDateHint": "Choose the lesson day in Egypt; each lesson time is shown in your device time zone.",
+    "student_joinWindow": "The join button appears 10 minutes before the lesson starts.",
+    "student_timePending": "Time to be confirmed"
   }
 }

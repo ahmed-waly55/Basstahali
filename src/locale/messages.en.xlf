@@ -13,7 +13,7 @@
     <unit id="m_629d28fb5255">
       <notes>
         <note category="location">src/app/Features/about/about.component.ts:25</note>
-        <note category="location">src/app/shared/header/header.component.ts:21</note>
+        <note category="location">src/app/shared/header/header.component.ts:22</note>
       </notes>
       <segment state="translated">
         <source>من نحن</source>
@@ -33,8 +33,8 @@
       <notes>
         <note category="location">src/app/Features/about/about.component.ts:27</note>
         <note category="location">src/app/Features/hero/hero.component.ts:17</note>
-        <note category="location">src/app/Features/landing/landing.component.ts:90</note>
-        <note category="location">src/app/core/services/seo-title.strategy.ts:139</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:97</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:130</note>
         <note category="location">src/app/shared/footer/footer.component.ts:27</note>
       </notes>
       <segment state="translated">
@@ -226,7 +226,7 @@
     <unit id="m_733f81a21615">
       <notes>
         <note category="location">src/app/Features/about/about.component.ts:48</note>
-        <note category="location">src/app/Features/landing/landing.component.ts:89</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:96</note>
       </notes>
       <segment state="translated">
         <source>مميزات المنصة</source>
@@ -725,7 +725,7 @@
     </unit>
     <unit id="m_370e5a7c84ab">
       <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:35</note>
+        <note category="location">src/app/Features/courses/courses.component.ts:24</note>
       </notes>
       <segment state="translated">
         <source>المناهج والمسارات التعليمية</source>
@@ -734,7 +734,7 @@
     </unit>
     <unit id="m_a0ee55410b16">
       <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:36</note>
+        <note category="location">src/app/Features/courses/courses.component.ts:25</note>
       </notes>
       <segment state="translated">
         <source>استكشف</source>
@@ -743,7 +743,7 @@
     </unit>
     <unit id="m_cf8fb985b213">
       <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:37</note>
+        <note category="location">src/app/Features/courses/courses.component.ts:26</note>
       </notes>
       <segment state="translated">
         <source>أحدث الكورسات والمواد</source>
@@ -752,7 +752,7 @@
     </unit>
     <unit id="m_7a5ffd5900ff">
       <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:38</note>
+        <note category="location">src/app/Features/courses/courses.component.ts:27</note>
       </notes>
       <segment state="translated">
         <source>محتوى تعليمي شامل ومبسط مصمم خصيصاً لمساعدة الطلاب على التفوق الدراسي واجتياز الاختبارات.</source>
@@ -761,7 +761,7 @@
     </unit>
     <unit id="m_0fba16800630">
       <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:42</note>
+        <note category="location">src/app/Features/courses/courses.component.ts:30</note>
       </notes>
       <segment state="translated">
         <source>اشترك الآن</source>
@@ -770,7 +770,7 @@
     </unit>
     <unit id="m_11fdef2dc5f8">
       <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:50</note>
+        <note category="location">src/app/Features/courses/courses.component.ts:41</note>
         <note category="location">src/app/Features/teachers/teachers.component.ts:40</note>
       </notes>
       <segment state="translated">
@@ -780,14 +780,8 @@
     </unit>
     <unit id="m_2b7e1606aeba">
       <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:51</note>
-        <note category="location">src/app/Features/landing/landing.component.ts:115</note>
-        <note category="location">src/app/Features/landing/landing.component.ts:129</note>
-        <note category="location">src/app/Features/landing/landing.component.ts:136</note>
-        <note category="location">src/app/Features/landing/landing.component.ts:157</note>
-        <note category="location">src/app/Features/landing/landing.component.ts:178</note>
-        <note category="location">src/app/Features/pricing/pricing.component.ts:74</note>
-        <note category="location">src/app/Features/pricing/pricing.component.ts:98</note>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:75</note>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:99</note>
       </notes>
       <segment state="translated">
         <source>المرحلة الثانوية</source>
@@ -796,11 +790,8 @@
     </unit>
     <unit id="m_36d9c98fcafd">
       <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:53</note>
-        <note category="location">src/app/Features/landing/landing.component.ts:143</note>
-        <note category="location">src/app/Features/landing/landing.component.ts:164</note>
-        <note category="location">src/app/Features/pricing/pricing.component.ts:62</note>
-        <note category="location">src/app/Features/pricing/pricing.component.ts:86</note>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:63</note>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:87</note>
       </notes>
       <segment state="translated">
         <source>المرحلة الابتدائية</source>
@@ -809,7 +800,8 @@
     </unit>
     <unit id="m_825de8950251">
       <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:61</note>
+        <note category="location">src/app/Features/courses/courses.component.ts:44</note>
+        <note category="location">src/app/Features/courses/courses.component.ts:105</note>
         <note category="location">src/app/Features/teachers/teachers.component.ts:41</note>
         <note category="location">src/app/Features/teachers/teachers.component.ts:51</note>
       </notes>
@@ -820,7 +812,6 @@
     </unit>
     <unit id="m_891c08556834">
       <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:72</note>
         <note category="location">src/app/Features/teachers/teachers.component.ts:50</note>
       </notes>
       <segment state="translated">
@@ -830,7 +821,6 @@
     </unit>
     <unit id="m_e0258574b3da">
       <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:92</note>
         <note category="location">src/app/Features/teachers/teachers.component.ts:74</note>
       </notes>
       <segment state="translated">
@@ -840,7 +830,7 @@
     </unit>
     <unit id="m_fb090c279a7d">
       <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:101</note>
+        <note category="location">src/app/Features/courses/courses.component.ts:60</note>
         <note category="location">src/app/Features/teachers/teachers.component.ts:63</note>
       </notes>
       <segment state="translated">
@@ -850,7 +840,6 @@
     </unit>
     <unit id="m_44dcaf6c0e96">
       <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:112</note>
         <note category="location">src/app/Features/teachers/teachers.component.ts:62</note>
       </notes>
       <segment state="translated">
@@ -860,10 +849,10 @@
     </unit>
     <unit id="courseEnrollMessage">
       <notes>
-        <note category="location">src/app/Features/courses/courses.component.ts:148</note>
+        <note category="location">src/app/Features/courses/courses.component.ts:143</note>
       </notes>
       <segment state="translated">
-        <source>السلام عليكم، أرغب في التسجيل في كورس: <ph id="0" equiv="COURSE" disp="courseTitle" /></source>
+        <source>السلام عليكم، أرغب في التسجيل في كورس: <ph id="0" equiv="COURSE" disp="courseTitle"/></source>
         <target>Hello, I would like to enrol in the course: <ph id="0" equiv="COURSE" disp="courseTitle" /></target>
       </segment>
     </unit>
@@ -881,7 +870,6 @@
         <note category="location">src/app/Features/curriculum-details/curriculum-details.component.ts:20</note>
         <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:33</note>
         <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:92</note>
-        <note category="location">src/app/shared/footer/footer.component.ts:17</note>
       </notes>
       <segment state="translated">
         <source>المراحل الدراسية</source>
@@ -901,6 +889,7 @@
       <notes>
         <note category="location">src/app/Features/curriculum-details/curriculum-details.component.ts:22</note>
         <note category="location">src/app/Features/curriculum/curriculum.component.ts:22</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:48</note>
         <note category="location">src/app/Features/subjects/subjects.component.ts:37</note>
         <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:69</note>
         <note category="location">src/app/shared/components/owl-loader/owl-loader.component.ts:14</note>
@@ -914,7 +903,10 @@
       <notes>
         <note category="location">src/app/Features/curriculum-details/curriculum-details.component.ts:23</note>
         <note category="location">src/app/Features/curriculum/curriculum.component.ts:23</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:49</note>
         <note category="location">src/app/Features/subjects/subjects.component.ts:38</note>
+        <note category="location">src/app/core/i18n/locale-runtime.ts:384</note>
+        <note category="location">src/app/core/services/preferences.service.ts:44</note>
         <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:43</note>
       </notes>
       <segment state="translated">
@@ -926,6 +918,7 @@
       <notes>
         <note category="location">src/app/Features/curriculum-details/curriculum-details.component.ts:24</note>
         <note category="location">src/app/Features/curriculum/curriculum.component.ts:24</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:50</note>
         <note category="location">src/app/Features/subjects/subjects.component.ts:39</note>
         <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:44</note>
       </notes>
@@ -938,7 +931,9 @@
       <notes>
         <note category="location">src/app/Features/curriculum-details/curriculum-details.component.ts:25</note>
         <note category="location">src/app/Features/curriculum/curriculum.component.ts:25</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:51</note>
         <note category="location">src/app/Features/subjects/subjects.component.ts:40</note>
+        <note category="location">src/app/core/i18n/locale-runtime.ts:387</note>
         <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:45</note>
       </notes>
       <segment state="translated">
@@ -995,10 +990,11 @@
     <unit id="m_1ea7464560c3">
       <notes>
         <note category="location">src/app/Features/curriculum/curriculum.component.ts:20</note>
-        <note category="location">src/app/core/services/seo-title.strategy.ts:147</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:138</note>
         <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:32</note>
         <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:91</note>
-        <note category="location">src/app/shared/header/header.component.ts:16</note>
+        <note category="location">src/app/shared/footer/footer.component.ts:17</note>
+        <note category="location">src/app/shared/header/header.component.ts:17</note>
       </notes>
       <segment state="translated">
         <source>المناهج الدراسية</source>
@@ -1035,6 +1031,7 @@
     <unit id="m_4d255e9aaa04">
       <notes>
         <note category="location">src/app/Features/curriculum/curriculum.component.ts:28</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:52</note>
       </notes>
       <segment state="translated">
         <source>لا توجد مناهج متاحة</source>
@@ -1341,7 +1338,7 @@
     </unit>
     <unit id="landingTrialMessage">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:41</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:44</note>
       </notes>
       <segment state="translated">
         <source>السلام عليكم، أرغب في حجز أول حصة تجريبية مجانية.</source>
@@ -1350,7 +1347,7 @@
     </unit>
     <unit id="m_4dc778bb0709">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:45</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:53</note>
       </notes>
       <segment state="translated">
         <source>لماذا بسطهالي؟</source>
@@ -1359,7 +1356,7 @@
     </unit>
     <unit id="m_ef1f81cc2219">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:46</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:54</note>
       </notes>
       <segment state="translated">
         <source>كل ما يحتاجه الطالب...</source>
@@ -1368,7 +1365,7 @@
     </unit>
     <unit id="m_149eab48f8d5">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:47</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:55</note>
       </notes>
       <segment state="translated">
         <source>في مكان واحد</source>
@@ -1377,7 +1374,7 @@
     </unit>
     <unit id="m_bc25e99f9ae0">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:48</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:56</note>
       </notes>
       <segment state="translated">
         <source>منصة متكاملة تساعد الطالب وولي الأمر على متابعة العملية التعليمية بسهولة.</source>
@@ -1386,7 +1383,7 @@
     </unit>
     <unit id="m_df67c0ff5d15">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:49</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:57</note>
       </notes>
       <segment state="translated">
         <source>جدول الحصص</source>
@@ -1395,7 +1392,7 @@
     </unit>
     <unit id="m_3196feca54ae">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:50</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:58</note>
       </notes>
       <segment state="translated">
         <source>تنظيم كامل للحصص والمواعيد.</source>
@@ -1404,7 +1401,7 @@
     </unit>
     <unit id="m_cc40179ce00c">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:51</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:59</note>
       </notes>
       <segment state="translated">
         <source>إشعارات ذكية</source>
@@ -1413,7 +1410,7 @@
     </unit>
     <unit id="m_8d63fdbb70ec">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:52</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:60</note>
       </notes>
       <segment state="translated">
         <source>تنبيهات قبل الحصص والواجبات.</source>
@@ -1422,7 +1419,7 @@
     </unit>
     <unit id="m_2dca077cc935">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:53</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:61</note>
       </notes>
       <segment state="translated">
         <source>رفع الواجبات</source>
@@ -1431,7 +1428,7 @@
     </unit>
     <unit id="m_fe7466316c5b">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:54</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:62</note>
       </notes>
       <segment state="translated">
         <source>رفع سريع وسهل للواجبات.</source>
@@ -1440,7 +1437,7 @@
     </unit>
     <unit id="m_10bd43535d5c">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:55</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:63</note>
       </notes>
       <segment state="translated">
         <source>تصحيح إلكتروني</source>
@@ -1449,7 +1446,7 @@
     </unit>
     <unit id="m_7cb12f66df00">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:56</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:64</note>
       </notes>
       <segment state="translated">
         <source>تصحيح فوري مع ملاحظات المعلم.</source>
@@ -1458,7 +1455,7 @@
     </unit>
     <unit id="m_93253eaf4991">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:57</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:65</note>
       </notes>
       <segment state="translated">
         <source>متابعة ولي الأمر</source>
@@ -1467,7 +1464,7 @@
     </unit>
     <unit id="m_81e5a00e0c5a">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:58</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:66</note>
       </notes>
       <segment state="translated">
         <source>متابعة مستمرة لمستوى الأبناء.</source>
@@ -1476,7 +1473,7 @@
     </unit>
     <unit id="m_a2991806009f">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:59</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:67</note>
       </notes>
       <segment state="translated">
         <source>تقارير الأداء</source>
@@ -1485,7 +1482,7 @@
     </unit>
     <unit id="m_4c202b92e8cc">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:60</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:68</note>
       </notes>
       <segment state="translated">
         <source>تحليل كامل لتقدم الطالب.</source>
@@ -1494,7 +1491,7 @@
     </unit>
     <unit id="m_7127659cb735">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:61</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:69</note>
       </notes>
       <segment state="translated">
         <source>🎁 عرض لفترة محدودة</source>
@@ -1503,7 +1500,7 @@
     </unit>
     <unit id="m_6dc1b1365af6">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:62</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:70</note>
       </notes>
       <segment state="translated">
         <source>جرّب أول حصة</source>
@@ -1512,7 +1509,7 @@
     </unit>
     <unit id="m_fb97e075faae">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:63</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:71</note>
       </notes>
       <segment state="translated">
         <source>مجانًا</source>
@@ -1521,7 +1518,7 @@
     </unit>
     <unit id="m_14e4a20dfd7c">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:64</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:72</note>
       </notes>
       <segment state="translated">
         <source>احجز حصتك التجريبية المجانية وتعرّف على أسلوب الشرح قبل الاشتراك.</source>
@@ -1530,7 +1527,7 @@
     </unit>
     <unit id="m_8f7716d77474">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:65</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:73</note>
       </notes>
       <segment state="translated">
         <source>احجز الآن عبر واتساب</source>
@@ -1539,7 +1536,7 @@
     </unit>
     <unit id="m_84a67ee91b0f">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:66</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:74</note>
       </notes>
       <segment state="translated">
         <source>كيف تبدأ معنا؟</source>
@@ -1548,7 +1545,7 @@
     </unit>
     <unit id="m_9602e81690c9">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:67</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:75</note>
       </notes>
       <segment state="translated">
         <source>ابدأ رحلتك التعليمية في</source>
@@ -1557,7 +1554,7 @@
     </unit>
     <unit id="m_5324c02ad8af">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:68</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:76</note>
       </notes>
       <segment state="translated">
         <source>4 خطوات</source>
@@ -1566,7 +1563,7 @@
     </unit>
     <unit id="m_29499543fd3e">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:69</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:77</note>
       </notes>
       <segment state="translated">
         <source>التسجيل في منصة بسطهالي لا يستغرق سوى دقائق قليلة، لتنطلق بعدها في تجربة تعليمية سلسة وممتعة.</source>
@@ -1575,7 +1572,7 @@
     </unit>
     <unit id="m_e27bdf84c680">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:70</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:78</note>
       </notes>
       <segment state="translated">
         <source>أنشئ حسابك</source>
@@ -1584,7 +1581,7 @@
     </unit>
     <unit id="m_bdc93726daf6">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:71</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:79</note>
       </notes>
       <segment state="translated">
         <source>قم بإنشاء حسابك الجديد بسهولة أو اطلب التسجيل المباشر عبر خدمة الواتساب.</source>
@@ -1593,8 +1590,8 @@
     </unit>
     <unit id="m_3d2fb6a4d73c">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:72</note>
-        <note category="location">src/app/Features/pricing/pricing.component.ts:49</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:80</note>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:50</note>
       </notes>
       <segment state="translated">
         <source>اختر المنهج</source>
@@ -1603,7 +1600,7 @@
     </unit>
     <unit id="m_7016c886ae15">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:73</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:81</note>
       </notes>
       <segment state="translated">
         <source>حدد الدولة، المنهج، والمرحلة الدراسية لتظهر لك الدروس والمواد المخصصة لك.</source>
@@ -1612,7 +1609,7 @@
     </unit>
     <unit id="m_67f49e701485">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:74</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:82</note>
       </notes>
       <segment state="translated">
         <source>فعّل اشتراكك</source>
@@ -1621,7 +1618,7 @@
     </unit>
     <unit id="m_67cf62749c77">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:75</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:83</note>
       </notes>
       <segment state="translated">
         <source>اختر الباقة المناسبة لاحتياجاتك وأكمل عملية الاشتراك بخطوات آمنة وسريعة.</source>
@@ -1630,7 +1627,7 @@
     </unit>
     <unit id="m_e04f5380ec6a">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:76</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:84</note>
       </notes>
       <segment state="translated">
         <source>ابدأ التعلم</source>
@@ -1639,7 +1636,7 @@
     </unit>
     <unit id="m_df5c55d4e104">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:77</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:85</note>
       </notes>
       <segment state="translated">
         <source>شاهد الشروحات التفاعلية، احضر الحصص، وأنجز الواجبات بسهولة للتفوق.</source>
@@ -1648,7 +1645,7 @@
     </unit>
     <unit id="m_8dc5631ffac6">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:78</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:86</note>
       </notes>
       <segment state="translated">
         <source>سجل حسابك الآن عبر الواتساب</source>
@@ -1657,7 +1654,7 @@
     </unit>
     <unit id="m_526d124bec7b">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:80</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:87</note>
       </notes>
       <segment state="translated">
         <source>شرح واضح، مواعيد مرتبة ومتابعة للدروس؛ تفاصيل تهمك كولي أمر.</source>
@@ -1666,7 +1663,7 @@
     </unit>
     <unit id="m_d0c08f94b14b">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:81</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:88</note>
       </notes>
       <segment state="translated">
         <source>تواصل معنا على واتساب</source>
@@ -1675,7 +1672,7 @@
     </unit>
     <unit id="m_4c00a66d7eae">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:82</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:89</note>
       </notes>
       <segment state="translated">
         <source>نحن هنا لمساعدتك والإجابة على استفساراتك</source>
@@ -1684,10 +1681,10 @@
     </unit>
     <unit id="m_988638232136">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:83</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:90</note>
         <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:62</note>
         <note category="location">src/app/shared/footer/footer.component.ts:25</note>
-        <note category="location">src/app/shared/header/header.component.ts:27</note>
+        <note category="location">src/app/shared/header/header.component.ts:28</note>
         <note category="location">src/app/shared/not-found/not-found.component.ts:16</note>
       </notes>
       <segment state="translated">
@@ -1697,7 +1694,7 @@
     </unit>
     <unit id="m_48b4fb1a68d2">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:84</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:91</note>
       </notes>
       <segment state="translated">
         <source>المناهج الدراسية و الكورسات</source>
@@ -1706,7 +1703,7 @@
     </unit>
     <unit id="m_173cce3ff639">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:85</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:92</note>
         <note category="location">src/app/Features/teacher-form/teacher-form.component.ts:58</note>
       </notes>
       <segment state="translated">
@@ -1716,7 +1713,7 @@
     </unit>
     <unit id="m_33dca1b609ba">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:86</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:93</note>
       </notes>
       <segment state="translated">
         <source>جميع المراحل الدراسية وفق أفضل المناهج مع نخبة من المدرسين.</source>
@@ -1725,8 +1722,8 @@
     </unit>
     <unit id="m_5b82b7079a31">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:87</note>
-        <note category="location">src/app/shared/header/header.component.ts:17</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:94</note>
+        <note category="location">src/app/shared/header/header.component.ts:18</note>
       </notes>
       <segment state="translated">
         <source>الكورسات</source>
@@ -1735,7 +1732,7 @@
     </unit>
     <unit id="m_a73730be0c2b">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:88</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:95</note>
       </notes>
       <segment state="translated">
         <source>كورسات في اللغات، البرمجة، المهارات، والمواد الإثرائية لجميع الأعمار.</source>
@@ -1744,7 +1741,7 @@
     </unit>
     <unit id="m_4df49eb87a01">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:91</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:98</note>
       </notes>
       <segment state="translated">
         <source>ماذا يقول طلابنا؟</source>
@@ -1753,7 +1750,7 @@
     </unit>
     <unit id="m_a784688c7932">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:92</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:99</note>
       </notes>
       <segment state="translated">
         <source>عرض الآراء السابقة</source>
@@ -1762,7 +1759,7 @@
     </unit>
     <unit id="m_0926efa89f4b">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:93</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:100</note>
       </notes>
       <segment state="translated">
         <source>عرض الآراء التالية</source>
@@ -1771,11 +1768,8 @@
     </unit>
     <unit id="m_667eb688d965">
       <notes>
-        <note category="location">src/app/Features/landing/landing.component.ts:122</note>
-        <note category="location">src/app/Features/landing/landing.component.ts:150</note>
-        <note category="location">src/app/Features/landing/landing.component.ts:171</note>
-        <note category="location">src/app/Features/pricing/pricing.component.ts:68</note>
-        <note category="location">src/app/Features/pricing/pricing.component.ts:92</note>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:69</note>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:93</note>
       </notes>
       <segment state="translated">
         <source>المرحلة المتوسطة</source>
@@ -1784,7 +1778,7 @@
     </unit>
     <unit id="m_b598140d68a4">
       <notes>
-        <note category="location">src/app/Features/legal/legal.component.ts:33</note>
+        <note category="location">src/app/Features/legal/legal.component.ts:34</note>
         <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:63</note>
       </notes>
       <segment state="translated">
@@ -1794,10 +1788,10 @@
     </unit>
     <unit id="m_b986d8fb163c">
       <notes>
-        <note category="location">src/app/Features/legal/legal.component.ts:34</note>
+        <note category="location">src/app/Features/legal/legal.component.ts:35</note>
         <note category="location">src/app/shared/components/learning-catalog/learning-catalog.component.ts:31</note>
         <note category="location">src/app/shared/footer/footer.component.ts:16</note>
-        <note category="location">src/app/shared/header/header.component.ts:15</note>
+        <note category="location">src/app/shared/header/header.component.ts:16</note>
       </notes>
       <segment state="translated">
         <source>الرئيسية</source>
@@ -1806,7 +1800,7 @@
     </unit>
     <unit id="m_d398f5116515">
       <notes>
-        <note category="location">src/app/Features/legal/legal.component.ts:35</note>
+        <note category="location">src/app/Features/legal/legal.component.ts:36</note>
       </notes>
       <segment state="translated">
         <source>معلومات وسياسات بسطهالي</source>
@@ -1815,7 +1809,7 @@
     </unit>
     <unit id="m_2723fb0ddcdf">
       <notes>
-        <note category="location">src/app/Features/legal/legal.component.ts:36</note>
+        <note category="location">src/app/Features/legal/legal.component.ts:37</note>
       </notes>
       <segment state="translated">
         <source>آخر تحديث</source>
@@ -1824,7 +1818,7 @@
     </unit>
     <unit id="m_f7687b7e329b">
       <notes>
-        <note category="location">src/app/Features/legal/legal.component.ts:37</note>
+        <note category="location">src/app/Features/legal/legal.component.ts:38</note>
       </notes>
       <segment state="translated">
         <source>صفحات السياسات</source>
@@ -1833,8 +1827,8 @@
     </unit>
     <unit id="m_8b7b36b70cdd">
       <notes>
-        <note category="location">src/app/Features/legal/legal.component.ts:38</note>
-        <note category="location">src/app/Features/legal/privacy.content.ts:4</note>
+        <note category="location">src/app/Features/legal/legal.component.ts:39</note>
+        <note category="location">src/app/Features/legal/privacy.content.ts:5</note>
         <note category="location">src/app/shared/footer/footer.component.ts:22</note>
       </notes>
       <segment state="translated">
@@ -1844,8 +1838,8 @@
     </unit>
     <unit id="m_bec6c46de276">
       <notes>
-        <note category="location">src/app/Features/legal/legal.component.ts:39</note>
-        <note category="location">src/app/Features/legal/terms.content.ts:4</note>
+        <note category="location">src/app/Features/legal/legal.component.ts:40</note>
+        <note category="location">src/app/Features/legal/terms.content.ts:5</note>
         <note category="location">src/app/shared/footer/footer.component.ts:23</note>
       </notes>
       <segment state="translated">
@@ -1855,7 +1849,7 @@
     </unit>
     <unit id="m_80b8f8c418da">
       <notes>
-        <note category="location">src/app/Features/legal/legal.component.ts:40</note>
+        <note category="location">src/app/Features/legal/legal.component.ts:41</note>
       </notes>
       <segment state="translated">
         <source>في هذه الصفحة</source>
@@ -1864,7 +1858,7 @@
     </unit>
     <unit id="m_af97bb006377">
       <notes>
-        <note category="location">src/app/Features/legal/legal.component.ts:41</note>
+        <note category="location">src/app/Features/legal/legal.component.ts:42</note>
       </notes>
       <segment state="translated">
         <source>لديك سؤال؟</source>
@@ -1873,7 +1867,7 @@
     </unit>
     <unit id="m_208c0dc965eb">
       <notes>
-        <note category="location">src/app/Features/legal/legal.component.ts:42</note>
+        <note category="location">src/app/Features/legal/legal.component.ts:43</note>
       </notes>
       <segment state="translated">
         <source>تواصل مع فريق بسطهالي للاستفسار عن السياسات أو تفاصيل الاشتراك.</source>
@@ -1882,7 +1876,7 @@
     </unit>
     <unit id="m_a01613b4c618">
       <notes>
-        <note category="location">src/app/Features/legal/legal.component.ts:43</note>
+        <note category="location">src/app/Features/legal/legal.component.ts:44</note>
         <note category="location">src/app/layouts/landing-layout/landing-layout.component.ts:17</note>
       </notes>
       <segment state="translated">
@@ -1892,7 +1886,7 @@
     </unit>
     <unit id="m_c4bfa628d3e0">
       <notes>
-        <note category="location">src/app/Features/legal/legal.component.ts:44</note>
+        <note category="location">src/app/Features/legal/legal.component.ts:45</note>
       </notes>
       <segment state="translated">
         <source>عرض الباقات والأسعار</source>
@@ -1901,7 +1895,7 @@
     </unit>
     <unit id="m_f51fce2b9d36">
       <notes>
-        <note category="location">src/app/Features/legal/privacy.content.ts:5</note>
+        <note category="location">src/app/Features/legal/privacy.content.ts:6</note>
       </notes>
       <segment state="translated">
         <source>توضح هذه الصفحة المعلومات التي يقدمها المستخدم عبر موقع بسطهالي، وكيفية التواصل وحفظ تفضيلات التصفح واستخدام الخدمات الخارجية. نهدف إلى مساعدة ولي الأمر والمدرس على فهم المعلومات التي يختار مشاركتها أثناء استخدام الموقع.</source>
@@ -1910,7 +1904,7 @@
     </unit>
     <unit id="m_88d9c9294e46">
       <notes>
-        <note category="location">src/app/Features/legal/privacy.content.ts:9</note>
+        <note category="location">src/app/Features/legal/privacy.content.ts:10</note>
       </notes>
       <segment state="translated">
         <source>المعلومات التي تقدمها</source>
@@ -1919,7 +1913,7 @@
     </unit>
     <unit id="m_bcae5e4a07ec">
       <notes>
-        <note category="location">src/app/Features/legal/privacy.content.ts:11</note>
+        <note category="location">src/app/Features/legal/privacy.content.ts:12</note>
       </notes>
       <segment state="translated">
         <source>يطلب نموذج الانضمام للمدرسين الاسم الكامل، البريد الإلكتروني، كلمة المرور، رقم واتساب، طريقة استلام المستحقات وبيانات الحساب، إلى جانب المنهج والمرحلة الدراسية والمواد التي يدرسها المدرس.</source>
@@ -1928,7 +1922,7 @@
     </unit>
     <unit id="m_540927b5fb69">
       <notes>
-        <note category="location">src/app/Features/legal/privacy.content.ts:12</note>
+        <note category="location">src/app/Features/legal/privacy.content.ts:13</note>
       </notes>
       <segment state="translated">
         <source>عند إرسال نموذج الانضمام، تُرسل المعلومات التي أدخلتها إلى بسطهالي ضمن طلبك. يرجى تقديم بيانات صحيحة والاقتصار على المعلومات المطلوبة في حقول النموذج.</source>
@@ -1937,7 +1931,7 @@
     </unit>
     <unit id="m_42adaa1941dc">
       <notes>
-        <note category="location">src/app/Features/legal/privacy.content.ts:17</note>
+        <note category="location">src/app/Features/legal/privacy.content.ts:18</note>
       </notes>
       <segment state="translated">
         <source>بيانات طلب الانضمام ومتابعته</source>
@@ -1946,7 +1940,7 @@
     </unit>
     <unit id="m_758d17649636">
       <notes>
-        <note category="location">src/app/Features/legal/privacy.content.ts:19</note>
+        <note category="location">src/app/Features/legal/privacy.content.ts:20</note>
       </notes>
       <segment state="translated">
         <source>تُرفق بيانات المدرس وتخصصاته وبيانات استلام المستحقات بطلب الانضمام. اختيار المنهج والمرحلة والمواد يساعد على تحديد ما يقدمه المدرس، ولا يحتاج تصفح قوائم المناهج العامة إلى إرسال نموذج انضمام.</source>
@@ -1955,7 +1949,7 @@
     </unit>
     <unit id="m_2c7efb14c290">
       <notes>
-        <note category="location">src/app/Features/legal/privacy.content.ts:20</note>
+        <note category="location">src/app/Features/legal/privacy.content.ts:21</note>
       </notes>
       <segment state="translated">
         <source>تعرض صفحة متابعة الطلب الحالة التي تعيدها الخدمة عند الاستعلام برقم الطلب. قد تتطلب الخدمة رقم واتساب المسجل للتحقق من الاستعلام. احتفظ برقم طلبك وتجنب نشره مع بياناتك الشخصية في أماكن عامة.</source>
@@ -1964,7 +1958,7 @@
     </unit>
     <unit id="m_08f51c19f964">
       <notes>
-        <note category="location">src/app/Features/legal/privacy.content.ts:25</note>
+        <note category="location">src/app/Features/legal/privacy.content.ts:35</note>
       </notes>
       <segment state="translated">
         <source>التواصل عبر البريد وواتساب</source>
@@ -1973,7 +1967,7 @@
     </unit>
     <unit id="m_527246fc4d6b">
       <notes>
-        <note category="location">src/app/Features/legal/privacy.content.ts:27</note>
+        <note category="location">src/app/Features/legal/privacy.content.ts:37</note>
       </notes>
       <segment state="translated">
         <source>يتيح نموذج التواصل إدخال الاسم ورقم الهاتف والبريد الإلكتروني وموضوع الرسالة ونصها. زر النموذج يفتح مسودة في تطبيق البريد لديك إلى basstahali@gmail.com، ويضع بيانات النموذج في الرسالة. يمكنك مراجعتها قبل إرسالها من تطبيق البريد؛ الموقع لا يرسل الرسالة نيابةً عنك.</source>
@@ -1982,7 +1976,7 @@
     </unit>
     <unit id="m_96e57725b13c">
       <notes>
-        <note category="location">src/app/Features/legal/privacy.content.ts:28</note>
+        <note category="location">src/app/Features/legal/privacy.content.ts:38</note>
       </notes>
       <segment state="translated">
         <source>تنتقل روابط الاستفسار والاشتراك إلى واتساب على الرقم +971 56 330 6087، وقد تتضمن رسالة جاهزة عن الباقة أو الخدمة التي اخترتها. راجع الرسالة قبل إرسالها. استخدام البريد وواتساب يخضع أيضًا لسياسات وإعدادات مزودي هذه الخدمات.</source>
@@ -1991,7 +1985,7 @@
     </unit>
     <unit id="m_b309d2f33542">
       <notes>
-        <note category="location">src/app/Features/legal/privacy.content.ts:33</note>
+        <note category="location">src/app/Features/legal/privacy.content.ts:43</note>
       </notes>
       <segment state="translated">
         <source>تفضيلات اللغة والمظهر</source>
@@ -2000,7 +1994,7 @@
     </unit>
     <unit id="m_7d1fdb12e082">
       <notes>
-        <note category="location">src/app/Features/legal/privacy.content.ts:35</note>
+        <note category="location">src/app/Features/legal/privacy.content.ts:45</note>
       </notes>
       <segment state="translated">
         <source>يحفظ الموقع اختيار اللغة العربية أو الإنجليزية وتفضيل المظهر الفاتح أو الداكن في التخزين المحلي لمتصفحك للاحتفاظ بهذه الاختيارات عند الزيارة التالية من المتصفح نفسه.</source>
@@ -2009,7 +2003,7 @@
     </unit>
     <unit id="m_3a7aedca421f">
       <notes>
-        <note category="location">src/app/Features/legal/privacy.content.ts:36</note>
+        <note category="location">src/app/Features/legal/privacy.content.ts:46</note>
       </notes>
       <segment state="translated">
         <source>تقرأ صفحة الباقات المنطقة الزمنية المضبوطة على جهازك من المتصفح. إذا كانت توقيت القاهرة (Africa/Cairo)، تظهر الأسعار بالجنيه المصري بسعر 15 جنيهًا لكل درهم؛ ولأي توقيت آخر أو عند تعذر قراءته تظهر بالدرهم الإماراتي. يعتمد ذلك على إعداد الجهاز، ولا يحتاج إلى إذن الموقع الجغرافي أو تحديد الدولة من عنوان الشبكة.</source>
@@ -2018,7 +2012,7 @@
     </unit>
     <unit id="m_4c590c659be8">
       <notes>
-        <note category="location">src/app/Features/legal/privacy.content.ts:37</note>
+        <note category="location">src/app/Features/legal/privacy.content.ts:47</note>
       </notes>
       <segment state="translated">
         <source>يمكنك تغيير هذه التفضيلات من أدوات الموقع أو إزالة بيانات الموقع من إعدادات المتصفح. إزالة بيانات المتصفح تعيد ضبط التفضيلات المحلية، ولا تحذف طلبات الانضمام التي سبق إرسالها إلى الخدمة.</source>
@@ -2027,7 +2021,7 @@
     </unit>
     <unit id="m_8ecd147707a7">
       <notes>
-        <note category="location">src/app/Features/legal/privacy.content.ts:42</note>
+        <note category="location">src/app/Features/legal/privacy.content.ts:52</note>
       </notes>
       <segment state="translated">
         <source>المحتوى والروابط الخارجية</source>
@@ -2036,7 +2030,7 @@
     </unit>
     <unit id="m_0b23eea99bcf">
       <notes>
-        <note category="location">src/app/Features/legal/privacy.content.ts:44</note>
+        <note category="location">src/app/Features/legal/privacy.content.ts:54</note>
       </notes>
       <segment state="translated">
         <source>قد تُحمّل بعض الصور والأيقونات وملفات العرض من خدمات خارجية، منها DiceBear وUnsplash وcdnjs. تتضمن الصفحة أيضًا ملفًا خارجيًا من Google AdSense. تحميل مورد خارجي ينشئ اتصالًا بمزوده، وقد يتضمن طلب التحميل معلومات مثل عنوان الشبكة ونوع المتصفح؛ تخضع معالجة هذه الطلبات لسياسة المزود.</source>
@@ -2045,7 +2039,7 @@
     </unit>
     <unit id="m_e18a2109f5bf">
       <notes>
-        <note category="location">src/app/Features/legal/privacy.content.ts:45</note>
+        <note category="location">src/app/Features/legal/privacy.content.ts:55</note>
       </notes>
       <segment state="translated">
         <source>قد تستخدم الخدمات الخارجية ملفات تعريف الارتباط وفق سياساتها وإعداداتها. يمكنك إدارة هذه الملفات أو حظرها من إعدادات المتصفح، مع مراعاة أن بعض وظائف الخدمات الخارجية قد تتأثر.</source>
@@ -2054,7 +2048,7 @@
     </unit>
     <unit id="m_774d76e8f694">
       <notes>
-        <note category="location">src/app/Features/legal/privacy.content.ts:46</note>
+        <note category="location">src/app/Features/legal/privacy.content.ts:56</note>
       </notes>
       <segment state="translated">
         <source>روابط Facebook وInstagram وTikTok وWhatsApp تنقلك إلى خدمات خارج موقع بسطهالي. راجع سياسة الخصوصية وإعدادات المشاركة في الخدمة الخارجية قبل إرسال معلومات شخصية أو متابعة الحسابات من خلالها.</source>
@@ -2063,7 +2057,7 @@
     </unit>
     <unit id="m_e2eed203870d">
       <notes>
-        <note category="location">src/app/Features/legal/privacy.content.ts:51</note>
+        <note category="location">src/app/Features/legal/privacy.content.ts:61</note>
       </notes>
       <segment state="translated">
         <source>الطلاب القاصرون ومشاركة ولي الأمر</source>
@@ -2072,7 +2066,7 @@
     </unit>
     <unit id="m_2ebd2b79096c">
       <notes>
-        <note category="location">src/app/Features/legal/privacy.content.ts:53</note>
+        <note category="location">src/app/Features/legal/privacy.content.ts:63</note>
       </notes>
       <segment state="translated">
         <source>لأن الخدمة التعليمية قد يستخدمها طلاب قاصرون، نشجع ولي الأمر على المشاركة في اختيار الحصص ومراجعة التواصل والحجز، ومساعدة الطالب على تحديد المعلومات المناسبة للمشاركة.</source>
@@ -2081,7 +2075,7 @@
     </unit>
     <unit id="m_7221a6965d41">
       <notes>
-        <note category="location">src/app/Features/legal/privacy.content.ts:54</note>
+        <note category="location">src/app/Features/legal/privacy.content.ts:64</note>
       </notes>
       <segment state="translated">
         <source>اكتفِ بالمعلومات اللازمة للاستفسار أو ترتيب الدراسة. تجنب إرسال صور خاصة للطالب أو وثائق هوية أو معلومات صحية حساسة عبر الرسائل، وراجع ما يشاركه الطالب مع الخدمات الخارجية.</source>
@@ -2090,7 +2084,7 @@
     </unit>
     <unit id="m_72604b76383a">
       <notes>
-        <note category="location">src/app/Features/legal/privacy.content.ts:59</note>
+        <note category="location">src/app/Features/legal/privacy.content.ts:69</note>
       </notes>
       <segment state="translated">
         <source>مشاركة المعلومات بعناية</source>
@@ -2099,7 +2093,7 @@
     </unit>
     <unit id="m_2862b895fc5b">
       <notes>
-        <note category="location">src/app/Features/legal/privacy.content.ts:61</note>
+        <note category="location">src/app/Features/legal/privacy.content.ts:71</note>
       </notes>
       <segment state="translated">
         <source>استخدم كلمة مرور لا تستخدمها لحسابات أخرى، ولا ترسلها عبر البريد أو واتساب. أدخل بيانات استلام المستحقات المطلوبة في حقول نموذج المدرس، وتجنب إدخال كلمات مرور الخدمات المالية أو الرموز السرية للبطاقات.</source>
@@ -2108,7 +2102,7 @@
     </unit>
     <unit id="m_b1aa0359563a">
       <notes>
-        <note category="location">src/app/Features/legal/privacy.content.ts:66</note>
+        <note category="location">src/app/Features/legal/privacy.content.ts:76</note>
       </notes>
       <segment state="translated">
         <source>الاستفسارات وطلب تصحيح البيانات</source>
@@ -2117,7 +2111,7 @@
     </unit>
     <unit id="m_c7983029e49f">
       <notes>
-        <note category="location">src/app/Features/legal/privacy.content.ts:68</note>
+        <note category="location">src/app/Features/legal/privacy.content.ts:78</note>
       </notes>
       <segment state="translated">
         <source>إذا كان لديك سؤال عن هذه الصفحة أو رغبت في طلب تصحيح معلومات قدمتها، تواصل عبر basstahali@gmail.com أو واتساب +971 56 330 6087. اشرح موضوع طلبك والتصحيح المطلوب بإيجاز، واذكر رقم الطلب عند الحاجة دون إرفاق كلمة مرور أو معلومات مالية حساسة.</source>
@@ -2126,7 +2120,7 @@
     </unit>
     <unit id="m_592918b57dd2">
       <notes>
-        <note category="location">src/app/Features/legal/terms.content.ts:5</note>
+        <note category="location">src/app/Features/legal/terms.content.ts:6</note>
       </notes>
       <segment state="translated">
         <source>توضح هذه الشروط كيفية استخدام بسطهالي والاستفسار عن باقات الحصص الخصوصية المباشرة أونلاين وترتيب الاشتراك فيها. يرجى قراءتها والتأكد من تفاصيل الباقة مع فريقنا قبل تأكيد الاشتراك.</source>
@@ -2135,7 +2129,7 @@
     </unit>
     <unit id="m_f52b13d61867">
       <notes>
-        <note category="location">src/app/Features/legal/terms.content.ts:9</note>
+        <note category="location">src/app/Features/legal/terms.content.ts:10</note>
       </notes>
       <segment state="translated">
         <source>الاستخدام التعليمي وولي الأمر</source>
@@ -2144,7 +2138,7 @@
     </unit>
     <unit id="m_069cbdbdf83c">
       <notes>
-        <note category="location">src/app/Features/legal/terms.content.ts:11</note>
+        <note category="location">src/app/Features/legal/terms.content.ts:12</note>
       </notes>
       <segment state="translated">
         <source>بسطهالي منصة للحصص الخصوصية المباشرة أونلاين، تساعد الطلاب على فهم موادهم الدراسية والتفاعل مع معلميهم. استخدم المنصة ووسائل التواصل المرتبطة بها للأغراض التعليمية وترتيب الحصص.</source>
@@ -2153,7 +2147,7 @@
     </unit>
     <unit id="m_64673d0fd534">
       <notes>
-        <note category="location">src/app/Features/legal/terms.content.ts:12</note>
+        <note category="location">src/app/Features/legal/terms.content.ts:13</note>
       </notes>
       <segment state="translated">
         <source>إذا كان الطالب قاصرًا، يجب أن يتولى ولي أمره تنسيق الاشتراك وتأكيد تفاصيله والتواصل مع الفريق عند الحاجة، مع متابعة استخدام الطالب للمنصة والحصص.</source>
@@ -2162,7 +2156,7 @@
     </unit>
     <unit id="m_5a2b65bae7ea">
       <notes>
-        <note category="location">src/app/Features/legal/terms.content.ts:17</note>
+        <note category="location">src/app/Features/legal/terms.content.ts:18</note>
       </notes>
       <segment state="translated">
         <source>صحة البيانات وطلبات انضمام المعلمين</source>
@@ -2171,7 +2165,7 @@
     </unit>
     <unit id="m_f4a278e834f9">
       <notes>
-        <note category="location">src/app/Features/legal/terms.content.ts:19</note>
+        <note category="location">src/app/Features/legal/terms.content.ts:20</note>
       </notes>
       <segment state="translated">
         <source>قدّم بيانات صحيحة عند التواصل أو التسجيل أو طلب الاشتراك، وأبلغ الفريق إذا تغيّرت المعلومات اللازمة لترتيب الحصص أو التواصل معك. حافظ على سرية بيانات تسجيل دخولك.</source>
@@ -2180,7 +2174,7 @@
     </unit>
     <unit id="m_7f590f05b0f6">
       <notes>
-        <note category="location">src/app/Features/legal/terms.content.ts:20</note>
+        <note category="location">src/app/Features/legal/terms.content.ts:21</note>
       </notes>
       <segment state="translated">
         <source>يجب على المتقدم للانضمام إلى هيئة التدريس تقديم معلومات صحيحة عن نفسه والمواد والمناهج التي يرغب في تدريسها. إرسال الطلب أو الحصول على رقم طلب لا يعني قبوله؛ تُعرف نتيجة الطلب من متابعة حالته أو التواصل مع الفريق.</source>
@@ -2189,7 +2183,7 @@
     </unit>
     <unit id="m_0f91404720af">
       <notes>
-        <note category="location">src/app/Features/legal/terms.content.ts:25</note>
+        <note category="location">src/app/Features/legal/terms.content.ts:26</note>
       </notes>
       <segment state="translated">
         <source>الباقات والأسعار المعروضة</source>
@@ -2198,7 +2192,7 @@
     </unit>
     <unit id="m_d32b8dc711f5">
       <notes>
-        <note category="location">src/app/Features/legal/terms.content.ts:27</note>
+        <note category="location">src/app/Features/legal/terms.content.ts:28</note>
       </notes>
       <segment state="translated">
         <source>تعرض صفحة الباقات عروض المنهج الانترناشونال والمنهج الوزاري بحسب المرحلة الدراسية. تشمل الباقات المعروضة 4 مواد دراسية ومادة إضافية هدية، مع 8 حصص لكل مادة. تظهر أسعار الباقات للزائر من مصر بالجنيه المصري بسعر تحويل ثابت 15 جنيهًا لكل درهم، وللزائر من باقي الدول بالدرهم الإماراتي.</source>
@@ -2207,7 +2201,7 @@
     </unit>
     <unit id="m_421bfa14f51b">
       <notes>
-        <note category="location">src/app/Features/legal/terms.content.ts:28</note>
+        <note category="location">src/app/Features/legal/terms.content.ts:29</note>
       </notes>
       <segment state="translated">
         <source>راجع تفاصيل الباقة والسعر والعرض الظاهر في صفحة الباقات، ثم أكّد مع الفريق المواد التي ستدرسها والمرحلة والمنهج المناسبين لك قبل الاشتراك.</source>
@@ -2216,7 +2210,7 @@
     </unit>
     <unit id="m_208f13e387cd">
       <notes>
-        <note category="location">src/app/Features/legal/terms.content.ts:33</note>
+        <note category="location">src/app/Features/legal/terms.content.ts:34</note>
       </notes>
       <segment state="translated">
         <source>ترتيب الاشتراك وتأكيد التفاصيل</source>
@@ -2225,7 +2219,7 @@
     </unit>
     <unit id="m_2b6fdf41bc73">
       <notes>
-        <note category="location">src/app/Features/legal/terms.content.ts:35</note>
+        <note category="location">src/app/Features/legal/terms.content.ts:36</note>
       </notes>
       <segment state="translated">
         <source>زر الاشتراك يفتح واتساب للتواصل مع فريق بسطهالي بشأن الباقة المختارة. قبل أي دفع، تأكد مع الفريق من المواد وعدد الحصص والمواعيد والسعر النهائي للباقة.</source>
@@ -2234,7 +2228,7 @@
     </unit>
     <unit id="m_ff615e7ea02f">
       <notes>
-        <note category="location">src/app/Features/legal/terms.content.ts:36</note>
+        <note category="location">src/app/Features/legal/terms.content.ts:37</note>
       </notes>
       <segment state="translated">
         <source>احتفظ بتأكيد تفاصيل الاشتراك والمراسلات المتعلقة به لتتمكن من الرجوع إليها عند ترتيب الحصص أو طلب المساعدة.</source>
@@ -2243,7 +2237,7 @@
     </unit>
     <unit id="m_1eb53b54176a">
       <notes>
-        <note category="location">src/app/Features/legal/terms.content.ts:41</note>
+        <note category="location">src/app/Features/legal/terms.content.ts:42</note>
       </notes>
       <segment state="translated">
         <source>الحصص والمواعيد</source>
@@ -2252,7 +2246,7 @@
     </unit>
     <unit id="m_d556d581508d">
       <notes>
-        <note category="location">src/app/Features/legal/terms.content.ts:43</note>
+        <note category="location">src/app/Features/legal/terms.content.ts:44</note>
       </notes>
       <segment state="translated">
         <source>تُرتّب مواعيد الحصص بالتواصل مع الفريق وفق المواد والباقة المتفق عليها. التزم بالمواعيد المؤكدة، وتواصل مبكرًا إذا واجهتك مشكلة في الحضور أو احتجت إلى طلب تغيير الموعد.</source>
@@ -2261,7 +2255,7 @@
     </unit>
     <unit id="m_a1aa7d3c54c2">
       <notes>
-        <note category="location">src/app/Features/legal/terms.content.ts:44</note>
+        <note category="location">src/app/Features/legal/terms.content.ts:45</note>
       </notes>
       <segment state="translated">
         <source>للمشاركة في الحصص المباشرة، جهّز جهازًا مناسبًا واتصالًا بالإنترنت يسمح لك بمتابعة الشرح والتفاعل، وأبلغ الفريق عند وجود مشكلة تقنية تؤثر على حضورك.</source>
@@ -2270,7 +2264,7 @@
     </unit>
     <unit id="m_50fdfe9c1d29">
       <notes>
-        <note category="location">src/app/Features/legal/terms.content.ts:49</note>
+        <note category="location">src/app/Features/legal/terms.content.ts:50</note>
       </notes>
       <segment state="translated">
         <source>احترام الطلاب والمعلمين</source>
@@ -2279,7 +2273,7 @@
     </unit>
     <unit id="m_82f7bec69f36">
       <notes>
-        <note category="location">src/app/Features/legal/terms.content.ts:51</note>
+        <note category="location">src/app/Features/legal/terms.content.ts:52</note>
       </notes>
       <segment state="translated">
         <source>تعامل باحترام مع المعلمين والطلاب وفريق الدعم. تجنّب الإساءة أو التنمّر أو تعطيل الحصة أو إرسال محتوى غير مناسب، وحافظ على بيئة تساعد الجميع على التعلم.</source>
@@ -2288,7 +2282,7 @@
     </unit>
     <unit id="m_75670425d887">
       <notes>
-        <note category="location">src/app/Features/legal/terms.content.ts:52</note>
+        <note category="location">src/app/Features/legal/terms.content.ts:53</note>
       </notes>
       <segment state="translated">
         <source>احترم خصوصية المشاركين، ولا تنشر بيانات التواصل الخاصة بهم أو صورهم أو محادثاتهم دون إذنهم. وجّه الاستفسارات أو المشكلات المتعلقة بالحصة إلى فريق بسطهالي.</source>
@@ -2297,7 +2291,7 @@
     </unit>
     <unit id="m_7a1890675029">
       <notes>
-        <note category="location">src/app/Features/legal/terms.content.ts:57</note>
+        <note category="location">src/app/Features/legal/terms.content.ts:58</note>
       </notes>
       <segment state="translated">
         <source>حقوق المحتوى وتسجيل الحصص</source>
@@ -2306,7 +2300,7 @@
     </unit>
     <unit id="m_b9b82a2f0dce">
       <notes>
-        <note category="location">src/app/Features/legal/terms.content.ts:59</note>
+        <note category="location">src/app/Features/legal/terms.content.ts:60</note>
       </notes>
       <segment state="translated">
         <source>تظل حقوق المحتوى والمواد التعليمية لأصحابها. استخدم المواد التي تُتاح لك في الحصص لأغراض تعلمك الشخصي، ولا تشاركها أو تعيد نشرها أو تبيعها دون إذن صاحب الحق.</source>
@@ -2315,7 +2309,7 @@
     </unit>
     <unit id="m_32daafd40a3c">
       <notes>
-        <note category="location">src/app/Features/legal/terms.content.ts:60</note>
+        <note category="location">src/app/Features/legal/terms.content.ts:61</note>
       </notes>
       <segment state="translated">
         <source>لا تسجّل الحصص أو تصوّرها أو تشارك تسجيلاتها دون الحصول على إذن من أصحاب المحتوى والمشاركين المعنيين.</source>
@@ -2324,7 +2318,7 @@
     </unit>
     <unit id="m_90053139767d">
       <notes>
-        <note category="location">src/app/Features/legal/terms.content.ts:65</note>
+        <note category="location">src/app/Features/legal/terms.content.ts:66</note>
       </notes>
       <segment state="translated">
         <source>الإلغاء والتأجيل والاسترداد والتواصل</source>
@@ -2333,7 +2327,7 @@
     </unit>
     <unit id="m_67f0c76636b5">
       <notes>
-        <note category="location">src/app/Features/legal/terms.content.ts:67</note>
+        <note category="location">src/app/Features/legal/terms.content.ts:68</note>
       </notes>
       <segment state="translated">
         <source>قبل تأكيد الاشتراك، اطلب من الفريق توضيح شروط الإلغاء والتأجيل والاسترداد التي تنطبق على الباقة التي اخترتها. إذا رغبت في تغيير الاشتراك أو واجهت مشكلة بعد تأكيده، تواصل مع الفريق لشرح طلبك ومراجعة التفاصيل المتفق عليها.</source>
@@ -2342,7 +2336,7 @@
     </unit>
     <unit id="m_ebcfd555374e">
       <notes>
-        <note category="location">src/app/Features/legal/terms.content.ts:68</note>
+        <note category="location">src/app/Features/legal/terms.content.ts:69</note>
       </notes>
       <segment state="translated">
         <source>للاستفسار عن هذه الشروط أو تفاصيل الاشتراك، تواصل معنا عبر واتساب على +971563306087 أو البريد الإلكتروني basstahali@gmail.com.</source>
@@ -2351,7 +2345,7 @@
     </unit>
     <unit id="m_cc7c628c0943">
       <notes>
-        <note category="location">src/app/Features/pricing/pricing.component.ts:39</note>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:40</note>
       </notes>
       <segment state="translated">
         <source>باقات الحصص المباشرة</source>
@@ -2360,7 +2354,7 @@
     </unit>
     <unit id="m_f08dbdfff820">
       <notes>
-        <note category="location">src/app/Features/pricing/pricing.component.ts:40</note>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:41</note>
       </notes>
       <segment state="translated">
         <source>اختر</source>
@@ -2369,7 +2363,7 @@
     </unit>
     <unit id="m_99839e1179a7">
       <notes>
-        <note category="location">src/app/Features/pricing/pricing.component.ts:41</note>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:42</note>
       </notes>
       <segment state="translated">
         <source>الباقة المناسبة لك</source>
@@ -2378,7 +2372,7 @@
     </unit>
     <unit id="m_277a62a440ec">
       <notes>
-        <note category="location">src/app/Features/pricing/pricing.component.ts:42</note>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:43</note>
       </notes>
       <segment state="translated">
         <source>4 مواد + مادة هدية، و8 حصص لكل مادة.</source>
@@ -2387,7 +2381,7 @@
     </unit>
     <unit id="m_48e0ece017eb">
       <notes>
-        <note category="location">src/app/Features/pricing/pricing.component.ts:43</note>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:44</note>
       </notes>
       <segment state="translated">
         <source>أسعار مصر بالجنيه المصري، بسعر ثابت 15 جنيهًا لكل درهم.</source>
@@ -2396,7 +2390,7 @@
     </unit>
     <unit id="m_692fc0d89aa0">
       <notes>
-        <note category="location">src/app/Features/pricing/pricing.component.ts:44</note>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:45</note>
       </notes>
       <segment state="translated">
         <source>باقة 4 مواد + مادة هدية</source>
@@ -2405,7 +2399,7 @@
     </unit>
     <unit id="m_b596c59ccd7f">
       <notes>
-        <note category="location">src/app/Features/pricing/pricing.component.ts:45</note>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:46</note>
       </notes>
       <segment state="translated">
         <source>بدلاً من</source>
@@ -2414,7 +2408,7 @@
     </unit>
     <unit id="m_d80c2c9d5035">
       <notes>
-        <note category="location">src/app/Features/pricing/pricing.component.ts:46</note>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:47</note>
       </notes>
       <segment state="translated">
         <source>خصم 20%</source>
@@ -2423,7 +2417,7 @@
     </unit>
     <unit id="m_5500f35d67a3">
       <notes>
-        <note category="location">src/app/Features/pricing/pricing.component.ts:47</note>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:48</note>
       </notes>
       <segment state="translated">
         <source>اشترك عبر واتساب</source>
@@ -2432,7 +2426,7 @@
     </unit>
     <unit id="m_7babcfaf69c7">
       <notes>
-        <note category="location">src/app/Features/pricing/pricing.component.ts:48</note>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:49</note>
       </notes>
       <segment state="translated">
         <source>اختر باقتك للتواصل معنا مباشرة عبر واتساب وإتمام الاشتراك.</source>
@@ -2441,7 +2435,7 @@
     </unit>
     <unit id="m_6e69637a22ec">
       <notes>
-        <note category="location">src/app/Features/pricing/pricing.component.ts:58</note>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:59</note>
       </notes>
       <segment state="translated">
         <source>المنهج الانترناشونال</source>
@@ -2450,7 +2444,7 @@
     </unit>
     <unit id="m_eef96d9971e1">
       <notes>
-        <note category="location">src/app/Features/pricing/pricing.component.ts:82</note>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:83</note>
       </notes>
       <segment state="translated">
         <source>المنهج الوزاري</source>
@@ -2459,7 +2453,7 @@
     </unit>
     <unit id="m_5e686ab66049">
       <notes>
-        <note category="location">src/app/Features/pricing/pricing.component.ts:110</note>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:111</note>
       </notes>
       <segment state="translated">
         <source>4 مواد دراسية</source>
@@ -2468,7 +2462,7 @@
     </unit>
     <unit id="m_4fdaa3026c04">
       <notes>
-        <note category="location">src/app/Features/pricing/pricing.component.ts:111</note>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:112</note>
       </notes>
       <segment state="translated">
         <source>مادة إضافية هدية</source>
@@ -2477,7 +2471,7 @@
     </unit>
     <unit id="m_eea6aa3b02f5">
       <notes>
-        <note category="location">src/app/Features/pricing/pricing.component.ts:112</note>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:113</note>
       </notes>
       <segment state="translated">
         <source>8 حصص لكل مادة</source>
@@ -2486,10 +2480,10 @@
     </unit>
     <unit id="pricingWhatsapp">
       <notes>
-        <note category="location">src/app/Features/pricing/pricing.component.ts:127</note>
+        <note category="location">src/app/Features/pricing/pricing.component.ts:131</note>
       </notes>
       <segment state="translated">
-        <source>السلام عليكم، أرغب في الاشتراك في باقة بسطهالي <ph id="0" equiv="CURRICULUM" disp="curriculum" />، <ph id="1" equiv="STAGE" disp="stage" />، بسعر <ph id="2" equiv="PRICE" disp="price" /> <ph id="3" equiv="CURRENCY" disp="currency" />: 4 مواد + مادة هدية، و8 حصص لكل مادة.</source>
+        <source>السلام عليكم، أرغب في الاشتراك في باقة بسطهالي <ph id="0" equiv="CURRICULUM" disp="curriculum"/>، <ph id="1" equiv="STAGE" disp="stage"/>، بسعر <ph id="2" equiv="PRICE" disp="price"/> <ph id="3" equiv="CURRENCY" disp="currency"/>: 4 مواد + مادة هدية، و8 حصص لكل مادة.</source>
         <target>Hello, I would like to subscribe to the Basstahali <ph id="0" equiv="CURRICULUM" disp="curriculum" /> package for <ph id="1" equiv="STAGE" disp="stage" />: <ph id="2" equiv="PRICE" disp="price" /> <ph id="3" equiv="CURRENCY" disp="currency" />, 4 subjects + 1 free subject, with 8 lessons per subject.</target>
       </segment>
     </unit>
@@ -3061,7 +3055,7 @@
         <note category="location">src/app/Features/teachers/teachers.component.ts:122</note>
       </notes>
       <segment state="translated">
-        <source>السلام عليكم، أرغب في حجز حصة تجريبية مع <ph id="0" equiv="TEACHER_NAME" disp="teacherName" />.</source>
+        <source>السلام عليكم، أرغب في حجز حصة تجريبية مع <ph id="0" equiv="TEACHER_NAME" disp="teacherName"/>.</source>
         <target>Hello, I would like to book a trial lesson with <ph id="0" equiv="TEACHER_NAME" disp="teacherName" />.</target>
       </segment>
     </unit>
@@ -3070,13 +3064,13 @@
         <note category="location">src/app/Features/teachers/teachers.component.ts:128</note>
       </notes>
       <segment state="translated">
-        <source>🎓 خبرة <ph id="0" equiv="EXPERIENCE" disp="experience" /> سنوات</source>
+        <source>🎓 خبرة <ph id="0" equiv="EXPERIENCE" disp="experience"/> سنوات</source>
         <target>🎓 <ph id="0" equiv="EXPERIENCE" disp="experience" /> years of experience</target>
       </segment>
     </unit>
     <unit id="m_7753e57af83a">
       <notes>
-        <note category="location">src/app/app.routes.ts:11</note>
+        <note category="location">src/app/app.routes.ts:63</note>
       </notes>
       <segment state="translated">
         <source>بسطهالي | منصة تعليمية ذكية لشرح المناهج الدراسية</source>
@@ -3085,7 +3079,7 @@
     </unit>
     <unit id="m_069ebefa6d9b">
       <notes>
-        <note category="location">src/app/app.routes.ts:27</note>
+        <note category="location">src/app/app.routes.ts:85</note>
       </notes>
       <segment state="translated">
         <source>بسطهالي | الدورات التعليمية</source>
@@ -3094,7 +3088,7 @@
     </unit>
     <unit id="m_b35fc6460fd6">
       <notes>
-        <note category="location">src/app/app.routes.ts:33</note>
+        <note category="location">src/app/app.routes.ts:91</note>
       </notes>
       <segment state="translated">
         <source>بسطهالي | المدرسين</source>
@@ -3103,7 +3097,7 @@
     </unit>
     <unit id="m_e6f562d1a4fb">
       <notes>
-        <note category="location">src/app/app.routes.ts:39</note>
+        <note category="location">src/app/app.routes.ts:97</note>
       </notes>
       <segment state="translated">
         <source>بسطهالي | تواصل معنا</source>
@@ -3112,7 +3106,7 @@
     </unit>
     <unit id="m_daf607e9a7e6">
       <notes>
-        <note category="location">src/app/app.routes.ts:45</note>
+        <note category="location">src/app/app.routes.ts:103</note>
       </notes>
       <segment state="translated">
         <source>بسطهالي | خطط الاشتراك</source>
@@ -3121,8 +3115,8 @@
     </unit>
     <unit id="m_55ac61564737">
       <notes>
-        <note category="location">src/app/app.routes.ts:52</note>
-        <note category="location">src/app/core/services/seo-title.strategy.ts:40</note>
+        <note category="location">src/app/app.routes.ts:110</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:48</note>
       </notes>
       <segment state="translated">
         <source>سياسة الخصوصية | بسطهالي</source>
@@ -3131,8 +3125,8 @@
     </unit>
     <unit id="m_dd16c0c56bb1">
       <notes>
-        <note category="location">src/app/app.routes.ts:59</note>
-        <note category="location">src/app/core/services/seo-title.strategy.ts:44</note>
+        <note category="location">src/app/app.routes.ts:117</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:52</note>
       </notes>
       <segment state="translated">
         <source>الشروط والأحكام | بسطهالي</source>
@@ -3141,7 +3135,7 @@
     </unit>
     <unit id="m_7918eec1b680">
       <notes>
-        <note category="location">src/app/app.routes.ts:65</note>
+        <note category="location">src/app/app.routes.ts:123</note>
       </notes>
       <segment state="translated">
         <source>بسطهالي | المناهج الدراسية</source>
@@ -3150,7 +3144,7 @@
     </unit>
     <unit id="m_40ee6fa3c738">
       <notes>
-        <note category="location">src/app/app.routes.ts:73</note>
+        <note category="location">src/app/app.routes.ts:131</note>
       </notes>
       <segment state="translated">
         <source>بسطهالي | تفاصيل المنهج</source>
@@ -3159,7 +3153,7 @@
     </unit>
     <unit id="m_5b50ccab86d7">
       <notes>
-        <note category="location">src/app/app.routes.ts:79</note>
+        <note category="location">src/app/app.routes.ts:137</note>
       </notes>
       <segment state="translated">
         <source>بسطهالي | مميزات المنصة</source>
@@ -3168,7 +3162,7 @@
     </unit>
     <unit id="m_9feeb9e44e0e">
       <notes>
-        <note category="location">src/app/app.routes.ts:87</note>
+        <note category="location">src/app/app.routes.ts:145</note>
       </notes>
       <segment state="translated">
         <source>بسطهالي | المنهاج الدراسية </source>
@@ -3177,7 +3171,7 @@
     </unit>
     <unit id="m_f086ce8440c2">
       <notes>
-        <note category="location">src/app/app.routes.ts:93</note>
+        <note category="location">src/app/app.routes.ts:151</note>
       </notes>
       <segment state="translated">
         <source>بسطهالي | المواد الدراسية</source>
@@ -3287,7 +3281,7 @@
     </unit>
     <unit id="m_f12f3ea7ff7d">
       <notes>
-        <note category="location">src/app/core/services/seo-title.strategy.ts:8</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:16</note>
       </notes>
       <segment state="translated">
         <source>بسطهالي | حصص أونلاين وشرح مبسط للمناهج الدراسية</source>
@@ -3296,7 +3290,7 @@
     </unit>
     <unit id="m_15abae32d48b">
       <notes>
-        <note category="location">src/app/core/services/seo-title.strategy.ts:9</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:17</note>
       </notes>
       <segment state="translated">
         <source>بسطهالي منصة تعليمية أونلاين لشرح المناهج الخليجية، مع حصص مباشرة ومعلمين متخصصين ومتابعة تساعد الطلاب على الفهم والتفوق.</source>
@@ -3305,7 +3299,7 @@
     </unit>
     <unit id="m_7f11203def7a">
       <notes>
-        <note category="location">src/app/core/services/seo-title.strategy.ts:12</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:20</note>
       </notes>
       <segment state="translated">
         <source>عن بسطهالي | منصة تعليمية للمناهج الخليجية</source>
@@ -3314,7 +3308,7 @@
     </unit>
     <unit id="m_a356a56cde09">
       <notes>
-        <note category="location">src/app/core/services/seo-title.strategy.ts:13</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:21</note>
       </notes>
       <segment state="translated">
         <source>تعرّف على بسطهالي ورسالتنا في تبسيط المناهج الدراسية وتقديم حصص أونلاين ومتابعة تعليمية للطلاب.</source>
@@ -3323,7 +3317,7 @@
     </unit>
     <unit id="m_bc12097aab75">
       <notes>
-        <note category="location">src/app/core/services/seo-title.strategy.ts:16</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:24</note>
       </notes>
       <segment state="translated">
         <source>المناهج الدراسية | بسطهالي</source>
@@ -3332,7 +3326,7 @@
     </unit>
     <unit id="m_13a48af1623b">
       <notes>
-        <note category="location">src/app/core/services/seo-title.strategy.ts:17</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:25</note>
       </notes>
       <segment state="translated">
         <source>استكشف المناهج الدراسية على بسطهالي واختر منهجك للوصول إلى المراحل والمواد الدراسية والحصص المناسبة لك.</source>
@@ -3341,7 +3335,7 @@
     </unit>
     <unit id="m_0427fec64ea7">
       <notes>
-        <note category="location">src/app/core/services/seo-title.strategy.ts:24</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:32</note>
       </notes>
       <segment state="translated">
         <source>المعلمون والحصص الأونلاين | بسطهالي</source>
@@ -3350,7 +3344,7 @@
     </unit>
     <unit id="m_49645387dc69">
       <notes>
-        <note category="location">src/app/core/services/seo-title.strategy.ts:25</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:33</note>
       </notes>
       <segment state="translated">
         <source>تعرّف على معلمي بسطهالي وتواصل معنا لحجز حصص تعليمية أونلاين تناسب منهجك ومرحلتك الدراسية.</source>
@@ -3359,7 +3353,7 @@
     </unit>
     <unit id="m_ec1f5a01a8eb">
       <notes>
-        <note category="location">src/app/core/services/seo-title.strategy.ts:28</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:36</note>
       </notes>
       <segment state="translated">
         <source>باقات الحصص للمنهج الانترناشونال والوزاري | بسطهالي</source>
@@ -3368,7 +3362,7 @@
     </unit>
     <unit id="m_1278d3c02b66">
       <notes>
-        <note category="location">src/app/core/services/seo-title.strategy.ts:29</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:37</note>
       </notes>
       <segment state="translated">
         <source>باقات بسطهالي للمنهج الانترناشونال والوزاري: 4 مواد ومادة هدية، و8 حصص لكل مادة، بأسعار تبدأ من 640 درهم إماراتي. اشترك مباشرة عبر واتساب.</source>
@@ -3377,7 +3371,7 @@
     </unit>
     <unit id="m_bec6ce12f4dc">
       <notes>
-        <note category="location">src/app/core/services/seo-title.strategy.ts:32</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:40</note>
       </notes>
       <segment state="translated">
         <source>مميزات منصة بسطهالي التعليمية</source>
@@ -3386,7 +3380,7 @@
     </unit>
     <unit id="m_3011e3c6829c">
       <notes>
-        <note category="location">src/app/core/services/seo-title.strategy.ts:33</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:41</note>
       </notes>
       <segment state="translated">
         <source>اكتشف مميزات بسطهالي في تبسيط الشرح والمتابعة التعليمية والتواصل مع المعلمين لدعم رحلة التعلم.</source>
@@ -3395,7 +3389,7 @@
     </unit>
     <unit id="m_d9ccfb4b572f">
       <notes>
-        <note category="location">src/app/core/services/seo-title.strategy.ts:36</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:44</note>
       </notes>
       <segment state="translated">
         <source>تواصل مع بسطهالي | الاستفسار عن الحصص</source>
@@ -3404,7 +3398,7 @@
     </unit>
     <unit id="m_e5add1196391">
       <notes>
-        <note category="location">src/app/core/services/seo-title.strategy.ts:37</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:45</note>
       </notes>
       <segment state="translated">
         <source>تواصل مع فريق بسطهالي للاستفسار عن المناهج والحصص الأونلاين والاشتراكات التعليمية.</source>
@@ -3413,7 +3407,7 @@
     </unit>
     <unit id="m_0e99ada47889">
       <notes>
-        <note category="location">src/app/core/services/seo-title.strategy.ts:41</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:49</note>
       </notes>
       <segment state="translated">
         <source>تعرّف على بيانات التسجيل والتواصل وتفضيلات اللغة والمظهر في بسطهالي، والخدمات الخارجية وطرق التواصل بشأن خصوصيتك.</source>
@@ -3422,7 +3416,7 @@
     </unit>
     <unit id="m_0655c0c1e36f">
       <notes>
-        <note category="location">src/app/core/services/seo-title.strategy.ts:45</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:53</note>
       </notes>
       <segment state="translated">
         <source>اطّلع على شروط استخدام بسطهالي والحصص الأونلاين، وتفاصيل الاشتراك والتواصل بشأن المواعيد والإلغاء والمتابعة.</source>
@@ -3431,7 +3425,7 @@
     </unit>
     <unit id="m_70ae199b58d2">
       <notes>
-        <note category="location">src/app/core/services/seo-title.strategy.ts:48</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:56</note>
       </notes>
       <segment state="translated">
         <source>انضم كمعلم إلى بسطهالي</source>
@@ -3440,7 +3434,7 @@
     </unit>
     <unit id="m_439ac974363a">
       <notes>
-        <note category="location">src/app/core/services/seo-title.strategy.ts:49</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:57</note>
       </notes>
       <segment state="translated">
         <source>قدّم طلب الانضمام إلى فريق معلمي بسطهالي وتابع حالة طلبك عبر المنصة.</source>
@@ -3449,7 +3443,7 @@
     </unit>
     <unit id="m_f8a6a577545b">
       <notes>
-        <note category="location">src/app/core/services/seo-title.strategy.ts:69</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:75</note>
       </notes>
       <segment state="translated">
         <source>المراحل الدراسية | بسطهالي</source>
@@ -3458,7 +3452,7 @@
     </unit>
     <unit id="m_59354bda7c94">
       <notes>
-        <note category="location">src/app/core/services/seo-title.strategy.ts:70</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:76</note>
       </notes>
       <segment state="translated">
         <source>اختر المرحلة والصف الدراسي على بسطهالي للوصول إلى المواد الدراسية المناسبة لمنهجك.</source>
@@ -3467,7 +3461,7 @@
     </unit>
     <unit id="m_c14ab189dff7">
       <notes>
-        <note category="location">src/app/core/services/seo-title.strategy.ts:74</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:80</note>
       </notes>
       <segment state="translated">
         <source>المواد الدراسية | بسطهالي</source>
@@ -3476,7 +3470,7 @@
     </unit>
     <unit id="m_17b9403cb86c">
       <notes>
-        <note category="location">src/app/core/services/seo-title.strategy.ts:75</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:81</note>
       </notes>
       <segment state="translated">
         <source>استكشف مواد صفك الدراسي على بسطهالي وتواصل معنا للاستفسار عن الشروحات والحصص الأونلاين.</source>
@@ -3485,7 +3479,7 @@
     </unit>
     <unit id="m_df57cf4af71a">
       <notes>
-        <note category="location">src/app/core/services/seo-title.strategy.ts:83</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:90</note>
       </notes>
       <segment state="translated">
         <source>الصفحة غير موجودة | بسطهالي</source>
@@ -3494,7 +3488,7 @@
     </unit>
     <unit id="m_cb26f571b00c">
       <notes>
-        <note category="location">src/app/core/services/seo-title.strategy.ts:84</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:91</note>
       </notes>
       <segment state="translated">
         <source>الصفحة المطلوبة غير موجودة. استكشف المناهج والحصص التعليمية على بسطهالي.</source>
@@ -3503,6 +3497,7 @@
     </unit>
     <unit id="m_c5dd280359ea">
       <notes>
+        <note category="location">src/app/Features/courses/courses.component.ts:28</note>
         <note category="location">src/app/core/services/visitor-pricing.service.ts:15</note>
       </notes>
       <segment state="translated">
@@ -3875,7 +3870,7 @@
         <note category="location">src/app/shared/components/learning-catalog/subject-booking.ts:11</note>
       </notes>
       <segment state="translated">
-        <source>السلام عليكم، أرغب في حجز مادة <ph id="0" equiv="SUBJECT" disp="subjectName" /> على منصة بسطهالي.</source>
+        <source>السلام عليكم، أرغب في حجز مادة <ph id="0" equiv="SUBJECT" disp="subjectName"/> على منصة بسطهالي.</source>
         <target>Hello, I would like to book <ph id="0" equiv="SUBJECT" disp="subjectName" /> on Basstahali.</target>
       </segment>
     </unit>
@@ -3884,7 +3879,7 @@
         <note category="location">src/app/shared/components/learning-catalog/subject-booking.ts:14</note>
       </notes>
       <segment state="translated">
-        <source>المرحلة: <ph id="0" equiv="GRADE" disp="context.gradeName" /></source>
+        <source>المرحلة: <ph id="0" equiv="GRADE" disp="context.gradeName"/></source>
         <target>Grade: <ph id="0" equiv="GRADE" disp="context.gradeName" /></target>
       </segment>
     </unit>
@@ -3893,7 +3888,7 @@
         <note category="location">src/app/shared/components/learning-catalog/subject-booking.ts:18</note>
       </notes>
       <segment state="translated">
-        <source>المنهج: <ph id="0" equiv="CURRICULUM" disp="context.curriculumName" /></source>
+        <source>المنهج: <ph id="0" equiv="CURRICULUM" disp="context.curriculumName"/></source>
         <target>Curriculum: <ph id="0" equiv="CURRICULUM" disp="context.curriculumName" /></target>
       </segment>
     </unit>
@@ -3902,7 +3897,7 @@
         <note category="location">src/app/shared/components/learning-catalog/subject-booking.ts:25</note>
       </notes>
       <segment state="translated">
-        <source>احجز مادة <ph id="0" equiv="SUBJECT" disp="subjectName" /> عبر واتساب</source>
+        <source>احجز مادة <ph id="0" equiv="SUBJECT" disp="subjectName"/> عبر واتساب</source>
         <target>Book <ph id="0" equiv="SUBJECT" disp="subjectName" /> via WhatsApp</target>
       </segment>
     </unit>
@@ -3981,7 +3976,7 @@
     <unit id="m_ec15ec94c35d">
       <notes>
         <note category="location">src/app/shared/footer/footer.component.ts:18</note>
-        <note category="location">src/app/shared/header/header.component.ts:19</note>
+        <note category="location">src/app/shared/header/header.component.ts:20</note>
       </notes>
       <segment state="translated">
         <source>المميزات</source>
@@ -3991,7 +3986,7 @@
     <unit id="m_43edaf712d07">
       <notes>
         <note category="location">src/app/shared/footer/footer.component.ts:19</note>
-        <note category="location">src/app/shared/header/header.component.ts:18</note>
+        <note category="location">src/app/shared/header/header.component.ts:19</note>
       </notes>
       <segment state="translated">
         <source>المدرسين</source>
@@ -4030,13 +4025,13 @@
         <note category="location">src/app/shared/footer/footer.component.ts:32</note>
       </notes>
       <segment state="translated">
-        <source>جميع الحقوق محفوظة © <ph id="0" equiv="YEAR" disp="this.currentYear" /> بسطهالي</source>
+        <source>جميع الحقوق محفوظة © <ph id="0" equiv="YEAR" disp="this.currentYear"/> بسطهالي</source>
         <target>All rights reserved © <ph id="0" equiv="YEAR" disp="this.currentYear" /> Basstahali</target>
       </segment>
     </unit>
     <unit id="m_d3d452110c4d">
       <notes>
-        <note category="location">src/app/shared/header/header.component.ts:20</note>
+        <note category="location">src/app/shared/header/header.component.ts:21</note>
       </notes>
       <segment state="translated">
         <source>الأسعار</source>
@@ -4045,7 +4040,7 @@
     </unit>
     <unit id="m_404841693fc2">
       <notes>
-        <note category="location">src/app/shared/header/header.component.ts:22</note>
+        <note category="location">src/app/shared/header/header.component.ts:23</note>
       </notes>
       <segment state="translated">
         <source>عربي</source>
@@ -4054,7 +4049,7 @@
     </unit>
     <unit id="m_8c6117b67c8b">
       <notes>
-        <note category="location">src/app/shared/header/header.component.ts:23</note>
+        <note category="location">src/app/shared/header/header.component.ts:24</note>
       </notes>
       <segment state="translated">
         <source>تسجيل الدخول</source>
@@ -4063,7 +4058,7 @@
     </unit>
     <unit id="m_cb75b65677d5">
       <notes>
-        <note category="location">src/app/shared/header/header.component.ts:24</note>
+        <note category="location">src/app/shared/header/header.component.ts:25</note>
       </notes>
       <segment state="translated">
         <source>القائمة الرئيسية</source>
@@ -4072,7 +4067,7 @@
     </unit>
     <unit id="m_2aaf2c72e715">
       <notes>
-        <note category="location">src/app/shared/header/header.component.ts:25</note>
+        <note category="location">src/app/shared/header/header.component.ts:26</note>
       </notes>
       <segment state="translated">
         <source>التبديل إلى العربية</source>
@@ -4081,7 +4076,7 @@
     </unit>
     <unit id="m_d77b19407de9">
       <notes>
-        <note category="location">src/app/shared/header/header.component.ts:26</note>
+        <note category="location">src/app/shared/header/header.component.ts:27</note>
       </notes>
       <segment state="translated">
         <source>تبديل الوضع الداكن</source>
@@ -4136,6 +4131,12 @@
     <unit id="parentFeedbackRole">
       <notes>
         <note category="location">src/app/Features/landing/landing.component.ts:125</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:131</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:137</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:143</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:149</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:155</note>
+        <note category="location">src/app/Features/landing/landing.component.ts:167</note>
       </notes>
       <segment state="translated">
         <source>ولية أمر</source>
@@ -4307,6 +4308,7 @@
     <unit id="courseCategoryProgramming">
       <notes>
         <note category="location">src/app/Features/courses/courses.component.ts:42</note>
+        <note category="location">src/app/Features/courses/courses.component.ts:51</note>
       </notes>
       <segment state="translated">
         <source>البرمجة</source>
@@ -4489,13 +4491,13 @@
         <note category="location">src/app/Features/courses/courses.component.ts:150</note>
       </notes>
       <segment state="translated">
-        <source>السلام عليكم، أرغب في معرفة تفاصيل الكورس: <ph id="0" equiv="COURSE" disp="courseTitle" /></source>
+        <source>السلام عليكم، أرغب في معرفة تفاصيل الكورس: <ph id="0" equiv="COURSE" disp="courseTitle"/></source>
         <target>Hello, I would like to know the details of the course: <ph id="0" equiv="COURSE" disp="courseTitle" /></target>
       </segment>
     </unit>
     <unit id="coursesSeoTitle">
       <notes>
-        <note category="location">src/app/core/services/seo-title.strategy.ts:20</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:28</note>
       </notes>
       <segment state="translated">
         <source>كورسات اللغات والبرمجة والماث | بسطهالي</source>
@@ -4504,7 +4506,7 @@
     </unit>
     <unit id="coursesSeoDescription">
       <notes>
-        <note category="location">src/app/core/services/seo-title.strategy.ts:21</note>
+        <note category="location">src/app/core/services/seo-title.strategy.ts:29</note>
       </notes>
       <segment state="translated">
         <source>كورسات الإنجليزية والألمانية والإيطالية والفرنسية والعربية والبرمجة والماث مع بسطهالي، في حصص مباشرة أونلاين بأسعار تبدأ من 5000 جنيه مصري. احجز عبر واتساب.</source>
@@ -5584,7 +5586,7 @@
     </unit>
     <unit id="student_security">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:3</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:33</note>
       </notes>
       <segment state="translated">
         <source>أمان الحساب</source>
@@ -5593,7 +5595,7 @@
     </unit>
     <unit id="student_changePassword">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:4</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:34</note>
       </notes>
       <segment state="translated">
         <source>تغيير كلمة المرور</source>
@@ -5602,7 +5604,7 @@
     </unit>
     <unit id="student_passwordIntro">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:5</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:35</note>
       </notes>
       <segment state="translated">
         <source>غيّر كلمة مرور حسابك من هنا، واستخدم كلمة لا تشاركها مع أي شخص.</source>
@@ -5611,7 +5613,7 @@
     </unit>
     <unit id="student_currentPassword">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:6</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:36</note>
       </notes>
       <segment state="translated">
         <source>كلمة المرور الحالية</source>
@@ -5620,7 +5622,7 @@
     </unit>
     <unit id="student_newPassword">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:7</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:37</note>
       </notes>
       <segment state="translated">
         <source>كلمة المرور الجديدة</source>
@@ -5629,7 +5631,7 @@
     </unit>
     <unit id="student_confirmPassword">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:8</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:38</note>
       </notes>
       <segment state="translated">
         <source>تأكيد كلمة المرور الجديدة</source>
@@ -5638,7 +5640,7 @@
     </unit>
     <unit id="student_required">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:9</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:39</note>
       </notes>
       <segment state="translated">
         <source>هذا الحقل مطلوب.</source>
@@ -5647,7 +5649,7 @@
     </unit>
     <unit id="student_passwordMismatch">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:10</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:40</note>
       </notes>
       <segment state="translated">
         <source>تأكيد كلمة المرور لا يطابق كلمة المرور الجديدة.</source>
@@ -5656,7 +5658,7 @@
     </unit>
     <unit id="student_savingPassword">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:11</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:41</note>
       </notes>
       <segment state="translated">
         <source>جارٍ تغيير كلمة المرور…</source>
@@ -5665,7 +5667,7 @@
     </unit>
     <unit id="student_passwordChanged">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:12</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:42</note>
       </notes>
       <segment state="translated">
         <source>تم تغيير كلمة المرور بنجاح.</source>
@@ -5674,7 +5676,7 @@
     </unit>
     <unit id="student_passwordFailed">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:13</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:43</note>
       </notes>
       <segment state="translated">
         <source>تعذر تغيير كلمة المرور. تأكد من البيانات وحاول مرة أخرى.</source>
@@ -5683,7 +5685,7 @@
     </unit>
     <unit id="student_portal">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:14</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:44</note>
       </notes>
       <segment state="translated">
         <source>مساحة الطالب</source>
@@ -5692,7 +5694,7 @@
     </unit>
     <unit id="student_nav">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:15</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:45</note>
       </notes>
       <segment state="translated">
         <source>التنقل في مساحة الطالب</source>
@@ -5701,7 +5703,7 @@
     </unit>
     <unit id="student_overview">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:16</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:46</note>
       </notes>
       <segment state="translated">
         <source>الرئيسية</source>
@@ -5710,7 +5712,7 @@
     </unit>
     <unit id="student_schedule">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:17</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:47</note>
       </notes>
       <segment state="translated">
         <source>جدولي الدراسي</source>
@@ -5719,7 +5721,7 @@
     </unit>
     <unit id="student_courses">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:18</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:48</note>
       </notes>
       <segment state="translated">
         <source>موادي الدراسية</source>
@@ -5728,7 +5730,7 @@
     </unit>
     <unit id="student_assignments">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:19</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:49</note>
       </notes>
       <segment state="translated">
         <source>الواجبات</source>
@@ -5737,7 +5739,7 @@
     </unit>
     <unit id="student_exams">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:20</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:50</note>
       </notes>
       <segment state="translated">
         <source>الاختبارات</source>
@@ -5746,7 +5748,7 @@
     </unit>
     <unit id="student_messages">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:21</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:51</note>
       </notes>
       <segment state="translated">
         <source>الرسائل</source>
@@ -5755,7 +5757,7 @@
     </unit>
     <unit id="student_profile">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:22</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:52</note>
       </notes>
       <segment state="translated">
         <source>الملف الشخصي</source>
@@ -5764,7 +5766,7 @@
     </unit>
     <unit id="student_home">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:23</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:53</note>
       </notes>
       <segment state="translated">
         <source>موقع بسطهالي</source>
@@ -5773,7 +5775,7 @@
     </unit>
     <unit id="student_logout">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:24</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:54</note>
       </notes>
       <segment state="translated">
         <source>تسجيل الخروج</source>
@@ -5782,7 +5784,7 @@
     </unit>
     <unit id="student_loggingOut">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:25</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:55</note>
       </notes>
       <segment state="translated">
         <source>جارٍ تسجيل الخروج…</source>
@@ -5791,7 +5793,7 @@
     </unit>
     <unit id="student_theme">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:26</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:56</note>
       </notes>
       <segment state="translated">
         <source>تغيير المظهر</source>
@@ -5800,7 +5802,7 @@
     </unit>
     <unit id="student_language">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:27</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:57</note>
       </notes>
       <segment state="translated">
         <source>تغيير اللغة</source>
@@ -5809,7 +5811,7 @@
     </unit>
     <unit id="student_help">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:28</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:58</note>
       </notes>
       <segment state="translated">
         <source>نحتاج نساعدك؟</source>
@@ -5818,7 +5820,7 @@
     </unit>
     <unit id="student_helpText">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:29</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:59</note>
       </notes>
       <segment state="translated">
         <source>فريق بسطهالي معك لترتيب دراستك والإجابة عن استفساراتك.</source>
@@ -5827,7 +5829,7 @@
     </unit>
     <unit id="student_whatsapp">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:30</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:60</note>
       </notes>
       <segment state="translated">
         <source>تواصل عبر واتساب</source>
@@ -5836,7 +5838,7 @@
     </unit>
     <unit id="student_supportMessage">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:31</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:61</note>
       </notes>
       <segment state="translated">
         <source>السلام عليكم، أحتاج مساعدة بخصوص حسابي كطالب في بسطهالي.</source>
@@ -5845,7 +5847,7 @@
     </unit>
     <unit id="student_welcome">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:32</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:62</note>
       </notes>
       <segment state="translated">
         <source>أهلًا بك،</source>
@@ -5854,7 +5856,7 @@
     </unit>
     <unit id="student_welcomeFallback">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:33</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:63</note>
       </notes>
       <segment state="translated">
         <source>أهلًا بك في مساحة الطالب</source>
@@ -5863,7 +5865,7 @@
     </unit>
     <unit id="student_welcomeText">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:34</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:64</note>
       </notes>
       <segment state="translated">
         <source>خطوتك الجاية تبدأ من هنا. تابع حصصك وموادك، وخلك مستعد لكل درس.</source>
@@ -5872,7 +5874,7 @@
     </unit>
     <unit id="student_learningToday">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:35</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:65</note>
       </notes>
       <segment state="translated">
         <source>خلّ التعلّم جزءًا من يومك</source>
@@ -5881,7 +5883,7 @@
     </unit>
     <unit id="student_today">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:36</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:66</note>
       </notes>
       <segment state="translated">
         <source>اليوم</source>
@@ -5890,7 +5892,7 @@
     </unit>
     <unit id="student_todaysLessons">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:37</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:67</note>
       </notes>
       <segment state="translated">
         <source>حصص اليوم</source>
@@ -5899,7 +5901,7 @@
     </unit>
     <unit id="student_viewSchedule">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:38</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:68</note>
       </notes>
       <segment state="translated">
         <source>عرض الجدول كاملًا</source>
@@ -5908,7 +5910,7 @@
     </unit>
     <unit id="student_quickAccess">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:39</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:69</note>
       </notes>
       <segment state="translated">
         <source>كل اللي تحتاجه لدراستك</source>
@@ -5917,7 +5919,7 @@
     </unit>
     <unit id="student_myLearning">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:40</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:70</note>
       </notes>
       <segment state="translated">
         <source>رحلتي الدراسية</source>
@@ -5926,7 +5928,7 @@
     </unit>
     <unit id="student_myLearningText">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:41</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:71</note>
       </notes>
       <segment state="translated">
         <source>لمحة عن بيانات دراستك كما تظهر في حسابك.</source>
@@ -5935,7 +5937,7 @@
     </unit>
     <unit id="student_loading">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:42</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:72</note>
       </notes>
       <segment state="translated">
         <source>جارٍ تحميل بياناتك…</source>
@@ -5944,7 +5946,7 @@
     </unit>
     <unit id="student_loadFailed">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:43</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:73</note>
       </notes>
       <segment state="translated">
         <source>تعذر تحميل البيانات الآن. جرّب مرة ثانية.</source>
@@ -5953,7 +5955,7 @@
     </unit>
     <unit id="student_retry">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:44</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:74</note>
       </notes>
       <segment state="translated">
         <source>حاول مرة أخرى</source>
@@ -5962,7 +5964,7 @@
     </unit>
     <unit id="student_noStats">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:45</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:75</note>
       </notes>
       <segment state="translated">
         <source>لا تتوفر إحصاءات دراسية في حسابك حاليًا.</source>
@@ -5971,7 +5973,7 @@
     </unit>
     <unit id="student_noLessonsToday">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:46</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:76</note>
       </notes>
       <segment state="translated">
         <source>ما عندك حصص مسجلة لهذا اليوم.</source>
@@ -5980,7 +5982,7 @@
     </unit>
     <unit id="student_noLessons">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:47</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:77</note>
       </notes>
       <segment state="translated">
         <source>ما فيه حصص مسجلة في التاريخ المختار.</source>
@@ -5989,7 +5991,7 @@
     </unit>
     <unit id="student_noCourses">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:48</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:78</note>
       </notes>
       <segment state="translated">
         <source>ما فيه مواد مرتبطة بحسابك حاليًا. تواصل معنا إذا كنت مشتركًا وتحتاج مساعدة.</source>
@@ -5998,7 +6000,7 @@
     </unit>
     <unit id="student_noProfile">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:49</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:79</note>
       </notes>
       <segment state="translated">
         <source>لا تتوفر بيانات الملف الشخصي حاليًا.</source>
@@ -6007,7 +6009,7 @@
     </unit>
     <unit id="student_scheduleText">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:50</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:80</note>
       </notes>
       <segment state="translated">
         <source>اختر يومك وتابع مواعيد حصصك وروابط الانضمام المتاحة.</source>
@@ -6016,7 +6018,7 @@
     </unit>
     <unit id="student_date">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:51</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:81</note>
       </notes>
       <segment state="translated">
         <source>تاريخ الحصص</source>
@@ -6025,7 +6027,7 @@
     </unit>
     <unit id="student_lesson">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:52</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:82</note>
       </notes>
       <segment state="translated">
         <source>حصة دراسية</source>
@@ -6034,7 +6036,7 @@
     </unit>
     <unit id="student_subject">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:53</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:83</note>
       </notes>
       <segment state="translated">
         <source>المادة</source>
@@ -6043,7 +6045,7 @@
     </unit>
     <unit id="student_teacher">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:54</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:84</note>
       </notes>
       <segment state="translated">
         <source>المعلم</source>
@@ -6052,7 +6054,7 @@
     </unit>
     <unit id="student_time">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:55</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:85</note>
       </notes>
       <segment state="translated">
         <source>الموعد</source>
@@ -6061,7 +6063,7 @@
     </unit>
     <unit id="student_status">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:56</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:86</note>
       </notes>
       <segment state="translated">
         <source>الحالة</source>
@@ -6070,7 +6072,7 @@
     </unit>
     <unit id="student_join">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:57</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:87</note>
       </notes>
       <segment state="translated">
         <source>انضم للحصة</source>
@@ -6079,7 +6081,7 @@
     </unit>
     <unit id="student_joinUnavailable">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:58</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:88</note>
       </notes>
       <segment state="translated">
         <source>رابط الحصة غير متاح حاليًا</source>
@@ -6088,7 +6090,7 @@
     </unit>
     <unit id="student_opensNewTab">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:59</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:89</note>
       </notes>
       <segment state="translated">
         <source>يفتح في نافذة جديدة</source>
@@ -6097,7 +6099,7 @@
     </unit>
     <unit id="student_previous">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:60</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:90</note>
       </notes>
       <segment state="translated">
         <source>السابق</source>
@@ -6106,7 +6108,7 @@
     </unit>
     <unit id="student_next">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:61</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:91</note>
       </notes>
       <segment state="translated">
         <source>التالي</source>
@@ -6115,7 +6117,7 @@
     </unit>
     <unit id="student_page">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:62</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:92</note>
       </notes>
       <segment state="translated">
         <source>صفحة</source>
@@ -6124,7 +6126,7 @@
     </unit>
     <unit id="student_of">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:63</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:93</note>
       </notes>
       <segment state="translated">
         <source>من</source>
@@ -6133,7 +6135,7 @@
     </unit>
     <unit id="student_lessons">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:64</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:94</note>
       </notes>
       <segment state="translated">
         <source>حصة</source>
@@ -6142,7 +6144,7 @@
     </unit>
     <unit id="student_coursesText">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:65</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:95</note>
       </notes>
       <segment state="translated">
         <source>موادك المسجل فيها وتفاصيلها المتاحة، في مكان واحد.</source>
@@ -6151,7 +6153,7 @@
     </unit>
     <unit id="student_remainingSessions">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:66</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:96</note>
       </notes>
       <segment state="translated">
         <source>الحصص المتبقية</source>
@@ -6160,7 +6162,7 @@
     </unit>
     <unit id="student_totalSessions">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:67</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:97</note>
       </notes>
       <segment state="translated">
         <source>إجمالي الحصص</source>
@@ -6169,7 +6171,7 @@
     </unit>
     <unit id="student_usedSessions">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:68</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:98</note>
       </notes>
       <segment state="translated">
         <source>الحصص المستخدمة</source>
@@ -6178,7 +6180,7 @@
     </unit>
     <unit id="student_courseCount">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:69</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:99</note>
       </notes>
       <segment state="translated">
         <source>المواد المسجل فيها</source>
@@ -6187,7 +6189,7 @@
     </unit>
     <unit id="student_upcomingSessions">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:70</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:100</note>
       </notes>
       <segment state="translated">
         <source>الحصص القادمة</source>
@@ -6196,7 +6198,7 @@
     </unit>
     <unit id="student_attendanceRate">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:71</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:101</note>
       </notes>
       <segment state="translated">
         <source>نسبة الحضور</source>
@@ -6205,7 +6207,7 @@
     </unit>
     <unit id="student_completedAssignments">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:72</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:102</note>
       </notes>
       <segment state="translated">
         <source>الواجبات المكتملة</source>
@@ -6214,7 +6216,7 @@
     </unit>
     <unit id="student_pendingAssignments">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:73</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:103</note>
       </notes>
       <segment state="translated">
         <source>الواجبات المتبقية</source>
@@ -6223,7 +6225,7 @@
     </unit>
     <unit id="student_progress">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:74</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:104</note>
       </notes>
       <segment state="translated">
         <source>نسبة الإنجاز</source>
@@ -6232,7 +6234,7 @@
     </unit>
     <unit id="student_course">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:75</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:105</note>
       </notes>
       <segment state="translated">
         <source>مادة دراسية</source>
@@ -6241,7 +6243,7 @@
     </unit>
     <unit id="student_profileText">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:76</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:106</note>
       </notes>
       <segment state="translated">
         <source>بيانات حسابك وتفاصيل اشتراكك المسجلة لدى بسطهالي.</source>
@@ -6250,7 +6252,7 @@
     </unit>
     <unit id="student_personalInfo">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:77</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:107</note>
       </notes>
       <segment state="translated">
         <source>البيانات الشخصية</source>
@@ -6259,7 +6261,7 @@
     </unit>
     <unit id="student_fullName">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:78</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:108</note>
       </notes>
       <segment state="translated">
         <source>الاسم الكامل</source>
@@ -6268,7 +6270,7 @@
     </unit>
     <unit id="student_email">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:79</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:109</note>
       </notes>
       <segment state="translated">
         <source>البريد الإلكتروني</source>
@@ -6277,7 +6279,7 @@
     </unit>
     <unit id="student_phone">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:80</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:110</note>
       </notes>
       <segment state="translated">
         <source>رقم الهاتف</source>
@@ -6286,7 +6288,7 @@
     </unit>
     <unit id="student_parentInfo">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:81</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:111</note>
       </notes>
       <segment state="translated">
         <source>بيانات ولي الأمر</source>
@@ -6295,7 +6297,7 @@
     </unit>
     <unit id="student_parentName">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:82</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:112</note>
       </notes>
       <segment state="translated">
         <source>اسم ولي الأمر</source>
@@ -6304,7 +6306,7 @@
     </unit>
     <unit id="student_parentPhone">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:83</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:113</note>
       </notes>
       <segment state="translated">
         <source>هاتف ولي الأمر</source>
@@ -6313,7 +6315,7 @@
     </unit>
     <unit id="student_educationInfo">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:84</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:114</note>
       </notes>
       <segment state="translated">
         <source>البيانات الدراسية</source>
@@ -6322,7 +6324,7 @@
     </unit>
     <unit id="student_curriculum">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:85</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:115</note>
       </notes>
       <segment state="translated">
         <source>المنهج</source>
@@ -6331,7 +6333,7 @@
     </unit>
     <unit id="student_stage">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:86</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:116</note>
       </notes>
       <segment state="translated">
         <source>المرحلة الدراسية</source>
@@ -6340,7 +6342,7 @@
     </unit>
     <unit id="student_grade">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:87</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:117</note>
       </notes>
       <segment state="translated">
         <source>الصف الدراسي</source>
@@ -6349,7 +6351,7 @@
     </unit>
     <unit id="student_subscription">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:88</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:118</note>
       </notes>
       <segment state="translated">
         <source>تفاصيل الاشتراك</source>
@@ -6358,7 +6360,7 @@
     </unit>
     <unit id="student_creditBalance">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:89</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:119</note>
       </notes>
       <segment state="translated">
         <source>رصيد الحصص</source>
@@ -6367,7 +6369,7 @@
     </unit>
     <unit id="student_expiration">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:90</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:120</note>
       </notes>
       <segment state="translated">
         <source>تاريخ انتهاء الاشتراك</source>
@@ -6376,7 +6378,7 @@
     </unit>
     <unit id="student_notProvided">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:91</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:121</note>
       </notes>
       <segment state="translated">
         <source>غير متوفر</source>
@@ -6385,7 +6387,7 @@
     </unit>
     <unit id="student_updateProfile">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:92</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:122</note>
       </notes>
       <segment state="translated">
         <source>تحتاج تعدّل بياناتك؟</source>
@@ -6394,7 +6396,7 @@
     </unit>
     <unit id="student_updateProfileText">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:93</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:123</note>
       </notes>
       <segment state="translated">
         <source>تواصل مع فريق بسطهالي لمراجعة بيانات حسابك وتصحيحها.</source>
@@ -6403,7 +6405,7 @@
     </unit>
     <unit id="student_scheduled">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:94</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:124</note>
       </notes>
       <segment state="translated">
         <source>مجدولة</source>
@@ -6412,7 +6414,7 @@
     </unit>
     <unit id="student_completed">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:95</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:125</note>
       </notes>
       <segment state="translated">
         <source>مكتملة</source>
@@ -6421,7 +6423,7 @@
     </unit>
     <unit id="student_cancelled">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:96</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:126</note>
       </notes>
       <segment state="translated">
         <source>ملغاة</source>
@@ -6430,7 +6432,7 @@
     </unit>
     <unit id="student_active">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:97</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:127</note>
       </notes>
       <segment state="translated">
         <source>نشطة</source>
@@ -6439,7 +6441,7 @@
     </unit>
     <unit id="student_pending">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:98</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:128</note>
       </notes>
       <segment state="translated">
         <source>قيد الانتظار</source>
@@ -6448,7 +6450,7 @@
     </unit>
     <unit id="student_inactive">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:99</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:129</note>
       </notes>
       <segment state="translated">
         <source>غير نشطة</source>
@@ -6457,7 +6459,7 @@
     </unit>
     <unit id="student_expired">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:100</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:130</note>
       </notes>
       <segment state="translated">
         <source>منتهية</source>
@@ -6466,7 +6468,7 @@
     </unit>
     <unit id="student_inProgress">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:101</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:131</note>
       </notes>
       <segment state="translated">
         <source>جارية</source>
@@ -6475,7 +6477,7 @@
     </unit>
     <unit id="student_paid">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:102</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:132</note>
       </notes>
       <segment state="translated">
         <source>مدفوع</source>
@@ -6484,7 +6486,7 @@
     </unit>
     <unit id="student_unpaid">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:103</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:133</note>
       </notes>
       <segment state="translated">
         <source>غير مدفوع</source>
@@ -6493,7 +6495,7 @@
     </unit>
     <unit id="student_payment">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:104</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:134</note>
       </notes>
       <segment state="translated">
         <source>حالة الدفع</source>
@@ -6502,7 +6504,7 @@
     </unit>
     <unit id="student_account">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:105</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:135</note>
       </notes>
       <segment state="translated">
         <source>حساب الطالب</source>
@@ -6511,7 +6513,7 @@
     </unit>
     <unit id="student_accountMenu">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:106</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:136</note>
       </notes>
       <segment state="translated">
         <source>أدوات الحساب</source>
@@ -6520,7 +6522,7 @@
     </unit>
     <unit id="student_skip">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:107</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:137</note>
       </notes>
       <segment state="translated">
         <source>انتقل إلى المحتوى</source>
@@ -6529,7 +6531,7 @@
     </unit>
     <unit id="student_currentPage">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:108</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:138</note>
       </notes>
       <segment state="translated">
         <source>الصفحة الحالية</source>
@@ -6538,7 +6540,7 @@
     </unit>
     <unit id="student_refresh">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:109</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:139</note>
       </notes>
       <segment state="translated">
         <source>تحديث</source>
@@ -6547,7 +6549,7 @@
     </unit>
     <unit id="student_percentage">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:110</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:140</note>
       </notes>
       <segment state="translated">
         <source>٪</source>
@@ -6556,7 +6558,7 @@
     </unit>
     <unit id="student_scheduledAt">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:111</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:141</note>
       </notes>
       <segment state="translated">
         <source>الموعد المحدد</source>
@@ -6565,7 +6567,7 @@
     </unit>
     <unit id="student_courseDescription">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:112</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:142</note>
       </notes>
       <segment state="translated">
         <source>تابع جدول حصص المادة من صفحة جدولي الدراسي.</source>
@@ -6574,7 +6576,7 @@
     </unit>
     <unit id="student_viewAssignments">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:113</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:143</note>
       </notes>
       <segment state="translated">
         <source>تابع واجباتك</source>
@@ -6583,7 +6585,7 @@
     </unit>
     <unit id="student_viewExams">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:114</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:144</note>
       </notes>
       <segment state="translated">
         <source>تابع اختباراتك</source>
@@ -6592,7 +6594,7 @@
     </unit>
     <unit id="student_viewMessages">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:115</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:145</note>
       </notes>
       <segment state="translated">
         <source>راجع رسائلك</source>
@@ -6601,7 +6603,7 @@
     </unit>
     <unit id="student_pagination">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:116</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:146</note>
       </notes>
       <segment state="translated">
         <source>التنقل بين صفحات الحصص</source>
@@ -6610,7 +6612,7 @@
     </unit>
     <unit id="student_dateError">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:117</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:147</note>
       </notes>
       <segment state="translated">
         <source>اختر تاريخًا صحيحًا لعرض الحصص.</source>
@@ -6666,7 +6668,7 @@
     </unit>
     <unit id="student_userName">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:3</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:21</note>
       </notes>
       <segment state="translated">
         <source>اسم المستخدم</source>
@@ -6675,7 +6677,7 @@
     </unit>
     <unit id="student_subscriptionBySessions">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:4</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:22</note>
       </notes>
       <segment state="translated">
         <source>اشتراك حسب عدد الحصص</source>
@@ -6684,7 +6686,7 @@
     </unit>
     <unit id="student_subscriptionStarted">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:5</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:23</note>
       </notes>
       <segment state="translated">
         <source>بداية الاشتراك</source>
@@ -6693,7 +6695,7 @@
     </unit>
     <unit id="student_regularCreditBalance">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:6</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:24</note>
       </notes>
       <segment state="translated">
         <source>رصيد الحصص الأساسية</source>
@@ -6702,7 +6704,7 @@
     </unit>
     <unit id="student_courseCreditBalance">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:7</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:25</note>
       </notes>
       <segment state="translated">
         <source>رصيد حصص الكورسات</source>
@@ -6711,7 +6713,7 @@
     </unit>
     <unit id="student_compensatoryCreditBalance">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:8</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:26</note>
       </notes>
       <segment state="translated">
         <source>رصيد الحصص التعويضية</source>
@@ -6720,7 +6722,7 @@
     </unit>
     <unit id="student_compensatoryCreditsAdded">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:9</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:27</note>
       </notes>
       <segment state="translated">
         <source>إجمالي الحصص التعويضية المضافة</source>
@@ -6729,7 +6731,7 @@
     </unit>
     <unit id="student_compensatoryCredits">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:10</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:28</note>
       </notes>
       <segment state="translated">
         <source>الحصص التعويضية</source>
@@ -6738,7 +6740,7 @@
     </unit>
     <unit id="student_creditQuantity">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:11</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:29</note>
       </notes>
       <segment state="translated">
         <source>عدد الحصص المضافة</source>
@@ -6747,7 +6749,7 @@
     </unit>
     <unit id="student_creditRemaining">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:12</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:30</note>
       </notes>
       <segment state="translated">
         <source>الرصيد المتبقي</source>
@@ -6756,7 +6758,7 @@
     </unit>
     <unit id="student_creditAddedAt">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:13</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:31</note>
       </notes>
       <segment state="translated">
         <source>تاريخ الإضافة</source>
@@ -6765,7 +6767,7 @@
     </unit>
     <unit id="student_creditExpiresAt">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:14</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:32</note>
       </notes>
       <segment state="translated">
         <source>تاريخ انتهاء الرصيد</source>
@@ -6774,7 +6776,7 @@
     </unit>
     <unit id="student_scheduleWeek">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:3</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:9</note>
       </notes>
       <segment state="translated">
         <source>أسبوع الحصص</source>
@@ -6783,7 +6785,7 @@
     </unit>
     <unit id="student_noWeekLessons">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:4</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:10</note>
       </notes>
       <segment state="translated">
         <source>لا توجد حصص مسجلة في هذا الأسبوع.</source>
@@ -6792,7 +6794,7 @@
     </unit>
     <unit id="student_scheduleFullText">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:5</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:11</note>
       </notes>
       <segment state="translated">
         <source>تابع كل حصصك المسجلة، أو اختر يومًا لعرض حصصه.</source>
@@ -6801,7 +6803,7 @@
     </unit>
     <unit id="student_fullSchedule">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:6</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:12</note>
       </notes>
       <segment state="translated">
         <source>الجدول الكامل</source>
@@ -6810,7 +6812,7 @@
     </unit>
     <unit id="student_selectedDay">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:7</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:13</note>
       </notes>
       <segment state="translated">
         <source>يوم محدد</source>
@@ -6819,7 +6821,7 @@
     </unit>
     <unit id="student_scheduleView">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:8</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:14</note>
       </notes>
       <segment state="translated">
         <source>طريقة عرض الجدول</source>
@@ -6828,7 +6830,7 @@
     </unit>
     <unit id="student_noScheduledLessons">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:9</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:15</note>
       </notes>
       <segment state="translated">
         <source>لا توجد حصص مسجلة في جدولك حاليًا.</source>
@@ -6837,7 +6839,7 @@
     </unit>
     <unit id="student_recurrenceOnce">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:10</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:16</note>
       </notes>
       <segment state="translated">
         <source>مرة واحدة</source>
@@ -6846,7 +6848,7 @@
     </unit>
     <unit id="student_recurrenceDaily">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:11</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:17</note>
       </notes>
       <segment state="translated">
         <source>يوميًا</source>
@@ -6855,7 +6857,7 @@
     </unit>
     <unit id="student_recurrenceWeekly">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:12</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:18</note>
       </notes>
       <segment state="translated">
         <source>أسبوعيًا</source>
@@ -6864,7 +6866,7 @@
     </unit>
     <unit id="student_recurrenceMonthly">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:13</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:19</note>
       </notes>
       <segment state="translated">
         <source>شهريًا</source>
@@ -6873,7 +6875,7 @@
     </unit>
     <unit id="student_recurrenceUntil">
       <notes>
-        <note category="location">src/app/Features/student-dashboard/student-ui.ts:14</note>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:20</note>
       </notes>
       <segment state="translated">
         <source>حتى</source>
@@ -6882,7 +6884,7 @@
     </unit>
     <unit id="authSessionExpiredTitle">
       <notes>
-        <note category="location">src/app/core/auth/auth.service.ts:348</note>
+        <note category="location">src/app/core/auth/auth.service.ts:369</note>
       </notes>
       <segment state="translated">
         <source>انتهت صلاحية الجلسة</source>
@@ -6891,7 +6893,7 @@
     </unit>
     <unit id="authSessionExpiredMessage">
       <notes>
-        <note category="location">src/app/core/auth/auth.service.ts:349</note>
+        <note category="location">src/app/core/auth/auth.service.ts:370</note>
       </notes>
       <segment state="translated">
         <source>انتهت صلاحية جلستك. سجّل الدخول مرة أخرى للمتابعة.</source>
@@ -6900,11 +6902,101 @@
     </unit>
     <unit id="authSessionExpiredConfirm">
       <notes>
-        <note category="location">src/app/core/auth/auth.service.ts:350</note>
+        <note category="location">src/app/core/auth/auth.service.ts:371</note>
       </notes>
       <segment state="translated">
         <source>تسجيل الدخول</source>
         <target>Sign in</target>
+      </segment>
+    </unit>
+    <unit id="student_lessonBannerNotices">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-lesson-banner.component.ts:32</note>
+      </notes>
+      <segment state="translated">
+        <source>تنبيهات الحصص المتاحة</source>
+        <target>Available lesson notices</target>
+      </segment>
+    </unit>
+    <unit id="student_lessonBannerStarting">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-lesson-banner.component.ts:33</note>
+      </notes>
+      <segment state="translated">
+        <source>حصتك تبدأ قريبًا</source>
+        <target>Your lesson starts soon</target>
+      </segment>
+    </unit>
+    <unit id="student_lessonBannerLive">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-lesson-banner.component.ts:34</note>
+      </notes>
+      <segment state="translated">
+        <source>حصتك جارية الآن</source>
+        <target>Your lesson is in progress</target>
+      </segment>
+    </unit>
+    <unit id="student_lessonBannerTimeZone">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-lesson-banner.component.ts:35</note>
+      </notes>
+      <segment state="translated">
+        <source>بتوقيت جهازك</source>
+        <target>Your device timezone</target>
+      </segment>
+    </unit>
+    <unit id="student_scheduleDay">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:3</note>
+      </notes>
+      <segment state="translated">
+        <source>اليوم</source>
+        <target>Day</target>
+      </segment>
+    </unit>
+    <unit id="student_deviceTime">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:4</note>
+      </notes>
+      <segment state="translated">
+        <source>المواعيد بتوقيت جهازك</source>
+        <target>Times are shown in your device time zone</target>
+      </segment>
+    </unit>
+    <unit id="student_sourceDate">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:5</note>
+      </notes>
+      <segment state="translated">
+        <source>تاريخ الحصص بتوقيت مصر</source>
+        <target>Lesson date in Egypt</target>
+      </segment>
+    </unit>
+    <unit id="student_sourceDateHint">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:6</note>
+      </notes>
+      <segment state="translated">
+        <source>اختر يوم الحصص في مصر؛ يظهر موعد كل حصة بتوقيت جهازك.</source>
+        <target>Choose the lesson day in Egypt; each lesson time is shown in your device time zone.</target>
+      </segment>
+    </unit>
+    <unit id="student_joinWindow">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:7</note>
+      </notes>
+      <segment state="translated">
+        <source>يظهر زر الانضمام قبل بداية الحصة بـ10 دقائق.</source>
+        <target>The join button appears 10 minutes before the lesson starts.</target>
+      </segment>
+    </unit>
+    <unit id="student_timePending">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:8</note>
+      </notes>
+      <segment state="translated">
+        <source>الموعد قيد التأكيد</source>
+        <target>Time to be confirmed</target>
       </segment>
     </unit>
   </file>

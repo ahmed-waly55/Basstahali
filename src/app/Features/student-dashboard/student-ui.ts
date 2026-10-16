@@ -1,5 +1,11 @@
 export function createStudentCopy() {
   return {
+    scheduleDay: $localize`:@@student_scheduleDay:اليوم`,
+    deviceTime: $localize`:@@student_deviceTime:المواعيد بتوقيت جهازك`,
+    sourceDate: $localize`:@@student_sourceDate:تاريخ الحصص بتوقيت مصر`,
+    sourceDateHint: $localize`:@@student_sourceDateHint:اختر يوم الحصص في مصر؛ يظهر موعد كل حصة بتوقيت جهازك.`,
+    joinWindow: $localize`:@@student_joinWindow:يظهر زر الانضمام قبل بداية الحصة بـ10 دقائق.`,
+    timePending: $localize`:@@student_timePending:الموعد قيد التأكيد`,
     scheduleWeek: $localize`:@@student_scheduleWeek:أسبوع الحصص`,
     noWeekLessons: $localize`:@@student_noWeekLessons:لا توجد حصص مسجلة في هذا الأسبوع.`,
     scheduleFullText: $localize`:@@student_scheduleFullText:تابع كل حصصك المسجلة، أو اختر يومًا لعرض حصصه.`,

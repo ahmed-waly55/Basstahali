@@ -3,6 +3,7 @@ import {
   Component,
   DestroyRef,
   LOCALE_ID,
+  computed,
   inject,
   signal,
 } from '@angular/core';
@@ -13,13 +14,12 @@ import { AuthService } from '../../core/auth/auth.service';
 import { StudentService } from '../../core/student/student.service';
 import type { StudentSession, StudentStat } from '../../core/student/student.models';
 import {
-  createStudentCopy,
-  localStudentDay,
-  safeLessonLink,
-  studentDate,
-  studentStatus,
-  studentTime,
-} from './student-ui';
+  lessonPresentation,
+  studentSourceDay,
+  studentTimeZoneLabel,
+} from './student-lesson-display';
+import { StudentTimetableService } from './student-timetable.service';
+import { createStudentCopy, studentDate, studentStatus } from './student-ui';
 
 @Component({
   selector: 'app-student-overview',
@@ -32,7 +32,8 @@ export class StudentOverviewComponent {
   readonly copy = createStudentCopy();
   readonly auth = inject(AuthService);
   readonly locale = inject(LOCALE_ID);
-  readonly today = localStudentDay();
+  readonly today = studentSourceDay();
+  readonly timetable = inject(StudentTimetableService);
   readonly supportLink = `https://wa.me/971563306087?text=${encodeURIComponent(this.copy.supportMessage)}`;
   readonly stats = signal<StudentStat[]>([]);
   readonly sessions = signal<StudentSession[]>([]);
@@ -40,8 +41,23 @@ export class StudentOverviewComponent {
   readonly lessonsLoading = signal(false);
   readonly statsError = signal(false);
   readonly lessonsError = signal(false);
-  readonly safeLink = safeLessonLink;
   readonly statusLabel = studentStatus;
+  readonly timeZoneLabel = computed(() =>
+    studentTimeZoneLabel(this.timetable.timeZone(), this.locale, this.timetable.now()),
+  );
+  readonly rows = computed(() =>
+    this.sessions().map((lesson) =>
+      lessonPresentation(
+        lesson,
+        {
+          now: this.timetable.now(),
+          timeZone: this.timetable.timeZone(),
+          selectedDate: this.today,
+        },
+        this.locale,
+      ),
+    ),
+  );
   private readonly api = inject(StudentService);
   private readonly destroyRef = inject(DestroyRef);
   private statsRequest?: Subscription;
@@ -60,14 +76,6 @@ export class StudentOverviewComponent {
       ? this.copy.notProvided
       : new Intl.NumberFormat(this.locale).format(value);
   }
-  lessonTime(lesson: StudentSession): string {
-    const start = studentTime(lesson.startTime, this.locale);
-    const end = studentTime(lesson.endTime, this.locale);
-    return start
-      ? [start, end].filter(Boolean).join(' – ')
-      : lesson.timeRange || this.copy.notProvided;
-  }
-
   loadStats(): void {
     this.statsRequest?.unsubscribe();
     this.statsLoading.set(true);

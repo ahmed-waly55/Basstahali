@@ -5,10 +5,13 @@ import { catchError, finalize, of } from 'rxjs';
 import { AuthService } from '../../core/auth/auth.service';
 import { PreferencesService } from '../../core/services/preferences.service';
 import { createStudentCopy } from './student-ui';
+import { StudentLessonBannerComponent } from './student-lesson-banner.component';
+import { StudentTimetableService } from './student-timetable.service';
 
 @Component({
   selector: 'app-student-shell',
-  imports: [RouterLink, RouterLinkActive, RouterOutlet],
+  imports: [RouterLink, RouterLinkActive, RouterOutlet, StudentLessonBannerComponent],
+  providers: [StudentTimetableService],
   templateUrl: './student-shell.component.html',
   styleUrls: ['./student-shared.css', './student-shell.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,

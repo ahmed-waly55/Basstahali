@@ -87,7 +87,7 @@
 <section class="student-panel" [attr.aria-busy]="lessonsLoading()">
   <div class="student-section-header">
     <div>
-      <p class="student-eyebrow">{{ date(today) }}</p>
+      <p class="student-eyebrow">{{ copy.deviceTime }}: {{ timeZoneLabel() }}</p>
       <h2 class="student-panel-title">{{ copy.todaysLessons }}</h2>
     </div>
     <a routerLink="/student/schedule" class="student-link">{{ copy.viewSchedule }}</a>
@@ -110,22 +110,28 @@
     </div>
   } @else {
     <div class="student-lesson-list">
-      @for (lesson of sessions(); track $index) {
+      @for (row of rows(); track $index) {
         <article class="student-lesson">
           <div>
-            <h3>{{ lesson.subjectName || lesson.courseName || copy.lesson }}</h3>
+            <h3>{{ row.lesson.subjectName || row.lesson.courseName || copy.lesson }}</h3>
             <div class="student-lesson-details">
-              @if (lesson.teacherName) {
-                <span>{{ copy.teacher }}: {{ lesson.teacherName }}</span>
+              @if (row.lesson.teacherName) {
+                <span>{{ copy.teacher }}: {{ row.lesson.teacherName }}</span>
               }
-              <bdi>{{ lessonTime(lesson) }}</bdi>
-              @if (lesson.status) {
-                <span class="student-tag">{{ statusLabel(lesson.status) }}</span>
+              <span
+                >{{ row.day }}
+                @if (row.date) {
+                  · {{ row.date }}
+                }
+              </span>
+              <bdi>{{ row.time }}</bdi>
+              @if (row.lesson.status) {
+                <span class="student-tag">{{ statusLabel(row.lesson.status) }}</span>
               }
             </div>
           </div>
           <div class="student-lesson-actions">
-            @if (safeLink(lesson.classLink); as link) {
+            @if (row.joinLink; as link) {
               <a
                 [href]="link"
                 target="_blank"
@@ -145,7 +151,7 @@
                   <path d="M7 17 17 7M7 7h10v10" /></svg
               ></a>
             } @else {
-              <span class="student-small student-muted">{{ copy.joinUnavailable }}</span>
+              <span class="student-small student-muted">{{ copy.joinWindow }}</span>
             }
           </div>
         </article>

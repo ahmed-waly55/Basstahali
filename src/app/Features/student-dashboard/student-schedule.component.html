@@ -32,7 +32,9 @@
       </div>
       @if (view() === 'day') {
         <div class="student-date-picker">
-          <label for="student-schedule-date" class="student-field-label">{{ copy.date }}</label>
+          <label for="student-schedule-date" class="student-field-label">{{
+            copy.sourceDate
+          }}</label>
           <div class="student-date-controls">
             <input
               id="student-schedule-date"
@@ -68,7 +70,27 @@
       {{ copy.refresh }}
     </button>
   </div>
-  <h2 class="student-schedule-day">
+  <div class="student-time-zone" role="note">
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.7"
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7v5l3 2" />
+    </svg>
+    <span
+      >{{ copy.deviceTime }} <strong>{{ timeZoneLabel() }}</strong></span
+    >
+  </div>
+  @if (view() === 'day') {
+    <p class="student-schedule-hint">{{ copy.sourceDateHint }}</p>
+  }
+  <h2 class="student-schedule-day" id="student-timetable-heading">
     {{ view() === 'all' ? copy.fullSchedule : date(selectedDate()) }}
   </h2>
   @if (view() === 'all' && (homeSchedule()?.weekStart || homeSchedule()?.weekEnd)) {
@@ -110,67 +132,120 @@
       </p>
     </div>
   } @else {
-    <div class="student-lesson-list">
-      @for (lesson of lessons(); track $index) {
-        <article class="student-lesson">
-          <div>
-            <h3>{{ lesson.subjectName || lesson.courseName || copy.lesson }}</h3>
-            <div class="student-lesson-details">
-              <span>{{ copy.teacher }}: {{ lesson.teacherName || copy.notProvided }}</span>
-              @if (lessonDay(lesson); as day) {
-                <span>{{ day }}</span>
-              }
-              <bdi>{{ lessonTime(lesson) }}</bdi>
-              @if (lesson.period) {
-                <span>{{ lesson.period }}</span>
-              }
-            </div>
-            <div class="student-schedule-tags">
-              @if (recurrence(lesson); as label) {
-                <span class="student-tag">{{ label }}</span>
-              }
-              @if (lesson.recurrenceEndDate) {
-                <span class="student-small student-muted"
-                  >{{ copy.recurrenceUntil }} {{ date(lesson.recurrenceEndDate) }}</span
-                >
-              }
-              @if (lesson.status) {
-                <span class="student-tag">{{ copy.status }}: {{ statusLabel(lesson.status) }}</span>
-              }
-              @if (lesson.paymentStatus) {
-                <span class="student-tag"
-                  >{{ copy.payment }}: {{ statusLabel(lesson.paymentStatus) }}</span
-                >
-              }
-            </div>
-          </div>
-          <div class="student-lesson-actions">
-            @if (safeLink(lesson.classLink); as link) {
-              <a
-                [href]="link"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="student-button"
-                [attr.title]="copy.opensNewTab"
-                >{{ copy.join }}
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  aria-hidden="true"
-                >
-                  <path d="M7 17 17 7M7 7h10v10" /></svg
-              ></a>
-            } @else {
-              <span class="student-small student-muted">{{ copy.joinUnavailable }}</span>
-            }
-          </div>
-        </article>
-      }
+    <div class="student-timetable-wrap">
+      <table
+        class="student-timetable"
+        aria-labelledby="student-timetable-heading"
+        aria-describedby="student-join-window"
+      >
+        <thead>
+          <tr>
+            <th scope="col">
+              <span
+                ><svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M12 5c-3-2-6-2-9-1v15c3-1 6-1 9 1m0-15c3-2 6-2 9-1v15c-3-1-6-1-9 1V5Z"
+                  /></svg
+                >{{ copy.subject }}</span
+              >
+            </th>
+            <th scope="col">
+              <span
+                ><svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="7" r="4" />
+                  <path d="M4 22v-3a8 8 0 0 1 16 0v3" /></svg
+                >{{ copy.teacher }}</span
+              >
+            </th>
+            <th scope="col">
+              <span
+                ><svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3" y="5" width="18" height="16" rx="3" />
+                  <path d="M8 2v6m8-6v6M3 11h18" /></svg
+                >{{ copy.scheduleDay }}</span
+              >
+            </th>
+            <th scope="col">
+              <span
+                ><svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3 2" /></svg
+                >{{ copy.time }}</span
+              >
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (row of rows(); track $index) {
+            <tr class="student-lesson" [class.student-lesson-ready]="row.joinLink">
+              <th scope="row" class="student-subject-cell">
+                <span class="student-subject-icon" aria-hidden="true">✦</span>
+                <span class="student-subject-name">{{
+                  row.lesson.subjectName || row.lesson.courseName || copy.lesson
+                }}</span>
+                @if (row.joinLink; as link) {
+                  <a
+                    [href]="link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="student-button student-join-button"
+                    [attr.title]="copy.opensNewTab"
+                    >{{ copy.join }}
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      aria-hidden="true"
+                    >
+                      <path d="M7 17 17 7M7 7h10v10" /></svg
+                  ></a>
+                }
+              </th>
+              <td class="student-teacher-cell">
+                <strong>{{ row.lesson.teacherName || copy.notProvided }}</strong>
+                @if (recurrence(row.lesson); as label) {
+                  <span class="student-cell-note">{{ label }}</span>
+                }
+                @if (row.lesson.recurrenceEndDate) {
+                  <span class="student-cell-note"
+                    >{{ copy.recurrenceUntil }} {{ date(row.lesson.recurrenceEndDate) }}</span
+                  >
+                }
+              </td>
+              <td class="student-day-cell">
+                <strong>{{ row.day }}</strong>
+                @if (row.date) {
+                  <span class="student-cell-note">{{ row.date }}</span>
+                }
+                @if (row.lesson.status) {
+                  <span class="student-cell-note">{{ statusLabel(row.lesson.status) }}</span>
+                }
+                @if (row.lesson.paymentStatus) {
+                  <span class="student-cell-note"
+                    >{{ copy.payment }}: {{ statusLabel(row.lesson.paymentStatus) }}</span
+                  >
+                }
+              </td>
+              <td class="student-time-cell">
+                <bdi class="student-clock">{{ row.clock }}</bdi>
+                @if (row.period) {
+                  <span class="student-cell-note">{{ row.period }}</span>
+                }
+                @if (row.end) {
+                  <bdi class="student-cell-note student-end-time">– {{ row.end }}</bdi>
+                }
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
     </div>
+    <p id="student-join-window" class="student-join-hint">
+      <span aria-hidden="true">◷</span>{{ copy.joinWindow }}
+    </p>
   }
   @if (!loading() && !error() && showPagination()) {
     <nav class="student-pagination" [attr.aria-label]="copy.pagination">
