@@ -13,6 +13,7 @@ import {
   StudentExamAnswer,
   StudentExamQuestion,
   StudentExcuse,
+  StudentHomeSchedule,
   StudentMessage,
   StudentPage,
   StudentProfile,
@@ -90,6 +91,25 @@ function pageParams(pageNumber: number, pageSize: number): HttpParams {
     throw new StudentDataError('Invalid pagination.');
   }
   return new HttpParams().set('PageNumber', pageNumber).set('PageSize', pageSize);
+}
+
+function validScheduleDay(value: unknown): value is string {
+  return (
+    typeof value === 'string' &&
+    /^\d{4}-\d{2}-\d{2}$/.test(value) &&
+    Number.isFinite(Date.parse(value)) &&
+    new Date(value).toISOString().slice(0, 10) === value
+  );
+}
+
+function scheduleLink(raw: StudentRecord): string | null {
+  for (const key of ['classLink', 'zoomUrl', 'zoom', 'meetingLink']) {
+    const value = studentSafeUrl(raw[key]);
+    if (!value) continue;
+    const url = new URL(value);
+    if (url.protocol === 'https:' && !url.username && !url.password) return url.href;
+  }
+  return null;
 }
 
 export function adaptStudentPage<T>(
@@ -206,15 +226,21 @@ function adaptSession(raw: StudentRecord): StudentSession {
   return {
     id: text(raw, 'id', 'sessionId'),
     studentId: text(raw, 'studentId'),
-    teacherName: text(raw, 'teacherName') ?? nestedName(raw, 'teacher'),
-    subjectName: text(raw, 'subjectName') ?? nestedName(raw, 'subject'),
+    teacherName: text(raw, 'teacherName') ?? nestedName(raw, 'teacher') ?? text(raw, 'teacher'),
+    subjectName: text(raw, 'subjectName') ?? nestedName(raw, 'subject') ?? text(raw, 'subject'),
     date: text(raw, 'date'),
+    day: text(raw, 'day'),
+    dayOfWeek: text(raw, 'dayOfWeek'),
     startTime: text(raw, 'startTime'),
     endTime: text(raw, 'endTime'),
     timeRange: text(raw, 'timeRange'),
-    classLink: studentSafeUrl(field(raw, 'classLink', 'meetingLink')),
+    timeSlot: text(raw, 'timeSlot'),
+    period: text(raw, 'period'),
+    recurrenceType: text(raw, 'recurrenceType'),
+    recurrenceEndDate: text(raw, 'recurrenceEndDate'),
+    classLink: scheduleLink(raw),
     status: text(raw, 'status'),
-    occurrenceAt: text(raw, 'occurrenceAt'),
+    occurrenceAt: text(raw, 'occurrenceAt') ?? text(raw, 'scheduledAt'),
     courseName: text(raw, 'courseName') ?? nestedName(raw, 'course'),
     paymentStatus: text(raw, 'paymentStatus'),
     raw,
@@ -363,18 +389,50 @@ export class StudentService {
       map((value) => adaptStudentPage(value, adaptCourse, ['courses'])),
     );
   }
+
+  getSchedule(
+    date?: string,
+    pageNumber = 1,
+    pageSize = 10,
+  ): Observable<StudentPage<StudentSession>> {
+    return defer(() => {
+      if (date !== undefined && !validScheduleDay(date))
+        throw new StudentDataError('Invalid schedule date.');
+      let params = pageParams(pageNumber, pageSize);
+      if (date !== undefined) params = params.set('date', date);
+      // The authenticated Student API supports the full timetable or an optional date filter.
+      return this.get('/schedules', params);
+    }).pipe(map((value) => adaptStudentPage(value, adaptSession, ['schedules'])));
+  }
+
+  getHomeSchedule(weekStart?: string): Observable<StudentHomeSchedule> {
+    return defer(() => {
+      if (weekStart !== undefined && !validScheduleDay(weekStart))
+        throw new StudentDataError('Invalid schedule week.');
+      const params =
+        weekStart === undefined ? undefined : new HttpParams().set('weekStart', weekStart);
+      return this.get('/home/schedule', params);
+    }).pipe(
+      map((value) => {
+        const record = requiredRecord(value);
+        const items = record['items'];
+        if (items !== null && !Array.isArray(items)) throw new StudentDataError();
+        return {
+          weekStart: text(record, 'weekStart'),
+          weekEnd: text(record, 'weekEnd'),
+          items: items === null ? [] : items.map((item) => adaptSession(requiredRecord(item))),
+        };
+      }),
+    );
+  }
+
   getDailySchedule(
     date: string,
     pageNumber = 1,
     pageSize = 10,
   ): Observable<StudentPage<StudentSession>> {
     return defer(() => {
-      if (
-        !/^\d{4}-\d{2}-\d{2}$/.test(date) ||
-        !Number.isFinite(Date.parse(date)) ||
-        new Date(date).toISOString().slice(0, 10) !== date
-      )
-        throw new StudentDataError('Invalid schedule date.');
+      if (!validScheduleDay(date)) throw new StudentDataError('Invalid schedule date.');
       const params = pageParams(pageNumber, pageSize).set('date', date);
       // The Student API identifies the signed-in student from the bearer token.
       // Its optional studentId filter is unnecessary here; profile loading must not block the timetable.

@@ -1,7 +1,7 @@
 import { isPlatformBrowser } from '@angular/common';
 import { HttpErrorResponse, HttpInterceptorFn, HttpRequest } from '@angular/common/http';
 import { inject, PLATFORM_ID } from '@angular/core';
-import { catchError, switchMap, throwError } from 'rxjs';
+import { catchError, from, switchMap, throwError } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { SKIP_AUTH } from './auth.models';
 import { AuthService } from './auth.service';
@@ -45,36 +45,20 @@ export const authInterceptor: HttpInterceptorFn = (request, next) => {
   }
   const auth = inject(AuthService);
   if (!auth.hasSession()) return next(request);
-  const generation = auth.sessionGeneration();
-
   return auth.getValidAccessToken().pipe(
-    switchMap((token) =>
-      next(bearer(request, token)).pipe(
+    switchMap((token) => {
+      const generation = auth.sessionGeneration();
+      return next(bearer(request, token)).pipe(
         catchError((error: unknown) => {
           if (!(error instanceof HttpErrorResponse) || error.status !== 401) {
             return throwError(() => error);
           }
-          if (auth.sessionGeneration() !== generation) return throwError(() => error);
-          // Writes are never replayed: the caller must explicitly submit them again after signing in.
-          if (request.method !== 'GET') {
-            auth.invalidateSession();
-            return throwError(() => error);
-          }
-          return auth.refreshAccessToken(token).pipe(
-            switchMap((freshToken) => next(bearer(request, freshToken))),
-            catchError((retryError: unknown) => {
-              if (
-                retryError instanceof HttpErrorResponse &&
-                retryError.status === 401 &&
-                auth.sessionGeneration() === generation
-              ) {
-                auth.invalidateSession();
-              }
-              return throwError(() => retryError);
-            }),
+          // A 401 expires this session. Neither reads nor writes are automatically replayed.
+          return from(auth.expireSession(generation)).pipe(
+            switchMap(() => throwError(() => error)),
           );
         }),
-      ),
-    ),
+      );
+    }),
   );
 };

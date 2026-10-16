@@ -1,32 +1,62 @@
 <header class="student-page-heading">
   <p class="student-eyebrow">{{ copy.portal }}</p>
   <h1 class="student-heading">{{ copy.schedule }}</h1>
-  <p class="student-description">{{ copy.scheduleText }}</p>
+  <p class="student-description">{{ copy.scheduleFullText }}</p>
 </header>
 <section class="student-panel" [attr.aria-busy]="loading()">
   <div class="student-schedule-toolbar">
-    <div class="student-date-picker">
-      <label for="student-schedule-date" class="student-field-label">{{ copy.date }}</label>
-      <div class="student-date-controls">
-        <input
-          id="student-schedule-date"
-          type="date"
-          class="student-select-date"
-          [value]="selectedDate()"
-          (change)="changeDate($event)"
-          [attr.aria-invalid]="invalidDate()"
-          [attr.aria-describedby]="invalidDate() ? 'student-date-error' : null"
-        /><button
-          type="button"
-          class="student-button student-button-secondary"
-          (click)="today()"
-          [disabled]="loading()"
-        >
-          {{ copy.today }}
-        </button>
+    <div class="student-schedule-filters">
+      <div class="student-schedule-switch" role="radiogroup" [attr.aria-label]="copy.scheduleView">
+        <label>
+          <input
+            id="student-schedule-view-all"
+            type="radio"
+            name="student-schedule-view"
+            value="all"
+            [checked]="view() === 'all'"
+            (change)="changeViewFromControl($event)"
+          />
+          <span>{{ copy.fullSchedule }}</span>
+        </label>
+        <label>
+          <input
+            id="student-schedule-view-day"
+            type="radio"
+            name="student-schedule-view"
+            value="day"
+            [checked]="view() === 'day'"
+            (change)="changeViewFromControl($event)"
+          />
+          <span>{{ copy.selectedDay }}</span>
+        </label>
       </div>
-      @if (invalidDate()) {
-        <p id="student-date-error" class="student-date-error" role="alert">{{ copy.dateError }}</p>
+      @if (view() === 'day') {
+        <div class="student-date-picker">
+          <label for="student-schedule-date" class="student-field-label">{{ copy.date }}</label>
+          <div class="student-date-controls">
+            <input
+              id="student-schedule-date"
+              type="date"
+              class="student-select-date"
+              [value]="selectedDate()"
+              (change)="changeDate($event)"
+              [attr.aria-invalid]="invalidDate()"
+              [attr.aria-describedby]="invalidDate() ? 'student-date-error' : null"
+            /><button
+              type="button"
+              class="student-button student-button-secondary"
+              (click)="today()"
+              [disabled]="loading()"
+            >
+              {{ copy.today }}
+            </button>
+          </div>
+          @if (invalidDate()) {
+            <p id="student-date-error" class="student-date-error" role="alert">
+              {{ copy.dateError }}
+            </p>
+          }
+        </div>
       }
     </div>
     <button
@@ -38,7 +68,23 @@
       {{ copy.refresh }}
     </button>
   </div>
-  <h2 class="student-schedule-day">{{ date(selectedDate()) }}</h2>
+  <h2 class="student-schedule-day">
+    {{ view() === 'all' ? copy.fullSchedule : date(selectedDate()) }}
+  </h2>
+  @if (view() === 'all' && (homeSchedule()?.weekStart || homeSchedule()?.weekEnd)) {
+    <p class="student-schedule-week">
+      <span>{{ copy.scheduleWeek }}:</span>
+      @if (homeSchedule()?.weekStart; as start) {
+        <span>{{ date(start) }}</span>
+      }
+      @if (homeSchedule()?.weekStart && homeSchedule()?.weekEnd) {
+        <span aria-hidden="true">–</span>
+      }
+      @if (homeSchedule()?.weekEnd; as end) {
+        <span>{{ date(end) }}</span>
+      }
+    </p>
+  }
   @if (loading()) {
     <div class="student-state" role="status">
       <span class="student-spinner" aria-hidden="true"></span>
@@ -51,21 +97,43 @@
         {{ copy.retry }}
       </button>
     </div>
-  } @else if (!page()?.items?.length) {
+  } @else if (!lessons().length) {
     <div class="student-state">
-      <p>{{ copy.noLessons }}</p>
+      <p>
+        {{
+          view() === 'day'
+            ? copy.noLessons
+            : homeSchedule()?.weekStart || homeSchedule()?.weekEnd
+              ? copy.noWeekLessons
+              : copy.noScheduledLessons
+        }}
+      </p>
     </div>
   } @else {
     <div class="student-lesson-list">
-      @for (lesson of page()!.items; track $index) {
+      @for (lesson of lessons(); track $index) {
         <article class="student-lesson">
           <div>
             <h3>{{ lesson.subjectName || lesson.courseName || copy.lesson }}</h3>
             <div class="student-lesson-details">
-              <span>{{ copy.teacher }}: {{ lesson.teacherName || copy.notProvided }}</span
-              ><bdi>{{ lessonTime(lesson) }}</bdi>
+              <span>{{ copy.teacher }}: {{ lesson.teacherName || copy.notProvided }}</span>
+              @if (lessonDay(lesson); as day) {
+                <span>{{ day }}</span>
+              }
+              <bdi>{{ lessonTime(lesson) }}</bdi>
+              @if (lesson.period) {
+                <span>{{ lesson.period }}</span>
+              }
             </div>
             <div class="student-schedule-tags">
+              @if (recurrence(lesson); as label) {
+                <span class="student-tag">{{ label }}</span>
+              }
+              @if (lesson.recurrenceEndDate) {
+                <span class="student-small student-muted"
+                  >{{ copy.recurrenceUntil }} {{ date(lesson.recurrenceEndDate) }}</span
+                >
+              }
               @if (lesson.status) {
                 <span class="student-tag">{{ copy.status }}: {{ statusLabel(lesson.status) }}</span>
               }

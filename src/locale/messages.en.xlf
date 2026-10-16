@@ -4534,8 +4534,8 @@
         <note category="location">src/app/Features/legal/privacy.content.ts:29</note>
       </notes>
       <segment state="translated">
-        <source>تُحفظ رموز جلسة الدخول ومعرّف التبويب في تخزين الجلسة في المتصفح (sessionStorage) لإبقاء حسابك مفتوحًا وتجديد الجلسة. تسجيل الخروج يمسح الجلسة من هذا التبويب ويطلب إنهاءها لدى الخدمة. لا تشارك رموز الجلسة مع الآخرين.</source>
-        <target>Sign-in session tokens and a tab identifier are saved in the browser’s session storage (sessionStorage) to keep your account signed in and renew the session. Signing out clears the session from this tab and requests that the service end it. Do not share session tokens with others.</target>
+        <source>تُحفظ رموز الدخول وتجديد الجلسة ومعرّف الجهاز في التخزين المحلي للمتصفح (localStorage) لإبقاء حسابك مفتوحًا عند العودة للموقع وتجديد الجلسة. تسجيل الخروج يمسح بيانات الجلسة المحفوظة ويطلب إنهاءها لدى الخدمة. لا تشارك رموز الجلسة مع الآخرين.</source>
+        <target>Access and refresh tokens and a device identifier are stored in the browser’s local storage (localStorage) to keep your account signed in when you return to the site and renew the session. Signing out clears the stored session data and requests that the service end the session. Do not share session tokens with others.</target>
       </segment>
     </unit>
     <unit id="privacyStudentDashboardData">
@@ -6770,6 +6770,141 @@
       <segment state="translated">
         <source>تاريخ انتهاء الرصيد</source>
         <target>Credit expiry date</target>
+      </segment>
+    </unit>
+    <unit id="student_scheduleWeek">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:3</note>
+      </notes>
+      <segment state="translated">
+        <source>أسبوع الحصص</source>
+        <target>Lesson week</target>
+      </segment>
+    </unit>
+    <unit id="student_noWeekLessons">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:4</note>
+      </notes>
+      <segment state="translated">
+        <source>لا توجد حصص مسجلة في هذا الأسبوع.</source>
+        <target>No lessons are listed for this week.</target>
+      </segment>
+    </unit>
+    <unit id="student_scheduleFullText">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:5</note>
+      </notes>
+      <segment state="translated">
+        <source>تابع كل حصصك المسجلة، أو اختر يومًا لعرض حصصه.</source>
+        <target>View all your scheduled lessons, or choose a date to see lessons for that day.</target>
+      </segment>
+    </unit>
+    <unit id="student_fullSchedule">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:6</note>
+      </notes>
+      <segment state="translated">
+        <source>الجدول الكامل</source>
+        <target>Full schedule</target>
+      </segment>
+    </unit>
+    <unit id="student_selectedDay">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:7</note>
+      </notes>
+      <segment state="translated">
+        <source>يوم محدد</source>
+        <target>Selected day</target>
+      </segment>
+    </unit>
+    <unit id="student_scheduleView">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:8</note>
+      </notes>
+      <segment state="translated">
+        <source>طريقة عرض الجدول</source>
+        <target>Schedule view</target>
+      </segment>
+    </unit>
+    <unit id="student_noScheduledLessons">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:9</note>
+      </notes>
+      <segment state="translated">
+        <source>لا توجد حصص مسجلة في جدولك حاليًا.</source>
+        <target>No lessons are listed in your schedule yet.</target>
+      </segment>
+    </unit>
+    <unit id="student_recurrenceOnce">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:10</note>
+      </notes>
+      <segment state="translated">
+        <source>مرة واحدة</source>
+        <target>One time</target>
+      </segment>
+    </unit>
+    <unit id="student_recurrenceDaily">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:11</note>
+      </notes>
+      <segment state="translated">
+        <source>يوميًا</source>
+        <target>Daily</target>
+      </segment>
+    </unit>
+    <unit id="student_recurrenceWeekly">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:12</note>
+      </notes>
+      <segment state="translated">
+        <source>أسبوعيًا</source>
+        <target>Weekly</target>
+      </segment>
+    </unit>
+    <unit id="student_recurrenceMonthly">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:13</note>
+      </notes>
+      <segment state="translated">
+        <source>شهريًا</source>
+        <target>Monthly</target>
+      </segment>
+    </unit>
+    <unit id="student_recurrenceUntil">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:14</note>
+      </notes>
+      <segment state="translated">
+        <source>حتى</source>
+        <target>Until</target>
+      </segment>
+    </unit>
+    <unit id="authSessionExpiredTitle">
+      <notes>
+        <note category="location">src/app/core/auth/auth.service.ts:348</note>
+      </notes>
+      <segment state="translated">
+        <source>انتهت صلاحية الجلسة</source>
+        <target>Session expired</target>
+      </segment>
+    </unit>
+    <unit id="authSessionExpiredMessage">
+      <notes>
+        <note category="location">src/app/core/auth/auth.service.ts:349</note>
+      </notes>
+      <segment state="translated">
+        <source>انتهت صلاحية جلستك. سجّل الدخول مرة أخرى للمتابعة.</source>
+        <target>Your session has expired. Sign in again to continue.</target>
+      </segment>
+    </unit>
+    <unit id="authSessionExpiredConfirm">
+      <notes>
+        <note category="location">src/app/core/auth/auth.service.ts:350</note>
+      </notes>
+      <segment state="translated">
+        <source>تسجيل الدخول</source>
+        <target>Sign in</target>
       </segment>
     </unit>
   </file>

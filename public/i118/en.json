@@ -495,7 +495,7 @@
     "coursesSeoDescription": "Learn English, German, Italian, French, Arabic, programming and maths in live online lessons with Basstahali. Courses start at EGP 5,000. Book via WhatsApp.",
     "privacyStudentAccountTitle": "Student account and session",
     "privacyStudentLoginData": "When you sign in, your username and password are sent to the Basstahali service to verify your account. The website interface does not save your password in browser storage.",
-    "privacyStudentSessionData": "Sign-in session tokens and a tab identifier are saved in the browser’s session storage (sessionStorage) to keep your account signed in and renew the session. Signing out clears the session from this tab and requests that the service end it. Do not share session tokens with others.",
+    "privacyStudentSessionData": "Access and refresh tokens and a device identifier are stored in the browser’s local storage (localStorage) to keep your account signed in when you return to the site and renew the session. Signing out clears the stored session data and requests that the service end the session. Do not share session tokens with others.",
     "privacyStudentDashboardData": "After you sign in, the student dashboard displays your account details, lessons, courses, assignments and exams from the service. Messages, exam answers, files and student requests are sent to the service when you choose to submit them through the dashboard.",
     "authLoginBadge": "Student space",
     "authLoginIntroTitle": "Your learning space",
@@ -743,6 +743,21 @@
     "student_creditQuantity": "Credits added",
     "student_creditRemaining": "Remaining credits",
     "student_creditAddedAt": "Date added",
-    "student_creditExpiresAt": "Credit expiry date"
+    "student_creditExpiresAt": "Credit expiry date",
+    "student_scheduleWeek": "Lesson week",
+    "student_noWeekLessons": "No lessons are listed for this week.",
+    "student_scheduleFullText": "View all your scheduled lessons, or choose a date to see lessons for that day.",
+    "student_fullSchedule": "Full schedule",
+    "student_selectedDay": "Selected day",
+    "student_scheduleView": "Schedule view",
+    "student_noScheduledLessons": "No lessons are listed in your schedule yet.",
+    "student_recurrenceOnce": "One time",
+    "student_recurrenceDaily": "Daily",
+    "student_recurrenceWeekly": "Weekly",
+    "student_recurrenceMonthly": "Monthly",
+    "student_recurrenceUntil": "Until",
+    "authSessionExpiredTitle": "Session expired",
+    "authSessionExpiredMessage": "Your session has expired. Sign in again to continue.",
+    "authSessionExpiredConfirm": "Sign in"
   }
 }

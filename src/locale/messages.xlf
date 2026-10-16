@@ -4040,7 +4040,7 @@
         <note category="location">src/app/Features/legal/privacy.content.ts:29</note>
       </notes>
       <segment>
-        <source>تُحفظ رموز جلسة الدخول ومعرّف التبويب في تخزين الجلسة في المتصفح (sessionStorage) لإبقاء حسابك مفتوحًا وتجديد الجلسة. تسجيل الخروج يمسح الجلسة من هذا التبويب ويطلب إنهاءها لدى الخدمة. لا تشارك رموز الجلسة مع الآخرين.</source>
+        <source>تُحفظ رموز الدخول وتجديد الجلسة ومعرّف الجهاز في التخزين المحلي للمتصفح (localStorage) لإبقاء حسابك مفتوحًا عند العودة للموقع وتجديد الجلسة. تسجيل الخروج يمسح بيانات الجلسة المحفوظة ويطلب إنهاءها لدى الخدمة. لا تشارك رموز الجلسة مع الآخرين.</source>
       </segment>
     </unit>
     <unit id="privacyStudentDashboardData">
@@ -6027,6 +6027,126 @@
       </notes>
       <segment>
         <source>تاريخ انتهاء الرصيد</source>
+      </segment>
+    </unit>
+    <unit id="student_scheduleWeek">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:3</note>
+      </notes>
+      <segment>
+        <source>أسبوع الحصص</source>
+      </segment>
+    </unit>
+    <unit id="student_noWeekLessons">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:4</note>
+      </notes>
+      <segment>
+        <source>لا توجد حصص مسجلة في هذا الأسبوع.</source>
+      </segment>
+    </unit>
+    <unit id="student_scheduleFullText">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:5</note>
+      </notes>
+      <segment>
+        <source>تابع كل حصصك المسجلة، أو اختر يومًا لعرض حصصه.</source>
+      </segment>
+    </unit>
+    <unit id="student_fullSchedule">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:6</note>
+      </notes>
+      <segment>
+        <source>الجدول الكامل</source>
+      </segment>
+    </unit>
+    <unit id="student_selectedDay">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:7</note>
+      </notes>
+      <segment>
+        <source>يوم محدد</source>
+      </segment>
+    </unit>
+    <unit id="student_scheduleView">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:8</note>
+      </notes>
+      <segment>
+        <source>طريقة عرض الجدول</source>
+      </segment>
+    </unit>
+    <unit id="student_noScheduledLessons">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:9</note>
+      </notes>
+      <segment>
+        <source>لا توجد حصص مسجلة في جدولك حاليًا.</source>
+      </segment>
+    </unit>
+    <unit id="student_recurrenceOnce">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:10</note>
+      </notes>
+      <segment>
+        <source>مرة واحدة</source>
+      </segment>
+    </unit>
+    <unit id="student_recurrenceDaily">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:11</note>
+      </notes>
+      <segment>
+        <source>يوميًا</source>
+      </segment>
+    </unit>
+    <unit id="student_recurrenceWeekly">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:12</note>
+      </notes>
+      <segment>
+        <source>أسبوعيًا</source>
+      </segment>
+    </unit>
+    <unit id="student_recurrenceMonthly">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:13</note>
+      </notes>
+      <segment>
+        <source>شهريًا</source>
+      </segment>
+    </unit>
+    <unit id="student_recurrenceUntil">
+      <notes>
+        <note category="location">src/app/Features/student-dashboard/student-ui.ts:14</note>
+      </notes>
+      <segment>
+        <source>حتى</source>
+      </segment>
+    </unit>
+    <unit id="authSessionExpiredTitle">
+      <notes>
+        <note category="location">src/app/core/auth/auth.service.ts:348</note>
+      </notes>
+      <segment>
+        <source>انتهت صلاحية الجلسة</source>
+      </segment>
+    </unit>
+    <unit id="authSessionExpiredMessage">
+      <notes>
+        <note category="location">src/app/core/auth/auth.service.ts:349</note>
+      </notes>
+      <segment>
+        <source>انتهت صلاحية جلستك. سجّل الدخول مرة أخرى للمتابعة.</source>
+      </segment>
+    </unit>
+    <unit id="authSessionExpiredConfirm">
+      <notes>
+        <note category="location">src/app/core/auth/auth.service.ts:350</note>
+      </notes>
+      <segment>
+        <source>تسجيل الدخول</source>
       </segment>
     </unit>
   </file>

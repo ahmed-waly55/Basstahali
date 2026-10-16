@@ -3,7 +3,12 @@ import { HttpTestingController, provideHttpClientTesting } from '@angular/common
 import { TestBed } from '@angular/core/testing';
 import { environment } from '../../../environments/environment';
 import { SKIP_ERROR_NOTIFICATION } from '../interceptors/loading-interceptor';
-import { StudentDashboard, StudentPage, StudentSession } from './student.models';
+import {
+  StudentDashboard,
+  StudentHomeSchedule,
+  StudentPage,
+  StudentSession,
+} from './student.models';
 import {
   StudentDataError,
   StudentService,
@@ -247,6 +252,188 @@ describe('StudentService private data', () => {
       .flush({ success: false }, { status: 403, statusText: 'Forbidden' });
     expect(failure).toBeInstanceOf(HttpErrorResponse);
     expect((failure as HttpErrorResponse).status).toBe(403);
+  });
+
+  it('loads the complete home timetable without sending unsupported paging or profile requests', () => {
+    let schedule: StudentHomeSchedule | undefined;
+    service.getHomeSchedule().subscribe((value) => (schedule = value));
+    backend.expectNone(base + '/profile/student');
+    const request = backend.expectOne(base + '/home/schedule');
+    expect(request.request.params.keys()).toEqual([]);
+    expect(request.request.cache).toBe('no-store');
+    expect(request.request.transferCache).toBe(false);
+    expect(request.request.context.get(SKIP_ERROR_NOTIFICATION)).toBe(true);
+    request.flush({
+      success: true,
+      data: {
+        weekStart: '2026-10-11',
+        weekEnd: '2026-10-17',
+        items: Array.from({ length: 12 }, (_, index) => ({
+          id: `home-${index}`,
+          subject: 'Mathematics',
+          teacher: 'Test teacher',
+          name: 'An ambiguous name',
+          studentName: 'Private student name',
+          day: 'Friday',
+          timeSlot: 'Evening',
+          timeRange: '18:00 - 19:00',
+          period: 'PM',
+          zoomUrl: 'https://zoom.us/j/123456789',
+          scheduledAt: '2026-10-16T15:00:00Z',
+          durationMinutes: 60,
+          status: 'Scheduled',
+          paymentStatus: 'Paid',
+        })),
+      },
+      errors: null,
+      traceId: null,
+    });
+    expect(schedule?.items).toHaveLength(12);
+    expect(schedule?.weekStart).toBe('2026-10-11');
+    expect(schedule?.weekEnd).toBe('2026-10-17');
+    expect(schedule?.items[0]).toMatchObject({
+      subjectName: 'Mathematics',
+      teacherName: 'Test teacher',
+      day: 'Friday',
+      timeSlot: 'Evening',
+      timeRange: '18:00 - 19:00',
+      period: 'PM',
+      occurrenceAt: '2026-10-16T15:00:00Z',
+      classLink: 'https://zoom.us/j/123456789',
+      studentId: null,
+      date: null,
+    });
+  });
+
+  it('sends only the documented optional weekStart filter to the home timetable', () => {
+    service.getHomeSchedule('2026-10-11').subscribe();
+    const request = backend.expectOne((req) => req.url === base + '/home/schedule');
+    expect(request.request.params.keys()).toEqual(['weekStart']);
+    expect(request.request.params.get('weekStart')).toBe('2026-10-11');
+    request.flush({
+      success: true,
+      data: { weekStart: '2026-10-11', weekEnd: '2026-10-17', items: [] },
+    });
+  });
+
+  it('accepts the home contract nullable items as an empty week without fabricated pagination', () => {
+    let schedule: StudentHomeSchedule | undefined;
+    service.getHomeSchedule().subscribe((value) => (schedule = value));
+    backend.expectOne(base + '/home/schedule').flush({
+      success: true,
+      data: { weekStart: '2026-10-11', weekEnd: '2026-10-17', items: null },
+    });
+    expect(schedule?.items).toEqual([]);
+    expect(schedule).not.toHaveProperty('totalCount');
+    expect(schedule).not.toHaveProperty('totalPages');
+  });
+
+  it('rejects unsupported home response shapes and failed envelopes rather than inventing an empty week', () => {
+    const failures: unknown[] = [];
+    for (const body of [
+      { success: true, data: { items: {} } },
+      { success: true, data: {} },
+      { success: false, data: { items: null } },
+    ]) {
+      service.getHomeSchedule().subscribe({ error: (error) => failures.push(error) });
+      backend.expectOne(base + '/home/schedule').flush(body);
+    }
+    expect(failures).toHaveLength(3);
+    expect(failures.every((error) => error instanceof StudentDataError)).toBe(true);
+  });
+
+  it('uses schedules with the selected day and real pagination independently of the daily endpoint', () => {
+    let page: StudentPage<StudentSession> | undefined;
+    service.getSchedule('2026-10-16', 2, 10).subscribe((value) => (page = value));
+    backend.expectNone(base + '/profile/student');
+    backend.expectNone((req) => req.url === base + '/schedules/daily');
+    const request = backend.expectOne((req) => req.url === base + '/schedules');
+    expect(
+      Object.fromEntries(
+        request.request.params.keys().map((key) => [key, request.request.params.get(key)]),
+      ),
+    ).toEqual({ date: '2026-10-16', PageNumber: '2', PageSize: '10' });
+    request.flush({
+      success: true,
+      data: {
+        items: [
+          {
+            id: 'weekly',
+            dayOfWeek: 'Sunday',
+            day: 'Sunday',
+            teacherName: '',
+            teacher: 'Teacher alias',
+            name: 'Do not infer a subject from a person name',
+            timeSlot: '18:00 - 19:00',
+            zoomUrl: 'https://zoom.us/j/123456789',
+            recurrenceType: 'Weekly',
+            recurrenceEndDate: '2026-11-29T00:00:00Z',
+          },
+        ],
+        pageNumber: 2,
+        pageSize: 10,
+        totalCount: 12,
+        totalPages: 2,
+        hasPreviousPage: true,
+        hasNextPage: false,
+      },
+    });
+    expect(page?.items[0]).toMatchObject({
+      teacherName: 'Teacher alias',
+      subjectName: null,
+      dayOfWeek: 'Sunday',
+      day: 'Sunday',
+      timeSlot: '18:00 - 19:00',
+      classLink: 'https://zoom.us/j/123456789',
+      recurrenceType: 'Weekly',
+      recurrenceEndDate: '2026-11-29T00:00:00Z',
+      date: null,
+      status: null,
+    });
+    expect(page?.totalCount).toBe(12);
+    expect(page?.hasNextPage).toBe(false);
+  });
+
+  it('finds the first safe schedule link when earlier API aliases are empty or unsafe', () => {
+    let page: StudentPage<StudentSession> | undefined;
+    service.getSchedule().subscribe((value) => (page = value));
+    const request = backend.expectOne((req) => req.url === base + '/schedules');
+    expect(request.request.params.get('PageNumber')).toBe('1');
+    expect(request.request.params.get('PageSize')).toBe('10');
+    expect(request.request.params.has('date')).toBe(false);
+    request.flush({
+      success: true,
+      data: {
+        items: [
+          { classLink: '', zoomUrl: 'https://zoom.us/j/first' },
+          { classLink: 'javascript:alert(1)', zoomUrl: 'https://zoom.us/j/second' },
+          {
+            classLink: 'http://zoom.us/j/unsafe',
+            zoomUrl: 'https://user:password@zoom.us/j/unsafe',
+            zoom: 'https://zoom.us/j/third',
+          },
+          { classLink: 'https://zoom.us/j/primary', zoomUrl: 'https://zoom.us/j/secondary' },
+          { zoomUrl: 'javascript:alert(1)', zoom: 'data:text/plain,unsafe' },
+        ],
+      },
+    });
+    expect(page?.items.map((item) => item.classLink)).toEqual([
+      'https://zoom.us/j/first',
+      'https://zoom.us/j/second',
+      'https://zoom.us/j/third',
+      'https://zoom.us/j/primary',
+      null,
+    ]);
+  });
+
+  it('rejects impossible schedule and home week filters before making any request', () => {
+    const failures: unknown[] = [];
+    service.getSchedule('2026-02-30').subscribe({ error: (error) => failures.push(error) });
+    service.getSchedule('').subscribe({ error: (error) => failures.push(error) });
+    service.getHomeSchedule('2026-02-30').subscribe({ error: (error) => failures.push(error) });
+    expect(failures).toHaveLength(3);
+    expect(failures.every((error) => error instanceof StudentDataError)).toBe(true);
+    backend.expectNone(() => true);
   });
 
   it('rejects impossible dates without making any request', () => {

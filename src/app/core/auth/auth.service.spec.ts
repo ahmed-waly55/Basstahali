@@ -1,6 +1,9 @@
 import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { PLATFORM_ID } from '@angular/core';
+import { clearTranslations, loadTranslations } from '@angular/localize';
+import { firstValueFrom } from 'rxjs';
+import Swal, { type SweetAlertOptions } from 'sweetalert2';
 import { TestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { vi } from 'vitest';
@@ -57,7 +60,13 @@ describe('Student authentication session', () => {
   }
 
   beforeEach(() => {
+    localStorage.clear();
     sessionStorage.clear();
+    vi.spyOn(Swal, 'fire').mockResolvedValue({
+      isConfirmed: true,
+      isDenied: false,
+      isDismissed: false,
+    });
     configure();
   });
 
@@ -65,10 +74,15 @@ describe('Student authentication session', () => {
     auth.invalidateSession(false);
     backend.verify();
     vi.restoreAllMocks();
+    clearTranslations();
+    document.documentElement.dir = 'rtl';
+    document.documentElement.lang = 'ar';
+    document.documentElement.classList.remove('dark');
+    localStorage.clear();
     sessionStorage.clear();
   });
 
-  it('uses the documented login contract and stores the session without credentials in localStorage', () => {
+  it('uses the documented login contract and persists tokens in localStorage without storing login passwords', () => {
     const writeStorage = vi.spyOn(Storage.prototype, 'setItem');
     let result: AuthUser | undefined;
     auth.login(' student ', 'test-password').subscribe((value) => (result = value));
@@ -83,13 +97,16 @@ describe('Student authentication session', () => {
     expect(request.request.context.get(SKIP_ERROR_NOTIFICATION)).toBe(true);
     expect(request.request.transferCache).toBe(false);
     expect(request.request.cache).toBe('no-store');
-    request.flush({ success: true, data: session() });
+    const loginSession = session();
+    request.flush({ success: true, data: loginSession });
     expect(result).toEqual(user);
     expect(auth.user()).toEqual(user);
     expect(auth.isAuthenticated()).toBe(true);
-    expect(sessionStorage.getItem(storageKey)).not.toContain('test-password');
-    expect(sessionStorage.getItem(storageKey)).not.toContain('password');
-    expect(writeStorage.mock.contexts).not.toContain(localStorage);
+    expect(localStorage.getItem(storageKey)).not.toContain('test-password');
+    expect(localStorage.getItem(storageKey)).not.toContain('password');
+    expect(writeStorage.mock.contexts).toContain(localStorage);
+    expect(JSON.parse(localStorage.getItem(storageKey)!)).toEqual(loginSession);
+    expect(sessionStorage.getItem(storageKey)).toBeNull();
   });
 
   it.each(['Student', 'student', 'sTuDeNt'])(
@@ -110,7 +127,7 @@ describe('Student authentication session', () => {
     expect(failure).toBeInstanceOf(AuthError);
     expect((failure as AuthError).code).toBe('student-only');
     expect(auth.user()).toBeNull();
-    expect(sessionStorage.getItem(storageKey)).toBeNull();
+    expect(localStorage.getItem(storageKey)).toBeNull();
   });
 
   it('normalises nullable display fields without rejecting a valid Student identity', () => {
@@ -159,13 +176,13 @@ describe('Student authentication session', () => {
     backend.expectOne(`${url}/login`).flush({ success: true, data: session(overrides) });
     expect(failure).toBeInstanceOf(AuthError);
     expect(auth.hasSession()).toBe(false);
-    expect(sessionStorage.getItem(storageKey)).toBeNull();
+    expect(localStorage.getItem(storageKey)).toBeNull();
   });
 
-  it('refreshes an expired restored access token once and persists rotated tokens', () => {
+  it('refreshes an expired restored access token once and persists rotated tokens', async () => {
     auth.invalidateSession(false);
     TestBed.resetTestingModule();
-    sessionStorage.setItem(
+    localStorage.setItem(
       storageKey,
       JSON.stringify(session({ accessTokenExpiresAt: new Date(Date.now() - 1_000).toISOString() })),
     );
@@ -180,9 +197,10 @@ describe('Student authentication session', () => {
       success: true,
       data: session({ accessToken: 'rotated-access', refreshToken: 'rotated-refresh' }),
     });
+    await auth.settlePendingRefresh();
     expect(results).toEqual(['rotated-access', 'rotated-access']);
     auth.getValidAccessToken().subscribe((token) => expect(token).toBe('rotated-access'));
-    expect(JSON.parse(sessionStorage.getItem(storageKey)!).refreshToken).toBe('rotated-refresh');
+    expect(JSON.parse(localStorage.getItem(storageKey)!).refreshToken).toBe('rotated-refresh');
     backend.expectNone(`${url}/refresh-token`);
   });
 
@@ -209,7 +227,7 @@ describe('Student authentication session', () => {
     backend.expectOne(`${url}/me`).flush({ success: true, data: { ...user, roles: ['Teacher'] } });
     expect(allowed).toBe(false);
     expect(auth.user()).toBeNull();
-    expect(sessionStorage.getItem(storageKey)).toBeNull();
+    expect(localStorage.getItem(storageKey)).toBeNull();
   });
 
   it('clears an expired refresh session and redirects to a safe student return target', () => {
@@ -226,27 +244,28 @@ describe('Student authentication session', () => {
     clock.mockRestore();
   });
 
-  it('clears a rejected refresh without retrying it or leaving tokens behind', () => {
+  it('clears a rejected refresh without retrying it or leaving tokens behind', async () => {
     signIn();
     let failure: unknown;
     auth.refreshAccessToken().subscribe({ error: (error) => (failure = error) });
     backend
       .expectOne(`${url}/refresh-token`)
       .flush({}, { status: 401, statusText: 'Unauthorized' });
+    await auth.settlePendingRefresh();
     expect((failure as AuthError).code).toBe('session-expired');
     expect(auth.hasSession()).toBe(false);
-    expect(sessionStorage.getItem(storageKey)).toBeNull();
+    expect(localStorage.getItem(storageKey)).toBeNull();
     expect(navigate).toHaveBeenCalled();
     backend.expectNone(`${url}/refresh-token`);
   });
 
   it('revokes the refresh token with the same device and clears locally even if logout fails', () => {
     signIn();
-    const device = sessionStorage.getItem('basstahali-auth-device');
+    const device = localStorage.getItem('basstahali-auth-device');
     let completed = false;
     auth.logout().subscribe(() => (completed = true));
     expect(auth.user()).toBeNull();
-    expect(sessionStorage.getItem(storageKey)).toBeNull();
+    expect(localStorage.getItem(storageKey)).toBeNull();
     const request = backend.expectOne(`${url}/logout`);
     expect(request.request.body).toEqual({ refreshToken: 'test-refresh', device });
     expect(request.request.headers.get('Authorization')).toBe('Bearer test-access');
@@ -261,32 +280,59 @@ describe('Student authentication session', () => {
     backend.expectOne(`${url}/logout`).flush({}, { status: 401, statusText: 'Unauthorized' });
     expect(navigate).toHaveBeenCalled();
     expect(auth.hasSession()).toBe(false);
+    expect(Swal.fire).not.toHaveBeenCalled();
   });
 
-  it('does not restore tokens from a refresh that completes after logout', () => {
+  it('uses the active English catalog and light theme for the expiry prompt without changing the route language', async () => {
+    signIn();
+    document.documentElement.lang = 'en';
+    document.documentElement.dir = 'ltr';
+    loadTranslations({
+      authSessionExpiredTitle: 'Session expired',
+      authSessionExpiredMessage: 'Your session has expired. Sign in again to continue.',
+      authSessionExpiredConfirm: 'Sign in',
+    });
+    await auth.expireSession();
+    const options = vi.mocked(Swal.fire).mock.calls.at(-1)?.[0] as SweetAlertOptions;
+    expect(options.title).toBe('Session expired');
+    expect(options.text).toBe('Your session has expired. Sign in again to continue.');
+    expect(options.confirmButtonText).toBe('Sign in');
+    expect(options.theme).toBe('light');
+    const popup = document.createElement('div');
+    options.didOpen?.(popup);
+    expect(popup.dir).toBe('ltr');
+    expect(navigate).toHaveBeenCalledWith(['/login'], {
+      queryParams: { returnUrl: '/student/schedule?week=current' },
+    });
+  });
+
+  it('does not restore tokens from a refresh that completes after logout', async () => {
     signIn();
     let failure: unknown;
-    auth.refreshAccessToken().subscribe({ error: (error) => (failure = error) });
+    const completion = firstValueFrom(auth.refreshAccessToken()).catch((error) => {
+      failure = error;
+    });
     const refresh = backend.expectOne(`${url}/refresh-token`);
     auth.logout().subscribe();
     backend.expectOne(`${url}/logout`).flush({});
     refresh.flush({ success: true, data: session({ accessToken: 'late-access' }) });
+    await completion;
     expect((failure as AuthError).code).toBe('session-expired');
     expect(auth.user()).toBeNull();
-    expect(sessionStorage.getItem(storageKey)).toBeNull();
+    expect(localStorage.getItem(storageKey)).toBeNull();
   });
 
   it('aborts an old injector refresh on teardown without removing its persisted session', () => {
     signIn();
-    const stored = sessionStorage.getItem(storageKey);
+    const stored = localStorage.getItem(storageKey);
     const oldAuth = auth;
     auth.refreshAccessToken().subscribe();
     const refresh = backend.expectOne(`${url}/refresh-token`);
     TestBed.resetTestingModule();
     expect(refresh.cancelled).toBe(true);
-    expect(sessionStorage.getItem(storageKey)).toBe(stored);
+    expect(localStorage.getItem(storageKey)).toBe(stored);
     oldAuth.invalidateSession();
-    expect(sessionStorage.getItem(storageKey)).toBe(stored);
+    expect(localStorage.getItem(storageKey)).toBe(stored);
     expect(navigate).not.toHaveBeenCalled();
     configure();
     expect(auth.isAuthenticated()).toBe(true);
@@ -315,17 +361,17 @@ describe('Student authentication session', () => {
     TestBed.resetTestingModule();
     configure();
     auth.getValidAccessToken().subscribe((token) => expect(token).toBe('rotated-access'));
-    expect(JSON.parse(sessionStorage.getItem(storageKey)!).refreshToken).toBe('rotated-refresh');
+    expect(JSON.parse(localStorage.getItem(storageKey)!).refreshToken).toBe('rotated-refresh');
     backend.expectNone(`${url}/refresh-token`);
   });
 
   it('rejects malformed stored JSON instead of reviving an earlier in-memory session', () => {
     signIn();
     TestBed.resetTestingModule();
-    sessionStorage.setItem(storageKey, '{malformed');
+    localStorage.setItem(storageKey, '{malformed');
     configure();
     expect(auth.hasSession()).toBe(false);
-    expect(sessionStorage.getItem(storageKey)).toBeNull();
+    expect(localStorage.getItem(storageKey)).toBeNull();
   });
 
   it('keeps a browser-only memory session over language rebootstrap when storage is disabled', () => {
@@ -354,7 +400,7 @@ describe('Student authentication session', () => {
       throw new DOMException('Full', 'QuotaExceededError');
     });
     signIn();
-    expect(sessionStorage.getItem(storageKey)).toBeNull();
+    expect(localStorage.getItem(storageKey)).toBeNull();
     TestBed.resetTestingModule();
     configure();
     expect(auth.user()).toEqual(user);

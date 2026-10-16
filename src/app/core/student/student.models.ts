@@ -74,15 +74,28 @@ export interface StudentSession {
   teacherName: string | null;
   subjectName: string | null;
   date: string | null;
+  day: string | null;
+  dayOfWeek: string | null;
   startTime: string | null;
   endTime: string | null;
   timeRange: string | null;
+  timeSlot: string | null;
+  period: string | null;
+  recurrenceType: string | null;
+  recurrenceEndDate: string | null;
   classLink: string | null;
   status: string | null;
   occurrenceAt: string | null;
   courseName: string | null;
   paymentStatus: string | null;
   raw: StudentRecord;
+}
+
+/** The full timetable endpoint returns a week and its complete item list, without pagination. */
+export interface StudentHomeSchedule {
+  weekStart: string | null;
+  weekEnd: string | null;
+  items: StudentSession[];
 }
 
 export interface StudentCourse {

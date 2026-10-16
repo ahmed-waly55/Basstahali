@@ -495,7 +495,7 @@
     "coursesSeoDescription": "كورسات الإنجليزية والألمانية والإيطالية والفرنسية والعربية والبرمجة والماث مع بسطهالي، في حصص مباشرة أونلاين بأسعار تبدأ من 5000 جنيه مصري. احجز عبر واتساب.",
     "privacyStudentAccountTitle": "حساب الطالب والجلسة",
     "privacyStudentLoginData": "عند تسجيل الدخول، يُرسل اسم المستخدم وكلمة المرور إلى خدمة بسطهالي للتحقق من الحساب. لا تحفظ واجهة الموقع كلمة المرور في تخزين المتصفح.",
-    "privacyStudentSessionData": "تُحفظ رموز جلسة الدخول ومعرّف التبويب في تخزين الجلسة في المتصفح (sessionStorage) لإبقاء حسابك مفتوحًا وتجديد الجلسة. تسجيل الخروج يمسح الجلسة من هذا التبويب ويطلب إنهاءها لدى الخدمة. لا تشارك رموز الجلسة مع الآخرين.",
+    "privacyStudentSessionData": "تُحفظ رموز الدخول وتجديد الجلسة ومعرّف الجهاز في التخزين المحلي للمتصفح (localStorage) لإبقاء حسابك مفتوحًا عند العودة للموقع وتجديد الجلسة. تسجيل الخروج يمسح بيانات الجلسة المحفوظة ويطلب إنهاءها لدى الخدمة. لا تشارك رموز الجلسة مع الآخرين.",
     "privacyStudentDashboardData": "تعرض لوحة الطالب بيانات حسابه وحصصه وكورساته وواجباته واختباراته من الخدمة بعد تسجيل الدخول. تُرسل الرسائل وإجابات الاختبارات والملفات وطلبات الطالب إلى الخدمة عندما يختار إرسالها من اللوحة.",
     "authLoginBadge": "مساحة الطالب",
     "authLoginIntroTitle": "مساحتك للتعلّم",
@@ -743,6 +743,21 @@
     "student_creditQuantity": "عدد الحصص المضافة",
     "student_creditRemaining": "الرصيد المتبقي",
     "student_creditAddedAt": "تاريخ الإضافة",
-    "student_creditExpiresAt": "تاريخ انتهاء الرصيد"
+    "student_creditExpiresAt": "تاريخ انتهاء الرصيد",
+    "student_scheduleWeek": "أسبوع الحصص",
+    "student_noWeekLessons": "لا توجد حصص مسجلة في هذا الأسبوع.",
+    "student_scheduleFullText": "تابع كل حصصك المسجلة، أو اختر يومًا لعرض حصصه.",
+    "student_fullSchedule": "الجدول الكامل",
+    "student_selectedDay": "يوم محدد",
+    "student_scheduleView": "طريقة عرض الجدول",
+    "student_noScheduledLessons": "لا توجد حصص مسجلة في جدولك حاليًا.",
+    "student_recurrenceOnce": "مرة واحدة",
+    "student_recurrenceDaily": "يوميًا",
+    "student_recurrenceWeekly": "أسبوعيًا",
+    "student_recurrenceMonthly": "شهريًا",
+    "student_recurrenceUntil": "حتى",
+    "authSessionExpiredTitle": "انتهت صلاحية الجلسة",
+    "authSessionExpiredMessage": "انتهت صلاحية جلستك. سجّل الدخول مرة أخرى للمتابعة.",
+    "authSessionExpiredConfirm": "تسجيل الدخول"
   }
 }

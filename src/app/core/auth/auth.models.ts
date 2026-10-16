@@ -1,5 +1,8 @@
 import { HttpContextToken } from '@angular/common/http';
 
+export const AUTH_SESSION_STORAGE_KEY = 'basstahali-auth-session';
+export const AUTH_DEVICE_STORAGE_KEY = 'basstahali-auth-device';
+
 export interface AuthUser {
   id: string;
   userName: string;

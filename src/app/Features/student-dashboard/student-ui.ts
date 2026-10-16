@@ -1,5 +1,17 @@
 export function createStudentCopy() {
   return {
+    scheduleWeek: $localize`:@@student_scheduleWeek:أسبوع الحصص`,
+    noWeekLessons: $localize`:@@student_noWeekLessons:لا توجد حصص مسجلة في هذا الأسبوع.`,
+    scheduleFullText: $localize`:@@student_scheduleFullText:تابع كل حصصك المسجلة، أو اختر يومًا لعرض حصصه.`,
+    fullSchedule: $localize`:@@student_fullSchedule:الجدول الكامل`,
+    selectedDay: $localize`:@@student_selectedDay:يوم محدد`,
+    scheduleView: $localize`:@@student_scheduleView:طريقة عرض الجدول`,
+    noScheduledLessons: $localize`:@@student_noScheduledLessons:لا توجد حصص مسجلة في جدولك حاليًا.`,
+    recurrenceOnce: $localize`:@@student_recurrenceOnce:مرة واحدة`,
+    recurrenceDaily: $localize`:@@student_recurrenceDaily:يوميًا`,
+    recurrenceWeekly: $localize`:@@student_recurrenceWeekly:أسبوعيًا`,
+    recurrenceMonthly: $localize`:@@student_recurrenceMonthly:شهريًا`,
+    recurrenceUntil: $localize`:@@student_recurrenceUntil:حتى`,
     userName: $localize`:@@student_userName:اسم المستخدم`,
     subscriptionBySessions: $localize`:@@student_subscriptionBySessions:اشتراك حسب عدد الحصص`,
     subscriptionStarted: $localize`:@@student_subscriptionStarted:بداية الاشتراك`,
