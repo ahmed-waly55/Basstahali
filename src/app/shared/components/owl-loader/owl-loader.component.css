@@ -1,0 +1,190 @@
+:host {
+  pointer-events: none;
+}
+
+.request-progress {
+  position: fixed;
+  inset: 0 0 auto;
+  height: 3px;
+  overflow: hidden;
+  z-index: 70;
+  background: var(--soft);
+  pointer-events: none;
+}
+
+.request-progress span {
+  display: block;
+  width: 38%;
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #ffc107, #8d60db, #4f2db7);
+  animation: request-travel 1.6s ease-in-out infinite;
+}
+
+.request-status {
+  position: fixed;
+  inset-block-end: calc(24px + env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 65;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: min(336px, calc(100vw - 32px));
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: 0 12px 44px -12px rgba(59, 35, 109, 0.25);
+  pointer-events: none;
+  animation: request-appear 0.2s ease-out;
+}
+
+.request-mascot {
+  position: relative;
+  flex: 0 0 54px;
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--soft);
+}
+
+.request-orbit {
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  border-block-start-color: var(--brand);
+  border-inline-end-color: #ffc107;
+  border-radius: inherit;
+  animation: request-orbit 1.7s linear infinite;
+}
+
+.request-owl {
+  position: relative;
+  width: 42px;
+  height: 46px;
+  overflow: hidden;
+}
+
+.request-owl img {
+  position: absolute;
+  inset-block-start: 50%;
+  left: 50%;
+  width: 88px;
+  max-width: none;
+  height: 59px;
+  object-fit: contain;
+  transform: translate(-50%, -50%);
+}
+
+.request-copy {
+  flex: 1;
+  min-width: 0;
+  text-align: start;
+  overflow-wrap: anywhere;
+}
+
+.request-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 750;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.request-description {
+  margin: 3px 0 0;
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.request-dots {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.request-dots i {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--brand);
+  animation: request-dot 1.2s ease-in-out infinite;
+}
+
+.request-dots i:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.request-dots i:nth-child(3) {
+  animation-delay: 0.3s;
+  background: #df9d00;
+}
+
+:host-context(html.dark) .request-status {
+  box-shadow: 0 12px 44px -12px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 639px) {
+  .request-status {
+    inset-block-end: calc(96px + env(safe-area-inset-bottom));
+    padding: 14px 16px;
+    gap: 12px;
+    border-radius: 20px;
+  }
+}
+
+@keyframes request-travel {
+  from {
+    transform: translateX(-110%);
+  }
+  to {
+    transform: translateX(365%);
+  }
+}
+
+@keyframes request-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes request-dot {
+  0%,
+  80%,
+  100% {
+    opacity: 0.4;
+    transform: translateY(0);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes request-appear {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 8px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .request-progress span,
+  .request-status,
+  .request-orbit,
+  .request-dots i {
+    animation: none;
+  }
+  .request-progress span {
+    width: 100%;
+  }
+}

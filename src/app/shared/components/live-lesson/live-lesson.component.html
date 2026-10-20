@@ -1,0 +1,43 @@
+<figure class="lesson-scene">
+  <div class="lesson-photo-frame">
+    <img
+      src="images/live-lesson-student.webp"
+      [alt]="messages.m_8e049b4425e8"
+      width="1448"
+      height="1086"
+      fetchpriority="high"
+      loading="eager"
+      class="lesson-photo"
+    />
+  </div>
+  @if (!reducedMotion()) {
+    <button
+      type="button"
+      class="lesson-motion-button"
+      (click)="toggleMotion()"
+      [attr.aria-label]="motionPaused() ? messages.m_e876cfcf685e : messages.m_e6e04ccf1248"
+      [attr.title]="motionPaused() ? messages.m_e876cfcf685e : messages.m_e6e04ccf1248"
+    >
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        @if (motionPaused()) {
+          <path stroke-linejoin="round" d="m9 5 11 7-11 7V5Z" />
+        } @else {
+          <path stroke-linecap="round" d="M9 5v14M15 5v14" />
+        }
+      </svg>
+    </button>
+  }
+  <figcaption class="lesson-caption">
+    <span class="live-dot" aria-hidden="true"></span>
+    <div>
+      <strong>{{ messages.m_e904fc08c213 }}</strong>
+      <p>{{ messages.m_bf191a2e66ac }}</p>
+    </div>
+  </figcaption>
+</figure>

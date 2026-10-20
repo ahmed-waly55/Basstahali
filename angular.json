@@ -1,0 +1,123 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "cli": {
+    "packageManager": "npm",
+    "analytics": "e8f30c25-5ead-4010-bebe-a7a04f346156"
+  },
+  "newProjectRoot": "projects",
+  "projects": {
+    "basstahali": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "type": "component"
+        },
+        "@schematics/angular:directive": {
+          "type": "directive"
+        },
+        "@schematics/angular:service": {
+          "type": "service"
+        },
+        "@schematics/angular:class": {
+          "type": "class"
+        },
+        "@schematics/angular:interface": {
+          "type": "interface"
+        },
+        "@schematics/angular:interceptor": {
+          "typeSeparator": "-"
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "src/main.ts",
+            "polyfills": ["@angular/localize/init"],
+            "tsConfig": "tsconfig.app.json",
+            "allowedCommonJsDependencies": ["aos"],
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
+            "styles": ["node_modules/aos/dist/aos.css", "src/styles.css"],
+            "scripts": [],
+            "server": "src/main.server.ts",
+            "outputMode": "server",
+            "security": {
+              "allowedHosts": ["localhost", "127.0.0.1", "basstahali.com", "www.basstahali.com"]
+            },
+            "ssr": {
+              "entry": "src/server.ts"
+            },
+            "localize": false
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "localize": false,
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "basstahali:build:production"
+            },
+            "development": {
+              "buildTarget": "basstahali:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "buildTarget": "basstahali:build:development",
+            "tsConfig": "tsconfig.spec.json",
+            "runner": "vitest",
+            "providersFile": "src/test-providers.ts",
+            "setupFiles": ["src/test-setup.ts"]
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular/build:extract-i18n",
+          "options": {
+            "buildTarget": "basstahali:build:development",
+            "format": "xlf2",
+            "outputPath": "src/locale",
+            "outFile": "messages.xlf"
+          }
+        }
+      },
+      "i18n": {
+        "sourceLocale": "ar"
+      }
+    }
+  }
+}

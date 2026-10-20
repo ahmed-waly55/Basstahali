@@ -1,0 +1,24 @@
+:host {
+  display: block;
+}
+
+.group {
+  transition: all 0.35s ease;
+}
+
+.group svg {
+  transition: 0.35s;
+}
+
+.group:hover svg {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+:host-context(html.dark) .group > span {
+  background: var(--soft);
+  border-color: var(--border);
+  color: var(--brand);
+}
+button {
+  cursor: pointer;
+}

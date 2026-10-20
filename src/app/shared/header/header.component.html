@@ -1,0 +1,144 @@
+<header class="site-header">
+  <div class="header-inner">
+    <a
+      routerLink="/"
+      (click)="closeMenu()"
+      class="brand-link"
+      [attr.aria-label]="messages.m_b986d8fb163c"
+      ><span class="brand-owl"><img src="images/owl.png" alt="" width="96" height="64" /></span
+      ><span class="brand-wordmark">
+        @if (preferences.language() === 'ar') {
+          <span class="brand-name" dir="rtl">بسط<span>هالي</span></span>
+          <span class="brand-subtitle" dir="ltr">Basstahali</span>
+        } @else {
+          <span class="brand-name brand-latin" dir="ltr">Bassta<span>hali</span></span>
+          <span class="brand-subtitle brand-arabic" dir="rtl">بسطهالي</span>
+        }
+      </span></a
+    >
+    <nav class="desktop-nav" [attr.aria-label]="messages.m_cb75b65677d5">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">{{
+        messages.m_b986d8fb163c
+      }}</a>
+      <a routerLink="/curriculum" routerLinkActive="active">{{ messages.m_1ea7464560c3 }}</a>
+      <a routerLink="/courses" routerLinkActive="active">{{ messages.m_5b82b7079a31 }}</a>
+      <a routerLink="/teachers" routerLinkActive="active">{{ messages.m_43edaf712d07 }}</a>
+      <a routerLink="/features" routerLinkActive="active">{{ messages.m_ec15ec94c35d }}</a>
+      <a routerLink="/pricing" routerLinkActive="active">{{ messages.m_d3d452110c4d }}</a>
+      <a routerLink="/about" routerLinkActive="active">{{ messages.m_629d28fb5255 }}</a>
+    </nav>
+    <div class="header-actions">
+      <button
+        type="button"
+        (click)="preferences.toggleLanguage()"
+        class="language-button"
+        [disabled]="preferences.switchingLanguage()"
+        [attr.aria-busy]="preferences.switchingLanguage()"
+        [attr.aria-label]="
+          preferences.language() === 'ar' ? 'Switch to English' : messages.m_2aaf2c72e715
+        "
+      >
+        {{ preferences.language() === 'ar' ? 'EN' : messages.m_404841693fc2 }}
+      </button>
+      <button
+        type="button"
+        (click)="preferences.toggleTheme()"
+        class="theme-button"
+        [attr.aria-pressed]="preferences.dark()"
+        [attr.aria-label]="messages.m_d77b19407de9"
+      >
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.7"
+        >
+          @if (preferences.dark()) {
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"
+            />
+          } @else {
+            <path d="M20 14A8 8 0 0 1 10 4a8 8 0 1 0 10 10Z" />
+          }
+        </svg>
+      </button>
+      <a href="https://dashboard.basstahali.com" class="header-login"
+        >{{ messages.m_8c6117b67c8b }}
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.7"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="m7 17 10-10M7 7h10v10" /></svg
+      ></a>
+      <button
+        type="button"
+        (click)="toggleMenu()"
+        class="menu-button"
+        [attr.aria-expanded]="isMenuOpen"
+        aria-controls="mobile-navigation"
+        [attr.aria-label]="messages.m_cb75b65677d5"
+      >
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        >
+          @if (isMenuOpen) {
+            <path d="m6 6 12 12M6 18 18 6" />
+          } @else {
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          }
+        </svg>
+      </button>
+    </div>
+  </div>
+  @if (isMenuOpen) {
+    <nav
+      id="mobile-navigation"
+      class="mobile-navigation"
+      [attr.aria-label]="messages.m_cb75b65677d5"
+    >
+      @for (
+        link of [
+          { path: '/', label: messages.m_b986d8fb163c },
+          { path: '/curriculum', label: messages.m_1ea7464560c3 },
+          { path: '/courses', label: messages.m_5b82b7079a31 },
+          { path: '/teachers', label: messages.m_43edaf712d07 },
+          { path: '/features', label: messages.m_ec15ec94c35d },
+          { path: '/pricing', label: messages.m_d3d452110c4d },
+          { path: '/about', label: messages.m_629d28fb5255 },
+          { path: '/contact', label: messages.m_988638232136 },
+        ];
+        track link.path
+      ) {
+        <a
+          [routerLink]="link.path"
+          (click)="closeMenu()"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+          >{{ link.label }}</a
+        >
+      }
+      <a href="https://dashboard.basstahali.com" class="mobile-login"
+        >{{ messages.m_8c6117b67c8b }}
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="m7 17 10-10M7 7h10v10" />
+        </svg>
+      </a>
+    </nav>
+  }
+</header>

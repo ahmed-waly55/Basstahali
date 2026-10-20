@@ -1,0 +1,236 @@
+<section
+  class="learning-catalog bg-[var(--page)] pb-20"
+  [attr.dir]="preferences.language() === 'ar' ? 'rtl' : 'ltr'"
+>
+  <div class="bg-[var(--surface)] text-[var(--ink)] border-b border-[var(--border)]">
+    <div class="relative mx-auto max-w-7xl px-5 py-8 sm:px-8 md:py-10">
+      <nav
+        [attr.aria-label]="messages.m_b598140d68a4"
+        class="mb-8 flex flex-wrap items-center gap-2 text-sm text-[var(--muted)]"
+      >
+        <a routerLink="/" class="hover:text-[#ffc107]">{{ messages.m_b986d8fb163c }}</a
+        ><span aria-hidden="true">/</span>
+        @if (step() > 1) {
+          <a routerLink="/curriculum" class="hover:text-[#ffc107]">{{ messages.m_1ea7464560c3 }}</a
+          ><span aria-hidden="true">/</span>
+        }
+        @if (step() === 3) {
+          <a [routerLink]="backLink()" class="hover:text-[#ffc107]">{{ messages.m_e56a7b103ef6 }}</a
+          ><span aria-hidden="true">/</span>
+        }
+        <span aria-current="page">{{ title() }}</span>
+      </nav>
+      <div class="flex flex-col justify-between gap-8 md:flex-row md:items-end">
+        <div class="max-w-2xl">
+          <h1 class="text-3xl font-extrabold leading-tight sm:text-4xl">
+            {{ title() }}
+          </h1>
+          <p class="mt-5 max-w-xl text-base leading-8 text-[var(--muted)] sm:text-lg">
+            {{ description() }}
+          </p>
+        </div>
+        <ol [attr.aria-label]="messages.m_2cadbb3d0c3c" class="flex gap-3 text-sm">
+          @for (label of stepLabels; track label; let index = $index) {
+            <li
+              class="flex flex-col items-center gap-2"
+              [attr.aria-current]="step() === index + 1 ? 'step' : null"
+            >
+              <span
+                class="flex h-11 w-11 items-center justify-center rounded-2xl border border-[var(--border)] font-bold"
+                [class.bg-yellow-400]="step() === index + 1"
+                [class.text-purple-950]="step() === index + 1"
+                >{{ index + 1 }}</span
+              >
+              <span>{{ label }}</span>
+            </li>
+          }
+        </ol>
+      </div>
+    </div>
+  </div>
+  <div class="mx-auto max-w-7xl px-5 pt-8 sm:px-8">
+    @if (step() > 1) {
+      <a
+        [routerLink]="backLink()"
+        class="mb-6 inline-flex items-center gap-2 font-bold text-[#3b236d]"
+        ><span aria-hidden="true">→</span>
+        {{ step() === 2 ? messages.m_33fe9feecbfc : messages.m_fc0f6f348438 }}</a
+      >
+    }
+    <div class="mb-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+      <div>
+        <h2 class="text-xl font-bold text-[#3b236d]">
+          {{
+            step() === 1
+              ? messages.m_17f5a7b2b1e1
+              : step() === 2
+                ? messages.m_9568ca9a2b18
+                : messages.m_e8d4848d70d7
+          }}
+        </h2>
+        @if (!loading() && !failed()) {
+          <p class="mt-2 text-sm text-slate-500" aria-live="polite">
+            {{ filtered().length }}
+            {{ messages.m_aa7099e27834 }}
+            {{ items().length }}
+            {{ messages.m_fe30fd1d6cb8 }}
+          </p>
+        }
+      </div>
+      <div class="w-full sm:max-w-sm">
+        <label for="catalog-search" class="mb-2 block text-sm font-semibold text-slate-600"
+          >{{ messages.m_b7cd28953c33 }}
+          {{ title() }}</label
+        >
+        <input
+          id="catalog-search"
+          type="search"
+          [value]="query()"
+          (input)="query.set($any($event.target).value)"
+          [placeholder]="
+            messages.m_fc86abfa98de
+          "
+          class="w-full rounded-2xl border border-purple-100 bg-white px-5 py-3 text-[#3b236d] shadow-sm focus:border-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-100"
+        />
+      </div>
+    </div>
+    @if (loading()) {
+      <div role="status" aria-live="polite">
+        <p class="mb-4 text-slate-600">
+          {{ messages.m_730c04f9f7c9 }}
+          {{ title() }}…
+        </p>
+        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3" aria-hidden="true">
+          @for (placeholder of [1, 2, 3]; track placeholder) {
+            <div
+              class="h-64 animate-pulse rounded-3xl border border-purple-100 bg-purple-100/50"
+            ></div>
+          }
+        </div>
+      </div>
+    } @else if (failed()) {
+      <div role="alert" class="rounded-3xl border border-purple-100 bg-white p-10 text-center">
+        <h3 class="text-xl font-bold text-[#3b236d]">{{ messages.m_e0465a89fde9 }}</h3>
+        <p class="mt-3 text-slate-600">
+          {{ messages.m_c736c9f1496a }}
+        </p>
+        <button
+          type="button"
+          (click)="retry.emit()"
+          class="mt-6 rounded-xl bg-[#3b236d] px-7 py-3 font-bold text-white"
+        >
+          {{ messages.m_2e47b5f289f1 }}
+        </button>
+      </div>
+    } @else if (filtered().length) {
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        @for (item of filtered(); track key(item) || $index; let index = $index) {
+          <article
+            class="group relative flex flex-col rounded-3xl border border-purple-100 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-purple-300 hover:shadow-lg sm:p-7"
+          >
+            <div class="mb-6 flex items-start justify-between gap-4">
+              <span
+                class="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f4f0fa] text-[#3b236d]"
+                aria-hidden="true"
+                ><svg
+                  class="h-7 w-7"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 6v14M3 5c3-1 6-1 9 1 3-2 6-2 9-1v14c-3-1-6-1-9 1-3-2-6-2-9-1V5Z"
+                  /></svg
+              ></span>
+              <span class="rounded-full bg-amber-50 px-3 py-1 text-xs font-bold text-amber-800">{{
+                step() === 1
+                  ? messages.m_3a6bbb407f01
+                  : step() === 2
+                    ? messages.m_ff11d6178d73
+                    : messages.m_7ea037d430bc
+              }}</span>
+            </div>
+            <h3 class="text-xl font-extrabold leading-8 text-[#3b236d]">
+              {{ name(item) }}
+            </h3>
+            <p class="mb-7 mt-3 text-sm leading-7 text-slate-600">
+              {{
+                itemDescription(item) ||
+                  (step() === 1
+                    ? messages.m_29fc2ee50825
+                    : step() === 2
+                      ? messages.m_a26265e1c5e4
+                      : messages.m_08f70f3decd3)
+              }}
+            </p>
+            @if (step() < 3 && key(item)) {
+              <a
+                [routerLink]="[step() === 1 ? '/curriculum' : '/subjects', key(item)]"
+                [queryParams]="step() === 2 ? { curriculum: curriculumId() } : null"
+                class="mt-auto flex items-center justify-between rounded-xl bg-[#f4f0fa] px-5 py-3 font-bold text-[#3b236d] transition group-hover:bg-[#3b236d] group-hover:text-white"
+                [attr.aria-label]="
+                  (step() === 1 ? messages.m_ea2000f61b88 : messages.m_9464e5061743) + name(item)
+                "
+                >{{ step() === 1 ? messages.m_27873d8c70fc : messages.m_718591f8c558
+                }}<span aria-hidden="true">←</span></a
+              >
+            } @else if (step() === 3) {
+              <a
+                [href]="bookingLink(item)"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-auto flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#ffc107] px-5 py-3 text-center text-sm font-bold text-purple-950 hover:bg-amber-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ffc107]"
+                [attr.aria-label]="bookingAriaLabel(item)"
+                ><i class="fa-brands fa-whatsapp text-xl" aria-hidden="true"></i
+                >{{ bookingLabel }}</a
+              >
+            }
+          </article>
+        }
+      </div>
+    } @else {
+      <div
+        role="status"
+        class="rounded-3xl border border-dashed border-purple-200 bg-white p-10 text-center"
+      >
+        <h3 class="text-xl font-bold text-[#3b236d]">
+          {{ query() ? messages.m_8d88b0583d4d : messages.m_fca727a94d64 }}
+        </h3>
+        <p class="mt-3 text-slate-600">
+          {{ query() ? messages.m_9c11c23a1864 : messages.m_f2e0d175e64f }}
+        </p>
+        @if (query()) {
+          <button
+            type="button"
+            (click)="query.set('')"
+            class="mt-5 font-bold text-[#3b236d] underline underline-offset-4"
+          >
+            {{ messages.m_d36294e5abb3 }}
+          </button>
+        }
+      </div>
+    }
+    <aside
+      class="mt-10 flex flex-col items-start justify-between gap-5 rounded-3xl border border-purple-100 bg-[#f0eafa] p-6 sm:flex-row sm:items-center sm:p-8"
+    >
+      <div>
+        <h2 class="text-lg font-bold text-[#3b236d]">
+          {{ messages.m_24ad3009f7b1 }}
+        </h2>
+        <p class="mt-2 text-sm leading-7 text-slate-600">
+          {{ messages.m_9216e40a4838 }}
+        </p>
+      </div>
+      <a
+        href="https://wa.me/971563306087"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="shrink-0 rounded-xl bg-[#3b236d] px-6 py-3 font-bold text-white"
+        >{{ messages.m_988638232136 }}</a
+      >
+    </aside>
+  </div>
+</section>

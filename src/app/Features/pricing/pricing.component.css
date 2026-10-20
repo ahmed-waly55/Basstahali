@@ -1,0 +1,15 @@
+.curriculum-option {
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+.curriculum-option:hover {
+  background: var(--soft);
+  color: var(--ink);
+}
+
+.curriculum-option-active,
+.curriculum-option-active:hover {
+  background: #4f2db7;
+  color: #fff;
+}

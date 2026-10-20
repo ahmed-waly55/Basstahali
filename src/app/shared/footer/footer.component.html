@@ -1,0 +1,160 @@
+<footer class="bg-[#3D1A6D] text-white pt-12 pb-6" dir="inherit">
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- Main -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 items-start pb-10">
+      <!-- Brand -->
+      <div class="space-y-5">
+        <a routerLink="/" class="block">
+          <img
+            src="images/owl.png"
+            [alt]="messages.m_70b341c96b9c"
+            class="h-24 w-auto object-contain"
+          />
+        </a>
+
+        <p class="text-white/80 leading-8 text-sm max-w-sm">
+          {{ messages.m_724341e8f3eb }}
+        </p>
+      </div>
+
+      <!-- Links -->
+      <div class="grid grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-5">
+            {{ messages.m_6e58cd380220 }}
+          </h3>
+
+          <ul class="space-y-3 text-white/80 text-sm">
+            <li>
+              <a routerLink="/" class="hover:text-yellow-300 transition">
+                {{ messages.m_b986d8fb163c }}
+              </a>
+            </li>
+
+            <li>
+              <a routerLink="/curriculum" class="hover:text-yellow-300 transition">
+                {{ messages.m_1ea7464560c3 }}
+              </a>
+            </li>
+
+            <li>
+              <a routerLink="/features" class="hover:text-yellow-300 transition">
+                {{ messages.m_ec15ec94c35d }}
+              </a>
+            </li>
+
+            <li>
+              <a routerLink="/teachers" class="hover:text-yellow-300 transition">
+                {{ messages.m_43edaf712d07 }}
+              </a>
+            </li>
+
+            <li>
+              <a routerLink="/teacher-form" class="hover:text-yellow-300 transition">
+                {{ messages.m_2e84aea0e101 }}
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold mb-5">
+            {{ messages.m_c380b562310d }}
+          </h3>
+
+          <ul class="space-y-3 text-white/80 text-sm">
+            <li>
+              <a routerLink="/privacy" class="hover:text-yellow-300 transition">
+                {{ messages.m_8b7b36b70cdd }}
+              </a>
+            </li>
+
+            <li>
+              <a routerLink="/terms" class="hover:text-yellow-300 transition">
+                {{ messages.m_bec6c46de276 }}
+              </a>
+            </li>
+
+            <li>
+              <a routerLink="/about" fragment="faq" class="hover:text-yellow-300 transition">
+                {{ messages.m_90b224ff944b }}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Contact -->
+
+      <div>
+        <h3 class="text-xl font-bold mb-5">
+          {{ messages.m_988638232136 }}
+        </h3>
+
+        <div class="space-y-4 text-white/90 text-sm">
+          <div class="flex items-center gap-3">
+            <i class="fa-solid fa-phone text-xl"></i>
+
+            <span dir="ltr"> +971 56 330 6087 </span>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <i class="fa-solid fa-envelope text-xl"></i>
+
+            <a href="mailto:basstahali@gmail.com" dir="ltr" class="break-all hover:text-[#ffc107]"
+              >basstahali&#64;gmail.com</a
+            >
+          </div>
+
+          <div class="flex items-center gap-3">
+            <i class="fa-solid fa-location-dot text-xl"></i>
+
+            <span>
+              {{ messages.m_54db1b890699 }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Social -->
+
+    <div class="border-t border-white/20 pt-6">
+      <div class="flex justify-center gap-4">
+        <a
+          href="https://www.facebook.com/basstahali"
+          class="w-11 h-11 bg-white text-[#2039A8] rounded-full flex items-center justify-center hover:bg-yellow-300 hover:text-black transition duration-300"
+        >
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+
+        <a
+          href="https://www.instagram.com/basstahali"
+          class="w-11 h-11 bg-white text-[#2039A8] rounded-full flex items-center justify-center hover:bg-yellow-300 hover:text-black transition"
+        >
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a
+          href="https://www.tiktok.com/@basstahali"
+          class="w-11 h-11 bg-white text-[#2039A8] rounded-full flex items-center justify-center hover:bg-yellow-300 hover:text-black transition"
+        >
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+
+        <a
+          href="https://wa.me/971563306087"
+          class="w-11 h-11 bg-white text-[#2039A8] rounded-full flex items-center justify-center hover:bg-yellow-300 hover:text-black transition"
+        >
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+
+    <div class="text-center text-sm text-white/70 mt-6">
+      {{ copyright }}
+    </div>
+  </div>
+</footer>

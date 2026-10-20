@@ -1,0 +1,13 @@
+/* Avoid focus zoom on narrow screens while retaining the original form cards. */
+@media (max-width: 639px) {
+  input,
+  select {
+    font-size: 16px;
+    min-width: 0;
+  }
+}
+
+:host-context(html.dark) button[type='submit']:disabled {
+  background: #382849;
+  color: #baabcc !important;
+}

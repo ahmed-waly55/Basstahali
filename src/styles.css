@@ -1,0 +1,571 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import './fonts.css';
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Alexandria Variable', 'Inter Variable', Arial, sans-serif;
+}
+
+html {
+  font-family: var(--font-sans);
+}
+html[lang='en'] {
+  --font-sans: 'Inter Variable', 'Alexandria Variable', Arial, sans-serif;
+}
+:where(button, input, select, textarea) {
+  font-family: inherit;
+}
+.absolute.blur-2xl,
+.absolute.blur-3xl {
+  pointer-events: none;
+}
+
+:root {
+  color-scheme: light;
+}
+a,
+button,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+:where(a, button, input):focus-visible {
+  outline: 3px solid #b48ce8;
+  outline-offset: 4px;
+}
+.learning-catalog {
+  min-height: 70vh;
+}
+.learning-catalog :where(h1, h2, h3, p) {
+  overflow-wrap: anywhere;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+:root {
+  --surface: #fff;
+  --page: #faf9fc;
+  --soft: #f2edf8;
+  --border: #eae4f0;
+  --ink: #2b1b44;
+  --muted: #72677d;
+  --brand: #4f2db7;
+}
+html.dark {
+  color-scheme: dark;
+  --surface: #241b34;
+  --page: #171120;
+  --soft: #30223f;
+  --border: #514060;
+  --ink: #f1e9fa;
+  --muted: #c8bdd7;
+  --brand: #d6baff;
+}
+html.dark body {
+  background: var(--page);
+  color: var(--ink);
+}
+
+/* Keep the original light layouts; map their shared utility colors to dark surfaces. */
+html.dark :where(.bg-white, .bg-white\/80, .bg-white\/90, .bg-white\/95) {
+  background-color: var(--surface);
+}
+html.dark
+  :where(
+    .bg-gray-50,
+    .bg-gray-100,
+    .bg-slate-50,
+    .bg-slate-100,
+    .bg-purple-50,
+    .bg-purple-50\/30,
+    .bg-purple-100,
+    .bg-purple-100\/50,
+    .bg-indigo-50,
+    .bg-indigo-100,
+    .bg-\[\#faf8ff\],
+    .bg-\[\#f8f7ff\],
+    .bg-\[\#f4f0fa\],
+    .bg-\[\#f0eafa\],
+    .bg-\[\#dcd5f7\],
+    .bg-\[\#F3EFFF\],
+    .bg-\[\#F7F3FD\]
+  ) {
+  background-color: var(--soft);
+}
+html.dark :where(.bg-yellow-100, .bg-amber-50, .bg-amber-100) {
+  background-color: #3e301e;
+}
+html.dark :where(.bg-blue-100, .bg-blue-100\/50) {
+  background-color: #24334a;
+}
+html.dark :where(.bg-green-100, .bg-emerald-100) {
+  background-color: #203d34;
+}
+html.dark
+  :where(
+    .border-gray-100,
+    .border-gray-200,
+    .border-slate-100,
+    .border-slate-200,
+    .border-slate-200\/80,
+    .border-purple-50,
+    .border-purple-50\/60,
+    .border-purple-100,
+    .border-purple-200,
+    .border-purple-300,
+    .border-\[\#E7DFFF\],
+    .border-\[\#e1d5f2\]
+  ) {
+  border-color: var(--border);
+}
+html.dark :where(.text-black, .text-gray-800, .text-gray-900, .text-slate-800, .text-slate-900) {
+  color: var(--ink);
+}
+html.dark
+  :where(
+    .text-gray-400,
+    .text-gray-500,
+    .text-gray-600,
+    .text-gray-700,
+    .text-slate-400,
+    .text-slate-500,
+    .text-slate-600,
+    .text-slate-700,
+    .text-\[\#6c5991\]
+  ) {
+  color: var(--muted);
+}
+html.dark
+  :where(
+    .text-purple-400,
+    .text-purple-600,
+    .text-purple-900,
+    .text-purple-950,
+    .text-indigo-600,
+    .text-indigo-700,
+    .text-indigo-950,
+    .text-\[\#3b236d\],
+    .text-\[\#4F2DB7\],
+    .text-\[\#2B1B54\],
+    .text-\[\#3D1A6D\],
+    .text-\[\#4c1d95\],
+    .text-\[\#2a174a\]
+  ) {
+  color: var(--brand);
+}
+html.dark :where(.text-amber-600, .text-amber-800, .text-yellow-600) {
+  color: #ffda83;
+}
+html.dark :where(.text-blue-600, .text-\[\#2039A8\]) {
+  color: #a6c4ff;
+}
+html.dark :where(.text-green-500, .text-green-600, .text-emerald-600) {
+  color: #73dfb6;
+}
+html.dark :where(.text-red-600, .text-rose-500) {
+  color: #ff9aad;
+}
+
+/* Light gradient stops include form backgrounds and teacher photo placeholders. */
+html.dark
+  :where(
+    .from-white,
+    .from-purple-50\/50,
+    .from-purple-100,
+    .from-purple-200,
+    .from-purple-200\/30
+  ) {
+  --tw-gradient-from: var(--page);
+}
+html.dark .via-indigo-50\/40 {
+  --tw-gradient-via: var(--soft);
+}
+html.dark :where(.to-white, .to-indigo-50, .to-purple-100\/30, .to-purple-200) {
+  --tw-gradient-to: var(--soft);
+}
+html.dark :where(.bg-gradient-to-br, .bg-gradient-to-r.from-\[\#4A148C\]) {
+  --tw-gradient-from: #21162f;
+  --tw-gradient-via: #241731;
+  --tw-gradient-to: #38224b;
+}
+
+html.dark :where(input, select, textarea) {
+  background-color: #21182f;
+  color: var(--ink);
+  border-color: #705485;
+  accent-color: #b795ef;
+}
+html.dark :where(input, textarea)::placeholder {
+  color: #b9aac9;
+  opacity: 1;
+}
+html.dark :where(input, select, textarea):focus {
+  border-color: #b795ef;
+}
+html.dark :where(button, input, select, textarea):disabled {
+  color: #baabcc;
+}
+
+/* A pale hover utility must remain a dark surface when its interaction is active. */
+html.dark
+  :where(
+    .hover\:bg-gray-100,
+    .hover\:bg-slate-100,
+    .hover\:bg-slate-200,
+    .hover\:bg-indigo-50,
+    .hover\:bg-purple-50,
+    .hover\:bg-purple-100,
+    .hover\:bg-amber-50,
+    .hover\:bg-green-50
+  ):hover {
+  background-color: var(--soft);
+}
+html.dark
+  :where(
+    .hover\:border-purple-300,
+    .hover\:border-indigo-200,
+    .hover\:border-\[\#3b236d\]\/30
+  ):hover {
+  border-color: #a686d1;
+}
+html.dark
+  .group:hover
+  :where(
+    .group-hover\:bg-purple-600,
+    .group-hover\:bg-indigo-600,
+    .group-hover\:bg-\[\#3b236d\],
+    .group-hover\:bg-\[\#4F2DB7\]
+  ) {
+  background-color: #6941b2;
+  color: #fff;
+}
+html.dark
+  .group:hover
+  :where(
+    .group-hover\:bg-purple-600,
+    .group-hover\:bg-indigo-600,
+    .group-hover\:bg-\[\#3b236d\],
+    .group-hover\:bg-\[\#4F2DB7\]
+  )
+  * {
+  color: inherit;
+}
+html.dark .group:hover .group-hover\:bg-green-500 {
+  background-color: #147a57;
+  color: #fff;
+}
+html.dark .group:hover .group-hover\:bg-green-500 * {
+  color: inherit;
+}
+
+/* Gold actions and badges retain dark ink, including inherited icon/label colors. */
+html.dark
+  :where(
+    .bg-yellow-400,
+    .bg-amber-400,
+    .bg-amber-500,
+    .bg-\[\#F9B400\],
+    .bg-\[\#FFC107\],
+    .bg-\[\#ffc107\]
+  ) {
+  color: #2b1b44;
+}
+html.dark
+  :where(
+    .bg-yellow-400,
+    .bg-amber-400,
+    .bg-amber-500,
+    .bg-\[\#F9B400\],
+    .bg-\[\#FFC107\],
+    .bg-\[\#ffc107\]
+  )
+  * {
+  color: inherit;
+}
+html.dark :where(.hover\:bg-\[\#F9B400\], .hover\:bg-yellow-300):hover {
+  color: #2b1b44;
+}
+html.dark
+  .group:hover
+  :where(.group-hover\:bg-yellow-400, .group-hover\:bg-amber-500, .group-hover\:bg-\[\#ffc107\]) {
+  background-color: #ffc107;
+  color: #2b1b44;
+}
+html.dark
+  .group:hover
+  :where(.group-hover\:bg-yellow-400, .group-hover\:bg-amber-500, .group-hover\:bg-\[\#ffc107\])
+  * {
+  color: inherit;
+}
+html[dir='ltr'] .text-right,
+html[dir='ltr'] .lg\:text-right {
+  text-align: left;
+}
+
+.page-container {
+  width: min(100% - 40px, 1152px);
+  margin-inline: auto;
+}
+.page-heading {
+  padding-block: 38px 48px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.page-heading h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.5;
+  margin-top: 12px;
+  color: var(--ink);
+}
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+  color: var(--brand);
+}
+.eyebrow span {
+  padding-inline: 8px;
+  color: #d5c5e8;
+}
+.page-intro {
+  font-size: 16px;
+  line-height: 1.9;
+  max-width: 640px;
+  color: var(--muted);
+  margin-top: 10px;
+}
+.content-section {
+  padding-block: 48px 64px;
+}
+.section-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 750;
+  color: var(--ink);
+  line-height: 1.5;
+}
+.section-copy {
+  color: var(--muted);
+  line-height: 1.9;
+  margin-top: 12px;
+}
+.surface-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 28px;
+}
+.soft-card {
+  background: var(--soft);
+  border-radius: 24px;
+  padding: 28px;
+}
+.primary-action,
+.secondary-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 46px;
+  border-radius: 12px;
+  padding: 12px 22px;
+  font-size: 14px;
+  font-weight: 750;
+  cursor: pointer;
+}
+.primary-action {
+  background: #3b236d;
+  color: #fff;
+}
+.primary-action:hover {
+  background: #4f2db7;
+}
+.secondary-action {
+  background: var(--soft);
+  color: var(--brand);
+}
+.gold-action {
+  background: #ffc107;
+  color: #3b236d;
+}
+.gold-action:hover {
+  background: #ffce38;
+}
+.filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-block: 0 28px;
+}
+.filter-tabs button {
+  padding: 10px 18px;
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  font-size: 13px;
+  color: var(--muted);
+  background: var(--surface);
+  cursor: pointer;
+}
+.filter-tabs button.selected {
+  background: #3b236d;
+  border-color: #3b236d;
+  color: #fff;
+}
+.card-label {
+  display: inline-block;
+  padding: 5px 11px;
+  font-size: 12px;
+  font-weight: 650;
+  background: var(--soft);
+  color: var(--brand);
+  border-radius: 9px;
+}
+.clean-form label {
+  display: block;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.clean-form :where(input:not([type='checkbox']), textarea, select) {
+  width: 100%;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--page);
+  color: var(--ink);
+  font-size: 14px;
+}
+.clean-form :where(input, textarea, select):focus {
+  outline: 2px solid #cbb5ee;
+  outline-offset: 1px;
+}
+.clean-form button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.clean-form .field-error {
+  color: #dc4868;
+  font-size: 12px;
+  margin-top: 5px;
+}
+.clean-form input[type='checkbox'] {
+  accent-color: #4f2db7;
+}
+@media (max-width: 639px) {
+  main h1:not(.hero-clean h1):not(.not-found-container h1) {
+    font-size: 28px;
+    line-height: 1.5;
+  }
+  main :is(h2.text-2xl, h2.text-3xl, h2.text-4xl, h2.text-5xl, h2.text-6xl, .section-title) {
+    font-size: 22px;
+    line-height: 1.6;
+  }
+  main :is(h3.text-lg, h3.text-xl, h3.text-2xl, h3.text-3xl) {
+    font-size: 18px;
+  }
+  main :is(p.text-lg, p.text-xl, .page-intro, .section-copy) {
+    font-size: 14px;
+    line-height: 1.9;
+  }
+  main .plan-price {
+    font-size: 32px;
+  }
+  main h1 > i {
+    font-size: 28px;
+  }
+  .page-heading {
+    padding-block: 26px 32px;
+  }
+  .content-section {
+    padding-block: 32px 44px;
+  }
+  .surface-card,
+  .soft-card {
+    padding: 22px;
+  }
+  .page-container {
+    width: calc(100% - 32px);
+  }
+}
+
+/* Shared confirmation dialogs: use the same brand and theme as the retained header. */
+.swal2-popup.basstahali-dialog {
+  width: min(420px, calc(100vw - 32px));
+  padding: 24px;
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: 0 24px 80px rgba(20, 12, 37, 0.2);
+}
+.basstahali-dialog__title {
+  padding: 0;
+  margin-top: 12px;
+  color: var(--ink);
+  font-size: 23px;
+  line-height: 1.5;
+  font-weight: 750;
+}
+.basstahali-dialog__message {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+.basstahali-dialog__actions {
+  width: 100%;
+  margin: 24px 0 0;
+  padding: 0;
+}
+.basstahali-dialog__confirm {
+  width: 100%;
+  padding: 13px 22px;
+  border: 0;
+  border-radius: 12px;
+  background: #4f2db7;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.basstahali-dialog__confirm:hover {
+  background: #3b236d;
+}
+.basstahali-dialog__confirm:focus-visible {
+  outline: 3px solid #ffc107;
+  outline-offset: 3px;
+}
+.basstahali-dialog__close {
+  width: 36px;
+  height: 36px;
+  margin: 10px;
+  border-radius: 10px;
+  color: var(--muted);
+  font-size: 26px;
+}
+.basstahali-dialog__close:hover {
+  color: var(--brand);
+  background: var(--soft);
+}
+.basstahali-dialog .swal2-icon {
+  margin: 14px auto 8px;
+}
+html[dir='rtl'] .basstahali-dialog__close {
+  grid-column: 1;
+  justify-self: start;
+}

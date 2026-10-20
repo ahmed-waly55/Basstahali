@@ -1,0 +1,15 @@
+@if (visible$ | async) {
+  <div class="request-progress" aria-hidden="true"><span></span></div>
+
+  <div class="request-status" role="status" aria-live="polite" aria-atomic="true" dir="inherit">
+    <span class="request-mascot" aria-hidden="true">
+      <span class="request-orbit"></span>
+      <span class="request-owl"><img src="images/owl.png" alt="" width="88" height="59" /></span>
+    </span>
+    <div class="request-copy">
+      <p class="request-title">{{ messages.m_cee8f138e31b }}</p>
+      <p class="request-description">{{ messages.m_38417eeccdce }}</p>
+    </div>
+    <span class="request-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+  </div>
+}

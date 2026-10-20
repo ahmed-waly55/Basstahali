@@ -1,0 +1,579 @@
+<!-- Hero Component Animation -->
+<app-hero></app-hero>
+
+<!-- Header 1 -->
+<app-section-header
+  [title]="messages.m_48b4fb1a68d2"
+  data-aos="fade-down"
+  data-aos-duration="800"
+/>
+
+<div class="container mx-auto px-4">
+  <!-- تم ضبط الشبكة هنا لتصبح 3 كروت في الصف الواحد lg:grid-cols-3 -->
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto"
+    [attr.aria-busy]="curriculaLoading"
+  >
+    @if (curriculaLoading) {
+      <div
+        class="md:col-span-2 rounded-2xl border border-purple-100 bg-purple-50 p-8 text-center text-purple-900"
+        role="status"
+      >
+        {{ messages.m_cee8f138e31b }}
+      </div>
+    } @else if (curriculaFailed) {
+      <div
+        class="md:col-span-2 rounded-2xl border border-purple-100 bg-purple-50 p-8 text-center"
+        role="alert"
+      >
+        <p class="font-bold text-purple-900">{{ messages.m_e0465a89fde9 }}</p>
+        <p class="mt-2 text-sm text-slate-600">{{ messages.m_c736c9f1496a }}</p>
+        <button
+          type="button"
+          (click)="fetchCurricula()"
+          class="mt-4 rounded-xl bg-[#4F2DB7] px-5 py-3 text-sm font-bold text-white"
+        >
+          {{ messages.m_2e47b5f289f1 }}
+        </button>
+      </div>
+    } @else if (!curriculaList.length) {
+      <div
+        class="md:col-span-2 rounded-2xl border border-purple-100 bg-purple-50 p-8 text-center text-purple-900"
+        role="status"
+      >
+        {{ messages.m_4d255e9aaa04 }}
+      </div>
+    }
+    <!-- عرض المناهج القادمة من الـ API ديناميكياً -->
+    @for (
+      curriculum of curriculaList;
+      track curriculum.id || curriculum._id || $index;
+      let idx = $index
+    ) {
+      <a
+        [routerLink]="['/curriculum', curriculum.id || curriculum._id]"
+        class="block hover:no-underline cursor-pointer"
+        [attr.data-aos]="'fade-up'"
+        [attr.data-aos-delay]="(idx + 1) * 100"
+      >
+        <app-education-card
+          [title]="preferences.itemName(curriculum) || messages.m_173cce3ff639"
+          [subtitle]="curriculum.description || messages.m_33dca1b609ba"
+          iconBg="bg-blue-100"
+          iconColor="text-blue-600"
+          glowColor="bg-blue-300"
+          lineColor="bg-blue-500"
+          borderColor="hover:border-blue-300"
+          buttonColor="border-blue-500 text-blue-600 hover:bg-blue-600 hover:text-white"
+        >
+        </app-education-card>
+      </a>
+    }
+
+    <!-- الكورسات (ثابتة بجانب المناهج) -->
+    <a
+      routerLink="/courses"
+      class="block hover:no-underline"
+      data-aos="fade-up"
+      data-aos-delay="250"
+    >
+      <app-education-card
+        [title]="messages.m_5b82b7079a31"
+        [subtitle]="messages.m_a73730be0c2b"
+        iconBg="bg-[#F9B400]/20"
+        iconColor="text-[#F9B400]"
+        glowColor="bg-[#F9B400]/40"
+        lineColor="bg-[#F9B400]"
+        borderColor="hover:border-[#F9B400]"
+        buttonColor="border-[#F9B400] text-[#F9B400] hover:bg-[#F9B400] hover:text-black"
+      >
+      </app-education-card>
+    </a>
+  </div>
+</div>
+
+<!-- Header 2 -->
+<app-section-header
+  [title]="messages.m_733f81a21615"
+  data-aos="fade-down"
+  data-aos-duration="800"
+/>
+
+<section class="container mx-auto px-4 py-8">
+  <div
+    class="relative overflow-hidden rounded-[32px] bg-gradient-to-r from-[#3D1A6D] via-[#4F2DB7] to-[#6A3FC8] p-8 md:p-10"
+    data-aos="zoom-in"
+    data-aos-duration="900"
+  >
+    <!-- Decorations -->
+    <div class="absolute -top-20 -right-20 w-72 h-72 bg-[#F9B400]/20 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-20 -left-20 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
+
+    <!-- Heading -->
+    <div class="relative text-center mb-10" data-aos="fade-up" data-aos-delay="150">
+      <span
+        class="inline-flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full text-white text-sm font-semibold"
+      >
+        <i class="fa-solid fa-stars text-[#F9B400]"></i>
+        {{ messages.m_4dc778bb0709 }}
+      </span>
+
+      <h2 class="mt-5 text-3xl md:text-4xl font-black text-white">
+        {{ messages.m_ef1f81cc2219 }}
+        <span class="text-[#F9B400]">{{ messages.m_149eab48f8d5 }}</span>
+      </h2>
+
+      <p class="mt-3 text-white/75 max-w-2xl mx-auto">
+        {{ messages.m_bc25e99f9ae0 }}
+      </p>
+    </div>
+
+    <!-- Features Cards with Stagger Animation -->
+    <div class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-5">
+      <div
+        class="group rounded-3xl bg-white/10 backdrop-blur-md border border-white/10 p-5 text-center hover:bg-white/20 transition-all duration-300 hover:-translate-y-2"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        <div
+          class="w-14 h-14 rounded-2xl bg-[#F9B400] text-[#3D1A6D] flex items-center justify-center text-2xl mx-auto shadow-lg group-hover:scale-110 transition"
+        >
+          <i class="fa-solid fa-calendar-days"></i>
+        </div>
+        <h3 class="mt-4 font-bold text-white">{{ messages.m_df67c0ff5d15 }}</h3>
+        <p class="mt-2 text-sm text-white/70 leading-6">
+          {{ messages.m_3196feca54ae }}
+        </p>
+      </div>
+
+      <div
+        class="group rounded-3xl bg-white/10 backdrop-blur-md border border-white/10 p-5 text-center hover:bg-white/20 transition-all duration-300 hover:-translate-y-2"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        <div
+          class="w-14 h-14 rounded-2xl bg-[#F9B400] text-[#3D1A6D] flex items-center justify-center text-2xl mx-auto shadow-lg group-hover:scale-110 transition"
+        >
+          <i class="fa-solid fa-bell"></i>
+        </div>
+        <h3 class="mt-4 font-bold text-white">{{ messages.m_cc40179ce00c }}</h3>
+        <p class="mt-2 text-sm text-white/70">{{ messages.m_8d63fdbb70ec }}</p>
+      </div>
+
+      <div
+        class="group rounded-3xl bg-white/10 backdrop-blur-md border border-white/10 p-5 text-center hover:bg-white/20 transition-all duration-300 hover:-translate-y-2"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+        <div
+          class="w-14 h-14 rounded-2xl bg-[#F9B400] text-[#3D1A6D] flex items-center justify-center text-2xl mx-auto shadow-lg group-hover:scale-110 transition"
+        >
+          <i class="fa-solid fa-cloud-arrow-up"></i>
+        </div>
+        <h3 class="mt-4 font-bold text-white">{{ messages.m_2dca077cc935 }}</h3>
+        <p class="mt-2 text-sm text-white/70">{{ messages.m_fe7466316c5b }}</p>
+      </div>
+
+      <div
+        class="group rounded-3xl bg-white/10 backdrop-blur-md border border-white/10 p-5 text-center hover:bg-white/20 transition-all duration-300 hover:-translate-y-2"
+        data-aos="fade-up"
+        data-aos-delay="400"
+      >
+        <div
+          class="w-14 h-14 rounded-2xl bg-[#F9B400] text-[#3D1A6D] flex items-center justify-center text-2xl mx-auto shadow-lg group-hover:scale-110 transition"
+        >
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <h3 class="mt-4 font-bold text-white">{{ messages.m_10bd43535d5c }}</h3>
+        <p class="mt-2 text-sm text-white/70">{{ messages.m_7cb12f66df00 }}</p>
+      </div>
+
+      <div
+        class="group rounded-3xl bg-white/10 backdrop-blur-md border border-white/10 p-5 text-center hover:bg-white/20 transition-all duration-300 hover:-translate-y-2"
+        data-aos="fade-up"
+        data-aos-delay="500"
+      >
+        <div
+          class="w-14 h-14 rounded-2xl bg-[#F9B400] text-[#3D1A6D] flex items-center justify-center text-2xl mx-auto shadow-lg group-hover:scale-110 transition"
+        >
+          <i class="fa-solid fa-user-group"></i>
+        </div>
+        <h3 class="mt-4 font-bold text-white">{{ messages.m_93253eaf4991 }}</h3>
+        <p class="mt-2 text-sm text-white/70">{{ messages.m_81e5a00e0c5a }}</p>
+      </div>
+
+      <div
+        class="group rounded-3xl bg-white/10 backdrop-blur-md border border-white/10 p-5 text-center hover:bg-white/20 transition-all duration-300 hover:-translate-y-2"
+        data-aos="fade-up"
+        data-aos-delay="600"
+      >
+        <div
+          class="w-14 h-14 rounded-2xl bg-[#F9B400] text-[#3D1A6D] flex items-center justify-center text-2xl mx-auto shadow-lg group-hover:scale-110 transition"
+        >
+          <i class="fa-solid fa-chart-line"></i>
+        </div>
+        <h3 class="mt-4 font-bold text-white">{{ messages.m_a2991806009f }}</h3>
+        <p class="mt-2 text-sm text-white/70">{{ messages.m_4c202b92e8cc }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. Banner Section -->
+<section
+  dir="ltr"
+  class="w-full max-w-7xl mx-auto px-4 py-4"
+  data-aos="zoom-in-up"
+  data-aos-duration="800"
+>
+  <div
+    class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#4A148C] via-[#5E17EB] to-[#45129E] px-6 md:px-10 py-5 shadow-xl flex flex-col md:flex-row items-center justify-between gap-4"
+  >
+    <!-- البومة -->
+    <div
+      class="relative flex items-center justify-center shrink-0"
+      data-aos="fade-right"
+      data-aos-delay="250"
+    >
+      <span class="absolute -top-2 left-4 text-yellow-300 animate-pulse">✦</span>
+      <span class="absolute bottom-2 right-2 text-purple-300">✦</span>
+      <img
+        src="/images/owl-banner.png"
+        [alt]="messages.m_70b341c96b9c"
+        class="w-32 md:w-44 h-auto object-contain drop-shadow-xl"
+      />
+    </div>
+
+    <!-- المحتوى -->
+    <div
+      class="flex-1 flex flex-col md:items-end items-center text-center md:text-right text-white"
+      data-aos="fade-left"
+      data-aos-delay="350"
+    >
+      <span
+        class="mb-2 inline-flex items-center rounded-full bg-yellow-400/20 border border-yellow-300/30 px-4 py-1 text-sm font-semibold text-yellow-200"
+      >
+        {{ messages.m_7127659cb735 }}
+      </span>
+      <h2 class="text-2xl md:text-4xl font-extrabold">
+        {{ messages.m_6dc1b1365af6 }}
+        <span class="text-yellow-300">{{ messages.m_fb97e075faae }}</span>
+      </h2>
+      <p class="mt-2 text-purple-100 text-base md:text-lg">
+        {{ messages.m_14e4a20dfd7c }}
+      </p>
+      <div class="mt-4">
+        <a
+          [href]="trialBookingLink"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-3 bg-[#FFC107] hover:bg-[#FFC108] text-black font-bold px-7 py-3 rounded-2xl shadow-lg transition duration-300 hover:scale-105"
+        >
+          <i class="pi pi-whatsapp text-xl"></i>
+          {{ messages.m_8f7716d77474 }}
+        </a>
+      </div>
+    </div>
+
+    <!-- خلفية -->
+    <div
+      class="absolute -bottom-10 -right-10 w-40 h-40 bg-purple-400/20 rounded-full blur-3xl"
+    ></div>
+    <div class="absolute -top-10 -left-10 w-40 h-40 bg-indigo-400/20 rounded-full blur-3xl"></div>
+  </div>
+</section>
+
+<section class="relative py-20 md:py-28 overflow-hidden bg-slate-50">
+  <!-- Dynamic Background Glowing Blobs -->
+  <div
+    class="absolute top-1/4 -right-20 w-80 h-80 bg-purple-200/40 rounded-full blur-3xl pointer-events-none"
+  ></div>
+  <div
+    class="absolute bottom-10 -left-20 w-80 h-80 bg-amber-200/40 rounded-full blur-3xl pointer-events-none"
+  ></div>
+
+  <div class="container relative mx-auto px-4 max-w-7xl z-10">
+    <!-- Header Section -->
+    <div class="text-center max-w-3xl mx-auto mb-16 md:mb-20" data-aos="fade-down">
+      <span
+        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-100 text-[#4F2DB7] text-sm font-bold mb-4 shadow-sm"
+      >
+        <i class="fa-solid fa-rocket text-[#F9B400]"></i>
+        <span>{{ messages.m_84a67ee91b0f }}</span>
+      </span>
+
+      <h2 class="text-3xl md:text-5xl font-black text-slate-900 leading-tight">
+        {{ messages.m_9602e81690c9 }}
+        <span class="text-[#4F2DB7] relative inline-block">
+          {{ messages.m_5324c02ad8af }}
+          <svg
+            class="absolute -bottom-2 right-0 w-full h-2 text-[#F9B400]"
+            viewBox="0 0 100 20"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0 15 Q 50 0, 100 15"
+              stroke="currentColor"
+              stroke-width="6"
+              fill="none"
+              stroke-linecap="round"
+            />
+          </svg>
+        </span>
+      </h2>
+
+      <p class="mt-4 text-slate-600 text-base md:text-lg leading-relaxed">
+        {{ messages.m_29499543fd3e }}
+      </p>
+    </div>
+
+    <!-- Steps Timeline Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+      <!-- Connection Line (Desktop) -->
+      <div
+        class="hidden lg:block absolute top-1/2 right-[12%] left-[12%] h-1 bg-gradient-to-l from-purple-200 via-[#4F2DB7]/30 to-purple-200 -translate-y-8 z-0"
+      ></div>
+
+      <!-- Step 1 -->
+      <div class="relative group z-10" data-aos="fade-up" data-aos-delay="0">
+        <div
+          class="h-full bg-white rounded-3xl p-8 border border-slate-200/80 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center"
+        >
+          <!-- Step Number Badge -->
+          <div
+            class="absolute -top-4 right-6 w-9 h-9 rounded-2xl bg-[#F9B400] text-[#3D1A6D] text-sm font-black flex items-center justify-center shadow-md border-2 border-white"
+          >
+            01
+          </div>
+
+          <!-- Icon Circle -->
+          <div
+            class="w-20 h-20 rounded-2xl bg-purple-50 text-[#4F2DB7] group-hover:bg-[#4F2DB7] group-hover:text-white transition-colors duration-300 flex items-center justify-center text-3xl shadow-inner mb-6"
+          >
+            <i class="fa-solid fa-user-plus"></i>
+          </div>
+
+          <h3 class="text-xl font-bold text-slate-900 mb-2">{{ messages.m_e27bdf84c680 }}</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">
+            {{ messages.m_bdc93726daf6 }}
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="relative group z-10" data-aos="fade-up" data-aos-delay="150">
+        <div
+          class="h-full bg-white rounded-3xl p-8 border border-slate-200/80 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center"
+        >
+          <!-- Step Number Badge -->
+          <div
+            class="absolute -top-4 right-6 w-9 h-9 rounded-2xl bg-[#F9B400] text-[#3D1A6D] text-sm font-black flex items-center justify-center shadow-md border-2 border-white"
+          >
+            02
+          </div>
+
+          <!-- Icon Circle -->
+          <div
+            class="w-20 h-20 rounded-2xl bg-purple-50 text-[#4F2DB7] group-hover:bg-[#4F2DB7] group-hover:text-white transition-colors duration-300 flex items-center justify-center text-3xl shadow-inner mb-6"
+          >
+            <i class="fa-solid fa-book-open"></i>
+          </div>
+
+          <h3 class="text-xl font-bold text-slate-900 mb-2">{{ messages.m_3d2fb6a4d73c }}</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">
+            {{ messages.m_7016c886ae15 }}
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="relative group z-10" data-aos="fade-up" data-aos-delay="300">
+        <div
+          class="h-full bg-white rounded-3xl p-8 border border-slate-200/80 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center"
+        >
+          <!-- Step Number Badge -->
+          <div
+            class="absolute -top-4 right-6 w-9 h-9 rounded-2xl bg-[#F9B400] text-[#3D1A6D] text-sm font-black flex items-center justify-center shadow-md border-2 border-white"
+          >
+            03
+          </div>
+
+          <!-- Icon Circle -->
+          <div
+            class="w-20 h-20 rounded-2xl bg-purple-50 text-[#4F2DB7] group-hover:bg-[#4F2DB7] group-hover:text-white transition-colors duration-300 flex items-center justify-center text-3xl shadow-inner mb-6"
+          >
+            <i class="fa-solid fa-credit-card"></i>
+          </div>
+
+          <h3 class="text-xl font-bold text-slate-900 mb-2">{{ messages.m_67f49e701485 }}</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">
+            {{ messages.m_67cf62749c77 }}
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="relative group z-10" data-aos="fade-up" data-aos-delay="450">
+        <div
+          class="h-full bg-white rounded-3xl p-8 border border-slate-200/80 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center"
+        >
+          <!-- Step Number Badge -->
+          <div
+            class="absolute -top-4 right-6 w-9 h-9 rounded-2xl bg-[#F9B400] text-[#3D1A6D] text-sm font-black flex items-center justify-center shadow-md border-2 border-white"
+          >
+            04
+          </div>
+
+          <!-- Icon Circle -->
+          <div
+            class="w-20 h-20 rounded-2xl bg-purple-50 text-[#4F2DB7] group-hover:bg-[#4F2DB7] group-hover:text-white transition-colors duration-300 flex items-center justify-center text-3xl shadow-inner mb-6"
+          >
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+
+          <h3 class="text-xl font-bold text-slate-900 mb-2">{{ messages.m_e04f5380ec6a }}</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">
+            {{ messages.m_df5c55d4e104 }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call To Action Button -->
+    <div class="mt-16 text-center" data-aos="zoom-in" data-aos-delay="500">
+      <a
+        href="https://wa.me/971563306087"
+        target="_blank"
+        class="inline-flex items-center gap-3 bg-[#4F2DB7] hover:bg-[#3D1A6D] text-white font-bold py-4 px-8 rounded-2xl transition duration-300 shadow-xl shadow-purple-900/20 hover:scale-105"
+      >
+        <i class="fa-brands fa-whatsapp text-2xl text-[#25D366]"></i>
+        <span>{{ messages.m_8dc5631ffac6 }}</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 5. ماذا يقول طلابنا -->
+<section class="max-w-6xl mx-auto px-4 py-8" data-aos="fade-up" data-aos-duration="800">
+  <app-section-header [title]="messages.m_4df49eb87a01" />
+
+  <p class="max-w-2xl mx-auto mb-6 text-center text-sm md:text-base leading-relaxed text-slate-600">
+    {{ messages.m_526d124bec7b }}
+  </p>
+
+  <div
+    class="relative flex items-center px-2"
+    (mouseenter)="stopAutoPlay()"
+    (mouseleave)="startAutoPlay()"
+  >
+    <button
+      (click)="preferences.language() === 'ar' ? scrollRight() : scrollLeft()"
+      type="button"
+      [attr.aria-label]="
+        preferences.language() === 'ar' ? messages.m_a784688c7932 : messages.m_0926efa89f4b
+      "
+      class="absolute -right-2 md:-right-4 z-20 w-8 h-8 md:w-9 md:h-9 rounded-full bg-white shadow-md border border-purple-100 flex items-center justify-center text-purple-600 hover:bg-purple-50 transition-all focus:outline-none"
+    >
+      <i class="fa-solid fa-chevron-right text-xs md:text-sm"></i>
+    </button>
+
+    <div
+      #sliderTrack
+      class="flex gap-4 overflow-x-auto no-scrollbar scroll-smooth py-2 px-1 w-full"
+      style="scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch"
+    >
+      @for (item of testimonials; track item.id) {
+        <div
+          class="w-[82%] sm:w-[48%] lg:w-[calc(33.333%-11px)] shrink-0 bg-[#f8f7ff] rounded-2xl p-4 md:p-5 text-center flex flex-col items-center justify-between border border-purple-50/60 shadow-xs relative"
+          style="scroll-snap-align: start"
+        >
+          <div
+            class="w-full text-right text-[#9b8bc4]/50 text-xl font-serif select-none leading-none"
+          >
+            <i class="fa-solid fa-quote-right"></i>
+          </div>
+
+          <p
+            class="text-[#2a174a] font-bold text-xs md:text-sm leading-relaxed px-1 my-3 text-center"
+          >
+            {{ item.quote }}
+          </p>
+
+          <div class="flex flex-col items-center mt-auto w-full">
+            <div
+              class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#dcd5f7] p-0.5 mb-1.5 overflow-hidden flex items-center justify-center"
+            >
+              <i class="fa-solid fa-user text-xl text-[#6c5991]" aria-hidden="true"></i>
+            </div>
+
+            <h4 class="font-bold text-[#2a174a] text-xs md:text-sm mb-0.5">
+              {{ item.name }}
+            </h4>
+            <span class="text-[11px] font-medium text-[#6c5991]">{{ item.role }}</span>
+          </div>
+        </div>
+      }
+    </div>
+
+    <button
+      (click)="preferences.language() === 'ar' ? scrollLeft() : scrollRight()"
+      type="button"
+      [attr.aria-label]="
+        preferences.language() === 'ar' ? messages.m_0926efa89f4b : messages.m_a784688c7932
+      "
+      class="absolute -left-2 md:-left-4 z-20 w-8 h-8 md:w-9 md:h-9 rounded-full bg-white shadow-md border border-purple-100 flex items-center justify-center text-purple-600 hover:bg-purple-50 transition-all focus:outline-none"
+    >
+      <i class="fa-solid fa-chevron-left text-xs md:text-sm"></i>
+    </button>
+  </div>
+</section>
+
+<!-- 6. WhatsApp CTA Section -->
+<section class="max-w-5xl mx-auto px-4 py-8" data-aos="zoom-in" data-aos-duration="800">
+  <div
+    class="relative bg-gradient-to-r from-[#4c1d95] via-[#5b21b6] to-[#6d28d9] text-white rounded-[2rem] p-6 md:p-8 flex flex-col md:flex-row items-center justify-between shadow-xl overflow-hidden"
+  >
+    <i
+      class="fa-solid fa-sparkles absolute top-4 right-8 text-white/20 text-xl pointer-events-none"
+    ></i>
+    <i
+      class="fa-solid fa-star-of-life absolute bottom-4 right-1/4 text-white/10 text-xs pointer-events-none"
+    ></i>
+
+    <div
+      class="flex flex-col items-center md:items-start text-center md:text-right z-10 w-full md:w-auto mb-6 md:mb-0"
+      data-aos="fade-right"
+      data-aos-delay="200"
+    >
+      <h2 class="text-2xl md:text-3xl font-extrabold mb-2 tracking-wide">
+        {{ messages.m_d0c08f94b14b }}
+      </h2>
+
+      <p class="text-white/80 text-sm md:text-base font-medium mb-6">
+        {{ messages.m_4c00a66d7eae }}
+      </p>
+
+      <a
+        href="https://wa.me/971563306087"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center gap-2.5 bg-white text-[#4c1d95] hover:bg-gray-100 font-bold text-sm md:text-base px-8 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0"
+      >
+        <i class="fa-brands fa-whatsapp text-green-500 text-lg md:text-xl"></i>
+        <span>{{ messages.m_988638232136 }}</span>
+      </a>
+    </div>
+
+    <div
+      class="relative z-10 flex items-center justify-center shrink-0"
+      data-aos="zoom-in"
+      data-aos-delay="300"
+    >
+      <div
+        class="w-24 h-24 md:w-32 md:h-32 bg-gradient-to-tr from-green-600 to-green-400 rounded-full flex items-center justify-center shadow-2xl border-4 border-white/20 transform hover:scale-105 transition-transform duration-300"
+      >
+        <i class="fa-brands fa-whatsapp text-white text-5xl md:text-7xl drop-shadow-md"></i>
+      </div>
+    </div>
+  </div>
+</section>
